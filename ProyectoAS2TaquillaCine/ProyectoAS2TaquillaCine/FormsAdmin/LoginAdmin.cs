@@ -32,5 +32,10 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             // Opcional: Cerrar o esconder el formulario actual
             this.Hide();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

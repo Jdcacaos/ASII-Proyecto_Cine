@@ -55,7 +55,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
         private void button1_Click(object sender, EventArgs e)
         {
             //Cadena de conexión a tu base de datos MySQL
-            string connectionString = "server=localhost;database=Cine;user=root;password=admin1234;";
+            string connectionString = DatabaseConfig.ConnectionString;
 
             // Obtener los valores ingresados por el usuario
             string email = txtuser.Text;
