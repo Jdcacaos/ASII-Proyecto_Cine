@@ -27,8 +27,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
                 return;
             }
             // Cadena de conexión a tu base de datos MySQL
-            string connectionString = "server=localhost;database=Cine;user=root;password=admin1234;";
-
+            string connectionString = DatabaseConfig.ConnectionString;
             // Crear una conexión a la base de datos
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
