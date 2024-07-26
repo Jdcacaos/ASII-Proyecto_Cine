@@ -29,6 +29,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
 
             LlenarComboBox_tiposala();
             LlenarComboBox_ubicacion();
+            LlenarComboBox_estado();
 
             try
             {
@@ -60,6 +61,18 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void LlenarComboBox_estado()
+        {
+            cbestado.Items.Clear();
+            cbestado.Items.Add("Activo");
+            cbestado.Items.Add("Inactivo");
+            if (cbestado.Items.Count > 0)
+            {
+                cbestado.SelectedIndex = 0;
+            }
+        }
+
 
         private void LlenarComboBox_tiposala()
         {
@@ -95,6 +108,10 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
 
             cbtiposala.DisplayMember = "Value";
             cbtiposala.ValueMember = "Key";
+            if (cbtiposala.Items.Count > 0)
+            {
+                cbtiposala.SelectedIndex = 0;
+            }
         }
 
         private void LlenarComboBox_ubicacion()
@@ -131,6 +148,10 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
 
             cbubicacion.DisplayMember = "Value";
             cbubicacion.ValueMember = "Key";
+            if (cbubicacion.Items.Count > 0)
+            {
+                cbubicacion.SelectedIndex = 0;
+            }
         }
 
         public void llenar_tabla()
@@ -179,12 +200,45 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            txtnosala.Text = dataGridView1.SelectedCells[1].Value.ToString();
-            txtcapacidad.Text = dataGridView1.SelectedCells[2].Value.ToString();
-            cbtiposala.Text = dataGridView1.SelectedCells[3].Value.ToString();
-            cbubicacion.Text = dataGridView1.SelectedCells[4].Value.ToString();
-            cbestado.Text = dataGridView1.SelectedCells[5].Value.ToString();
+            if (dataGridView1.SelectedCells.Count > 0)
+            {
+                int selectedRowIndex = dataGridView1.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = dataGridView1.Rows[selectedRowIndex];
+
+                txtnosala.Text = Convert.ToString(selectedRow.Cells["Numero_Sala"].Value);
+                txtcapacidad.Text = Convert.ToString(selectedRow.Cells["Capacidad"].Value);
+
+                string tipoSalaNombre = Convert.ToString(selectedRow.Cells["Tipo"].Value);
+                string ubicacionNombre = Convert.ToString(selectedRow.Cells["Direccion"].Value);
+                string estadoNombre = Convert.ToString(selectedRow.Cells["Estado_tbl_sala"].Value);
+
+                // Buscar y seleccionar el valor en el ComboBox de tipo de sala
+                foreach (var item in cbtiposala.Items)
+                {
+                    var keyValuePair = (KeyValuePair<int, string>)item;
+                    if (keyValuePair.Value == tipoSalaNombre)
+                    {
+                        cbtiposala.SelectedItem = keyValuePair;
+                        break;
+                    }
+                }
+
+                // Buscar y seleccionar el valor en el ComboBox de ubicación
+                foreach (var item in cbubicacion.Items)
+                {
+                    var keyValuePair = (KeyValuePair<int, string>)item;
+                    if (keyValuePair.Value == ubicacionNombre)
+                    {
+                        cbubicacion.SelectedItem = keyValuePair;
+                        break;
+                    }
+                }
+
+                // Asignar el valor del estado
+                cbestado.SelectedItem = estadoNombre;
+            }
         }
+
 
         private void btn_agregar_Click(object sender, EventArgs e)
         {
@@ -238,7 +292,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             else
             {
                 MessageBox.Show("No hay filas seleccionadas.");
-                return null;
+                return null;        
             }
         }
 
@@ -246,7 +300,6 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
         {
             try
             {
-                // Verificar si los elementos seleccionados son nulos
                 if (cbtiposala.SelectedItem == null || cbubicacion.SelectedItem == null || cbestado.SelectedItem == null)
                 {
                     MessageBox.Show("Por favor, actualiza todos los datos");
@@ -271,8 +324,15 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                 using (MySqlConnection connection = new MySqlConnection(connectionString))
                 {
                     connection.Open();
-                    string consulta = "UPDATE tbl_sala SET Numero_Sala = '" + txtnosala.Text + "', Capacidad = '" + txtcapacidad.Text + "', FK_ID_Tipo_Sala = " + tiposala + ", FK_ID_Ubicacion = " + ubicacion + ", Estado_tbl_sala = '" + cbestado.SelectedValue + "' WHERE ID_Sala = " + ValorObtenido + ";";
+                    string consulta = "UPDATE tbl_sala SET Numero_Sala = @Numero_Sala, Capacidad = @Capacidad, FK_ID_Tipo_Sala = @FK_ID_Tipo_Sala, FK_ID_Ubicacion = @FK_ID_Ubicacion, Estado_tbl_sala = @Estado_tbl_sala WHERE ID_Sala = @ID_Sala";
                     MySqlCommand comando = new MySqlCommand(consulta, connection);
+                    comando.Parameters.AddWithValue("@Numero_Sala", txtnosala.Text);
+                    comando.Parameters.AddWithValue("@Capacidad", txtcapacidad.Text);
+                    comando.Parameters.AddWithValue("@FK_ID_Tipo_Sala", tiposala);
+                    comando.Parameters.AddWithValue("@FK_ID_Ubicacion", ubicacion);
+                    comando.Parameters.AddWithValue("@Estado_tbl_sala", cbestado.SelectedItem.ToString());
+                    comando.Parameters.AddWithValue("@ID_Sala", ValorObtenido);
+
                     int cantidad = comando.ExecuteNonQuery();
                     if (cantidad > 0)
                     {
@@ -305,11 +365,54 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
 
 
 
+
         private void btn_eliminar_Click(object sender, EventArgs e)
         {
+            if (dataGridView1.SelectedCells.Count > 0)
+            {
+                int selectedRowIndex = dataGridView1.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = dataGridView1.Rows[selectedRowIndex];
+                int idSala = Convert.ToInt32(selectedRow.Cells["ID_Sala"].Value);
 
+                DialogResult dialogResult = MessageBox.Show("¿Estás seguro de que deseas eliminar este registro?", "Confirmar eliminación", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    using (MySqlConnection connection = new MySqlConnection(connectionString))
+                    {
+                        try
+                        {
+                            connection.Open();
+                            string query = "DELETE FROM tbl_sala WHERE ID_Sala = @ID_Sala";
+                            using (MySqlCommand command = new MySqlCommand(query, connection))
+                            {
+                                command.Parameters.AddWithValue("@ID_Sala", idSala);
+                                int rowsAffected = command.ExecuteNonQuery();
+                                if (rowsAffected > 0)
+                                {
+                                    MessageBox.Show("Registro eliminado exitosamente.");
+                                }
+                                else
+                                {
+                                    MessageBox.Show("No se encontró el registro para eliminar.");
+                                }
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Error al eliminar el registro: " + ex.Message);
+                        }
+                    }
 
+                    // Actualizar el DataGridView
+                    llenar_tabla();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor, selecciona un registro para eliminar.");
+            }
         }
+
 
         private bool datosCorrectos()
         {
