@@ -16,5 +16,12 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
         {
             InitializeComponent();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FormsAdmin.MenuGeneral MenuForm = new FormsAdmin.MenuGeneral();
+            MenuForm.Show();
+            this.Hide();
+        }
     }
 }

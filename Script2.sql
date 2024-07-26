@@ -10,6 +10,7 @@ INSERT INTO tbl_clasificacion (Nombre) VALUES ('NC-17');
 
 select * from tbl_clasificacion;
 
+
 #tbl proveedores pelicula
 
 INSERT INTO tbl_proveedor_pelicula (Nombre) VALUES ('Warner Bros. Pictures');
@@ -25,11 +26,16 @@ INSERT INTO tbl_tipo_sala (Tipo) VALUES ('IMAX');
 INSERT INTO tbl_tipo_sala (Tipo) VALUES ('4DX');
 INSERT INTO tbl_tipo_sala (Tipo) VALUES ('VIP');
 
-select * from tbl_tipo_Sala
+select * from tbl_tipo_Sala;
+
+
 
 #tbl cargo
 INSERT INTO tbl_cargo (Nombre) VALUES ('Administrador');
 INSERT INTO tbl_cargo (Nombre) VALUES ('Gerente');
+
+
+
 
 select * from tbl_cargo;
 
@@ -41,7 +47,6 @@ INSERT INTO tbl_ubicacion (Ciudad,Direccion) VALUES ('Mixco','CineHub SanKris Ma
 INSERT INTO tbl_ubicacion (Ciudad,Direccion) VALUES ('Villa Nueva','CineHub Plaza Villa Nueva');
 
 select * from tbl_ubicacion;
-
 
 
 

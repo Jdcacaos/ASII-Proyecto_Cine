@@ -58,8 +58,9 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(163, 105);
             this.button1.TabIndex = 5;
-            this.button1.Text = "Usuarios";
+            this.button1.Text = "Añadir empleado";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label3
             // 
@@ -88,6 +89,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.button2.TabIndex = 8;
             this.button2.Text = "Peliculas";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -98,6 +100,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.button3.TabIndex = 9;
             this.button3.Text = "Salas";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
@@ -108,6 +111,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.button4.TabIndex = 10;
             this.button4.Text = "Ubicaciones";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
@@ -118,6 +122,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.button5.TabIndex = 11;
             this.button5.Text = "Horarios";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button6
             // 
@@ -126,8 +131,9 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(163, 105);
             this.button6.TabIndex = 12;
-            this.button6.Text = "Ventas";
+            this.button6.Text = "Proveedor";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // MenuGeneral
             // 
