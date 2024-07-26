@@ -34,6 +34,8 @@ select * from tbl_tipo_Sala;
 INSERT INTO tbl_cargo (Nombre) VALUES ('Administrador');
 INSERT INTO tbl_cargo (Nombre) VALUES ('Gerente');
 
+select * from tbl_sala;
+INSERT INTO tbl_cargo (Nombre) VALUES ('Gerente');
 
 
 
@@ -47,7 +49,11 @@ INSERT INTO tbl_ubicacion (Ciudad,Direccion) VALUES ('Mixco','CineHub SanKris Ma
 INSERT INTO tbl_ubicacion (Ciudad,Direccion) VALUES ('Villa Nueva','CineHub Plaza Villa Nueva');
 
 select * from tbl_ubicacion;
+select * from tbl_sala;
+select * from tbl_tipo_sala;
 
+INSERT INTO tbl_sala (ID_Sala,Numero_Sala, Capacidad, FK_ID_Tipo_Sala,FK_ID_Ubicacion, Estado_tbl_sala) VALUES ('1','1','50','1','1','Activo');
+INSERT INTO tbl_sala (ID_Sala,Numero_Sala, Capacidad, FK_ID_Tipo_Sala,FK_ID_Ubicacion, Estado_tbl_sala) VALUES ('2','2','50','2','2','Activo');
 
-
+SELECT ID_tipo_sala, Tipo FROM tbl_tipo_sala;
 
