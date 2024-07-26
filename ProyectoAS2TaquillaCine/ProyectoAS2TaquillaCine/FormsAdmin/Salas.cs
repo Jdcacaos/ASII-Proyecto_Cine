@@ -448,5 +448,10 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
 
             return true;
         }
+
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
