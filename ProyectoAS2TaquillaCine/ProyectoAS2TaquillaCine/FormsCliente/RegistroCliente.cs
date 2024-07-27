@@ -57,6 +57,11 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
                     }
 
                     MessageBox.Show("Registro completado exitosamente.");
+
+                    
+                    FormsCliente.LoginCliente loginForm = new FormsCliente.LoginCliente();
+                    loginForm.Show();
+                    this.Hide(); 
                 }
                 catch (Exception ex)
                 {
@@ -109,6 +114,13 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
         private void txtFechaNac_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnRegresar_Click(object sender, EventArgs e)
+        {
+            FormsCliente.LoginCliente loginForm = new FormsCliente.LoginCliente();
+            loginForm.Show();
+            this.Hide();
         }
     }
 }
