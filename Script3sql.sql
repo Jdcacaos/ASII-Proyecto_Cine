@@ -57,3 +57,12 @@ INSERT INTO tbl_sala (ID_Sala,Numero_Sala, Capacidad, FK_ID_Tipo_Sala,FK_ID_Ubic
 
 SELECT ID_tipo_sala, Tipo FROM tbl_tipo_sala;
 
+SELECT * FROM tbl_ubicacion;
+
+USE CINE; 
+select * from tbl_pelicula;
+
+ALTER TABLE tbl_pelicula 
+MODIFY COLUMN Imagen blob;
+
+
