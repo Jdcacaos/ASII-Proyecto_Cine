@@ -99,5 +99,7 @@ SELECT * FROM cine.tbl_proyeccion;
 SELECT ID_Pelicula , Titulo FROM tbl_pelicula;
 
 
+ALTER TABLE tbl_pelicula MODIFY COLUMN Imagen BLOB;
+
 
 
