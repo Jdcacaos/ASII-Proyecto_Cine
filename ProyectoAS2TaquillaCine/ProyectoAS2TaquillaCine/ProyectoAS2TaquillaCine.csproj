@@ -105,11 +105,11 @@
     <Compile Include="FormsAdmin\AgregarPeliculas.Designer.cs">
       <DependentUpon>AgregarPeliculas.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormsAdmin\AgregarUsuario.cs">
+    <Compile Include="FormsAdmin\AgregarEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormsAdmin\AgregarUsuario.Designer.cs">
-      <DependentUpon>AgregarUsuario.cs</DependentUpon>
+    <Compile Include="FormsAdmin\AgregarEmpleado.Designer.cs">
+      <DependentUpon>AgregarEmpleado.cs</DependentUpon>
     </Compile>
     <Compile Include="FormsAdmin\Horarios.cs">
       <SubType>Form</SubType>
@@ -134,6 +134,12 @@
     </Compile>
     <Compile Include="FormsAdmin\Peliculas.Designer.cs">
       <DependentUpon>Peliculas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsAdmin\Proveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsAdmin\Proveedor.Designer.cs">
+      <DependentUpon>Proveedor.cs</DependentUpon>
     </Compile>
     <Compile Include="FormsAdmin\Salas.cs">
       <SubType>Form</SubType>
@@ -212,8 +218,8 @@
     <EmbeddedResource Include="FormsAdmin\AgregarPeliculas.resx">
       <DependentUpon>AgregarPeliculas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormsAdmin\AgregarUsuario.resx">
-      <DependentUpon>AgregarUsuario.cs</DependentUpon>
+    <EmbeddedResource Include="FormsAdmin\AgregarEmpleado.resx">
+      <DependentUpon>AgregarEmpleado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormsAdmin\Horarios.resx">
       <DependentUpon>Horarios.cs</DependentUpon>
@@ -226,6 +232,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormsAdmin\Peliculas.resx">
       <DependentUpon>Peliculas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsAdmin\Proveedor.resx">
+      <DependentUpon>Proveedor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormsAdmin\Salas.resx">
       <DependentUpon>Salas.cs</DependentUpon>

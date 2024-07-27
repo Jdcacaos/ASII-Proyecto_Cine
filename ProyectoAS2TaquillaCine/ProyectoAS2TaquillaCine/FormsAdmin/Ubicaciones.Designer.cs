@@ -53,8 +53,9 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(91, 33);
             this.button4.TabIndex = 31;
-            this.button4.Text = "Regresar";
+            this.button4.Text = "f";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
