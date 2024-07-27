@@ -99,6 +99,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DatabaseConfig.cs" />
+    <Compile Include="FormsAdmin\AgregarEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsAdmin\AgregarEmpleado.Designer.cs">
+      <DependentUpon>AgregarEmpleado.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormsAdmin\AgregarPeliculas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -177,6 +183,12 @@
     <Compile Include="FormsCliente\LoginCliente.Designer.cs">
       <DependentUpon>LoginCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormsCliente\MenuUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsCliente\MenuUsuario.Designer.cs">
+      <DependentUpon>MenuUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormsCliente\Pago.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -209,6 +221,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormsAdmin\AgregarEmpleado.resx">
+      <DependentUpon>AgregarEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormsAdmin\AgregarPeliculas.resx">
       <DependentUpon>AgregarPeliculas.cs</DependentUpon>
     </EmbeddedResource>
@@ -247,6 +262,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormsCliente\LoginCliente.resx">
       <DependentUpon>LoginCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsCliente\MenuUsuario.resx">
+      <DependentUpon>MenuUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormsCliente\Pago.resx">
       <DependentUpon>Pago.cs</DependentUpon>
@@ -291,7 +309,22 @@
     <None Include="Resources\16974783388025.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\cinema-movies-concept-background-with-5761469.jpg" />
+    <None Include="Resources\metodo-de-pago1.png" />
+    <None Include="Resources\reserva1.png" />
+    <None Include="Resources\viendo-una-pelicula %282%291.png" />
+    <None Include="Resources\clock_timer_time_calendar_date_schedule_hourglass_stopwatch_deadline_icon_2319051.png" />
+    <None Include="Resources\ticket_cinema_icon_1908851.png" />
+    <None Include="Resources\mapa1.png" />
+    <None Include="Resources\cine1.png" />
+    <None Include="Resources\viendo-una-pelicula.png" />
+    <None Include="Resources\avatar %284%29.png" />
+    <None Include="Resources\agregar-usuario1.png" />
+    <None Include="Resources\chart_marketing_report_shop_graph_business_sales_shopping_analytics_finance_icon_2319091.png" />
+    <None Include="Resources\asiento %281%291.png" />
+    <None Include="Resources\avatar %285%29.png" />
     <Content Include="Resources\cine.jpg" />
+    <None Include="Resources\panel-de-administrador1.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\telefono-gratuito-cinesur.jpg" />

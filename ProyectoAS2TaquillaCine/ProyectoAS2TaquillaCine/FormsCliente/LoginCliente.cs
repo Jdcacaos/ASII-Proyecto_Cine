@@ -87,7 +87,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
                             // Aquí puedes abrir el formulario principal de tu aplicación o proceder según tu lógica
                             // Ejemplo:
                             // Crear una instancia del formulario LoginCliente
-                            FormsCliente.Cartelera CarteleraForm = new FormsCliente.Cartelera();
+                            FormsCliente.MenuUsuario CarteleraForm = new FormsCliente.MenuUsuario();
 
                             // Mostrar el formulario LoginCliente
                             CarteleraForm.Show();

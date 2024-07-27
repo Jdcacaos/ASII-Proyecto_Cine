@@ -122,5 +122,10 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             loginForm.Show();
             this.Hide();
         }
+
+        private void RegistroCliente_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
