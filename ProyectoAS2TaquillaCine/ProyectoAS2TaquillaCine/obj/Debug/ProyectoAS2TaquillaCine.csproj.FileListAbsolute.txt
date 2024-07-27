@@ -179,7 +179,6 @@ C:\CineAnalisis\ASII-Proyecto_Cine\ProyectoAS2TaquillaCine\ProyectoAS2TaquillaCi
 C:\CineAnalisis\ASII-Proyecto_Cine\ProyectoAS2TaquillaCine\ProyectoAS2TaquillaCine\obj\Debug\ProyectoAS2TaquillaCine.FormsAdmin.AgregarEmpleado.resources
 C:\Users\jdcac\Desktop\Sistema_cine\ASII-Proyecto_Cine\ProyectoAS2TaquillaCine\ProyectoAS2TaquillaCine\obj\Debug\ProyectoAS2TaquillaCine.FormsAdmin.AgregarEmpleado.resources
 C:\Users\jdcac\Desktop\Sistema_cine\ASII-Proyecto_Cine\ProyectoAS2TaquillaCine\ProyectoAS2TaquillaCine\obj\Debug\ProyectoAS2TaquillaCine.FormsAdmin.Proveedor.resources
-<<<<<<< HEAD
 C:\Users\bhern\Desktop\SistemaCine\ASII-Proyecto_Cine\ProyectoAS2TaquillaCine\ProyectoAS2TaquillaCine\bin\Debug\ProyectoAS2TaquillaCine.exe.config
 C:\Users\bhern\Desktop\SistemaCine\ASII-Proyecto_Cine\ProyectoAS2TaquillaCine\ProyectoAS2TaquillaCine\bin\Debug\ProyectoAS2TaquillaCine.exe
 C:\Users\bhern\Desktop\SistemaCine\ASII-Proyecto_Cine\ProyectoAS2TaquillaCine\ProyectoAS2TaquillaCine\bin\Debug\ProyectoAS2TaquillaCine.pdb
@@ -241,10 +240,8 @@ C:\Users\bhern\Desktop\SistemaCine\ASII-Proyecto_Cine\ProyectoAS2TaquillaCine\Pr
 C:\Users\bhern\Desktop\SistemaCine\ASII-Proyecto_Cine\ProyectoAS2TaquillaCine\ProyectoAS2TaquillaCine\obj\Debug\ProyectoAS2TaquillaCine.csproj.CopyComplete
 C:\Users\bhern\Desktop\SistemaCine\ASII-Proyecto_Cine\ProyectoAS2TaquillaCine\ProyectoAS2TaquillaCine\obj\Debug\ProyectoAS2TaquillaCine.exe
 C:\Users\bhern\Desktop\SistemaCine\ASII-Proyecto_Cine\ProyectoAS2TaquillaCine\ProyectoAS2TaquillaCine\obj\Debug\ProyectoAS2TaquillaCine.pdb
-=======
 C:\Cine\ASII-Proyecto_Cine\ProyectoAS2TaquillaCine\ProyectoAS2TaquillaCine\obj\Debug\ProyectoAS2TaquillaCine.FormsAdmin.AgregarEmpleado.resources
 C:\Cine\ASII-Proyecto_Cine\ProyectoAS2TaquillaCine\ProyectoAS2TaquillaCine\obj\Debug\ProyectoAS2TaquillaCine.FormsAdmin.Proveedor.resources
->>>>>>> c73250991cb456e11c81922cfcefb84b01e8b59a
 C:\Users\DELL\Desktop\labo analisis\arreglo\ASII-Proyecto_Cine\ProyectoAS2TaquillaCine\ProyectoAS2TaquillaCine\bin\Debug\ProyectoAS2TaquillaCine.exe.config
 C:\Users\DELL\Desktop\labo analisis\arreglo\ASII-Proyecto_Cine\ProyectoAS2TaquillaCine\ProyectoAS2TaquillaCine\bin\Debug\ProyectoAS2TaquillaCine.exe
 C:\Users\DELL\Desktop\labo analisis\arreglo\ASII-Proyecto_Cine\ProyectoAS2TaquillaCine\ProyectoAS2TaquillaCine\bin\Debug\ProyectoAS2TaquillaCine.pdb
