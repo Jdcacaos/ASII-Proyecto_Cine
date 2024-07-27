@@ -14,7 +14,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
 {
     public partial class Salas : Form
     {
-        string connectionString = DatabaseConfig.ConnectionString; // Debe ser una cadena de conexión MySQL
+        string connectionString = DatabaseConfig.ConnectionString; 
 
         public Salas()
         {
@@ -275,7 +275,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error al registrar el empleado: " + ex.Message);
+                    MessageBox.Show("Error al registrar la sala: " + ex.Message);
                 }
             }
 
@@ -362,9 +362,6 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                 MessageBox.Show("Se ha producido un error: " + ex.Message);
             }
         }
-
-
-
 
         private void btn_eliminar_Click(object sender, EventArgs e)
         {
