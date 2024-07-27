@@ -29,15 +29,8 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
         /// </summary>
         private void InitializeComponent()
         {
-            this.button4 = new System.Windows.Forms.Button();
-            this.btn_editar = new System.Windows.Forms.Button();
-            this.btn_agregar = new System.Windows.Forms.Button();
-            this.btn_eliminar = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.txtnosala = new System.Windows.Forms.TextBox();
             this.txtcapacidad = new System.Windows.Forms.TextBox();
             this.cbtiposala = new System.Windows.Forms.ComboBox();
@@ -48,57 +41,26 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(16, 27);
-            this.button4.Margin = new System.Windows.Forms.Padding(4);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(121, 41);
-            this.button4.TabIndex = 31;
-            this.button4.Text = "Regresar";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // btn_editar
-            // 
-            this.btn_editar.Location = new System.Drawing.Point(1054, 573);
-            this.btn_editar.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_editar.Name = "btn_editar";
-            this.btn_editar.Size = new System.Drawing.Size(121, 41);
-            this.btn_editar.TabIndex = 30;
-            this.btn_editar.Text = "Editar";
-            this.btn_editar.UseVisualStyleBackColor = true;
-            this.btn_editar.Click += new System.EventHandler(this.btn_editar_Click);
-            // 
-            // btn_agregar
-            // 
-            this.btn_agregar.Location = new System.Drawing.Point(1054, 524);
-            this.btn_agregar.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_agregar.Name = "btn_agregar";
-            this.btn_agregar.Size = new System.Drawing.Size(121, 41);
-            this.btn_agregar.TabIndex = 29;
-            this.btn_agregar.Text = "Agregar";
-            this.btn_agregar.UseVisualStyleBackColor = true;
-            this.btn_agregar.Click += new System.EventHandler(this.btn_agregar_Click);
-            // 
-            // btn_eliminar
-            // 
-            this.btn_eliminar.Location = new System.Drawing.Point(1054, 622);
-            this.btn_eliminar.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_eliminar.Name = "btn_eliminar";
-            this.btn_eliminar.Size = new System.Drawing.Size(121, 41);
-            this.btn_eliminar.TabIndex = 28;
-            this.btn_eliminar.Text = "Eliminar";
-            this.btn_eliminar.UseVisualStyleBackColor = true;
-            this.btn_eliminar.Click += new System.EventHandler(this.btn_eliminar_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(1200, 39);
+            this.label3.ForeColor = System.Drawing.SystemColors.Control;
+            this.label3.Location = new System.Drawing.Point(320, 101);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(39, 17);
@@ -108,59 +70,24 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(1200, 11);
+            this.label4.ForeColor = System.Drawing.SystemColors.Control;
+            this.label4.Location = new System.Drawing.Point(320, 73);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(47, 17);
             this.label4.TabIndex = 26;
             this.label4.Text = "Fecha";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(568, 143);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(163, 52);
-            this.label2.TabIndex = 24;
-            this.label2.Text = "SALAS";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 54F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(433, 41);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(448, 102);
-            this.label1.TabIndex = 23;
-            this.label1.Text = "CINEHUB";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(28, 221);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(887, 487);
-            this.dataGridView1.TabIndex = 32;
-            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
-            // 
             // txtnosala
             // 
-            this.txtnosala.Location = new System.Drawing.Point(1054, 260);
+            this.txtnosala.Location = new System.Drawing.Point(229, 312);
             this.txtnosala.Name = "txtnosala";
             this.txtnosala.Size = new System.Drawing.Size(208, 22);
             this.txtnosala.TabIndex = 33;
             // 
             // txtcapacidad
             // 
-            this.txtcapacidad.Location = new System.Drawing.Point(1054, 299);
+            this.txtcapacidad.Location = new System.Drawing.Point(229, 351);
             this.txtcapacidad.Name = "txtcapacidad";
             this.txtcapacidad.Size = new System.Drawing.Size(208, 22);
             this.txtcapacidad.TabIndex = 34;
@@ -168,7 +95,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             // cbtiposala
             // 
             this.cbtiposala.FormattingEnabled = true;
-            this.cbtiposala.Location = new System.Drawing.Point(1054, 343);
+            this.cbtiposala.Location = new System.Drawing.Point(229, 395);
             this.cbtiposala.Name = "cbtiposala";
             this.cbtiposala.Size = new System.Drawing.Size(208, 24);
             this.cbtiposala.TabIndex = 35;
@@ -176,7 +103,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             // cbubicacion
             // 
             this.cbubicacion.FormattingEnabled = true;
-            this.cbubicacion.Location = new System.Drawing.Point(1054, 392);
+            this.cbubicacion.Location = new System.Drawing.Point(229, 444);
             this.cbubicacion.Name = "cbubicacion";
             this.cbubicacion.Size = new System.Drawing.Size(208, 24);
             this.cbubicacion.TabIndex = 36;
@@ -187,7 +114,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.cbestado.Items.AddRange(new object[] {
             "Activo",
             "Inactivo"});
-            this.cbestado.Location = new System.Drawing.Point(1054, 436);
+            this.cbestado.Location = new System.Drawing.Point(229, 488);
             this.cbestado.Name = "cbestado";
             this.cbestado.Size = new System.Drawing.Size(208, 24);
             this.cbestado.TabIndex = 37;
@@ -195,93 +122,225 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(940, 260);
+            this.label5.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label5.Location = new System.Drawing.Point(33, 305);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(108, 17);
+            this.label5.Size = new System.Drawing.Size(163, 26);
             this.label5.TabIndex = 38;
             this.label5.Text = "Numero de sala";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(960, 302);
+            this.label6.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label6.Location = new System.Drawing.Point(33, 351);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(75, 17);
+            this.label6.Size = new System.Drawing.Size(113, 26);
             this.label6.TabIndex = 39;
             this.label6.Text = "Capacidad";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(960, 346);
+            this.label7.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label7.Location = new System.Drawing.Point(33, 395);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(66, 17);
+            this.label7.Size = new System.Drawing.Size(98, 26);
             this.label7.TabIndex = 40;
             this.label7.Text = "Tipo sala";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(960, 395);
+            this.label8.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label8.Location = new System.Drawing.Point(33, 444);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(70, 17);
+            this.label8.Size = new System.Drawing.Size(107, 26);
             this.label8.TabIndex = 41;
             this.label8.Text = "Ubicación";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(960, 439);
+            this.label9.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label9.Location = new System.Drawing.Point(33, 488);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(82, 17);
+            this.label9.Size = new System.Drawing.Size(119, 26);
             this.label9.TabIndex = 42;
             this.label9.Text = "Estado sala";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1314, 35);
+            this.panel1.TabIndex = 43;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.panel2.Controls.Add(this.label10);
+            this.panel2.Controls.Add(this.button5);
+            this.panel2.Controls.Add(this.label9);
+            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.label8);
+            this.panel2.Controls.Add(this.cbestado);
+            this.panel2.Controls.Add(this.label7);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.txtnosala);
+            this.panel2.Controls.Add(this.label6);
+            this.panel2.Controls.Add(this.txtcapacidad);
+            this.panel2.Controls.Add(this.label5);
+            this.panel2.Controls.Add(this.cbtiposala);
+            this.panel2.Controls.Add(this.cbubicacion);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel2.Location = new System.Drawing.Point(824, 35);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(490, 795);
+            this.panel2.TabIndex = 44;
+            // 
+            // label10
+            // 
+            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label10.Location = new System.Drawing.Point(124, 164);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(235, 26);
+            this.label10.TabIndex = 53;
+            this.label10.Text = "Mantenimiento de Sala";
+            // 
+            // button5
+            // 
+            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button5.Location = new System.Drawing.Point(80, 589);
+            this.button5.Margin = new System.Windows.Forms.Padding(4);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(316, 50);
+            this.button5.TabIndex = 38;
+            this.button5.Text = "Guardar";
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.BackColor = System.Drawing.Color.Red;
+            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button1.Location = new System.Drawing.Point(316, 7);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(121, 41);
+            this.button1.TabIndex = 37;
+            this.button1.Text = "Regresar";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            this.panel3.Controls.Add(this.dataGridView1);
+            this.panel3.Controls.Add(this.button3);
+            this.panel3.Controls.Add(this.button6);
+            this.panel3.Controls.Add(this.label1);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(0, 35);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(824, 795);
+            this.panel3.TabIndex = 45;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(13, 256);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.Size = new System.Drawing.Size(782, 383);
+            this.dataGridView1.TabIndex = 179;
+            this.dataGridView1.Tag = "";
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // button3
+            // 
+            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button3.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.button3.ForeColor = System.Drawing.SystemColors.Control;
+            this.button3.Location = new System.Drawing.Point(41, 672);
+            this.button3.Margin = new System.Windows.Forms.Padding(4);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(159, 48);
+            this.button3.TabIndex = 36;
+            this.button3.Text = "Editar";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button6
+            // 
+            this.button6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button6.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.button6.ForeColor = System.Drawing.SystemColors.Control;
+            this.button6.Location = new System.Drawing.Point(228, 672);
+            this.button6.Margin = new System.Windows.Forms.Padding(4);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(148, 48);
+            this.button6.TabIndex = 35;
+            this.button6.Text = "Eliminar";
+            this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label1.Font = new System.Drawing.Font("Arial Narrow", 54F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label1.Location = new System.Drawing.Point(246, 49);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(376, 105);
+            this.label1.TabIndex = 32;
+            this.label1.Text = "CINEHUB";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // Salas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1314, 751);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.cbestado);
-            this.Controls.Add(this.cbubicacion);
-            this.Controls.Add(this.cbtiposala);
-            this.Controls.Add(this.txtcapacidad);
-            this.Controls.Add(this.txtnosala);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.btn_editar);
-            this.Controls.Add(this.btn_agregar);
-            this.Controls.Add(this.btn_eliminar);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(1314, 830);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Salas";
             this.Text = "Salas";
             this.Load += new System.EventHandler(this.Salas_Load);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button btn_editar;
-        private System.Windows.Forms.Button btn_agregar;
-        private System.Windows.Forms.Button btn_eliminar;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox txtnosala;
         private System.Windows.Forms.TextBox txtcapacidad;
         private System.Windows.Forms.ComboBox cbtiposala;
@@ -292,5 +351,15 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Label label1;
     }
 }

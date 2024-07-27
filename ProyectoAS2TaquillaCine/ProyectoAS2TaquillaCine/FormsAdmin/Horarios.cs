@@ -18,7 +18,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
         public Horarios()
         {
             InitializeComponent();
-            
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
         private void Horarios_Load(object sender, EventArgs e)
         {   
@@ -442,6 +442,146 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                     dateTimePicker1.Value = fechaDateTime;
                 }
 
+            }
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+
+            if (!datosCorrectos())
+            {
+                return;
+            }
+
+            int idPelicula = ((KeyValuePair<int, string>)cb_Pelicula.SelectedItem).Key;
+            int idSala = ((KeyValuePair<int, int>)cb_id_Sala.SelectedItem).Key;
+
+
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+
+                    string query = "INSERT INTO tbl_proyeccion (FK_ID_Pelicula, FK_ID_Sala, Fecha, Estado_tbl_proyeccion, Hora) " +
+                        "VALUES (@FK_ID_Pelicula, @FK_ID_Sala, @Fecha, @Estado_tbl_proyeccion, @Hora)";
+
+                    using (MySqlCommand command = new MySqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@FK_ID_Pelicula", idPelicula);
+                        command.Parameters.AddWithValue("@FK_ID_Sala", idSala);
+                        command.Parameters.AddWithValue("@Fecha", dateTimePicker1.Value.ToString("yyyy-MM-dd"));
+                        command.Parameters.AddWithValue("@Estado_tbl_proyeccion", cbEstado.Text);
+                        command.Parameters.AddWithValue("@Hora", dateTimePicker2.Value.ToString("HH:mm:ss"));
+
+                        command.ExecuteNonQuery();
+                    }
+
+                    MessageBox.Show("Registro completado exitosamente.");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al registrar la proyeccion: " + ex.Message);
+                }
+            }
+
+            llenar_tabla();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+
+            if (dataGridView1.SelectedCells.Count > 0)
+            {
+                int selectedRowIndex = dataGridView1.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = dataGridView1.Rows[selectedRowIndex];
+                int idProyeccion = Convert.ToInt32(selectedRow.Cells["ID_Proyeccion"].Value);
+
+                DialogResult dialogResult = MessageBox.Show("¿Estás seguro de que deseas eliminar este registro?", "Confirmar eliminación", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    using (MySqlConnection connection = new MySqlConnection(connectionString))
+                    {
+                        try
+                        {
+                            connection.Open();
+                            string query = "DELETE FROM tbl_proyeccion WHERE ID_Proyeccion = @ID_Proyeccion";
+                            using (MySqlCommand command = new MySqlCommand(query, connection))
+                            {
+                                command.Parameters.AddWithValue("@ID_Proyeccion", idProyeccion);
+                                int rowsAffected = command.ExecuteNonQuery();
+                                if (rowsAffected > 0)
+                                {
+                                    MessageBox.Show("Registro eliminado exitosamente.");
+                                }
+                                else
+                                {
+                                    MessageBox.Show("No se encontró el registro para eliminar.");
+                                }
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Error al eliminar el registro: " + ex.Message);
+                        }
+                    }
+
+                    // Actualizar el DataGridView
+                    llenar_tabla();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor, selecciona un registro para eliminar.");
+            }
+
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+
+            if (dataGridView1.SelectedCells.Count > 0)
+            {
+                int selectedRowIndex = dataGridView1.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = dataGridView1.Rows[selectedRowIndex];
+                int idProyeccion = Convert.ToInt32(selectedRow.Cells["ID_Proyeccion"].Value);
+
+                DialogResult dialogResult = MessageBox.Show("¿Estás seguro de que deseas eliminar este registro?", "Confirmar eliminación", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    using (MySqlConnection connection = new MySqlConnection(connectionString))
+                    {
+                        try
+                        {
+                            connection.Open();
+                            string query = "DELETE FROM tbl_proyeccion WHERE ID_Proyeccion = @ID_Proyeccion";
+                            using (MySqlCommand command = new MySqlCommand(query, connection))
+                            {
+                                command.Parameters.AddWithValue("@ID_Proyeccion", idProyeccion);
+                                int rowsAffected = command.ExecuteNonQuery();
+                                if (rowsAffected > 0)
+                                {
+                                    MessageBox.Show("Registro eliminado exitosamente.");
+                                }
+                                else
+                                {
+                                    MessageBox.Show("No se encontró el registro para eliminar.");
+                                }
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Error al eliminar el registro: " + ex.Message);
+                        }
+                    }
+
+                    // Actualizar el DataGridView
+                    llenar_tabla();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor, selecciona un registro para eliminar.");
             }
         }
     }

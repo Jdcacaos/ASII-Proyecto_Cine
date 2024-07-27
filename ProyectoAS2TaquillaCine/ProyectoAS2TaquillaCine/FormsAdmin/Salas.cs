@@ -19,6 +19,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
         public Salas()
         {
             InitializeComponent();
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
         private void Salas_Load(object sender, EventArgs e)
@@ -449,6 +450,169 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
         private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if (!datosCorrectos())
+            {
+                return;
+            }
+
+            int idtiposala = ((KeyValuePair<int, string>)cbtiposala.SelectedItem).Key;
+            int idubicacion = ((KeyValuePair<int, string>)cbubicacion.SelectedItem).Key;
+
+
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+
+                    string query = "INSERT INTO tbl_sala (Numero_Sala, Capacidad, FK_ID_Tipo_Sala, FK_ID_Ubicacion, Estado_tbl_sala) " +
+                                   "VALUES (@Numero_Sala, @Capacidad, @FK_ID_Tipo_Sala, @FK_ID_Ubicacion, @Estado_tbl_sala)";
+
+                    using (MySqlCommand command = new MySqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@Numero_Sala", txtnosala.Text);
+                        command.Parameters.AddWithValue("@Capacidad", txtcapacidad.Text);
+                        command.Parameters.AddWithValue("@FK_ID_Tipo_Sala", idtiposala);
+                        command.Parameters.AddWithValue("@FK_ID_Ubicacion", idubicacion);
+                        command.Parameters.AddWithValue("@Estado_tbl_sala", cbestado.Text);
+
+                        command.ExecuteNonQuery();
+                    }
+
+                    MessageBox.Show("Registro completado exitosamente.");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al registrar la sala: " + ex.Message);
+                }
+            }
+
+            llenar_tabla();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (cbtiposala.SelectedItem == null || cbubicacion.SelectedItem == null || cbestado.SelectedItem == null)
+                {
+                    MessageBox.Show("Por favor, actualiza todos los datos");
+                    return;
+                }
+
+                // Obtener valores del ComboBox
+                int tiposala = ((KeyValuePair<int, string>)cbtiposala.SelectedItem).Key;
+                int ubicacion = ((KeyValuePair<int, string>)cbubicacion.SelectedItem).Key;
+
+                // Obtener valor de la celda
+                Object obtener = ObtenerValorCelda("ID_Sala");
+                if (obtener == null)
+                {
+                    MessageBox.Show("No se pudo obtener el valor de ID_Sala.");
+                    return;
+                }
+
+                int ValorObtenido = Convert.ToInt32(obtener);
+
+                // Actualizar base de datos
+                using (MySqlConnection connection = new MySqlConnection(connectionString))
+                {
+                    connection.Open();
+                    string consulta = "UPDATE tbl_sala SET Numero_Sala = @Numero_Sala, Capacidad = @Capacidad, FK_ID_Tipo_Sala = @FK_ID_Tipo_Sala, FK_ID_Ubicacion = @FK_ID_Ubicacion, Estado_tbl_sala = @Estado_tbl_sala WHERE ID_Sala = @ID_Sala";
+                    MySqlCommand comando = new MySqlCommand(consulta, connection);
+                    comando.Parameters.AddWithValue("@Numero_Sala", txtnosala.Text);
+                    comando.Parameters.AddWithValue("@Capacidad", txtcapacidad.Text);
+                    comando.Parameters.AddWithValue("@FK_ID_Tipo_Sala", tiposala);
+                    comando.Parameters.AddWithValue("@FK_ID_Ubicacion", ubicacion);
+                    comando.Parameters.AddWithValue("@Estado_tbl_sala", cbestado.SelectedItem.ToString());
+                    comando.Parameters.AddWithValue("@ID_Sala", ValorObtenido);
+
+                    int cantidad = comando.ExecuteNonQuery();
+                    if (cantidad > 0)
+                    {
+                        MessageBox.Show("Registro modificado");
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se encontró el registro para modificar.");
+                    }
+                    llenar_tabla();
+                }
+            }
+            catch (NullReferenceException ex)
+            {
+                MessageBox.Show("Se ha producido un error: " + ex.Message);
+            }
+            catch (FormatException ex)
+            {
+                MessageBox.Show("Formato de datos incorrecto: " + ex.Message);
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("Error de base de datos: " + ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Se ha producido un error: " + ex.Message);
+            }
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedCells.Count > 0)
+            {
+                int selectedRowIndex = dataGridView1.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = dataGridView1.Rows[selectedRowIndex];
+                int idSala = Convert.ToInt32(selectedRow.Cells["ID_Sala"].Value);
+
+                DialogResult dialogResult = MessageBox.Show("¿Estás seguro de que deseas eliminar este registro?", "Confirmar eliminación", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    using (MySqlConnection connection = new MySqlConnection(connectionString))
+                    {
+                        try
+                        {
+                            connection.Open();
+                            string query = "DELETE FROM tbl_sala WHERE ID_Sala = @ID_Sala";
+                            using (MySqlCommand command = new MySqlCommand(query, connection))
+                            {
+                                command.Parameters.AddWithValue("@ID_Sala", idSala);
+                                int rowsAffected = command.ExecuteNonQuery();
+                                if (rowsAffected > 0)
+                                {
+                                    MessageBox.Show("Registro eliminado exitosamente.");
+                                }
+                                else
+                                {
+                                    MessageBox.Show("No se encontró el registro para eliminar.");
+                                }
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Error al eliminar el registro: " + ex.Message);
+                        }
+                    }
+
+                    // Actualizar el DataGridView
+                    llenar_tabla();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor, selecciona un registro para eliminar.");
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FormsAdmin.MenuGeneral MenuForm = new FormsAdmin.MenuGeneral();
+            MenuForm.Show();
+            this.Hide();
         }
     }
 }

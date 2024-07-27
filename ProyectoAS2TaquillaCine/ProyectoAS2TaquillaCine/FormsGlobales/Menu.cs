@@ -48,5 +48,31 @@ namespace ProyectoAS2TaquillaCine.FormsGlobales
             this.Hide(); // Si quieres ocultar el formulario actual
                          // this.Close(); // Si quieres cerrar el formulario actual
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            // Crear una instancia del formulario LoginCliente
+            FormsCliente.LoginCliente loginForm = new FormsCliente.LoginCliente();
+
+            // Mostrar el formulario LoginCliente
+            loginForm.Show();
+
+            // Opcional: Cerrar o esconder el formulario actual
+            this.Hide(); // Si quieres ocultar el formulario actual
+                         // this.Close(); // Si quieres cerrar el formulario actual
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            // Crear una instancia del formulario LoginCliente
+            FormsAdmin.MenuGeneral loginForm = new FormsAdmin.MenuGeneral();
+
+            // Mostrar el formulario LoginCliente
+            loginForm.Show();
+
+            // Opcional: Cerrar o esconder el formulario actual
+            this.Hide(); // Si quieres ocultar el formulario actual
+                         // this.Close(); // Si quieres cerrar el formulario actual
+        }
     }
 }

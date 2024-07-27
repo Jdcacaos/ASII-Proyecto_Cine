@@ -22,6 +22,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
         public AgregarPeliculas()
         {
             InitializeComponent();
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
         private void Peliculas_Load(object sender, EventArgs e)
@@ -279,7 +280,109 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
 
         }
 
-        private void btn_agregar_Click(object sender, EventArgs e)
+       
+
+
+
+        private object ObtenerValorCelda(string nombreColumna)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                DataGridViewRow filaSeleccionada = dataGridView1.SelectedRows[0];
+                return filaSeleccionada.Cells[nombreColumna].Value;
+            }
+            else
+            {
+                MessageBox.Show("No hay filas seleccionadas.");
+                return null;
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            FormsAdmin.MenuGeneral MenuForm = new FormsAdmin.MenuGeneral();
+            MenuForm.Show();
+            this.Hide();
+        }
+
+        private bool datosCorrectos()
+        {
+            if (txttitulo.Text.Trim().Equals(""))
+            {
+                MessageBox.Show("Ingrese el titulo");
+                return false;
+            }
+
+            if (txtgenero.Text.Trim().Equals(""))
+            {
+                MessageBox.Show("Ingrese el genero");
+                return false;
+            }
+
+            if (txtsinopsis.Text.Trim().Equals(""))
+            {
+                MessageBox.Show("Ingrese la sinopsis");
+                return false;
+            }
+
+            if (cbclasificacion.Text.Trim().Equals(""))
+            {
+                MessageBox.Show("Seleccione la clasificacion");
+                return false;
+            }
+
+            if (cbproveedor.Text.Trim().Equals(""))
+            {
+                MessageBox.Show("Seleccione el proveedor");
+                return false;
+            }
+
+            if (cbestado.Text.Trim().Equals(""))
+            {
+                MessageBox.Show("Seleccione un estado");
+                return false;
+            }
+
+            return true;
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+      
+        private void btnSeleccionarImagen_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.Filter = "Imágenes (*.jpg;*.jpeg;*.png)|*.jpg;*.jpeg;*.png";
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    // Cargar la imagen en el PictureBox
+                    pictureBox.Image = Image.FromFile(openFileDialog.FileName);
+                    // Guardar la ruta de la imagen en un TextBox o variable
+                    txtimagen.Text = openFileDialog.FileName;
+                }
+            }
+        }
+
+        private Image RedimensionarImagen(Image imagenOriginal, int anchoDeseado, int altoDeseado)
+        {
+            // Crear un nuevo objeto Bitmap con las dimensiones deseadas
+            Bitmap imagenRedimensionada = new Bitmap(anchoDeseado, altoDeseado);
+
+            // Crear un objeto Graphics para dibujar la imagen redimensionada
+            using (Graphics g = Graphics.FromImage(imagenRedimensionada))
+            {
+                g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
+                g.DrawImage(imagenOriginal, 0, 0, anchoDeseado, altoDeseado);
+            }
+
+            return imagenRedimensionada;
+        }
+
+        private void button5_Click(object sender, EventArgs e)
         {
             if (!datosCorrectos())
             {
@@ -357,77 +460,9 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             llenar_tabla();
         }
 
-
-
-        private object ObtenerValorCelda(string nombreColumna)
-        {
-            if (dataGridView1.SelectedRows.Count > 0)
-            {
-                DataGridViewRow filaSeleccionada = dataGridView1.SelectedRows[0];
-                return filaSeleccionada.Cells[nombreColumna].Value;
-            }
-            else
-            {
-                MessageBox.Show("No hay filas seleccionadas.");
-                return null;
-            }
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            FormsAdmin.MenuGeneral MenuForm = new FormsAdmin.MenuGeneral();
-            MenuForm.Show();
-            this.Hide();
-        }
-
-        private bool datosCorrectos()
-        {
-            if (txttitulo.Text.Trim().Equals(""))
-            {
-                MessageBox.Show("Ingrese el titulo");
-                return false;
-            }
-
-            if (txtgenero.Text.Trim().Equals(""))
-            {
-                MessageBox.Show("Ingrese el genero");
-                return false;
-            }
-
-            if (txtsinopsis.Text.Trim().Equals(""))
-            {
-                MessageBox.Show("Ingrese la sinopsis");
-                return false;
-            }
-
-            if (cbclasificacion.Text.Trim().Equals(""))
-            {
-                MessageBox.Show("Seleccione la clasificacion");
-                return false;
-            }
-
-            if (cbproveedor.Text.Trim().Equals(""))
-            {
-                MessageBox.Show("Seleccione el proveedor");
-                return false;
-            }
-
-            if (cbestado.Text.Trim().Equals(""))
-            {
-                MessageBox.Show("Seleccione un estado");
-                return false;
-            }
-
-            return true;
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void btn_editar_Click(object sender, EventArgs e)
-        {
             try
             {
                 if (cbclasificacion.SelectedItem == null || cbproveedor.SelectedItem == null || cbestado.SelectedItem == null)
@@ -523,9 +558,9 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             }
         }
 
-
-        private void btn_eliminar_Click(object sender, EventArgs e)
+        private void button6_Click(object sender, EventArgs e)
         {
+
             if (dataGridView1.SelectedCells.Count > 0)
             {
                 int selectedRowIndex = dataGridView1.SelectedCells[0].RowIndex;
@@ -565,42 +600,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                     llenar_tabla();
                 }
             }
-            else
-            {
-                MessageBox.Show("Por favor, selecciona un registro para eliminar.");
-            }
         }
-
-        private void btnSeleccionarImagen_Click(object sender, EventArgs e)
-        {
-            using (OpenFileDialog openFileDialog = new OpenFileDialog())
-            {
-                openFileDialog.Filter = "Imágenes (*.jpg;*.jpeg;*.png)|*.jpg;*.jpeg;*.png";
-                if (openFileDialog.ShowDialog() == DialogResult.OK)
-                {
-                    // Cargar la imagen en el PictureBox
-                    pictureBox.Image = Image.FromFile(openFileDialog.FileName);
-                    // Guardar la ruta de la imagen en un TextBox o variable
-                    txtimagen.Text = openFileDialog.FileName;
-                }
-            }
-        }
-
-        private Image RedimensionarImagen(Image imagenOriginal, int anchoDeseado, int altoDeseado)
-        {
-            // Crear un nuevo objeto Bitmap con las dimensiones deseadas
-            Bitmap imagenRedimensionada = new Bitmap(anchoDeseado, altoDeseado);
-
-            // Crear un objeto Graphics para dibujar la imagen redimensionada
-            using (Graphics g = Graphics.FromImage(imagenRedimensionada))
-            {
-                g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
-                g.DrawImage(imagenOriginal, 0, 0, anchoDeseado, altoDeseado);
-            }
-
-            return imagenRedimensionada;
-        }
-
-
     }
 }
+
