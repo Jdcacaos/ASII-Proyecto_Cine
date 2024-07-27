@@ -23,7 +23,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
         public Ubicaciones()
         {
             InitializeComponent();
-
+            DGV_Ubicaciones.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             // Configurar el Timer
             tm_tiempo = new Timer();
             tm_tiempo.Interval = 1000; // 1000 ms = 1 segundo
@@ -284,6 +284,159 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             }
         }
 
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if (!datosCorrectos())
+            {
+                return;
+            }
+
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+
+                    string query = "INSERT INTO tbl_ubicacion (Ciudad, Direccion)" +
+                                   "VALUES (@Ciudad, @Direccion)";
+
+                    using (MySqlCommand command = new MySqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@Ciudad", txtCiudad.Text);
+                        command.Parameters.AddWithValue("@Direccion", txtUbicacion.Text);
+
+                        command.ExecuteNonQuery();
+                    }
+
+                    MessageBox.Show("Registro completado exitosamente.");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al registrar el cine: " + ex.Message);
+                }
+
+                llenar_tabla();
+
+                txtCiudad.Text = "";
+                txtUbicacion.Text = "";
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (txtCiudad.Text == "" || txtUbicacion.Text == "")
+            {
+                MessageBox.Show("Por favor, llena los datos");
+                return;
+            }
+
+            try
+            {
+                // Obtener valor de la celda
+                Object obtener = ObtenerValorCelda("ID_Ubicacion");
+                if (obtener == null)
+                {
+                    MessageBox.Show("No se pudo obtener el valor de ID_Ubicacion");
+                    return;
+                }
+
+                int ValorObtenido = Convert.ToInt32(obtener);
+
+                using (MySqlConnection connection = new MySqlConnection(connectionString))
+                {
+                    connection.Open();
+                    string consulta = "UPDATE tbl_Ubicacion SET Ciudad = @Ciudad, Direccion = @Direccion WHERE ID_Ubicacion = @ID_Ubicacion";
+                    MySqlCommand comando = new MySqlCommand(consulta, connection);
+                    comando.Parameters.AddWithValue("@Ciudad", txtCiudad.Text);
+                    comando.Parameters.AddWithValue("@Direccion", txtUbicacion.Text);
+                    comando.Parameters.AddWithValue("@ID_Ubicacion", ValorObtenido);
+
+                    int cantidad = comando.ExecuteNonQuery();
+                    if (cantidad > 0)
+                    {
+                        MessageBox.Show("Registro modificado");
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se encontró el registro para modificar.");
+                    }
+                    llenar_tabla();
+                }
+            }
+            catch (NullReferenceException ex)
+            {
+                MessageBox.Show("Se ha producido un error: " + ex.Message);
+            }
+            catch (FormatException ex)
+            {
+                MessageBox.Show("Formato de datos incorrecto: " + ex.Message);
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("Error de base de datos: " + ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Se ha producido un error: " + ex.Message);
+            }
+
+            txtCiudad.Text = "";
+            txtUbicacion.Text = "";
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            if (DGV_Ubicaciones.SelectedCells.Count > 0)
+            {
+                int selectedRowIndex = DGV_Ubicaciones.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = DGV_Ubicaciones.Rows[selectedRowIndex];
+                int idubicacion = Convert.ToInt32(selectedRow.Cells["ID_Ubicacion"].Value);
+
+                DialogResult dialogResult = MessageBox.Show("¿Estás seguro de que deseas eliminar este registro?", "Confirmar eliminación", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    using (MySqlConnection connection = new MySqlConnection(connectionString))
+                    {
+                        try
+                        {
+                            connection.Open();
+                            string query = "DELETE FROM tbl_ubicacion WHERE ID_Ubicacion = @ID_Ubicacion";
+                            using (MySqlCommand command = new MySqlCommand(query, connection))
+                            {
+                                command.Parameters.AddWithValue("@ID_Ubicacion", idubicacion);
+                                int rowsAffected = command.ExecuteNonQuery();
+                                if (rowsAffected > 0)
+                                {
+                                    MessageBox.Show("Registro eliminado exitosamente.");
+                                }
+                                else
+                                {
+                                    MessageBox.Show("No se encontró el registro para eliminar.");
+                                }
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Error al eliminar el registro: " + ex.Message);
+                        }
+                    }
+                    llenar_tabla();
+                }
+                txtCiudad.Text = "";
+                txtUbicacion.Text = "";
+            }
+            else
+            {
+                MessageBox.Show("Por favor, selecciona un registro para eliminar.");
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FormsAdmin.MenuGeneral MenuForm = new FormsAdmin.MenuGeneral();
+            MenuForm.Show();
+            this.Hide();
+        }
     }
 
 }
