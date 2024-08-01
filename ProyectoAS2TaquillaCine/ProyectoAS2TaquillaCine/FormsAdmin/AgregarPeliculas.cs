@@ -10,7 +10,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using System.Data.SqlClient;
-using System.Drawing;
 using System.Drawing.Imaging;
 
 namespace ProyectoAS2TaquillaCine.FormsAdmin

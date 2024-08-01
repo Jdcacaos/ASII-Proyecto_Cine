@@ -103,7 +103,6 @@ C:\Users\jdcac\Desktop\Sistema_cine\ASII-Proyecto_Cine\ProyectoAS2TaquillaCine\P
 C:\Users\jdcac\Desktop\Sistema_cine\ASII-Proyecto_Cine\ProyectoAS2TaquillaCine\ProyectoAS2TaquillaCine\obj\Debug\ProyectoAS2TaquillaCine.FormsAdmin.Usuarios.resources
 C:\Users\jdcac\Desktop\Sistema_cine\ASII-Proyecto_Cine\ProyectoAS2TaquillaCine\ProyectoAS2TaquillaCine\obj\Debug\ProyectoAS2TaquillaCine.FormsAdmin.Ventas.resources
 C:\Users\jdcac\Desktop\Sistema_cine\ASII-Proyecto_Cine\ProyectoAS2TaquillaCine\ProyectoAS2TaquillaCine\obj\Debug\ProyectoAS2TaquillaCine.FormsCliente.Asientos.resources
-C:\Users\jdcac\Desktop\Sistema_cine\ASII-Proyecto_Cine\ProyectoAS2TaquillaCine\ProyectoAS2TaquillaCine\obj\Debug\ProyectoAS2TaquillaCine.FormsCliente.Cartelera.resources
 C:\Users\jdcac\Desktop\Sistema_cine\ASII-Proyecto_Cine\ProyectoAS2TaquillaCine\ProyectoAS2TaquillaCine\obj\Debug\ProyectoAS2TaquillaCine.FormsCliente.LoginCliente.resources
 C:\Users\jdcac\Desktop\Sistema_cine\ASII-Proyecto_Cine\ProyectoAS2TaquillaCine\ProyectoAS2TaquillaCine\obj\Debug\ProyectoAS2TaquillaCine.FormsCliente.Pago.resources
 C:\Users\jdcac\Desktop\Sistema_cine\ASII-Proyecto_Cine\ProyectoAS2TaquillaCine\ProyectoAS2TaquillaCine\obj\Debug\ProyectoAS2TaquillaCine.Form1.resources
@@ -179,7 +178,6 @@ C:\CineAnalisis\ASII-Proyecto_Cine\ProyectoAS2TaquillaCine\ProyectoAS2TaquillaCi
 C:\CineAnalisis\ASII-Proyecto_Cine\ProyectoAS2TaquillaCine\ProyectoAS2TaquillaCine\obj\Debug\ProyectoAS2TaquillaCine.FormsAdmin.AgregarEmpleado.resources
 C:\Users\jdcac\Desktop\Sistema_cine\ASII-Proyecto_Cine\ProyectoAS2TaquillaCine\ProyectoAS2TaquillaCine\obj\Debug\ProyectoAS2TaquillaCine.FormsAdmin.AgregarEmpleado.resources
 C:\Users\jdcac\Desktop\Sistema_cine\ASII-Proyecto_Cine\ProyectoAS2TaquillaCine\ProyectoAS2TaquillaCine\obj\Debug\ProyectoAS2TaquillaCine.FormsAdmin.Proveedor.resources
-<<<<<<< HEAD
 C:\Users\bhern\Desktop\SistemaCine\ASII-Proyecto_Cine\ProyectoAS2TaquillaCine\ProyectoAS2TaquillaCine\bin\Debug\ProyectoAS2TaquillaCine.exe.config
 C:\Users\bhern\Desktop\SistemaCine\ASII-Proyecto_Cine\ProyectoAS2TaquillaCine\ProyectoAS2TaquillaCine\bin\Debug\ProyectoAS2TaquillaCine.exe
 C:\Users\bhern\Desktop\SistemaCine\ASII-Proyecto_Cine\ProyectoAS2TaquillaCine\ProyectoAS2TaquillaCine\bin\Debug\ProyectoAS2TaquillaCine.pdb
@@ -241,10 +239,8 @@ C:\Users\bhern\Desktop\SistemaCine\ASII-Proyecto_Cine\ProyectoAS2TaquillaCine\Pr
 C:\Users\bhern\Desktop\SistemaCine\ASII-Proyecto_Cine\ProyectoAS2TaquillaCine\ProyectoAS2TaquillaCine\obj\Debug\ProyectoAS2TaquillaCine.csproj.CopyComplete
 C:\Users\bhern\Desktop\SistemaCine\ASII-Proyecto_Cine\ProyectoAS2TaquillaCine\ProyectoAS2TaquillaCine\obj\Debug\ProyectoAS2TaquillaCine.exe
 C:\Users\bhern\Desktop\SistemaCine\ASII-Proyecto_Cine\ProyectoAS2TaquillaCine\ProyectoAS2TaquillaCine\obj\Debug\ProyectoAS2TaquillaCine.pdb
-=======
 C:\Cine\ASII-Proyecto_Cine\ProyectoAS2TaquillaCine\ProyectoAS2TaquillaCine\obj\Debug\ProyectoAS2TaquillaCine.FormsAdmin.AgregarEmpleado.resources
 C:\Cine\ASII-Proyecto_Cine\ProyectoAS2TaquillaCine\ProyectoAS2TaquillaCine\obj\Debug\ProyectoAS2TaquillaCine.FormsAdmin.Proveedor.resources
->>>>>>> c73250991cb456e11c81922cfcefb84b01e8b59a
 C:\Users\DELL\Desktop\labo analisis\arreglo\ASII-Proyecto_Cine\ProyectoAS2TaquillaCine\ProyectoAS2TaquillaCine\bin\Debug\ProyectoAS2TaquillaCine.exe.config
 C:\Users\DELL\Desktop\labo analisis\arreglo\ASII-Proyecto_Cine\ProyectoAS2TaquillaCine\ProyectoAS2TaquillaCine\bin\Debug\ProyectoAS2TaquillaCine.exe
 C:\Users\DELL\Desktop\labo analisis\arreglo\ASII-Proyecto_Cine\ProyectoAS2TaquillaCine\ProyectoAS2TaquillaCine\bin\Debug\ProyectoAS2TaquillaCine.pdb
@@ -306,3 +302,6 @@ C:\Users\DELL\Desktop\labo analisis\arreglo\ASII-Proyecto_Cine\ProyectoAS2Taquil
 C:\Users\DELL\Desktop\labo analisis\arreglo\ASII-Proyecto_Cine\ProyectoAS2TaquillaCine\ProyectoAS2TaquillaCine\obj\Debug\ProyectoAS2TaquillaCine.csproj.CopyComplete
 C:\Users\DELL\Desktop\labo analisis\arreglo\ASII-Proyecto_Cine\ProyectoAS2TaquillaCine\ProyectoAS2TaquillaCine\obj\Debug\ProyectoAS2TaquillaCine.exe
 C:\Users\DELL\Desktop\labo analisis\arreglo\ASII-Proyecto_Cine\ProyectoAS2TaquillaCine\ProyectoAS2TaquillaCine\obj\Debug\ProyectoAS2TaquillaCine.pdb
+C:\Users\jdcac\Desktop\Sistema_cine\ASII-Proyecto_Cine\ProyectoAS2TaquillaCine\ProyectoAS2TaquillaCine\obj\Debug\ProyectoAS2TaquillaCine.Cartelera.cs.Cartelera.resources
+C:\Users\jdcac\Desktop\Sistema_cine\ASII-Proyecto_Cine\ProyectoAS2TaquillaCine\ProyectoAS2TaquillaCine\obj\Debug\ProyectoAS2TaquillaCine.FormsCliente.CarteleraNueva.resources
+C:\Users\jdcac\Desktop\Sistema_cine\ASII-Proyecto_Cine\ProyectoAS2TaquillaCine\ProyectoAS2TaquillaCine\obj\Debug\ProyectoAS2TaquillaCine.HorariosPelicula.resources

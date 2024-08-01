@@ -8,13 +8,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+
 namespace ProyectoAS2TaquillaCine.FormsAdmin
 {
     public partial class Proveedor : Form
     {
         string connectionString = DatabaseConfig.ConnectionString;
-        
-        int selectedProveedorId = -1; // Variable para almacenar el ID del proveedor seleccionado
        
         public Proveedor()
         {
@@ -187,6 +186,11 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             }
         
         }
+
+        private void Proveedor_Load(object sender, EventArgs e)
+        {
+            CargarProveedores();
+        }
     }
-    }
+}
 
