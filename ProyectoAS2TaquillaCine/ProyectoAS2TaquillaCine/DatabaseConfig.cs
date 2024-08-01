@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace ProyectoAS2TaquillaCine
 {
     public static class DatabaseConfig
