@@ -10,7 +10,11 @@ using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using System.Data.SqlClient;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+
+>>>>>>> 5c43817564edecd27c4406aeb1729dacf07823b0
 
 >>>>>>> 5c43817564edecd27c4406aeb1729dacf07823b0
 
@@ -21,7 +25,11 @@ namespace ProyectoAS2TaquillaCine
     public partial class Reserva : Form
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         int pelicula = 6;
+=======
+        int pelicula = 5;
+>>>>>>> 5c43817564edecd27c4406aeb1729dacf07823b0
 =======
         int pelicula = 5;
 >>>>>>> 5c43817564edecd27c4406aeb1729dacf07823b0
@@ -76,9 +84,15 @@ namespace ProyectoAS2TaquillaCine
         private void button8_Click(object sender, EventArgs e)
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             restar(textBox1);
             operar(textBox1, label9, label13);
             total(textBox1, textBox2, textBox3, label13, label14, label15);
+=======
+            FormsCliente.Cartelera formCartelera = new FormsCliente.Cartelera();
+            formCartelera.Show();
+            this.Hide();
+>>>>>>> 5c43817564edecd27c4406aeb1729dacf07823b0
 =======
             FormsCliente.Cartelera formCartelera = new FormsCliente.Cartelera();
             formCartelera.Show();
@@ -210,9 +224,15 @@ namespace ProyectoAS2TaquillaCine
         private void button1_Click(object sender, EventArgs e)
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             FormsCliente.CarteleraNueva formCartelera = new FormsCliente.CarteleraNueva();
             formCartelera.Show();
             this.Hide();
+=======
+            restar(textBox1);
+            operar(textBox1, label9, label13);
+            total(textBox1, textBox2, textBox3, label13, label14, label15);
+>>>>>>> 5c43817564edecd27c4406aeb1729dacf07823b0
 =======
             restar(textBox1);
             operar(textBox1, label9, label13);

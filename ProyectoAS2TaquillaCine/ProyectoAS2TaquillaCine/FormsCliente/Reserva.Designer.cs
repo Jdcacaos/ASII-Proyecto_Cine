@@ -354,6 +354,9 @@ namespace ProyectoAS2TaquillaCine
             this.label15.Size = new System.Drawing.Size(16, 20);
             this.label15.TabIndex = 28;
             this.label15.Text = "0";
+<<<<<<< HEAD
+>>>>>>> 5c43817564edecd27c4406aeb1729dacf07823b0
+=======
 >>>>>>> 5c43817564edecd27c4406aeb1729dacf07823b0
             // 
             // label16
@@ -364,7 +367,11 @@ namespace ProyectoAS2TaquillaCine
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(16, 20);
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.label16.TabIndex = 57;
+=======
+            this.label16.TabIndex = 29;
+>>>>>>> 5c43817564edecd27c4406aeb1729dacf07823b0
 =======
             this.label16.TabIndex = 29;
 >>>>>>> 5c43817564edecd27c4406aeb1729dacf07823b0
@@ -476,6 +483,9 @@ namespace ProyectoAS2TaquillaCine
             this.button7.Text = "CONTINUAR";
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.button7_Click);
+<<<<<<< HEAD
+>>>>>>> 5c43817564edecd27c4406aeb1729dacf07823b0
+=======
 >>>>>>> 5c43817564edecd27c4406aeb1729dacf07823b0
             // 
             // button8
@@ -487,6 +497,7 @@ namespace ProyectoAS2TaquillaCine
             this.button8.Text = "-";
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.button8_Click);
+<<<<<<< HEAD
 <<<<<<< HEAD
             // 
             // textBox3
@@ -639,6 +650,8 @@ namespace ProyectoAS2TaquillaCine
             this.label2.Size = new System.Drawing.Size(108, 16);
             this.label2.TabIndex = 31;
             this.label2.Text = "Seleccione una fecha";
+=======
+>>>>>>> 5c43817564edecd27c4406aeb1729dacf07823b0
 =======
 >>>>>>> 5c43817564edecd27c4406aeb1729dacf07823b0
             // 
