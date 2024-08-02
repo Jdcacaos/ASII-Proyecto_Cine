@@ -1,0 +1,49 @@
+# Archivos de Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.suo
+*.tmp
+
+# Archivos de compilación
+bin/
+obj/
+
+# Archivos de paquetes NuGet
+*.nupkg
+*.snupkg
+packages/
+
+# Archivos de configuraciones de usuario
+*.config
+*.settings
+
+# Archivos de registros
+*.log
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+
+# Archivos de empaquetado
+*.zip
+*.tar.gz
+*.7z
+
+# Archivos de Backup
+*.bak
+*.swp
+
+# Archivos temporales de IDE
+*.suo
+*.tmp
+
+# Archivos generados por Visual Studio
+*.csproj.user
+*.suo
+
+# Archivos específicos del entorno
+*.local
+*.sublime-project
+*.sublime-workspace
