@@ -65,7 +65,7 @@ namespace ProyectoAS2TaquillaCine.FormsGlobales
         private void button2_Click_1(object sender, EventArgs e)
         {
             // Crear una instancia del formulario LoginCliente
-            FormsAdmin.MenuGeneral loginForm = new FormsAdmin.MenuGeneral();
+            FormsAdmin.LoginAdmin loginForm = new FormsAdmin.LoginAdmin();
 
             // Mostrar el formulario LoginCliente
             loginForm.Show();

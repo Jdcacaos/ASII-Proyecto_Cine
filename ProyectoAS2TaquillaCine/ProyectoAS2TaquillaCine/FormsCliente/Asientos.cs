@@ -136,6 +136,14 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
 
         }
 
+<<<<<<< HEAD
+        private void button8_Click(object sender, EventArgs e)
+        {
+            FormsCliente.Reserva formReserva = new FormsCliente.Reserva();
+            formReserva.Show();
+            this.Hide();
+        }
+=======
         private void Tick(object sender, EventArgs e)
         {
             tiempoRestante--;
@@ -550,11 +558,15 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
 
         }
 
+<<<<<<< HEAD
         private void button95_Click(object sender, EventArgs e)
         {
             FormsCliente.Pago newPago = new FormsCliente.Pago();
             newPago.Show();
             this.Hide();
         }
+=======
+>>>>>>> d0ca6f15de6bfbc3f2c8c3463d85476367b33b26
+>>>>>>> 5c43817564edecd27c4406aeb1729dacf07823b0
     }
 }
