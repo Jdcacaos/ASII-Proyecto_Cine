@@ -14,6 +14,8 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
     public partial class Proveedor : Form
     {
         string connectionString = DatabaseConfig.ConnectionString;
+        
+        //int selectedProveedorId = -1; // Variable para almacenar el ID del proveedor seleccionado
        
         public Proveedor()
         {

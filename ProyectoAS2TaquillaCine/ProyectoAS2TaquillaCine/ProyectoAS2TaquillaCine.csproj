@@ -177,12 +177,6 @@
     <Compile Include="FormsCliente\Cartelera.Designer.cs">
       <DependentUpon>Cartelera.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormsCliente\CarteleraNueva.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormsCliente\CarteleraNueva.Designer.cs">
-      <DependentUpon>CarteleraNueva.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormsCliente\LoginCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -218,12 +212,6 @@
     </Compile>
     <Compile Include="FormsGlobales\Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
-    </Compile>
-    <Compile Include="HorariosPelicula.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="HorariosPelicula.Designer.cs">
-      <DependentUpon>HorariosPelicula.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -266,9 +254,6 @@
     <EmbeddedResource Include="FormsCliente\Cartelera.resx">
       <DependentUpon>Cartelera.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormsCliente\CarteleraNueva.resx">
-      <DependentUpon>CarteleraNueva.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormsCliente\LoginCliente.resx">
       <DependentUpon>LoginCliente.cs</DependentUpon>
     </EmbeddedResource>
@@ -286,9 +271,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormsGlobales\Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="HorariosPelicula.resx">
-      <DependentUpon>HorariosPelicula.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

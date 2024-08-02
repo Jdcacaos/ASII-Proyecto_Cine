@@ -17,11 +17,15 @@ namespace ProyectoAS2TaquillaCine
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 <<<<<<< HEAD
+<<<<<<< HEAD
             //Application.Run(new FormsCliente.Reserva());
             Application.Run(new FormsGlobales.Menu());
 =======
             Application.Run(new FormsCliente.Asientos());
 >>>>>>> d0ca6f15de6bfbc3f2c8c3463d85476367b33b26
+=======
+            Application.Run(new FormsGlobales.Menu());
+>>>>>>> parent of 8ce81a1 (Form cartelera y asietnos)
         }
     }
 }
