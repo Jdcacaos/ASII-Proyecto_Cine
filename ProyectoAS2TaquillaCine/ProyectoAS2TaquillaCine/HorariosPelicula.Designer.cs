@@ -35,6 +35,7 @@ namespace ProyectoAS2TaquillaCine
             this.lbl_genero = new System.Windows.Forms.Label();
             this.lbl_sinopsis = new System.Windows.Forms.Label();
             this.byn_back = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picbox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,7 +62,7 @@ namespace ProyectoAS2TaquillaCine
             // picbox1
             // 
             this.picbox1.Location = new System.Drawing.Point(171, 11);
-            this.picbox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picbox1.Margin = new System.Windows.Forms.Padding(2);
             this.picbox1.Name = "picbox1";
             this.picbox1.Size = new System.Drawing.Size(263, 187);
             this.picbox1.TabIndex = 2;
@@ -87,7 +88,7 @@ namespace ProyectoAS2TaquillaCine
             // 
             // byn_back
             // 
-            this.byn_back.Location = new System.Drawing.Point(13, 11);
+            this.byn_back.Location = new System.Drawing.Point(13, 12);
             this.byn_back.Name = "byn_back";
             this.byn_back.Size = new System.Drawing.Size(75, 23);
             this.byn_back.TabIndex = 5;
@@ -95,18 +96,29 @@ namespace ProyectoAS2TaquillaCine
             this.byn_back.UseVisualStyleBackColor = true;
             this.byn_back.Click += new System.EventHandler(this.byn_back_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(12, 47);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Ordenar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // HorariosPelicula
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(787, 608);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.byn_back);
             this.Controls.Add(this.lbl_sinopsis);
             this.Controls.Add(this.lbl_genero);
             this.Controls.Add(this.picbox1);
             this.Controls.Add(this.lbl_duracion);
             this.Controls.Add(this.lbl_nombre);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "HorariosPelicula";
             this.Text = "HorariosPelicula";
             this.Load += new System.EventHandler(this.HorariosPelicula_Load);
@@ -124,5 +136,6 @@ namespace ProyectoAS2TaquillaCine
         private System.Windows.Forms.Label lbl_genero;
         private System.Windows.Forms.Label lbl_sinopsis;
         private System.Windows.Forms.Button byn_back;
+        private System.Windows.Forms.Button button1;
     }
 }

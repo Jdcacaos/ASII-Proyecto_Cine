@@ -112,7 +112,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
 
         private void Asientos_Load(object sender, EventArgs e)
         {
-            IniciarCronometro(1);
+            IniciarCronometro(30);
         }
         private void IniciarCronometro(int segundos)
         {
@@ -545,7 +545,16 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             }
         }
 
+        private void button8_Click(object sender, EventArgs e)
+        {
 
+        }
 
+        private void button95_Click(object sender, EventArgs e)
+        {
+            FormsCliente.Pago newPago = new FormsCliente.Pago();
+            newPago.Show();
+            this.Hide();
+        }
     }
 }
