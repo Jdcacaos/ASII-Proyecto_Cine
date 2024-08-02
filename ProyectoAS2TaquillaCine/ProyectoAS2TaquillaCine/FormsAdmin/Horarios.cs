@@ -37,7 +37,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                 conexionDB = new MySqlConnection(connectionString);
 
                 // Consulta SQL actualizada para incluir las uniones
-                MySqlCommand comando = new MySqlCommand("SELECT p.ID_Proyeccion, pel.Titulo AS Pelicula, s.Numero_Sala AS Sala, p.Fecha, p.Hora, p.Estado_tbl_proyeccion AS Estado " +
+                MySqlCommand comando = new MySqlCommand("SELECT p.ID_Proyeccion, pel.Titulo AS Pelicula, s.Numero_Sala AS Sala, p.Fecha, p.Hora, p.Estado_tbl_proyeccion AS Estado ,p.Precio_Nino , p.Precio_Adulto , p.Precio_3ra_Edad " +
                     "FROM tbl_proyeccion p " +
                     "JOIN tbl_pelicula pel ON p.FK_ID_Pelicula = pel.ID_Pelicula " +
                     "JOIN tbl_sala s ON p.FK_ID_Sala = s.ID_Sala", conexionDB);
@@ -68,7 +68,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                 conexionDB = new MySqlConnection(connectionString);
 
                 // Consulta SQL actualizada para incluir las uniones
-                MySqlCommand comando = new MySqlCommand("SELECT p.ID_Proyeccion, pel.Titulo AS Pelicula, s.Numero_Sala AS Sala, p.Fecha, p.Hora, p.Estado_tbl_proyeccion AS Estado " +
+                MySqlCommand comando = new MySqlCommand("SELECT p.ID_Proyeccion, pel.Titulo AS Pelicula, s.Numero_Sala AS Sala, p.Fecha, p.Hora, p.Estado_tbl_proyeccion AS Estado , p.Precio_Nino , p.Precio_Adulto , p.Precio_3ra_Edad " +
                     "FROM tbl_proyeccion p " +
                     "JOIN tbl_pelicula pel ON p.FK_ID_Pelicula = pel.ID_Pelicula " +
                     "JOIN tbl_sala s ON p.FK_ID_Sala = s.ID_Sala", conexionDB);
@@ -194,97 +194,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
 
         }
 
-        //Eliminar Datos
-        private void button1_Click(object sender, EventArgs e)
-        {
-            if (dataGridView1.SelectedCells.Count > 0)
-            {
-                int selectedRowIndex = dataGridView1.SelectedCells[0].RowIndex;
-                DataGridViewRow selectedRow = dataGridView1.Rows[selectedRowIndex];
-                int idProyeccion = Convert.ToInt32(selectedRow.Cells["ID_Proyeccion"].Value);
-
-                DialogResult dialogResult = MessageBox.Show("¿Estás seguro de que deseas eliminar este registro?", "Confirmar eliminación", MessageBoxButtons.YesNo);
-                if (dialogResult == DialogResult.Yes)
-                {
-                    using (MySqlConnection connection = new MySqlConnection(connectionString))
-                    {
-                        try
-                        {
-                            connection.Open();
-                            string query = "DELETE FROM tbl_proyeccion WHERE ID_Proyeccion = @ID_Proyeccion";
-                            using (MySqlCommand command = new MySqlCommand(query, connection))
-                            {
-                                command.Parameters.AddWithValue("@ID_Proyeccion", idProyeccion);
-                                int rowsAffected = command.ExecuteNonQuery();
-                                if (rowsAffected > 0)
-                                {
-                                    MessageBox.Show("Registro eliminado exitosamente.");
-                                }
-                                else
-                                {
-                                    MessageBox.Show("No se encontró el registro para eliminar.");
-                                }
-                            }
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show("Error al eliminar el registro: " + ex.Message);
-                        }
-                    }
-
-                    // Actualizar el DataGridView
-                    llenar_tabla();
-                }
-            }
-            else
-            {
-                MessageBox.Show("Por favor, selecciona un registro para eliminar.");
-            }
-        }
-
         //Agregar Datos
-        private void btn_agregar_Click(object sender, EventArgs e)
-        {
-            if (!datosCorrectos())
-            {
-                return;
-            }
-
-            int idPelicula = ((KeyValuePair<int, string>)cb_Pelicula.SelectedItem).Key;
-            int idSala = ((KeyValuePair<int, int>)cb_id_Sala.SelectedItem).Key;
-
-
-            using (MySqlConnection connection = new MySqlConnection(connectionString))
-            {
-                try
-                {
-                    connection.Open();
-
-                    string query="INSERT INTO tbl_proyeccion (FK_ID_Pelicula, FK_ID_Sala, Fecha, Estado_tbl_proyeccion, Hora) " +
-                        "VALUES (@FK_ID_Pelicula, @FK_ID_Sala, @Fecha, @Estado_tbl_proyeccion, @Hora)";
-
-                    using (MySqlCommand command = new MySqlCommand(query, connection))
-                    {
-                        command.Parameters.AddWithValue("@FK_ID_Pelicula", idPelicula);
-                        command.Parameters.AddWithValue("@FK_ID_Sala", idSala); 
-                        command.Parameters.AddWithValue("@Fecha", dateTimePicker1.Value.ToString("yyyy-MM-dd"));
-                        command.Parameters.AddWithValue("@Estado_tbl_proyeccion", cbEstado.Text);  
-                        command.Parameters.AddWithValue("@Hora", dateTimePicker2.Value.ToString("HH:mm:ss"));
-
-                        command.ExecuteNonQuery();
-                    }
-
-                    MessageBox.Show("Registro completado exitosamente.");
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error al registrar la proyeccion: " + ex.Message);
-                }
-            }
-
-            llenar_tabla();
-        }
-
         private bool datosCorrectos()
         {
             if (cb_Pelicula.Text.Trim().Equals(""))
@@ -302,6 +212,21 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             if (cbEstado.Text.Trim().Equals(""))
             {
                 MessageBox.Show("Seleccione un estado");
+                return false;
+            }
+            if (txtNino.Text.Trim().Equals(""))
+            {
+                MessageBox.Show("Seleccione un precio");
+                return false;
+            }
+            if (txtAdulto.Text.Trim().Equals(""))
+            {
+                MessageBox.Show("Seleccione un precio");
+                return false;
+            }
+            if (txt3ra.Text.Trim().Equals(""))
+            {
+                MessageBox.Show("Seleccione un precio");
                 return false;
             }
 
@@ -327,7 +252,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
         {
             try
             {
-                if (cb_Pelicula.SelectedItem == null || cb_id_Sala == null || cbEstado.SelectedItem == null)
+                if (cb_Pelicula.SelectedItem == null || cb_id_Sala == null || cbEstado.SelectedItem == null || txt3ra.Text == null || txtNino.Text == null || txtAdulto.Text == null)
                 {
                     MessageBox.Show("Por favor, actualiza todos los datos");
                     return;
@@ -352,13 +277,16 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                 {
                     connection.Open();
                     string consulta = "UPDATE tbl_proyeccion SET FK_ID_Pelicula = @FK_ID_Pelicula, FK_ID_Sala = @FK_ID_Sala, Fecha = @Fecha, " +
-                           "Estado_tbl_proyeccion = @Estado_tbl_proyeccion, Hora = @Hora WHERE ID_Proyeccion = @ID_Proyeccion";
+                           "Estado_tbl_proyeccion = @Estado_tbl_proyeccion, Hora = @Hora , Precio_Nino = @Precio_Nino , Precio_Adulto = @Precio_Adulto , Precio_3ra_Edad = @Precio_3ra_Edad WHERE ID_Proyeccion = @ID_Proyeccion";
                     MySqlCommand command = new MySqlCommand(consulta, connection);
                     command.Parameters.AddWithValue("@FK_ID_Pelicula", idPelicula);
                     command.Parameters.AddWithValue("@FK_ID_Sala", idSala);
                     command.Parameters.AddWithValue("@Fecha", dateTimePicker1.Value.ToString("yyyy-MM-dd"));
                     command.Parameters.AddWithValue("@Estado_tbl_proyeccion", cbEstado.Text);
                     command.Parameters.AddWithValue("@Hora", dateTimePicker2.Value.ToString("HH:mm:ss"));
+                    command.Parameters.AddWithValue("@Precio_Nino", txtNino.Text);
+                    command.Parameters.AddWithValue("@Precio_Adulto", txtAdulto.Text);
+                    command.Parameters.AddWithValue("@Precio_3ra_Edad", txt3ra.Text);
                     command.Parameters.AddWithValue("@ID_Proyeccion", ValorObtenido);
 
                     int cantidad = command.ExecuteNonQuery();
@@ -397,6 +325,10 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             {
                 int selectedRowIndex = dataGridView1.SelectedCells[0].RowIndex;
                 DataGridViewRow selectedRow = dataGridView1.Rows[selectedRowIndex];
+
+                txtNino.Text = Convert.ToString(selectedRow.Cells["Precio_Nino"].Value);
+                txtAdulto.Text = Convert.ToString(selectedRow.Cells["Precio_Adulto"].Value);
+                txt3ra.Text = Convert.ToString(selectedRow.Cells["Precio_3ra_Edad"].Value);
 
                 string pelicula = Convert.ToString(selectedRow.Cells["Pelicula"].Value);
                 int sala = Convert.ToInt32(selectedRow.Cells["Sala"].Value);
@@ -463,8 +395,8 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                 {
                     connection.Open();
 
-                    string query = "INSERT INTO tbl_proyeccion (FK_ID_Pelicula, FK_ID_Sala, Fecha, Estado_tbl_proyeccion, Hora) " +
-                        "VALUES (@FK_ID_Pelicula, @FK_ID_Sala, @Fecha, @Estado_tbl_proyeccion, @Hora)";
+                    string query = "INSERT INTO tbl_proyeccion (FK_ID_Pelicula, FK_ID_Sala, Fecha, Estado_tbl_proyeccion, Hora, Precio_Nino, Precio_Adulto , Precio_3ra_Edad) " +
+                        "VALUES (@FK_ID_Pelicula, @FK_ID_Sala, @Fecha, @Estado_tbl_proyeccion, @Hora , @Precio_Nino, @Precio_Adulto , @Precio_3ra_Edad)";
 
                     using (MySqlCommand command = new MySqlCommand(query, connection))
                     {
@@ -473,6 +405,9 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                         command.Parameters.AddWithValue("@Fecha", dateTimePicker1.Value.ToString("yyyy-MM-dd"));
                         command.Parameters.AddWithValue("@Estado_tbl_proyeccion", cbEstado.Text);
                         command.Parameters.AddWithValue("@Hora", dateTimePicker2.Value.ToString("HH:mm:ss"));
+                        command.Parameters.AddWithValue("@Precio_Nino", txtNino.Text);
+                        command.Parameters.AddWithValue("@Precio_Adulto", txtAdulto.Text);
+                        command.Parameters.AddWithValue("@Precio_3ra_Edad", txt3ra.Text);
 
                         command.ExecuteNonQuery();
                     }
@@ -490,50 +425,6 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
 
         private void button6_Click(object sender, EventArgs e)
         {
-
-            if (dataGridView1.SelectedCells.Count > 0)
-            {
-                int selectedRowIndex = dataGridView1.SelectedCells[0].RowIndex;
-                DataGridViewRow selectedRow = dataGridView1.Rows[selectedRowIndex];
-                int idProyeccion = Convert.ToInt32(selectedRow.Cells["ID_Proyeccion"].Value);
-
-                DialogResult dialogResult = MessageBox.Show("¿Estás seguro de que deseas eliminar este registro?", "Confirmar eliminación", MessageBoxButtons.YesNo);
-                if (dialogResult == DialogResult.Yes)
-                {
-                    using (MySqlConnection connection = new MySqlConnection(connectionString))
-                    {
-                        try
-                        {
-                            connection.Open();
-                            string query = "DELETE FROM tbl_proyeccion WHERE ID_Proyeccion = @ID_Proyeccion";
-                            using (MySqlCommand command = new MySqlCommand(query, connection))
-                            {
-                                command.Parameters.AddWithValue("@ID_Proyeccion", idProyeccion);
-                                int rowsAffected = command.ExecuteNonQuery();
-                                if (rowsAffected > 0)
-                                {
-                                    MessageBox.Show("Registro eliminado exitosamente.");
-                                }
-                                else
-                                {
-                                    MessageBox.Show("No se encontró el registro para eliminar.");
-                                }
-                            }
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show("Error al eliminar el registro: " + ex.Message);
-                        }
-                    }
-
-                    // Actualizar el DataGridView
-                    llenar_tabla();
-                }
-            }
-            else
-            {
-                MessageBox.Show("Por favor, selecciona un registro para eliminar.");
-            }
 
         }
 
@@ -583,6 +474,11 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             {
                 MessageBox.Show("Por favor, selecciona un registro para eliminar.");
             }
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 

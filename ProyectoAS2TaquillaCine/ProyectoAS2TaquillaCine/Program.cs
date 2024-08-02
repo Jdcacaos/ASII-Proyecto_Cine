@@ -16,7 +16,16 @@ namespace ProyectoAS2TaquillaCine
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+<<<<<<< HEAD
             Application.Run(new FormsGlobales.Menu());
+=======
+<<<<<<< HEAD
+            //Application.Run(new FormsCliente.Reserva());
+            Application.Run(new FormsGlobales.Menu());
+=======
+            Application.Run(new FormsCliente.Asientos());
+>>>>>>> d0ca6f15de6bfbc3f2c8c3463d85476367b33b26
+>>>>>>> c00b6344197da608ff9c1f34c797cf6f3cf21621
         }
     }
 }
