@@ -8,7 +8,7 @@ namespace ProyectoAS2TaquillaCine
 {
     public static class DatabaseConfig
     {
-        public static string ConnectionString = "server=localhost;database=Cine;user=root;password=admin12345hgtrhrhrhtrh;";
+        public static string ConnectionString = "server=localhost;database=Cine;user=root;password=admin12h;";
     }
 
 }
