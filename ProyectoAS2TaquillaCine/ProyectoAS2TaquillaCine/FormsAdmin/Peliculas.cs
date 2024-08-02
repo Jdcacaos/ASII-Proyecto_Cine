@@ -16,5 +16,10 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
         {
             InitializeComponent();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

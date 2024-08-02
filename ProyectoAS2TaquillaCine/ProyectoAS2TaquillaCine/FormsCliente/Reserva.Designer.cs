@@ -94,6 +94,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(120, 21);
             this.comboBox1.TabIndex = 4;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // comboBox2
             // 
@@ -103,6 +104,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(120, 21);
             this.comboBox2.TabIndex = 6;
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -174,9 +176,9 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             this.label9.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(638, 305);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(33, 20);
+            this.label9.Size = new System.Drawing.Size(16, 20);
             this.label9.TabIndex = 12;
-            this.label9.Text = "Q40";
+            this.label9.Text = "0";
             // 
             // label10
             // 
@@ -184,9 +186,9 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             this.label10.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(638, 336);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(33, 20);
+            this.label10.Size = new System.Drawing.Size(16, 20);
             this.label10.TabIndex = 13;
-            this.label10.Text = "Q40";
+            this.label10.Text = "0";
             // 
             // label11
             // 
@@ -194,31 +196,37 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             this.label11.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(638, 368);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(33, 20);
+            this.label11.Size = new System.Drawing.Size(16, 20);
             this.label11.TabIndex = 14;
-            this.label11.Text = "Q40";
+            this.label11.Text = "0";
             // 
             // textBox1
             // 
+            this.textBox1.Enabled = false;
             this.textBox1.Location = new System.Drawing.Point(706, 305);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(33, 20);
             this.textBox1.TabIndex = 15;
+            this.textBox1.Text = "0";
             // 
             // textBox2
             // 
+            this.textBox2.Enabled = false;
             this.textBox2.Location = new System.Drawing.Point(706, 336);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(33, 20);
             this.textBox2.TabIndex = 16;
+            this.textBox2.Text = "0";
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // textBox3
             // 
+            this.textBox3.Enabled = false;
             this.textBox3.Location = new System.Drawing.Point(706, 368);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(33, 20);
             this.textBox3.TabIndex = 17;
+            this.textBox3.Text = "0";
             // 
             // button1
             // 
@@ -228,6 +236,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             this.button1.TabIndex = 18;
             this.button1.Text = "-";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -237,6 +246,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             this.button2.TabIndex = 19;
             this.button2.Text = "+";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -246,6 +256,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             this.button3.TabIndex = 21;
             this.button3.Text = "+";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
@@ -255,6 +266,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             this.button4.TabIndex = 20;
             this.button4.Text = "-";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
@@ -264,6 +276,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             this.button5.TabIndex = 23;
             this.button5.Text = "+";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button6
             // 
@@ -273,6 +286,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             this.button6.TabIndex = 22;
             this.button6.Text = "-";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // label12
             // 
@@ -286,6 +300,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // 
             // textBox4
             // 
+            this.textBox4.Enabled = false;
             this.textBox4.Location = new System.Drawing.Point(706, 403);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(33, 20);
@@ -297,9 +312,9 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             this.label13.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.Location = new System.Drawing.Point(867, 306);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(37, 20);
+            this.label13.Size = new System.Drawing.Size(16, 20);
             this.label13.TabIndex = 26;
-            this.label13.Text = "Qxxx";
+            this.label13.Text = "0";
             // 
             // label14
             // 
@@ -307,9 +322,9 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             this.label14.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.Location = new System.Drawing.Point(867, 337);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(37, 20);
+            this.label14.Size = new System.Drawing.Size(16, 20);
             this.label14.TabIndex = 27;
-            this.label14.Text = "Qxxx";
+            this.label14.Text = "0";
             // 
             // label15
             // 
@@ -317,9 +332,9 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             this.label15.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.Location = new System.Drawing.Point(867, 366);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(37, 20);
+            this.label15.Size = new System.Drawing.Size(16, 20);
             this.label15.TabIndex = 28;
-            this.label15.Text = "Qxxx";
+            this.label15.Text = "0";
             // 
             // label16
             // 
@@ -327,9 +342,9 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             this.label16.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.Location = new System.Drawing.Point(766, 403);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(37, 20);
+            this.label16.Size = new System.Drawing.Size(16, 20);
             this.label16.TabIndex = 29;
-            this.label16.Text = "Qxxx";
+            this.label16.Text = "0";
             // 
             // button7
             // 
@@ -339,6 +354,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             this.button7.TabIndex = 30;
             this.button7.Text = "CONTINUAR";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button8
             // 
@@ -348,6 +364,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             this.button8.TabIndex = 31;
             this.button8.Text = "Regresar";
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // label17
             // 
