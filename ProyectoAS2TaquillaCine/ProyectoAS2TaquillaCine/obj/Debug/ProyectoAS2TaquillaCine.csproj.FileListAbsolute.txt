@@ -305,3 +305,6 @@ C:\Users\DELL\Desktop\labo analisis\arreglo\ASII-Proyecto_Cine\ProyectoAS2Taquil
 C:\Users\jdcac\Desktop\Sistema_cine\ASII-Proyecto_Cine\ProyectoAS2TaquillaCine\ProyectoAS2TaquillaCine\obj\Debug\ProyectoAS2TaquillaCine.Cartelera.cs.Cartelera.resources
 C:\Users\jdcac\Desktop\Sistema_cine\ASII-Proyecto_Cine\ProyectoAS2TaquillaCine\ProyectoAS2TaquillaCine\obj\Debug\ProyectoAS2TaquillaCine.FormsCliente.CarteleraNueva.resources
 C:\Users\jdcac\Desktop\Sistema_cine\ASII-Proyecto_Cine\ProyectoAS2TaquillaCine\ProyectoAS2TaquillaCine\obj\Debug\ProyectoAS2TaquillaCine.HorariosPelicula.resources
+C:\Cine\ASII-Proyecto_Cine\ProyectoAS2TaquillaCine\ProyectoAS2TaquillaCine\obj\Debug\ProyectoAS2TaquillaCine.Cartelera.cs.Cartelera.resources
+C:\Cine\ASII-Proyecto_Cine\ProyectoAS2TaquillaCine\ProyectoAS2TaquillaCine\obj\Debug\ProyectoAS2TaquillaCine.FormsCliente.CarteleraNueva.resources
+C:\Cine\ASII-Proyecto_Cine\ProyectoAS2TaquillaCine\ProyectoAS2TaquillaCine\obj\Debug\ProyectoAS2TaquillaCine.HorariosPelicula.resources
