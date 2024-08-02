@@ -432,8 +432,8 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                 {
                     connection.Open();
 
-                    string query = "INSERT INTO tbl_pelicula (Titulo, Genero, Duracion, FK_ID_Clasificacion, Imagen, Sinopsis, FK_ID_Proveedor, Estado_tbl_pelicula) " +
-                                   "VALUES (@Titulo, @Genero, @Duracion, @FK_ID_Clasificacion, @Imagen, @Sinopsis, @FK_ID_Proveedor, @Estado_tbl_pelicula)";
+                    string query = "INSERT INTO tbl_pelicula (Titulo, Genero, Duracion, FK_ID_Clasificacion, Imagen, Sinopsis, FK_ID_Proveedor, Estado_tbl_pelicula, trailer_url) " +
+                                   "VALUES (@Titulo, @Genero, @Duracion, @FK_ID_Clasificacion, @Imagen, @Sinopsis, @FK_ID_Proveedor, @Estado_tbl_pelicula, @Trailer_url)";
 
                     using (MySqlCommand command = new MySqlCommand(query, connection))
                     {
@@ -445,6 +445,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                         command.Parameters.AddWithValue("@Sinopsis", txtsinopsis.Text);
                         command.Parameters.AddWithValue("@FK_ID_Proveedor", idproveedor);
                         command.Parameters.AddWithValue("@Estado_tbl_pelicula", cbestado.Text);
+                        command.Parameters.AddWithValue("@Trailer_url", txt_Trailer.Text);
 
                         command.ExecuteNonQuery();
                     }
@@ -465,7 +466,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
 
             try
             {
-                if (cbclasificacion.SelectedItem == null || cbproveedor.SelectedItem == null || cbestado.SelectedItem == null)
+                if (cbclasificacion.SelectedItem == null || cbproveedor.SelectedItem == null || cbestado.SelectedItem == null || txt_Trailer == null || txtimagen == null)
                 {
                     MessageBox.Show("Por favor, actualiza todos los datos");
                     return;
@@ -514,7 +515,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                 using (MySqlConnection connection = new MySqlConnection(connectionString))
                 {
                     connection.Open();
-                    string consulta = "UPDATE tbl_pelicula SET Titulo= @Titulo, Genero= @Genero, Duracion= @Duracion, FK_ID_Clasificacion = @FK_ID_Clasificacion, Imagen = @Imagen, Sinopsis = @Sinopsis, FK_ID_Proveedor = @FK_ID_Proveedor, Estado_tbl_pelicula = @Estado_tbl_pelicula WHERE ID_Pelicula = @ID_Pelicula";
+                    string consulta = "UPDATE tbl_pelicula SET Titulo= @Titulo, Genero= @Genero, Duracion= @Duracion, FK_ID_Clasificacion = @FK_ID_Clasificacion, Imagen = @Imagen, Sinopsis = @Sinopsis, FK_ID_Proveedor = @FK_ID_Proveedor, Estado_tbl_pelicula = @Estado_tbl_pelicula, trailer_url = @trailer_url WHERE ID_Pelicula = @ID_Pelicula";
                     MySqlCommand comando = new MySqlCommand(consulta, connection);
 
                     comando.Parameters.AddWithValue("@Titulo", txttitulo.Text);
@@ -526,6 +527,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                     comando.Parameters.AddWithValue("@FK_ID_Proveedor", idproveedor);
                     comando.Parameters.AddWithValue("@Estado_tbl_pelicula", cbestado.Text);
                     comando.Parameters.AddWithValue("@ID_Pelicula", ValorObtenido);
+                    comando.Parameters.AddWithValue("@trailer_url", txt_Trailer.Text);
 
                     int cantidad = comando.ExecuteNonQuery();
 

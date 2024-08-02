@@ -12,6 +12,8 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -50,6 +52,15 @@
     </Reference>
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.5.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebView2.Core, Version=1.0.2592.51, Culture=neutral, PublicKeyToken=2a8ab48044d2601e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.WebView2.1.0.2592.51\lib\net462\Microsoft.Web.WebView2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebView2.WinForms, Version=1.0.2592.51, Culture=neutral, PublicKeyToken=2a8ab48044d2601e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.WebView2.1.0.2592.51\lib\net462\Microsoft.Web.WebView2.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebView2.Wpf, Version=1.0.2592.51, Culture=neutral, PublicKeyToken=2a8ab48044d2601e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.WebView2.1.0.2592.51\lib\net462\Microsoft.Web.WebView2.Wpf.dll</HintPath>
     </Reference>
     <Reference Include="MySql.Data, Version=9.0.0.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <HintPath>..\packages\MySql.Data.9.0.0\lib\net462\MySql.Data.dll</HintPath>
@@ -171,11 +182,17 @@
     <Compile Include="FormsCliente\Asientos.Designer.cs">
       <DependentUpon>Asientos.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormsCliente\Cartelera.cs">
+    <Compile Include="FormsCliente\CarteleraNueva.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormsCliente\Cartelera.Designer.cs">
-      <DependentUpon>Cartelera.cs</DependentUpon>
+    <Compile Include="FormsCliente\CarteleraNueva.Designer.cs">
+      <DependentUpon>CarteleraNueva.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsCliente\InfoPelicula.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsCliente\InfoPelicula.Designer.cs">
+      <DependentUpon>InfoPelicula.cs</DependentUpon>
     </Compile>
     <Compile Include="FormsCliente\LoginCliente.cs">
       <SubType>Form</SubType>
@@ -251,8 +268,11 @@
     <EmbeddedResource Include="FormsCliente\Asientos.resx">
       <DependentUpon>Asientos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormsCliente\Cartelera.resx">
-      <DependentUpon>Cartelera.cs</DependentUpon>
+    <EmbeddedResource Include="FormsCliente\CarteleraNueva.resx">
+      <DependentUpon>CarteleraNueva.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsCliente\InfoPelicula.resx">
+      <DependentUpon>InfoPelicula.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormsCliente\LoginCliente.resx">
       <DependentUpon>LoginCliente.cs</DependentUpon>
@@ -314,4 +334,11 @@
     <None Include="Resources\telefono-gratuito-cinesur.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Microsoft.Web.WebView2.1.0.2592.51\build\Microsoft.Web.WebView2.targets" Condition="Exists('..\packages\Microsoft.Web.WebView2.1.0.2592.51\build\Microsoft.Web.WebView2.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Web.WebView2.1.0.2592.51\build\Microsoft.Web.WebView2.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Web.WebView2.1.0.2592.51\build\Microsoft.Web.WebView2.targets'))" />
+  </Target>
 </Project>

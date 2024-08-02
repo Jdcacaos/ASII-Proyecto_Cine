@@ -67,7 +67,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
 
         private void button8_Click(object sender, EventArgs e)
         {
-            FormsCliente.Cartelera formCartelera = new FormsCliente.Cartelera();
+            FormsCliente.CarteleraNueva formCartelera = new FormsCliente.CarteleraNueva();
             formCartelera.Show();
             this.Hide();
         }
