@@ -71,28 +71,29 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial Narrow", 54F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(502, 9);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(267, 81);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(301, 83);
+            this.label1.Size = new System.Drawing.Size(376, 105);
             this.label1.TabIndex = 4;
             this.label1.Text = "CINEHUB";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(1324, 32);
+            this.label3.Location = new System.Drawing.Point(1765, 39);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(30, 13);
+            this.label3.Size = new System.Drawing.Size(39, 17);
             this.label3.TabIndex = 6;
             this.label3.Text = "Hora";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(1324, 9);
+            this.label2.Location = new System.Drawing.Point(1765, 11);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(37, 13);
+            this.label2.Size = new System.Drawing.Size(47, 17);
             this.label2.TabIndex = 5;
             this.label2.Text = "Fecha";
             // 
@@ -100,123 +101,138 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial Narrow", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(523, 110);
+            this.label4.Location = new System.Drawing.Point(295, 205);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(266, 37);
+            this.label4.Size = new System.Drawing.Size(322, 46);
             this.label4.TabIndex = 12;
             this.label4.Text = "Informacion personal";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(440, 164);
+            this.label5.Location = new System.Drawing.Point(185, 272);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(59, 13);
+            this.label5.Size = new System.Drawing.Size(80, 17);
             this.label5.TabIndex = 13;
             this.label5.Text = "Nombre(s)*";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(667, 164);
+            this.label6.Location = new System.Drawing.Point(487, 272);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(53, 13);
+            this.label6.Size = new System.Drawing.Size(70, 17);
             this.label6.TabIndex = 14;
             this.label6.Text = "Apellidos*";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(440, 203);
+            this.label7.Location = new System.Drawing.Point(185, 320);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(97, 13);
+            this.label7.Size = new System.Drawing.Size(129, 17);
             this.label7.TabIndex = 15;
             this.label7.Text = "Correo electronico*";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(443, 180);
+            this.textBox1.Location = new System.Drawing.Point(189, 292);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(193, 20);
+            this.textBox1.Size = new System.Drawing.Size(256, 22);
             this.textBox1.TabIndex = 16;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(670, 180);
+            this.textBox2.Location = new System.Drawing.Point(491, 292);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(193, 20);
+            this.textBox2.Size = new System.Drawing.Size(256, 22);
             this.textBox2.TabIndex = 17;
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(443, 219);
+            this.textBox3.Location = new System.Drawing.Point(189, 340);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(193, 20);
+            this.textBox3.Size = new System.Drawing.Size(256, 22);
             this.textBox3.TabIndex = 18;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(440, 376);
+            this.label8.Location = new System.Drawing.Point(185, 533);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(108, 13);
+            this.label8.Size = new System.Drawing.Size(145, 17);
             this.label8.TabIndex = 19;
             this.label8.Text = "* Campos obligatorios";
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(443, 304);
+            this.textBox4.Location = new System.Drawing.Point(189, 444);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(193, 20);
+            this.textBox4.Size = new System.Drawing.Size(256, 22);
             this.textBox4.TabIndex = 21;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(440, 288);
+            this.label9.Location = new System.Drawing.Point(185, 424);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(94, 13);
+            this.label9.Size = new System.Drawing.Size(126, 17);
             this.label9.TabIndex = 20;
             this.label9.Text = "Numero de tarjeta ";
             // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(670, 304);
+            this.comboBox1.Location = new System.Drawing.Point(491, 444);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(50, 21);
+            this.comboBox1.Size = new System.Drawing.Size(65, 24);
             this.comboBox1.TabIndex = 22;
             // 
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(726, 304);
+            this.comboBox2.Location = new System.Drawing.Point(566, 444);
+            this.comboBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(50, 21);
+            this.comboBox2.Size = new System.Drawing.Size(65, 24);
             this.comboBox2.TabIndex = 23;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(667, 288);
+            this.label10.Location = new System.Drawing.Point(487, 424);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(105, 13);
+            this.label10.Size = new System.Drawing.Size(136, 17);
             this.label10.TabIndex = 24;
             this.label10.Text = "Fecha de caducidad";
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(443, 353);
+            this.textBox5.Location = new System.Drawing.Point(189, 504);
+            this.textBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(39, 20);
+            this.textBox5.Size = new System.Drawing.Size(51, 22);
             this.textBox5.TabIndex = 26;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(440, 337);
+            this.label11.Location = new System.Drawing.Point(185, 485);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(133, 13);
+            this.label11.Size = new System.Drawing.Size(174, 17);
             this.label11.TabIndex = 25;
             this.label11.Text = "Codigo de seguridad /CVV";
             // 
@@ -224,9 +240,10 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // 
             this.radioButton1.AutoSize = true;
             this.radioButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.radioButton1.Location = new System.Drawing.Point(608, 403);
+            this.radioButton1.Location = new System.Drawing.Point(409, 566);
+            this.radioButton1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(102, 17);
+            this.radioButton1.Size = new System.Drawing.Size(134, 21);
             this.radioButton1.TabIndex = 28;
             this.radioButton1.Text = "Consumidor final";
             this.radioButton1.UseVisualStyleBackColor = true;
@@ -235,43 +252,48 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // 
             this.radioButton2.AutoSize = true;
             this.radioButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.radioButton2.Location = new System.Drawing.Point(608, 426);
+            this.radioButton2.Location = new System.Drawing.Point(409, 594);
+            this.radioButton2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(91, 17);
+            this.radioButton2.Size = new System.Drawing.Size(119, 21);
             this.radioButton2.TabIndex = 29;
             this.radioButton2.Text = "Agregar datos";
             this.radioButton2.UseVisualStyleBackColor = true;
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(570, 473);
+            this.textBox6.Location = new System.Drawing.Point(358, 652);
+            this.textBox6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(193, 20);
+            this.textBox6.Size = new System.Drawing.Size(256, 22);
             this.textBox6.TabIndex = 31;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(567, 457);
+            this.label12.Location = new System.Drawing.Point(354, 632);
+            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(25, 13);
+            this.label12.Size = new System.Drawing.Size(30, 17);
             this.label12.TabIndex = 30;
             this.label12.Text = "NIT";
             // 
             // button95
             // 
-            this.button95.Location = new System.Drawing.Point(570, 549);
+            this.button95.Location = new System.Drawing.Point(358, 746);
+            this.button95.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button95.Name = "button95";
-            this.button95.Size = new System.Drawing.Size(183, 51);
+            this.button95.Size = new System.Drawing.Size(244, 63);
             this.button95.TabIndex = 140;
             this.button95.Text = "PAGAR";
             this.button95.UseVisualStyleBackColor = true;
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(216, 164);
+            this.button8.Location = new System.Drawing.Point(113, 87);
+            this.button8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(86, 37);
+            this.button8.Size = new System.Drawing.Size(115, 46);
             this.button8.TabIndex = 141;
             this.button8.Text = "Regresar";
             this.button8.UseVisualStyleBackColor = true;
@@ -279,80 +301,89 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(1171, 428);
+            this.label13.Location = new System.Drawing.Point(1017, 599);
+            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(34, 13);
+            this.label13.Size = new System.Drawing.Size(44, 17);
             this.label13.TabIndex = 152;
             this.label13.Text = "00:00";
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(951, 428);
+            this.label14.Location = new System.Drawing.Point(866, 597);
+            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(83, 13);
+            this.label14.Size = new System.Drawing.Size(111, 17);
             this.label14.TabIndex = 151;
             this.label14.Text = "Tiempo restante";
             // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(951, 447);
+            this.progressBar1.Location = new System.Drawing.Point(866, 620);
+            this.progressBar1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(254, 23);
+            this.progressBar1.Size = new System.Drawing.Size(339, 28);
             this.progressBar1.TabIndex = 150;
             // 
             // label15
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(999, 326);
+            this.label15.Location = new System.Drawing.Point(930, 471);
+            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(114, 25);
+            this.label15.Size = new System.Drawing.Size(139, 31);
             this.label15.TabIndex = 149;
             this.label15.Text = "Total : Q350";
             // 
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(1041, 272);
+            this.label16.Location = new System.Drawing.Point(986, 405);
+            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(57, 13);
+            this.label16.Size = new System.Drawing.Size(75, 17);
             this.label16.TabIndex = 148;
             this.label16.Text = "Boletos : 5";
             // 
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(1041, 248);
+            this.label17.Location = new System.Drawing.Point(986, 375);
+            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(94, 13);
+            this.label17.Size = new System.Drawing.Size(122, 17);
             this.label17.TabIndex = 147;
             this.label17.Text = "Funcion : 9:45 PM";
             // 
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(1041, 225);
+            this.label18.Location = new System.Drawing.Point(986, 347);
+            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(136, 13);
+            this.label18.Size = new System.Drawing.Size(180, 17);
             this.label18.TabIndex = 146;
             this.label18.Text = "Fecha : 17 de julio de 2026";
             // 
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(1041, 201);
+            this.label19.Location = new System.Drawing.Point(986, 317);
+            this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(72, 13);
+            this.label19.Size = new System.Drawing.Size(96, 17);
             this.label19.TabIndex = 145;
             this.label19.Text = "Lugar: Cayala";
             // 
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(1041, 179);
+            this.label20.Location = new System.Drawing.Point(986, 290);
+            this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(107, 13);
+            this.label20.Size = new System.Drawing.Size(141, 17);
             this.label20.TabIndex = 144;
             this.label20.Text = "Pelicula : Juan Diego";
             // 
@@ -360,27 +391,29 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(946, 151);
+            this.label21.Location = new System.Drawing.Point(859, 256);
+            this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(186, 25);
+            this.label21.Size = new System.Drawing.Size(233, 31);
             this.label21.TabIndex = 143;
             this.label21.Text = "Resumen de compra";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::ProyectoAS2TaquillaCine.Properties.Resources._16974783388025;
-            this.pictureBox1.Location = new System.Drawing.Point(951, 179);
+            this.pictureBox1.Location = new System.Drawing.Point(866, 290);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(83, 97);
+            this.pictureBox1.Size = new System.Drawing.Size(111, 119);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 142;
             this.pictureBox1.TabStop = false;
             // 
             // Pago
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1373, 741);
+            this.ClientSize = new System.Drawing.Size(1664, 912);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.progressBar1);
@@ -416,8 +449,11 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Pago";
             this.Text = "Pago";
+            this.Load += new System.EventHandler(this.Pago_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

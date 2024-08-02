@@ -16,5 +16,58 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
         {
             InitializeComponent();
         }
+       
+        public void AbrirformHijo(object formhijo)
+        {
+            if (this.panelgeneral.Controls.Count > 0)
+                this.panelgeneral.Controls.RemoveAt(0);
+            Form fh = formhijo as Form;
+            fh.TopLevel = false;
+            fh.Dock = DockStyle.Fill;
+            this.panelgeneral.Controls.Add(fh);
+            this.panelgeneral.Tag = fh;
+            fh.Show();
+
+
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            AbrirformHijo(new FormsAdmin.AgregarEmpleado());
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            AbrirformHijo(new FormsAdmin.Peliculas());
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            AbrirformHijo(new FormsAdmin.Ubicaciones());
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            AbrirformHijo(new FormsAdmin.Salas());
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            AbrirformHijo(new FormsAdmin.Horarios());
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            AbrirformHijo(new FormsAdmin.Ventas());
+        }
     }
 }

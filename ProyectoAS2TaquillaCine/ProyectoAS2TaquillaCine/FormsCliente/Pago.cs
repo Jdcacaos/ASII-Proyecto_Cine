@@ -16,5 +16,10 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
         {
             InitializeComponent();
         }
+
+        private void Pago_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
