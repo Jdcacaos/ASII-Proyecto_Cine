@@ -171,12 +171,6 @@
     <Compile Include="FormsCliente\Asientos.Designer.cs">
       <DependentUpon>Asientos.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormsCliente\Cartelera.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormsCliente\Cartelera.Designer.cs">
-      <DependentUpon>Cartelera.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormsCliente\CarteleraNueva.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -262,9 +256,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormsCliente\Asientos.resx">
       <DependentUpon>Asientos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormsCliente\Cartelera.resx">
-      <DependentUpon>Cartelera.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormsCliente\CarteleraNueva.resx">
       <DependentUpon>CarteleraNueva.cs</DependentUpon>
