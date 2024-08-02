@@ -104,6 +104,9 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 8ce81a1 (Form cartelera y asietnos)
 =======
 >>>>>>> parent of 8ce81a1 (Form cartelera y asietnos)
             // label2
@@ -260,7 +263,10 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             this.button4.Text = "Reservar";
             this.button4.UseVisualStyleBackColor = true;
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.button4.Click += new System.EventHandler(this.button4_Click);
+=======
+>>>>>>> parent of 8ce81a1 (Form cartelera y asietnos)
 =======
 >>>>>>> parent of 8ce81a1 (Form cartelera y asietnos)
             // 
@@ -274,8 +280,11 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             this.label17.Text = "Clasificacion";
             // 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> d0ca6f15de6bfbc3f2c8c3463d85476367b33b26
+=======
+>>>>>>> parent of 8ce81a1 (Form cartelera y asietnos)
 =======
 >>>>>>> parent of 8ce81a1 (Form cartelera y asietnos)
             // label18

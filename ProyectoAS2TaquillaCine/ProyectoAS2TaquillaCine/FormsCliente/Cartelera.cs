@@ -17,6 +17,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             InitializeComponent();
         }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 <<<<<<< HEAD
         private void button4_Click(object sender, EventArgs e)
@@ -32,6 +33,8 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
         }
 
 >>>>>>> d0ca6f15de6bfbc3f2c8c3463d85476367b33b26
+=======
+>>>>>>> parent of 8ce81a1 (Form cartelera y asietnos)
 =======
 >>>>>>> parent of 8ce81a1 (Form cartelera y asietnos)
     }

@@ -41,9 +41,13 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.dgvProveedores = new System.Windows.Forms.DataGridView();
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.button7 = new System.Windows.Forms.Button();
 =======
 >>>>>>> d0ca6f15de6bfbc3f2c8c3463d85476367b33b26
+=======
+            this.button7 = new System.Windows.Forms.Button();
+>>>>>>> parent of 8ce81a1 (Form cartelera y asietnos)
 =======
             this.button7 = new System.Windows.Forms.Button();
 >>>>>>> parent of 8ce81a1 (Form cartelera y asietnos)
@@ -104,12 +108,16 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             // 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 8ce81a1 (Form cartelera y asietnos)
 =======
 >>>>>>> parent of 8ce81a1 (Form cartelera y asietnos)
             // Tiempo
             // 
             this.Tiempo.AutoSize = true;
             this.Tiempo.ForeColor = System.Drawing.SystemColors.Control;
+<<<<<<< HEAD
 <<<<<<< HEAD
             this.Tiempo.Location = new System.Drawing.Point(226, 62);
             this.Tiempo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -121,12 +129,17 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
 =======
 >>>>>>> d0ca6f15de6bfbc3f2c8c3463d85476367b33b26
 =======
+=======
+>>>>>>> parent of 8ce81a1 (Form cartelera y asietnos)
             this.Tiempo.Location = new System.Drawing.Point(302, 76);
             this.Tiempo.Name = "Tiempo";
             this.Tiempo.Size = new System.Drawing.Size(46, 17);
             this.Tiempo.TabIndex = 70;
             this.Tiempo.Text = "label7";
             // 
+<<<<<<< HEAD
+>>>>>>> parent of 8ce81a1 (Form cartelera y asietnos)
+=======
 >>>>>>> parent of 8ce81a1 (Form cartelera y asietnos)
             // label2
             // 
@@ -192,10 +205,18 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.dgvProveedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.dgvProveedores.Location = new System.Drawing.Point(9, 214);
             this.dgvProveedores.Name = "dgvProveedores";
             this.dgvProveedores.RowHeadersWidth = 51;
             this.dgvProveedores.Size = new System.Drawing.Size(572, 227);
+=======
+            this.dgvProveedores.Location = new System.Drawing.Point(12, 264);
+            this.dgvProveedores.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvProveedores.Name = "dgvProveedores";
+            this.dgvProveedores.RowHeadersWidth = 51;
+            this.dgvProveedores.Size = new System.Drawing.Size(763, 279);
+>>>>>>> parent of 8ce81a1 (Form cartelera y asietnos)
             this.dgvProveedores.TabIndex = 184;
             this.dgvProveedores.Tag = "";
             // 
@@ -204,6 +225,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.button7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.button7.BackColor = System.Drawing.Color.CornflowerBlue;
             this.button7.ForeColor = System.Drawing.SystemColors.Control;
+<<<<<<< HEAD
             this.button7.Location = new System.Drawing.Point(323, 559);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(111, 39);
@@ -232,6 +254,8 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.button7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.button7.BackColor = System.Drawing.Color.CornflowerBlue;
             this.button7.ForeColor = System.Drawing.SystemColors.Control;
+=======
+>>>>>>> parent of 8ce81a1 (Form cartelera y asietnos)
             this.button7.Location = new System.Drawing.Point(431, 688);
             this.button7.Margin = new System.Windows.Forms.Padding(4);
             this.button7.Name = "button7";
@@ -241,6 +265,9 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.button7.UseVisualStyleBackColor = false;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
+<<<<<<< HEAD
+>>>>>>> parent of 8ce81a1 (Form cartelera y asietnos)
+=======
 >>>>>>> parent of 8ce81a1 (Form cartelera y asietnos)
             // label3
             // 
@@ -263,9 +290,13 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.button3.ForeColor = System.Drawing.SystemColors.Control;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.button3.Location = new System.Drawing.Point(56, 559);
 =======
             this.button3.Location = new System.Drawing.Point(218, 695);
+=======
+            this.button3.Location = new System.Drawing.Point(74, 688);
+>>>>>>> parent of 8ce81a1 (Form cartelera y asietnos)
 =======
             this.button3.Location = new System.Drawing.Point(74, 688);
 >>>>>>> parent of 8ce81a1 (Form cartelera y asietnos)
@@ -285,9 +316,13 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.button6.ForeColor = System.Drawing.SystemColors.Control;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.button6.Location = new System.Drawing.Point(192, 559);
 =======
             this.button6.Location = new System.Drawing.Point(400, 695);
+=======
+            this.button6.Location = new System.Drawing.Point(256, 688);
+>>>>>>> parent of 8ce81a1 (Form cartelera y asietnos)
 =======
             this.button6.Location = new System.Drawing.Point(256, 688);
 >>>>>>> parent of 8ce81a1 (Form cartelera y asietnos)
