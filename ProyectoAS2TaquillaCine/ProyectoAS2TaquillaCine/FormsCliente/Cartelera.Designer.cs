@@ -55,6 +55,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button5 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -108,9 +109,9 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             this.label2.Font = new System.Drawing.Font("Arial Narrow", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(507, 201);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(396, 37);
+            this.label2.Size = new System.Drawing.Size(301, 37);
             this.label2.TabIndex = 11;
-            this.label2.Text = "Juan Diego : Fan de los Hongos";
+            this.label2.Text = "Wa : Fan de los Hongos";
             // 
             // label3
             // 
@@ -293,11 +294,21 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
             // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(948, 275);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(351, 210);
+            this.button5.TabIndex = 37;
+            this.button5.Text = "Reservar";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
             // Cartelera
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1384, 737);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.label17);
@@ -360,5 +371,6 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Button button5;
     }
 }
