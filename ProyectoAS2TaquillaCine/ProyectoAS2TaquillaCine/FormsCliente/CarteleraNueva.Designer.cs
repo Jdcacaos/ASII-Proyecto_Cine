@@ -35,6 +35,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             this.cbDepto = new System.Windows.Forms.ComboBox();
             this.btnQF = new System.Windows.Forms.Button();
             this.PeliculaPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -95,11 +96,21 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             this.PeliculaPanel.Size = new System.Drawing.Size(1740, 685);
             this.PeliculaPanel.TabIndex = 10;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(122, 79);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(118, 60);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // CarteleraNueva
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1845, 907);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.PeliculaPanel);
             this.Controls.Add(this.btnQF);
             this.Controls.Add(this.btn_filtrar);
@@ -123,5 +134,6 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
         private System.Windows.Forms.ComboBox cbDepto;
         private System.Windows.Forms.Button btnQF;
         private System.Windows.Forms.FlowLayoutPanel PeliculaPanel;
+        private System.Windows.Forms.Button button1;
     }
 }
