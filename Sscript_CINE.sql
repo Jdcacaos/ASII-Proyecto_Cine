@@ -429,3 +429,13 @@ UNLOCK TABLES;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 -- Dump completed on 2024-07-26 22:57:41
+
+select * from tbl_proyeccion;
+
+SELECT Hora FROM tbl_proyeccion WHERE Fecha = "2024-07-31";
+SELECT * FROM tbl_proyeccion WHERE Fecha = "2024-08-01";
+
+SELECT Precio_Nino,Precio_Adulto,Precio_3ra_Edad FROM tbl_proyeccion WHERE Fecha = "2024-08-04";
+
+SELECT DISTINCT Fecha FROM tbl_proyeccion
+select * from tbl_peliculas;

@@ -57,7 +57,6 @@ INSERT INTO tbl_sala (ID_Sala,Numero_Sala, Capacidad, FK_ID_Tipo_Sala,FK_ID_Ubic
 
 SELECT ID_tipo_sala, Tipo FROM tbl_tipo_sala;
 
-<<<<<<< HEAD
 SELECT * FROM tbl_ubicacion;
 
 USE CINE; 
@@ -65,7 +64,6 @@ select * from tbl_pelicula;
 
 ALTER TABLE tbl_pelicula 
 MODIFY COLUMN Imagen blob;
-=======
 select * from tbl_proyeccion;
 
 select * from tbl_sala;
@@ -110,6 +108,12 @@ SELECT ID_Pelicula , Titulo FROM tbl_pelicula;
 
 ALTER TABLE tbl_pelicula MODIFY COLUMN Imagen BLOB;
 
->>>>>>> c73250991cb456e11c81922cfcefb84b01e8b59a
+
+DELETE FROM tbl_proyeccion;
+DELETE FROM tbl_pelicula;
+
+SET SQL_SAFE_UPDATES = 0;
+SET SQL_SAFE_UPDATES = 1;
+
 
 

@@ -21,5 +21,12 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
         {
 
         }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            FormsCliente.Reserva formReserva = new FormsCliente.Reserva();
+            formReserva.Show();
+            this.Hide();
+        }
     }
 }

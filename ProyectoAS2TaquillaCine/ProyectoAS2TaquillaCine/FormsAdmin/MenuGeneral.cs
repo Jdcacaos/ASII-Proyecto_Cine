@@ -58,5 +58,17 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
         {
             AbrirformHijo(new FormsAdmin.Proveedor());
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            FormsGlobales.Menu loginForm = new FormsGlobales.Menu();
+
+            // Mostrar el formulario LoginCliente
+            loginForm.Show();
+
+            // Opcional: Cerrar o esconder el formulario actual
+            this.Hide();
+
+        }
     }
 }
