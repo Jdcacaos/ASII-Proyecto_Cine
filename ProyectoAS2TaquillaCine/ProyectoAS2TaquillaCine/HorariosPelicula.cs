@@ -77,5 +77,12 @@ namespace ProyectoAS2TaquillaCine
             Cartelera.ShowDialog();
             this.Close();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Reserva formReserva = new Reserva();
+            formReserva.Show();
+            this.Hide();
+        }
     }
 }
