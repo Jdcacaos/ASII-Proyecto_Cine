@@ -100,7 +100,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
 
         private void btnReserva_Click(object sender, EventArgs e)
         {
-            FormsCliente.Reserva FormReserva = new Reserva();
+            FormsCliente.Reserva FormReserva = new Reserva(idpelicula);
             this.Hide();
             FormReserva.ShowDialog();
             this.Close();

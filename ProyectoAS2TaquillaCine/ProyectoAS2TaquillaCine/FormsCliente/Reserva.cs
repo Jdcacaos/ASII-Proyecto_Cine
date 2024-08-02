@@ -16,7 +16,14 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
     
     public partial class Reserva : Form
     {
-        int pelicula = 6;
+        private int pelicula;
+
+        public Reserva(int id)
+        {
+            InitializeComponent();
+            pelicula = id;
+        }
+
         string connectionString = DatabaseConfig.ConnectionString;
         public Reserva()
         {
