@@ -187,10 +187,19 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
         
         }
 
+<<<<<<< HEAD
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
+    }
+=======
         private void Proveedor_Load(object sender, EventArgs e)
         {
             CargarProveedores();
         }
     }
 }
+>>>>>>> d0ca6f15de6bfbc3f2c8c3463d85476367b33b26
 

@@ -20,10 +20,19 @@ namespace ProyectoAS2TaquillaCine.Cartelera.cs
             InitializeComponent();
         }
 
+<<<<<<< HEAD
+        private void button4_Click(object sender, EventArgs e)
+        {
+            FormsCliente.Reserva formReserva = new FormsCliente.Reserva();
+            formReserva.Show();
+            this.Hide();
+        }
+=======
         private void Cartelera_Load(object sender, EventArgs e)
         {
 
         }
 
+>>>>>>> d0ca6f15de6bfbc3f2c8c3463d85476367b33b26
     }
 }
