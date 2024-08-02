@@ -56,6 +56,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
         {
             //Cadena de conexión a tu base de datos MySQL
             string connectionString = DatabaseConfig.ConnectionString;
+            FormsCliente.CarteleraNueva CarteleraForm = new FormsCliente.CarteleraNueva();
 
             // Obtener los valores ingresados por el usuario
             string email = txtuser.Text;
@@ -87,7 +88,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
                             // Aquí puedes abrir el formulario principal de tu aplicación o proceder según tu lógica
                             // Ejemplo:
                             // Crear una instancia del formulario LoginCliente
-                            FormsCliente.Cartelera CarteleraForm = new FormsCliente.Cartelera();
+                            //FormsCliente.LoginCliente = new FormsCliente.LoginCliente();
 
                             // Mostrar el formulario LoginCliente
                             CarteleraForm.Show();
