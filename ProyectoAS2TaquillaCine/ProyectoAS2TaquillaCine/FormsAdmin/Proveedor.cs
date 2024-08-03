@@ -20,6 +20,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
         {
             InitializeComponent();
             dgvProveedores.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -94,7 +95,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
 
         private void button7_Click(object sender, EventArgs e)
         {
-            CargarProveedores();
+           
         }
 
         private bool datosCorrectos()
@@ -212,6 +213,15 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.Hide();
         }
 
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Proveedor_Load(object sender, EventArgs e)
+        {
+            CargarProveedores();
+        }
     }
     }
 

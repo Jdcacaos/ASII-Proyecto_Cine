@@ -39,7 +39,6 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.button2 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dgvProveedores = new System.Windows.Forms.DataGridView();
-            this.button7 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
@@ -151,7 +150,6 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
             this.panel3.Controls.Add(this.dgvProveedores);
-            this.panel3.Controls.Add(this.button7);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.button3);
             this.panel3.Controls.Add(this.button6);
@@ -161,6 +159,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(586, 659);
             this.panel3.TabIndex = 77;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // dgvProveedores
             // 
@@ -174,19 +173,6 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.dgvProveedores.Size = new System.Drawing.Size(572, 227);
             this.dgvProveedores.TabIndex = 184;
             this.dgvProveedores.Tag = "";
-            // 
-            // button7
-            // 
-            this.button7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button7.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.button7.ForeColor = System.Drawing.SystemColors.Control;
-            this.button7.Location = new System.Drawing.Point(323, 559);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(111, 39);
-            this.button7.TabIndex = 4;
-            this.button7.Text = "Actualizar";
-            this.button7.UseVisualStyleBackColor = false;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // label3
             // 
@@ -207,7 +193,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.button3.BackColor = System.Drawing.Color.CornflowerBlue;
             this.button3.ForeColor = System.Drawing.SystemColors.Control;
-            this.button3.Location = new System.Drawing.Point(56, 559);
+            this.button3.Location = new System.Drawing.Point(150, 559);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(119, 39);
             this.button3.TabIndex = 2;
@@ -220,7 +206,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.button6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.button6.BackColor = System.Drawing.Color.CornflowerBlue;
             this.button6.ForeColor = System.Drawing.SystemColors.Control;
-            this.button6.Location = new System.Drawing.Point(192, 559);
+            this.button6.Location = new System.Drawing.Point(340, 559);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(111, 39);
             this.button6.TabIndex = 3;
@@ -238,6 +224,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.Controls.Add(this.panel1);
             this.Name = "Proveedor";
             this.Text = "Productora";
+            this.Load += new System.EventHandler(this.Proveedor_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -260,7 +247,6 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
         private System.Windows.Forms.DataGridView dgvProveedores;
     }
 }

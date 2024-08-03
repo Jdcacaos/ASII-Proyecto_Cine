@@ -321,7 +321,6 @@ C:\CineAnalisis\ASII-Proyecto_Cine\ProyectoAS2TaquillaCine\ProyectoAS2TaquillaCi
 C:\CineAnalisis\ASII-Proyecto_Cine\ProyectoAS2TaquillaCine\ProyectoAS2TaquillaCine\bin\Debug\Microsoft.Web.WebView2.Wpf.xml
 C:\CineAnalisis\ASII-Proyecto_Cine\ProyectoAS2TaquillaCine\ProyectoAS2TaquillaCine\obj\Debug\ProyectoAS2TaquillaCine.FormsCliente.CarteleraNueva.resources
 C:\CineAnalisis\ASII-Proyecto_Cine\ProyectoAS2TaquillaCine\ProyectoAS2TaquillaCine\obj\Debug\ProyectoAS2TaquillaCine.FormsCliente.InfoPelicula.resources
-<<<<<<< HEAD
 C:\Users\bhern\Desktop\SistemaCine\ASII-Proyecto_Cine\ProyectoAS2TaquillaCine\ProyectoAS2TaquillaCine\bin\Debug\runtimes\win-x86\native\WebView2Loader.dll
 C:\Users\bhern\Desktop\SistemaCine\ASII-Proyecto_Cine\ProyectoAS2TaquillaCine\ProyectoAS2TaquillaCine\bin\Debug\runtimes\win-x64\native\WebView2Loader.dll
 C:\Users\bhern\Desktop\SistemaCine\ASII-Proyecto_Cine\ProyectoAS2TaquillaCine\ProyectoAS2TaquillaCine\bin\Debug\runtimes\win-arm64\native\WebView2Loader.dll
@@ -333,7 +332,6 @@ C:\Users\bhern\Desktop\SistemaCine\ASII-Proyecto_Cine\ProyectoAS2TaquillaCine\Pr
 C:\Users\bhern\Desktop\SistemaCine\ASII-Proyecto_Cine\ProyectoAS2TaquillaCine\ProyectoAS2TaquillaCine\bin\Debug\Microsoft.Web.WebView2.Wpf.xml
 C:\Users\bhern\Desktop\SistemaCine\ASII-Proyecto_Cine\ProyectoAS2TaquillaCine\ProyectoAS2TaquillaCine\obj\Debug\ProyectoAS2TaquillaCine.FormsCliente.CarteleraNueva.resources
 C:\Users\bhern\Desktop\SistemaCine\ASII-Proyecto_Cine\ProyectoAS2TaquillaCine\ProyectoAS2TaquillaCine\obj\Debug\ProyectoAS2TaquillaCine.FormsCliente.InfoPelicula.resources
-=======
 C:\Cine\ASII-Proyecto_Cine\ProyectoAS2TaquillaCine\ProyectoAS2TaquillaCine\bin\Debug\runtimes\win-x86\native\WebView2Loader.dll
 C:\Cine\ASII-Proyecto_Cine\ProyectoAS2TaquillaCine\ProyectoAS2TaquillaCine\bin\Debug\runtimes\win-x64\native\WebView2Loader.dll
 C:\Cine\ASII-Proyecto_Cine\ProyectoAS2TaquillaCine\ProyectoAS2TaquillaCine\bin\Debug\runtimes\win-arm64\native\WebView2Loader.dll
@@ -345,4 +343,4 @@ C:\Cine\ASII-Proyecto_Cine\ProyectoAS2TaquillaCine\ProyectoAS2TaquillaCine\bin\D
 C:\Cine\ASII-Proyecto_Cine\ProyectoAS2TaquillaCine\ProyectoAS2TaquillaCine\bin\Debug\Microsoft.Web.WebView2.Wpf.xml
 C:\Cine\ASII-Proyecto_Cine\ProyectoAS2TaquillaCine\ProyectoAS2TaquillaCine\obj\Debug\ProyectoAS2TaquillaCine.FormsCliente.CarteleraNueva.resources
 C:\Cine\ASII-Proyecto_Cine\ProyectoAS2TaquillaCine\ProyectoAS2TaquillaCine\obj\Debug\ProyectoAS2TaquillaCine.FormsCliente.InfoPelicula.resources
->>>>>>> 2441f46a83f038e6a59b1edce35fc94bc6272f77
+

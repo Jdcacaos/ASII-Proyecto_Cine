@@ -478,6 +478,36 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
         {
             this.Hide();
         }
+
+        private void txtNino_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtAdulto_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt3ra_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }

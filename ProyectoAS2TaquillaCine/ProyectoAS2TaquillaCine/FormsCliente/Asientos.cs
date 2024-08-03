@@ -212,9 +212,10 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
 
         private void button8_Click(object sender, EventArgs e)
         {
-            FormsCliente.Reserva formReserva = new FormsCliente.Reserva();
+            FormsCliente.CarteleraNueva formReserva = new FormsCliente.CarteleraNueva();
             formReserva.Show();
-            this.Hide();
+            timer.Stop();
+            this.Close();
         }
         
 
@@ -280,6 +281,11 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             {
                 return Image.FromStream(ms);
             }
+        }
+
+        private void pb1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
