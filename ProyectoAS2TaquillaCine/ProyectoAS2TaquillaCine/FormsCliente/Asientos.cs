@@ -1,8 +1,10 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,14 +14,21 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
 {
     public partial class Asientos : Form
     {
+        private int asientosSeleccionados = 1;
+        public int TotalAsientos { get; set; }
+        string connectionString = DatabaseConfig.ConnectionString;
         private Timer timer;
         private int tiempoTotal; // Tiempo total en segundos
         private int tiempoRestante; // Tiempo restante en segundos
-        public Asientos()
+        private int pelicula;
+        private int totalventa;
+
+        public Asientos(int id, int total)
         {
             InitializeComponent();
-
             btnI10.BackColor = Color.Red;
+            pelicula = id;
+            totalventa = total;
 
             // Asegúrate de que el Timer se inicializa y se configura correctamente
             timer = new Timer();
@@ -107,6 +116,9 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             btnI8.Click += Asiento_Click;
             btnI9.Click += Asiento_Click;
             btnI10.Click += Asiento_Click;
+
+
+            lbl_totalventa.Text = Convert.ToString(totalventa);
         }
 
         private void IniciarCronometro(int segundos)
@@ -162,21 +174,35 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             Button btn = sender as Button;
 
             // Verificar si el botón es rojo, en cuyo caso no hacer nada
-            if (btn.BackColor == Color.Red)
-            {
-                btn.Enabled = false;
-                return; // Salir del método si el botón es rojo
-            }
+
 
             // Alternar el color de los botones que no son rojos
             if (btn.BackColor == Color.Lime)
             {
-                btn.BackColor = Color.DarkBlue;
+
+                
+
+                if (asientosSeleccionados <= TotalAsientos)
+                {
+
+
+                    btn.BackColor = Color.DarkBlue;
+                    asientosSeleccionados++;
+                }
+                else
+                {
+                    MessageBox.Show("Has alcanzado el número máximo de asientos seleccionados.");
+                    btn.BackColor = Color.Lime;
+            
+                }
+
             }
-            else
-            {
+            else {
                 btn.BackColor = Color.Lime;
+                asientosSeleccionados--;
             }
+           
+
         }
 
         private void label15_Click(object sender, EventArgs e)
@@ -190,10 +216,70 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             formReserva.Show();
             this.Hide();
         }
+        
 
         private void Asientos_Load_1(object sender, EventArgs e)
         {
             IniciarCronometro(60);
+            label25.Text = TotalAsientos.ToString();
+
+            using (MySqlConnection conexion = new MySqlConnection(connectionString))
+            {
+                try
+                {
+                    conexion.Open();
+
+                    // Ejecutar la primera consulta
+                    string query = "SELECT Titulo, Imagen FROM tbl_pelicula WHERE ID_pelicula = @id";
+                    MySqlCommand cmd = new MySqlCommand(query, conexion);
+                    cmd.Parameters.AddWithValue("@id", pelicula);
+                    MySqlDataReader reader = cmd.ExecuteReader();
+
+                    if (reader.Read())
+                    {
+                        string nombre = reader["Titulo"].ToString();
+                        byte[] fotografia = (byte[])reader["Imagen"];
+
+                        lbl_NomPelicula.Text = nombre;
+                        picbx_pelicula.Image = imagen(fotografia);
+                    }
+
+                    reader.Close(); // Cerrar el primer lector antes de ejecutar la segunda consulta
+
+                    // Ejecutar la segunda consulta
+                    string query2 = "SELECT FK_ID_Sala, Fecha, Hora FROM tbl_proyeccion WHERE FK_ID_Pelicula = @id";
+                    MySqlCommand cmd2 = new MySqlCommand(query2, conexion);
+                    cmd2.Parameters.AddWithValue("@id", pelicula);
+                    MySqlDataReader reader2 = cmd2.ExecuteReader();
+
+                    if (reader2.Read())
+                    {
+                        string fecha = reader2["Fecha"].ToString();
+                        string horario = reader2["Hora"].ToString();
+
+                        lbl_FechaProyeccion.Text = "Fecha: " + fecha;
+                        lbl_horarioproyeccion.Text = "Horario: " + horario;
+                    }
+
+                    reader2.Close(); // Cerrar el segundo lector
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+                finally
+                {
+                    conexion.Close();
+                }
+            }
+        }
+
+        private Image imagen(byte[] byteArrayIn)
+        {
+            using (MemoryStream ms = new MemoryStream(byteArrayIn))
+            {
+                return Image.FromStream(ms);
+            }
         }
     }
 }

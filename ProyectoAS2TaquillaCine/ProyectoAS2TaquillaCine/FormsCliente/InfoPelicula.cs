@@ -16,6 +16,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
     {
         string connectionString = DatabaseConfig.ConnectionString;
         private int idpelicula;
+
         private string trailerUrl; // Asegúrate de que esta variable esté inicializada
 
         public InfoPelicula(int id)

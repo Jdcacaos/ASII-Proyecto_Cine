@@ -98,7 +98,11 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             // cb_Pelicula
             // 
             this.cb_Pelicula.FormattingEnabled = true;
+<<<<<<< HEAD
             this.cb_Pelicula.Location = new System.Drawing.Point(196, 168);
+=======
+            this.cb_Pelicula.Location = new System.Drawing.Point(152, 222);
+>>>>>>> main
             this.cb_Pelicula.Name = "cb_Pelicula";
             this.cb_Pelicula.Size = new System.Drawing.Size(121, 21);
             this.cb_Pelicula.TabIndex = 43;
@@ -106,7 +110,11 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             // cb_id_Sala
             // 
             this.cb_id_Sala.FormattingEnabled = true;
+<<<<<<< HEAD
             this.cb_id_Sala.Location = new System.Drawing.Point(196, 208);
+=======
+            this.cb_id_Sala.Location = new System.Drawing.Point(152, 262);
+>>>>>>> main
             this.cb_id_Sala.Name = "cb_id_Sala";
             this.cb_id_Sala.Size = new System.Drawing.Size(121, 21);
             this.cb_id_Sala.TabIndex = 44;
@@ -115,7 +123,11 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             // 
             this.dateTimePicker1.CustomFormat = "yyyy/MM/dd";
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+<<<<<<< HEAD
             this.dateTimePicker1.Location = new System.Drawing.Point(196, 247);
+=======
+            this.dateTimePicker1.Location = new System.Drawing.Point(152, 301);
+>>>>>>> main
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dateTimePicker1.Size = new System.Drawing.Size(121, 20);
@@ -126,17 +138,28 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             // cbEstado
             // 
             this.cbEstado.FormattingEnabled = true;
+<<<<<<< HEAD
             this.cbEstado.Location = new System.Drawing.Point(196, 323);
             this.cbEstado.Name = "cbEstado";
             this.cbEstado.Size = new System.Drawing.Size(121, 21);
             this.cbEstado.TabIndex = 47;
+=======
+            this.cbEstado.Location = new System.Drawing.Point(152, 377);
+            this.cbEstado.Name = "cbEstado";
+            this.cbEstado.Size = new System.Drawing.Size(121, 21);
+            this.cbEstado.TabIndex = 46;
+>>>>>>> main
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+<<<<<<< HEAD
             this.label5.Location = new System.Drawing.Point(35, 167);
+=======
+            this.label5.Location = new System.Drawing.Point(71, 220);
+>>>>>>> main
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(67, 19);
             this.label5.TabIndex = 47;
@@ -147,9 +170,15 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+<<<<<<< HEAD
             this.label6.Location = new System.Drawing.Point(35, 212);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(40, 19);
+=======
+            this.label6.Location = new System.Drawing.Point(71, 265);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(64, 19);
+>>>>>>> main
             this.label6.TabIndex = 48;
             this.label6.Text = "Sala";
             // 
@@ -158,7 +187,11 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+<<<<<<< HEAD
             this.label7.Location = new System.Drawing.Point(38, 248);
+=======
+            this.label7.Location = new System.Drawing.Point(74, 301);
+>>>>>>> main
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(53, 19);
             this.label7.TabIndex = 49;
@@ -169,7 +202,11 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+<<<<<<< HEAD
             this.label8.Location = new System.Drawing.Point(38, 324);
+=======
+            this.label8.Location = new System.Drawing.Point(76, 379);
+>>>>>>> main
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(60, 19);
             this.label8.TabIndex = 50;
@@ -180,7 +217,11 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+<<<<<<< HEAD
             this.label9.Location = new System.Drawing.Point(38, 282);
+=======
+            this.label9.Location = new System.Drawing.Point(74, 335);
+>>>>>>> main
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(46, 19);
             this.label9.TabIndex = 51;
@@ -190,11 +231,19 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             // dateTimePicker2
             // 
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+<<<<<<< HEAD
             this.dateTimePicker2.Location = new System.Drawing.Point(196, 286);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.ShowUpDown = true;
             this.dateTimePicker2.Size = new System.Drawing.Size(121, 20);
             this.dateTimePicker2.TabIndex = 46;
+=======
+            this.dateTimePicker2.Location = new System.Drawing.Point(152, 340);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.ShowUpDown = true;
+            this.dateTimePicker2.Size = new System.Drawing.Size(121, 20);
+            this.dateTimePicker2.TabIndex = 52;
+>>>>>>> main
             // 
             // panel2
             // 
@@ -222,7 +271,11 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.panel2.Controls.Add(this.dateTimePicker1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel2.Location = new System.Drawing.Point(669, 28);
+<<<<<<< HEAD
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
+=======
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+>>>>>>> main
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(368, 562);
             this.panel2.TabIndex = 55;
@@ -287,10 +340,17 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
             this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+<<<<<<< HEAD
             this.button8.Location = new System.Drawing.Point(80, 477);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(237, 41);
             this.button8.TabIndex = 51;
+=======
+            this.button8.Location = new System.Drawing.Point(82, 426);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(237, 41);
+            this.button8.TabIndex = 54;
+>>>>>>> main
             this.button8.Text = "Guardar";
             this.button8.UseVisualStyleBackColor = false;
             this.button8.Click += new System.EventHandler(this.button8_Click);
@@ -316,7 +376,11 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.button1.Location = new System.Drawing.Point(237, 6);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(91, 33);
+<<<<<<< HEAD
             this.button1.TabIndex = 54;
+=======
+            this.button1.TabIndex = 37;
+>>>>>>> main
             this.button1.Text = "Regresar";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -330,7 +394,11 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.panel3.Controls.Add(this.label1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 28);
+<<<<<<< HEAD
             this.panel3.Margin = new System.Windows.Forms.Padding(2);
+=======
+            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+>>>>>>> main
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(669, 562);
             this.panel3.TabIndex = 56;
@@ -347,7 +415,11 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
+<<<<<<< HEAD
             this.dataGridView1.Size = new System.Drawing.Size(637, 236);
+=======
+            this.dataGridView1.Size = new System.Drawing.Size(637, 228);
+>>>>>>> main
             this.dataGridView1.TabIndex = 179;
             this.dataGridView1.Tag = "";
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
@@ -360,7 +432,11 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.button6.Location = new System.Drawing.Point(31, 463);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(119, 39);
+<<<<<<< HEAD
             this.button6.TabIndex = 52;
+=======
+            this.button6.TabIndex = 36;
+>>>>>>> main
             this.button6.Text = "Editar";
             this.button6.UseVisualStyleBackColor = false;
             this.button6.Click += new System.EventHandler(this.button3_Click);
@@ -373,7 +449,11 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.button7.Location = new System.Drawing.Point(171, 463);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(111, 39);
+<<<<<<< HEAD
             this.button7.TabIndex = 53;
+=======
+            this.button7.TabIndex = 35;
+>>>>>>> main
             this.button7.Text = "Eliminar";
             this.button7.UseVisualStyleBackColor = false;
             this.button7.Click += new System.EventHandler(this.button7_Click);
@@ -384,10 +464,17 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.label1.Font = new System.Drawing.Font("Arial Narrow", 54F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+<<<<<<< HEAD
             this.label1.Location = new System.Drawing.Point(173, 37);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(339, 85);
+=======
+            this.label1.Location = new System.Drawing.Point(209, 40);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(282, 85);
+>>>>>>> main
             this.label1.TabIndex = 32;
             this.label1.Text = "CINEHUB";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -397,7 +484,11 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+<<<<<<< HEAD
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
+=======
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+>>>>>>> main
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1037, 28);
             this.panel1.TabIndex = 54;
