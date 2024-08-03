@@ -31,14 +31,13 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.picbx_pelicula = new System.Windows.Forms.PictureBox();
             this.button8 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.lbl_NomPelicula = new System.Windows.Forms.Label();
+            this.lbl_lugarProyeccion = new System.Windows.Forms.Label();
+            this.lbl_FechaProyeccion = new System.Windows.Forms.Label();
+            this.lbl_horarioproyeccion = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.btnA1 = new System.Windows.Forms.Button();
@@ -131,7 +130,11 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             this.label23 = new System.Windows.Forms.Label();
             this.pb1 = new System.Windows.Forms.ProgressBar();
             this.lblT = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.lbl_numsala = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.lbl_totalventa = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.picbx_pelicula)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -154,16 +157,16 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             this.label4.TabIndex = 8;
             this.label4.Text = "Selecciona tus asientos";
             // 
-            // pictureBox1
+            // picbx_pelicula
             // 
-            this.pictureBox1.Image = global::ProyectoAS2TaquillaCine.Properties.Resources._16974783388025;
-            this.pictureBox1.Location = new System.Drawing.Point(875, 230);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(111, 119);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 11;
-            this.pictureBox1.TabStop = false;
+            this.picbx_pelicula.Image = global::ProyectoAS2TaquillaCine.Properties.Resources._16974783388025;
+            this.picbx_pelicula.Location = new System.Drawing.Point(875, 230);
+            this.picbx_pelicula.Margin = new System.Windows.Forms.Padding(4);
+            this.picbx_pelicula.Name = "picbx_pelicula";
+            this.picbx_pelicula.Size = new System.Drawing.Size(111, 119);
+            this.picbx_pelicula.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picbx_pelicula.TabIndex = 11;
+            this.picbx_pelicula.TabStop = false;
             // 
             // button8
             // 
@@ -187,55 +190,45 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             this.label2.TabIndex = 33;
             this.label2.Text = "Resumen de compra";
             // 
-            // label3
+            // lbl_NomPelicula
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(995, 230);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(141, 17);
-            this.label3.TabIndex = 34;
-            this.label3.Text = "Pelicula : Juan Diego";
+            this.lbl_NomPelicula.AutoSize = true;
+            this.lbl_NomPelicula.Location = new System.Drawing.Point(995, 230);
+            this.lbl_NomPelicula.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_NomPelicula.Name = "lbl_NomPelicula";
+            this.lbl_NomPelicula.Size = new System.Drawing.Size(141, 17);
+            this.lbl_NomPelicula.TabIndex = 34;
+            this.lbl_NomPelicula.Text = "Pelicula : Juan Diego";
             // 
-            // label5
+            // lbl_lugarProyeccion
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(995, 257);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(96, 17);
-            this.label5.TabIndex = 35;
-            this.label5.Text = "Lugar: Cayala";
+            this.lbl_lugarProyeccion.AutoSize = true;
+            this.lbl_lugarProyeccion.Location = new System.Drawing.Point(995, 257);
+            this.lbl_lugarProyeccion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_lugarProyeccion.Name = "lbl_lugarProyeccion";
+            this.lbl_lugarProyeccion.Size = new System.Drawing.Size(96, 17);
+            this.lbl_lugarProyeccion.TabIndex = 35;
+            this.lbl_lugarProyeccion.Text = "Lugar: Cayala";
             // 
-            // label6
+            // lbl_FechaProyeccion
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(995, 287);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(180, 17);
-            this.label6.TabIndex = 36;
-            this.label6.Text = "Fecha : 17 de julio de 2026";
+            this.lbl_FechaProyeccion.AutoSize = true;
+            this.lbl_FechaProyeccion.Location = new System.Drawing.Point(995, 287);
+            this.lbl_FechaProyeccion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_FechaProyeccion.Name = "lbl_FechaProyeccion";
+            this.lbl_FechaProyeccion.Size = new System.Drawing.Size(180, 17);
+            this.lbl_FechaProyeccion.TabIndex = 36;
+            this.lbl_FechaProyeccion.Text = "Fecha : 17 de julio de 2026";
             // 
-            // label7
+            // lbl_horarioproyeccion
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(995, 315);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(122, 17);
-            this.label7.TabIndex = 37;
-            this.label7.Text = "Funcion : 9:45 PM";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(995, 345);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(75, 17);
-            this.label8.TabIndex = 38;
-            this.label8.Text = "Boletos : 5";
+            this.lbl_horarioproyeccion.AutoSize = true;
+            this.lbl_horarioproyeccion.Location = new System.Drawing.Point(995, 315);
+            this.lbl_horarioproyeccion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_horarioproyeccion.Name = "lbl_horarioproyeccion";
+            this.lbl_horarioproyeccion.Size = new System.Drawing.Size(63, 17);
+            this.lbl_horarioproyeccion.TabIndex = 37;
+            this.lbl_horarioproyeccion.Text = "Horario: ";
             // 
             // label9
             // 
@@ -244,9 +237,9 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             this.label9.Location = new System.Drawing.Point(939, 411);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(175, 31);
+            this.label9.Size = new System.Drawing.Size(105, 31);
             this.label9.TabIndex = 39;
-            this.label9.Text = "Total : Q350";
+            this.label9.Text = "Total : ";
             // 
             // label10
             // 
@@ -1230,11 +1223,53 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             this.lblT.TabIndex = 150;
             this.lblT.Text = "label11";
             // 
+            // lbl_numsala
+            // 
+            this.lbl_numsala.AutoSize = true;
+            this.lbl_numsala.Location = new System.Drawing.Point(995, 340);
+            this.lbl_numsala.Name = "lbl_numsala";
+            this.lbl_numsala.Size = new System.Drawing.Size(44, 17);
+            this.lbl_numsala.TabIndex = 151;
+            this.lbl_numsala.Text = "Sala: ";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(995, 369);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(59, 17);
+            this.label24.TabIndex = 152;
+            this.label24.Text = "Boletos:";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(1063, 369);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(54, 17);
+            this.label25.TabIndex = 153;
+            this.label25.Text = "boletos";
+            // 
+            // lbl_totalventa
+            // 
+            this.lbl_totalventa.AutoSize = true;
+            this.lbl_totalventa.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_totalventa.Location = new System.Drawing.Point(1031, 411);
+            this.lbl_totalventa.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_totalventa.Name = "lbl_totalventa";
+            this.lbl_totalventa.Size = new System.Drawing.Size(105, 31);
+            this.lbl_totalventa.TabIndex = 154;
+            this.lbl_totalventa.Text = "Total : ";
+            // 
             // Asientos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1319, 913);
+            this.Controls.Add(this.lbl_totalventa);
+            this.Controls.Add(this.label25);
+            this.Controls.Add(this.label24);
+            this.Controls.Add(this.lbl_numsala);
             this.Controls.Add(this.lblT);
             this.Controls.Add(this.pb1);
             this.Controls.Add(this.label23);
@@ -1327,21 +1362,20 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             this.Controls.Add(this.btnA1);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lbl_horarioproyeccion);
+            this.Controls.Add(this.lbl_FechaProyeccion);
+            this.Controls.Add(this.lbl_lugarProyeccion);
+            this.Controls.Add(this.lbl_NomPelicula);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button8);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.picbx_pelicula);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Asientos";
             this.Text = "Asientos";
             this.Load += new System.EventHandler(this.Asientos_Load_1);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picbx_pelicula)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1351,14 +1385,13 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox picbx_pelicula;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lbl_NomPelicula;
+        private System.Windows.Forms.Label lbl_lugarProyeccion;
+        private System.Windows.Forms.Label lbl_FechaProyeccion;
+        private System.Windows.Forms.Label lbl_horarioproyeccion;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btnA1;
@@ -1451,5 +1484,9 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.ProgressBar pb1;
         private System.Windows.Forms.Label lblT;
+        private System.Windows.Forms.Label lbl_numsala;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label lbl_totalventa;
     }
 }

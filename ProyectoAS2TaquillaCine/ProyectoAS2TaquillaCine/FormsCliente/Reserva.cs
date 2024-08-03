@@ -17,6 +17,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
     public partial class Reserva : Form
     {
         private int pelicula;
+        private int totalventa;
 
         public Reserva(int id)
         {
@@ -183,6 +184,15 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             total = Convert.ToDouble(label1.Text) + Convert.ToDouble(label2.Text) + Convert.ToDouble(label3.Text);
             label16.Text = total.ToString();
             textBox4.Text = totalAsientos.ToString();
+
+            if (int.TryParse(label16.Text, out int valorTotal))
+            {
+                totalventa = valorTotal;
+            }
+            else
+            {
+                totalventa = 0; // O algún valor por defecto si la conversión falla
+            }
         }
 
 
@@ -246,7 +256,11 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
 
         private void button7_Click(object sender, EventArgs e)
         {
-            FormsCliente.Asientos formAsientos = new FormsCliente.Asientos();
+            int totalAsientos = Convert.ToInt32(textBox1.Text) + Convert.ToInt32(textBox2.Text) + Convert.ToInt32(textBox3.Text);
+            totalventa = Convert.ToInt32(label16.Text);
+            FormsCliente.Asientos formAsientos = new FormsCliente.Asientos(pelicula, totalventa);
+            formAsientos.TotalAsientos = totalAsientos;
+
             formAsientos.Show();
             this.Hide();
         }
