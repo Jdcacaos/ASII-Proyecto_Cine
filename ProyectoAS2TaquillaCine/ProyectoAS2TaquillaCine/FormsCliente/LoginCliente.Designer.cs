@@ -48,7 +48,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             this.mostrarCon.Location = new System.Drawing.Point(169, 291);
             this.mostrarCon.Name = "mostrarCon";
             this.mostrarCon.Size = new System.Drawing.Size(141, 24);
-            this.mostrarCon.TabIndex = 13;
+            this.mostrarCon.TabIndex = 2;
             this.mostrarCon.Text = "Mostrar contraseña";
             this.mostrarCon.UseVisualStyleBackColor = true;
             this.mostrarCon.CheckedChanged += new System.EventHandler(this.mostrarCon_CheckedChanged);
@@ -60,7 +60,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             this.txtContrasena.Name = "txtContrasena";
             this.txtContrasena.PasswordChar = '*';
             this.txtContrasena.Size = new System.Drawing.Size(394, 48);
-            this.txtContrasena.TabIndex = 12;
+            this.txtContrasena.TabIndex = 1;
             this.txtContrasena.TextChanged += new System.EventHandler(this.txtContrasena_TextChanged);
             // 
             // label2
@@ -79,7 +79,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             this.txtuser.Location = new System.Drawing.Point(49, 110);
             this.txtuser.Name = "txtuser";
             this.txtuser.Size = new System.Drawing.Size(394, 48);
-            this.txtuser.TabIndex = 10;
+            this.txtuser.TabIndex = 0;
             this.txtuser.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label1
@@ -98,7 +98,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             this.button1.Location = new System.Drawing.Point(101, 372);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(279, 75);
-            this.button1.TabIndex = 7;
+            this.button1.TabIndex = 3;
             this.button1.Text = "Ingresar";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -119,7 +119,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             this.button2.Location = new System.Drawing.Point(12, 23);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(122, 37);
-            this.button2.TabIndex = 14;
+            this.button2.TabIndex = 5;
             this.button2.Text = "Regresar";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -129,7 +129,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             this.button3.Location = new System.Drawing.Point(169, 478);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(160, 35);
-            this.button3.TabIndex = 15;
+            this.button3.TabIndex = 4;
             this.button3.Text = "Registrarse";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);

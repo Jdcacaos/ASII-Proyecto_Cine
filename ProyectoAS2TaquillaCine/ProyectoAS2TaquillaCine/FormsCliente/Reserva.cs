@@ -152,21 +152,38 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             }
         }
 
-        private void sumar(TextBox textBox) //Funcion de boton sumar asientos
+        private void sumar(TextBox textBox)
         {
-            int valor;
-            valor = Convert.ToInt16(textBox.Text);
-            valor++;
-            textBox.Text = valor.ToString();
+            int valor = Convert.ToInt16(textBox.Text);
+            if (valor < 10)
+            {
+                valor++;
+                textBox.Text = valor.ToString();
+                operar(textBox, label9, label13); // Asegúrate de actualizar los cálculos
+                total(textBox1, textBox2, textBox3, label13, label14, label15); // Asegúrate de actualizar el total
+            }
+            else
+            {
+                MessageBox.Show("El número máximo de boletos para esta categoría es 10.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
-        private void restar(TextBox textBox) //Funcion de boton restar asientos
+        private void restar(TextBox textBox)
         {
-            int valor;
-            valor = Convert.ToInt16(textBox.Text);
-            valor--;
-            textBox.Text = valor.ToString();
+            int valor = Convert.ToInt16(textBox.Text);
+            if (valor > 0)
+            {
+                valor--;
+                textBox.Text = valor.ToString();
+                operar(textBox, label9, label13); // Asegúrate de actualizar los cálculos
+                total(textBox1, textBox2, textBox3, label13, label14, label15); // Asegúrate de actualizar el total
+            }
+            else
+            {
+                MessageBox.Show("El número de boletos no puede ser negativo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
         private void operar(TextBox textbox,Label label , Label label1) //Opera Entradas * Precio
         {
             double entradas, precio, subtotal;
@@ -176,14 +193,37 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             label1.Text = subtotal.ToString();
         }
 
-        private void total(TextBox textbox1, TextBox textbox2 ,TextBox textbox3 , Label label1 , Label label2 , Label label3)
+        private void total(TextBox textbox1, TextBox textbox2, TextBox textbox3, Label label1, Label label2, Label label3)
         {
-            double totalAsientos, total , valor1,valor2,valor3;
-            totalAsientos = Convert.ToDouble(textbox1.Text) + Convert.ToDouble(textbox2.Text) + Convert.ToDouble(textbox3.Text);
+            double totalAsientos, total, valor1, valor2, valor3;
+            valor1 = Convert.ToDouble(textbox1.Text);
+            valor2 = Convert.ToDouble(textbox2.Text);
+            valor3 = Convert.ToDouble(textbox3.Text);
+
+            totalAsientos = valor1 + valor2 + valor3;
             total = Convert.ToDouble(label1.Text) + Convert.ToDouble(label2.Text) + Convert.ToDouble(label3.Text);
-            label16.Text = total.ToString();
-            textBox4.Text = totalAsientos.ToString();
+
+            if (totalAsientos > 10)
+            {
+                MessageBox.Show("El número total de boletos no puede superar 10.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                textbox1.Text = "0";
+                textbox2.Text = "0";
+                textbox3.Text = "0";
+                label16.Text = "0";
+                textBox4.Text = "0";
+            }
+            else if (totalAsientos == 0)
+            {
+                MessageBox.Show("Debe seleccionar al menos un boleto para proceder.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                textBox4.Text = "0";
+            }
+            else
+            {
+                label16.Text = total.ToString();
+                textBox4.Text = totalAsientos.ToString();
+            }
         }
+
 
 
 

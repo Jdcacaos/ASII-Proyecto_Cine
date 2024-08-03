@@ -86,7 +86,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             // txtCiudad
             // 
             this.txtCiudad.Location = new System.Drawing.Point(141, 310);
-            this.txtCiudad.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCiudad.Margin = new System.Windows.Forms.Padding(2);
             this.txtCiudad.Name = "txtCiudad";
             this.txtCiudad.Size = new System.Drawing.Size(157, 20);
             this.txtCiudad.TabIndex = 34;
@@ -94,7 +94,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             // txtUbicacion
             // 
             this.txtUbicacion.Location = new System.Drawing.Point(141, 352);
-            this.txtUbicacion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtUbicacion.Margin = new System.Windows.Forms.Padding(2);
             this.txtUbicacion.Name = "txtUbicacion";
             this.txtUbicacion.Size = new System.Drawing.Size(157, 20);
             this.txtUbicacion.TabIndex = 35;
@@ -104,7 +104,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(980, 28);
             this.panel1.TabIndex = 36;
@@ -122,7 +122,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.panel2.Controls.Add(this.lbl_Ciudad);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel2.Location = new System.Drawing.Point(612, 28);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(368, 680);
             this.panel2.TabIndex = 37;
@@ -162,7 +162,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.button1.Location = new System.Drawing.Point(237, 6);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(91, 33);
-            this.button1.TabIndex = 37;
+            this.button1.TabIndex = 42;
             this.button1.Text = "Regresar";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -176,7 +176,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.panel3.Controls.Add(this.button6);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 28);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(612, 680);
             this.panel3.TabIndex = 77;
@@ -217,7 +217,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.button3.Location = new System.Drawing.Point(56, 580);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(119, 39);
-            this.button3.TabIndex = 36;
+            this.button3.TabIndex = 40;
             this.button3.Text = "Editar";
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
@@ -230,7 +230,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.button6.Location = new System.Drawing.Point(192, 580);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(111, 39);
-            this.button6.TabIndex = 35;
+            this.button6.TabIndex = 41;
             this.button6.Text = "Eliminar";
             this.button6.UseVisualStyleBackColor = false;
             this.button6.Click += new System.EventHandler(this.button6_Click);

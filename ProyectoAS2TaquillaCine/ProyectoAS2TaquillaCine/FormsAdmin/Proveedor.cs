@@ -190,7 +190,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
         }
     }
     }
