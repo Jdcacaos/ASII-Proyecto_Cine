@@ -26,7 +26,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
         public Asientos(int id, int total)
         {
             InitializeComponent();
-            btnI10.BackColor = Color.Red;
+    
             pelicula = id;
             totalventa = total;
 
@@ -284,6 +284,11 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
         }
 
         private void pb1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnI10_Click(object sender, EventArgs e)
         {
 
         }

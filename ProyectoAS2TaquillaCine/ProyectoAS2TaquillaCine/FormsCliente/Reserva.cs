@@ -13,10 +13,11 @@ using System.Data.SqlClient;
 
 namespace ProyectoAS2TaquillaCine.FormsCliente
 {
-    
+
     public partial class Reserva : Form
     {
         private int pelicula;
+
         private int totalventa;
 
         public Reserva(int id)
@@ -124,51 +125,68 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             }
         }
 
-        private void LoadHoras(string fecha , int id_Pelicula)
+        private void LoadHoras(string fecha, int id_Pelicula)
         {
             using (MySqlConnection connection = new MySqlConnection(connectionString))
-            try
-            {
-                connection.Open();
-                string query = "SELECT Hora FROM tbl_proyeccion WHERE Fecha = @Fecha AND FK_ID_Pelicula = @ID_Pelicula";
-                MySqlCommand cmd = new MySqlCommand(query, connection);
-                cmd.Parameters.AddWithValue("@Fecha", fecha);
-                cmd.Parameters.AddWithValue("@ID_Pelicula", id_Pelicula);
-                MySqlDataReader reader = cmd.ExecuteReader();
-
-                while (reader.Read())
+                try
                 {
-                    comboBox2.Items.Add(reader.GetTimeSpan("Hora").ToString());
+                    connection.Open();
+                    string query = "SELECT Hora FROM tbl_proyeccion WHERE Fecha = @Fecha AND FK_ID_Pelicula = @ID_Pelicula";
+                    MySqlCommand cmd = new MySqlCommand(query, connection);
+                    cmd.Parameters.AddWithValue("@Fecha", fecha);
+                    cmd.Parameters.AddWithValue("@ID_Pelicula", id_Pelicula);
+                    MySqlDataReader reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        comboBox2.Items.Add(reader.GetTimeSpan("Hora").ToString());
+                    }
+
+                    reader.Close();
                 }
-                
-                reader.Close();
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
                 }
-            catch (Exception ex)
+                finally
+                {
+                    connection.Close();
+                }
+        }
+
+        private void sumar(TextBox textBox)
+        {
+            int valor = Convert.ToInt16(textBox.Text);
+            if (valor < 10)
             {
-                MessageBox.Show("Error: " + ex.Message);
+                valor++;
+                textBox.Text = valor.ToString();
+                operar(textBox, label9, label13); // Asegúrate de actualizar los cálculos
+                total(textBox1, textBox2, textBox3, label13, label14, label15); // Asegúrate de actualizar el total
             }
-            finally
+            else
             {
-                connection.Close();
+                MessageBox.Show("El número máximo de boletos para esta categoría es 10.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        private void sumar(TextBox textBox) //Funcion de boton sumar asientos
+        private void restar(TextBox textBox)
         {
-            int valor;
-            valor = Convert.ToInt16(textBox.Text);
-            valor++;
-            textBox.Text = valor.ToString();
+            int valor = Convert.ToInt16(textBox.Text);
+            if (valor > 0)
+            {
+                valor--;
+                textBox.Text = valor.ToString();
+                operar(textBox, label9, label13); // Asegúrate de actualizar los cálculos
+                total(textBox1, textBox2, textBox3, label13, label14, label15); // Asegúrate de actualizar el total
+            }
+            else
+            {
+                MessageBox.Show("El número de boletos no puede ser negativo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
-        private void restar(TextBox textBox) //Funcion de boton restar asientos
-        {
-            int valor;
-            valor = Convert.ToInt16(textBox.Text);
-            valor--;
-            textBox.Text = valor.ToString();
-        }
-        private void operar(TextBox textbox,Label label , Label label1) //Opera Entradas * Precio
+        private void operar(TextBox textbox, Label label, Label label1) //Opera Entradas * Precio
         {
             double entradas, precio, subtotal;
             entradas = Convert.ToDouble(textbox.Text);
@@ -177,30 +195,44 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             label1.Text = subtotal.ToString();
         }
 
-        private void total(TextBox textbox1, TextBox textbox2 ,TextBox textbox3 , Label label1 , Label label2 , Label label3)
+        private void total(TextBox textbox1, TextBox textbox2, TextBox textbox3, Label label1, Label label2, Label label3)
         {
-            double totalAsientos, total , valor1,valor2,valor3;
-            totalAsientos = Convert.ToDouble(textbox1.Text) + Convert.ToDouble(textbox2.Text) + Convert.ToDouble(textbox3.Text);
-            total = Convert.ToDouble(label1.Text) + Convert.ToDouble(label2.Text) + Convert.ToDouble(label3.Text);
-            label16.Text = total.ToString();
-            textBox4.Text = totalAsientos.ToString();
+            double totalAsientos, total, valor1, valor2, valor3;
+            valor1 = Convert.ToDouble(textbox1.Text);
+            valor2 = Convert.ToDouble(textbox2.Text);
+            valor3 = Convert.ToDouble(textbox3.Text);
 
-            if (int.TryParse(label16.Text, out int valorTotal))
+            totalAsientos = valor1 + valor2 + valor3;
+            total = Convert.ToDouble(label1.Text) + Convert.ToDouble(label2.Text) + Convert.ToDouble(label3.Text);
+
+            if (totalAsientos > 10)
             {
-                totalventa = valorTotal;
+                MessageBox.Show("El número total de boletos no puede superar 10.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                textbox1.Text = "0";
+                textbox2.Text = "0";
+                textbox3.Text = "0";
+                label16.Text = "0";
+                textBox4.Text = "0";
+            }
+            else if (totalAsientos == 0)
+            {
+                MessageBox.Show("Debe seleccionar al menos un boleto para proceder.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                textBox4.Text = "0";
             }
             else
             {
-                totalventa = 0; // O algún valor por defecto si la conversión falla
+                label16.Text = total.ToString();
+                textBox4.Text = totalAsientos.ToString();
             }
         }
+
 
 
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             comboBox2.Items.Clear();
-            LoadHoras(comboBox1.SelectedItem.ToString(),pelicula);
+            LoadHoras(comboBox1.SelectedItem.ToString(), pelicula);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -266,3 +298,6 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
         }
     }
 }
+
+
+
