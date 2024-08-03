@@ -79,7 +79,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             // txtnosala
             // 
             this.txtnosala.Location = new System.Drawing.Point(172, 254);
-            this.txtnosala.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtnosala.Margin = new System.Windows.Forms.Padding(2);
             this.txtnosala.Name = "txtnosala";
             this.txtnosala.Size = new System.Drawing.Size(157, 20);
             this.txtnosala.TabIndex = 33;
@@ -87,7 +87,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             // txtcapacidad
             // 
             this.txtcapacidad.Location = new System.Drawing.Point(172, 285);
-            this.txtcapacidad.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtcapacidad.Margin = new System.Windows.Forms.Padding(2);
             this.txtcapacidad.Name = "txtcapacidad";
             this.txtcapacidad.Size = new System.Drawing.Size(157, 20);
             this.txtcapacidad.TabIndex = 34;
@@ -96,7 +96,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             // 
             this.cbtiposala.FormattingEnabled = true;
             this.cbtiposala.Location = new System.Drawing.Point(172, 321);
-            this.cbtiposala.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbtiposala.Margin = new System.Windows.Forms.Padding(2);
             this.cbtiposala.Name = "cbtiposala";
             this.cbtiposala.Size = new System.Drawing.Size(157, 21);
             this.cbtiposala.TabIndex = 35;
@@ -105,7 +105,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             // 
             this.cbubicacion.FormattingEnabled = true;
             this.cbubicacion.Location = new System.Drawing.Point(172, 361);
-            this.cbubicacion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbubicacion.Margin = new System.Windows.Forms.Padding(2);
             this.cbubicacion.Name = "cbubicacion";
             this.cbubicacion.Size = new System.Drawing.Size(157, 21);
             this.cbubicacion.TabIndex = 36;
@@ -117,7 +117,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             "Activo",
             "Inactivo"});
             this.cbestado.Location = new System.Drawing.Point(172, 396);
-            this.cbestado.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbestado.Margin = new System.Windows.Forms.Padding(2);
             this.cbestado.Name = "cbestado";
             this.cbestado.Size = new System.Drawing.Size(157, 21);
             this.cbestado.TabIndex = 37;
@@ -187,7 +187,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(986, 28);
             this.panel1.TabIndex = 43;
@@ -212,7 +212,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.panel2.Controls.Add(this.cbubicacion);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel2.Location = new System.Drawing.Point(618, 28);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(368, 612);
             this.panel2.TabIndex = 44;
@@ -266,7 +266,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.panel3.Controls.Add(this.label1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 28);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(618, 612);
             this.panel3.TabIndex = 45;
@@ -317,10 +317,10 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.label1.Font = new System.Drawing.Font("Arial Narrow", 54F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label1.Location = new System.Drawing.Point(184, 40);
+            this.label1.Location = new System.Drawing.Point(148, 40);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(282, 85);
+            this.label1.Size = new System.Drawing.Size(318, 85);
             this.label1.TabIndex = 32;
             this.label1.Text = "CINEHUB";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;

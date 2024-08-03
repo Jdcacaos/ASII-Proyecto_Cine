@@ -62,11 +62,11 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(67, 269);
+            this.label1.Location = new System.Drawing.Point(59, 268);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(134, 16);
+            this.label1.Size = new System.Drawing.Size(149, 16);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Nombre del proveedor:";
+            this.label1.Text = "Nombre de la Productora:";
             // 
             // panel1
             // 
@@ -115,9 +115,9 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.label2.Location = new System.Drawing.Point(93, 133);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(232, 19);
+            this.label2.Size = new System.Drawing.Size(185, 19);
             this.label2.TabIndex = 53;
-            this.label2.Text = "Mantenimiento de proveedor";
+            this.label2.Text = "Ingreso de Productoras";
             // 
             // button5
             // 
@@ -194,10 +194,10 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.label3.Font = new System.Drawing.Font("Arial Narrow", 54F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label3.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label3.Location = new System.Drawing.Point(169, 36);
+            this.label3.Location = new System.Drawing.Point(136, 36);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(282, 85);
+            this.label3.Size = new System.Drawing.Size(315, 85);
             this.label3.TabIndex = 182;
             this.label3.Text = "CINEHUB";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -237,7 +237,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "Proveedor";
-            this.Text = "Proveedor";
+            this.Text = "Productora";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);

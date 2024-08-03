@@ -36,18 +36,21 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
 
         private void button5_Click(object sender, EventArgs e)
         {
+            if (!datosCorrectos())
+            {
+                return; // No proceder si los datos no son correctos
+            }
+
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
                 try
                 {
                     connection.Open();
-
                     string query = "INSERT INTO tbl_proveedor_pelicula (nombre) VALUES (@Nombre)";
 
                     using (MySqlCommand command = new MySqlCommand(query, connection))
                     {
                         command.Parameters.AddWithValue("@Nombre", txtNombre.Text);
-
                         command.ExecuteNonQuery();
                     }
 
@@ -60,6 +63,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                 }
             }
         }
+
         private void CargarProveedores()
             {
                 string query = "SELECT ID_proveedor, nombre FROM tbl_proveedor_pelicula";
@@ -93,8 +97,22 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             CargarProveedores();
         }
 
+        private bool datosCorrectos()
+        {
+            if (string.IsNullOrWhiteSpace(txtNombre.Text))
+            {
+                MessageBox.Show("El nombre no puede estar vacío.");
+                return false;
+            }
+            return true;
+        }
+
         private void button3_Click(object sender, EventArgs e)
         {
+            if (!datosCorrectos())
+            {
+                return; // No proceder si los datos no son correctos
+            }
 
             if (dgvProveedores.SelectedCells.Count > 0)
             {
@@ -136,6 +154,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                 MessageBox.Show("Por favor, selecciona un proveedor para editar.", "Error de selección", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
         private void LimpiarCampos()
         {
             txtNombre.Text = string.Empty;
@@ -192,6 +211,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
         {
             this.Hide();
         }
+
     }
     }
 

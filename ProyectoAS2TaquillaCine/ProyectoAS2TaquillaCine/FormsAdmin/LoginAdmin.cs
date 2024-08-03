@@ -43,6 +43,13 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             string email = txtuser.Text;
             string contrasena = txtContra.Text;
 
+            // Validar que el correo tenga el sufijo @gmail.com
+            if (!email.EndsWith("@gmail.com"))
+            {
+                MessageBox.Show("El correo electrónico debe tener el sufijo @gmail.com.", "Error de login", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             // Crear una conexión a la base de datos
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
@@ -87,6 +94,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                 }
             }
         }
+
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {

@@ -187,10 +187,10 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.label1.Font = new System.Drawing.Font("Arial Narrow", 54F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label1.Location = new System.Drawing.Point(182, 36);
+            this.label1.Location = new System.Drawing.Point(156, 36);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(282, 85);
+            this.label1.Size = new System.Drawing.Size(308, 85);
             this.label1.TabIndex = 182;
             this.label1.Text = "CINEHUB";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;

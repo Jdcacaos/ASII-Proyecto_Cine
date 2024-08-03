@@ -74,5 +74,10 @@ namespace ProyectoAS2TaquillaCine.FormsGlobales
             this.Hide(); // Si quieres ocultar el formulario actual
                          // this.Close(); // Si quieres cerrar el formulario actual
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

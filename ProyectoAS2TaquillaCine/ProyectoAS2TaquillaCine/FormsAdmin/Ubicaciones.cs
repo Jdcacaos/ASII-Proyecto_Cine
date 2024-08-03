@@ -42,9 +42,10 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
 
         private void btn_Agregar_Click(object sender, EventArgs e)
         {
+            // Verifica si los datos son correctos
             if (!datosCorrectos())
             {
-                return;
+                return; // Si los datos no son correctos, no se continúa con el proceso
             }
 
             using (MySqlConnection connection = new MySqlConnection(connectionString))
@@ -53,8 +54,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                 {
                     connection.Open();
 
-                    string query = "INSERT INTO tbl_ubicacion (Ciudad, Direccion)" +
-                                   "VALUES (@Ciudad, @Direccion)";
+                    string query = "INSERT INTO tbl_ubicacion (Ciudad, Direccion) VALUES (@Ciudad, @Direccion)";
 
                     using (MySqlCommand command = new MySqlCommand(query, connection))
                     {
@@ -68,15 +68,17 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error al registrar el cine: " + ex.Message);
+                    MessageBox.Show("Error al registrar la ubicación: " + ex.Message);
                 }
 
                 llenar_tabla();
 
+                // Limpiar campos
                 txtCiudad.Text = "";
                 txtUbicacion.Text = "";
             }
         }
+
         private object ObtenerValorCelda(string nombreColumna)
         {
             if (DGV_Ubicaciones.SelectedRows.Count > 0)
@@ -258,18 +260,19 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
         {
             if (txtCiudad.Text.Trim().Equals(""))
             {
-                MessageBox.Show("Ingrese el nombre");
+                MessageBox.Show("Ingrese el nombre de la ciudad.");
                 return false;
             }
 
             if (txtUbicacion.Text.Trim().Equals(""))
             {
-                MessageBox.Show("Ingrese el numero de sala");
+                MessageBox.Show("Ingrese la dirección.");
                 return false;
             }
 
             return true;
         }
+
 
         private void DGV_Ubicaciones_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -433,8 +436,6 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
 
         private void button1_Click(object sender, EventArgs e)
         {
-            FormsAdmin.MenuGeneral MenuForm = new FormsAdmin.MenuGeneral();
-            MenuForm.Show();
             this.Hide();
         }
     }

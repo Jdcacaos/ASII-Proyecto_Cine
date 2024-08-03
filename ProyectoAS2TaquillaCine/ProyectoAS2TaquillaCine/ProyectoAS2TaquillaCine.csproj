@@ -326,6 +326,7 @@
     <None Include="Resources\mapa.png" />
     <None Include="Resources\cine1.png" />
     <None Include="Resources\agregar-usuario1.png" />
+    <None Include="Resources\apagar.jpg" />
     <Content Include="Resources\cine.jpg" />
     <None Include="Resources\panel-de-administrador1.png" />
     <None Include="Resources\cinema-movies-concept-background-with-5761469.jpg" />

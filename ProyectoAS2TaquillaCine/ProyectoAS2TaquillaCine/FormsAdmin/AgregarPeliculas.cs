@@ -12,6 +12,8 @@ using MySql.Data.MySqlClient;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Drawing.Imaging;
+using System.Text.RegularExpressions;
+
 
 namespace ProyectoAS2TaquillaCine.FormsAdmin
 {
@@ -24,6 +26,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             InitializeComponent();
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
+
 
         private void Peliculas_Load(object sender, EventArgs e)
         {
@@ -349,8 +352,17 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                 return false;
             }
 
+            // Validar URL del tráiler
+            if (string.IsNullOrEmpty(txt_Trailer.Text) || !EsUrlDeYouTube(txt_Trailer.Text))
+            {
+                MessageBox.Show("Debe ingresar una URL de tráiler válida de YouTube.");
+                return false;
+            }
+
             return true;
         }
+
+
 
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -474,11 +486,12 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
         }
 
 
+
         private void button3_Click(object sender, EventArgs e)
         {
             try
             {
-                if (cbclasificacion.SelectedItem == null || cbproveedor.SelectedItem == null || cbestado.SelectedItem == null || txt_Trailer == null || txtimagen == null)
+                if (cbclasificacion.SelectedItem == null || cbproveedor.SelectedItem == null || cbestado.SelectedItem == null || string.IsNullOrEmpty(txt_Trailer.Text) || string.IsNullOrEmpty(txtimagen.Text))
                 {
                     MessageBox.Show("Por favor, actualiza todos los datos.");
                     return;
@@ -577,6 +590,13 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             }
         }
 
+        private bool EsUrlDeYouTube(string url)
+        {
+            string patron = @"^(https?:\/\/)?(www\.)?(youtube\.com\/watch\?v=|youtu\.be\/)[a-zA-Z0-9_-]{11}$";
+            Regex regex = new Regex(patron, RegexOptions.IgnoreCase);
+            return regex.IsMatch(url);
+        }
+
 
         private void button6_Click(object sender, EventArgs e)
         {
@@ -625,6 +645,11 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
+        }
+
+        private void txtgenero_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
         }
     }
 }
