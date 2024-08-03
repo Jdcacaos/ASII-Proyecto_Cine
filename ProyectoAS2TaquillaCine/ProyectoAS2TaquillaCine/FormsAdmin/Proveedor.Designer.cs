@@ -62,18 +62,18 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(67, 269);
+            this.label1.Location = new System.Drawing.Point(59, 268);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(134, 16);
+            this.label1.Size = new System.Drawing.Size(149, 16);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Nombre del proveedor:";
+            this.label1.Text = "Nombre de la Productora:";
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(954, 28);
             this.panel1.TabIndex = 35;
@@ -89,7 +89,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.panel2.Controls.Add(this.label1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel2.Location = new System.Drawing.Point(586, 28);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(368, 659);
             this.panel2.TabIndex = 36;
@@ -115,9 +115,9 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.label2.Location = new System.Drawing.Point(93, 133);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(232, 19);
+            this.label2.Size = new System.Drawing.Size(185, 19);
             this.label2.TabIndex = 53;
-            this.label2.Text = "Mantenimiento de proveedor";
+            this.label2.Text = "Ingreso de Productoras";
             // 
             // button5
             // 
@@ -129,7 +129,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.button5.Location = new System.Drawing.Point(69, 355);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(237, 41);
-            this.button5.TabIndex = 38;
+            this.button5.TabIndex = 1;
             this.button5.Text = "Guardar";
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
@@ -142,7 +142,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.button2.Location = new System.Drawing.Point(237, 6);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(91, 33);
-            this.button2.TabIndex = 37;
+            this.button2.TabIndex = 5;
             this.button2.Text = "Regresar";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -157,7 +157,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.panel3.Controls.Add(this.button6);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 28);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(586, 659);
             this.panel3.TabIndex = 77;
@@ -183,7 +183,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.button7.Location = new System.Drawing.Point(323, 559);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(111, 39);
-            this.button7.TabIndex = 183;
+            this.button7.TabIndex = 4;
             this.button7.Text = "Actualizar";
             this.button7.UseVisualStyleBackColor = false;
             this.button7.Click += new System.EventHandler(this.button7_Click);
@@ -194,10 +194,10 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.label3.Font = new System.Drawing.Font("Arial Narrow", 54F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label3.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label3.Location = new System.Drawing.Point(169, 36);
+            this.label3.Location = new System.Drawing.Point(136, 36);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(282, 85);
+            this.label3.Size = new System.Drawing.Size(315, 85);
             this.label3.TabIndex = 182;
             this.label3.Text = "CINEHUB";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -210,7 +210,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.button3.Location = new System.Drawing.Point(56, 559);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(119, 39);
-            this.button3.TabIndex = 36;
+            this.button3.TabIndex = 2;
             this.button3.Text = "Editar";
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
@@ -223,7 +223,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.button6.Location = new System.Drawing.Point(192, 559);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(111, 39);
-            this.button6.TabIndex = 35;
+            this.button6.TabIndex = 3;
             this.button6.Text = "Eliminar";
             this.button6.UseVisualStyleBackColor = false;
             this.button6.Click += new System.EventHandler(this.button6_Click);
@@ -237,7 +237,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "Proveedor";
-            this.Text = "Proveedor";
+            this.Text = "Productora";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);

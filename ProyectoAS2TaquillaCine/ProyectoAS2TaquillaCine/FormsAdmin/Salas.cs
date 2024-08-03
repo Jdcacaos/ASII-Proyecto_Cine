@@ -243,6 +243,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
 
         private void btn_agregar_Click(object sender, EventArgs e)
         {
+            // Verificar que todos los datos sean correctos
             if (!datosCorrectos())
             {
                 return;
@@ -250,7 +251,6 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
 
             int idtiposala = ((KeyValuePair<int, string>)cbtiposala.SelectedItem).Key;
             int idubicacion = ((KeyValuePair<int, string>)cbubicacion.SelectedItem).Key;
-      
 
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
@@ -282,6 +282,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
 
             llenar_tabla();
         }
+
 
         private object ObtenerValorCelda(string nombreColumna)
         {
@@ -414,38 +415,51 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
 
         private bool datosCorrectos()
         {
-            if(txtcapacidad.Text.Trim().Equals(""))
+            // Verificar que los campos de texto no estén vacíos
+            if (string.IsNullOrWhiteSpace(txtnosala.Text))
             {
-                MessageBox.Show("Ingrese el nombre");
+                MessageBox.Show("Ingrese el número de sala.");
                 return false;
             }
 
-            if (txtnosala.Text.Trim().Equals(""))
+            if (string.IsNullOrWhiteSpace(txtcapacidad.Text))
             {
-                MessageBox.Show("Ingrese el numero de sala");
+                MessageBox.Show("Ingrese la capacidad.");
                 return false;
             }
 
-            if (cbtiposala.Text.Trim().Equals(""))
+            // Verificar que se haya seleccionado un tipo de sala
+            if (cbtiposala.SelectedItem == null)
             {
-                MessageBox.Show("Seleccione el tipo de sala");
+                MessageBox.Show("Seleccione el tipo de sala.");
                 return false;
             }
 
-            if (cbubicacion.Text.Trim().Equals(""))
+            // Verificar que se haya seleccionado una ubicación
+            if (cbubicacion.SelectedItem == null)
             {
-                MessageBox.Show("Seleccione la ubicación");
+                MessageBox.Show("Seleccione la ubicación.");
                 return false;
             }
 
-            if (cbestado.Text.Trim().Equals(""))
+            // Verificar que se haya seleccionado un estado
+            if (cbestado.SelectedItem == null)
             {
-                MessageBox.Show("Seleccione un estado");
+                MessageBox.Show("Seleccione un estado.");
+                return false;
+            }
+
+            // Verificar que la capacidad sea un número positivo
+            int capacidad;
+            if (!int.TryParse(txtcapacidad.Text, out capacidad) || capacidad <= 0)
+            {
+                MessageBox.Show("La capacidad debe ser un número positivo.");
                 return false;
             }
 
             return true;
         }
+
 
         private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
@@ -610,8 +624,6 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
 
         private void button1_Click(object sender, EventArgs e)
         {
-            FormsAdmin.MenuGeneral MenuForm = new FormsAdmin.MenuGeneral();
-            MenuForm.Show();
             this.Hide();
         }
     }

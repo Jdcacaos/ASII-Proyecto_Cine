@@ -12,6 +12,8 @@ using MySql.Data.MySqlClient;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Drawing.Imaging;
+using System.Text.RegularExpressions;
+
 
 namespace ProyectoAS2TaquillaCine.FormsAdmin
 {
@@ -24,6 +26,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             InitializeComponent();
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
+
 
         private void Peliculas_Load(object sender, EventArgs e)
         {
@@ -309,42 +312,58 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
         {
             if (txttitulo.Text.Trim().Equals(""))
             {
-                MessageBox.Show("Ingrese el titulo");
+                MessageBox.Show("Ingrese el título.");
                 return false;
             }
 
             if (txtgenero.Text.Trim().Equals(""))
             {
-                MessageBox.Show("Ingrese el genero");
+                MessageBox.Show("Ingrese el género.");
                 return false;
             }
 
             if (txtsinopsis.Text.Trim().Equals(""))
             {
-                MessageBox.Show("Ingrese la sinopsis");
+                MessageBox.Show("Ingrese la sinopsis.");
                 return false;
             }
 
             if (cbclasificacion.Text.Trim().Equals(""))
             {
-                MessageBox.Show("Seleccione la clasificacion");
+                MessageBox.Show("Seleccione la clasificación.");
                 return false;
             }
 
             if (cbproveedor.Text.Trim().Equals(""))
             {
-                MessageBox.Show("Seleccione el proveedor");
+                MessageBox.Show("Seleccione el proveedor.");
                 return false;
             }
 
             if (cbestado.Text.Trim().Equals(""))
             {
-                MessageBox.Show("Seleccione un estado");
+                MessageBox.Show("Seleccione un estado.");
+                return false;
+            }
+
+            if (string.IsNullOrEmpty(txtimagen.Text))
+            {
+                MessageBox.Show("Debe seleccionar una imagen.");
+                return false;
+            }
+
+            // Validar URL del tráiler
+            if (string.IsNullOrEmpty(txt_Trailer.Text) || !EsUrlDeYouTube(txt_Trailer.Text))
+            {
+                MessageBox.Show("Debe ingresar una URL de tráiler válida de YouTube.");
                 return false;
             }
 
             return true;
         }
+
+
+
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
@@ -425,6 +444,11 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                     return;
                 }
             }
+            else
+            {
+                MessageBox.Show("Debe seleccionar una imagen.");
+                return;
+            }
 
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
@@ -461,14 +485,15 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             llenar_tabla();
         }
 
+
+
         private void button3_Click(object sender, EventArgs e)
         {
-
             try
             {
-                if (cbclasificacion.SelectedItem == null || cbproveedor.SelectedItem == null || cbestado.SelectedItem == null || txt_Trailer == null || txtimagen == null)
+                if (cbclasificacion.SelectedItem == null || cbproveedor.SelectedItem == null || cbestado.SelectedItem == null || string.IsNullOrEmpty(txt_Trailer.Text) || string.IsNullOrEmpty(txtimagen.Text))
                 {
-                    MessageBox.Show("Por favor, actualiza todos los datos");
+                    MessageBox.Show("Por favor, actualiza todos los datos.");
                     return;
                 }
 
@@ -511,11 +536,16 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                         return;
                     }
                 }
+                else
+                {
+                    MessageBox.Show("Debe seleccionar una imagen.");
+                    return;
+                }
 
                 using (MySqlConnection connection = new MySqlConnection(connectionString))
                 {
                     connection.Open();
-                    string consulta = "UPDATE tbl_pelicula SET Titulo= @Titulo, Genero= @Genero, Duracion= @Duracion, FK_ID_Clasificacion = @FK_ID_Clasificacion, Imagen = @Imagen, Sinopsis = @Sinopsis, FK_ID_Proveedor = @FK_ID_Proveedor, Estado_tbl_pelicula = @Estado_tbl_pelicula, trailer_url = @trailer_url WHERE ID_Pelicula = @ID_Pelicula";
+                    string consulta = "UPDATE tbl_pelicula SET Titulo = @Titulo, Genero = @Genero, Duracion = @Duracion, FK_ID_Clasificacion = @FK_ID_Clasificacion, Imagen = @Imagen, Sinopsis = @Sinopsis, FK_ID_Proveedor = @FK_ID_Proveedor, Estado_tbl_pelicula = @Estado_tbl_pelicula, trailer_url = @trailer_url WHERE ID_Pelicula = @ID_Pelicula";
                     MySqlCommand comando = new MySqlCommand(consulta, connection);
 
                     comando.Parameters.AddWithValue("@Titulo", txttitulo.Text);
@@ -560,6 +590,14 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             }
         }
 
+        private bool EsUrlDeYouTube(string url)
+        {
+            string patron = @"^(https?:\/\/)?(www\.)?(youtube\.com\/watch\?v=|youtu\.be\/)[a-zA-Z0-9_-]{11}$";
+            Regex regex = new Regex(patron, RegexOptions.IgnoreCase);
+            return regex.IsMatch(url);
+        }
+
+
         private void button6_Click(object sender, EventArgs e)
         {
 
@@ -602,6 +640,16 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                     llenar_tabla();
                 }
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
+        private void txtgenero_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
         }
     }
 }

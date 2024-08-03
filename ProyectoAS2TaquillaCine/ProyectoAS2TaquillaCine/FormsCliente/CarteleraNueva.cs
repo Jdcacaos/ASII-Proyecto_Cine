@@ -312,7 +312,9 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            FormsGlobales.Menu newMenu = new FormsGlobales.Menu();
+            newMenu.Show();
+            this.Hide();
         }
     }
 }

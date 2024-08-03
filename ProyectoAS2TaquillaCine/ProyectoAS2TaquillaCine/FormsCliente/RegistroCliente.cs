@@ -21,13 +21,51 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
 
         private void button1_Click(object sender, EventArgs e)
         {
+            // Verificar que todos los campos estén llenos
+            if (string.IsNullOrWhiteSpace(txtnombre.Text) ||
+                string.IsNullOrWhiteSpace(txtApellido.Text) ||
+                string.IsNullOrWhiteSpace(txtEmail.Text) ||
+                string.IsNullOrWhiteSpace(txtContrasena.Text) ||
+                string.IsNullOrWhiteSpace(txtContrasenaVer.Text) ||
+                string.IsNullOrWhiteSpace(txtTelefono.Text) ||
+                string.IsNullOrWhiteSpace(txtNit.Text))
+            {
+                MessageBox.Show("Por favor, complete todos los campos.", "Error de validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Validar coincidencia de contraseñas
             if (txtContrasena.Text != txtContrasenaVer.Text)
             {
                 MessageBox.Show("Las contraseñas no coinciden. Por favor, verifícalas.", "Error de confirmación de contraseña", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+
+            // Validar que nombre y apellido solo contengan letras
+            if (!System.Text.RegularExpressions.Regex.IsMatch(txtnombre.Text, @"^[a-zA-Z]+$") ||
+                !System.Text.RegularExpressions.Regex.IsMatch(txtApellido.Text, @"^[a-zA-Z]+$"))
+            {
+                MessageBox.Show("Ingrese valores válidos.", "Error de validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Validar que el email tenga el sufijo @gmail.com
+            if (!txtEmail.Text.EndsWith("@gmail.com"))
+            {
+                MessageBox.Show("Ingrese valores válidos.", "Error de validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Validar que el teléfono solo contenga números y el símbolo +
+            if (!System.Text.RegularExpressions.Regex.IsMatch(txtTelefono.Text, @"^[\d+]+$"))
+            {
+                MessageBox.Show("Ingrese valores válidos.", "Error de validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             // Cadena de conexión a tu base de datos MySQL
             string connectionString = DatabaseConfig.ConnectionString;
+
             // Crear una conexión a la base de datos
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
@@ -58,10 +96,9 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
 
                     MessageBox.Show("Registro completado exitosamente.");
 
-                    
                     FormsCliente.LoginCliente loginForm = new FormsCliente.LoginCliente();
                     loginForm.Show();
-                    this.Hide(); 
+                    this.Hide();
                 }
                 catch (Exception ex)
                 {
@@ -69,6 +106,8 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
                 }
             }
         }
+
+
 
         // Otros métodos y eventos del formulario
         private void label5_Click(object sender, EventArgs e)

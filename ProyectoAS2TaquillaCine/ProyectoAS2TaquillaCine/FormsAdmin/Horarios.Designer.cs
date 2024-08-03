@@ -43,6 +43,12 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.label9 = new System.Windows.Forms.Label();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.txt3ra = new System.Windows.Forms.TextBox();
+            this.txtAdulto = new System.Windows.Forms.TextBox();
+            this.txtNino = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.button8 = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -52,12 +58,6 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.button7 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.txtNino = new System.Windows.Forms.TextBox();
-            this.txtAdulto = new System.Windows.Forms.TextBox();
-            this.txt3ra = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -129,7 +129,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.cbEstado.Location = new System.Drawing.Point(196, 323);
             this.cbEstado.Name = "cbEstado";
             this.cbEstado.Size = new System.Drawing.Size(121, 21);
-            this.cbEstado.TabIndex = 46;
+            this.cbEstado.TabIndex = 47;
             // 
             // label5
             // 
@@ -194,7 +194,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.ShowUpDown = true;
             this.dateTimePicker2.Size = new System.Drawing.Size(121, 20);
-            this.dateTimePicker2.TabIndex = 52;
+            this.dateTimePicker2.TabIndex = 46;
             // 
             // panel2
             // 
@@ -222,10 +222,64 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.panel2.Controls.Add(this.dateTimePicker1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel2.Location = new System.Drawing.Point(669, 28);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(368, 562);
             this.panel2.TabIndex = 55;
+            // 
+            // txt3ra
+            // 
+            this.txt3ra.Location = new System.Drawing.Point(196, 434);
+            this.txt3ra.Name = "txt3ra";
+            this.txt3ra.Size = new System.Drawing.Size(121, 20);
+            this.txt3ra.TabIndex = 50;
+            // 
+            // txtAdulto
+            // 
+            this.txtAdulto.Location = new System.Drawing.Point(196, 399);
+            this.txtAdulto.Name = "txtAdulto";
+            this.txtAdulto.Size = new System.Drawing.Size(121, 20);
+            this.txtAdulto.TabIndex = 49;
+            // 
+            // txtNino
+            // 
+            this.txtNino.Location = new System.Drawing.Point(196, 360);
+            this.txtNino.Name = "txtNino";
+            this.txtNino.Size = new System.Drawing.Size(121, 20);
+            this.txtNino.TabIndex = 48;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label12.Location = new System.Drawing.Point(38, 435);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(126, 19);
+            this.label12.TabIndex = 57;
+            this.label12.Text = "Precio 3ra Edad";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label11.Location = new System.Drawing.Point(38, 399);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(111, 19);
+            this.label11.TabIndex = 56;
+            this.label11.Text = "Precio Adulto";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label2.Location = new System.Drawing.Point(38, 362);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(97, 19);
+            this.label2.TabIndex = 55;
+            this.label2.Text = "Precio Niño";
             // 
             // button8
             // 
@@ -236,7 +290,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.button8.Location = new System.Drawing.Point(80, 477);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(237, 41);
-            this.button8.TabIndex = 54;
+            this.button8.TabIndex = 51;
             this.button8.Text = "Guardar";
             this.button8.UseVisualStyleBackColor = false;
             this.button8.Click += new System.EventHandler(this.button8_Click);
@@ -262,9 +316,10 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.button1.Location = new System.Drawing.Point(237, 6);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(91, 33);
-            this.button1.TabIndex = 37;
+            this.button1.TabIndex = 54;
             this.button1.Text = "Regresar";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel3
             // 
@@ -275,7 +330,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.panel3.Controls.Add(this.label1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 28);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(669, 562);
             this.panel3.TabIndex = 56;
@@ -305,7 +360,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.button6.Location = new System.Drawing.Point(31, 463);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(119, 39);
-            this.button6.TabIndex = 36;
+            this.button6.TabIndex = 52;
             this.button6.Text = "Editar";
             this.button6.UseVisualStyleBackColor = false;
             this.button6.Click += new System.EventHandler(this.button3_Click);
@@ -318,7 +373,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.button7.Location = new System.Drawing.Point(171, 463);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(111, 39);
-            this.button7.TabIndex = 35;
+            this.button7.TabIndex = 53;
             this.button7.Text = "Eliminar";
             this.button7.UseVisualStyleBackColor = false;
             this.button7.Click += new System.EventHandler(this.button7_Click);
@@ -342,65 +397,11 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1037, 28);
             this.panel1.TabIndex = 54;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(38, 362);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(97, 19);
-            this.label2.TabIndex = 55;
-            this.label2.Text = "Precio Niño";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label11.Location = new System.Drawing.Point(38, 399);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(111, 19);
-            this.label11.TabIndex = 56;
-            this.label11.Text = "Precio Adulto";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label12.Location = new System.Drawing.Point(38, 435);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(126, 19);
-            this.label12.TabIndex = 57;
-            this.label12.Text = "Precio 3ra Edad";
-            // 
-            // txtNino
-            // 
-            this.txtNino.Location = new System.Drawing.Point(196, 360);
-            this.txtNino.Name = "txtNino";
-            this.txtNino.Size = new System.Drawing.Size(121, 20);
-            this.txtNino.TabIndex = 58;
-            // 
-            // txtAdulto
-            // 
-            this.txtAdulto.Location = new System.Drawing.Point(196, 399);
-            this.txtAdulto.Name = "txtAdulto";
-            this.txtAdulto.Size = new System.Drawing.Size(121, 20);
-            this.txtAdulto.TabIndex = 59;
-            // 
-            // txt3ra
-            // 
-            this.txt3ra.Location = new System.Drawing.Point(196, 434);
-            this.txt3ra.Name = "txt3ra";
-            this.txt3ra.Size = new System.Drawing.Size(121, 20);
-            this.txt3ra.TabIndex = 60;
             // 
             // Horarios
             // 

@@ -574,5 +574,10 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                 MessageBox.Show("Por favor, selecciona un registro para eliminar.");
             }
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
     }
 }

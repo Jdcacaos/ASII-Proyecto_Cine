@@ -87,7 +87,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // PeliculaPanel
             // 
             this.PeliculaPanel.Location = new System.Drawing.Point(47, 147);
-            this.PeliculaPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.PeliculaPanel.Margin = new System.Windows.Forms.Padding(2);
             this.PeliculaPanel.Name = "PeliculaPanel";
             this.PeliculaPanel.Size = new System.Drawing.Size(1305, 557);
             this.PeliculaPanel.TabIndex = 10;
@@ -95,11 +95,11 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(81, 55);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(88, 49);
             this.button1.TabIndex = 11;
-            this.button1.Text = "button1";
+            this.button1.Text = "Regresar";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -107,7 +107,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1384, 737);
+            this.ClientSize = new System.Drawing.Size(1370, 737);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.PeliculaPanel);
             this.Controls.Add(this.btnQF);

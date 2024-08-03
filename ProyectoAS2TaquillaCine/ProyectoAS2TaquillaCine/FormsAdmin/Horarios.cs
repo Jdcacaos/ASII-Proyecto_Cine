@@ -197,41 +197,47 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
         //Agregar Datos
         private bool datosCorrectos()
         {
-            if (cb_Pelicula.Text.Trim().Equals(""))
+            // Verificar que todos los ComboBox tengan una selección
+            if (cb_Pelicula.SelectedItem == null)
             {
                 MessageBox.Show("Seleccione una Pelicula");
                 return false;
             }
 
-            if (cb_id_Sala.Text.Trim().Equals(""))
+            if (cb_id_Sala.SelectedItem == null)
             {
                 MessageBox.Show("Seleccione una Sala");
                 return false;
             }
 
-            if (cbEstado.Text.Trim().Equals(""))
+            if (cbEstado.SelectedItem == null)
             {
                 MessageBox.Show("Seleccione un estado");
                 return false;
             }
-            if (txtNino.Text.Trim().Equals(""))
+
+            // Verificar que todos los TextBox no estén vacíos
+            if (string.IsNullOrWhiteSpace(txtNino.Text))
             {
-                MessageBox.Show("Seleccione un precio");
+                MessageBox.Show("Ingrese el precio para niños");
                 return false;
             }
-            if (txtAdulto.Text.Trim().Equals(""))
+
+            if (string.IsNullOrWhiteSpace(txtAdulto.Text))
             {
-                MessageBox.Show("Seleccione un precio");
+                MessageBox.Show("Ingrese el precio para adultos");
                 return false;
             }
-            if (txt3ra.Text.Trim().Equals(""))
+
+            if (string.IsNullOrWhiteSpace(txt3ra.Text))
             {
-                MessageBox.Show("Seleccione un precio");
+                MessageBox.Show("Ingrese el precio para tercera edad");
                 return false;
             }
 
             return true;
         }
+
 
         //Editar
         private object ObtenerValorCelda(string nombreColumna)
@@ -252,10 +258,9 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
         {
             try
             {
-                if (cb_Pelicula.SelectedItem == null || cb_id_Sala == null || cbEstado.SelectedItem == null || txt3ra.Text == null || txtNino.Text == null || txtAdulto.Text == null)
+                if (!datosCorrectos())
                 {
-                    MessageBox.Show("Por favor, actualiza todos los datos");
-                    return;
+                    return; // No proceder si los datos no son correctos
                 }
 
                 // Obtener valores del ComboBox
@@ -301,23 +306,12 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                     llenar_tabla();
                 }
             }
-            catch (NullReferenceException ex)
-            {
-                MessageBox.Show("Se ha producido un error: " + ex.Message);
-            }
-            catch (FormatException ex)
-            {
-                MessageBox.Show("Formato de datos incorrecto: " + ex.Message);
-            }
-            catch (MySqlException ex)
-            {
-                MessageBox.Show("Error de base de datos: " + ex.Message);
-            }
             catch (Exception ex)
             {
                 MessageBox.Show("Se ha producido un error: " + ex.Message);
             }
         }
+
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -379,15 +373,13 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
 
         private void button8_Click(object sender, EventArgs e)
         {
-
             if (!datosCorrectos())
             {
-                return;
+                return; // No proceder si los datos no son correctos
             }
 
             int idPelicula = ((KeyValuePair<int, string>)cb_Pelicula.SelectedItem).Key;
             int idSala = ((KeyValuePair<int, int>)cb_id_Sala.SelectedItem).Key;
-
 
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
@@ -422,6 +414,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
 
             llenar_tabla();
         }
+
 
         private void button6_Click(object sender, EventArgs e)
         {
@@ -479,6 +472,11 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
         }
     }
 

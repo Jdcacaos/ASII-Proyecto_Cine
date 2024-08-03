@@ -72,7 +72,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1061, 28);
             this.panel1.TabIndex = 34;
@@ -102,7 +102,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.panel2.Controls.Add(this.button4);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel2.Location = new System.Drawing.Point(693, 28);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(368, 683);
             this.panel2.TabIndex = 35;
@@ -137,17 +137,18 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             "Activo",
             "Inactivo"});
             this.cbEstado.Location = new System.Drawing.Point(184, 520);
-            this.cbEstado.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbEstado.Margin = new System.Windows.Forms.Padding(2);
             this.cbEstado.Name = "cbEstado";
             this.cbEstado.Size = new System.Drawing.Size(121, 21);
-            this.cbEstado.TabIndex = 68;
+            this.cbEstado.TabIndex = 7;
             // 
             // txtContrasenaVer
             // 
             this.txtContrasenaVer.Location = new System.Drawing.Point(184, 439);
             this.txtContrasenaVer.Name = "txtContrasenaVer";
+            this.txtContrasenaVer.PasswordChar = '*';
             this.txtContrasenaVer.Size = new System.Drawing.Size(121, 20);
-            this.txtContrasenaVer.TabIndex = 67;
+            this.txtContrasenaVer.TabIndex = 5;
             // 
             // label3
             // 
@@ -177,14 +178,15 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.cbCargo.Location = new System.Drawing.Point(184, 325);
             this.cbCargo.Name = "cbCargo";
             this.cbCargo.Size = new System.Drawing.Size(121, 21);
-            this.cbCargo.TabIndex = 64;
+            this.cbCargo.TabIndex = 2;
             // 
             // txtContrasena
             // 
             this.txtContrasena.Location = new System.Drawing.Point(184, 401);
             this.txtContrasena.Name = "txtContrasena";
+            this.txtContrasena.PasswordChar = '*';
             this.txtContrasena.Size = new System.Drawing.Size(121, 20);
-            this.txtContrasena.TabIndex = 63;
+            this.txtContrasena.TabIndex = 4;
             // 
             // label9
             // 
@@ -202,7 +204,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.txtTelefono.Location = new System.Drawing.Point(184, 480);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(121, 20);
-            this.txtTelefono.TabIndex = 61;
+            this.txtTelefono.TabIndex = 6;
             // 
             // label8
             // 
@@ -220,7 +222,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.txtEmail.Location = new System.Drawing.Point(184, 367);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(121, 20);
-            this.txtEmail.TabIndex = 59;
+            this.txtEmail.TabIndex = 3;
             // 
             // label4
             // 
@@ -238,7 +240,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.txtApellido.Location = new System.Drawing.Point(184, 286);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(121, 20);
-            this.txtApellido.TabIndex = 57;
+            this.txtApellido.TabIndex = 1;
             // 
             // label5
             // 
@@ -256,7 +258,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.txtnombre.Location = new System.Drawing.Point(184, 241);
             this.txtnombre.Name = "txtnombre";
             this.txtnombre.Size = new System.Drawing.Size(121, 20);
-            this.txtnombre.TabIndex = 55;
+            this.txtnombre.TabIndex = 0;
             // 
             // label7
             // 
@@ -292,7 +294,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.button5.Location = new System.Drawing.Point(60, 566);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(237, 41);
-            this.button5.TabIndex = 38;
+            this.button5.TabIndex = 8;
             this.button5.Text = "Guardar";
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
@@ -308,6 +310,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.button4.TabIndex = 37;
             this.button4.Text = "Regresar";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // panel3
             // 
@@ -318,7 +321,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.panel3.Controls.Add(this.label1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 28);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(693, 683);
             this.panel3.TabIndex = 36;
@@ -345,7 +348,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.button3.Location = new System.Drawing.Point(31, 584);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(119, 39);
-            this.button3.TabIndex = 36;
+            this.button3.TabIndex = 9;
             this.button3.Text = "Editar";
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
@@ -358,7 +361,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.button2.Location = new System.Drawing.Point(171, 584);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(111, 39);
-            this.button2.TabIndex = 35;
+            this.button2.TabIndex = 10;
             this.button2.Text = "Eliminar";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click_1);
@@ -369,10 +372,10 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.label1.Font = new System.Drawing.Font("Arial Narrow", 54F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label1.Location = new System.Drawing.Point(221, 40);
+            this.label1.Location = new System.Drawing.Point(191, 39);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(282, 85);
+            this.label1.Size = new System.Drawing.Size(313, 85);
             this.label1.TabIndex = 32;
             this.label1.Text = "CINEHUB";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;

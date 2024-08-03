@@ -54,12 +54,19 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //Cadena de conexión a tu base de datos MySQL
+            // Cadena de conexión a tu base de datos MySQL
             string connectionString = DatabaseConfig.ConnectionString;
 
             // Obtener los valores ingresados por el usuario
             string email = txtuser.Text;
             string contrasena = txtContrasena.Text;
+
+            // Validar que el correo tenga el sufijo @gmail.com
+            if (!email.EndsWith("@gmail.com"))
+            {
+                MessageBox.Show("El correo electrónico debe tener el sufijo @gmail.com.", "Error de login", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
             // Crear una conexión a la base de datos
             using (MySqlConnection connection = new MySqlConnection(connectionString))
@@ -86,16 +93,13 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
                             MessageBox.Show("Inicio de sesión exitoso.", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             // Aquí puedes abrir el formulario principal de tu aplicación o proceder según tu lógica
                             // Ejemplo:
-                            // Crear una instancia del formulario LoginCliente
                             FormsCliente.CarteleraNueva CarteleraForm = new FormsCliente.CarteleraNueva();
 
-                            // Mostrar el formulario LoginCliente
+                            // Mostrar el formulario
                             CarteleraForm.Show();
 
                             // Opcional: Cerrar o esconder el formulario actual
-                            this.Hide(); // Si quieres ocultar el formulario actual
-                                         // this.Close(); // Si quieres cerrar el formulario actual
-                       
+                            this.Hide();
                         }
                         else
                         {
@@ -110,6 +114,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
                 }
             }
         }
+
 
         private void mostrarCon_CheckedChanged(object sender, EventArgs e)
         {
