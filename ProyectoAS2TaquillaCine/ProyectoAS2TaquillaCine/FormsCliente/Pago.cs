@@ -14,25 +14,28 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
 {
     public partial class Pago : Form
     {
-
+        private List<(char fila, int numero)> asientosSeleccionados;
         private int Venta { get; set; }
         string connectionString = DatabaseConfig.ConnectionString;
         private Timer timer; 
         private int tiempoRestante; 
         private int idCliente;
-        public Pago(int TotalVenta, int idCliente)
+        private int descu;
+        private int idproyeccion;
+        public Pago(int TotalVenta, int idCliente, List<(char fila, int numero)> asientos, int idproye, int desc)
         {
             InitializeComponent();
             LlenarComboEmpleados();
             Llenar_ComboBox_ano();
             Llenar_ComboBox_mes();
             txtCorreo.TextChanged += TxtCorreo_TextChanged;
-
+            asientosSeleccionados = asientos;
             // Inicializa el Timer
             timer = new Timer();
             timer.Interval = 1000; // Intervalo en milisegundos (1000 ms = 1 segundo)
             timer.Tick += new EventHandler(timer_Tick);
 
+            descu = desc;
             // Configura la ProgressBar
             pb1.Maximum = 500; // Puedes ajustar el valor máximo según tus necesidades
             pb1.Value = 500;
@@ -44,11 +47,58 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // Inicia el Timer
             timer.Start();
 
+            idproyeccion = idproye;
             this.idCliente = idCliente;
             Venta = TotalVenta;
             
 
         }
+        private int ObtenerIDAsiento(char fila, int numero)
+        {
+            int idAsiento = -1;
+
+            using (MySqlConnection conexion = new MySqlConnection(connectionString))
+            {
+                conexion.Open();
+                string query = "SELECT ID_Asiento FROM tbl_asiento WHERE Fila = @fila AND Numero = @numero";
+                MySqlCommand cmd = new MySqlCommand(query, conexion);
+                cmd.Parameters.AddWithValue("@fila", fila);
+                cmd.Parameters.AddWithValue("@numero", numero);
+
+                var result = cmd.ExecuteScalar();
+                if (result != null)
+                {
+                    idAsiento = Convert.ToInt32(result);
+                }
+            }
+
+            return idAsiento;
+        }
+        public void InsertarAsientosSeleccionados()
+        {
+            using (MySqlConnection conexion = new MySqlConnection(connectionString))
+            {
+                conexion.Open();
+                MySqlCommand cmd = conexion.CreateCommand();
+
+                foreach (var asiento in asientosSeleccionados)
+                {
+                    cmd.CommandText = "INSERT INTO tbl_reservacion (Fk_ID_Proyeccion, Fk_ID_cliente, Fk_ID_Asiento, precio, descuento) " +
+                                      "VALUES (@proyeccionId, @clienteId, @asientoId, @precio, @descuento)";
+                    cmd.Parameters.Clear();
+                    cmd.Parameters.AddWithValue("@proyeccionId", idproyeccion);
+                    cmd.Parameters.AddWithValue("@clienteId", idCliente);
+                    cmd.Parameters.AddWithValue("@asientoId", ObtenerIDAsiento(asiento.fila, asiento.numero));
+                    cmd.Parameters.AddWithValue("@precio", Venta-descu); // Ejemplo de precio
+                    cmd.Parameters.AddWithValue("@descuento", descu); // Ejemplo de descuento
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
+
+        
+        
 
         private void Pago_Load(object sender, EventArgs e)
         {
@@ -225,6 +275,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
 
         private void btnPagar_Click(object sender, EventArgs e)
         {
+            InsertarAsientosSeleccionados();
             // Obtener los valores del formulario
             string numeroTarjeta = txtTj.Text;
             string mesExpiracion = cbmes.SelectedItem.ToString();

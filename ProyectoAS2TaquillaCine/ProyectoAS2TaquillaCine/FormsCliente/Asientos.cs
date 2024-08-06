@@ -1,13 +1,9 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ProyectoAS2TaquillaCine.FormsCliente
@@ -24,7 +20,9 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
         private int totalventa;
         private int idproye;
         private int idCliente;
-        public Asientos(int id, int total, int idproyeccion, int idcliente)
+        private int descu;
+        private List<(char fila, int numero)> asientosSeleccionadosList = new List<(char fila, int numero)>(); // Lista de asientos seleccionados
+        public Asientos(int id, int total, int idproyeccion, int idcliente, int desc)
         {
             InitializeComponent();
             idCliente = idcliente;
@@ -35,6 +33,8 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             timer = new Timer();
             timer.Interval = 1000; // 1 segundo
             timer.Tick += Tick;
+
+            descu = desc;
 
             // Asignar el mismo método a todos los botones
             btnA1.Click += Asiento_Click;
@@ -119,7 +119,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             btnI10.Click += Asiento_Click;
 
 
-            lbl_totalventa.Text = Convert.ToString(totalventa);
+            lbl_totalventa.Text = Convert.ToString(totalventa + descu);
         }
 
         private void IniciarCronometro(int segundos)
@@ -169,6 +169,27 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
                 this.Close(); // Opcional: cierra el formulario actual si ya no es necesario
             }
         }
+        private int ObtenerIDAsiento(char fila, int numero)
+        {
+            int idAsiento = -1;
+
+            using (MySqlConnection conexion = new MySqlConnection(connectionString))
+            {
+                conexion.Open();
+                string query = "SELECT ID_Asiento FROM tbl_asiento WHERE Fila = @fila AND Numero = @numero";
+                MySqlCommand cmd = new MySqlCommand(query, conexion);
+                cmd.Parameters.AddWithValue("@fila", fila);
+                cmd.Parameters.AddWithValue("@numero", numero);
+
+                var result = cmd.ExecuteScalar();
+                if (result != null)
+                {
+                    idAsiento = Convert.ToInt32(result);
+                }
+            }
+
+            return idAsiento;
+        }
 
         private void Asiento_Click(object sender, EventArgs e)
         {
@@ -177,6 +198,8 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // No hacer nada si el botón está deshabilitado (asiento ocupado)
             if (!btn.Enabled)
                 return;
+            char fila = btn.Name[3]; // Asumiendo que el nombre del botón sigue el formato btnA1, btnB2, etc.
+            int numero = int.Parse(btn.Name.Substring(4));
 
             // Alternar el color de los botones que no son rojos
             if (btn.BackColor == Color.Lime)
@@ -185,12 +208,13 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
                 {
                     btn.BackColor = Color.DarkBlue;
                     asientosSeleccionados++;
+                    asientosSeleccionadosList.Add((fila, numero));
                 }
                 else
                 {
                     MessageBox.Show("Has alcanzado el número máximo de asientos seleccionados.");
                     btn.BackColor = Color.Lime;
-            
+
                 }
 
             }
@@ -198,9 +222,15 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             {
                 btn.BackColor = Color.Lime;
                 asientosSeleccionados--;
+                asientosSeleccionadosList.Remove((fila, numero));
             }
 
 
+        }
+
+        public List<(char fila, int numero)> ObtenerAsientosSeleccionados()
+        {
+            return asientosSeleccionadosList;
         }
 
         private void label15_Click(object sender, EventArgs e)
@@ -215,13 +245,14 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             timer.Stop();
             this.Close();
         }
-        
+
 
         private void Asientos_Load_1(object sender, EventArgs e)
         {
             IniciarCronometro(60);
             label25.Text = TotalAsientos.ToString();
-
+            lbl_descuento.Text = Convert.ToString(descu);
+            lbl_totalC.Text = Convert.ToString(totalventa);
             using (MySqlConnection conexion = new MySqlConnection(connectionString))
             {
                 try
@@ -280,7 +311,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
 
                     reader3.Close();
                 }
-               
+
                 catch (Exception ex)
                 {
                     MessageBox.Show("Error: " + ex.Message);
@@ -360,10 +391,20 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
 
         private void button95_Click(object sender, EventArgs e)
         {
-            FormsCliente.Pago formPago = new FormsCliente.Pago(totalventa, idCliente);
+            List<(char fila, int numero)> asientosSeleccionados = ObtenerAsientosSeleccionados();
+            foreach (var asiento in asientosSeleccionados)
+            {
+                Console.WriteLine($"Fila: {asiento.fila}, Número: {asiento.numero}");
+            }
+            FormsCliente.Pago formPago = new FormsCliente.Pago(totalventa-descu, idCliente, asientosSeleccionados, idproye, descu);
             formPago.Show();
             timer.Stop();
             this.Hide();
+        }
+
+        private void lbl_totalventa_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

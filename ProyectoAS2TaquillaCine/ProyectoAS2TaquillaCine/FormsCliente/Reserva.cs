@@ -22,6 +22,11 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
 
         public int totalventa { get; set; }
 
+        private int precioniño;
+        private int precioadulto;
+        private int precioterceraedad;
+        private int descuento;
+
         public Reserva(int id, int idCliente)
         {
             InitializeComponent();
@@ -160,6 +165,19 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
         private void sumar(TextBox textBox)
         {
             int valor = Convert.ToInt16(textBox.Text);
+
+            if (valor >= 5)
+            {
+                descuento = 10;
+            }
+            else if (valor >= 8)
+            {
+                descuento = 20;
+            }
+            else if (valor == 10)
+            {
+                descuento = 30;
+            }
             if (valor < 10)
             {
                 valor++;
@@ -314,9 +332,9 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             int totalAsientos = Convert.ToInt32(textBox1.Text) + Convert.ToInt32(textBox2.Text) + Convert.ToInt32(textBox3.Text);
             totalventa = Convert.ToInt32(label16.Text);
             int idProyeccion = ObtenerIdProyeccion(pelicula, comboBox1.SelectedItem.ToString(), comboBox2.SelectedItem.ToString());
-            FormsCliente.Asientos formAsientos = new FormsCliente.Asientos(pelicula, totalventa, idProyeccion, idCliente);
+            FormsCliente.Asientos formAsientos = new FormsCliente.Asientos(pelicula, totalventa, idProyeccion, idCliente, descuento);
             formAsientos.TotalAsientos = totalAsientos;
-            FormsCliente.Pago formPago = new FormsCliente.Pago(totalventa, idCliente);
+          
 
             formAsientos.Show();
             this.Hide();
