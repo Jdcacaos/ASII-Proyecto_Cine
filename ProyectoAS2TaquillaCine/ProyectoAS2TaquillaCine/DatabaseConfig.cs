@@ -3,7 +3,7 @@
     public static class DatabaseConfig
     {
 
-        public static string ConnectionString = "server=localhost;database=Cine;user=root;password=root;";
+        public static string ConnectionString = "server=localhost;database=Cine;user=root;password=;";
 
     }
 

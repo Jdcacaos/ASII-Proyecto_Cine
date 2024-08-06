@@ -17,7 +17,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
 
         private void AgregarEmpleado_Load(object sender, EventArgs e)
         {
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgv_empleados.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             MySqlConnection conexionDB;
             DataTable dataTable = new DataTable();
             MySqlDataReader resultado;
@@ -43,8 +43,8 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
 
 
                 // Asignar el DataTable al DataGridView
-                dataGridView1.DataSource = dataTable;
-                dataGridView1.Columns["FK_ID_Cargo"].Visible = false;
+                dgv_empleados.DataSource = dataTable;
+                dgv_empleados.Columns["FK_ID_Cargo"].Visible = false;
             }
             catch (Exception ex)
             {
@@ -65,14 +65,14 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                     {
                         using (MySqlDataReader reader = command.ExecuteReader())
                         {
-                            cbCargo.Items.Clear();
+                            cb_cargo.Items.Clear();
 
                             while (reader.Read())
                             {
                                 int idCargo = reader.GetInt32("ID_Cargo");
                                 string nombre = reader.GetString("Nombre");
 
-                                cbCargo.Items.Add(new KeyValuePair<int, string>(idCargo, nombre));
+                                cb_cargo.Items.Add(new KeyValuePair<int, string>(idCargo, nombre));
                             }
                         }
                     }
@@ -83,8 +83,8 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                 }
             }
 
-            cbCargo.DisplayMember = "Value";
-            cbCargo.ValueMember = "Key";
+            cb_cargo.DisplayMember = "Value";
+            cb_cargo.ValueMember = "Key";
         }
 
 
@@ -93,10 +93,10 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
         public AgregarEmpleado()
         {
             InitializeComponent();
-            timer1 = new Timer();
-            timer1.Interval = 1000; // Intervalo en milisegundos (1000 ms = 1 segundo)
-            timer1.Tick += new EventHandler(timer1_Tick);
-            timer1.Start(); // Iniciar el Timer
+            tmr_timer1 = new Timer();
+            tmr_timer1.Interval = 1000; // Intervalo en milisegundos (1000 ms = 1 segundo)
+            tmr_timer1.Tick += new EventHandler(timer1_Tick);
+            tmr_timer1.Start(); // Iniciar el Timer
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -107,51 +107,51 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
         }
         private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            if (dataGridView1.SelectedCells.Count > 0)
+            if (dgv_empleados.SelectedCells.Count > 0)
             {
-                int selectedRowIndex = dataGridView1.SelectedCells[0].RowIndex;
-                DataGridViewRow selectedRow = dataGridView1.Rows[selectedRowIndex];
+                int selectedRowIndex = dgv_empleados.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = dgv_empleados.Rows[selectedRowIndex];
 
                 // Asignar valores a los TextBox, manejando posibles valores nulos
-                txtnombre.Text = Convert.ToString(selectedRow.Cells["Nombre"].Value);
-                txtApellido.Text = Convert.ToString(selectedRow.Cells["Apellido"].Value);
-                txtEmail.Text = Convert.ToString(selectedRow.Cells["Email"].Value);
-                txtContrasena.Text = Convert.ToString(selectedRow.Cells["Contrasena"].Value);
-                txtTelefono.Text = Convert.ToString(selectedRow.Cells["Telefono"].Value);
+                txtbx_nombre.Text = Convert.ToString(selectedRow.Cells["Nombre"].Value);
+                txtbx_apellido.Text = Convert.ToString(selectedRow.Cells["Apellido"].Value);
+                txtbx_email.Text = Convert.ToString(selectedRow.Cells["Email"].Value);
+                txtbx_contrasena.Text = Convert.ToString(selectedRow.Cells["Contrasena"].Value);
+                txtbx_telefono.Text = Convert.ToString(selectedRow.Cells["Telefono"].Value);
 
                 // Obtener el valor del cargo y estado
                 var cargoId = Convert.ToInt32(selectedRow.Cells["FK_ID_Cargo"].Value);
                 var estado = Convert.ToString(selectedRow.Cells["Estado_tbl_empleado"].Value);
 
                 // Buscar y seleccionar el valor en el ComboBox de cargo
-                foreach (var item in cbCargo.Items)
+                foreach (var item in cb_cargo.Items)
                 {
                     if (item is KeyValuePair<int, string> keyValuePair && keyValuePair.Key == cargoId)
                     {
-                        cbCargo.SelectedItem = keyValuePair;
+                        cb_cargo.SelectedItem = keyValuePair;
                         break;
                     }
                 }
 
                 // Asignar el valor del estado al ComboBox
-                cbEstado.SelectedItem = estado;
+                cb_estadoEmp.SelectedItem = estado;
             }
         }
         private void button1_Click(object sender, EventArgs e)
         {
 
-            if (txtApellido.Text=="" || txtContrasena.Text=="" || txtContrasenaVer.Text=="" || txtEmail.Text=="" || txtnombre.Text=="" || txtTelefono == null || cbCargo.Text=="" || cbEstado.Text=="") 
+            if (txtbx_apellido.Text=="" || txtbx_contrasena.Text=="" || txtbx_confContra.Text=="" || txtbx_email.Text=="" || txtbx_nombre.Text=="" || txtbx_telefono == null || cb_cargo.Text=="" || cb_estadoEmp.Text=="") 
             {
                 MessageBox.Show("Hay campos vacios, LLENE TODOS LOS CAMPOS", "Error de llenado de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            if (txtContrasena.Text != txtContrasenaVer.Text)
+            if (txtbx_contrasena.Text != txtbx_confContra.Text)
             {
                 MessageBox.Show("Las contraseñas no coinciden. Por favor, verifícalas.", "Error de confirmación de contraseña", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            int idCargo = ((KeyValuePair<int, string>)cbCargo.SelectedItem).Key;
+            int idCargo = ((KeyValuePair<int, string>)cb_cargo.SelectedItem).Key;
 
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
@@ -164,13 +164,13 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
 
                     using (MySqlCommand command = new MySqlCommand(query, connection))
                     {
-                        command.Parameters.AddWithValue("@Nombre", txtnombre.Text);
-                        command.Parameters.AddWithValue("@Apellido", txtApellido.Text);
+                        command.Parameters.AddWithValue("@Nombre", txtbx_nombre.Text);
+                        command.Parameters.AddWithValue("@Apellido", txtbx_apellido.Text);
                         command.Parameters.AddWithValue("@Cargo", idCargo);
-                        command.Parameters.AddWithValue("@Email", txtEmail.Text);
-                        command.Parameters.AddWithValue("@Contrasena", txtContrasena.Text);
-                        command.Parameters.AddWithValue("@Telefono", txtTelefono.Text);
-                        command.Parameters.AddWithValue("@Estado", cbEstado.Text);
+                        command.Parameters.AddWithValue("@Email", txtbx_email.Text);
+                        command.Parameters.AddWithValue("@Contrasena", txtbx_contrasena.Text);
+                        command.Parameters.AddWithValue("@Telefono", txtbx_telefono.Text);
+                        command.Parameters.AddWithValue("@Estado", cb_estadoEmp.Text);
 
                         command.ExecuteNonQuery();
                     }
@@ -182,8 +182,8 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                     MessageBox.Show("Error al registrar el empleado: " + ex.Message);
                 }
             }
-            llenar_tabla();
-            vaciar();
+            PllenarTabla();
+            Pvaciar();
         }
 
 
@@ -191,19 +191,19 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
         {
 
         }
-        public void vaciar() {
-            txtApellido.Text = "";
-            txtContrasena.Text = "";
-            txtContrasenaVer.Text = "";
-            txtEmail.Text = "";
-            txtnombre.Text="";
-            txtTelefono.Text = "";
-            cbCargo.Text = "";
-            cbEstado.Text = "";
+        public void Pvaciar() {
+            txtbx_apellido.Text = "";
+            txtbx_contrasena.Text = "";
+            txtbx_confContra.Text = "";
+            txtbx_email.Text = "";
+            txtbx_nombre.Text="";
+            txtbx_telefono.Text = "";
+            cb_cargo.Text = "";
+            cb_estadoEmp.Text = "";
         }
 
 
-        public void llenar_tabla()
+        public void PllenarTabla()
         {
             MySqlConnection conexionDB;
             DataTable dataTable = new DataTable();
@@ -230,8 +230,8 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
 
 
                 // Asignar el DataTable al DataGridView
-                dataGridView1.DataSource = dataTable;
-                dataGridView1.Columns["FK_ID_Cargo"].Visible = false;
+                dgv_empleados.DataSource = dataTable;
+                dgv_empleados.Columns["FK_ID_Cargo"].Visible = false;
             }
             catch (Exception ex)
             {
@@ -243,10 +243,10 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
 
         private void btn_Eliminar_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedCells.Count > 0)
+            if (dgv_empleados.SelectedCells.Count > 0)
             {
-                int selectedRowIndex = dataGridView1.SelectedCells[0].RowIndex;
-                DataGridViewRow selectedRow = dataGridView1.Rows[selectedRowIndex];
+                int selectedRowIndex = dgv_empleados.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = dgv_empleados.Rows[selectedRowIndex];
                 int idEmpleado = Convert.ToInt32(selectedRow.Cells["ID_Empleado"].Value);
 
                 DialogResult dialogResult = MessageBox.Show("¿Estás seguro de que deseas eliminar este registro?", "Confirmar eliminación", MessageBoxButtons.YesNo);
@@ -279,8 +279,8 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                     }
 
                     // Actualizar el DataGridView
-                    llenar_tabla();
-                    vaciar();
+                    PllenarTabla();
+                    Pvaciar();
                 }
             }
             else
@@ -297,9 +297,9 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
 
         private object ObtenerValorCelda(string nombreColumna)
         {
-            if (dataGridView1.SelectedRows.Count > 0)
+            if (dgv_empleados.SelectedRows.Count > 0)
             {
-                DataGridViewRow filaSeleccionada = dataGridView1.SelectedRows[0];
+                DataGridViewRow filaSeleccionada = dgv_empleados.SelectedRows[0];
                 return filaSeleccionada.Cells[nombreColumna].Value;
             }
             else
@@ -318,7 +318,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                 {
 
                     // Obtener valores del ComboBox
-                    int cargo = ((KeyValuePair<int, string>)cbCargo.SelectedItem).Key;
+                    int cargo = ((KeyValuePair<int, string>)cb_cargo.SelectedItem).Key;
 
                     // Obtener valor de la celda
                     Object obtener = ObtenerValorCelda("ID_Empleado");
@@ -336,13 +336,13 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                         connection.Open();
                         string consulta = "UPDATE tbl_empleado SET Nombre = @Nombre, Apellido = @Apellido, FK_ID_Cargo = @FK_ID_Cargo, Email = @Email, Telefono = @Telefono, Estado_tbl_empleado = @Estado, Contrasena = @Contrasena WHERE ID_Empleado = @ID_Empleado";
                         MySqlCommand comando = new MySqlCommand(consulta, connection);
-                        comando.Parameters.AddWithValue("@Nombre", txtnombre.Text);
-                        comando.Parameters.AddWithValue("@Apellido", txtApellido.Text);
+                        comando.Parameters.AddWithValue("@Nombre", txtbx_nombre.Text);
+                        comando.Parameters.AddWithValue("@Apellido", txtbx_apellido.Text);
                         comando.Parameters.AddWithValue("@FK_ID_Cargo", cargo);
-                        comando.Parameters.AddWithValue("@Email", txtEmail.Text);
-                        comando.Parameters.AddWithValue("@Telefono", txtTelefono.Text);
-                        comando.Parameters.AddWithValue("@Estado", cbEstado.SelectedItem.ToString());
-                        comando.Parameters.AddWithValue("@Contrasena", txtContrasena.Text);
+                        comando.Parameters.AddWithValue("@Email", txtbx_email.Text);
+                        comando.Parameters.AddWithValue("@Telefono", txtbx_telefono.Text);
+                        comando.Parameters.AddWithValue("@Estado", cb_estadoEmp.SelectedItem.ToString());
+                        comando.Parameters.AddWithValue("@Contrasena", txtbx_contrasena.Text);
                         comando.Parameters.AddWithValue("@ID_Empleado", ValorObtenido);
 
                         int cantidad = comando.ExecuteNonQuery();
@@ -354,8 +354,8 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                         {
                             MessageBox.Show("No se encontró el registro para modificar.");
                         }
-                        llenar_tabla();
-                        vaciar();
+                        PllenarTabla();
+                        Pvaciar();
                     }
                 }
                 catch (NullReferenceException ex)
@@ -389,7 +389,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             string dateTimeText = now.ToString("yyyy-MM-dd HH:mm:ss"); // Cambia el formato según tus necesidades
 
             // Establecer el texto del Label
-            Tiempo.Text = dateTimeText;
+            lb_tiempoSys.Text = dateTimeText;
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -407,18 +407,18 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
         private void button5_Click(object sender, EventArgs e)
         {
 
-            if (txtApellido.Text == "" || txtContrasena.Text == "" || txtContrasenaVer.Text == "" || txtEmail.Text == "" || txtnombre.Text == "" || txtTelefono == null || cbCargo.Text == "" || cbEstado.Text == "")
+            if (txtbx_apellido.Text == "" || txtbx_contrasena.Text == "" || txtbx_confContra.Text == "" || txtbx_email.Text == "" || txtbx_nombre.Text == "" || txtbx_telefono == null || cb_cargo.Text == "" || cb_estadoEmp.Text == "")
             {
                 MessageBox.Show("Hay campos vacios, LLENE TODOS LOS CAMPOS", "Error de llenado de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            if (txtContrasena.Text != txtContrasenaVer.Text)
+            if (txtbx_contrasena.Text != txtbx_confContra.Text)
             {
                 MessageBox.Show("Las contraseñas no coinciden. Por favor, verifícalas.", "Error de confirmación de contraseña", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            int idCargo = ((KeyValuePair<int, string>)cbCargo.SelectedItem).Key;
+            int idCargo = ((KeyValuePair<int, string>)cb_cargo.SelectedItem).Key;
 
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
@@ -431,13 +431,13 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
 
                     using (MySqlCommand command = new MySqlCommand(query, connection))
                     {
-                        command.Parameters.AddWithValue("@Nombre", txtnombre.Text);
-                        command.Parameters.AddWithValue("@Apellido", txtApellido.Text);
+                        command.Parameters.AddWithValue("@Nombre", txtbx_nombre.Text);
+                        command.Parameters.AddWithValue("@Apellido", txtbx_apellido.Text);
                         command.Parameters.AddWithValue("@Cargo", idCargo);
-                        command.Parameters.AddWithValue("@Email", txtEmail.Text);
-                        command.Parameters.AddWithValue("@Contrasena", txtContrasena.Text);
-                        command.Parameters.AddWithValue("@Telefono", txtTelefono.Text);
-                        command.Parameters.AddWithValue("@Estado", cbEstado.Text);
+                        command.Parameters.AddWithValue("@Email", txtbx_email.Text);
+                        command.Parameters.AddWithValue("@Contrasena", txtbx_contrasena.Text);
+                        command.Parameters.AddWithValue("@Telefono", txtbx_telefono.Text);
+                        command.Parameters.AddWithValue("@Estado", cb_estadoEmp.Text);
 
                         command.ExecuteNonQuery();
                     }
@@ -449,8 +449,8 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                     MessageBox.Show("Error al registrar el empleado: " + ex.Message);
                 }
             }
-            llenar_tabla();
-            vaciar();
+            PllenarTabla();
+            Pvaciar();
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
@@ -468,7 +468,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                 {
 
                     // Obtener valores del ComboBox
-                    int cargo = ((KeyValuePair<int, string>)cbCargo.SelectedItem).Key;
+                    int cargo = ((KeyValuePair<int, string>)cb_cargo.SelectedItem).Key;
 
                     // Obtener valor de la celda
                     Object obtener = ObtenerValorCelda("ID_Empleado");
@@ -486,13 +486,13 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                         connection.Open();
                         string consulta = "UPDATE tbl_empleado SET Nombre = @Nombre, Apellido = @Apellido, FK_ID_Cargo = @FK_ID_Cargo, Email = @Email, Telefono = @Telefono, Estado_tbl_empleado = @Estado, Contrasena = @Contrasena WHERE ID_Empleado = @ID_Empleado";
                         MySqlCommand comando = new MySqlCommand(consulta, connection);
-                        comando.Parameters.AddWithValue("@Nombre", txtnombre.Text);
-                        comando.Parameters.AddWithValue("@Apellido", txtApellido.Text);
+                        comando.Parameters.AddWithValue("@Nombre", txtbx_nombre.Text);
+                        comando.Parameters.AddWithValue("@Apellido", txtbx_apellido.Text);
                         comando.Parameters.AddWithValue("@FK_ID_Cargo", cargo);
-                        comando.Parameters.AddWithValue("@Email", txtEmail.Text);
-                        comando.Parameters.AddWithValue("@Telefono", txtTelefono.Text);
-                        comando.Parameters.AddWithValue("@Estado", cbEstado.SelectedItem.ToString());
-                        comando.Parameters.AddWithValue("@Contrasena", txtContrasena.Text);
+                        comando.Parameters.AddWithValue("@Email", txtbx_email.Text);
+                        comando.Parameters.AddWithValue("@Telefono", txtbx_telefono.Text);
+                        comando.Parameters.AddWithValue("@Estado", cb_estadoEmp.SelectedItem.ToString());
+                        comando.Parameters.AddWithValue("@Contrasena", txtbx_contrasena.Text);
                         comando.Parameters.AddWithValue("@ID_Empleado", ValorObtenido);
 
                         int cantidad = comando.ExecuteNonQuery();
@@ -504,8 +504,8 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                         {
                             MessageBox.Show("No se encontró el registro para modificar.");
                         }
-                        llenar_tabla();
-                        vaciar();
+                        PllenarTabla();
+                        Pvaciar();
                     }
                 }
                 catch (NullReferenceException ex)
@@ -529,10 +529,10 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
 
         private void button2_Click_1(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedCells.Count > 0)
+            if (dgv_empleados.SelectedCells.Count > 0)
             {
-                int selectedRowIndex = dataGridView1.SelectedCells[0].RowIndex;
-                DataGridViewRow selectedRow = dataGridView1.Rows[selectedRowIndex];
+                int selectedRowIndex = dgv_empleados.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = dgv_empleados.Rows[selectedRowIndex];
                 int idEmpleado = Convert.ToInt32(selectedRow.Cells["ID_Empleado"].Value);
 
                 DialogResult dialogResult = MessageBox.Show("¿Estás seguro de que deseas eliminar este registro?", "Confirmar eliminación", MessageBoxButtons.YesNo);
@@ -565,8 +565,8 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                     }
 
                     // Actualizar el DataGridView
-                    llenar_tabla();
-                    vaciar();
+                    PllenarTabla();
+                    Pvaciar();
                 }
             }
             else

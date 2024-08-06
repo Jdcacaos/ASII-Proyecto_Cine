@@ -146,12 +146,6 @@
     <Compile Include="FormsAdmin\MenuGeneral.Designer.cs">
       <DependentUpon>MenuGeneral.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormsAdmin\Peliculas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormsAdmin\Peliculas.Designer.cs">
-      <DependentUpon>Peliculas.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormsAdmin\Proveedor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -255,9 +249,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormsAdmin\MenuGeneral.resx">
       <DependentUpon>MenuGeneral.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormsAdmin\Peliculas.resx">
-      <DependentUpon>Peliculas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormsAdmin\Proveedor.resx">
       <DependentUpon>Proveedor.cs</DependentUpon>

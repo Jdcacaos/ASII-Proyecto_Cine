@@ -40,8 +40,8 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             string connectionString = DatabaseConfig.ConnectionString;
 
             // Obtener los valores ingresados por el usuario
-            string email = txtuser.Text;
-            string contrasena = txtContra.Text;
+            string email = txtbx_user.Text;
+            string contrasena = txtbx_contrasena.Text;
 
             // Validar que el correo tenga el sufijo @gmail.com
             if (!email.EndsWith("@gmail.com"))
@@ -98,15 +98,15 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBox1.Checked)
+            if (chb_mostrarCont.Checked)
             {
                 // Mostrar la contraseña
-                txtContra.PasswordChar = '\0'; // \0 es el carácter nulo, que muestra el texto plano
+                txtbx_contrasena.PasswordChar = '\0'; // \0 es el carácter nulo, que muestra el texto plano
             }
             else
             {
                 // Ocultar la contraseña
-                txtContra.PasswordChar = '*'; // O cualquier otro carácter de tu elección
+                txtbx_contrasena.PasswordChar = '*'; // O cualquier otro carácter de tu elección
             }
         }
     }
