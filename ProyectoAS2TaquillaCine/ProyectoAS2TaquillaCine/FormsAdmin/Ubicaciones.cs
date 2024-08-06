@@ -26,9 +26,12 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             DGV_Ubicaciones.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             // Configurar el Timer
             tm_tiempo = new Timer();
-            tm_tiempo.Interval = 1000; // 1000 ms = 1 segundo
+            tm_tiempo.Interval = 100; // 1000 ms = 1 segundo
             tm_tiempo.Tick += new EventHandler(this.TimerFechaHora_Tick);
             tm_tiempo.Start(); // Iniciar el Timer
+            groupBox2.Visible = GlobalSettings.IsAdmin;
+            button3.Visible = GlobalSettings.IsAdmin;
+            button6.Visible = GlobalSettings.IsAdmin;
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -437,6 +440,46 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtbxBuscar2_TextChanged(object sender, EventArgs e)
+        {
+            // Obtener el texto de búsqueda
+            string searchText = txtbxBuscar2.Text.Trim();
+            if (string.IsNullOrEmpty(searchText))
+            {
+                // Si el texto de búsqueda está vacío, no aplicar filtro
+                (DGV_Ubicaciones.DataSource as DataTable).DefaultView.RowFilter = string.Empty;
+                return;
+            }
+
+            // Crear una lista para las expresiones de filtro
+            List<string> filterExpressions = new List<string>();
+
+            // Obtener el DataTable
+            DataTable dataTable = DGV_Ubicaciones.DataSource as DataTable;
+
+            // Recorrer todas las columnas del DataTable
+            foreach (DataColumn column in dataTable.Columns)
+            {
+                // Excluir columnas que no sean de tipo texto
+                if (column.DataType == typeof(string))
+                {
+                    // Agregar expresión de filtro para la columna
+                    filterExpressions.Add($"[{column.ColumnName}] LIKE '%{searchText}%'");
+                }
+            }
+
+            // Unir todas las expresiones de filtro con el operador OR
+            string filterExpression = string.Join(" OR ", filterExpressions);
+
+            // Aplicar el filtro
+            (DGV_Ubicaciones.DataSource as DataTable).DefaultView.RowFilter = filterExpression;
         }
     }
 

@@ -25,7 +25,19 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
         {
             InitializeComponent();
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.CellFormatting += new DataGridViewCellFormattingEventHandler(dataGridView1_CellFormatting);
+            button3.Visible = GlobalSettings.IsAdmin;
+            button6.Visible = GlobalSettings.IsAdmin;
+            groupBox2.Visible = GlobalSettings.IsAdmin;
+            timer1 = new Timer();
+            timer1.Interval = 100; // Intervalo en milisegundos (1000 ms = 1 segundo)
+            timer1.Tick += new EventHandler(timer1_Tick);
+            timer1.Start(); // Iniciar el Timer
+            timer1.Tick += new EventHandler(timer1_Tick);
+
         }
+
+
 
 
         private void Peliculas_Load(object sender, EventArgs e)
@@ -210,8 +222,15 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
         }
 
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
+
+            if (dataGridView1.Columns[e.ColumnIndex].Name == "Titulo")
+            {
+                e.CellStyle.Font = new Font(dataGridView1.Font, FontStyle.Bold); // Aplicar negrita
+                e.CellStyle.BackColor = Color.LightYellow; // Opcional: color de fondo para hacer más visible
+                e.CellStyle.ForeColor = Color.Black;       // Opcional: color del texto
+            }
             if (dataGridView1.SelectedCells.Count > 0)
             {
                 int selectedRowIndex = dataGridView1.SelectedCells[0].RowIndex;
@@ -385,6 +404,19 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                 }
             }
         }
+
+        private void UpdateDateTimeLabel()
+        {
+            // Obtener la fecha y hora actuales
+            DateTime now = DateTime.Now;
+
+            // Formatear la fecha y hora como texto
+            string dateTimeText = now.ToString("yyyy-MM-dd HH:mm:ss"); // Cambia el formato según tus necesidades
+
+            // Establecer el texto del Label
+            label4.Text = dateTimeText;
+        }
+
 
         private Image RedimensionarImagen(Image imagenOriginal, int anchoDeseado, int altoDeseado)
         {
@@ -650,6 +682,46 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
         private void txtgenero_KeyPress(object sender, KeyPressEventArgs e)
         {
 
+        }
+
+        private void txtbxBuscar_TextChanged(object sender, EventArgs e)
+        {
+            // Obtener el texto de búsqueda
+            string searchText = txtbxBuscar.Text.Trim();
+            if (string.IsNullOrEmpty(searchText))
+            {
+                // Si el texto de búsqueda está vacío, no aplicar filtro
+                (dataGridView1.DataSource as DataTable).DefaultView.RowFilter = string.Empty;
+                return;
+            }
+
+            // Crear una lista para las expresiones de filtro
+            List<string> filterExpressions = new List<string>();
+
+            // Obtener el DataTable
+            DataTable dataTable = dataGridView1.DataSource as DataTable;
+
+            // Recorrer todas las columnas del DataTable
+            foreach (DataColumn column in dataTable.Columns)
+            {
+                // Excluir columnas que no sean de tipo texto
+                if (column.DataType == typeof(string))
+                {
+                    // Agregar expresión de filtro para la columna
+                    filterExpressions.Add($"[{column.ColumnName}] LIKE '%{searchText}%'");
+                }
+            }
+
+            // Unir todas las expresiones de filtro con el operador OR
+            string filterExpression = string.Join(" OR ", filterExpressions);
+
+            // Aplicar el filtro
+            (dataGridView1.DataSource as DataTable).DefaultView.RowFilter = filterExpression;
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            UpdateDateTimeLabel();
         }
     }
 }

@@ -68,7 +68,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.txtuser.Name = "txtuser";
             this.txtuser.Size = new System.Drawing.Size(394, 47);
             this.txtuser.TabIndex = 0;
-            this.txtuser.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+
             // 
             // label2
             // 

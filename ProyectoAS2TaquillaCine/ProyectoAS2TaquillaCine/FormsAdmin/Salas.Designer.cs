@@ -29,158 +29,50 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
         /// </summary>
         private void InitializeComponent()
         {
-            this.label3 = new System.Windows.Forms.Label();
+            this.components = new System.ComponentModel.Container();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtnosala = new System.Windows.Forms.TextBox();
-            this.txtcapacidad = new System.Windows.Forms.TextBox();
-            this.cbtiposala = new System.Windows.Forms.ComboBox();
-            this.cbubicacion = new System.Windows.Forms.ComboBox();
-            this.cbestado = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button3 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtbxBuscar2 = new System.Windows.Forms.TextBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.cbestado = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtnosala = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtcapacidad = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cbtiposala = new System.Windows.Forms.ComboBox();
+            this.cbubicacion = new System.Windows.Forms.ComboBox();
+            this.button5 = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.SystemColors.Control;
-            this.label3.Location = new System.Drawing.Point(240, 82);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(30, 13);
-            this.label3.TabIndex = 27;
-            this.label3.Text = "Hora";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.SystemColors.Control;
-            this.label4.Location = new System.Drawing.Point(240, 59);
+            this.label4.Location = new System.Drawing.Point(216, 78);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(37, 13);
             this.label4.TabIndex = 26;
             this.label4.Text = "Fecha";
-            // 
-            // txtnosala
-            // 
-            this.txtnosala.Location = new System.Drawing.Point(172, 254);
-            this.txtnosala.Margin = new System.Windows.Forms.Padding(2);
-            this.txtnosala.Name = "txtnosala";
-            this.txtnosala.Size = new System.Drawing.Size(157, 20);
-            this.txtnosala.TabIndex = 33;
-            // 
-            // txtcapacidad
-            // 
-            this.txtcapacidad.Location = new System.Drawing.Point(172, 285);
-            this.txtcapacidad.Margin = new System.Windows.Forms.Padding(2);
-            this.txtcapacidad.Name = "txtcapacidad";
-            this.txtcapacidad.Size = new System.Drawing.Size(157, 20);
-            this.txtcapacidad.TabIndex = 34;
-            // 
-            // cbtiposala
-            // 
-            this.cbtiposala.FormattingEnabled = true;
-            this.cbtiposala.Location = new System.Drawing.Point(172, 321);
-            this.cbtiposala.Margin = new System.Windows.Forms.Padding(2);
-            this.cbtiposala.Name = "cbtiposala";
-            this.cbtiposala.Size = new System.Drawing.Size(157, 21);
-            this.cbtiposala.TabIndex = 35;
-            // 
-            // cbubicacion
-            // 
-            this.cbubicacion.FormattingEnabled = true;
-            this.cbubicacion.Location = new System.Drawing.Point(172, 361);
-            this.cbubicacion.Margin = new System.Windows.Forms.Padding(2);
-            this.cbubicacion.Name = "cbubicacion";
-            this.cbubicacion.Size = new System.Drawing.Size(157, 21);
-            this.cbubicacion.TabIndex = 36;
-            // 
-            // cbestado
-            // 
-            this.cbestado.FormattingEnabled = true;
-            this.cbestado.Items.AddRange(new object[] {
-            "Activo",
-            "Inactivo"});
-            this.cbestado.Location = new System.Drawing.Point(172, 396);
-            this.cbestado.Margin = new System.Windows.Forms.Padding(2);
-            this.cbestado.Name = "cbestado";
-            this.cbestado.Size = new System.Drawing.Size(157, 21);
-            this.cbestado.TabIndex = 37;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label5.Location = new System.Drawing.Point(25, 248);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(128, 19);
-            this.label5.TabIndex = 38;
-            this.label5.Text = "Numero de sala";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label6.Location = new System.Drawing.Point(25, 285);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(88, 19);
-            this.label6.TabIndex = 39;
-            this.label6.Text = "Capacidad";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label7.Location = new System.Drawing.Point(25, 321);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(75, 19);
-            this.label7.TabIndex = 40;
-            this.label7.Text = "Tipo sala";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label8.Location = new System.Drawing.Point(25, 361);
-            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(84, 19);
-            this.label8.TabIndex = 41;
-            this.label8.Text = "Ubicación";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label9.Location = new System.Drawing.Point(25, 396);
-            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(93, 19);
-            this.label9.TabIndex = 42;
-            this.label9.Text = "Estado sala";
             // 
             // panel1
             // 
@@ -195,21 +87,9 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            this.panel2.Controls.Add(this.label10);
-            this.panel2.Controls.Add(this.button5);
-            this.panel2.Controls.Add(this.label9);
+            this.panel2.Controls.Add(this.groupBox2);
             this.panel2.Controls.Add(this.button1);
-            this.panel2.Controls.Add(this.label8);
-            this.panel2.Controls.Add(this.cbestado);
-            this.panel2.Controls.Add(this.label7);
-            this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.txtnosala);
-            this.panel2.Controls.Add(this.label6);
-            this.panel2.Controls.Add(this.txtcapacidad);
-            this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.cbtiposala);
-            this.panel2.Controls.Add(this.cbubicacion);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel2.Location = new System.Drawing.Point(618, 28);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
@@ -223,33 +103,19 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label10.Location = new System.Drawing.Point(93, 133);
+            this.label10.Location = new System.Drawing.Point(209, 163);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(184, 19);
+            this.label10.Size = new System.Drawing.Size(136, 19);
             this.label10.TabIndex = 53;
-            this.label10.Text = "Mantenimiento de Sala";
-            // 
-            // button5
-            // 
-            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button5.Location = new System.Drawing.Point(60, 479);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(237, 41);
-            this.button5.TabIndex = 38;
-            this.button5.Text = "Guardar";
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.label10.Text = "Registros de Sala";
             // 
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.BackColor = System.Drawing.Color.Red;
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(237, 6);
+            this.button1.Location = new System.Drawing.Point(219, 20);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(91, 33);
             this.button1.TabIndex = 41;
@@ -260,6 +126,8 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            this.panel3.Controls.Add(this.groupBox1);
+            this.panel3.Controls.Add(this.label10);
             this.panel3.Controls.Add(this.dataGridView1);
             this.panel3.Controls.Add(this.button3);
             this.panel3.Controls.Add(this.button6);
@@ -317,13 +185,198 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.label1.Font = new System.Drawing.Font("Arial Narrow", 54F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label1.Location = new System.Drawing.Point(148, 40);
+            this.label1.Location = new System.Drawing.Point(125, 78);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(318, 85);
             this.label1.TabIndex = 32;
             this.label1.Text = "CINEHUB";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.label11);
+            this.groupBox1.Controls.Add(this.txtbxBuscar2);
+            this.groupBox1.Location = new System.Drawing.Point(1, 3);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(612, 65);
+            this.groupBox1.TabIndex = 184;
+            this.groupBox1.TabStop = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label2.Location = new System.Drawing.Point(17, 22);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(65, 20);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Buscar";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label11.Location = new System.Drawing.Point(-206, 17);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(65, 20);
+            this.label11.TabIndex = 3;
+            this.label11.Text = "Buscar";
+            // 
+            // txtbxBuscar2
+            // 
+            this.txtbxBuscar2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbxBuscar2.Location = new System.Drawing.Point(88, 19);
+            this.txtbxBuscar2.Multiline = true;
+            this.txtbxBuscar2.Name = "txtbxBuscar2";
+            this.txtbxBuscar2.Size = new System.Drawing.Size(509, 33);
+            this.txtbxBuscar2.TabIndex = 2;
+            this.txtbxBuscar2.TextChanged += new System.EventHandler(this.txtbxBuscar2_TextChanged);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.button5);
+            this.groupBox2.Controls.Add(this.label9);
+            this.groupBox2.Controls.Add(this.label8);
+            this.groupBox2.Controls.Add(this.cbestado);
+            this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Controls.Add(this.txtnosala);
+            this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Controls.Add(this.txtcapacidad);
+            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Controls.Add(this.cbtiposala);
+            this.groupBox2.Controls.Add(this.cbubicacion);
+            this.groupBox2.Location = new System.Drawing.Point(28, 137);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(314, 444);
+            this.groupBox2.TabIndex = 43;
+            this.groupBox2.TabStop = false;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label9.Location = new System.Drawing.Point(5, 165);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(93, 19);
+            this.label9.TabIndex = 52;
+            this.label9.Text = "Estado sala";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label8.Location = new System.Drawing.Point(5, 130);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(84, 19);
+            this.label8.TabIndex = 51;
+            this.label8.Text = "Ubicación";
+            // 
+            // cbestado
+            // 
+            this.cbestado.FormattingEnabled = true;
+            this.cbestado.Items.AddRange(new object[] {
+            "Activo",
+            "Inactivo"});
+            this.cbestado.Location = new System.Drawing.Point(152, 165);
+            this.cbestado.Margin = new System.Windows.Forms.Padding(2);
+            this.cbestado.Name = "cbestado";
+            this.cbestado.Size = new System.Drawing.Size(157, 21);
+            this.cbestado.TabIndex = 47;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label7.Location = new System.Drawing.Point(5, 90);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(75, 19);
+            this.label7.TabIndex = 50;
+            this.label7.Text = "Tipo sala";
+            // 
+            // txtnosala
+            // 
+            this.txtnosala.Location = new System.Drawing.Point(152, 23);
+            this.txtnosala.Margin = new System.Windows.Forms.Padding(2);
+            this.txtnosala.Name = "txtnosala";
+            this.txtnosala.Size = new System.Drawing.Size(157, 20);
+            this.txtnosala.TabIndex = 43;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label6.Location = new System.Drawing.Point(5, 54);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(88, 19);
+            this.label6.TabIndex = 49;
+            this.label6.Text = "Capacidad";
+            // 
+            // txtcapacidad
+            // 
+            this.txtcapacidad.Location = new System.Drawing.Point(152, 54);
+            this.txtcapacidad.Margin = new System.Windows.Forms.Padding(2);
+            this.txtcapacidad.Name = "txtcapacidad";
+            this.txtcapacidad.Size = new System.Drawing.Size(157, 20);
+            this.txtcapacidad.TabIndex = 44;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label5.Location = new System.Drawing.Point(5, 17);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(128, 19);
+            this.label5.TabIndex = 48;
+            this.label5.Text = "Numero de sala";
+            // 
+            // cbtiposala
+            // 
+            this.cbtiposala.FormattingEnabled = true;
+            this.cbtiposala.Location = new System.Drawing.Point(152, 90);
+            this.cbtiposala.Margin = new System.Windows.Forms.Padding(2);
+            this.cbtiposala.Name = "cbtiposala";
+            this.cbtiposala.Size = new System.Drawing.Size(157, 21);
+            this.cbtiposala.TabIndex = 45;
+            // 
+            // cbubicacion
+            // 
+            this.cbubicacion.FormattingEnabled = true;
+            this.cbubicacion.Location = new System.Drawing.Point(152, 130);
+            this.cbubicacion.Margin = new System.Windows.Forms.Padding(2);
+            this.cbubicacion.Name = "cbubicacion";
+            this.cbubicacion.Size = new System.Drawing.Size(157, 21);
+            this.cbubicacion.TabIndex = 46;
+            // 
+            // button5
+            // 
+            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button5.Location = new System.Drawing.Point(41, 375);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(237, 41);
+            this.button5.TabIndex = 53;
+            this.button5.Text = "Guardar";
+            this.button5.UseVisualStyleBackColor = false;
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Salas
             // 
@@ -340,33 +393,43 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtnosala;
-        private System.Windows.Forms.TextBox txtcapacidad;
-        private System.Windows.Forms.ComboBox cbtiposala;
-        private System.Windows.Forms.ComboBox cbubicacion;
-        private System.Windows.Forms.ComboBox cbestado;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox txtbxBuscar2;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox cbestado;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtnosala;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtcapacidad;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox cbtiposala;
+        private System.Windows.Forms.ComboBox cbubicacion;
+        private System.Windows.Forms.Timer timer1;
     }
 }

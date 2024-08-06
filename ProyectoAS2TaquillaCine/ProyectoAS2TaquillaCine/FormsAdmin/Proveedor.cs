@@ -20,7 +20,9 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
         {
             InitializeComponent();
             dgvProveedores.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-
+            groupBox2.Visible = GlobalSettings.IsAdmin;
+            button3.Visible = GlobalSettings.IsAdmin;
+            button6.Visible = GlobalSettings.IsAdmin;
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -221,6 +223,41 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
         private void Proveedor_Load(object sender, EventArgs e)
         {
             CargarProveedores();
+        }
+
+        private void txtbxBuscar2_TextChanged(object sender, EventArgs e)
+        {
+             // Obtener el texto de búsqueda
+            string searchText = txtbxBuscar2.Text.Trim();
+            if (string.IsNullOrEmpty(searchText))
+            {
+                // Si el texto de búsqueda está vacío, no aplicar filtro
+                (dgvProveedores.DataSource as DataTable).DefaultView.RowFilter = string.Empty;
+                return;
+            }
+
+            // Crear una lista para las expresiones de filtro
+            List<string> filterExpressions = new List<string>();
+
+            // Obtener el DataTable
+            DataTable dataTable = dgvProveedores.DataSource as DataTable;
+
+            // Recorrer todas las columnas del DataTable
+            foreach (DataColumn column in dataTable.Columns)
+            {
+                // Excluir columnas que no sean de tipo texto
+                if (column.DataType == typeof(string))
+                {
+                    // Agregar expresión de filtro para la columna
+                    filterExpressions.Add($"[{column.ColumnName}] LIKE '%{searchText}%'");
+                }
+            }
+
+            // Unir todas las expresiones de filtro con el operador OR
+            string filterExpression = string.Join(" OR ", filterExpressions);
+
+            // Aplicar el filtro
+            (dgvProveedores.DataSource as DataTable).DefaultView.RowFilter = filterExpression;
         }
     }
     }

@@ -94,9 +94,12 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
         {
             InitializeComponent();
             timer1 = new Timer();
-            timer1.Interval = 1000; // Intervalo en milisegundos (1000 ms = 1 segundo)
+            timer1.Interval = 100; // Intervalo en milisegundos (1000 ms = 1 segundo)
             timer1.Tick += new EventHandler(timer1_Tick);
             timer1.Start(); // Iniciar el Timer
+            button3.Visible = GlobalSettings.IsAdmin;
+            button2.Visible = GlobalSettings.IsAdmin;
+            groupBox2.Visible = GlobalSettings.IsAdmin;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -579,5 +582,41 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
         {
             this.Hide();
         }
+
+        private void txtbxBuscar2_TextChanged(object sender, EventArgs e)
+        {
+            // Obtener el texto de búsqueda
+            string searchText = txtbxBuscar2.Text.Trim();
+            if (string.IsNullOrEmpty(searchText))
+            {
+                // Si el texto de búsqueda está vacío, no aplicar filtro
+                (dataGridView1.DataSource as DataTable).DefaultView.RowFilter = string.Empty;
+                return;
+            }
+
+            // Crear una lista para las expresiones de filtro
+            List<string> filterExpressions = new List<string>();
+
+            // Obtener el DataTable
+            DataTable dataTable = dataGridView1.DataSource as DataTable;
+
+            // Recorrer todas las columnas del DataTable
+            foreach (DataColumn column in dataTable.Columns)
+            {
+                // Excluir columnas que no sean de tipo texto
+                if (column.DataType == typeof(string))
+                {
+                    // Agregar expresión de filtro para la columna
+                    filterExpressions.Add($"[{column.ColumnName}] LIKE '%{searchText}%'");
+                }
+            }
+
+            // Unir todas las expresiones de filtro con el operador OR
+            string filterExpression = string.Join(" OR ", filterExpressions);
+
+            // Aplicar el filtro
+            (dataGridView1.DataSource as DataTable).DefaultView.RowFilter = filterExpression;
+        }
+
     }
 }
