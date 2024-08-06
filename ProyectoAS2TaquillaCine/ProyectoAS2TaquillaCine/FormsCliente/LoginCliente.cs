@@ -54,65 +54,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
 
         private void button1_Click(object sender, EventArgs e)
         {
-            // Cadena de conexión a tu base de datos MySQL
-            string connectionString = DatabaseConfig.ConnectionString;
-
-            // Obtener los valores ingresados por el usuario
-            string email = txtuser.Text;
-            string contrasena = txtContrasena.Text;
-
-            // Validar que el correo tenga el sufijo @gmail.com
-            if (!email.EndsWith("@gmail.com"))
-            {
-                MessageBox.Show("El correo electrónico debe tener el sufijo @gmail.com.", "Error de login", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            // Crear una conexión a la base de datos
-            using (MySqlConnection connection = new MySqlConnection(connectionString))
-            {
-                try
-                {
-                    connection.Open();
-
-                    // Crear un comando para validar el email y la contraseña
-                    string query = "SELECT COUNT(1) FROM tbl_cliente WHERE email = @Email AND contrasena = @Contrasena";
-
-                    using (MySqlCommand command = new MySqlCommand(query, connection))
-                    {
-                        // Agregar los parámetros con los valores ingresados
-                        command.Parameters.AddWithValue("@Email", email);
-                        command.Parameters.AddWithValue("@Contrasena", contrasena);
-
-                        // Ejecutar el comando y obtener el resultado
-                        int count = Convert.ToInt32(command.ExecuteScalar());
-
-                        if (count == 1)
-                        {
-                            // Las credenciales son correctas, permitir el acceso
-                            MessageBox.Show("Inicio de sesión exitoso.", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            // Aquí puedes abrir el formulario principal de tu aplicación o proceder según tu lógica
-                            // Ejemplo:
-                            FormsCliente.CarteleraNueva CarteleraForm = new FormsCliente.CarteleraNueva();
-
-                            // Mostrar el formulario
-                            CarteleraForm.Show();
-
-                            // Opcional: Cerrar o esconder el formulario actual
-                            this.Hide();
-                        }
-                        else
-                        {
-                            // Las credenciales son incorrectas, mostrar un mensaje de error
-                            MessageBox.Show("Correo o contraseña incorrectos.", "Error de login", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error al conectar con la base de datos: " + ex.Message);
-                }
-            }
+            
         }
 
 
@@ -132,6 +74,67 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
 
         private void txtContrasena_TextChanged(object sender, EventArgs e)
         {
+            // Cadena de conexión a tu base de datos MySQL
+            string connectionString = DatabaseConfig.ConnectionString;
+
+            // Obtener los valores ingresados por el usuario
+            string email = txtuser.Text.Trim();
+            string contrasena = txtContrasena.Text.Trim();
+
+            // Validar que el correo tenga el sufijo @gmail.com
+            if (!email.EndsWith("@gmail.com"))
+            {
+                MessageBox.Show("El correo electrónico debe tener el sufijo @gmail.com.", "Error de login", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Crear una conexión a la base de datos
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+
+                    // Crear un comando para validar el email y la contraseña y obtener el ID del cliente
+                    string query = "SELECT ID_Cliente FROM tbl_cliente WHERE email = @Email AND contrasena = @Contrasena";
+
+                    using (MySqlCommand command = new MySqlCommand(query, connection))
+                    {
+                        // Agregar los parámetros con los valores ingresados
+                        command.Parameters.AddWithValue("@Email", email);
+                        command.Parameters.AddWithValue("@Contrasena", contrasena);
+
+                        // Ejecutar el comando y obtener el resultado
+                        object result = command.ExecuteScalar();
+
+                        if (result != null)
+                        {
+                            // Las credenciales son correctas, permitir el acceso
+                            int idCliente = Convert.ToInt32(result);
+
+                            MessageBox.Show("Inicio de sesión exitoso.", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                            // Abrir el siguiente formulario y pasar el ID del cliente
+                            FormsCliente.CarteleraNueva PagoForm = new FormsCliente.CarteleraNueva(idCliente);
+
+                            // Mostrar el formulario
+                            PagoForm.Show();
+
+                            // Opcional: Cerrar o esconder el formulario actual
+                            this.Hide();
+                        }
+                        else
+                        {
+                            // Las credenciales son incorrectas, mostrar un mensaje de error
+                            MessageBox.Show("Correo o contraseña incorrectos.", "Error de login", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al conectar con la base de datos: " + ex.Message);
+                }
+            }
 
         }
     }

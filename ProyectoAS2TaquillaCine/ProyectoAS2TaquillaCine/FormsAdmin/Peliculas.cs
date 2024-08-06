@@ -21,5 +21,10 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
         {
 
         }
+
+        private void Peliculas_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

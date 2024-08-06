@@ -16,14 +16,17 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
 
     public partial class Reserva : Form
     {
+
         private int pelicula;
+        private int idCliente;
 
-        private int totalventa;
+        public int totalventa { get; set; }
 
-        public Reserva(int id)
+        public Reserva(int id, int idCliente)
         {
             InitializeComponent();
             pelicula = id;
+            this.idCliente = idCliente;
         }
 
         string connectionString = DatabaseConfig.ConnectionString;
@@ -76,7 +79,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
 
         private void button8_Click(object sender, EventArgs e)
         {
-            FormsCliente.CarteleraNueva formCartelera = new FormsCliente.CarteleraNueva();
+            FormsCliente.CarteleraNueva formCartelera = new FormsCliente.CarteleraNueva(idCliente);
             formCartelera.Show();
             this.Hide();
         }
@@ -290,8 +293,9 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
         {
             int totalAsientos = Convert.ToInt32(textBox1.Text) + Convert.ToInt32(textBox2.Text) + Convert.ToInt32(textBox3.Text);
             totalventa = Convert.ToInt32(label16.Text);
-            FormsCliente.Asientos formAsientos = new FormsCliente.Asientos(pelicula, totalventa);
+            FormsCliente.Asientos formAsientos = new FormsCliente.Asientos(pelicula, totalventa, idCliente);
             formAsientos.TotalAsientos = totalAsientos;
+            FormsCliente.Pago formPago = new FormsCliente.Pago(totalventa, idCliente);
 
             formAsientos.Show();
             this.Hide();

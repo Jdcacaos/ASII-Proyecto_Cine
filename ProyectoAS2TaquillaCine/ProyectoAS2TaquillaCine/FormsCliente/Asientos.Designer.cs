@@ -117,7 +117,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             this.button94 = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.button95 = new System.Windows.Forms.Button();
+            this.btn_pagar = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
@@ -139,10 +139,9 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 54F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(193, 22);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(257, 27);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(359, 82);
+            this.label1.Size = new System.Drawing.Size(448, 102);
             this.label1.TabIndex = 3;
             this.label1.Text = "CINEHUB";
             // 
@@ -150,28 +149,29 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(272, 116);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(363, 143);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(165, 18);
+            this.label4.Size = new System.Drawing.Size(207, 24);
             this.label4.TabIndex = 8;
             this.label4.Text = "Selecciona tus asientos";
             // 
             // picbx_pelicula
             // 
             this.picbx_pelicula.Image = global::ProyectoAS2TaquillaCine.Properties.Resources._16974783388025;
-            this.picbx_pelicula.Location = new System.Drawing.Point(656, 187);
+            this.picbx_pelicula.Location = new System.Drawing.Point(875, 230);
+            this.picbx_pelicula.Margin = new System.Windows.Forms.Padding(4);
             this.picbx_pelicula.Name = "picbx_pelicula";
-            this.picbx_pelicula.Size = new System.Drawing.Size(83, 97);
+            this.picbx_pelicula.Size = new System.Drawing.Size(111, 119);
             this.picbx_pelicula.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picbx_pelicula.TabIndex = 11;
             this.picbx_pelicula.TabStop = false;
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(10, 20);
+            this.button8.Location = new System.Drawing.Point(13, 25);
+            this.button8.Margin = new System.Windows.Forms.Padding(4);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(86, 37);
+            this.button8.Size = new System.Drawing.Size(115, 46);
             this.button8.TabIndex = 32;
             this.button8.Text = "Regresar";
             this.button8.UseVisualStyleBackColor = true;
@@ -181,36 +181,40 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(651, 159);
+            this.label2.Location = new System.Drawing.Point(868, 196);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(227, 25);
+            this.label2.Size = new System.Drawing.Size(281, 31);
             this.label2.TabIndex = 33;
             this.label2.Text = "Resumen de compra";
             // 
             // lbl_NomPelicula
             // 
             this.lbl_NomPelicula.AutoSize = true;
-            this.lbl_NomPelicula.Location = new System.Drawing.Point(746, 187);
+            this.lbl_NomPelicula.Location = new System.Drawing.Point(995, 230);
+            this.lbl_NomPelicula.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_NomPelicula.Name = "lbl_NomPelicula";
-            this.lbl_NomPelicula.Size = new System.Drawing.Size(107, 13);
+            this.lbl_NomPelicula.Size = new System.Drawing.Size(141, 17);
             this.lbl_NomPelicula.TabIndex = 34;
             this.lbl_NomPelicula.Text = "Pelicula : Juan Diego";
             // 
             // lbl_FechaProyeccion
             // 
             this.lbl_FechaProyeccion.AutoSize = true;
-            this.lbl_FechaProyeccion.Location = new System.Drawing.Point(746, 209);
+            this.lbl_FechaProyeccion.Location = new System.Drawing.Point(995, 257);
+            this.lbl_FechaProyeccion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_FechaProyeccion.Name = "lbl_FechaProyeccion";
-            this.lbl_FechaProyeccion.Size = new System.Drawing.Size(136, 13);
+            this.lbl_FechaProyeccion.Size = new System.Drawing.Size(180, 17);
             this.lbl_FechaProyeccion.TabIndex = 36;
             this.lbl_FechaProyeccion.Text = "Fecha : 17 de julio de 2026";
             // 
             // lbl_horarioproyeccion
             // 
             this.lbl_horarioproyeccion.AutoSize = true;
-            this.lbl_horarioproyeccion.Location = new System.Drawing.Point(746, 237);
+            this.lbl_horarioproyeccion.Location = new System.Drawing.Point(995, 292);
+            this.lbl_horarioproyeccion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_horarioproyeccion.Name = "lbl_horarioproyeccion";
-            this.lbl_horarioproyeccion.Size = new System.Drawing.Size(47, 13);
+            this.lbl_horarioproyeccion.Size = new System.Drawing.Size(63, 17);
             this.lbl_horarioproyeccion.TabIndex = 37;
             this.lbl_horarioproyeccion.Text = "Horario: ";
             // 
@@ -218,18 +222,20 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(704, 334);
+            this.label9.Location = new System.Drawing.Point(939, 411);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(86, 25);
+            this.label9.Size = new System.Drawing.Size(105, 31);
             this.label9.TabIndex = 39;
             this.label9.Text = "Total : ";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(656, 436);
+            this.label10.Location = new System.Drawing.Point(875, 537);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(83, 13);
+            this.label10.Size = new System.Drawing.Size(111, 17);
             this.label10.TabIndex = 41;
             this.label10.Text = "Tiempo restante";
             // 
@@ -237,9 +243,10 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // 
             this.btnA1.BackColor = System.Drawing.Color.Lime;
             this.btnA1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnA1.Location = new System.Drawing.Point(199, 271);
+            this.btnA1.Location = new System.Drawing.Point(265, 334);
+            this.btnA1.Margin = new System.Windows.Forms.Padding(4);
             this.btnA1.Name = "btnA1";
-            this.btnA1.Size = new System.Drawing.Size(23, 23);
+            this.btnA1.Size = new System.Drawing.Size(31, 28);
             this.btnA1.TabIndex = 43;
             this.btnA1.UseVisualStyleBackColor = false;
             // 
@@ -247,9 +254,10 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // 
             this.btnA2.BackColor = System.Drawing.Color.Lime;
             this.btnA2.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnA2.Location = new System.Drawing.Point(228, 271);
+            this.btnA2.Location = new System.Drawing.Point(304, 334);
+            this.btnA2.Margin = new System.Windows.Forms.Padding(4);
             this.btnA2.Name = "btnA2";
-            this.btnA2.Size = new System.Drawing.Size(23, 23);
+            this.btnA2.Size = new System.Drawing.Size(31, 28);
             this.btnA2.TabIndex = 44;
             this.btnA2.UseVisualStyleBackColor = false;
             // 
@@ -257,9 +265,10 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // 
             this.btnA3.BackColor = System.Drawing.Color.Lime;
             this.btnA3.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnA3.Location = new System.Drawing.Point(257, 271);
+            this.btnA3.Location = new System.Drawing.Point(343, 334);
+            this.btnA3.Margin = new System.Windows.Forms.Padding(4);
             this.btnA3.Name = "btnA3";
-            this.btnA3.Size = new System.Drawing.Size(23, 23);
+            this.btnA3.Size = new System.Drawing.Size(31, 28);
             this.btnA3.TabIndex = 45;
             this.btnA3.UseVisualStyleBackColor = false;
             // 
@@ -267,9 +276,10 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // 
             this.btnA4.BackColor = System.Drawing.Color.Lime;
             this.btnA4.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnA4.Location = new System.Drawing.Point(286, 271);
+            this.btnA4.Location = new System.Drawing.Point(381, 334);
+            this.btnA4.Margin = new System.Windows.Forms.Padding(4);
             this.btnA4.Name = "btnA4";
-            this.btnA4.Size = new System.Drawing.Size(23, 23);
+            this.btnA4.Size = new System.Drawing.Size(31, 28);
             this.btnA4.TabIndex = 46;
             this.btnA4.UseVisualStyleBackColor = false;
             // 
@@ -277,9 +287,10 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // 
             this.btnA5.BackColor = System.Drawing.Color.Lime;
             this.btnA5.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnA5.Location = new System.Drawing.Point(315, 271);
+            this.btnA5.Location = new System.Drawing.Point(420, 334);
+            this.btnA5.Margin = new System.Windows.Forms.Padding(4);
             this.btnA5.Name = "btnA5";
-            this.btnA5.Size = new System.Drawing.Size(23, 23);
+            this.btnA5.Size = new System.Drawing.Size(31, 28);
             this.btnA5.TabIndex = 47;
             this.btnA5.UseVisualStyleBackColor = false;
             // 
@@ -287,9 +298,10 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // 
             this.btnA6.BackColor = System.Drawing.Color.Lime;
             this.btnA6.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnA6.Location = new System.Drawing.Point(344, 271);
+            this.btnA6.Location = new System.Drawing.Point(459, 334);
+            this.btnA6.Margin = new System.Windows.Forms.Padding(4);
             this.btnA6.Name = "btnA6";
-            this.btnA6.Size = new System.Drawing.Size(23, 23);
+            this.btnA6.Size = new System.Drawing.Size(31, 28);
             this.btnA6.TabIndex = 48;
             this.btnA6.UseVisualStyleBackColor = false;
             // 
@@ -297,9 +309,10 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // 
             this.btnA7.BackColor = System.Drawing.Color.Lime;
             this.btnA7.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnA7.Location = new System.Drawing.Point(373, 271);
+            this.btnA7.Location = new System.Drawing.Point(497, 334);
+            this.btnA7.Margin = new System.Windows.Forms.Padding(4);
             this.btnA7.Name = "btnA7";
-            this.btnA7.Size = new System.Drawing.Size(23, 23);
+            this.btnA7.Size = new System.Drawing.Size(31, 28);
             this.btnA7.TabIndex = 49;
             this.btnA7.UseVisualStyleBackColor = false;
             // 
@@ -307,9 +320,10 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // 
             this.btnA8.BackColor = System.Drawing.Color.Lime;
             this.btnA8.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnA8.Location = new System.Drawing.Point(402, 271);
+            this.btnA8.Location = new System.Drawing.Point(536, 334);
+            this.btnA8.Margin = new System.Windows.Forms.Padding(4);
             this.btnA8.Name = "btnA8";
-            this.btnA8.Size = new System.Drawing.Size(23, 23);
+            this.btnA8.Size = new System.Drawing.Size(31, 28);
             this.btnA8.TabIndex = 50;
             this.btnA8.UseVisualStyleBackColor = false;
             // 
@@ -317,9 +331,10 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // 
             this.btnA9.BackColor = System.Drawing.Color.Lime;
             this.btnA9.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnA9.Location = new System.Drawing.Point(431, 271);
+            this.btnA9.Location = new System.Drawing.Point(575, 334);
+            this.btnA9.Margin = new System.Windows.Forms.Padding(4);
             this.btnA9.Name = "btnA9";
-            this.btnA9.Size = new System.Drawing.Size(23, 23);
+            this.btnA9.Size = new System.Drawing.Size(31, 28);
             this.btnA9.TabIndex = 51;
             this.btnA9.UseVisualStyleBackColor = false;
             // 
@@ -327,9 +342,10 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // 
             this.btnA10.BackColor = System.Drawing.Color.Lime;
             this.btnA10.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnA10.Location = new System.Drawing.Point(460, 271);
+            this.btnA10.Location = new System.Drawing.Point(613, 334);
+            this.btnA10.Margin = new System.Windows.Forms.Padding(4);
             this.btnA10.Name = "btnA10";
-            this.btnA10.Size = new System.Drawing.Size(23, 23);
+            this.btnA10.Size = new System.Drawing.Size(31, 28);
             this.btnA10.TabIndex = 52;
             this.btnA10.UseVisualStyleBackColor = false;
             // 
@@ -337,9 +353,10 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // 
             this.btnB10.BackColor = System.Drawing.Color.Lime;
             this.btnB10.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnB10.Location = new System.Drawing.Point(460, 300);
+            this.btnB10.Location = new System.Drawing.Point(613, 369);
+            this.btnB10.Margin = new System.Windows.Forms.Padding(4);
             this.btnB10.Name = "btnB10";
-            this.btnB10.Size = new System.Drawing.Size(23, 23);
+            this.btnB10.Size = new System.Drawing.Size(31, 28);
             this.btnB10.TabIndex = 62;
             this.btnB10.UseVisualStyleBackColor = false;
             // 
@@ -347,9 +364,10 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // 
             this.btnB9.BackColor = System.Drawing.Color.Lime;
             this.btnB9.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnB9.Location = new System.Drawing.Point(431, 300);
+            this.btnB9.Location = new System.Drawing.Point(575, 369);
+            this.btnB9.Margin = new System.Windows.Forms.Padding(4);
             this.btnB9.Name = "btnB9";
-            this.btnB9.Size = new System.Drawing.Size(23, 23);
+            this.btnB9.Size = new System.Drawing.Size(31, 28);
             this.btnB9.TabIndex = 61;
             this.btnB9.UseVisualStyleBackColor = false;
             // 
@@ -357,9 +375,10 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // 
             this.btnB8.BackColor = System.Drawing.Color.Lime;
             this.btnB8.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnB8.Location = new System.Drawing.Point(402, 300);
+            this.btnB8.Location = new System.Drawing.Point(536, 369);
+            this.btnB8.Margin = new System.Windows.Forms.Padding(4);
             this.btnB8.Name = "btnB8";
-            this.btnB8.Size = new System.Drawing.Size(23, 23);
+            this.btnB8.Size = new System.Drawing.Size(31, 28);
             this.btnB8.TabIndex = 60;
             this.btnB8.UseVisualStyleBackColor = false;
             // 
@@ -367,9 +386,10 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // 
             this.btnB7.BackColor = System.Drawing.Color.Lime;
             this.btnB7.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnB7.Location = new System.Drawing.Point(373, 300);
+            this.btnB7.Location = new System.Drawing.Point(497, 369);
+            this.btnB7.Margin = new System.Windows.Forms.Padding(4);
             this.btnB7.Name = "btnB7";
-            this.btnB7.Size = new System.Drawing.Size(23, 23);
+            this.btnB7.Size = new System.Drawing.Size(31, 28);
             this.btnB7.TabIndex = 59;
             this.btnB7.UseVisualStyleBackColor = false;
             // 
@@ -377,9 +397,10 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // 
             this.btnB6.BackColor = System.Drawing.Color.Lime;
             this.btnB6.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnB6.Location = new System.Drawing.Point(344, 300);
+            this.btnB6.Location = new System.Drawing.Point(459, 369);
+            this.btnB6.Margin = new System.Windows.Forms.Padding(4);
             this.btnB6.Name = "btnB6";
-            this.btnB6.Size = new System.Drawing.Size(23, 23);
+            this.btnB6.Size = new System.Drawing.Size(31, 28);
             this.btnB6.TabIndex = 58;
             this.btnB6.UseVisualStyleBackColor = false;
             // 
@@ -387,9 +408,10 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // 
             this.btnB5.BackColor = System.Drawing.Color.Lime;
             this.btnB5.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnB5.Location = new System.Drawing.Point(315, 300);
+            this.btnB5.Location = new System.Drawing.Point(420, 369);
+            this.btnB5.Margin = new System.Windows.Forms.Padding(4);
             this.btnB5.Name = "btnB5";
-            this.btnB5.Size = new System.Drawing.Size(23, 23);
+            this.btnB5.Size = new System.Drawing.Size(31, 28);
             this.btnB5.TabIndex = 57;
             this.btnB5.UseVisualStyleBackColor = false;
             // 
@@ -397,9 +419,10 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // 
             this.btnB4.BackColor = System.Drawing.Color.Lime;
             this.btnB4.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnB4.Location = new System.Drawing.Point(286, 300);
+            this.btnB4.Location = new System.Drawing.Point(381, 369);
+            this.btnB4.Margin = new System.Windows.Forms.Padding(4);
             this.btnB4.Name = "btnB4";
-            this.btnB4.Size = new System.Drawing.Size(23, 23);
+            this.btnB4.Size = new System.Drawing.Size(31, 28);
             this.btnB4.TabIndex = 56;
             this.btnB4.UseVisualStyleBackColor = false;
             // 
@@ -407,9 +430,10 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // 
             this.btnB3.BackColor = System.Drawing.Color.Lime;
             this.btnB3.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnB3.Location = new System.Drawing.Point(257, 300);
+            this.btnB3.Location = new System.Drawing.Point(343, 369);
+            this.btnB3.Margin = new System.Windows.Forms.Padding(4);
             this.btnB3.Name = "btnB3";
-            this.btnB3.Size = new System.Drawing.Size(23, 23);
+            this.btnB3.Size = new System.Drawing.Size(31, 28);
             this.btnB3.TabIndex = 55;
             this.btnB3.UseVisualStyleBackColor = false;
             // 
@@ -417,9 +441,10 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // 
             this.btnB2.BackColor = System.Drawing.Color.Lime;
             this.btnB2.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnB2.Location = new System.Drawing.Point(228, 300);
+            this.btnB2.Location = new System.Drawing.Point(304, 369);
+            this.btnB2.Margin = new System.Windows.Forms.Padding(4);
             this.btnB2.Name = "btnB2";
-            this.btnB2.Size = new System.Drawing.Size(23, 23);
+            this.btnB2.Size = new System.Drawing.Size(31, 28);
             this.btnB2.TabIndex = 54;
             this.btnB2.UseVisualStyleBackColor = false;
             // 
@@ -427,9 +452,10 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // 
             this.btnB1.BackColor = System.Drawing.Color.Lime;
             this.btnB1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnB1.Location = new System.Drawing.Point(199, 300);
+            this.btnB1.Location = new System.Drawing.Point(265, 369);
+            this.btnB1.Margin = new System.Windows.Forms.Padding(4);
             this.btnB1.Name = "btnB1";
-            this.btnB1.Size = new System.Drawing.Size(23, 23);
+            this.btnB1.Size = new System.Drawing.Size(31, 28);
             this.btnB1.TabIndex = 53;
             this.btnB1.UseVisualStyleBackColor = false;
             // 
@@ -437,9 +463,10 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // 
             this.btnC10.BackColor = System.Drawing.Color.Lime;
             this.btnC10.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnC10.Location = new System.Drawing.Point(460, 329);
+            this.btnC10.Location = new System.Drawing.Point(613, 405);
+            this.btnC10.Margin = new System.Windows.Forms.Padding(4);
             this.btnC10.Name = "btnC10";
-            this.btnC10.Size = new System.Drawing.Size(23, 23);
+            this.btnC10.Size = new System.Drawing.Size(31, 28);
             this.btnC10.TabIndex = 72;
             this.btnC10.UseVisualStyleBackColor = false;
             // 
@@ -447,9 +474,10 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // 
             this.btnC9.BackColor = System.Drawing.Color.Lime;
             this.btnC9.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnC9.Location = new System.Drawing.Point(431, 329);
+            this.btnC9.Location = new System.Drawing.Point(575, 405);
+            this.btnC9.Margin = new System.Windows.Forms.Padding(4);
             this.btnC9.Name = "btnC9";
-            this.btnC9.Size = new System.Drawing.Size(23, 23);
+            this.btnC9.Size = new System.Drawing.Size(31, 28);
             this.btnC9.TabIndex = 71;
             this.btnC9.UseVisualStyleBackColor = false;
             // 
@@ -457,9 +485,10 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // 
             this.btnC8.BackColor = System.Drawing.Color.Lime;
             this.btnC8.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnC8.Location = new System.Drawing.Point(402, 329);
+            this.btnC8.Location = new System.Drawing.Point(536, 405);
+            this.btnC8.Margin = new System.Windows.Forms.Padding(4);
             this.btnC8.Name = "btnC8";
-            this.btnC8.Size = new System.Drawing.Size(23, 23);
+            this.btnC8.Size = new System.Drawing.Size(31, 28);
             this.btnC8.TabIndex = 70;
             this.btnC8.UseVisualStyleBackColor = false;
             // 
@@ -467,9 +496,10 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // 
             this.btnC7.BackColor = System.Drawing.Color.Lime;
             this.btnC7.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnC7.Location = new System.Drawing.Point(373, 329);
+            this.btnC7.Location = new System.Drawing.Point(497, 405);
+            this.btnC7.Margin = new System.Windows.Forms.Padding(4);
             this.btnC7.Name = "btnC7";
-            this.btnC7.Size = new System.Drawing.Size(23, 23);
+            this.btnC7.Size = new System.Drawing.Size(31, 28);
             this.btnC7.TabIndex = 69;
             this.btnC7.UseVisualStyleBackColor = false;
             // 
@@ -477,9 +507,10 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // 
             this.btnC6.BackColor = System.Drawing.Color.Lime;
             this.btnC6.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnC6.Location = new System.Drawing.Point(344, 329);
+            this.btnC6.Location = new System.Drawing.Point(459, 405);
+            this.btnC6.Margin = new System.Windows.Forms.Padding(4);
             this.btnC6.Name = "btnC6";
-            this.btnC6.Size = new System.Drawing.Size(23, 23);
+            this.btnC6.Size = new System.Drawing.Size(31, 28);
             this.btnC6.TabIndex = 68;
             this.btnC6.UseVisualStyleBackColor = false;
             // 
@@ -487,9 +518,10 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // 
             this.btnC5.BackColor = System.Drawing.Color.Lime;
             this.btnC5.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnC5.Location = new System.Drawing.Point(315, 329);
+            this.btnC5.Location = new System.Drawing.Point(420, 405);
+            this.btnC5.Margin = new System.Windows.Forms.Padding(4);
             this.btnC5.Name = "btnC5";
-            this.btnC5.Size = new System.Drawing.Size(23, 23);
+            this.btnC5.Size = new System.Drawing.Size(31, 28);
             this.btnC5.TabIndex = 67;
             this.btnC5.UseVisualStyleBackColor = false;
             // 
@@ -497,9 +529,10 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // 
             this.btnC4.BackColor = System.Drawing.Color.Lime;
             this.btnC4.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnC4.Location = new System.Drawing.Point(286, 329);
+            this.btnC4.Location = new System.Drawing.Point(381, 405);
+            this.btnC4.Margin = new System.Windows.Forms.Padding(4);
             this.btnC4.Name = "btnC4";
-            this.btnC4.Size = new System.Drawing.Size(23, 23);
+            this.btnC4.Size = new System.Drawing.Size(31, 28);
             this.btnC4.TabIndex = 66;
             this.btnC4.UseVisualStyleBackColor = false;
             // 
@@ -507,9 +540,10 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // 
             this.btnC3.BackColor = System.Drawing.Color.Lime;
             this.btnC3.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnC3.Location = new System.Drawing.Point(257, 329);
+            this.btnC3.Location = new System.Drawing.Point(343, 405);
+            this.btnC3.Margin = new System.Windows.Forms.Padding(4);
             this.btnC3.Name = "btnC3";
-            this.btnC3.Size = new System.Drawing.Size(23, 23);
+            this.btnC3.Size = new System.Drawing.Size(31, 28);
             this.btnC3.TabIndex = 65;
             this.btnC3.UseVisualStyleBackColor = false;
             // 
@@ -517,9 +551,10 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // 
             this.btnC2.BackColor = System.Drawing.Color.Lime;
             this.btnC2.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnC2.Location = new System.Drawing.Point(228, 329);
+            this.btnC2.Location = new System.Drawing.Point(304, 405);
+            this.btnC2.Margin = new System.Windows.Forms.Padding(4);
             this.btnC2.Name = "btnC2";
-            this.btnC2.Size = new System.Drawing.Size(23, 23);
+            this.btnC2.Size = new System.Drawing.Size(31, 28);
             this.btnC2.TabIndex = 64;
             this.btnC2.UseVisualStyleBackColor = false;
             // 
@@ -527,9 +562,10 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // 
             this.btnC1.BackColor = System.Drawing.Color.Lime;
             this.btnC1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnC1.Location = new System.Drawing.Point(199, 329);
+            this.btnC1.Location = new System.Drawing.Point(265, 405);
+            this.btnC1.Margin = new System.Windows.Forms.Padding(4);
             this.btnC1.Name = "btnC1";
-            this.btnC1.Size = new System.Drawing.Size(23, 23);
+            this.btnC1.Size = new System.Drawing.Size(31, 28);
             this.btnC1.TabIndex = 63;
             this.btnC1.UseVisualStyleBackColor = false;
             // 
@@ -537,9 +573,10 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // 
             this.btnD10.BackColor = System.Drawing.Color.Lime;
             this.btnD10.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnD10.Location = new System.Drawing.Point(460, 358);
+            this.btnD10.Location = new System.Drawing.Point(613, 441);
+            this.btnD10.Margin = new System.Windows.Forms.Padding(4);
             this.btnD10.Name = "btnD10";
-            this.btnD10.Size = new System.Drawing.Size(23, 23);
+            this.btnD10.Size = new System.Drawing.Size(31, 28);
             this.btnD10.TabIndex = 82;
             this.btnD10.UseVisualStyleBackColor = false;
             // 
@@ -547,9 +584,10 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // 
             this.btnD9.BackColor = System.Drawing.Color.Lime;
             this.btnD9.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnD9.Location = new System.Drawing.Point(431, 358);
+            this.btnD9.Location = new System.Drawing.Point(575, 441);
+            this.btnD9.Margin = new System.Windows.Forms.Padding(4);
             this.btnD9.Name = "btnD9";
-            this.btnD9.Size = new System.Drawing.Size(23, 23);
+            this.btnD9.Size = new System.Drawing.Size(31, 28);
             this.btnD9.TabIndex = 81;
             this.btnD9.UseVisualStyleBackColor = false;
             // 
@@ -557,9 +595,10 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // 
             this.btnD8.BackColor = System.Drawing.Color.Lime;
             this.btnD8.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnD8.Location = new System.Drawing.Point(402, 358);
+            this.btnD8.Location = new System.Drawing.Point(536, 441);
+            this.btnD8.Margin = new System.Windows.Forms.Padding(4);
             this.btnD8.Name = "btnD8";
-            this.btnD8.Size = new System.Drawing.Size(23, 23);
+            this.btnD8.Size = new System.Drawing.Size(31, 28);
             this.btnD8.TabIndex = 80;
             this.btnD8.UseVisualStyleBackColor = false;
             // 
@@ -567,9 +606,10 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // 
             this.btnD7.BackColor = System.Drawing.Color.Lime;
             this.btnD7.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnD7.Location = new System.Drawing.Point(373, 358);
+            this.btnD7.Location = new System.Drawing.Point(497, 441);
+            this.btnD7.Margin = new System.Windows.Forms.Padding(4);
             this.btnD7.Name = "btnD7";
-            this.btnD7.Size = new System.Drawing.Size(23, 23);
+            this.btnD7.Size = new System.Drawing.Size(31, 28);
             this.btnD7.TabIndex = 79;
             this.btnD7.UseVisualStyleBackColor = false;
             // 
@@ -577,9 +617,10 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // 
             this.btnD6.BackColor = System.Drawing.Color.Lime;
             this.btnD6.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnD6.Location = new System.Drawing.Point(344, 358);
+            this.btnD6.Location = new System.Drawing.Point(459, 441);
+            this.btnD6.Margin = new System.Windows.Forms.Padding(4);
             this.btnD6.Name = "btnD6";
-            this.btnD6.Size = new System.Drawing.Size(23, 23);
+            this.btnD6.Size = new System.Drawing.Size(31, 28);
             this.btnD6.TabIndex = 78;
             this.btnD6.UseVisualStyleBackColor = false;
             // 
@@ -587,9 +628,10 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // 
             this.btnD5.BackColor = System.Drawing.Color.Lime;
             this.btnD5.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnD5.Location = new System.Drawing.Point(315, 358);
+            this.btnD5.Location = new System.Drawing.Point(420, 441);
+            this.btnD5.Margin = new System.Windows.Forms.Padding(4);
             this.btnD5.Name = "btnD5";
-            this.btnD5.Size = new System.Drawing.Size(23, 23);
+            this.btnD5.Size = new System.Drawing.Size(31, 28);
             this.btnD5.TabIndex = 77;
             this.btnD5.UseVisualStyleBackColor = false;
             // 
@@ -597,9 +639,10 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // 
             this.btnD4.BackColor = System.Drawing.Color.Lime;
             this.btnD4.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnD4.Location = new System.Drawing.Point(286, 358);
+            this.btnD4.Location = new System.Drawing.Point(381, 441);
+            this.btnD4.Margin = new System.Windows.Forms.Padding(4);
             this.btnD4.Name = "btnD4";
-            this.btnD4.Size = new System.Drawing.Size(23, 23);
+            this.btnD4.Size = new System.Drawing.Size(31, 28);
             this.btnD4.TabIndex = 76;
             this.btnD4.UseVisualStyleBackColor = false;
             // 
@@ -607,9 +650,10 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // 
             this.btnE10.BackColor = System.Drawing.Color.Lime;
             this.btnE10.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnE10.Location = new System.Drawing.Point(460, 387);
+            this.btnE10.Location = new System.Drawing.Point(613, 476);
+            this.btnE10.Margin = new System.Windows.Forms.Padding(4);
             this.btnE10.Name = "btnE10";
-            this.btnE10.Size = new System.Drawing.Size(23, 23);
+            this.btnE10.Size = new System.Drawing.Size(31, 28);
             this.btnE10.TabIndex = 92;
             this.btnE10.UseVisualStyleBackColor = false;
             // 
@@ -617,9 +661,10 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // 
             this.btnE9.BackColor = System.Drawing.Color.Lime;
             this.btnE9.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnE9.Location = new System.Drawing.Point(431, 387);
+            this.btnE9.Location = new System.Drawing.Point(575, 476);
+            this.btnE9.Margin = new System.Windows.Forms.Padding(4);
             this.btnE9.Name = "btnE9";
-            this.btnE9.Size = new System.Drawing.Size(23, 23);
+            this.btnE9.Size = new System.Drawing.Size(31, 28);
             this.btnE9.TabIndex = 91;
             this.btnE9.UseVisualStyleBackColor = false;
             // 
@@ -627,9 +672,10 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // 
             this.btnE8.BackColor = System.Drawing.Color.Lime;
             this.btnE8.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnE8.Location = new System.Drawing.Point(402, 387);
+            this.btnE8.Location = new System.Drawing.Point(536, 476);
+            this.btnE8.Margin = new System.Windows.Forms.Padding(4);
             this.btnE8.Name = "btnE8";
-            this.btnE8.Size = new System.Drawing.Size(23, 23);
+            this.btnE8.Size = new System.Drawing.Size(31, 28);
             this.btnE8.TabIndex = 90;
             this.btnE8.UseVisualStyleBackColor = false;
             // 
@@ -637,9 +683,10 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // 
             this.btnE7.BackColor = System.Drawing.Color.Lime;
             this.btnE7.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnE7.Location = new System.Drawing.Point(373, 387);
+            this.btnE7.Location = new System.Drawing.Point(497, 476);
+            this.btnE7.Margin = new System.Windows.Forms.Padding(4);
             this.btnE7.Name = "btnE7";
-            this.btnE7.Size = new System.Drawing.Size(23, 23);
+            this.btnE7.Size = new System.Drawing.Size(31, 28);
             this.btnE7.TabIndex = 89;
             this.btnE7.UseVisualStyleBackColor = false;
             // 
@@ -647,9 +694,10 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // 
             this.btnE6.BackColor = System.Drawing.Color.Lime;
             this.btnE6.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnE6.Location = new System.Drawing.Point(344, 387);
+            this.btnE6.Location = new System.Drawing.Point(459, 476);
+            this.btnE6.Margin = new System.Windows.Forms.Padding(4);
             this.btnE6.Name = "btnE6";
-            this.btnE6.Size = new System.Drawing.Size(23, 23);
+            this.btnE6.Size = new System.Drawing.Size(31, 28);
             this.btnE6.TabIndex = 88;
             this.btnE6.UseVisualStyleBackColor = false;
             // 
@@ -657,9 +705,10 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // 
             this.btnE5.BackColor = System.Drawing.Color.Lime;
             this.btnE5.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnE5.Location = new System.Drawing.Point(315, 387);
+            this.btnE5.Location = new System.Drawing.Point(420, 476);
+            this.btnE5.Margin = new System.Windows.Forms.Padding(4);
             this.btnE5.Name = "btnE5";
-            this.btnE5.Size = new System.Drawing.Size(23, 23);
+            this.btnE5.Size = new System.Drawing.Size(31, 28);
             this.btnE5.TabIndex = 87;
             this.btnE5.UseVisualStyleBackColor = false;
             // 
@@ -667,9 +716,10 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // 
             this.btnE4.BackColor = System.Drawing.Color.Lime;
             this.btnE4.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnE4.Location = new System.Drawing.Point(286, 387);
+            this.btnE4.Location = new System.Drawing.Point(381, 476);
+            this.btnE4.Margin = new System.Windows.Forms.Padding(4);
             this.btnE4.Name = "btnE4";
-            this.btnE4.Size = new System.Drawing.Size(23, 23);
+            this.btnE4.Size = new System.Drawing.Size(31, 28);
             this.btnE4.TabIndex = 86;
             this.btnE4.UseVisualStyleBackColor = false;
             // 
@@ -677,9 +727,10 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // 
             this.btnF10.BackColor = System.Drawing.Color.Lime;
             this.btnF10.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnF10.Location = new System.Drawing.Point(460, 416);
+            this.btnF10.Location = new System.Drawing.Point(613, 512);
+            this.btnF10.Margin = new System.Windows.Forms.Padding(4);
             this.btnF10.Name = "btnF10";
-            this.btnF10.Size = new System.Drawing.Size(23, 23);
+            this.btnF10.Size = new System.Drawing.Size(31, 28);
             this.btnF10.TabIndex = 102;
             this.btnF10.UseVisualStyleBackColor = false;
             // 
@@ -687,9 +738,10 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // 
             this.btnF9.BackColor = System.Drawing.Color.Lime;
             this.btnF9.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnF9.Location = new System.Drawing.Point(431, 416);
+            this.btnF9.Location = new System.Drawing.Point(575, 512);
+            this.btnF9.Margin = new System.Windows.Forms.Padding(4);
             this.btnF9.Name = "btnF9";
-            this.btnF9.Size = new System.Drawing.Size(23, 23);
+            this.btnF9.Size = new System.Drawing.Size(31, 28);
             this.btnF9.TabIndex = 101;
             this.btnF9.UseVisualStyleBackColor = false;
             // 
@@ -697,9 +749,10 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // 
             this.btnF8.BackColor = System.Drawing.Color.Lime;
             this.btnF8.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnF8.Location = new System.Drawing.Point(402, 416);
+            this.btnF8.Location = new System.Drawing.Point(536, 512);
+            this.btnF8.Margin = new System.Windows.Forms.Padding(4);
             this.btnF8.Name = "btnF8";
-            this.btnF8.Size = new System.Drawing.Size(23, 23);
+            this.btnF8.Size = new System.Drawing.Size(31, 28);
             this.btnF8.TabIndex = 100;
             this.btnF8.UseVisualStyleBackColor = false;
             // 
@@ -707,9 +760,10 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // 
             this.btnF7.BackColor = System.Drawing.Color.Lime;
             this.btnF7.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnF7.Location = new System.Drawing.Point(373, 416);
+            this.btnF7.Location = new System.Drawing.Point(497, 512);
+            this.btnF7.Margin = new System.Windows.Forms.Padding(4);
             this.btnF7.Name = "btnF7";
-            this.btnF7.Size = new System.Drawing.Size(23, 23);
+            this.btnF7.Size = new System.Drawing.Size(31, 28);
             this.btnF7.TabIndex = 99;
             this.btnF7.UseVisualStyleBackColor = false;
             // 
@@ -717,9 +771,10 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // 
             this.btnF6.BackColor = System.Drawing.Color.Lime;
             this.btnF6.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnF6.Location = new System.Drawing.Point(344, 416);
+            this.btnF6.Location = new System.Drawing.Point(459, 512);
+            this.btnF6.Margin = new System.Windows.Forms.Padding(4);
             this.btnF6.Name = "btnF6";
-            this.btnF6.Size = new System.Drawing.Size(23, 23);
+            this.btnF6.Size = new System.Drawing.Size(31, 28);
             this.btnF6.TabIndex = 98;
             this.btnF6.UseVisualStyleBackColor = false;
             // 
@@ -727,9 +782,10 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // 
             this.btnF5.BackColor = System.Drawing.Color.Lime;
             this.btnF5.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnF5.Location = new System.Drawing.Point(315, 416);
+            this.btnF5.Location = new System.Drawing.Point(420, 512);
+            this.btnF5.Margin = new System.Windows.Forms.Padding(4);
             this.btnF5.Name = "btnF5";
-            this.btnF5.Size = new System.Drawing.Size(23, 23);
+            this.btnF5.Size = new System.Drawing.Size(31, 28);
             this.btnF5.TabIndex = 97;
             this.btnF5.UseVisualStyleBackColor = false;
             // 
@@ -737,9 +793,10 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // 
             this.btnF4.BackColor = System.Drawing.Color.Lime;
             this.btnF4.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnF4.Location = new System.Drawing.Point(286, 416);
+            this.btnF4.Location = new System.Drawing.Point(381, 512);
+            this.btnF4.Margin = new System.Windows.Forms.Padding(4);
             this.btnF4.Name = "btnF4";
-            this.btnF4.Size = new System.Drawing.Size(23, 23);
+            this.btnF4.Size = new System.Drawing.Size(31, 28);
             this.btnF4.TabIndex = 96;
             this.btnF4.UseVisualStyleBackColor = false;
             // 
@@ -747,9 +804,10 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // 
             this.btnG10.BackColor = System.Drawing.Color.Lime;
             this.btnG10.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnG10.Location = new System.Drawing.Point(460, 445);
+            this.btnG10.Location = new System.Drawing.Point(613, 548);
+            this.btnG10.Margin = new System.Windows.Forms.Padding(4);
             this.btnG10.Name = "btnG10";
-            this.btnG10.Size = new System.Drawing.Size(23, 23);
+            this.btnG10.Size = new System.Drawing.Size(31, 28);
             this.btnG10.TabIndex = 112;
             this.btnG10.UseVisualStyleBackColor = false;
             // 
@@ -757,9 +815,10 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // 
             this.btnG9.BackColor = System.Drawing.Color.Lime;
             this.btnG9.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnG9.Location = new System.Drawing.Point(431, 445);
+            this.btnG9.Location = new System.Drawing.Point(575, 548);
+            this.btnG9.Margin = new System.Windows.Forms.Padding(4);
             this.btnG9.Name = "btnG9";
-            this.btnG9.Size = new System.Drawing.Size(23, 23);
+            this.btnG9.Size = new System.Drawing.Size(31, 28);
             this.btnG9.TabIndex = 111;
             this.btnG9.UseVisualStyleBackColor = false;
             // 
@@ -767,9 +826,10 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // 
             this.btnG8.BackColor = System.Drawing.Color.Lime;
             this.btnG8.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnG8.Location = new System.Drawing.Point(402, 445);
+            this.btnG8.Location = new System.Drawing.Point(536, 548);
+            this.btnG8.Margin = new System.Windows.Forms.Padding(4);
             this.btnG8.Name = "btnG8";
-            this.btnG8.Size = new System.Drawing.Size(23, 23);
+            this.btnG8.Size = new System.Drawing.Size(31, 28);
             this.btnG8.TabIndex = 110;
             this.btnG8.UseVisualStyleBackColor = false;
             // 
@@ -777,9 +837,10 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // 
             this.btnG7.BackColor = System.Drawing.Color.Lime;
             this.btnG7.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnG7.Location = new System.Drawing.Point(373, 445);
+            this.btnG7.Location = new System.Drawing.Point(497, 548);
+            this.btnG7.Margin = new System.Windows.Forms.Padding(4);
             this.btnG7.Name = "btnG7";
-            this.btnG7.Size = new System.Drawing.Size(23, 23);
+            this.btnG7.Size = new System.Drawing.Size(31, 28);
             this.btnG7.TabIndex = 109;
             this.btnG7.UseVisualStyleBackColor = false;
             // 
@@ -787,9 +848,10 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // 
             this.btnG6.BackColor = System.Drawing.Color.Lime;
             this.btnG6.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnG6.Location = new System.Drawing.Point(344, 445);
+            this.btnG6.Location = new System.Drawing.Point(459, 548);
+            this.btnG6.Margin = new System.Windows.Forms.Padding(4);
             this.btnG6.Name = "btnG6";
-            this.btnG6.Size = new System.Drawing.Size(23, 23);
+            this.btnG6.Size = new System.Drawing.Size(31, 28);
             this.btnG6.TabIndex = 108;
             this.btnG6.UseVisualStyleBackColor = false;
             // 
@@ -797,9 +859,10 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // 
             this.btnG5.BackColor = System.Drawing.Color.Lime;
             this.btnG5.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnG5.Location = new System.Drawing.Point(315, 445);
+            this.btnG5.Location = new System.Drawing.Point(420, 548);
+            this.btnG5.Margin = new System.Windows.Forms.Padding(4);
             this.btnG5.Name = "btnG5";
-            this.btnG5.Size = new System.Drawing.Size(23, 23);
+            this.btnG5.Size = new System.Drawing.Size(31, 28);
             this.btnG5.TabIndex = 107;
             this.btnG5.UseVisualStyleBackColor = false;
             // 
@@ -807,9 +870,10 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // 
             this.btnG4.BackColor = System.Drawing.Color.Lime;
             this.btnG4.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnG4.Location = new System.Drawing.Point(286, 445);
+            this.btnG4.Location = new System.Drawing.Point(381, 548);
+            this.btnG4.Margin = new System.Windows.Forms.Padding(4);
             this.btnG4.Name = "btnG4";
-            this.btnG4.Size = new System.Drawing.Size(23, 23);
+            this.btnG4.Size = new System.Drawing.Size(31, 28);
             this.btnG4.TabIndex = 106;
             this.btnG4.UseVisualStyleBackColor = false;
             // 
@@ -817,9 +881,10 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // 
             this.btnH10.BackColor = System.Drawing.Color.Lime;
             this.btnH10.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnH10.Location = new System.Drawing.Point(460, 474);
+            this.btnH10.Location = new System.Drawing.Point(613, 583);
+            this.btnH10.Margin = new System.Windows.Forms.Padding(4);
             this.btnH10.Name = "btnH10";
-            this.btnH10.Size = new System.Drawing.Size(23, 23);
+            this.btnH10.Size = new System.Drawing.Size(31, 28);
             this.btnH10.TabIndex = 122;
             this.btnH10.UseVisualStyleBackColor = false;
             // 
@@ -827,9 +892,10 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // 
             this.btnH9.BackColor = System.Drawing.Color.Lime;
             this.btnH9.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnH9.Location = new System.Drawing.Point(431, 474);
+            this.btnH9.Location = new System.Drawing.Point(575, 583);
+            this.btnH9.Margin = new System.Windows.Forms.Padding(4);
             this.btnH9.Name = "btnH9";
-            this.btnH9.Size = new System.Drawing.Size(23, 23);
+            this.btnH9.Size = new System.Drawing.Size(31, 28);
             this.btnH9.TabIndex = 121;
             this.btnH9.UseVisualStyleBackColor = false;
             // 
@@ -837,9 +903,10 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // 
             this.btnH8.BackColor = System.Drawing.Color.Lime;
             this.btnH8.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnH8.Location = new System.Drawing.Point(402, 474);
+            this.btnH8.Location = new System.Drawing.Point(536, 583);
+            this.btnH8.Margin = new System.Windows.Forms.Padding(4);
             this.btnH8.Name = "btnH8";
-            this.btnH8.Size = new System.Drawing.Size(23, 23);
+            this.btnH8.Size = new System.Drawing.Size(31, 28);
             this.btnH8.TabIndex = 120;
             this.btnH8.UseVisualStyleBackColor = false;
             // 
@@ -847,9 +914,10 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // 
             this.btnH7.BackColor = System.Drawing.Color.Lime;
             this.btnH7.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnH7.Location = new System.Drawing.Point(373, 474);
+            this.btnH7.Location = new System.Drawing.Point(497, 583);
+            this.btnH7.Margin = new System.Windows.Forms.Padding(4);
             this.btnH7.Name = "btnH7";
-            this.btnH7.Size = new System.Drawing.Size(23, 23);
+            this.btnH7.Size = new System.Drawing.Size(31, 28);
             this.btnH7.TabIndex = 119;
             this.btnH7.UseVisualStyleBackColor = false;
             // 
@@ -857,9 +925,10 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // 
             this.btnH6.BackColor = System.Drawing.Color.Lime;
             this.btnH6.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnH6.Location = new System.Drawing.Point(344, 474);
+            this.btnH6.Location = new System.Drawing.Point(459, 583);
+            this.btnH6.Margin = new System.Windows.Forms.Padding(4);
             this.btnH6.Name = "btnH6";
-            this.btnH6.Size = new System.Drawing.Size(23, 23);
+            this.btnH6.Size = new System.Drawing.Size(31, 28);
             this.btnH6.TabIndex = 118;
             this.btnH6.UseVisualStyleBackColor = false;
             // 
@@ -867,9 +936,10 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // 
             this.btnH5.BackColor = System.Drawing.Color.Lime;
             this.btnH5.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnH5.Location = new System.Drawing.Point(315, 474);
+            this.btnH5.Location = new System.Drawing.Point(420, 583);
+            this.btnH5.Margin = new System.Windows.Forms.Padding(4);
             this.btnH5.Name = "btnH5";
-            this.btnH5.Size = new System.Drawing.Size(23, 23);
+            this.btnH5.Size = new System.Drawing.Size(31, 28);
             this.btnH5.TabIndex = 117;
             this.btnH5.UseVisualStyleBackColor = false;
             // 
@@ -877,9 +947,10 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // 
             this.btnH4.BackColor = System.Drawing.Color.Lime;
             this.btnH4.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnH4.Location = new System.Drawing.Point(286, 474);
+            this.btnH4.Location = new System.Drawing.Point(381, 583);
+            this.btnH4.Margin = new System.Windows.Forms.Padding(4);
             this.btnH4.Name = "btnH4";
-            this.btnH4.Size = new System.Drawing.Size(23, 23);
+            this.btnH4.Size = new System.Drawing.Size(31, 28);
             this.btnH4.TabIndex = 116;
             this.btnH4.UseVisualStyleBackColor = false;
             // 
@@ -887,9 +958,10 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // 
             this.btnI10.BackColor = System.Drawing.Color.Lime;
             this.btnI10.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnI10.Location = new System.Drawing.Point(460, 503);
+            this.btnI10.Location = new System.Drawing.Point(613, 619);
+            this.btnI10.Margin = new System.Windows.Forms.Padding(4);
             this.btnI10.Name = "btnI10";
-            this.btnI10.Size = new System.Drawing.Size(23, 23);
+            this.btnI10.Size = new System.Drawing.Size(31, 28);
             this.btnI10.TabIndex = 132;
             this.btnI10.UseVisualStyleBackColor = false;
             this.btnI10.Click += new System.EventHandler(this.btnI10_Click);
@@ -898,9 +970,10 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // 
             this.btnI9.BackColor = System.Drawing.Color.Lime;
             this.btnI9.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnI9.Location = new System.Drawing.Point(431, 503);
+            this.btnI9.Location = new System.Drawing.Point(575, 619);
+            this.btnI9.Margin = new System.Windows.Forms.Padding(4);
             this.btnI9.Name = "btnI9";
-            this.btnI9.Size = new System.Drawing.Size(23, 23);
+            this.btnI9.Size = new System.Drawing.Size(31, 28);
             this.btnI9.TabIndex = 131;
             this.btnI9.UseVisualStyleBackColor = false;
             // 
@@ -908,9 +981,10 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // 
             this.btnI8.BackColor = System.Drawing.Color.Lime;
             this.btnI8.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnI8.Location = new System.Drawing.Point(402, 503);
+            this.btnI8.Location = new System.Drawing.Point(536, 619);
+            this.btnI8.Margin = new System.Windows.Forms.Padding(4);
             this.btnI8.Name = "btnI8";
-            this.btnI8.Size = new System.Drawing.Size(23, 23);
+            this.btnI8.Size = new System.Drawing.Size(31, 28);
             this.btnI8.TabIndex = 130;
             this.btnI8.UseVisualStyleBackColor = false;
             // 
@@ -918,9 +992,10 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // 
             this.btnI7.BackColor = System.Drawing.Color.Lime;
             this.btnI7.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnI7.Location = new System.Drawing.Point(373, 503);
+            this.btnI7.Location = new System.Drawing.Point(497, 619);
+            this.btnI7.Margin = new System.Windows.Forms.Padding(4);
             this.btnI7.Name = "btnI7";
-            this.btnI7.Size = new System.Drawing.Size(23, 23);
+            this.btnI7.Size = new System.Drawing.Size(31, 28);
             this.btnI7.TabIndex = 129;
             this.btnI7.UseVisualStyleBackColor = false;
             // 
@@ -928,9 +1003,10 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // 
             this.btnI6.BackColor = System.Drawing.Color.Lime;
             this.btnI6.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnI6.Location = new System.Drawing.Point(344, 503);
+            this.btnI6.Location = new System.Drawing.Point(459, 619);
+            this.btnI6.Margin = new System.Windows.Forms.Padding(4);
             this.btnI6.Name = "btnI6";
-            this.btnI6.Size = new System.Drawing.Size(23, 23);
+            this.btnI6.Size = new System.Drawing.Size(31, 28);
             this.btnI6.TabIndex = 128;
             this.btnI6.UseVisualStyleBackColor = false;
             // 
@@ -938,9 +1014,10 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // 
             this.btnI5.BackColor = System.Drawing.Color.Lime;
             this.btnI5.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnI5.Location = new System.Drawing.Point(315, 503);
+            this.btnI5.Location = new System.Drawing.Point(420, 619);
+            this.btnI5.Margin = new System.Windows.Forms.Padding(4);
             this.btnI5.Name = "btnI5";
-            this.btnI5.Size = new System.Drawing.Size(23, 23);
+            this.btnI5.Size = new System.Drawing.Size(31, 28);
             this.btnI5.TabIndex = 127;
             this.btnI5.UseVisualStyleBackColor = false;
             // 
@@ -948,9 +1025,10 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // 
             this.btnI4.BackColor = System.Drawing.Color.Lime;
             this.btnI4.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnI4.Location = new System.Drawing.Point(286, 503);
+            this.btnI4.Location = new System.Drawing.Point(381, 619);
+            this.btnI4.Margin = new System.Windows.Forms.Padding(4);
             this.btnI4.Name = "btnI4";
-            this.btnI4.Size = new System.Drawing.Size(23, 23);
+            this.btnI4.Size = new System.Drawing.Size(31, 28);
             this.btnI4.TabIndex = 126;
             this.btnI4.UseVisualStyleBackColor = false;
             // 
@@ -958,18 +1036,20 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // 
             this.button92.BackColor = System.Drawing.Color.Lime;
             this.button92.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button92.Location = new System.Drawing.Point(300, 160);
+            this.button92.Location = new System.Drawing.Point(400, 197);
+            this.button92.Margin = new System.Windows.Forms.Padding(4);
             this.button92.Name = "button92";
-            this.button92.Size = new System.Drawing.Size(23, 23);
+            this.button92.Size = new System.Drawing.Size(31, 28);
             this.button92.TabIndex = 133;
             this.button92.UseVisualStyleBackColor = false;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(329, 164);
+            this.label12.Location = new System.Drawing.Point(439, 202);
+            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(56, 13);
+            this.label12.Size = new System.Drawing.Size(74, 17);
             this.label12.TabIndex = 134;
             this.label12.Text = "Disponible";
             // 
@@ -977,9 +1057,10 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // 
             this.button93.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.button93.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button93.Location = new System.Drawing.Point(300, 189);
+            this.button93.Location = new System.Drawing.Point(400, 233);
+            this.button93.Margin = new System.Windows.Forms.Padding(4);
             this.button93.Name = "button93";
-            this.button93.Size = new System.Drawing.Size(23, 23);
+            this.button93.Size = new System.Drawing.Size(31, 28);
             this.button93.TabIndex = 135;
             this.button93.UseVisualStyleBackColor = false;
             // 
@@ -987,45 +1068,51 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // 
             this.button94.BackColor = System.Drawing.Color.DarkBlue;
             this.button94.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button94.Location = new System.Drawing.Point(300, 218);
+            this.button94.Location = new System.Drawing.Point(400, 268);
+            this.button94.Margin = new System.Windows.Forms.Padding(4);
             this.button94.Name = "button94";
-            this.button94.Size = new System.Drawing.Size(23, 23);
+            this.button94.Size = new System.Drawing.Size(31, 28);
             this.button94.TabIndex = 136;
             this.button94.UseVisualStyleBackColor = false;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(329, 194);
+            this.label13.Location = new System.Drawing.Point(439, 239);
+            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(51, 13);
+            this.label13.Size = new System.Drawing.Size(66, 17);
             this.label13.TabIndex = 137;
             this.label13.Text = "Ocupado";
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(329, 223);
+            this.label14.Location = new System.Drawing.Point(439, 274);
+            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(54, 13);
+            this.label14.Size = new System.Drawing.Size(69, 17);
             this.label14.TabIndex = 138;
             this.label14.Text = "Seleccion";
             // 
-            // button95
+            // btn_pagar
             // 
-            this.button95.Location = new System.Drawing.Point(257, 581);
-            this.button95.Name = "button95";
-            this.button95.Size = new System.Drawing.Size(183, 51);
-            this.button95.TabIndex = 139;
-            this.button95.Text = "CONTINUAR";
-            this.button95.UseVisualStyleBackColor = true;
+            this.btn_pagar.Location = new System.Drawing.Point(343, 715);
+            this.btn_pagar.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_pagar.Name = "btn_pagar";
+            this.btn_pagar.Size = new System.Drawing.Size(244, 63);
+            this.btn_pagar.TabIndex = 139;
+            this.btn_pagar.Text = "CONTINUAR";
+            this.btn_pagar.UseVisualStyleBackColor = true;
+            this.btn_pagar.Click += new System.EventHandler(this.btn_pagar_Click);
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(161, 276);
+            this.label15.Location = new System.Drawing.Point(215, 340);
+            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(14, 13);
+            this.label15.Size = new System.Drawing.Size(17, 17);
             this.label15.TabIndex = 140;
             this.label15.Text = "A";
             this.label15.Click += new System.EventHandler(this.label15_Click);
@@ -1033,91 +1120,98 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(161, 305);
+            this.label16.Location = new System.Drawing.Point(215, 375);
+            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(14, 13);
+            this.label16.Size = new System.Drawing.Size(17, 17);
             this.label16.TabIndex = 141;
             this.label16.Text = "B";
             // 
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(161, 334);
+            this.label17.Location = new System.Drawing.Point(215, 411);
+            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(14, 13);
+            this.label17.Size = new System.Drawing.Size(17, 17);
             this.label17.TabIndex = 142;
             this.label17.Text = "C";
             // 
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(161, 363);
+            this.label18.Location = new System.Drawing.Point(215, 447);
+            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(15, 13);
+            this.label18.Size = new System.Drawing.Size(18, 17);
             this.label18.TabIndex = 143;
             this.label18.Text = "D";
             // 
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(162, 392);
+            this.label19.Location = new System.Drawing.Point(216, 482);
+            this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(14, 13);
+            this.label19.Size = new System.Drawing.Size(17, 17);
             this.label19.TabIndex = 144;
             this.label19.Text = "E";
             // 
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(162, 421);
+            this.label20.Location = new System.Drawing.Point(216, 518);
+            this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(13, 13);
+            this.label20.Size = new System.Drawing.Size(16, 17);
             this.label20.TabIndex = 145;
             this.label20.Text = "F";
             // 
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(162, 450);
+            this.label21.Location = new System.Drawing.Point(216, 554);
+            this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(15, 13);
+            this.label21.Size = new System.Drawing.Size(19, 17);
             this.label21.TabIndex = 146;
             this.label21.Text = "G";
             // 
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(163, 479);
+            this.label22.Location = new System.Drawing.Point(217, 590);
+            this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(15, 13);
+            this.label22.Size = new System.Drawing.Size(18, 17);
             this.label22.TabIndex = 147;
             this.label22.Text = "H";
             // 
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(163, 508);
+            this.label23.Location = new System.Drawing.Point(217, 625);
+            this.label23.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(10, 13);
+            this.label23.Size = new System.Drawing.Size(11, 17);
             this.label23.TabIndex = 148;
             this.label23.Text = "I";
             // 
             // pb1
             // 
-            this.pb1.Location = new System.Drawing.Point(658, 466);
-            this.pb1.Margin = new System.Windows.Forms.Padding(2);
+            this.pb1.Location = new System.Drawing.Point(877, 574);
+            this.pb1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pb1.Name = "pb1";
-            this.pb1.Size = new System.Drawing.Size(250, 19);
+            this.pb1.Size = new System.Drawing.Size(333, 23);
             this.pb1.TabIndex = 149;
             this.pb1.Click += new System.EventHandler(this.pb1_Click);
             // 
             // lblT
             // 
             this.lblT.AutoSize = true;
-            this.lblT.Location = new System.Drawing.Point(868, 436);
-            this.lblT.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblT.Location = new System.Drawing.Point(1157, 537);
             this.lblT.Name = "lblT";
-            this.lblT.Size = new System.Drawing.Size(41, 13);
+            this.lblT.Size = new System.Drawing.Size(54, 17);
             this.lblT.TabIndex = 150;
             this.lblT.Text = "label11";
             // 
@@ -1125,10 +1219,9 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // 
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(744, 260);
-            this.label24.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label24.Location = new System.Drawing.Point(992, 320);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(101, 29);
+            this.label24.Size = new System.Drawing.Size(123, 36);
             this.label24.TabIndex = 152;
             this.label24.Text = "Boletos:";
             // 
@@ -1136,10 +1229,9 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // 
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(849, 260);
-            this.label25.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label25.Location = new System.Drawing.Point(1132, 320);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(93, 29);
+            this.label25.Size = new System.Drawing.Size(112, 36);
             this.label25.TabIndex = 153;
             this.label25.Text = "boletos";
             // 
@@ -1147,17 +1239,18 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // 
             this.lbl_totalventa.AutoSize = true;
             this.lbl_totalventa.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_totalventa.Location = new System.Drawing.Point(773, 334);
+            this.lbl_totalventa.Location = new System.Drawing.Point(1031, 411);
+            this.lbl_totalventa.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_totalventa.Name = "lbl_totalventa";
-            this.lbl_totalventa.Size = new System.Drawing.Size(86, 25);
+            this.lbl_totalventa.Size = new System.Drawing.Size(105, 31);
             this.lbl_totalventa.TabIndex = 154;
             this.lbl_totalventa.Text = "Total : ";
             // 
             // Asientos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(989, 742);
+            this.ClientSize = new System.Drawing.Size(1319, 796);
             this.Controls.Add(this.lbl_totalventa);
             this.Controls.Add(this.label25);
             this.Controls.Add(this.label24);
@@ -1172,7 +1265,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             this.Controls.Add(this.label17);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label15);
-            this.Controls.Add(this.button95);
+            this.Controls.Add(this.btn_pagar);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.button94);
@@ -1261,6 +1354,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             this.Controls.Add(this.picbx_pelicula);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Asientos";
             this.Text = "Asientos";
             this.Load += new System.EventHandler(this.Asientos_Load_1);
@@ -1360,7 +1454,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
         private System.Windows.Forms.Button button94;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Button button95;
+        private System.Windows.Forms.Button btn_pagar;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;

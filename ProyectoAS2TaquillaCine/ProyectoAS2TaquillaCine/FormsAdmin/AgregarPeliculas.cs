@@ -10,7 +10,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using System.Data.SqlClient;
-using System.Drawing;
 using System.Drawing.Imaging;
 using System.Text.RegularExpressions;
 
@@ -648,6 +647,11 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
         }
 
         private void txtgenero_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }

@@ -14,10 +14,12 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
 {
     public partial class CarteleraNueva : Form
     {
+        private int idCliente;
         string connectionString = DatabaseConfig.ConnectionString;
-        public CarteleraNueva()
+        public CarteleraNueva(int idCliente)
         {
             InitializeComponent();
+            this.idCliente = idCliente;
         }
 
         private void CarteleraNueva_Load(object sender, EventArgs e)
@@ -102,7 +104,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
                 int pelicula = (int)moviePanel.Tag;
 
                 // Abrir el formulario de detalles de la película
-                InfoPelicula formhorario = new InfoPelicula(pelicula);
+                InfoPelicula formhorario = new InfoPelicula(pelicula, idCliente);
                 this.Hide();
                 formhorario.ShowDialog();
                 this.Close();
@@ -253,7 +255,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
                             {
                                 int id = (int)panel.Tag;
                                 this.Hide();
-                                InfoPelicula form = new InfoPelicula(id);
+                                InfoPelicula form = new InfoPelicula(id, idCliente);
                                 form.ShowDialog();
                                 this.Close();
                             };

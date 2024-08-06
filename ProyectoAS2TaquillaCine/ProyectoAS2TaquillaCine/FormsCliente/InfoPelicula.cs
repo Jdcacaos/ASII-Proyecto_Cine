@@ -16,13 +16,15 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
     {
         string connectionString = DatabaseConfig.ConnectionString;
         private int idpelicula;
+        private int idCliente;
 
         private string trailerUrl; // Asegúrate de que esta variable esté inicializada
 
-        public InfoPelicula(int id)
+        public InfoPelicula(int id, int idCliente)
         {
             InitializeComponent();
             idpelicula = id;
+            this.idCliente = idCliente;
         }
 
         private void InfoPelicula_Load(object sender, EventArgs e)
@@ -74,7 +76,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
 
         private void byn_back_Click_1(object sender, EventArgs e)
         {
-            FormsCliente.CarteleraNueva Cartelera = new CarteleraNueva();
+            FormsCliente.CarteleraNueva Cartelera = new CarteleraNueva(idCliente);
             this.Hide();
             Cartelera.ShowDialog();
             this.Close();
@@ -101,7 +103,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
 
         private void btnReserva_Click(object sender, EventArgs e)
         {
-            FormsCliente.Reserva FormReserva = new Reserva(idpelicula);
+            FormsCliente.Reserva FormReserva = new Reserva(idpelicula, idCliente);
             this.Hide();
             FormReserva.ShowDialog();
             this.Close();

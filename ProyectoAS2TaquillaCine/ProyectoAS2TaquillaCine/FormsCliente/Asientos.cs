@@ -22,13 +22,15 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
         private int tiempoRestante; // Tiempo restante en segundos
         private int pelicula;
         private int totalventa;
+        private int idCliente;
 
-        public Asientos(int id, int total)
+        public Asientos(int id, int total, int idCliente)
         {
             InitializeComponent();
     
             pelicula = id;
             totalventa = total;
+            this.idCliente = idCliente;
 
             // Asegúrate de que el Timer se inicializa y se configura correctamente
             timer = new Timer();
@@ -163,7 +165,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
                 MessageBox.Show("¡Tiempo agotado!");
 
                 // Redirige al formulario CarteleraNueva
-                CarteleraNueva carteleraNueva = new CarteleraNueva();
+                CarteleraNueva carteleraNueva = new CarteleraNueva(idCliente);
                 carteleraNueva.Show();
                 this.Close(); // Opcional: cierra el formulario actual si ya no es necesario
             }
@@ -212,7 +214,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
 
         private void button8_Click(object sender, EventArgs e)
         {
-            FormsCliente.CarteleraNueva formReserva = new FormsCliente.CarteleraNueva();
+            FormsCliente.CarteleraNueva formReserva = new FormsCliente.CarteleraNueva(idCliente);
             formReserva.Show();
             timer.Stop();
             this.Close();
@@ -291,6 +293,14 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
         private void btnI10_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_pagar_Click(object sender, EventArgs e)
+        {
+            FormsCliente.Pago formPago = new FormsCliente.Pago(totalventa, idCliente);
+            formPago.Show();
+            timer.Stop();
+            this.Hide();
         }
     }
 }
