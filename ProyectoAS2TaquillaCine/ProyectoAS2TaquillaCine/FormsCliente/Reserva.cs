@@ -285,12 +285,34 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             operar(textBox3, label11, label15);
             total(textBox1, textBox2, textBox3, label13, label14, label15);
         }
+        private int ObtenerIdProyeccion(int idPelicula, string fecha, string hora)
+        {
+            int idProyeccion = -1;
+            string query = "SELECT ID_Proyeccion FROM tbl_proyeccion WHERE FK_ID_Pelicula = @ID_Pelicula AND Fecha = @Fecha AND Hora = @Hora";
+
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                MySqlCommand command = new MySqlCommand(query, connection);
+                command.Parameters.AddWithValue("@ID_Pelicula", idPelicula);
+                command.Parameters.AddWithValue("@Fecha", fecha);
+                command.Parameters.AddWithValue("@Hora", hora);
+                connection.Open();
+                object result = command.ExecuteScalar();
+                if (result != null)
+                {
+                    idProyeccion = Convert.ToInt32(result);
+                }
+            }
+
+            return idProyeccion;
+        }
 
         private void button7_Click(object sender, EventArgs e)
         {
             int totalAsientos = Convert.ToInt32(textBox1.Text) + Convert.ToInt32(textBox2.Text) + Convert.ToInt32(textBox3.Text);
+            int idProyeccion = ObtenerIdProyeccion(pelicula, comboBox1.SelectedItem.ToString(), comboBox2.SelectedItem.ToString());
             totalventa = Convert.ToInt32(label16.Text);
-            FormsCliente.Asientos formAsientos = new FormsCliente.Asientos(pelicula, totalventa);
+            FormsCliente.Asientos formAsientos = new FormsCliente.Asientos(pelicula, totalventa, idProyeccion);
             formAsientos.TotalAsientos = totalAsientos;
 
             formAsientos.Show();
