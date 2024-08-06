@@ -262,7 +262,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
                     reader2.Close(); // Cerrar el segundo lector
 
                     string query3 = "SELECT A.Fila, A.Numero FROM tbl_reservacion R " +
-                           "JOIN tbl_asientos A ON R.Fk_ID_Asiento = A.ID_Asiento " +
+                           "JOIN tbl_asiento A ON R.Fk_ID_Asiento = A.ID_Asiento " +
                            "WHERE R.Fk_ID_Proyeccion = @proyeccionId";
                     MySqlCommand cmd3 = new MySqlCommand(query3, conexion);
                     cmd3.Parameters.AddWithValue("@proyeccionId", idproye); // Reemplazar 'pelicula' por el ID de la proyección si es necesario
@@ -336,6 +336,11 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
         }
 
         private void btnA2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button95_Click(object sender, EventArgs e)
         {
 
         }

@@ -121,17 +121,20 @@
   <data name="16974783388025" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\16974783388025.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="telefono-gratuito-cinesur" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\telefono-gratuito-cinesur.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="metodo-de-pago" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\metodo-de-pago.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="agregar-usuario1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\agregar-usuario1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="cinema-movies-concept-background-with-5761469" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cinema-movies-concept-background-with-5761469.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ticket_cinema_icon_190885" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ticket_cinema_icon_190885.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="metodo-de-pago" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\metodo-de-pago.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="apagar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\apagar.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="clock_timer_time_calendar_date_schedule_hourglass_stopwatch_deadline_icon_231905" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\clock_timer_time_calendar_date_schedule_hourglass_stopwatch_deadline_icon_231905.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="cine1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cine1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -139,11 +142,11 @@
   <data name="panel-de-administrador1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\panel-de-administrador1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ticket_cinema_icon_190885" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ticket_cinema_icon_190885.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="cinema-movies-concept-background-with-5761469" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cinema-movies-concept-background-with-5761469.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="clock_timer_time_calendar_date_schedule_hourglass_stopwatch_deadline_icon_231905" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\clock_timer_time_calendar_date_schedule_hourglass_stopwatch_deadline_icon_231905.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="telefono-gratuito-cinesur" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\telefono-gratuito-cinesur.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="mapa" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\mapa.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -151,7 +154,7 @@
   <data name="cine" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cine.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="apagar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\apagar.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="libro-abierto" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\libro-abierto.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
