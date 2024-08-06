@@ -41,9 +41,10 @@ namespace ProyectoAS2TaquillaCine.FormsGlobales
             this.label1.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Location = new System.Drawing.Point(272, 115);
+            this.label1.Location = new System.Drawing.Point(363, 142);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(131, 31);
+            this.label1.Size = new System.Drawing.Size(162, 39);
             this.label1.TabIndex = 8;
             this.label1.Text = "CINEEE!";
             // 
@@ -51,9 +52,10 @@ namespace ProyectoAS2TaquillaCine.FormsGlobales
             // 
             this.button2.BackColor = System.Drawing.SystemColors.Highlight;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(374, 251);
+            this.button2.Location = new System.Drawing.Point(499, 309);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(221, 79);
+            this.button2.Size = new System.Drawing.Size(295, 97);
             this.button2.TabIndex = 7;
             this.button2.Text = "Administrador";
             this.button2.UseVisualStyleBackColor = false;
@@ -63,9 +65,10 @@ namespace ProyectoAS2TaquillaCine.FormsGlobales
             // 
             this.button1.BackColor = System.Drawing.SystemColors.Highlight;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(84, 251);
+            this.button1.Location = new System.Drawing.Point(112, 309);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(201, 79);
+            this.button1.Size = new System.Drawing.Size(268, 97);
             this.button1.TabIndex = 6;
             this.button1.Text = "Cliente";
             this.button1.UseVisualStyleBackColor = false;
@@ -76,10 +79,11 @@ namespace ProyectoAS2TaquillaCine.FormsGlobales
             this.button3.BackColor = System.Drawing.Color.Red;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold);
             this.button3.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button3.Location = new System.Drawing.Point(12, 12);
+            this.button3.Location = new System.Drawing.Point(16, 15);
+            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button3.Name = "button3";
             this.button3.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.button3.Size = new System.Drawing.Size(120, 60);
+            this.button3.Size = new System.Drawing.Size(160, 74);
             this.button3.TabIndex = 9;
             this.button3.Text = "Apagar";
             this.button3.UseVisualStyleBackColor = false;
@@ -87,17 +91,19 @@ namespace ProyectoAS2TaquillaCine.FormsGlobales
             // 
             // Menu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ProyectoAS2TaquillaCine.Properties.Resources.cinema_movies_concept_background_with_5761469;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(679, 445);
+            this.ClientSize = new System.Drawing.Size(905, 548);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Menu";
             this.Text = "Menu";
+            this.Load += new System.EventHandler(this.Menu_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

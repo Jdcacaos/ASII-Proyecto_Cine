@@ -23,10 +23,11 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
         private int pelicula;
         private int totalventa;
         private int idproye;
-        public Asientos(int id, int total, int idproyeccion)
+        private int idCliente;
+        public Asientos(int id, int total, int idproyeccion, int idcliente)
         {
             InitializeComponent();
-    
+            idCliente = idcliente;
             pelicula = id;
             totalventa = total;
             idproye = idproyeccion;
@@ -163,7 +164,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
                 MessageBox.Show("¡Tiempo agotado!");
 
                 // Redirige al formulario CarteleraNueva
-                CarteleraNueva carteleraNueva = new CarteleraNueva();
+                CarteleraNueva carteleraNueva = new CarteleraNueva(idCliente);
                 carteleraNueva.Show();
                 this.Close(); // Opcional: cierra el formulario actual si ya no es necesario
             }
@@ -209,7 +210,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
 
         private void button8_Click(object sender, EventArgs e)
         {
-            FormsCliente.CarteleraNueva formReserva = new FormsCliente.CarteleraNueva();
+            FormsCliente.CarteleraNueva formReserva = new FormsCliente.CarteleraNueva(idCliente);
             formReserva.Show();
             timer.Stop();
             this.Close();
@@ -306,8 +307,25 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
                 case 'C':
                     btn = this.Controls.Find("btnC" + numero, true).FirstOrDefault() as Button;
                     break;
-                    // Repetir para las demás filas D a I
-                    // ...
+                case 'D':
+                    btn = this.Controls.Find("btnD" + numero, true).FirstOrDefault() as Button;
+                    break;
+                case 'E':
+                    btn = this.Controls.Find("btnE" + numero, true).FirstOrDefault() as Button;
+                    break;
+                case 'F':
+                    btn = this.Controls.Find("btnF" + numero, true).FirstOrDefault() as Button;
+                    break;
+                case 'G':
+                    btn = this.Controls.Find("btnG" + numero, true).FirstOrDefault() as Button;
+                    break;
+                case 'H':
+                    btn = this.Controls.Find("btnH" + numero, true).FirstOrDefault() as Button;
+                    break;
+                case 'I':
+                    btn = this.Controls.Find("btnI" + numero, true).FirstOrDefault() as Button;
+                    break;
+
             }
 
             // Si se encuentra el botón, marcarlo como ocupado
@@ -342,7 +360,10 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
 
         private void button95_Click(object sender, EventArgs e)
         {
-
+            FormsCliente.Pago formPago = new FormsCliente.Pago(totalventa, idCliente);
+            formPago.Show();
+            timer.Stop();
+            this.Hide();
         }
     }
 }

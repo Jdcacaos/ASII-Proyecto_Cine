@@ -54,26 +54,6 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
-        }
-
-
-        private void mostrarCon_CheckedChanged(object sender, EventArgs e)
-        {
-            if (mostrarCon.Checked)
-            {
-                // Mostrar la contraseña
-                txtContrasena.PasswordChar = '\0'; // \0 es el carácter nulo, que muestra el texto plano
-            }
-            else
-            {
-                // Ocultar la contraseña
-                txtContrasena.PasswordChar = '*'; // O cualquier otro carácter de tu elección
-            }
-        }
-
-        private void txtContrasena_TextChanged(object sender, EventArgs e)
-        {
             // Cadena de conexión a tu base de datos MySQL
             string connectionString = DatabaseConfig.ConnectionString;
 
@@ -135,6 +115,26 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
                     MessageBox.Show("Error al conectar con la base de datos: " + ex.Message);
                 }
             }
+        }
+
+
+        private void mostrarCon_CheckedChanged(object sender, EventArgs e)
+        {
+            if (mostrarCon.Checked)
+            {
+                // Mostrar la contraseña
+                txtContrasena.PasswordChar = '\0'; // \0 es el carácter nulo, que muestra el texto plano
+            }
+            else
+            {
+                // Ocultar la contraseña
+                txtContrasena.PasswordChar = '*'; // O cualquier otro carácter de tu elección
+            }
+        }
+
+        private void txtContrasena_TextChanged(object sender, EventArgs e)
+        {
+           
 
         }
     }
