@@ -1,10 +1,13 @@
-﻿using MySql.Data.MySqlClient;
+﻿using iTextSharp.text;
+using iTextSharp.text.pdf;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,6 +25,11 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
         private int idCliente;
         private int descu;
         private int idproyeccion;
+
+        private string nombreCliente;
+        private string nombrePelicula;
+        private string horario;
+        private int numAsientos;
         public Pago(int TotalVenta, int idCliente, List<(char fila, int numero)> asientos, int idproye, int desc)
         {
             InitializeComponent();
@@ -102,7 +110,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
 
         private void Pago_Load(object sender, EventArgs e)
         {
-           
+            obtnerdatosfactura();
         }
 
         private void LlenarComboEmpleados()
@@ -148,6 +156,54 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
                 catch (Exception ex)
                 {
                     MessageBox.Show("Error al cargar los datos: " + ex.Message);
+                }
+            }
+        }
+
+        private void obtnerdatosfactura()
+        {
+            string tipoTarjeta = rb_Credito.Checked ? "Credito" : "Debito";
+            int totalVenta = Venta;
+            int descuento = descu;
+            numAsientos = asientosSeleccionados.Count;
+
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+
+                    // Consulta SQL para obtener los datos de la factura
+                    string query = @"
+                                  SELECT 
+                        c.Nombre AS NombreCliente, 
+                        p.Titulo AS NombrePelicula, 
+                        CONCAT(pr.Fecha, ' ', pr.Hora) AS Horario
+                    FROM tbl_cliente c
+                    JOIN tbl_reservacion r ON c.ID_Cliente = r.Fk_ID_cliente
+                    JOIN tbl_proyeccion pr ON r.Fk_ID_Proyeccion = pr.ID_Proyeccion
+                    JOIN tbl_pelicula p ON pr.FK_ID_Pelicula = p.ID_Pelicula
+                    WHERE c.ID_Cliente = @idCliente AND pr.ID_Proyeccion = @idProyeccion";
+
+                    using (MySqlCommand command = new MySqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@idCliente", idCliente);
+                        command.Parameters.AddWithValue("@idProyeccion", idproyeccion);
+
+                        using (MySqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                nombreCliente = reader.GetString("NombreCliente");
+                                nombrePelicula = reader.GetString("NombrePelicula");
+                                horario = reader.GetString("Horario");
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al obtener los datos de la factura: " + ex.Message);
                 }
             }
         }
@@ -377,7 +433,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
 
                 // Mensaje de confirmación
                 MessageBox.Show("Boletos comprados.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                GenerarFacturaPDF();
                 timer.Stop();
                 this.Close();
             }
@@ -403,6 +459,85 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
         {
 
         }
+        private void GenerarFacturaPDF()
+        {
+            int venta = Venta;
+            int descuento = descu;
+            string metodoPago = "Tarjeta " + (rb_Credito.Checked ? "Credito" : "Debito");
+            DateTime fechaHora = DateTime.Now;
+            int idEmpleado = Convert.ToInt32(cbEmpleados.SelectedValue);
 
+            string nombrec = txtNombre.Text;
+
+            // Generar un número de factura (correlativo)
+            int numeroFactura = GenerarNumeroFactura(); // Método que genera o recupera el número de factura
+
+            // Ruta para guardar el PDF
+            string pdfDirectory = @"C:\Users\bhern\Desktop\PDF";
+            string pdfFileName = $"Factura_{numeroFactura}_{fechaHora:yyyyMMdd_HHmmss}.pdf";
+            string pdfPath = Path.Combine(pdfDirectory, pdfFileName);
+
+            // Crear un documento PDF
+            Document document = new Document();
+            PdfWriter.GetInstance(document, new FileStream(pdfPath, FileMode.Create));
+
+            // Abrir el documento para escribir
+            document.Open();
+
+            // Añadir contenido al documento
+
+            document.Add(new Paragraph($"Fecha y Hora: {fechaHora}"));
+            document.Add(new Paragraph($"Nombre del cliente: {nombrec}"));
+            document.Add(new Paragraph($"Nombre de la película: {nombrePelicula}"));
+            document.Add(new Paragraph($"Horario: {horario}"));
+            document.Add(new Paragraph($"Número de asientos: {numAsientos}"));
+            document.Add(new Paragraph($"Descuento: {descuento}"));
+            document.Add(new Paragraph($"Total de venta: {venta}"));
+            document.Add(new Paragraph($"Método de Pago: {metodoPago}"));
+            document.Add(new Paragraph($"ID del Empleado: {idEmpleado}"));
+
+            // Cerrar el documento
+            document.Close();
+
+            MessageBox.Show($"PDF generado con éxito en {pdfPath}");
+        }
+
+        private int GenerarNumeroFactura()
+        {
+            int numeroFactura = 0;
+
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+
+                    // Consulta para obtener el último número de factura
+                    string query = "SELECT MAX(NumeroFactura) FROM tbl_factura";
+
+                    using (MySqlCommand command = new MySqlCommand(query, connection))
+                    {
+                        object result = command.ExecuteScalar();
+                        if (result != DBNull.Value && result != null)
+                        {
+                            numeroFactura = Convert.ToInt32(result) + 1;
+                        }
+                        else
+                        {
+                            numeroFactura = 1; // Primera factura
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al generar el número de factura: " + ex.Message);
+                }
+            }
+
+            return numeroFactura;
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+        }
     }
 }
