@@ -24,6 +24,13 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
         {
             InitializeComponent();
             dgv_peliculas.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            tmr_timer1 = new Timer();
+            tmr_timer1.Interval = 100; // Intervalo en milisegundos (1000 ms = 1 segundo)
+            tmr_timer1.Tick += new EventHandler(tmr_timer1_Tick);
+            tmr_timer1.Start(); // Iniciar el Timer
+            btn_editar.Visible = GlobalSettings.IsAdmin;
+            btn_eliminar.Visible = GlobalSettings.IsAdmin;
+            gbIngresar.Visible = GlobalSettings.IsAdmin;
         }
 
 
@@ -654,6 +661,63 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void label2_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void UpdateDateTimeLabel()
+        {
+            // Obtener la fecha y hora actuales
+            DateTime now = DateTime.Now;
+
+            // Formatear la fecha y hora como texto
+            string dateTimeText = now.ToString("yyyy-MM-dd HH:mm:ss"); // Cambia el formato según tus necesidades
+
+            // Establecer el texto del Label
+            lb_fechaSys.Text = dateTimeText;
+        }
+        private void tmr_timer1_Tick(object sender, EventArgs e)
+        {
+            UpdateDateTimeLabel();
+        }
+
+        private void txtbxBuscar_TextChanged(object sender, EventArgs e)
+        {
+            // Obtener el texto de búsqueda
+            string searchText = txtbxBuscar.Text.Trim();
+            if (string.IsNullOrEmpty(searchText))
+            {
+                // Si el texto de búsqueda está vacío, no aplicar filtro
+                (dgv_peliculas.DataSource as DataTable).DefaultView.RowFilter = string.Empty;
+                return;
+            }
+
+            // Crear una lista para las expresiones de filtro
+            List<string> filterExpressions = new List<string>();
+
+            // Obtener el DataTable
+            DataTable dataTable = dgv_peliculas.DataSource as DataTable;
+
+            // Recorrer todas las columnas del DataTable
+            foreach (DataColumn column in dataTable.Columns)
+            {
+                // Excluir columnas que no sean de tipo texto
+                if (column.DataType == typeof(string))
+                {
+                    // Agregar expresión de filtro para la columna
+                    filterExpressions.Add($"[{column.ColumnName}] LIKE '%{searchText}%'");
+                }
+            }
+
+            // Unir todas las expresiones de filtro con el operador OR
+            string filterExpression = string.Join(" OR ", filterExpressions);
+
+            // Aplicar el filtro
+            (dgv_peliculas.DataSource as DataTable).DefaultView.RowFilter = filterExpression;
         }
     }
 }

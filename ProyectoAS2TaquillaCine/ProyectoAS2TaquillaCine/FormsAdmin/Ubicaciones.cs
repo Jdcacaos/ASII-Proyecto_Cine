@@ -23,12 +23,13 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
         public Ubicaciones()
         {
             InitializeComponent();
-            dgv_ubicaciones.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            // Configurar el Timer
             tmr_tiempo = new Timer();
-            tmr_tiempo.Interval = 1000; // 1000 ms = 1 segundo
-            tmr_tiempo.Tick += new EventHandler(this.TimerFechaHora_Tick);
+            tmr_tiempo.Interval = 100; // Intervalo en milisegundos (1000 ms = 1 segundo)
+            tmr_tiempo.Tick += new EventHandler(tmr_tiempo_Tick);
             tmr_tiempo.Start(); // Iniciar el Timer
+            btn_editar.Visible = GlobalSettings.IsAdmin;
+            btn_eliminar.Visible = GlobalSettings.IsAdmin;
+            gbIngresar.Visible = GlobalSettings.IsAdmin;
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -437,6 +438,57 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
+        }
+
+        private void txtbxBuscar_TextChanged(object sender, EventArgs e)
+        {
+            // Obtener el texto de búsqueda
+            string searchText = txtbxBuscar.Text.Trim();
+            if (string.IsNullOrEmpty(searchText))
+            {
+                // Si el texto de búsqueda está vacío, no aplicar filtro
+                (dgv_ubicaciones.DataSource as DataTable).DefaultView.RowFilter = string.Empty;
+                return;
+            }
+
+            // Crear una lista para las expresiones de filtro
+            List<string> filterExpressions = new List<string>();
+
+            // Obtener el DataTable
+            DataTable dataTable = dgv_ubicaciones.DataSource as DataTable;
+
+            // Recorrer todas las columnas del DataTable
+            foreach (DataColumn column in dataTable.Columns)
+            {
+                // Excluir columnas que no sean de tipo texto
+                if (column.DataType == typeof(string))
+                {
+                    // Agregar expresión de filtro para la columna
+                    filterExpressions.Add($"[{column.ColumnName}] LIKE '%{searchText}%'");
+                }
+            }
+
+            // Unir todas las expresiones de filtro con el operador OR
+            string filterExpression = string.Join(" OR ", filterExpressions);
+
+            // Aplicar el filtro
+            (dgv_ubicaciones.DataSource as DataTable).DefaultView.RowFilter = filterExpression;
+        }
+
+        private void UpdateDateTimeLabel()
+        {
+            // Obtener la fecha y hora actuales
+            DateTime now = DateTime.Now;
+
+            // Formatear la fecha y hora como texto
+            string dateTimeText = now.ToString("yyyy-MM-dd HH:mm:ss"); // Cambia el formato según tus necesidades
+
+            // Establecer el texto del Label
+            lb_fechaHora.Text = dateTimeText;
+        }
+        private void tmr_tiempo_Tick(object sender, EventArgs e)
+        {
+            UpdateDateTimeLabel();
         }
     }
 

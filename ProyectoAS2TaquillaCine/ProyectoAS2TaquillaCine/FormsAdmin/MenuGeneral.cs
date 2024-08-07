@@ -61,12 +61,21 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
 
         private void button7_Click(object sender, EventArgs e)
         {
+            // Verifica si el usuario es administrador y cambia la variable global si es necesario
+            if (GlobalSettings.IsAdmin)
+            {
+                GlobalSettings.IsAdmin = false;
+            }
+
+            // Mostrar el formulario de inicio de sesión (o cualquier otro formulario de tu elección)
             FormsGlobales.Menu newMenu = new FormsGlobales.Menu();
             newMenu.Show();
+
+            // Cerrar el formulario actual
             this.Hide();
         }
 
-        private void button8_Click(object sender, EventArgs e)
+        private void btn_bitacora_Click(object sender, EventArgs e)
         {
             AbrirformHijo(new FormsAdmin.Bitacora());
         }

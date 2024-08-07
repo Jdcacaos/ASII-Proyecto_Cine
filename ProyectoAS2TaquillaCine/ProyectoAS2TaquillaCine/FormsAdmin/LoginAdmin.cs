@@ -13,6 +13,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
 {
     public partial class LoginAdmin : Form
     {
+
         public LoginAdmin()
         {
             InitializeComponent();
@@ -58,33 +59,56 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                     connection.Open();
 
                     // Crear un comando para validar el email y la contraseña
-                    string query = "SELECT COUNT(1) FROM tbl_empleado WHERE Email = @Email AND Contrasena = @Contrasena";
+                    string query = "SELECT Contrasena, FK_ID_Cargo FROM tbl_empleado WHERE Email = @Email";
 
                     using (MySqlCommand command = new MySqlCommand(query, connection))
                     {
-                        // Agregar los parámetros con los valores ingresados
+                        // Agregar el parámetro con el valor ingresado
                         command.Parameters.AddWithValue("@Email", email);
-                        command.Parameters.AddWithValue("@Contrasena", contrasena);
 
                         // Ejecutar el comando y obtener el resultado
-                        int count = Convert.ToInt32(command.ExecuteScalar());
-
-                        if (count == 1)
+                        using (MySqlDataReader reader = command.ExecuteReader())
                         {
-                            // Las credenciales son correctas, permitir el acceso
-                            MessageBox.Show("Inicio de sesión exitoso.", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            // Aquí puedes abrir el formulario principal de tu aplicación o proceder según tu lógica
-                            // Ejemplo:
-                            FormsAdmin.MenuGeneral dashboardForm = new FormsAdmin.MenuGeneral();
-                            dashboardForm.Show();
+                            if (reader.Read())
+                            {
+                                string storedPassword = reader["Contrasena"].ToString();
+                                int cargoId = Convert.ToInt32(reader["FK_ID_Cargo"]);
 
-                            // Opcional: Cerrar o esconder el formulario actual
-                            this.Hide();
-                        }
-                        else
-                        {
-                            // Las credenciales son incorrectas, mostrar un mensaje de error
-                            MessageBox.Show("Correo o contraseña incorrectos.", "Error de login", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                // Comparar la contraseña ingresada con la almacenada
+                                if (storedPassword == contrasena)
+                                {
+                                    // Verificar el cargo del usuario
+                                    if (cargoId == 1)
+                                    {
+                                        // El usuario tiene el cargo de administrador
+                                        GlobalSettings.IsAdmin = true; // Activar la variable global
+                                    }
+                                    else
+                                    {
+                                        // El usuario no es administrador
+                                        GlobalSettings.IsAdmin = false; // O cualquier otra lógica según sea necesario
+                                    }
+
+                                    MessageBox.Show("Inicio de sesión exitoso.", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                                    // Aquí puedes abrir el formulario principal de tu aplicación o proceder según tu lógica
+                                    FormsAdmin.MenuGeneral dashboardForm = new FormsAdmin.MenuGeneral();
+                                    dashboardForm.Show();
+
+                                    // Opcional: Cerrar o esconder el formulario actual
+                                    this.Hide();
+                                }
+                                else
+                                {
+                                    // La contraseña es incorrecta, mostrar un mensaje de error
+                                    MessageBox.Show("Correo o contraseña incorrectos.", "Error de login", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
+                            }
+                            else
+                            {
+                                // El correo no existe, mostrar un mensaje de error
+                                MessageBox.Show("Correo o contraseña incorrectos.", "Error de login", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
                         }
                     }
                 }
@@ -94,6 +118,8 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                 }
             }
         }
+
+
 
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)

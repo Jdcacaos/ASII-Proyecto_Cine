@@ -77,7 +77,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.panel_panelGeneral.Location = new System.Drawing.Point(202, 28);
             this.panel_panelGeneral.Margin = new System.Windows.Forms.Padding(2);
             this.panel_panelGeneral.Name = "panel_panelGeneral";
-            this.panel_panelGeneral.Size = new System.Drawing.Size(876, 738);
+            this.panel_panelGeneral.Size = new System.Drawing.Size(876, 721);
             this.panel_panelGeneral.TabIndex = 20;
             // 
             // panel_panel2
@@ -96,7 +96,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.panel_panel2.Location = new System.Drawing.Point(0, 28);
             this.panel_panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel_panel2.Name = "panel_panel2";
-            this.panel_panel2.Size = new System.Drawing.Size(202, 738);
+            this.panel_panel2.Size = new System.Drawing.Size(202, 721);
             this.panel_panel2.TabIndex = 19;
             // 
             // panel_panel3
@@ -157,7 +157,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.btn_bitacora.TabIndex = 6;
             this.btn_bitacora.Text = "Bitacora";
             this.btn_bitacora.UseVisualStyleBackColor = false;
-            this.btn_bitacora.Click += new System.EventHandler(this.button8_Click);
+            this.btn_bitacora.Click += new System.EventHandler(this.btn_bitacora_Click);
             // 
             // btn_cerrarSesion
             // 
@@ -307,7 +307,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1078, 766);
+            this.ClientSize = new System.Drawing.Size(1078, 749);
             this.Controls.Add(this.panel_panelGeneral);
             this.Controls.Add(this.panel_panel2);
             this.Controls.Add(this.panel_panel1);
