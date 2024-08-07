@@ -60,6 +60,8 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             this.tiempo = new System.Windows.Forms.Timer(this.components);
             this.rb_Credito = new System.Windows.Forms.RadioButton();
             this.rb_Debito = new System.Windows.Forms.RadioButton();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -338,11 +340,33 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             this.rb_Debito.Text = "Débito";
             this.rb_Debito.UseVisualStyleBackColor = true;
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(0, 0);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(98, 21);
+            this.checkBox1.TabIndex = 161;
+            this.checkBox1.Text = "checkBox1";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(74, 440);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(81, 39);
+            this.button1.TabIndex = 162;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Pago
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1345, 690);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.rb_Debito);
             this.Controls.Add(this.rb_Credito);
             this.Controls.Add(this.lblCorreo);
@@ -413,5 +437,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
         private System.Windows.Forms.Timer tiempo;
         private System.Windows.Forms.RadioButton rb_Credito;
         private System.Windows.Forms.RadioButton rb_Debito;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Button button1;
     }
 }
