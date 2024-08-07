@@ -18,13 +18,13 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
         }
         public void AbrirformHijo(object formhijo)
         {
-            if (this.panelgeneral.Controls.Count > 0)
-                this.panelgeneral.Controls.RemoveAt(0);
+            if (this.panel_panelGeneral.Controls.Count > 0)
+                this.panel_panelGeneral.Controls.RemoveAt(0);
             Form fh = formhijo as Form;
             fh.TopLevel = false;
             fh.Dock = DockStyle.Fill;
-            this.panelgeneral.Controls.Add(fh);
-            this.panelgeneral.Tag = fh;
+            this.panel_panelGeneral.Controls.Add(fh);
+            this.panel_panelGeneral.Tag = fh;
             fh.Show();
 
 

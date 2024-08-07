@@ -43,7 +43,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                             var dataTable = new DataTable();
                             dataTable.Load(reader);
 
-                            dgvProveedores.DataSource = dataTable;
+                            dgv_bitacora.DataSource = dataTable;
                         }
                     }
                 }

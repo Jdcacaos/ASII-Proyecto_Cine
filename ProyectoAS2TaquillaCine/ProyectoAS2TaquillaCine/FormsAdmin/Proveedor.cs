@@ -19,7 +19,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
         public Proveedor()
         {
             InitializeComponent();
-            dgvProveedores.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgv_productores.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
         }
 
@@ -51,7 +51,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
 
                     using (MySqlCommand command = new MySqlCommand(query, connection))
                     {
-                        command.Parameters.AddWithValue("@Nombre", txtNombre.Text);
+                        command.Parameters.AddWithValue("@Nombre", txtbx_nombre.Text);
                         command.ExecuteNonQuery();
                     }
 
@@ -82,7 +82,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                                 var dataTable = new DataTable();
                                 dataTable.Load(reader);
 
-                                dgvProveedores.DataSource = dataTable;
+                                dgv_productores.DataSource = dataTable;
                             }
                         }
                     }
@@ -100,7 +100,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
 
         private bool datosCorrectos()
         {
-            if (string.IsNullOrWhiteSpace(txtNombre.Text))
+            if (string.IsNullOrWhiteSpace(txtbx_nombre.Text))
             {
                 MessageBox.Show("El nombre no puede estar vacío.");
                 return false;
@@ -115,10 +115,10 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                 return; // No proceder si los datos no son correctos
             }
 
-            if (dgvProveedores.SelectedCells.Count > 0)
+            if (dgv_productores.SelectedCells.Count > 0)
             {
-                int selectedRowIndex = dgvProveedores.SelectedCells[0].RowIndex;
-                DataGridViewRow selectedRow = dgvProveedores.Rows[selectedRowIndex];
+                int selectedRowIndex = dgv_productores.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = dgv_productores.Rows[selectedRowIndex];
                 int idProveedor = Convert.ToInt32(selectedRow.Cells["ID_proveedor"].Value);
 
                 DialogResult dialogResult = MessageBox.Show("¿Estás seguro de que deseas editar este registro?", "Confirmar edición", MessageBoxButtons.YesNo);
@@ -133,7 +133,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
 
                             using (MySqlCommand command = new MySqlCommand(query, connection))
                             {
-                                command.Parameters.AddWithValue("@Nombre", txtNombre.Text);
+                                command.Parameters.AddWithValue("@Nombre", txtbx_nombre.Text);
                                 command.Parameters.AddWithValue("@ID_proveedor", idProveedor);
 
                                 command.ExecuteNonQuery();
@@ -158,14 +158,14 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
 
         private void LimpiarCampos()
         {
-            txtNombre.Text = string.Empty;
+            txtbx_nombre.Text = string.Empty;
         }
         private void button6_Click(object sender, EventArgs e)
         {
-            if (dgvProveedores.SelectedCells.Count > 0)
+            if (dgv_productores.SelectedCells.Count > 0)
             {
-                int selectedRowIndex = dgvProveedores.SelectedCells[0].RowIndex;
-                DataGridViewRow selectedRow = dgvProveedores.Rows[selectedRowIndex];
+                int selectedRowIndex = dgv_productores.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = dgv_productores.Rows[selectedRowIndex];
                 int idProveedor = Convert.ToInt32(selectedRow.Cells["ID_proveedor"].Value);
 
                 DialogResult dialogResult = MessageBox.Show("¿Estás seguro de que deseas eliminar este registro?", "Confirmar eliminación", MessageBoxButtons.YesNo);
