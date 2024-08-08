@@ -16,8 +16,16 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
         public LoginCliente()
         {
             InitializeComponent();
+            txtuser.KeyDown += new KeyEventHandler(TextBox_KeyDown);
+            txtContrasena.KeyDown += new KeyEventHandler(TextBox_KeyDown);
         }
-
+        private void TextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                button1_Click(sender, e); // Llama al método del botón
+            }
+        }
         private void button2_Click(object sender, EventArgs e)
         {
             FormsGlobales.Menu loginForm = new FormsGlobales.Menu();
@@ -64,7 +72,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // Validar que el correo tenga el sufijo @gmail.com
             if (!email.EndsWith("@gmail.com"))
             {
-                MessageBox.Show("El correo electrónico debe tener el sufijo @gmail.com.", "Error de login", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Correo o contraseña invalido.", "Error de login", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 

@@ -318,5 +318,25 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             newMenu.Show();
             this.Hide();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            DialogResult resultado = MessageBox.Show(
+       "¿Estás seguro de que deseas cerrar sesión?",
+       "Confirmar Cierre de Sesión",
+       MessageBoxButtons.YesNo,
+       MessageBoxIcon.Question
+            );
+
+            if (resultado == DialogResult.Yes)
+            {
+                // Si el usuario confirma, cerrar sesión
+                FormsGlobales.Menu newMenu = new FormsGlobales.Menu();
+                newMenu.Show();
+
+                // Cerrar el formulario actual
+                this.Hide();
+            }
+        }
     }
 }

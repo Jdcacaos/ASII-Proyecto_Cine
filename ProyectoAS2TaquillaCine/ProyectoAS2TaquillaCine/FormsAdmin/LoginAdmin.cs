@@ -47,7 +47,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             // Validar que el correo tenga el sufijo @gmail.com
             if (!email.EndsWith("@gmail.com"))
             {
-                MessageBox.Show("El correo electrónico debe tener el sufijo @gmail.com.", "Error de login", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Correo o contraseña invalido.", "Error de login", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -134,6 +134,16 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                 // Ocultar la contraseña
                 txtbx_contrasena.PasswordChar = '*'; // O cualquier otro carácter de tu elección
             }
+        }
+
+        private void LoginAdmin_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtbx_contrasena_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

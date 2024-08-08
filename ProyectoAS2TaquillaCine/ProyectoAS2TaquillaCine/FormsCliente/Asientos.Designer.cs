@@ -1410,6 +1410,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Asientos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Asientos";
             this.Load += new System.EventHandler(this.Asientos_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.picbx_pelicula)).EndInit();

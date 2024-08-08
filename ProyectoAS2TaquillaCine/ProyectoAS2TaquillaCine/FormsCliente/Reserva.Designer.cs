@@ -205,7 +205,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // 
             this.textBox1.Enabled = false;
             this.textBox1.Location = new System.Drawing.Point(941, 375);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(43, 22);
             this.textBox1.TabIndex = 15;
@@ -215,7 +215,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // 
             this.textBox2.Enabled = false;
             this.textBox2.Location = new System.Drawing.Point(941, 414);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(43, 22);
             this.textBox2.TabIndex = 16;
@@ -226,7 +226,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // 
             this.textBox3.Enabled = false;
             this.textBox3.Location = new System.Drawing.Point(941, 453);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(4);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(43, 22);
             this.textBox3.TabIndex = 17;
@@ -235,7 +235,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(1016, 377);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(55, 25);
             this.button1.TabIndex = 18;
@@ -246,7 +246,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(1067, 377);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(55, 25);
             this.button2.TabIndex = 19;
@@ -257,7 +257,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(1067, 415);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(55, 25);
             this.button3.TabIndex = 21;
@@ -268,7 +268,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // button4
             // 
             this.button4.Location = new System.Drawing.Point(1016, 415);
-            this.button4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button4.Margin = new System.Windows.Forms.Padding(4);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(55, 25);
             this.button4.TabIndex = 20;
@@ -279,7 +279,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // button5
             // 
             this.button5.Location = new System.Drawing.Point(1067, 454);
-            this.button5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button5.Margin = new System.Windows.Forms.Padding(4);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(55, 25);
             this.button5.TabIndex = 23;
@@ -290,7 +290,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // button6
             // 
             this.button6.Location = new System.Drawing.Point(1016, 454);
-            this.button6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button6.Margin = new System.Windows.Forms.Padding(4);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(55, 25);
             this.button6.TabIndex = 22;
@@ -313,7 +313,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // 
             this.textBox4.Enabled = false;
             this.textBox4.Location = new System.Drawing.Point(941, 496);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(4);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(43, 22);
             this.textBox4.TabIndex = 25;
@@ -365,7 +365,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // button7
             // 
             this.button7.Location = new System.Drawing.Point(788, 588);
-            this.button7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button7.Margin = new System.Windows.Forms.Padding(4);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(244, 63);
             this.button7.TabIndex = 30;
@@ -376,7 +376,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // button8
             // 
             this.button8.Location = new System.Drawing.Point(144, 149);
-            this.button8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button8.Margin = new System.Windows.Forms.Padding(4);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(115, 46);
             this.button8.TabIndex = 31;
@@ -443,6 +443,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Reserva";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Reserva";
             this.Load += new System.EventHandler(this.Reserva_Load);
             this.ResumeLayout(false);

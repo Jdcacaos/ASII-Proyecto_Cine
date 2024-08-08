@@ -128,6 +128,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             this.Controls.Add(this.lbl_nombre);
             this.Controls.Add(this.picbox1);
             this.Name = "InfoPelicula";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "InfoPelicula";
             this.Load += new System.EventHandler(this.InfoPelicula_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picbox1)).EndInit();

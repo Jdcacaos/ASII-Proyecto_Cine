@@ -381,46 +381,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
 
         private void button8_Click(object sender, EventArgs e)
         {
-            if (!datosCorrectos())
-            {
-                return; // No proceder si los datos no son correctos
-            }
-
-            int idPelicula = ((KeyValuePair<int, string>)cb_Pelicula.SelectedItem).Key;
-            int idSala = ((KeyValuePair<int, int>)cb_id_Sala.SelectedItem).Key;
-
-            using (MySqlConnection connection = new MySqlConnection(connectionString))
-            {
-                try
-                {
-                    connection.Open();
-
-                    string query = "INSERT INTO tbl_proyeccion (FK_ID_Pelicula, FK_ID_Sala, Fecha, Estado_tbl_proyeccion, Hora, Precio_Nino, Precio_Adulto , Precio_3ra_Edad) " +
-                        "VALUES (@FK_ID_Pelicula, @FK_ID_Sala, @Fecha, @Estado_tbl_proyeccion, @Hora , @Precio_Nino, @Precio_Adulto , @Precio_3ra_Edad)";
-
-                    using (MySqlCommand command = new MySqlCommand(query, connection))
-                    {
-                        command.Parameters.AddWithValue("@FK_ID_Pelicula", idPelicula);
-                        command.Parameters.AddWithValue("@FK_ID_Sala", idSala);
-                        command.Parameters.AddWithValue("@Fecha", dtp_fecha.Value.ToString("yyyy-MM-dd"));
-                        command.Parameters.AddWithValue("@Estado_tbl_proyeccion", cb_Estado.Text);
-                        command.Parameters.AddWithValue("@Hora", dtp_hora.Value.ToString("HH:mm:ss"));
-                        command.Parameters.AddWithValue("@Precio_Nino", txtbx_nino.Text);
-                        command.Parameters.AddWithValue("@Precio_Adulto", txtbx_adulto.Text);
-                        command.Parameters.AddWithValue("@Precio_3ra_Edad", txtbx_3ra.Text);
-
-                        command.ExecuteNonQuery();
-                    }
-
-                    MessageBox.Show("Registro completado exitosamente.");
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error al registrar la proyeccion: " + ex.Message);
-                }
-            }
-
-            llenar_tabla();
+            
         }
 
 
@@ -565,6 +526,50 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
         private void tmr_timer1_Tick(object sender, EventArgs e)
         {
             UpdateDateTimeLabel();
+        }
+
+        private void btn_guardar_Click(object sender, EventArgs e)
+        {
+            if (!datosCorrectos())
+            {
+                return; // No proceder si los datos no son correctos
+            }
+
+            int idPelicula = ((KeyValuePair<int, string>)cb_Pelicula.SelectedItem).Key;
+            int idSala = ((KeyValuePair<int, int>)cb_id_Sala.SelectedItem).Key;
+
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+
+                    string query = "INSERT INTO tbl_proyeccion (FK_ID_Pelicula, FK_ID_Sala, Fecha, Estado_tbl_proyeccion, Hora, Precio_Nino, Precio_Adulto , Precio_3ra_Edad) " +
+                        "VALUES (@FK_ID_Pelicula, @FK_ID_Sala, @Fecha, @Estado_tbl_proyeccion, @Hora , @Precio_Nino, @Precio_Adulto , @Precio_3ra_Edad)";
+
+                    using (MySqlCommand command = new MySqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@FK_ID_Pelicula", idPelicula);
+                        command.Parameters.AddWithValue("@FK_ID_Sala", idSala);
+                        command.Parameters.AddWithValue("@Fecha", dtp_fecha.Value.ToString("yyyy-MM-dd"));
+                        command.Parameters.AddWithValue("@Estado_tbl_proyeccion", cb_Estado.Text);
+                        command.Parameters.AddWithValue("@Hora", dtp_hora.Value.ToString("HH:mm:ss"));
+                        command.Parameters.AddWithValue("@Precio_Nino", txtbx_nino.Text);
+                        command.Parameters.AddWithValue("@Precio_Adulto", txtbx_adulto.Text);
+                        command.Parameters.AddWithValue("@Precio_3ra_Edad", txtbx_3ra.Text);
+
+                        command.ExecuteNonQuery();
+                    }
+
+                    MessageBox.Show("Registro completado exitosamente.");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al registrar la proyeccion: " + ex.Message);
+                }
+            }
+
+            llenar_tabla();
         }
     }
 

@@ -60,8 +60,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             this.tiempo = new System.Windows.Forms.Timer(this.components);
             this.rb_Credito = new System.Windows.Forms.RadioButton();
             this.rb_Debito = new System.Windows.Forms.RadioButton();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.txtNomEmple = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -286,7 +285,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // cbEmpleados
             // 
             this.cbEmpleados.FormattingEnabled = true;
-            this.cbEmpleados.Location = new System.Drawing.Point(860, 321);
+            this.cbEmpleados.Location = new System.Drawing.Point(785, 186);
             this.cbEmpleados.Name = "cbEmpleados";
             this.cbEmpleados.Size = new System.Drawing.Size(338, 24);
             this.cbEmpleados.TabIndex = 154;
@@ -308,6 +307,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(257, 22);
             this.txtCorreo.TabIndex = 157;
+            this.txtCorreo.TextChanged += new System.EventHandler(this.txtCorreo_TextChanged_1);
             // 
             // lblCorreo
             // 
@@ -340,33 +340,20 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             this.rb_Debito.Text = "Débito";
             this.rb_Debito.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // txtNomEmple
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(0, 0);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(98, 21);
-            this.checkBox1.TabIndex = 161;
-            this.checkBox1.Text = "checkBox1";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(74, 440);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(81, 39);
-            this.button1.TabIndex = 162;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.txtNomEmple.Location = new System.Drawing.Point(860, 318);
+            this.txtNomEmple.Name = "txtNomEmple";
+            this.txtNomEmple.Size = new System.Drawing.Size(286, 22);
+            this.txtNomEmple.TabIndex = 161;
+            this.txtNomEmple.TextChanged += new System.EventHandler(this.txtNomEmple_TextChanged);
             // 
             // Pago
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1345, 690);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.txtNomEmple);
             this.Controls.Add(this.rb_Debito);
             this.Controls.Add(this.rb_Credito);
             this.Controls.Add(this.lblCorreo);
@@ -398,6 +385,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Pago";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pago";
             this.Load += new System.EventHandler(this.Pago_Load);
             this.ResumeLayout(false);
@@ -437,7 +425,6 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
         private System.Windows.Forms.Timer tiempo;
         private System.Windows.Forms.RadioButton rb_Credito;
         private System.Windows.Forms.RadioButton rb_Debito;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txtNomEmple;
     }
 }

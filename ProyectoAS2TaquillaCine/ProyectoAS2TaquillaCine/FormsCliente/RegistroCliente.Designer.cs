@@ -249,6 +249,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             this.Controls.Add(this.txtnombre);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "RegistroCliente";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RegistroCliente";
             this.ResumeLayout(false);
             this.PerformLayout();

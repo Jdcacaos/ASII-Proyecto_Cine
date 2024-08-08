@@ -27,6 +27,9 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
         private int precioterceraedad;
         private int descuento;
 
+        private string horario;
+        private string hora;
+        private string fecha;
         public Reserva(int id, int idCliente)
         {
             InitializeComponent();
@@ -235,11 +238,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
                 label16.Text = "0";
                 textBox4.Text = "0";
             }
-            else if (totalAsientos == 0)
-            {
-                MessageBox.Show("Debe seleccionar al menos un boleto para proceder.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                textBox4.Text = "0";
-            }
+            
             else
             {
                 label16.Text = total.ToString();
@@ -329,15 +328,27 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
         }
         private void button7_Click(object sender, EventArgs e)
         {
+           
             int totalAsientos = Convert.ToInt32(textBox1.Text) + Convert.ToInt32(textBox2.Text) + Convert.ToInt32(textBox3.Text);
-            totalventa = Convert.ToInt32(label16.Text);
-            int idProyeccion = ObtenerIdProyeccion(pelicula, comboBox1.SelectedItem.ToString(), comboBox2.SelectedItem.ToString());
-            FormsCliente.Asientos formAsientos = new FormsCliente.Asientos(pelicula, totalventa, idProyeccion, idCliente, descuento);
-            formAsientos.TotalAsientos = totalAsientos;
-          
+            if (totalAsientos == 0)
+            {
+                MessageBox.Show("Debe seleccionar al menos un boleto para proceder.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                textBox4.Text = "0";
+            }
+            else
+            {
+                fecha = Convert.ToString( comboBox1.SelectedItem);
+                hora = Convert.ToString(comboBox2.SelectedItem);
+                horario = fecha +" "+hora;
+                totalventa = Convert.ToInt32(label16.Text);
+                int idProyeccion = ObtenerIdProyeccion(pelicula, comboBox1.SelectedItem.ToString(), comboBox2.SelectedItem.ToString());
+                FormsCliente.Asientos formAsientos = new FormsCliente.Asientos(pelicula, totalventa, idProyeccion, idCliente, descuento, horario);
+                formAsientos.TotalAsientos = totalAsientos;
 
-            formAsientos.Show();
-            this.Hide();
+
+                formAsientos.Show();
+                this.Hide();
+            }
         }
     }
 }

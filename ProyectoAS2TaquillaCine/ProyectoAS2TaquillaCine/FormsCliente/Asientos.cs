@@ -21,8 +21,9 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
         private int idproye;
         private int idCliente;
         private int descu;
+        private string horario;
         private List<(char fila, int numero)> asientosSeleccionadosList = new List<(char fila, int numero)>(); // Lista de asientos seleccionados
-        public Asientos(int id, int total, int idproyeccion, int idcliente, int desc)
+        public Asientos(int id, int total, int idproyeccion, int idcliente, int desc, string horar)
         {
             InitializeComponent();
             idCliente = idcliente;
@@ -35,6 +36,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             timer.Tick += Tick;
 
             descu = desc;
+            horario = horar;
 
             // Asignar el mismo método a todos los botones
             btnA1.Click += Asiento_Click;
@@ -299,7 +301,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
                     MySqlCommand cmd3 = new MySqlCommand(query3, conexion);
                     cmd3.Parameters.AddWithValue("@proyeccionId", idproye); // Reemplazar 'pelicula' por el ID de la proyección si es necesario
                     MySqlDataReader reader3 = cmd3.ExecuteReader();
-
+                    int asientosOcupados = 0;
                     while (reader3.Read())
                     {
                         char fila = reader3["Fila"].ToString()[0];
@@ -307,9 +309,19 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
 
                         // Marcar el asiento como ocupado
                         MarcarAsientoOcupado(fila, numero);
+                        asientosOcupados++;
                     }
 
                     reader3.Close();
+                    if (asientosOcupados >= 72)
+                    {
+                        MessageBox.Show("Todos los asientos están ocupados. No se pueden hacer más reservas.");
+                        // Deshabilitar todos los botones de los asientos
+                        FormsCliente.CarteleraNueva formCartelera = new FormsCliente.CarteleraNueva(idCliente);
+                        formCartelera.Show();
+                        this.Close();
+                        timer.Stop();
+                    }
                 }
 
                 catch (Exception ex)
@@ -322,6 +334,16 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
                 }
             }
         }
+        private void DeshabilitarBotonesAsientos()
+{
+    foreach (Control control in this.Controls)
+    {
+        if (control is Button btn && btn.Name.StartsWith("btn"))
+        {
+            btn.Enabled = false; // Deshabilitar todos los botones de los asientos
+        }
+    }
+}
         private void MarcarAsientoOcupado(char fila, int numero)
         {
             Button btn = null;
@@ -391,15 +413,19 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
 
         private void button95_Click(object sender, EventArgs e)
         {
+           
             List<(char fila, int numero)> asientosSeleccionados = ObtenerAsientosSeleccionados();
-            foreach (var asiento in asientosSeleccionados)
+            if (asientosSeleccionados.Count != TotalAsientos)
             {
-                Console.WriteLine($"Fila: {asiento.fila}, Número: {asiento.numero}");
+                MessageBox.Show("TERMINE DE SELECCIONAR SUS ASIENTOS ...");
             }
-            FormsCliente.Pago formPago = new FormsCliente.Pago(totalventa-descu, idCliente, asientosSeleccionados, idproye, descu);
-            formPago.Show();
-            timer.Stop();
-            this.Hide();
+            else
+            {
+                FormsCliente.Pago formPago = new FormsCliente.Pago(totalventa - descu, idCliente, asientosSeleccionados, idproye, descu, horario);
+                formPago.Show();
+                timer.Stop();
+                this.Hide();
+            }
         }
 
         private void lbl_totalventa_Click(object sender, EventArgs e)
