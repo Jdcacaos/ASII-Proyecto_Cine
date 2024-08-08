@@ -18,13 +18,13 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
         }
         public void AbrirformHijo(object formhijo)
         {
-            if (this.panelgeneral.Controls.Count > 0)
-                this.panelgeneral.Controls.RemoveAt(0);
+            if (this.panel_panelGeneral.Controls.Count > 0)
+                this.panel_panelGeneral.Controls.RemoveAt(0);
             Form fh = formhijo as Form;
             fh.TopLevel = false;
             fh.Dock = DockStyle.Fill;
-            this.panelgeneral.Controls.Add(fh);
-            this.panelgeneral.Tag = fh;
+            this.panel_panelGeneral.Controls.Add(fh);
+            this.panel_panelGeneral.Tag = fh;
             fh.Show();
 
 
@@ -61,9 +61,23 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
 
         private void button7_Click(object sender, EventArgs e)
         {
+            // Verifica si el usuario es administrador y cambia la variable global si es necesario
+            if (GlobalSettings.IsAdmin)
+            {
+                GlobalSettings.IsAdmin = false;
+            }
+
+            // Mostrar el formulario de inicio de sesión (o cualquier otro formulario de tu elección)
             FormsGlobales.Menu newMenu = new FormsGlobales.Menu();
             newMenu.Show();
+
+            // Cerrar el formulario actual
             this.Hide();
+        }
+
+        private void btn_bitacora_Click(object sender, EventArgs e)
+        {
+            AbrirformHijo(new FormsAdmin.Bitacora());
         }
     }
 }

@@ -73,6 +73,16 @@ namespace ProyectoAS2TaquillaCine.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _6326055 {
+            get {
+                object obj = ResourceManager.GetObject("6326055", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap agregar_usuario1 {
             get {
                 object obj = ResourceManager.GetObject("agregar-usuario1", resourceCulture);
@@ -83,9 +93,49 @@ namespace ProyectoAS2TaquillaCine.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap anciano {
+            get {
+                object obj = ResourceManager.GetObject("anciano", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap apagar {
             get {
                 object obj = ResourceManager.GetObject("apagar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap asiento__1_1 {
+            get {
+                object obj = ResourceManager.GetObject("asiento (1)1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap avatar__5_ {
+            get {
+                object obj = ResourceManager.GetObject("avatar (5)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap buscar {
+            get {
+                object obj = ResourceManager.GetObject("buscar", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,6 +163,16 @@ namespace ProyectoAS2TaquillaCine.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap cine2 {
+            get {
+                object obj = ResourceManager.GetObject("cine2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap cinema_movies_concept_background_with_5761469 {
             get {
                 object obj = ResourceManager.GetObject("cinema-movies-concept-background-with-5761469", resourceCulture);
@@ -126,6 +186,77 @@ namespace ProyectoAS2TaquillaCine.Properties {
         internal static System.Drawing.Bitmap clock_timer_time_calendar_date_schedule_hourglass_stopwatch_deadline_icon_231905 {
             get {
                 object obj = ResourceManager.GetObject("clock_timer_time_calendar_date_schedule_hourglass_stopwatch_deadline_icon_231905", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap clock_timer_time_calendar_date_schedule_hourglass_stopwatch_deadline_icon_2319051 {
+            get {
+                object obj = ResourceManager.GetObject("clock_timer_time_calendar_date_schedule_hourglass_stopwatch_deadline_icon_2319051" +
+                        "", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap delete_button_6303088 {
+            get {
+                object obj = ResourceManager.GetObject("delete-button_6303088", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap diskette_save_saveas_1514 {
+            get {
+                object obj = ResourceManager.GetObject("diskette_save_saveas_1514", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap editsquare_120033 {
+            get {
+                object obj = ResourceManager.GetObject("editsquare_120033", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap filtrar {
+            get {
+                object obj = ResourceManager.GetObject("filtrar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap hombre {
+            get {
+                object obj = ResourceManager.GetObject("hombre", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap libro_abierto {
+            get {
+                object obj = ResourceManager.GetObject("libro-abierto", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -153,9 +284,49 @@ namespace ProyectoAS2TaquillaCine.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ninos {
+            get {
+                object obj = ResourceManager.GetObject("ninos", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ninos__1_ {
+            get {
+                object obj = ResourceManager.GetObject("ninos (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap panel_de_administrador1 {
             get {
                 object obj = ResourceManager.GetObject("panel-de-administrador1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap remolque {
+            get {
+                object obj = ResourceManager.GetObject("remolque", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap reserva__2_ {
+            get {
+                object obj = ResourceManager.GetObject("reserva (2)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -176,6 +347,16 @@ namespace ProyectoAS2TaquillaCine.Properties {
         internal static System.Drawing.Bitmap ticket_cinema_icon_190885 {
             get {
                 object obj = ResourceManager.GetObject("ticket_cinema_icon_190885", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap viendo_una_pelicula__2_ {
+            get {
+                object obj = ResourceManager.GetObject("viendo-una-pelicula (2)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

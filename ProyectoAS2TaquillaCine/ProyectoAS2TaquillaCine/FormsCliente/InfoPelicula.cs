@@ -16,14 +16,42 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
     {
         string connectionString = DatabaseConfig.ConnectionString;
         private int idpelicula;
+        private int idCliente;
 
         private string trailerUrl; // Asegúrate de que esta variable esté inicializada
 
-        public InfoPelicula(int id)
+        public InfoPelicula(int id, int idCliente)
         {
             InitializeComponent();
             idpelicula = id;
+            this.idCliente = idCliente;
+
+            this.btnReserva = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // btnReserva
+            // 
+            this.btnReserva.Location = new System.Drawing.Point(12, 12);
+            this.btnReserva.Name = "btnReserva";
+            this.btnReserva.Size = new System.Drawing.Size(120, 30);
+            this.btnReserva.TabIndex = 0;
+            this.btnReserva.Text = "Reservar";
+            this.btnReserva.UseVisualStyleBackColor = true;
+            this.btnReserva.Click += new System.EventHandler(this.btnReserva_Click);
+            // 
+            // MenuCliente
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnReserva);
+            this.Name = "MenuCliente";
+            this.Text = "MenuCliente";
+            this.ResumeLayout(false);
         }
+
+       
+        
 
         private void InfoPelicula_Load(object sender, EventArgs e)
         {
@@ -74,7 +102,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
 
         private void byn_back_Click_1(object sender, EventArgs e)
         {
-            FormsCliente.CarteleraNueva Cartelera = new CarteleraNueva();
+            FormsCliente.CarteleraNueva Cartelera = new CarteleraNueva(idCliente);
             this.Hide();
             Cartelera.ShowDialog();
             this.Close();
@@ -100,11 +128,19 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
         }
 
         private void btnReserva_Click(object sender, EventArgs e)
+            
+
         {
-            FormsCliente.Reserva FormReserva = new Reserva(idpelicula);
+
+            FormsCliente.Reserva FormReserva = new Reserva(idpelicula, idCliente);
             this.Hide();
             FormReserva.ShowDialog();
             this.Close();
+        }
+
+        private void picbox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

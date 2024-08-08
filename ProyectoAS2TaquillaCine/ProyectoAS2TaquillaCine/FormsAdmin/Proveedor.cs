@@ -19,7 +19,14 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
         public Proveedor()
         {
             InitializeComponent();
-            dgvProveedores.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgv_productores.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            tmr_timer1 = new Timer();
+            tmr_timer1.Interval = 100; // Intervalo en milisegundos (1000 ms = 1 segundo)
+            tmr_timer1.Tick += new EventHandler(tmr_timer1_Tick);
+            tmr_timer1.Start(); // Iniciar el Timer
+            btn_editar.Visible = GlobalSettings.IsAdmin;
+            btn_eliminar.Visible = GlobalSettings.IsAdmin;
+            gbIngresar.Visible = GlobalSettings.IsAdmin;
 
         }
 
@@ -51,7 +58,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
 
                     using (MySqlCommand command = new MySqlCommand(query, connection))
                     {
-                        command.Parameters.AddWithValue("@Nombre", txtNombre.Text);
+                        command.Parameters.AddWithValue("@Nombre", txtbx_nombre.Text);
                         command.ExecuteNonQuery();
                     }
 
@@ -82,7 +89,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                                 var dataTable = new DataTable();
                                 dataTable.Load(reader);
 
-                                dgvProveedores.DataSource = dataTable;
+                                dgv_productores.DataSource = dataTable;
                             }
                         }
                     }
@@ -100,7 +107,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
 
         private bool datosCorrectos()
         {
-            if (string.IsNullOrWhiteSpace(txtNombre.Text))
+            if (string.IsNullOrWhiteSpace(txtbx_nombre.Text))
             {
                 MessageBox.Show("El nombre no puede estar vacío.");
                 return false;
@@ -110,15 +117,16 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
 
         private void button3_Click(object sender, EventArgs e)
         {
+
             if (!datosCorrectos())
             {
                 return; // No proceder si los datos no son correctos
             }
 
-            if (dgvProveedores.SelectedCells.Count > 0)
+            if (dgv_productores.SelectedCells.Count > 0)
             {
-                int selectedRowIndex = dgvProveedores.SelectedCells[0].RowIndex;
-                DataGridViewRow selectedRow = dgvProveedores.Rows[selectedRowIndex];
+                int selectedRowIndex = dgv_productores.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = dgv_productores.Rows[selectedRowIndex];
                 int idProveedor = Convert.ToInt32(selectedRow.Cells["ID_proveedor"].Value);
 
                 DialogResult dialogResult = MessageBox.Show("¿Estás seguro de que deseas editar este registro?", "Confirmar edición", MessageBoxButtons.YesNo);
@@ -133,7 +141,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
 
                             using (MySqlCommand command = new MySqlCommand(query, connection))
                             {
-                                command.Parameters.AddWithValue("@Nombre", txtNombre.Text);
+                                command.Parameters.AddWithValue("@Nombre", txtbx_nombre.Text);
                                 command.Parameters.AddWithValue("@ID_proveedor", idProveedor);
 
                                 command.ExecuteNonQuery();
@@ -144,28 +152,32 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                             LimpiarCampos(); // Limpiar los TextBoxes después de editar
                         }
                     }
+                    catch (MySqlException ex)
+                    {
+                        MessageBox.Show("Error de base de datos: " + ex.Message);
+                    }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Error al editar el proveedor: " + ex.Message);
+                        MessageBox.Show("Se ha producido un error: " + ex.Message);
                     }
                 }
             }
             else
             {
-                MessageBox.Show("Por favor, selecciona un proveedor para editar.", "Error de selección", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Por favor, selecciona un productor para editar.");
             }
         }
 
         private void LimpiarCampos()
         {
-            txtNombre.Text = string.Empty;
+            txtbx_nombre.Text = string.Empty;
         }
         private void button6_Click(object sender, EventArgs e)
         {
-            if (dgvProveedores.SelectedCells.Count > 0)
+            if (dgv_productores.SelectedCells.Count > 0)
             {
-                int selectedRowIndex = dgvProveedores.SelectedCells[0].RowIndex;
-                DataGridViewRow selectedRow = dgvProveedores.Rows[selectedRowIndex];
+                int selectedRowIndex = dgv_productores.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = dgv_productores.Rows[selectedRowIndex];
                 int idProveedor = Convert.ToInt32(selectedRow.Cells["ID_proveedor"].Value);
 
                 DialogResult dialogResult = MessageBox.Show("¿Estás seguro de que deseas eliminar este registro?", "Confirmar eliminación", MessageBoxButtons.YesNo);
@@ -221,6 +233,88 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
         private void Proveedor_Load(object sender, EventArgs e)
         {
             CargarProveedores();
+        }
+
+        private void txtbxBuscar_TextChanged(object sender, EventArgs e)
+        {
+            // Obtener el texto de búsqueda
+            string searchText = txtbxBuscar.Text.Trim();
+            if (string.IsNullOrEmpty(searchText))
+            {
+                // Si el texto de búsqueda está vacío, no aplicar filtro
+                (dgv_productores.DataSource as DataTable).DefaultView.RowFilter = string.Empty;
+                return;
+            }
+
+            // Crear una lista para las expresiones de filtro
+            List<string> filterExpressions = new List<string>();
+
+            // Obtener el DataTable
+            DataTable dataTable = dgv_productores.DataSource as DataTable;
+
+            // Recorrer todas las columnas del DataTable
+            foreach (DataColumn column in dataTable.Columns)
+            {
+                // Excluir columnas que no sean de tipo texto
+                if (column.DataType == typeof(string))
+                {
+                    // Agregar expresión de filtro para la columna
+                    filterExpressions.Add($"[{column.ColumnName}] LIKE '%{searchText}%'");
+                }
+            }
+
+            // Unir todas las expresiones de filtro con el operador OR
+            string filterExpression = string.Join(" OR ", filterExpressions);
+
+            // Aplicar el filtro
+            (dgv_productores.DataSource as DataTable).DefaultView.RowFilter = filterExpression;
+        }
+
+        private void UpdateDateTimeLabel()
+        {
+            // Obtener la fecha y hora actuales
+            DateTime now = DateTime.Now;
+
+            // Formatear la fecha y hora como texto
+            string dateTimeText = now.ToString("yyyy-MM-dd HH:mm:ss"); // Cambia el formato según tus necesidades
+
+            // Establecer el texto del Label
+            lb_tiempoSys.Text = dateTimeText;
+        }
+
+        private void tmr_timer1_Tick(object sender, EventArgs e)
+        {
+            UpdateDateTimeLabel();
+        }
+
+        private void btn_guardar_Click(object sender, EventArgs e)
+        {
+            if (!datosCorrectos())
+            {
+                return; // No proceder si los datos no son correctos
+            }
+
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    string query = "INSERT INTO tbl_proveedor_pelicula (nombre) VALUES (@Nombre)";
+
+                    using (MySqlCommand command = new MySqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@Nombre", txtbx_nombre.Text);
+                        command.ExecuteNonQuery();
+                    }
+
+                    MessageBox.Show("Registro completado exitosamente.");
+                    CargarProveedores();  // Actualizar los datos en el DataGridView después de insertar un nuevo registro.
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al registrar el proveedor: " + ex.Message);
+                }
+            }
         }
     }
     }
