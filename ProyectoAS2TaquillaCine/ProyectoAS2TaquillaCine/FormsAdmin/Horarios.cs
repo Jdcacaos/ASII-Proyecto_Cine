@@ -18,7 +18,15 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
         public Horarios()
         {
             InitializeComponent();
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgv_horario.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgv_horario.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            tmr_timer1 = new Timer();
+            tmr_timer1.Interval = 100; // Intervalo en milisegundos (1000 ms = 1 segundo)
+            tmr_timer1.Tick += new EventHandler(tmr_timer1_Tick);
+            tmr_timer1.Start(); // Iniciar el Timer
+            btn_editar.Visible = GlobalSettings.IsAdmin;
+            btn_eliminar.Visible = GlobalSettings.IsAdmin;
+            gbIngresar.Visible = GlobalSettings.IsAdmin;
         }
         private void Horarios_Load(object sender, EventArgs e)
         {   
@@ -50,7 +58,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                 dataTable.Load(resultado);
 
                 // Asignar el DataTable al DataGridView
-                dataGridView1.DataSource = dataTable;
+                dgv_horario.DataSource = dataTable;
             }
             catch (Exception ex)
             {
@@ -81,7 +89,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                 dataTable.Load(resultado);
 
                 // Asignar el DataTable al DataGridView
-                dataGridView1.DataSource = dataTable;
+                dgv_horario.DataSource = dataTable;
             }
             catch (Exception ex)
             {
@@ -99,12 +107,12 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
 
         private void LlenarComboBox_estado()
         {
-            cbEstado.Items.Clear();
-            cbEstado.Items.Add("Activo");
-            cbEstado.Items.Add("Inactivo");
-            if (cbEstado.Items.Count > 0)
+            cb_Estado.Items.Clear();
+            cb_Estado.Items.Add("Activo");
+            cb_Estado.Items.Add("Inactivo");
+            if (cb_Estado.Items.Count > 0)
             {
-                cbEstado.SelectedIndex = 0;
+                cb_Estado.SelectedIndex = 0;
             }
         }
         private void LlenarComboBox_idSala()
@@ -210,26 +218,26 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                 return false;
             }
 
-            if (cbEstado.SelectedItem == null)
+            if (cb_Estado.SelectedItem == null)
             {
                 MessageBox.Show("Seleccione un estado");
                 return false;
             }
 
             // Verificar que todos los TextBox no estén vacíos
-            if (string.IsNullOrWhiteSpace(txtNino.Text))
+            if (string.IsNullOrWhiteSpace(txtbx_nino.Text))
             {
                 MessageBox.Show("Ingrese el precio para niños");
                 return false;
             }
 
-            if (string.IsNullOrWhiteSpace(txtAdulto.Text))
+            if (string.IsNullOrWhiteSpace(txtbx_adulto.Text))
             {
                 MessageBox.Show("Ingrese el precio para adultos");
                 return false;
             }
 
-            if (string.IsNullOrWhiteSpace(txt3ra.Text))
+            if (string.IsNullOrWhiteSpace(txtbx_3ra.Text))
             {
                 MessageBox.Show("Ingrese el precio para tercera edad");
                 return false;
@@ -242,9 +250,9 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
         //Editar
         private object ObtenerValorCelda(string nombreColumna)
         {
-            if (dataGridView1.SelectedRows.Count > 0)
+            if (dgv_horario.SelectedRows.Count > 0)
             {
-                DataGridViewRow filaSeleccionada = dataGridView1.SelectedRows[0];
+                DataGridViewRow filaSeleccionada = dgv_horario.SelectedRows[0];
                 return filaSeleccionada.Cells[nombreColumna].Value;
             }
             else
@@ -286,12 +294,12 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                     MySqlCommand command = new MySqlCommand(consulta, connection);
                     command.Parameters.AddWithValue("@FK_ID_Pelicula", idPelicula);
                     command.Parameters.AddWithValue("@FK_ID_Sala", idSala);
-                    command.Parameters.AddWithValue("@Fecha", dateTimePicker1.Value.ToString("yyyy-MM-dd"));
-                    command.Parameters.AddWithValue("@Estado_tbl_proyeccion", cbEstado.Text);
-                    command.Parameters.AddWithValue("@Hora", dateTimePicker2.Value.ToString("HH:mm:ss"));
-                    command.Parameters.AddWithValue("@Precio_Nino", txtNino.Text);
-                    command.Parameters.AddWithValue("@Precio_Adulto", txtAdulto.Text);
-                    command.Parameters.AddWithValue("@Precio_3ra_Edad", txt3ra.Text);
+                    command.Parameters.AddWithValue("@Fecha", dtp_fecha.Value.ToString("yyyy-MM-dd"));
+                    command.Parameters.AddWithValue("@Estado_tbl_proyeccion", cb_Estado.Text);
+                    command.Parameters.AddWithValue("@Hora", dtp_hora.Value.ToString("HH:mm:ss"));
+                    command.Parameters.AddWithValue("@Precio_Nino", txtbx_nino.Text);
+                    command.Parameters.AddWithValue("@Precio_Adulto", txtbx_adulto.Text);
+                    command.Parameters.AddWithValue("@Precio_3ra_Edad", txtbx_3ra.Text);
                     command.Parameters.AddWithValue("@ID_Proyeccion", ValorObtenido);
 
                     int cantidad = command.ExecuteNonQuery();
@@ -315,14 +323,14 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dataGridView1.SelectedCells.Count > 0)
+            if (dgv_horario.SelectedCells.Count > 0)
             {
-                int selectedRowIndex = dataGridView1.SelectedCells[0].RowIndex;
-                DataGridViewRow selectedRow = dataGridView1.Rows[selectedRowIndex];
+                int selectedRowIndex = dgv_horario.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = dgv_horario.Rows[selectedRowIndex];
 
-                txtNino.Text = Convert.ToString(selectedRow.Cells["Precio_Nino"].Value);
-                txtAdulto.Text = Convert.ToString(selectedRow.Cells["Precio_Adulto"].Value);
-                txt3ra.Text = Convert.ToString(selectedRow.Cells["Precio_3ra_Edad"].Value);
+                txtbx_nino.Text = Convert.ToString(selectedRow.Cells["Precio_Nino"].Value);
+                txtbx_adulto.Text = Convert.ToString(selectedRow.Cells["Precio_Adulto"].Value);
+                txtbx_3ra.Text = Convert.ToString(selectedRow.Cells["Precio_3ra_Edad"].Value);
 
                 string pelicula = Convert.ToString(selectedRow.Cells["Pelicula"].Value);
                 int sala = Convert.ToInt32(selectedRow.Cells["Sala"].Value);
@@ -352,20 +360,20 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                 }
 
                 // Asignar el valor del estado
-                cbEstado.SelectedItem = estado;
+                cb_Estado.SelectedItem = estado;
 
                 string hora = Convert.ToString(selectedRow.Cells["Hora"].Value);
                 DateTime horaDateTime;
                 if (DateTime.TryParse(hora, out horaDateTime))
                 {
-                    dateTimePicker2.Value = horaDateTime;
+                    dtp_hora.Value = horaDateTime;
                 }
 
                 string fecha = Convert.ToString(selectedRow.Cells["Fecha"].Value);
                 DateTime fechaDateTime;
                 if (DateTime.TryParse(fecha, out fechaDateTime))
                 {
-                    dateTimePicker1.Value = fechaDateTime;
+                    dtp_fecha.Value = fechaDateTime;
                 }
 
             }
@@ -373,46 +381,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
 
         private void button8_Click(object sender, EventArgs e)
         {
-            if (!datosCorrectos())
-            {
-                return; // No proceder si los datos no son correctos
-            }
-
-            int idPelicula = ((KeyValuePair<int, string>)cb_Pelicula.SelectedItem).Key;
-            int idSala = ((KeyValuePair<int, int>)cb_id_Sala.SelectedItem).Key;
-
-            using (MySqlConnection connection = new MySqlConnection(connectionString))
-            {
-                try
-                {
-                    connection.Open();
-
-                    string query = "INSERT INTO tbl_proyeccion (FK_ID_Pelicula, FK_ID_Sala, Fecha, Estado_tbl_proyeccion, Hora, Precio_Nino, Precio_Adulto , Precio_3ra_Edad) " +
-                        "VALUES (@FK_ID_Pelicula, @FK_ID_Sala, @Fecha, @Estado_tbl_proyeccion, @Hora , @Precio_Nino, @Precio_Adulto , @Precio_3ra_Edad)";
-
-                    using (MySqlCommand command = new MySqlCommand(query, connection))
-                    {
-                        command.Parameters.AddWithValue("@FK_ID_Pelicula", idPelicula);
-                        command.Parameters.AddWithValue("@FK_ID_Sala", idSala);
-                        command.Parameters.AddWithValue("@Fecha", dateTimePicker1.Value.ToString("yyyy-MM-dd"));
-                        command.Parameters.AddWithValue("@Estado_tbl_proyeccion", cbEstado.Text);
-                        command.Parameters.AddWithValue("@Hora", dateTimePicker2.Value.ToString("HH:mm:ss"));
-                        command.Parameters.AddWithValue("@Precio_Nino", txtNino.Text);
-                        command.Parameters.AddWithValue("@Precio_Adulto", txtAdulto.Text);
-                        command.Parameters.AddWithValue("@Precio_3ra_Edad", txt3ra.Text);
-
-                        command.ExecuteNonQuery();
-                    }
-
-                    MessageBox.Show("Registro completado exitosamente.");
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error al registrar la proyeccion: " + ex.Message);
-                }
-            }
-
-            llenar_tabla();
+            
         }
 
 
@@ -424,10 +393,10 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
         private void button7_Click(object sender, EventArgs e)
         {
 
-            if (dataGridView1.SelectedCells.Count > 0)
+            if (dgv_horario.SelectedCells.Count > 0)
             {
-                int selectedRowIndex = dataGridView1.SelectedCells[0].RowIndex;
-                DataGridViewRow selectedRow = dataGridView1.Rows[selectedRowIndex];
+                int selectedRowIndex = dgv_horario.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = dgv_horario.Rows[selectedRowIndex];
                 int idProyeccion = Convert.ToInt32(selectedRow.Cells["ID_Proyeccion"].Value);
 
                 DialogResult dialogResult = MessageBox.Show("¿Estás seguro de que deseas eliminar este registro?", "Confirmar eliminación", MessageBoxButtons.YesNo);
@@ -507,6 +476,100 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
         private void txt3ra_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtbxBuscar_TextChanged(object sender, EventArgs e)
+        {
+            // Obtener el texto de búsqueda
+            string searchText = txtbxBuscar.Text.Trim();
+            if (string.IsNullOrEmpty(searchText))
+            {
+                // Si el texto de búsqueda está vacío, no aplicar filtro
+                (dgv_horario.DataSource as DataTable).DefaultView.RowFilter = string.Empty;
+                return;
+            }
+
+            // Crear una lista para las expresiones de filtro
+            List<string> filterExpressions = new List<string>();
+
+            // Obtener el DataTable
+            DataTable dataTable = dgv_horario.DataSource as DataTable;
+
+            // Recorrer todas las columnas del DataTable
+            foreach (DataColumn column in dataTable.Columns)
+            {
+                // Excluir columnas que no sean de tipo texto
+                if (column.DataType == typeof(string))
+                {
+                    // Agregar expresión de filtro para la columna
+                    filterExpressions.Add($"[{column.ColumnName}] LIKE '%{searchText}%'");
+                }
+            }
+
+            // Unir todas las expresiones de filtro con el operador OR
+            string filterExpression = string.Join(" OR ", filterExpressions);
+
+            // Aplicar el filtro
+            (dgv_horario.DataSource as DataTable).DefaultView.RowFilter = filterExpression;
+        }
+        private void UpdateDateTimeLabel()
+        {
+            // Obtener la fecha y hora actuales
+            DateTime now = DateTime.Now;
+
+            // Formatear la fecha y hora como texto
+            string dateTimeText = now.ToString("yyyy-MM-dd HH:mm:ss"); // Cambia el formato según tus necesidades
+
+            // Establecer el texto del Label
+            lb_fechaSys.Text = dateTimeText;
+        }
+        private void tmr_timer1_Tick(object sender, EventArgs e)
+        {
+            UpdateDateTimeLabel();
+        }
+
+        private void btn_guardar_Click(object sender, EventArgs e)
+        {
+            if (!datosCorrectos())
+            {
+                return; // No proceder si los datos no son correctos
+            }
+
+            int idPelicula = ((KeyValuePair<int, string>)cb_Pelicula.SelectedItem).Key;
+            int idSala = ((KeyValuePair<int, int>)cb_id_Sala.SelectedItem).Key;
+
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+
+                    string query = "INSERT INTO tbl_proyeccion (FK_ID_Pelicula, FK_ID_Sala, Fecha, Estado_tbl_proyeccion, Hora, Precio_Nino, Precio_Adulto , Precio_3ra_Edad) " +
+                        "VALUES (@FK_ID_Pelicula, @FK_ID_Sala, @Fecha, @Estado_tbl_proyeccion, @Hora , @Precio_Nino, @Precio_Adulto , @Precio_3ra_Edad)";
+
+                    using (MySqlCommand command = new MySqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@FK_ID_Pelicula", idPelicula);
+                        command.Parameters.AddWithValue("@FK_ID_Sala", idSala);
+                        command.Parameters.AddWithValue("@Fecha", dtp_fecha.Value.ToString("yyyy-MM-dd"));
+                        command.Parameters.AddWithValue("@Estado_tbl_proyeccion", cb_Estado.Text);
+                        command.Parameters.AddWithValue("@Hora", dtp_hora.Value.ToString("HH:mm:ss"));
+                        command.Parameters.AddWithValue("@Precio_Nino", txtbx_nino.Text);
+                        command.Parameters.AddWithValue("@Precio_Adulto", txtbx_adulto.Text);
+                        command.Parameters.AddWithValue("@Precio_3ra_Edad", txtbx_3ra.Text);
+
+                        command.ExecuteNonQuery();
+                    }
+
+                    MessageBox.Show("Registro completado exitosamente.");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al registrar la proyeccion: " + ex.Message);
+                }
+            }
+
+            llenar_tabla();
         }
     }
 

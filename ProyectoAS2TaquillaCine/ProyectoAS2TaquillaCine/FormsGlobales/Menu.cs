@@ -79,5 +79,10 @@ namespace ProyectoAS2TaquillaCine.FormsGlobales
         {
             Application.Exit();
         }
+
+        private void Menu_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

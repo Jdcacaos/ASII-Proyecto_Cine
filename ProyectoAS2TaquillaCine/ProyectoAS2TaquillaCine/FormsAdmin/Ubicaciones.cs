@@ -18,17 +18,18 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
   
         private void TimerFechaHora_Tick(object sender, EventArgs e)
         {
-            lbl_FechaHora.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
+            lb_fechaHora.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
         }
         public Ubicaciones()
         {
             InitializeComponent();
-            DGV_Ubicaciones.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            // Configurar el Timer
-            tm_tiempo = new Timer();
-            tm_tiempo.Interval = 1000; // 1000 ms = 1 segundo
-            tm_tiempo.Tick += new EventHandler(this.TimerFechaHora_Tick);
-            tm_tiempo.Start(); // Iniciar el Timer
+            tmr_tiempo = new Timer();
+            tmr_tiempo.Interval = 100; // Intervalo en milisegundos (1000 ms = 1 segundo)
+            tmr_tiempo.Tick += new EventHandler(tmr_tiempo_Tick);
+            tmr_tiempo.Start(); // Iniciar el Timer
+            btn_editar.Visible = GlobalSettings.IsAdmin;
+            btn_eliminar.Visible = GlobalSettings.IsAdmin;
+            gbIngresar.Visible = GlobalSettings.IsAdmin;
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -58,8 +59,8 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
 
                     using (MySqlCommand command = new MySqlCommand(query, connection))
                     {
-                        command.Parameters.AddWithValue("@Ciudad", txtCiudad.Text);
-                        command.Parameters.AddWithValue("@Direccion", txtUbicacion.Text);
+                        command.Parameters.AddWithValue("@Ciudad", txtbx_ciudad.Text);
+                        command.Parameters.AddWithValue("@Direccion", txtbx_ubicacion.Text);
 
                         command.ExecuteNonQuery();
                     }
@@ -74,16 +75,16 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                 llenar_tabla();
 
                 // Limpiar campos
-                txtCiudad.Text = "";
-                txtUbicacion.Text = "";
+                txtbx_ciudad.Text = "";
+                txtbx_ubicacion.Text = "";
             }
         }
 
         private object ObtenerValorCelda(string nombreColumna)
         {
-            if (DGV_Ubicaciones.SelectedRows.Count > 0)
+            if (dgv_ubicaciones.SelectedRows.Count > 0)
             {
-                DataGridViewRow filaSeleccionada = DGV_Ubicaciones.SelectedRows[0];
+                DataGridViewRow filaSeleccionada = dgv_ubicaciones.SelectedRows[0];
                 return filaSeleccionada.Cells[nombreColumna].Value;
             }
             else
@@ -94,7 +95,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
         }
         private void btn_Editar_Click(object sender, EventArgs e)
         {
-            if (txtCiudad.Text == "" || txtUbicacion.Text == "")
+            if (txtbx_ciudad.Text == "" || txtbx_ubicacion.Text == "")
             {
                 MessageBox.Show("Por favor, llena los datos");
                 return;
@@ -117,8 +118,8 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                     connection.Open();
                     string consulta = "UPDATE tbl_Ubicacion SET Ciudad = @Ciudad, Direccion = @Direccion WHERE ID_Ubicacion = @ID_Ubicacion";
                     MySqlCommand comando = new MySqlCommand(consulta, connection);
-                    comando.Parameters.AddWithValue("@Ciudad", txtCiudad.Text);
-                    comando.Parameters.AddWithValue("@Direccion", txtUbicacion.Text);
+                    comando.Parameters.AddWithValue("@Ciudad", txtbx_ciudad.Text);
+                    comando.Parameters.AddWithValue("@Direccion", txtbx_ubicacion.Text);
                     comando.Parameters.AddWithValue("@ID_Ubicacion", ValorObtenido);
 
                     int cantidad = comando.ExecuteNonQuery();
@@ -150,16 +151,16 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                 MessageBox.Show("Se ha producido un error: " + ex.Message);
             }
 
-            txtCiudad.Text = "";
-            txtUbicacion.Text = "";
+            txtbx_ciudad.Text = "";
+            txtbx_ubicacion.Text = "";
         }
 
         private void btn_eliminar_Click(object sender, EventArgs e)
         {
-            if (DGV_Ubicaciones.SelectedCells.Count > 0)
+            if (dgv_ubicaciones.SelectedCells.Count > 0)
             {
-                int selectedRowIndex = DGV_Ubicaciones.SelectedCells[0].RowIndex;
-                DataGridViewRow selectedRow = DGV_Ubicaciones.Rows[selectedRowIndex];
+                int selectedRowIndex = dgv_ubicaciones.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = dgv_ubicaciones.Rows[selectedRowIndex];
                 int idubicacion = Convert.ToInt32(selectedRow.Cells["ID_Ubicacion"].Value);
 
                 DialogResult dialogResult = MessageBox.Show("¿Estás seguro de que deseas eliminar este registro?", "Confirmar eliminación", MessageBoxButtons.YesNo);
@@ -192,8 +193,8 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                     }
                     llenar_tabla();
                 }
-                txtCiudad.Text = "";
-                txtUbicacion.Text = "";
+                txtbx_ciudad.Text = "";
+                txtbx_ubicacion.Text = "";
             }
             else
             {
@@ -220,7 +221,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                 dataTable.Load(resultado);
 
                 // Asignar el DataTable al DataGridView
-                DGV_Ubicaciones.DataSource = dataTable;
+                dgv_ubicaciones.DataSource = dataTable;
             }
             catch (Exception ex)
             {
@@ -248,7 +249,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                 dataTable.Load(resultado);
 
                 // Asignar el DataTable al DataGridView
-                DGV_Ubicaciones.DataSource = dataTable;
+                dgv_ubicaciones.DataSource = dataTable;
             }
             catch (Exception ex)
             {
@@ -258,13 +259,13 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
 
         private bool datosCorrectos()
         {
-            if (txtCiudad.Text.Trim().Equals(""))
+            if (txtbx_ciudad.Text.Trim().Equals(""))
             {
                 MessageBox.Show("Ingrese el nombre de la ciudad.");
                 return false;
             }
 
-            if (txtUbicacion.Text.Trim().Equals(""))
+            if (txtbx_ubicacion.Text.Trim().Equals(""))
             {
                 MessageBox.Show("Ingrese la dirección.");
                 return false;
@@ -276,13 +277,13 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
 
         private void DGV_Ubicaciones_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (DGV_Ubicaciones.SelectedCells.Count > 0)
+            if (dgv_ubicaciones.SelectedCells.Count > 0)
             {
-                int selectedRowIndex = DGV_Ubicaciones.SelectedCells[0].RowIndex;
-                DataGridViewRow selectedRow = DGV_Ubicaciones.Rows[selectedRowIndex];
+                int selectedRowIndex = dgv_ubicaciones.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = dgv_ubicaciones.Rows[selectedRowIndex];
 
-                txtCiudad.Text = Convert.ToString(selectedRow.Cells["Ciudad"].Value);
-                txtUbicacion.Text = Convert.ToString(selectedRow.Cells["Direccion"].Value);
+                txtbx_ciudad.Text = Convert.ToString(selectedRow.Cells["Ciudad"].Value);
+                txtbx_ubicacion.Text = Convert.ToString(selectedRow.Cells["Direccion"].Value);
 
             }
         }
@@ -305,8 +306,8 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
 
                     using (MySqlCommand command = new MySqlCommand(query, connection))
                     {
-                        command.Parameters.AddWithValue("@Ciudad", txtCiudad.Text);
-                        command.Parameters.AddWithValue("@Direccion", txtUbicacion.Text);
+                        command.Parameters.AddWithValue("@Ciudad", txtbx_ciudad.Text);
+                        command.Parameters.AddWithValue("@Direccion", txtbx_ubicacion.Text);
 
                         command.ExecuteNonQuery();
                     }
@@ -320,14 +321,14 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
 
                 llenar_tabla();
 
-                txtCiudad.Text = "";
-                txtUbicacion.Text = "";
+                txtbx_ciudad.Text = "";
+                txtbx_ubicacion.Text = "";
             }
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if (txtCiudad.Text == "" || txtUbicacion.Text == "")
+            if (txtbx_ciudad.Text == "" || txtbx_ubicacion.Text == "")
             {
                 MessageBox.Show("Por favor, llena los datos");
                 return;
@@ -350,8 +351,8 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                     connection.Open();
                     string consulta = "UPDATE tbl_Ubicacion SET Ciudad = @Ciudad, Direccion = @Direccion WHERE ID_Ubicacion = @ID_Ubicacion";
                     MySqlCommand comando = new MySqlCommand(consulta, connection);
-                    comando.Parameters.AddWithValue("@Ciudad", txtCiudad.Text);
-                    comando.Parameters.AddWithValue("@Direccion", txtUbicacion.Text);
+                    comando.Parameters.AddWithValue("@Ciudad", txtbx_ciudad.Text);
+                    comando.Parameters.AddWithValue("@Direccion", txtbx_ubicacion.Text);
                     comando.Parameters.AddWithValue("@ID_Ubicacion", ValorObtenido);
 
                     int cantidad = comando.ExecuteNonQuery();
@@ -383,16 +384,16 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                 MessageBox.Show("Se ha producido un error: " + ex.Message);
             }
 
-            txtCiudad.Text = "";
-            txtUbicacion.Text = "";
+            txtbx_ciudad.Text = "";
+            txtbx_ubicacion.Text = "";
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            if (DGV_Ubicaciones.SelectedCells.Count > 0)
+            if (dgv_ubicaciones.SelectedCells.Count > 0)
             {
-                int selectedRowIndex = DGV_Ubicaciones.SelectedCells[0].RowIndex;
-                DataGridViewRow selectedRow = DGV_Ubicaciones.Rows[selectedRowIndex];
+                int selectedRowIndex = dgv_ubicaciones.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = dgv_ubicaciones.Rows[selectedRowIndex];
                 int idubicacion = Convert.ToInt32(selectedRow.Cells["ID_Ubicacion"].Value);
 
                 DialogResult dialogResult = MessageBox.Show("¿Estás seguro de que deseas eliminar este registro?", "Confirmar eliminación", MessageBoxButtons.YesNo);
@@ -425,8 +426,8 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                     }
                     llenar_tabla();
                 }
-                txtCiudad.Text = "";
-                txtUbicacion.Text = "";
+                txtbx_ciudad.Text = "";
+                txtbx_ubicacion.Text = "";
             }
             else
             {
@@ -437,6 +438,57 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
+        }
+
+        private void txtbxBuscar_TextChanged(object sender, EventArgs e)
+        {
+            // Obtener el texto de búsqueda
+            string searchText = txtbxBuscar.Text.Trim();
+            if (string.IsNullOrEmpty(searchText))
+            {
+                // Si el texto de búsqueda está vacío, no aplicar filtro
+                (dgv_ubicaciones.DataSource as DataTable).DefaultView.RowFilter = string.Empty;
+                return;
+            }
+
+            // Crear una lista para las expresiones de filtro
+            List<string> filterExpressions = new List<string>();
+
+            // Obtener el DataTable
+            DataTable dataTable = dgv_ubicaciones.DataSource as DataTable;
+
+            // Recorrer todas las columnas del DataTable
+            foreach (DataColumn column in dataTable.Columns)
+            {
+                // Excluir columnas que no sean de tipo texto
+                if (column.DataType == typeof(string))
+                {
+                    // Agregar expresión de filtro para la columna
+                    filterExpressions.Add($"[{column.ColumnName}] LIKE '%{searchText}%'");
+                }
+            }
+
+            // Unir todas las expresiones de filtro con el operador OR
+            string filterExpression = string.Join(" OR ", filterExpressions);
+
+            // Aplicar el filtro
+            (dgv_ubicaciones.DataSource as DataTable).DefaultView.RowFilter = filterExpression;
+        }
+
+        private void UpdateDateTimeLabel()
+        {
+            // Obtener la fecha y hora actuales
+            DateTime now = DateTime.Now;
+
+            // Formatear la fecha y hora como texto
+            string dateTimeText = now.ToString("yyyy-MM-dd HH:mm:ss"); // Cambia el formato según tus necesidades
+
+            // Establecer el texto del Label
+            lb_fechaHora.Text = dateTimeText;
+        }
+        private void tmr_tiempo_Tick(object sender, EventArgs e)
+        {
+            UpdateDateTimeLabel();
         }
     }
 

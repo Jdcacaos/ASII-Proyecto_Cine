@@ -16,14 +16,25 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
 
     public partial class Reserva : Form
     {
+
         private int pelicula;
+        private int idCliente;
 
-        private int totalventa;
+        public int totalventa { get; set; }
 
-        public Reserva(int id)
+        private int precioniño;
+        private int precioadulto;
+        private int precioterceraedad;
+        private int descuento;
+
+        private string horario;
+        private string hora;
+        private string fecha;
+        public Reserva(int id, int idCliente)
         {
             InitializeComponent();
             pelicula = id;
+            this.idCliente = idCliente;
         }
 
         string connectionString = DatabaseConfig.ConnectionString;
@@ -76,7 +87,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
 
         private void button8_Click(object sender, EventArgs e)
         {
-            FormsCliente.CarteleraNueva formCartelera = new FormsCliente.CarteleraNueva();
+            FormsCliente.CarteleraNueva formCartelera = new FormsCliente.CarteleraNueva(idCliente);
             formCartelera.Show();
             this.Hide();
         }
@@ -157,6 +168,19 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
         private void sumar(TextBox textBox)
         {
             int valor = Convert.ToInt16(textBox.Text);
+
+            if (valor >= 5)
+            {
+                descuento = 10;
+            }
+            else if (valor >= 8)
+            {
+                descuento = 20;
+            }
+            else if (valor == 10)
+            {
+                descuento = 30;
+            }
             if (valor < 10)
             {
                 valor++;
@@ -214,11 +238,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
                 label16.Text = "0";
                 textBox4.Text = "0";
             }
-            else if (totalAsientos == 0)
-            {
-                MessageBox.Show("Debe seleccionar al menos un boleto para proceder.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                textBox4.Text = "0";
-            }
+            
             else
             {
                 label16.Text = total.ToString();
@@ -285,16 +305,55 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             operar(textBox3, label11, label15);
             total(textBox1, textBox2, textBox3, label13, label14, label15);
         }
+        private int ObtenerIdProyeccion(int idPelicula, string fecha, string hora)
+        {
+            int idProyeccion = -1;
+            string query = "SELECT ID_Proyeccion FROM tbl_proyeccion WHERE FK_ID_Pelicula = @ID_Pelicula AND Fecha = @Fecha AND Hora = @Hora";
 
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                MySqlCommand command = new MySqlCommand(query, connection);
+                command.Parameters.AddWithValue("@ID_Pelicula", idPelicula);
+                command.Parameters.AddWithValue("@Fecha", fecha);
+                command.Parameters.AddWithValue("@Hora", hora);
+                connection.Open();
+                object result = command.ExecuteScalar();
+                if (result != null)
+                {
+                    idProyeccion = Convert.ToInt32(result);
+                }
+            }
+
+            return idProyeccion;
+        }
         private void button7_Click(object sender, EventArgs e)
         {
+           
             int totalAsientos = Convert.ToInt32(textBox1.Text) + Convert.ToInt32(textBox2.Text) + Convert.ToInt32(textBox3.Text);
-            totalventa = Convert.ToInt32(label16.Text);
-            FormsCliente.Asientos formAsientos = new FormsCliente.Asientos(pelicula, totalventa);
-            formAsientos.TotalAsientos = totalAsientos;
+            if (totalAsientos == 0)
+            {
+                MessageBox.Show("Debe seleccionar al menos un boleto para proceder.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                textBox4.Text = "0";
+            }
+            else
+            {
+                fecha = Convert.ToString( comboBox1.SelectedItem);
+                hora = Convert.ToString(comboBox2.SelectedItem);
+                horario = fecha +" "+hora;
+                totalventa = Convert.ToInt32(label16.Text);
+                int idProyeccion = ObtenerIdProyeccion(pelicula, comboBox1.SelectedItem.ToString(), comboBox2.SelectedItem.ToString());
+                FormsCliente.Asientos formAsientos = new FormsCliente.Asientos(pelicula, totalventa, idProyeccion, idCliente, descuento, horario);
+                formAsientos.TotalAsientos = totalAsientos;
 
-            formAsientos.Show();
-            this.Hide();
+
+                formAsientos.Show();
+                this.Hide();
+            }
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

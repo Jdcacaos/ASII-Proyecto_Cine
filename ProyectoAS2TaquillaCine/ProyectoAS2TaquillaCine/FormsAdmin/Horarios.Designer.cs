@@ -29,437 +29,532 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
         /// </summary>
         private void InitializeComponent()
         {
-            this.button4 = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.components = new System.ComponentModel.Container();
+            this.btn_boton4 = new System.Windows.Forms.Button();
+            this.lb_fechaSys = new System.Windows.Forms.Label();
+            this.panel_panel2 = new System.Windows.Forms.Panel();
+            this.gbIngresar = new System.Windows.Forms.GroupBox();
+            this.txtbx_3ra = new System.Windows.Forms.TextBox();
+            this.txtbx_adulto = new System.Windows.Forms.TextBox();
+            this.txtbx_nino = new System.Windows.Forms.TextBox();
+            this.lb_precio3ra = new System.Windows.Forms.Label();
+            this.lb_precioAdulto = new System.Windows.Forms.Label();
+            this.lb_precioNino = new System.Windows.Forms.Label();
+            this.btn_guardar = new System.Windows.Forms.Button();
+            this.lb_mantHorario = new System.Windows.Forms.Label();
+            this.dtp_hora = new System.Windows.Forms.DateTimePicker();
+            this.lb_hora = new System.Windows.Forms.Label();
+            this.lb_estado = new System.Windows.Forms.Label();
+            this.lb_fecha = new System.Windows.Forms.Label();
+            this.lb_sala = new System.Windows.Forms.Label();
+            this.lb_pelicula = new System.Windows.Forms.Label();
             this.cb_Pelicula = new System.Windows.Forms.ComboBox();
+            this.cb_Estado = new System.Windows.Forms.ComboBox();
             this.cb_id_Sala = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.cbEstado = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.txt3ra = new System.Windows.Forms.TextBox();
-            this.txtAdulto = new System.Windows.Forms.TextBox();
-            this.txtNino = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
+            this.dtp_fecha = new System.Windows.Forms.DateTimePicker();
+            this.btn_regresar = new System.Windows.Forms.Button();
+            this.panel_panel3 = new System.Windows.Forms.Panel();
+            this.gbbuscar = new System.Windows.Forms.GroupBox();
+            this.txtbxBuscar = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.button8 = new System.Windows.Forms.Button();
-            this.label10 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.dgv_horario = new System.Windows.Forms.DataGridView();
+            this.btn_editar = new System.Windows.Forms.Button();
+            this.btn_eliminar = new System.Windows.Forms.Button();
+            this.lb_cinehub = new System.Windows.Forms.Label();
+            this.panel_panel1 = new System.Windows.Forms.Panel();
+            this.tmr_timer1 = new System.Windows.Forms.Timer(this.components);
+            this.panel_panel2.SuspendLayout();
+            this.gbIngresar.SuspendLayout();
+            this.panel_panel3.SuspendLayout();
+            this.gbbuscar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_horario)).BeginInit();
             this.SuspendLayout();
             // 
-            // button4
+            // btn_boton4
             // 
-            this.button4.Location = new System.Drawing.Point(12, 12);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(91, 33);
-            this.button4.TabIndex = 40;
-            this.button4.Text = "Regresar";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.btn_boton4.Location = new System.Drawing.Point(16, 15);
+            this.btn_boton4.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_boton4.Name = "btn_boton4";
+            this.btn_boton4.Size = new System.Drawing.Size(121, 41);
+            this.btn_boton4.TabIndex = 40;
+            this.btn_boton4.Text = "Regresar";
+            this.btn_boton4.UseVisualStyleBackColor = true;
+            this.btn_boton4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // label3
+            // lb_fechaSys
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label3.Location = new System.Drawing.Point(208, 62);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(46, 19);
-            this.label3.TabIndex = 36;
-            this.label3.Text = "Hora";
+            this.lb_fechaSys.AutoSize = true;
+            this.lb_fechaSys.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_fechaSys.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lb_fechaSys.Location = new System.Drawing.Point(252, 69);
+            this.lb_fechaSys.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lb_fechaSys.Name = "lb_fechaSys";
+            this.lb_fechaSys.Size = new System.Drawing.Size(67, 26);
+            this.lb_fechaSys.TabIndex = 35;
+            this.lb_fechaSys.Text = "Fecha";
             // 
-            // label4
+            // panel_panel2
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label4.Location = new System.Drawing.Point(278, 62);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(53, 19);
-            this.label4.TabIndex = 35;
-            this.label4.Text = "Fecha";
+            this.panel_panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.panel_panel2.Controls.Add(this.gbIngresar);
+            this.panel_panel2.Controls.Add(this.btn_regresar);
+            this.panel_panel2.Controls.Add(this.lb_fechaSys);
+            this.panel_panel2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel_panel2.Location = new System.Drawing.Point(914, 34);
+            this.panel_panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel_panel2.Name = "panel_panel2";
+            this.panel_panel2.Size = new System.Drawing.Size(491, 824);
+            this.panel_panel2.TabIndex = 55;
+            // 
+            // gbIngresar
+            // 
+            this.gbIngresar.Controls.Add(this.txtbx_3ra);
+            this.gbIngresar.Controls.Add(this.txtbx_adulto);
+            this.gbIngresar.Controls.Add(this.txtbx_nino);
+            this.gbIngresar.Controls.Add(this.lb_precio3ra);
+            this.gbIngresar.Controls.Add(this.lb_precioAdulto);
+            this.gbIngresar.Controls.Add(this.lb_precioNino);
+            this.gbIngresar.Controls.Add(this.btn_guardar);
+            this.gbIngresar.Controls.Add(this.lb_mantHorario);
+            this.gbIngresar.Controls.Add(this.dtp_hora);
+            this.gbIngresar.Controls.Add(this.lb_hora);
+            this.gbIngresar.Controls.Add(this.lb_estado);
+            this.gbIngresar.Controls.Add(this.lb_fecha);
+            this.gbIngresar.Controls.Add(this.lb_sala);
+            this.gbIngresar.Controls.Add(this.lb_pelicula);
+            this.gbIngresar.Controls.Add(this.cb_Pelicula);
+            this.gbIngresar.Controls.Add(this.cb_Estado);
+            this.gbIngresar.Controls.Add(this.cb_id_Sala);
+            this.gbIngresar.Controls.Add(this.dtp_fecha);
+            this.gbIngresar.Location = new System.Drawing.Point(0, 155);
+            this.gbIngresar.Margin = new System.Windows.Forms.Padding(4);
+            this.gbIngresar.Name = "gbIngresar";
+            this.gbIngresar.Padding = new System.Windows.Forms.Padding(4);
+            this.gbIngresar.Size = new System.Drawing.Size(491, 665);
+            this.gbIngresar.TabIndex = 37;
+            this.gbIngresar.TabStop = false;
+            // 
+            // txtbx_3ra
+            // 
+            this.txtbx_3ra.Location = new System.Drawing.Point(260, 418);
+            this.txtbx_3ra.Margin = new System.Windows.Forms.Padding(4);
+            this.txtbx_3ra.Name = "txtbx_3ra";
+            this.txtbx_3ra.Size = new System.Drawing.Size(160, 22);
+            this.txtbx_3ra.TabIndex = 65;
+            // 
+            // txtbx_adulto
+            // 
+            this.txtbx_adulto.Location = new System.Drawing.Point(260, 375);
+            this.txtbx_adulto.Margin = new System.Windows.Forms.Padding(4);
+            this.txtbx_adulto.Name = "txtbx_adulto";
+            this.txtbx_adulto.Size = new System.Drawing.Size(160, 22);
+            this.txtbx_adulto.TabIndex = 64;
+            // 
+            // txtbx_nino
+            // 
+            this.txtbx_nino.Location = new System.Drawing.Point(260, 327);
+            this.txtbx_nino.Margin = new System.Windows.Forms.Padding(4);
+            this.txtbx_nino.Name = "txtbx_nino";
+            this.txtbx_nino.Size = new System.Drawing.Size(160, 22);
+            this.txtbx_nino.TabIndex = 63;
+            // 
+            // lb_precio3ra
+            // 
+            this.lb_precio3ra.AutoSize = true;
+            this.lb_precio3ra.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_precio3ra.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lb_precio3ra.Location = new System.Drawing.Point(71, 417);
+            this.lb_precio3ra.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lb_precio3ra.Name = "lb_precio3ra";
+            this.lb_precio3ra.Size = new System.Drawing.Size(162, 26);
+            this.lb_precio3ra.TabIndex = 75;
+            this.lb_precio3ra.Text = "Precio 3ra Edad";
+            // 
+            // lb_precioAdulto
+            // 
+            this.lb_precioAdulto.AutoSize = true;
+            this.lb_precioAdulto.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_precioAdulto.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lb_precioAdulto.Location = new System.Drawing.Point(71, 374);
+            this.lb_precioAdulto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lb_precioAdulto.Name = "lb_precioAdulto";
+            this.lb_precioAdulto.Size = new System.Drawing.Size(142, 26);
+            this.lb_precioAdulto.TabIndex = 74;
+            this.lb_precioAdulto.Text = "Precio Adulto";
+            // 
+            // lb_precioNino
+            // 
+            this.lb_precioNino.AutoSize = true;
+            this.lb_precioNino.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_precioNino.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lb_precioNino.Location = new System.Drawing.Point(71, 326);
+            this.lb_precioNino.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lb_precioNino.Name = "lb_precioNino";
+            this.lb_precioNino.Size = new System.Drawing.Size(123, 26);
+            this.lb_precioNino.TabIndex = 73;
+            this.lb_precioNino.Text = "Precio Niño";
+            // 
+            // btn_guardar
+            // 
+            this.btn_guardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_guardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.btn_guardar.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_guardar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_guardar.Image = global::ProyectoAS2TaquillaCine.Properties.Resources.diskette_save_saveas_1514;
+            this.btn_guardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_guardar.Location = new System.Drawing.Point(177, 506);
+            this.btn_guardar.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_guardar.Name = "btn_guardar";
+            this.btn_guardar.Size = new System.Drawing.Size(179, 78);
+            this.btn_guardar.TabIndex = 66;
+            this.btn_guardar.Text = "Guardar";
+            this.btn_guardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_guardar.UseVisualStyleBackColor = false;
+            this.btn_guardar.Click += new System.EventHandler(this.btn_guardar_Click);
+            // 
+            // lb_mantHorario
+            // 
+            this.lb_mantHorario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.lb_mantHorario.AutoSize = true;
+            this.lb_mantHorario.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_mantHorario.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lb_mantHorario.Location = new System.Drawing.Point(107, 21);
+            this.lb_mantHorario.Name = "lb_mantHorario";
+            this.lb_mantHorario.Size = new System.Drawing.Size(269, 26);
+            this.lb_mantHorario.TabIndex = 72;
+            this.lb_mantHorario.Text = "Mantenimiento de Horario";
+            // 
+            // dtp_hora
+            // 
+            this.dtp_hora.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dtp_hora.Location = new System.Drawing.Point(257, 224);
+            this.dtp_hora.Margin = new System.Windows.Forms.Padding(4);
+            this.dtp_hora.Name = "dtp_hora";
+            this.dtp_hora.ShowUpDown = true;
+            this.dtp_hora.Size = new System.Drawing.Size(160, 22);
+            this.dtp_hora.TabIndex = 61;
+            // 
+            // lb_hora
+            // 
+            this.lb_hora.AutoSize = true;
+            this.lb_hora.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_hora.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lb_hora.Location = new System.Drawing.Point(71, 224);
+            this.lb_hora.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lb_hora.Name = "lb_hora";
+            this.lb_hora.Size = new System.Drawing.Size(59, 26);
+            this.lb_hora.TabIndex = 71;
+            this.lb_hora.Text = "Hora";
+            // 
+            // lb_estado
+            // 
+            this.lb_estado.AutoSize = true;
+            this.lb_estado.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_estado.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lb_estado.Location = new System.Drawing.Point(71, 272);
+            this.lb_estado.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lb_estado.Name = "lb_estado";
+            this.lb_estado.Size = new System.Drawing.Size(76, 26);
+            this.lb_estado.TabIndex = 70;
+            this.lb_estado.Text = "Estado";
+            // 
+            // lb_fecha
+            // 
+            this.lb_fecha.AutoSize = true;
+            this.lb_fecha.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_fecha.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lb_fecha.Location = new System.Drawing.Point(71, 176);
+            this.lb_fecha.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lb_fecha.Name = "lb_fecha";
+            this.lb_fecha.Size = new System.Drawing.Size(67, 26);
+            this.lb_fecha.TabIndex = 69;
+            this.lb_fecha.Text = "Fecha";
+            // 
+            // lb_sala
+            // 
+            this.lb_sala.AutoSize = true;
+            this.lb_sala.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_sala.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lb_sala.Location = new System.Drawing.Point(71, 128);
+            this.lb_sala.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lb_sala.Name = "lb_sala";
+            this.lb_sala.Size = new System.Drawing.Size(51, 26);
+            this.lb_sala.TabIndex = 68;
+            this.lb_sala.Text = "Sala";
+            // 
+            // lb_pelicula
+            // 
+            this.lb_pelicula.AutoSize = true;
+            this.lb_pelicula.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_pelicula.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lb_pelicula.Location = new System.Drawing.Point(71, 79);
+            this.lb_pelicula.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lb_pelicula.Name = "lb_pelicula";
+            this.lb_pelicula.Size = new System.Drawing.Size(86, 26);
+            this.lb_pelicula.TabIndex = 67;
+            this.lb_pelicula.Text = "Pelicula";
             // 
             // cb_Pelicula
             // 
             this.cb_Pelicula.FormattingEnabled = true;
-            this.cb_Pelicula.Location = new System.Drawing.Point(205, 211);
+            this.cb_Pelicula.Location = new System.Drawing.Point(257, 79);
+            this.cb_Pelicula.Margin = new System.Windows.Forms.Padding(4);
             this.cb_Pelicula.Name = "cb_Pelicula";
-            this.cb_Pelicula.Size = new System.Drawing.Size(121, 21);
-            this.cb_Pelicula.TabIndex = 43;
+            this.cb_Pelicula.Size = new System.Drawing.Size(160, 24);
+            this.cb_Pelicula.TabIndex = 58;
+            // 
+            // cb_Estado
+            // 
+            this.cb_Estado.FormattingEnabled = true;
+            this.cb_Estado.Location = new System.Drawing.Point(257, 270);
+            this.cb_Estado.Margin = new System.Windows.Forms.Padding(4);
+            this.cb_Estado.Name = "cb_Estado";
+            this.cb_Estado.Size = new System.Drawing.Size(160, 24);
+            this.cb_Estado.TabIndex = 62;
             // 
             // cb_id_Sala
             // 
             this.cb_id_Sala.FormattingEnabled = true;
-            this.cb_id_Sala.Location = new System.Drawing.Point(205, 251);
+            this.cb_id_Sala.Location = new System.Drawing.Point(257, 128);
+            this.cb_id_Sala.Margin = new System.Windows.Forms.Padding(4);
             this.cb_id_Sala.Name = "cb_id_Sala";
-            this.cb_id_Sala.Size = new System.Drawing.Size(121, 21);
-            this.cb_id_Sala.TabIndex = 44;
+            this.cb_id_Sala.Size = new System.Drawing.Size(160, 24);
+            this.cb_id_Sala.TabIndex = 59;
             // 
-            // dateTimePicker1
+            // dtp_fecha
             // 
-            this.dateTimePicker1.CustomFormat = "yyyy/MM/dd";
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(205, 290);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dateTimePicker1.Size = new System.Drawing.Size(121, 20);
-            this.dateTimePicker1.TabIndex = 45;
-            this.dateTimePicker1.TabStop = false;
-            this.dateTimePicker1.Value = new System.DateTime(2024, 7, 26, 0, 0, 0, 0);
+            this.dtp_fecha.CustomFormat = "yyyy/MM/dd";
+            this.dtp_fecha.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtp_fecha.Location = new System.Drawing.Point(257, 176);
+            this.dtp_fecha.Margin = new System.Windows.Forms.Padding(4);
+            this.dtp_fecha.Name = "dtp_fecha";
+            this.dtp_fecha.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.dtp_fecha.Size = new System.Drawing.Size(160, 22);
+            this.dtp_fecha.TabIndex = 60;
+            this.dtp_fecha.Value = new System.DateTime(2024, 7, 26, 0, 0, 0, 0);
             // 
-            // cbEstado
+            // btn_regresar
             // 
-            this.cbEstado.FormattingEnabled = true;
-            this.cbEstado.Location = new System.Drawing.Point(205, 366);
-            this.cbEstado.Name = "cbEstado";
-            this.cbEstado.Size = new System.Drawing.Size(121, 21);
-            this.cbEstado.TabIndex = 46;
+            this.btn_regresar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_regresar.BackColor = System.Drawing.Color.Red;
+            this.btn_regresar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_regresar.Location = new System.Drawing.Point(300, 14);
+            this.btn_regresar.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_regresar.Name = "btn_regresar";
+            this.btn_regresar.Size = new System.Drawing.Size(121, 41);
+            this.btn_regresar.TabIndex = 13;
+            this.btn_regresar.Text = "Regresar";
+            this.btn_regresar.UseVisualStyleBackColor = false;
+            this.btn_regresar.Click += new System.EventHandler(this.button1_Click);
             // 
-            // label5
+            // panel_panel3
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label5.Location = new System.Drawing.Point(65, 211);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(67, 19);
-            this.label5.TabIndex = 47;
-            this.label5.Text = "Pelicula";
+            this.panel_panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            this.panel_panel3.Controls.Add(this.gbbuscar);
+            this.panel_panel3.Controls.Add(this.label1);
+            this.panel_panel3.Controls.Add(this.dgv_horario);
+            this.panel_panel3.Controls.Add(this.btn_editar);
+            this.panel_panel3.Controls.Add(this.btn_eliminar);
+            this.panel_panel3.Controls.Add(this.lb_cinehub);
+            this.panel_panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel_panel3.Location = new System.Drawing.Point(0, 34);
+            this.panel_panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel_panel3.Name = "panel_panel3";
+            this.panel_panel3.Size = new System.Drawing.Size(914, 824);
+            this.panel_panel3.TabIndex = 56;
             // 
-            // label6
+            // gbbuscar
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label6.Location = new System.Drawing.Point(65, 251);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(40, 19);
-            this.label6.TabIndex = 48;
-            this.label6.Text = "Sala";
+            this.gbbuscar.Controls.Add(this.txtbxBuscar);
+            this.gbbuscar.Controls.Add(this.label2);
+            this.gbbuscar.Location = new System.Drawing.Point(4, 0);
+            this.gbbuscar.Margin = new System.Windows.Forms.Padding(4);
+            this.gbbuscar.Name = "gbbuscar";
+            this.gbbuscar.Padding = new System.Windows.Forms.Padding(4);
+            this.gbbuscar.Size = new System.Drawing.Size(911, 65);
+            this.gbbuscar.TabIndex = 184;
+            this.gbbuscar.TabStop = false;
             // 
-            // label7
+            // txtbxBuscar
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label7.Location = new System.Drawing.Point(65, 290);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(53, 19);
-            this.label7.TabIndex = 49;
-            this.label7.Text = "Fecha";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label8.Location = new System.Drawing.Point(65, 368);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(60, 19);
-            this.label8.TabIndex = 50;
-            this.label8.Text = "Estado";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label9.Location = new System.Drawing.Point(65, 329);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(46, 19);
-            this.label9.TabIndex = 51;
-            this.label9.Text = "Hora";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker2.Location = new System.Drawing.Point(205, 329);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.ShowUpDown = true;
-            this.dateTimePicker2.Size = new System.Drawing.Size(121, 20);
-            this.dateTimePicker2.TabIndex = 52;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            this.panel2.Controls.Add(this.txt3ra);
-            this.panel2.Controls.Add(this.txtAdulto);
-            this.panel2.Controls.Add(this.txtNino);
-            this.panel2.Controls.Add(this.label12);
-            this.panel2.Controls.Add(this.label11);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.button8);
-            this.panel2.Controls.Add(this.label10);
-            this.panel2.Controls.Add(this.dateTimePicker2);
-            this.panel2.Controls.Add(this.button1);
-            this.panel2.Controls.Add(this.label9);
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.label8);
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.label7);
-            this.panel2.Controls.Add(this.label6);
-            this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.cb_Pelicula);
-            this.panel2.Controls.Add(this.cbEstado);
-            this.panel2.Controls.Add(this.cb_id_Sala);
-            this.panel2.Controls.Add(this.dateTimePicker1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(686, 28);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(368, 669);
-            this.panel2.TabIndex = 55;
-            // 
-            // txt3ra
-            // 
-            this.txt3ra.Location = new System.Drawing.Point(207, 487);
-            this.txt3ra.Name = "txt3ra";
-            this.txt3ra.Size = new System.Drawing.Size(121, 20);
-            this.txt3ra.TabIndex = 50;
-            this.txt3ra.TextChanged += new System.EventHandler(this.txt3ra_TextChanged);
-            // 
-            // txtAdulto
-            // 
-            this.txtAdulto.Location = new System.Drawing.Point(207, 452);
-            this.txtAdulto.Name = "txtAdulto";
-            this.txtAdulto.Size = new System.Drawing.Size(121, 20);
-            this.txtAdulto.TabIndex = 49;
-            this.txtAdulto.TextChanged += new System.EventHandler(this.txtAdulto_TextChanged);
-            // 
-            // txtNino
-            // 
-            this.txtNino.Location = new System.Drawing.Point(207, 413);
-            this.txtNino.Name = "txtNino";
-            this.txtNino.Size = new System.Drawing.Size(121, 20);
-            this.txtNino.TabIndex = 48;
-            this.txtNino.TextChanged += new System.EventHandler(this.txtNino_TextChanged);
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label12.Location = new System.Drawing.Point(65, 486);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(126, 19);
-            this.label12.TabIndex = 57;
-            this.label12.Text = "Precio 3ra Edad";
-            this.label12.Click += new System.EventHandler(this.label12_Click);
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label11.Location = new System.Drawing.Point(65, 451);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(111, 19);
-            this.label11.TabIndex = 56;
-            this.label11.Text = "Precio Adulto";
-            this.label11.Click += new System.EventHandler(this.label11_Click);
+            this.txtbxBuscar.Location = new System.Drawing.Point(95, 16);
+            this.txtbxBuscar.Margin = new System.Windows.Forms.Padding(4);
+            this.txtbxBuscar.Multiline = true;
+            this.txtbxBuscar.Name = "txtbxBuscar";
+            this.txtbxBuscar.Size = new System.Drawing.Size(787, 37);
+            this.txtbxBuscar.TabIndex = 182;
+            this.txtbxBuscar.TextChanged += new System.EventHandler(this.txtbxBuscar_TextChanged);
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(65, 412);
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label2.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label2.Location = new System.Drawing.Point(7, 22);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(97, 19);
-            this.label2.TabIndex = 55;
-            this.label2.Text = "Precio Niño";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
-            // 
-            // button8
-            // 
-            this.button8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button8.Location = new System.Drawing.Point(78, 568);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(237, 41);
-            this.button8.TabIndex = 54;
-            this.button8.Text = "Guardar";
-            this.button8.UseVisualStyleBackColor = false;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
-            // 
-            // label10
-            // 
-            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label10.Location = new System.Drawing.Point(93, 133);
-            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(210, 19);
-            this.label10.TabIndex = 53;
-            this.label10.Text = "Mantenimiento de Horario";
-            // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackColor = System.Drawing.Color.Red;
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(237, 6);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(91, 33);
-            this.button1.TabIndex = 37;
-            this.button1.Text = "Regresar";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            this.panel3.Controls.Add(this.dataGridView1);
-            this.panel3.Controls.Add(this.button6);
-            this.panel3.Controls.Add(this.button7);
-            this.panel3.Controls.Add(this.label1);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(0, 28);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(686, 669);
-            this.panel3.TabIndex = 56;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 193);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(654, 335);
-            this.dataGridView1.TabIndex = 179;
-            this.dataGridView1.Tag = "";
-            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // button6
-            // 
-            this.button6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button6.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.button6.ForeColor = System.Drawing.SystemColors.Control;
-            this.button6.Location = new System.Drawing.Point(31, 570);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(119, 39);
-            this.button6.TabIndex = 36;
-            this.button6.Text = "Editar";
-            this.button6.UseVisualStyleBackColor = false;
-            this.button6.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button7
-            // 
-            this.button7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button7.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.button7.ForeColor = System.Drawing.SystemColors.Control;
-            this.button7.Location = new System.Drawing.Point(171, 570);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(111, 39);
-            this.button7.TabIndex = 35;
-            this.button7.Text = "Eliminar";
-            this.button7.UseVisualStyleBackColor = false;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
+            this.label2.Size = new System.Drawing.Size(103, 32);
+            this.label2.TabIndex = 181;
+            this.label2.Text = "Buscar";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // label1
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label1.Font = new System.Drawing.Font("Arial Narrow", 54F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label1.Location = new System.Drawing.Point(218, 40);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label1.Location = new System.Drawing.Point(315, 187);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(282, 85);
-            this.label1.TabIndex = 32;
-            this.label1.Text = "CINEHUB";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label1.Size = new System.Drawing.Size(180, 26);
+            this.label1.TabIndex = 58;
+            this.label1.Text = "Registros Horario";
             // 
-            // panel1
+            // dgv_horario
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1054, 28);
-            this.panel1.TabIndex = 54;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            this.dgv_horario.AllowUserToAddRows = false;
+            this.dgv_horario.AllowUserToDeleteRows = false;
+            this.dgv_horario.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgv_horario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_horario.Location = new System.Drawing.Point(16, 238);
+            this.dgv_horario.Margin = new System.Windows.Forms.Padding(4);
+            this.dgv_horario.Name = "dgv_horario";
+            this.dgv_horario.ReadOnly = true;
+            this.dgv_horario.RowHeadersWidth = 51;
+            this.dgv_horario.Size = new System.Drawing.Size(870, 413);
+            this.dgv_horario.TabIndex = 179;
+            this.dgv_horario.Tag = "";
+            this.dgv_horario.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // btn_editar
+            // 
+            this.btn_editar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btn_editar.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btn_editar.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_editar.ForeColor = System.Drawing.SystemColors.Control;
+            this.btn_editar.Image = global::ProyectoAS2TaquillaCine.Properties.Resources.editsquare_120033;
+            this.btn_editar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_editar.Location = new System.Drawing.Point(41, 703);
+            this.btn_editar.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_editar.Name = "btn_editar";
+            this.btn_editar.Size = new System.Drawing.Size(126, 48);
+            this.btn_editar.TabIndex = 9;
+            this.btn_editar.Text = "Editar";
+            this.btn_editar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_editar.UseVisualStyleBackColor = false;
+            this.btn_editar.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // btn_eliminar
+            // 
+            this.btn_eliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btn_eliminar.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btn_eliminar.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_eliminar.ForeColor = System.Drawing.SystemColors.Control;
+            this.btn_eliminar.Image = global::ProyectoAS2TaquillaCine.Properties.Resources.delete_button_6303088;
+            this.btn_eliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_eliminar.Location = new System.Drawing.Point(240, 703);
+            this.btn_eliminar.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_eliminar.Name = "btn_eliminar";
+            this.btn_eliminar.Size = new System.Drawing.Size(138, 48);
+            this.btn_eliminar.TabIndex = 10;
+            this.btn_eliminar.Text = "Eliminar";
+            this.btn_eliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_eliminar.UseVisualStyleBackColor = false;
+            this.btn_eliminar.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // lb_cinehub
+            // 
+            this.lb_cinehub.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lb_cinehub.Font = new System.Drawing.Font("Arial Narrow", 54F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_cinehub.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lb_cinehub.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lb_cinehub.Location = new System.Drawing.Point(185, 82);
+            this.lb_cinehub.Name = "lb_cinehub";
+            this.lb_cinehub.Size = new System.Drawing.Size(455, 105);
+            this.lb_cinehub.TabIndex = 32;
+            this.lb_cinehub.Text = "CINEHUB";
+            this.lb_cinehub.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // panel_panel1
+            // 
+            this.panel_panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.panel_panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel_panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel_panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel_panel1.Name = "panel_panel1";
+            this.panel_panel1.Size = new System.Drawing.Size(1405, 34);
+            this.panel_panel1.TabIndex = 54;
+            this.panel_panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // tmr_timer1
+            // 
+            this.tmr_timer1.Tick += new System.EventHandler(this.tmr_timer1_Tick);
             // 
             // Horarios
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1054, 697);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.button4);
+            this.ClientSize = new System.Drawing.Size(1405, 858);
+            this.Controls.Add(this.panel_panel3);
+            this.Controls.Add(this.panel_panel2);
+            this.Controls.Add(this.panel_panel1);
+            this.Controls.Add(this.btn_boton4);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Horarios";
             this.Text = "Horarios";
             this.Load += new System.EventHandler(this.Horarios_Load);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel_panel2.ResumeLayout(false);
+            this.panel_panel2.PerformLayout();
+            this.gbIngresar.ResumeLayout(false);
+            this.gbIngresar.PerformLayout();
+            this.panel_panel3.ResumeLayout(false);
+            this.panel_panel3.PerformLayout();
+            this.gbbuscar.ResumeLayout(false);
+            this.gbbuscar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_horario)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox cb_Pelicula;
-        private System.Windows.Forms.ComboBox cb_id_Sala;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.ComboBox cbEstado;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button btn_boton4;
+        private System.Windows.Forms.Label lb_fechaSys;
+        private System.Windows.Forms.Panel panel_panel2;
+        private System.Windows.Forms.Button btn_regresar;
+        private System.Windows.Forms.Panel panel_panel3;
+        private System.Windows.Forms.DataGridView dgv_horario;
+        private System.Windows.Forms.Button btn_editar;
+        private System.Windows.Forms.Button btn_eliminar;
+        private System.Windows.Forms.Label lb_cinehub;
+        private System.Windows.Forms.Panel panel_panel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox txt3ra;
-        private System.Windows.Forms.TextBox txtAdulto;
-        private System.Windows.Forms.TextBox txtNino;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.GroupBox gbbuscar;
+        private System.Windows.Forms.TextBox txtbxBuscar;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Timer tmr_timer1;
+        private System.Windows.Forms.GroupBox gbIngresar;
+        private System.Windows.Forms.TextBox txtbx_3ra;
+        private System.Windows.Forms.TextBox txtbx_adulto;
+        private System.Windows.Forms.TextBox txtbx_nino;
+        private System.Windows.Forms.Label lb_precio3ra;
+        private System.Windows.Forms.Label lb_precioAdulto;
+        private System.Windows.Forms.Label lb_precioNino;
+        private System.Windows.Forms.Button btn_guardar;
+        private System.Windows.Forms.Label lb_mantHorario;
+        private System.Windows.Forms.DateTimePicker dtp_hora;
+        private System.Windows.Forms.Label lb_hora;
+        private System.Windows.Forms.Label lb_estado;
+        private System.Windows.Forms.Label lb_fecha;
+        private System.Windows.Forms.Label lb_sala;
+        private System.Windows.Forms.Label lb_pelicula;
+        private System.Windows.Forms.ComboBox cb_Pelicula;
+        private System.Windows.Forms.ComboBox cb_Estado;
+        private System.Windows.Forms.ComboBox cb_id_Sala;
+        private System.Windows.Forms.DateTimePicker dtp_fecha;
     }
 }

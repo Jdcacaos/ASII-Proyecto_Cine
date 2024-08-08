@@ -1,13 +1,9 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ProyectoAS2TaquillaCine.FormsCliente
@@ -22,18 +18,25 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
         private int tiempoRestante; // Tiempo restante en segundos
         private int pelicula;
         private int totalventa;
-
-        public Asientos(int id, int total)
+        private int idproye;
+        private int idCliente;
+        private int descu;
+        private string horario;
+        private List<(char fila, int numero)> asientosSeleccionadosList = new List<(char fila, int numero)>(); // Lista de asientos seleccionados
+        public Asientos(int id, int total, int idproyeccion, int idcliente, int desc, string horar)
         {
             InitializeComponent();
-    
+            idCliente = idcliente;
             pelicula = id;
             totalventa = total;
-
+            idproye = idproyeccion;
             // Asegúrate de que el Timer se inicializa y se configura correctamente
             timer = new Timer();
             timer.Interval = 1000; // 1 segundo
             timer.Tick += Tick;
+
+            descu = desc;
+            horario = horar;
 
             // Asignar el mismo método a todos los botones
             btnA1.Click += Asiento_Click;
@@ -118,7 +121,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             btnI10.Click += Asiento_Click;
 
 
-            lbl_totalventa.Text = Convert.ToString(totalventa);
+            lbl_totalventa.Text = Convert.ToString(totalventa + descu);
         }
 
         private void IniciarCronometro(int segundos)
@@ -163,46 +166,73 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
                 MessageBox.Show("¡Tiempo agotado!");
 
                 // Redirige al formulario CarteleraNueva
-                CarteleraNueva carteleraNueva = new CarteleraNueva();
+                CarteleraNueva carteleraNueva = new CarteleraNueva(idCliente);
                 carteleraNueva.Show();
                 this.Close(); // Opcional: cierra el formulario actual si ya no es necesario
             }
+        }
+        private int ObtenerIDAsiento(char fila, int numero)
+        {
+            int idAsiento = -1;
+
+            using (MySqlConnection conexion = new MySqlConnection(connectionString))
+            {
+                conexion.Open();
+                string query = "SELECT ID_Asiento FROM tbl_asiento WHERE Fila = @fila AND Numero = @numero";
+                MySqlCommand cmd = new MySqlCommand(query, conexion);
+                cmd.Parameters.AddWithValue("@fila", fila);
+                cmd.Parameters.AddWithValue("@numero", numero);
+
+                var result = cmd.ExecuteScalar();
+                if (result != null)
+                {
+                    idAsiento = Convert.ToInt32(result);
+                }
+            }
+
+            return idAsiento;
         }
 
         private void Asiento_Click(object sender, EventArgs e)
         {
             Button btn = sender as Button;
 
-            // Verificar si el botón es rojo, en cuyo caso no hacer nada
-
+            // No hacer nada si el botón está deshabilitado (asiento ocupado)
+            if (!btn.Enabled)
+                return;
+            char fila = btn.Name[3]; // Asumiendo que el nombre del botón sigue el formato btnA1, btnB2, etc.
+            int numero = int.Parse(btn.Name.Substring(4));
 
             // Alternar el color de los botones que no son rojos
             if (btn.BackColor == Color.Lime)
             {
-
-                
-
                 if (asientosSeleccionados <= TotalAsientos)
                 {
-
-
                     btn.BackColor = Color.DarkBlue;
                     asientosSeleccionados++;
+                    asientosSeleccionadosList.Add((fila, numero));
                 }
                 else
                 {
                     MessageBox.Show("Has alcanzado el número máximo de asientos seleccionados.");
                     btn.BackColor = Color.Lime;
-            
+
                 }
 
             }
-            else {
+            else if (btn.BackColor == Color.DarkBlue)
+            {
                 btn.BackColor = Color.Lime;
                 asientosSeleccionados--;
+                asientosSeleccionadosList.Remove((fila, numero));
             }
-           
 
+
+        }
+
+        public List<(char fila, int numero)> ObtenerAsientosSeleccionados()
+        {
+            return asientosSeleccionadosList;
         }
 
         private void label15_Click(object sender, EventArgs e)
@@ -212,18 +242,19 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
 
         private void button8_Click(object sender, EventArgs e)
         {
-            FormsCliente.CarteleraNueva formReserva = new FormsCliente.CarteleraNueva();
+            FormsCliente.CarteleraNueva formReserva = new FormsCliente.CarteleraNueva(idCliente);
             formReserva.Show();
             timer.Stop();
             this.Close();
         }
-        
+
 
         private void Asientos_Load_1(object sender, EventArgs e)
         {
             IniciarCronometro(60);
             label25.Text = TotalAsientos.ToString();
-
+            lbl_descuento.Text = Convert.ToString(descu);
+            lbl_totalC.Text = Convert.ToString(totalventa);
             using (MySqlConnection conexion = new MySqlConnection(connectionString))
             {
                 try
@@ -263,7 +294,36 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
                     }
 
                     reader2.Close(); // Cerrar el segundo lector
+
+                    string query3 = "SELECT A.Fila, A.Numero FROM tbl_reservacion R " +
+                           "JOIN tbl_asiento A ON R.Fk_ID_Asiento = A.ID_Asiento " +
+                           "WHERE R.Fk_ID_Proyeccion = @proyeccionId";
+                    MySqlCommand cmd3 = new MySqlCommand(query3, conexion);
+                    cmd3.Parameters.AddWithValue("@proyeccionId", idproye); // Reemplazar 'pelicula' por el ID de la proyección si es necesario
+                    MySqlDataReader reader3 = cmd3.ExecuteReader();
+                    int asientosOcupados = 0;
+                    while (reader3.Read())
+                    {
+                        char fila = reader3["Fila"].ToString()[0];
+                        int numero = Convert.ToInt32(reader3["Numero"]);
+
+                        // Marcar el asiento como ocupado
+                        MarcarAsientoOcupado(fila, numero);
+                        asientosOcupados++;
+                    }
+
+                    reader3.Close();
+                    if (asientosOcupados >= 72)
+                    {
+                        MessageBox.Show("Todos los asientos están ocupados. No se pueden hacer más reservas.");
+                        // Deshabilitar todos los botones de los asientos
+                        FormsCliente.CarteleraNueva formCartelera = new FormsCliente.CarteleraNueva(idCliente);
+                        formCartelera.Show();
+                        this.Close();
+                        timer.Stop();
+                    }
                 }
+
                 catch (Exception ex)
                 {
                     MessageBox.Show("Error: " + ex.Message);
@@ -274,7 +334,60 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
                 }
             }
         }
+        private void DeshabilitarBotonesAsientos()
+{
+    foreach (Control control in this.Controls)
+    {
+        if (control is Button btn && btn.Name.StartsWith("btn"))
+        {
+            btn.Enabled = false; // Deshabilitar todos los botones de los asientos
+        }
+    }
+}
+        private void MarcarAsientoOcupado(char fila, int numero)
+        {
+            Button btn = null;
 
+            // Obtener el botón correspondiente al asiento
+            switch (fila)
+            {
+                case 'A':
+                    btn = this.Controls.Find("btnA" + numero, true).FirstOrDefault() as Button;
+                    break;
+                case 'B':
+                    btn = this.Controls.Find("btnB" + numero, true).FirstOrDefault() as Button;
+                    break;
+                case 'C':
+                    btn = this.Controls.Find("btnC" + numero, true).FirstOrDefault() as Button;
+                    break;
+                case 'D':
+                    btn = this.Controls.Find("btnD" + numero, true).FirstOrDefault() as Button;
+                    break;
+                case 'E':
+                    btn = this.Controls.Find("btnE" + numero, true).FirstOrDefault() as Button;
+                    break;
+                case 'F':
+                    btn = this.Controls.Find("btnF" + numero, true).FirstOrDefault() as Button;
+                    break;
+                case 'G':
+                    btn = this.Controls.Find("btnG" + numero, true).FirstOrDefault() as Button;
+                    break;
+                case 'H':
+                    btn = this.Controls.Find("btnH" + numero, true).FirstOrDefault() as Button;
+                    break;
+                case 'I':
+                    btn = this.Controls.Find("btnI" + numero, true).FirstOrDefault() as Button;
+                    break;
+
+            }
+
+            // Si se encuentra el botón, marcarlo como ocupado
+            if (btn != null)
+            {
+                btn.BackColor = Color.Red;
+                btn.Enabled = false;
+            }
+        }
         private Image imagen(byte[] byteArrayIn)
         {
             using (MemoryStream ms = new MemoryStream(byteArrayIn))
@@ -289,6 +402,44 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
         }
 
         private void btnI10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnA2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button95_Click(object sender, EventArgs e)
+        {
+           
+            List<(char fila, int numero)> asientosSeleccionados = ObtenerAsientosSeleccionados();
+            if (asientosSeleccionados.Count != TotalAsientos)
+            {
+                MessageBox.Show("TERMINE DE SELECCIONAR SUS ASIENTOS ...");
+            }
+            else
+            {
+
+                FormsCliente.MenuCliente menuForm = new FormsCliente.MenuCliente();
+
+                // Mostrar el formulario
+                menuForm.Show();
+
+                // Ocultar el formulario actual de login
+                this.Hide();
+
+                // Abrir CarteleraNueva dentro de MenuCliente
+                
+                FormsCliente.Pago formPago = new FormsCliente.Pago(totalventa - descu, idCliente, asientosSeleccionados, idproye, descu, horario);
+                formPago.Show();
+                timer.Stop();
+                this.Hide();
+            }
+        }
+
+        private void lbl_totalventa_Click(object sender, EventArgs e)
         {
 
         }

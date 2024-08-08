@@ -16,8 +16,16 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
         public LoginCliente()
         {
             InitializeComponent();
+            txtuser.KeyDown += new KeyEventHandler(TextBox_KeyDown);
+            txtContrasena.KeyDown += new KeyEventHandler(TextBox_KeyDown);
         }
-
+        private void TextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                button1_Click(sender, e); // Llama al método del botón
+            }
+        }
         private void button2_Click(object sender, EventArgs e)
         {
             FormsGlobales.Menu loginForm = new FormsGlobales.Menu();
@@ -37,7 +45,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
         private void button3_Click(object sender, EventArgs e)
         {
             // Crear una instancia del formulario LoginCliente
-            FormsCliente.RegistroCliente RegistroForm= new FormsCliente.RegistroCliente();
+            FormsCliente.RegistroCliente RegistroForm = new FormsCliente.RegistroCliente();
 
             // Mostrar el formulario LoginCliente
             RegistroForm.Show();
@@ -58,13 +66,13 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             string connectionString = DatabaseConfig.ConnectionString;
 
             // Obtener los valores ingresados por el usuario
-            string email = txtuser.Text;
-            string contrasena = txtContrasena.Text;
+            string email = txtuser.Text.Trim();
+            string contrasena = txtContrasena.Text.Trim();
 
             // Validar que el correo tenga el sufijo @gmail.com
             if (!email.EndsWith("@gmail.com"))
             {
-                MessageBox.Show("El correo electrónico debe tener el sufijo @gmail.com.", "Error de login", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Correo o contraseña invalido.", "Error de login", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -75,8 +83,8 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
                 {
                     connection.Open();
 
-                    // Crear un comando para validar el email y la contraseña
-                    string query = "SELECT COUNT(1) FROM tbl_cliente WHERE email = @Email AND contrasena = @Contrasena";
+                    // Crear un comando para validar el email y la contraseña y obtener el ID del cliente
+                    string query = "SELECT ID_Cliente FROM tbl_cliente WHERE email = @Email AND contrasena = @Contrasena";
 
                     using (MySqlCommand command = new MySqlCommand(query, connection))
                     {
@@ -85,18 +93,20 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
                         command.Parameters.AddWithValue("@Contrasena", contrasena);
 
                         // Ejecutar el comando y obtener el resultado
-                        int count = Convert.ToInt32(command.ExecuteScalar());
+                        object result = command.ExecuteScalar();
 
-                        if (count == 1)
+                        if (result != null)
                         {
                             // Las credenciales son correctas, permitir el acceso
+                            int idCliente = Convert.ToInt32(result);
+
                             MessageBox.Show("Inicio de sesión exitoso.", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            // Aquí puedes abrir el formulario principal de tu aplicación o proceder según tu lógica
-                            // Ejemplo:
-                            FormsCliente.CarteleraNueva CarteleraForm = new FormsCliente.CarteleraNueva();
+
+                            // Abrir el siguiente formulario y pasar el ID del cliente
+                            FormsCliente.CarteleraNueva PagoForm = new FormsCliente.CarteleraNueva(idCliente);
 
                             // Mostrar el formulario
-                            CarteleraForm.Show();
+                            PagoForm.Show();
 
                             // Opcional: Cerrar o esconder el formulario actual
                             this.Hide();
@@ -132,6 +142,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
 
         private void txtContrasena_TextChanged(object sender, EventArgs e)
         {
+           
 
         }
     }

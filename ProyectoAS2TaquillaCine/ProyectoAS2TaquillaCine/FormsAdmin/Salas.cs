@@ -19,7 +19,14 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
         public Salas()
         {
             InitializeComponent();
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgv_sala.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            tmr_timer1 = new Timer();
+            tmr_timer1.Interval = 100; // Intervalo en milisegundos (1000 ms = 1 segundo)
+            tmr_timer1.Tick += new EventHandler(tmr_timer1_Tick);
+            tmr_timer1.Start(); // Iniciar el Timer
+            btn_editar.Visible = GlobalSettings.IsAdmin;
+            btn_eliminar.Visible = GlobalSettings.IsAdmin;
+            gbIngresar.Visible = GlobalSettings.IsAdmin;
         }
 
         private void Salas_Load(object sender, EventArgs e)
@@ -51,11 +58,11 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                 dataTable.Load(resultado);
 
                 // Asignar el DataTable al DataGridView
-                dataGridView1.DataSource = dataTable;
+                dgv_sala.DataSource = dataTable;
 
                 // Opcional: Ocultar las columnas de ID si ya no se necesitan
-                dataGridView1.Columns["FK_ID_Tipo_Sala"].Visible = false;
-                dataGridView1.Columns["FK_ID_Ubicacion"].Visible = false;
+                dgv_sala.Columns["FK_ID_Tipo_Sala"].Visible = false;
+                dgv_sala.Columns["FK_ID_Ubicacion"].Visible = false;
             }
             catch (Exception ex)
             {
@@ -65,12 +72,12 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
 
         private void LlenarComboBox_estado()
         {
-            cbestado.Items.Clear();
-            cbestado.Items.Add("Activo");
-            cbestado.Items.Add("Inactivo");
-            if (cbestado.Items.Count > 0)
+            cb_estado.Items.Clear();
+            cb_estado.Items.Add("Activo");
+            cb_estado.Items.Add("Inactivo");
+            if (cb_estado.Items.Count > 0)
             {
-                cbestado.SelectedIndex = 0;
+                cb_estado.SelectedIndex = 0;
             }
         }
 
@@ -89,14 +96,14 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                     {
                         using (MySqlDataReader reader = command.ExecuteReader())
                         {
-                            cbtiposala.Items.Clear();
+                            cb_tipoSala.Items.Clear();
 
                             while (reader.Read())
                             {
                                 int idtsala = reader.GetInt32("ID_tipo_sala");
                                 string tipo = reader.GetString("Tipo");
 
-                                cbtiposala.Items.Add(new KeyValuePair<int, string>(idtsala, tipo));
+                                cb_tipoSala.Items.Add(new KeyValuePair<int, string>(idtsala, tipo));
                             }
                         }
                     }
@@ -107,11 +114,11 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                 }
             }
 
-            cbtiposala.DisplayMember = "Value";
-            cbtiposala.ValueMember = "Key";
-            if (cbtiposala.Items.Count > 0)
+            cb_tipoSala.DisplayMember = "Value";
+            cb_tipoSala.ValueMember = "Key";
+            if (cb_tipoSala.Items.Count > 0)
             {
-                cbtiposala.SelectedIndex = 0;
+                cb_tipoSala.SelectedIndex = 0;
             }
         }
 
@@ -129,14 +136,14 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                     {
                         using (MySqlDataReader reader = command.ExecuteReader())
                         {
-                            cbubicacion.Items.Clear();
+                            cb_ubicacion.Items.Clear();
 
                             while (reader.Read())
                             {
                                 int idubicacion = reader.GetInt32("ID_Ubicacion");
                                 string direccion = reader.GetString("Direccion");
 
-                                cbubicacion.Items.Add(new KeyValuePair<int, string>(idubicacion, direccion));
+                                cb_ubicacion.Items.Add(new KeyValuePair<int, string>(idubicacion, direccion));
                             }
                         }
                     }
@@ -147,11 +154,11 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                 }
             }
 
-            cbubicacion.DisplayMember = "Value";
-            cbubicacion.ValueMember = "Key";
-            if (cbubicacion.Items.Count > 0)
+            cb_ubicacion.DisplayMember = "Value";
+            cb_ubicacion.ValueMember = "Key";
+            if (cb_ubicacion.Items.Count > 0)
             {
-                cbubicacion.SelectedIndex = 0;
+                cb_ubicacion.SelectedIndex = 0;
             }
         }
 
@@ -180,11 +187,11 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                 dataTable.Load(resultado);
 
                 // Asignar el DataTable al DataGridView
-                dataGridView1.DataSource = dataTable;
+                dgv_sala.DataSource = dataTable;
 
                 // Opcional: Ocultar las columnas de ID si ya no se necesitan
-                dataGridView1.Columns["FK_ID_Tipo_Sala"].Visible = false;
-                dataGridView1.Columns["FK_ID_Ubicacion"].Visible = false;
+                dgv_sala.Columns["FK_ID_Tipo_Sala"].Visible = false;
+                dgv_sala.Columns["FK_ID_Ubicacion"].Visible = false;
             }
             catch (Exception ex)
             {
@@ -201,42 +208,42 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dataGridView1.SelectedCells.Count > 0)
+            if (dgv_sala.SelectedCells.Count > 0)
             {
-                int selectedRowIndex = dataGridView1.SelectedCells[0].RowIndex;
-                DataGridViewRow selectedRow = dataGridView1.Rows[selectedRowIndex];
+                int selectedRowIndex = dgv_sala.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = dgv_sala.Rows[selectedRowIndex];
 
-                txtnosala.Text = Convert.ToString(selectedRow.Cells["Numero_Sala"].Value);
-                txtcapacidad.Text = Convert.ToString(selectedRow.Cells["Capacidad"].Value);
+                txtbx_noSala.Text = Convert.ToString(selectedRow.Cells["Numero_Sala"].Value);
+                txtbx_capacidad.Text = Convert.ToString(selectedRow.Cells["Capacidad"].Value);
 
                 string tipoSalaNombre = Convert.ToString(selectedRow.Cells["Tipo"].Value);
                 string ubicacionNombre = Convert.ToString(selectedRow.Cells["Direccion"].Value);
                 string estadoNombre = Convert.ToString(selectedRow.Cells["Estado_tbl_sala"].Value);
 
                 // Buscar y seleccionar el valor en el ComboBox de tipo de sala
-                foreach (var item in cbtiposala.Items)
+                foreach (var item in cb_tipoSala.Items)
                 {
                     var keyValuePair = (KeyValuePair<int, string>)item;
                     if (keyValuePair.Value == tipoSalaNombre)
                     {
-                        cbtiposala.SelectedItem = keyValuePair;
+                        cb_tipoSala.SelectedItem = keyValuePair;
                         break;
                     }
                 }
 
                 // Buscar y seleccionar el valor en el ComboBox de ubicación
-                foreach (var item in cbubicacion.Items)
+                foreach (var item in cb_ubicacion.Items)
                 {
                     var keyValuePair = (KeyValuePair<int, string>)item;
                     if (keyValuePair.Value == ubicacionNombre)
                     {
-                        cbubicacion.SelectedItem = keyValuePair;
+                        cb_ubicacion.SelectedItem = keyValuePair;
                         break;
                     }
                 }
 
                 // Asignar el valor del estado
-                cbestado.SelectedItem = estadoNombre;
+                cb_estado.SelectedItem = estadoNombre;
             }
         }
 
@@ -249,8 +256,8 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                 return;
             }
 
-            int idtiposala = ((KeyValuePair<int, string>)cbtiposala.SelectedItem).Key;
-            int idubicacion = ((KeyValuePair<int, string>)cbubicacion.SelectedItem).Key;
+            int idtiposala = ((KeyValuePair<int, string>)cb_tipoSala.SelectedItem).Key;
+            int idubicacion = ((KeyValuePair<int, string>)cb_ubicacion.SelectedItem).Key;
 
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
@@ -263,11 +270,11 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
 
                     using (MySqlCommand command = new MySqlCommand(query, connection))
                     {
-                        command.Parameters.AddWithValue("@Numero_Sala", txtnosala.Text);
-                        command.Parameters.AddWithValue("@Capacidad", txtcapacidad.Text);
+                        command.Parameters.AddWithValue("@Numero_Sala", txtbx_noSala.Text);
+                        command.Parameters.AddWithValue("@Capacidad", txtbx_capacidad.Text);
                         command.Parameters.AddWithValue("@FK_ID_Tipo_Sala", idtiposala);
                         command.Parameters.AddWithValue("@FK_ID_Ubicacion", idubicacion);
-                        command.Parameters.AddWithValue("@Estado_tbl_sala", cbestado.Text);
+                        command.Parameters.AddWithValue("@Estado_tbl_sala", cb_estado.Text);
 
                         command.ExecuteNonQuery();
                     }
@@ -286,9 +293,9 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
 
         private object ObtenerValorCelda(string nombreColumna)
         {
-            if (dataGridView1.SelectedRows.Count > 0)
+            if (dgv_sala.SelectedRows.Count > 0)
             {
-                DataGridViewRow filaSeleccionada = dataGridView1.SelectedRows[0];
+                DataGridViewRow filaSeleccionada = dgv_sala.SelectedRows[0];
                 return filaSeleccionada.Cells[nombreColumna].Value;
             }
             else
@@ -302,15 +309,15 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
         {
             try
             {
-                if (cbtiposala.SelectedItem == null || cbubicacion.SelectedItem == null || cbestado.SelectedItem == null)
+                if (cb_tipoSala.SelectedItem == null || cb_ubicacion.SelectedItem == null || cb_estado.SelectedItem == null)
                 {
                     MessageBox.Show("Por favor, actualiza todos los datos");
                     return;
                 }
 
                 // Obtener valores del ComboBox
-                int tiposala = ((KeyValuePair<int, string>)cbtiposala.SelectedItem).Key;
-                int ubicacion = ((KeyValuePair<int, string>)cbubicacion.SelectedItem).Key;
+                int tiposala = ((KeyValuePair<int, string>)cb_tipoSala.SelectedItem).Key;
+                int ubicacion = ((KeyValuePair<int, string>)cb_ubicacion.SelectedItem).Key;
 
                 // Obtener valor de la celda
                 Object obtener = ObtenerValorCelda("ID_Sala");
@@ -328,11 +335,11 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                     connection.Open();
                     string consulta = "UPDATE tbl_sala SET Numero_Sala = @Numero_Sala, Capacidad = @Capacidad, FK_ID_Tipo_Sala = @FK_ID_Tipo_Sala, FK_ID_Ubicacion = @FK_ID_Ubicacion, Estado_tbl_sala = @Estado_tbl_sala WHERE ID_Sala = @ID_Sala";
                     MySqlCommand comando = new MySqlCommand(consulta, connection);
-                    comando.Parameters.AddWithValue("@Numero_Sala", txtnosala.Text);
-                    comando.Parameters.AddWithValue("@Capacidad", txtcapacidad.Text);
+                    comando.Parameters.AddWithValue("@Numero_Sala", txtbx_noSala.Text);
+                    comando.Parameters.AddWithValue("@Capacidad", txtbx_capacidad.Text);
                     comando.Parameters.AddWithValue("@FK_ID_Tipo_Sala", tiposala);
                     comando.Parameters.AddWithValue("@FK_ID_Ubicacion", ubicacion);
-                    comando.Parameters.AddWithValue("@Estado_tbl_sala", cbestado.SelectedItem.ToString());
+                    comando.Parameters.AddWithValue("@Estado_tbl_sala", cb_estado.SelectedItem.ToString());
                     comando.Parameters.AddWithValue("@ID_Sala", ValorObtenido);
 
                     int cantidad = comando.ExecuteNonQuery();
@@ -367,10 +374,10 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
 
         private void btn_eliminar_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedCells.Count > 0)
+            if (dgv_sala.SelectedCells.Count > 0)
             {
-                int selectedRowIndex = dataGridView1.SelectedCells[0].RowIndex;
-                DataGridViewRow selectedRow = dataGridView1.Rows[selectedRowIndex];
+                int selectedRowIndex = dgv_sala.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = dgv_sala.Rows[selectedRowIndex];
                 int idSala = Convert.ToInt32(selectedRow.Cells["ID_Sala"].Value);
 
                 DialogResult dialogResult = MessageBox.Show("¿Estás seguro de que deseas eliminar este registro?", "Confirmar eliminación", MessageBoxButtons.YesNo);
@@ -416,34 +423,34 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
         private bool datosCorrectos()
         {
             // Verificar que los campos de texto no estén vacíos
-            if (string.IsNullOrWhiteSpace(txtnosala.Text))
+            if (string.IsNullOrWhiteSpace(txtbx_noSala.Text))
             {
                 MessageBox.Show("Ingrese el número de sala.");
                 return false;
             }
 
-            if (string.IsNullOrWhiteSpace(txtcapacidad.Text))
+            if (string.IsNullOrWhiteSpace(txtbx_capacidad.Text))
             {
                 MessageBox.Show("Ingrese la capacidad.");
                 return false;
             }
 
             // Verificar que se haya seleccionado un tipo de sala
-            if (cbtiposala.SelectedItem == null)
+            if (cb_tipoSala.SelectedItem == null)
             {
                 MessageBox.Show("Seleccione el tipo de sala.");
                 return false;
             }
 
             // Verificar que se haya seleccionado una ubicación
-            if (cbubicacion.SelectedItem == null)
+            if (cb_ubicacion.SelectedItem == null)
             {
                 MessageBox.Show("Seleccione la ubicación.");
                 return false;
             }
 
             // Verificar que se haya seleccionado un estado
-            if (cbestado.SelectedItem == null)
+            if (cb_estado.SelectedItem == null)
             {
                 MessageBox.Show("Seleccione un estado.");
                 return false;
@@ -451,7 +458,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
 
             // Verificar que la capacidad sea un número positivo
             int capacidad;
-            if (!int.TryParse(txtcapacidad.Text, out capacidad) || capacidad <= 0)
+            if (!int.TryParse(txtbx_capacidad.Text, out capacidad) || capacidad <= 0)
             {
                 MessageBox.Show("La capacidad debe ser un número positivo.");
                 return false;
@@ -473,8 +480,8 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                 return;
             }
 
-            int idtiposala = ((KeyValuePair<int, string>)cbtiposala.SelectedItem).Key;
-            int idubicacion = ((KeyValuePair<int, string>)cbubicacion.SelectedItem).Key;
+            int idtiposala = ((KeyValuePair<int, string>)cb_tipoSala.SelectedItem).Key;
+            int idubicacion = ((KeyValuePair<int, string>)cb_ubicacion.SelectedItem).Key;
 
 
             using (MySqlConnection connection = new MySqlConnection(connectionString))
@@ -488,11 +495,11 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
 
                     using (MySqlCommand command = new MySqlCommand(query, connection))
                     {
-                        command.Parameters.AddWithValue("@Numero_Sala", txtnosala.Text);
-                        command.Parameters.AddWithValue("@Capacidad", txtcapacidad.Text);
+                        command.Parameters.AddWithValue("@Numero_Sala", txtbx_noSala.Text);
+                        command.Parameters.AddWithValue("@Capacidad", txtbx_capacidad.Text);
                         command.Parameters.AddWithValue("@FK_ID_Tipo_Sala", idtiposala);
                         command.Parameters.AddWithValue("@FK_ID_Ubicacion", idubicacion);
-                        command.Parameters.AddWithValue("@Estado_tbl_sala", cbestado.Text);
+                        command.Parameters.AddWithValue("@Estado_tbl_sala", cb_estado.Text);
 
                         command.ExecuteNonQuery();
                     }
@@ -512,15 +519,15 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
         {
             try
             {
-                if (cbtiposala.SelectedItem == null || cbubicacion.SelectedItem == null || cbestado.SelectedItem == null)
+                if (cb_tipoSala.SelectedItem == null || cb_ubicacion.SelectedItem == null || cb_estado.SelectedItem == null)
                 {
                     MessageBox.Show("Por favor, actualiza todos los datos");
                     return;
                 }
 
                 // Obtener valores del ComboBox
-                int tiposala = ((KeyValuePair<int, string>)cbtiposala.SelectedItem).Key;
-                int ubicacion = ((KeyValuePair<int, string>)cbubicacion.SelectedItem).Key;
+                int tiposala = ((KeyValuePair<int, string>)cb_tipoSala.SelectedItem).Key;
+                int ubicacion = ((KeyValuePair<int, string>)cb_ubicacion.SelectedItem).Key;
 
                 // Obtener valor de la celda
                 Object obtener = ObtenerValorCelda("ID_Sala");
@@ -538,11 +545,11 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                     connection.Open();
                     string consulta = "UPDATE tbl_sala SET Numero_Sala = @Numero_Sala, Capacidad = @Capacidad, FK_ID_Tipo_Sala = @FK_ID_Tipo_Sala, FK_ID_Ubicacion = @FK_ID_Ubicacion, Estado_tbl_sala = @Estado_tbl_sala WHERE ID_Sala = @ID_Sala";
                     MySqlCommand comando = new MySqlCommand(consulta, connection);
-                    comando.Parameters.AddWithValue("@Numero_Sala", txtnosala.Text);
-                    comando.Parameters.AddWithValue("@Capacidad", txtcapacidad.Text);
+                    comando.Parameters.AddWithValue("@Numero_Sala", txtbx_noSala.Text);
+                    comando.Parameters.AddWithValue("@Capacidad", txtbx_capacidad.Text);
                     comando.Parameters.AddWithValue("@FK_ID_Tipo_Sala", tiposala);
                     comando.Parameters.AddWithValue("@FK_ID_Ubicacion", ubicacion);
-                    comando.Parameters.AddWithValue("@Estado_tbl_sala", cbestado.SelectedItem.ToString());
+                    comando.Parameters.AddWithValue("@Estado_tbl_sala", cb_estado.SelectedItem.ToString());
                     comando.Parameters.AddWithValue("@ID_Sala", ValorObtenido);
 
                     int cantidad = comando.ExecuteNonQuery();
@@ -577,10 +584,10 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
 
         private void button6_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedCells.Count > 0)
+            if (dgv_sala.SelectedCells.Count > 0)
             {
-                int selectedRowIndex = dataGridView1.SelectedCells[0].RowIndex;
-                DataGridViewRow selectedRow = dataGridView1.Rows[selectedRowIndex];
+                int selectedRowIndex = dgv_sala.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = dgv_sala.Rows[selectedRowIndex];
                 int idSala = Convert.ToInt32(selectedRow.Cells["ID_Sala"].Value);
 
                 DialogResult dialogResult = MessageBox.Show("¿Estás seguro de que deseas eliminar este registro?", "Confirmar eliminación", MessageBoxButtons.YesNo);
@@ -625,6 +632,99 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
+        }
+
+        private void txtbxBuscar_TextChanged(object sender, EventArgs e)
+        {
+            // Obtener el texto de búsqueda
+            string searchText = txtbxBuscar.Text.Trim();
+            if (string.IsNullOrEmpty(searchText))
+            {
+                // Si el texto de búsqueda está vacío, no aplicar filtro
+                (dgv_sala.DataSource as DataTable).DefaultView.RowFilter = string.Empty;
+                return;
+            }
+
+            // Crear una lista para las expresiones de filtro
+            List<string> filterExpressions = new List<string>();
+
+            // Obtener el DataTable
+            DataTable dataTable = dgv_sala.DataSource as DataTable;
+
+            // Recorrer todas las columnas del DataTable
+            foreach (DataColumn column in dataTable.Columns)
+            {
+                // Excluir columnas que no sean de tipo texto
+                if (column.DataType == typeof(string))
+                {
+                    // Agregar expresión de filtro para la columna
+                    filterExpressions.Add($"[{column.ColumnName}] LIKE '%{searchText}%'");
+                }
+            }
+
+            // Unir todas las expresiones de filtro con el operador OR
+            string filterExpression = string.Join(" OR ", filterExpressions);
+
+            // Aplicar el filtro
+            (dgv_sala.DataSource as DataTable).DefaultView.RowFilter = filterExpression;
+        }
+
+        private void UpdateDateTimeLabel()
+        {
+            // Obtener la fecha y hora actuales
+            DateTime now = DateTime.Now;
+
+            // Formatear la fecha y hora como texto
+            string dateTimeText = now.ToString("yyyy-MM-dd HH:mm:ss"); // Cambia el formato según tus necesidades
+
+            // Establecer el texto del Label
+            lb_fechaSys.Text = dateTimeText;
+        }
+        private void tmr_timer1_Tick(object sender, EventArgs e)
+        {
+            UpdateDateTimeLabel();
+        }
+
+        private void btn_guardar_Click(object sender, EventArgs e)
+        {
+            if (!datosCorrectos())
+            {
+                return;
+            }
+
+            int idtiposala = ((KeyValuePair<int, string>)cb_tipoSala.SelectedItem).Key;
+            int idubicacion = ((KeyValuePair<int, string>)cb_ubicacion.SelectedItem).Key;
+
+
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+
+                    string query = "INSERT INTO tbl_sala (Numero_Sala, Capacidad, FK_ID_Tipo_Sala, FK_ID_Ubicacion, Estado_tbl_sala) " +
+                                   "VALUES (@Numero_Sala, @Capacidad, @FK_ID_Tipo_Sala, @FK_ID_Ubicacion, @Estado_tbl_sala)";
+
+                    using (MySqlCommand command = new MySqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@Numero_Sala", txtbx_noSala.Text);
+                        command.Parameters.AddWithValue("@Capacidad", txtbx_capacidad.Text);
+                        command.Parameters.AddWithValue("@FK_ID_Tipo_Sala", idtiposala);
+                        command.Parameters.AddWithValue("@FK_ID_Ubicacion", idubicacion);
+                        command.Parameters.AddWithValue("@Estado_tbl_sala", cb_estado.Text);
+
+                        command.ExecuteNonQuery();
+                    }
+
+                    MessageBox.Show("Registro completado exitosamente.");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al registrar la sala: " + ex.Message);
+                }
+            }
+
+            llenar_tabla();
         }
     }
 }
