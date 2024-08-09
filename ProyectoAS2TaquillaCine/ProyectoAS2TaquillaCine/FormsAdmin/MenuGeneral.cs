@@ -61,23 +61,52 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
 
         private void button7_Click(object sender, EventArgs e)
         {
-            // Verifica si el usuario es administrador y cambia la variable global si es necesario
-            if (GlobalSettings.IsAdmin)
+
+            DialogResult resultado = MessageBox.Show(
+                   "¿Estás seguro de que deseas cerrar sesión?",
+                   "Confirmar Cierre de Sesión",
+                   MessageBoxButtons.YesNo,
+                   MessageBoxIcon.Question
+                        );
+
+            if (resultado == DialogResult.Yes)
             {
-                GlobalSettings.IsAdmin = false;
+                // Verifica si el usuario es administrador y cambia la variable global si es necesario
+                if (GlobalSettings.IsAdmin)
+                {
+                    GlobalSettings.IsAdmin = false;
+                }
+                // Si el usuario confirma, cerrar sesión
+                FormsGlobales.Menu newMenu = new FormsGlobales.Menu();
+                newMenu.Show();
+
+                // Cerrar el formulario actual
+                this.Hide();
             }
-
-            // Mostrar el formulario de inicio de sesión (o cualquier otro formulario de tu elección)
-            FormsGlobales.Menu newMenu = new FormsGlobales.Menu();
-            newMenu.Show();
-
-            // Cerrar el formulario actual
-            this.Hide();
         }
 
         private void btn_bitacora_Click(object sender, EventArgs e)
         {
             AbrirformHijo(new FormsAdmin.Bitacora());
+        }
+
+        private void btn_reportes_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_reportes_Click_1(object sender, EventArgs e)
+        {
+            FormsAdmin.Reportes newReporte = new FormsAdmin.Reportes();
+            newReporte.Show();
+            this.Hide();
+        }
+
+        private void btn_Taquilla_Click(object sender, EventArgs e)
+        {
+            FormsAdmin.RegistroTaquilla newTaquilla = new FormsAdmin.RegistroTaquilla();
+            newTaquilla.Show();
+            this.Hide();
         }
     }
 }

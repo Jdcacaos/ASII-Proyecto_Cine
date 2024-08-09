@@ -85,6 +85,26 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
 
         }
 
+        private int clasificacionPelicula;
+
+        private void ObtenerClasificacionPelicula(int idPelicula)
+        {
+            string query = "SELECT FK_ID_Clasificacion FROM tbl_pelicula WHERE ID_Pelicula = @ID_Pelicula";
+
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                MySqlCommand command = new MySqlCommand(query, connection);
+                command.Parameters.AddWithValue("@ID_Pelicula", idPelicula);
+                connection.Open();
+                object result = command.ExecuteScalar();
+                if (result != null)
+                {
+                    clasificacionPelicula = Convert.ToInt32(result);
+                }
+            }
+        }
+
+
         private void button8_Click(object sender, EventArgs e)
         {
             FormsCliente.CarteleraNueva formCartelera = new FormsCliente.CarteleraNueva(idCliente);
@@ -97,26 +117,20 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             {
                 // Consulta SQL para obtener las fechas de la proyección
                 string query = "SELECT DISTINCT Fecha FROM tbl_proyeccion WHERE FK_ID_Pelicula = @ID_Pelicula  AND Fecha >= @Today";
-                // Crea una nueva conexión SQL
+
                 using (MySqlConnection connection = new MySqlConnection(connectionString))
                 {
-                    // Abre la conexión
                     connection.Open();
 
-                    // Crea un comando SQL
                     using (MySqlCommand command = new MySqlCommand(query, connection))
                     {
-                        // Agrega el parámetro de ID de proyección
                         command.Parameters.AddWithValue("@ID_Pelicula", idPelicula);
                         command.Parameters.AddWithValue("@Today", DateTime.Now.ToString("yyyy-MM-dd"));
 
-                        // Ejecuta la consulta y obtiene los resultados
                         using (MySqlDataReader reader = command.ExecuteReader())
                         {
-                            // Limpia el ComboBox antes de llenarlo
                             comboBox1.Items.Clear();
 
-                            // Llena el ComboBox con los resultados
                             while (reader.Read())
                             {
                                 DateTime fecha = reader.GetDateTime(0);
@@ -125,6 +139,9 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
                         }
                     }
                 }
+
+                // Obtener la clasificación de la película
+                ObtenerClasificacionPelicula(idPelicula);
             }
             catch (Exception ex)
             {
@@ -135,6 +152,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
                 comboBox1.SelectedIndex = 0;
             }
         }
+
 
         private void LoadHoras(string fecha, int id_Pelicula)
         {
@@ -169,6 +187,16 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
         {
             int valor = Convert.ToInt16(textBox.Text);
 
+            if (textBox == textBox1) // Suponiendo que textBox1 es para niños
+            {
+                if (clasificacionPelicula == 5 || clasificacionPelicula == 6)
+                {
+                    MessageBox.Show("No se pueden seleccionar boletos para niños para esta película.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
+
+            // Resto del código para sumar
             if (valor >= 5)
             {
                 descuento = 10;
@@ -185,8 +213,8 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             {
                 valor++;
                 textBox.Text = valor.ToString();
-                operar(textBox, label9, label13); // Asegúrate de actualizar los cálculos
-                total(textBox1, textBox2, textBox3, label13, label14, label15); // Asegúrate de actualizar el total
+                operar(textBox, label9, label13);
+                total(textBox1, textBox2, textBox3, label13, label14, label15);
             }
             else
             {
@@ -197,18 +225,28 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
         private void restar(TextBox textBox)
         {
             int valor = Convert.ToInt16(textBox.Text);
+            if (textBox == textBox1) // Suponiendo que textBox1 es para niños
+            {
+                if (clasificacionPelicula == 5 || clasificacionPelicula == 6)
+                {
+                    MessageBox.Show("No se pueden seleccionar boletos para niños para esta película.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
+
             if (valor > 0)
             {
                 valor--;
                 textBox.Text = valor.ToString();
-                operar(textBox, label9, label13); // Asegúrate de actualizar los cálculos
-                total(textBox1, textBox2, textBox3, label13, label14, label15); // Asegúrate de actualizar el total
+                operar(textBox, label9, label13);
+                total(textBox1, textBox2, textBox3, label13, label14, label15);
             }
             else
             {
                 MessageBox.Show("El número de boletos no puede ser negativo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         private void operar(TextBox textbox, Label label, Label label1) //Opera Entradas * Precio
         {

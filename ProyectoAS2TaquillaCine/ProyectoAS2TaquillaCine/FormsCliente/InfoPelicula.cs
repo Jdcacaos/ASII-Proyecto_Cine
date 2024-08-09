@@ -78,7 +78,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
                         lbl_duracion.Text = "Duración: " + duracion + " min";
                         picbox1.Image = imagen(fotografia);
                         lbl_genero.Text = "Género: " + genero;
-                        lbl_sinopsis.Text = sinopsis;
+                        txtbx_sinopsis.Text = sinopsis;
                     }
                 }
                 catch (Exception ex)

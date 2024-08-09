@@ -422,15 +422,6 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             else
             {
 
-                FormsCliente.MenuCliente menuForm = new FormsCliente.MenuCliente();
-
-                // Mostrar el formulario
-                menuForm.Show();
-
-                // Ocultar el formulario actual de login
-                this.Hide();
-
-                // Abrir CarteleraNueva dentro de MenuCliente
                 
                 FormsCliente.Pago formPago = new FormsCliente.Pago(totalventa - descu, idCliente, asientosSeleccionados, idproye, descu, horario);
                 formPago.Show();

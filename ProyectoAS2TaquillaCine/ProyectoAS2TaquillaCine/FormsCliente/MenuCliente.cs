@@ -53,6 +53,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
         private void button1_Click(object sender, EventArgs e)
         {
          //AbrirformHijo(new FormsCliente.CarteleraNueva(this.idCliente));
+
         }
 
         private void button2_Click(object sender, EventArgs e)

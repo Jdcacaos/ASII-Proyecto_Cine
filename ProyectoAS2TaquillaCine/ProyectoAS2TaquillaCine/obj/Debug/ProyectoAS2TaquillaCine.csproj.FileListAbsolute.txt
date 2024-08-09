@@ -160,7 +160,6 @@ C:\Cine\ASII-Proyecto_Cine\ProyectoAS2TaquillaCine\ProyectoAS2TaquillaCine\obj\D
 C:\Cine\ASII-Proyecto_Cine\ProyectoAS2TaquillaCine\ProyectoAS2TaquillaCine\obj\Debug\ProyectoAS2TaquillaCine.FormsCliente.Asientos.resources
 C:\Cine\ASII-Proyecto_Cine\ProyectoAS2TaquillaCine\ProyectoAS2TaquillaCine\obj\Debug\ProyectoAS2TaquillaCine.FormsCliente.LoginCliente.resources
 C:\Cine\ASII-Proyecto_Cine\ProyectoAS2TaquillaCine\ProyectoAS2TaquillaCine\obj\Debug\ProyectoAS2TaquillaCine.FormsCliente.Pago.resources
-C:\Cine\ASII-Proyecto_Cine\ProyectoAS2TaquillaCine\ProyectoAS2TaquillaCine\obj\Debug\ProyectoAS2TaquillaCine.Form1.resources
 C:\Cine\ASII-Proyecto_Cine\ProyectoAS2TaquillaCine\ProyectoAS2TaquillaCine\obj\Debug\ProyectoAS2TaquillaCine.FormsCliente.RegistroCliente.resources
 C:\Cine\ASII-Proyecto_Cine\ProyectoAS2TaquillaCine\ProyectoAS2TaquillaCine\obj\Debug\ProyectoAS2TaquillaCine.FormsCliente.Reserva.resources
 C:\Cine\ASII-Proyecto_Cine\ProyectoAS2TaquillaCine\ProyectoAS2TaquillaCine\obj\Debug\ProyectoAS2TaquillaCine.FormsGlobales.Menu.resources
@@ -610,3 +609,7 @@ C:\Users\DELL\Desktop\labo analisis\borrar\ASII-Proyecto_Cine\ProyectoAS2Taquill
 C:\Users\DELL\Desktop\labo analisis\borrar\ASII-Proyecto_Cine\ProyectoAS2TaquillaCine\ProyectoAS2TaquillaCine\obj\Debug\ProyectoAS2TaquillaCine.pdb
 C:\Users\DELL\Desktop\labo analisis\borrar\ASII-Proyecto_Cine\ProyectoAS2TaquillaCine\ProyectoAS2TaquillaCine\obj\Debug\ProyectoAS2TaquillaCine.FormsCliente.MenuCliente.resources
 C:\Users\DELL\Desktop\labo analisis\borrar\ASII-Proyecto_Cine\ProyectoAS2TaquillaCine\ProyectoAS2TaquillaCine\obj\Debug\ProyectoAS2TaquillaCine.csproj.AssemblyReference.cache
+C:\Cine\ASII-Proyecto_Cine\ProyectoAS2TaquillaCine\ProyectoAS2TaquillaCine\bin\Debug\Google.Protobuf.pdb
+C:\Cine\ASII-Proyecto_Cine\ProyectoAS2TaquillaCine\ProyectoAS2TaquillaCine\obj\Debug\ProyectoAS2TaquillaCine.FormsCliente.MenuCliente.resources
+C:\Cine\ASII-Proyecto_Cine\ProyectoAS2TaquillaCine\ProyectoAS2TaquillaCine\obj\Debug\ProyectoAS2TaquillaCine.FormsAdmin.Reportes.resources
+C:\Cine\ASII-Proyecto_Cine\ProyectoAS2TaquillaCine\ProyectoAS2TaquillaCine\obj\Debug\ProyectoAS2TaquillaCine.FormsAdmin.RegistroTaquilla.resources

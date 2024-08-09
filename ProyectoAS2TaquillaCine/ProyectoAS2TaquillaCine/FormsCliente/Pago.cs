@@ -544,7 +544,16 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // Generar un número de factura (correlativo)
             //int numeroFactura = GenerarNumeroFactura(); // Método que genera o recupera el número de factura
 
-            string pdfDirectory = @"C:\Users\bhern\Desktop\PDF";
+            // Obtener la ruta de la carpeta de "Descargas"
+            string downloadsPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            string pdfDirectory = Path.Combine(downloadsPath, "Descargas");
+
+            // Asegúrate de que el directorio existe
+            if (!Directory.Exists(pdfDirectory))
+            {
+                Directory.CreateDirectory(pdfDirectory);
+            }
+
             string pdfFileName = $"Factura_{DateTime.Now:yyyyMMdd_HHmmss}.pdf";
             string pdfPath = Path.Combine(pdfDirectory, pdfFileName);
 
@@ -639,6 +648,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
                 MessageBox.Show($"Error al generar la factura en PDF: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         private int GenerarNumeroFactura()
         {

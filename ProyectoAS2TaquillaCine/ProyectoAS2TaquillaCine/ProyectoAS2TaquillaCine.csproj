@@ -215,6 +215,18 @@
     <Compile Include="FormsAdmin\Proveedor.Designer.cs">
       <DependentUpon>Proveedor.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormsAdmin\RegistroTaquilla.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsAdmin\RegistroTaquilla.Designer.cs">
+      <DependentUpon>RegistroTaquilla.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsAdmin\Reportes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsAdmin\Reportes.Designer.cs">
+      <DependentUpon>Reportes.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormsAdmin\Salas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -275,12 +287,6 @@
     <Compile Include="FormsCliente\Pago.Designer.cs">
       <DependentUpon>Pago.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormsCliente\Principal.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormsCliente\Principal.Designer.cs">
-      <DependentUpon>Principal.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormsCliente\RegistroCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -323,6 +329,12 @@
     <EmbeddedResource Include="FormsAdmin\Proveedor.resx">
       <DependentUpon>Proveedor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormsAdmin\RegistroTaquilla.resx">
+      <DependentUpon>RegistroTaquilla.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsAdmin\Reportes.resx">
+      <DependentUpon>Reportes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormsAdmin\Salas.resx">
       <DependentUpon>Salas.cs</DependentUpon>
     </EmbeddedResource>
@@ -352,9 +364,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormsCliente\Pago.resx">
       <DependentUpon>Pago.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormsCliente\Principal.resx">
-      <DependentUpon>Principal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormsCliente\RegistroCliente.resx">
       <DependentUpon>RegistroCliente.cs</DependentUpon>
