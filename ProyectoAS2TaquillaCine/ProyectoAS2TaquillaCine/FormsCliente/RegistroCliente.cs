@@ -22,42 +22,42 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
         private void button1_Click(object sender, EventArgs e)
         {
             // Verificar que todos los campos estén llenos
-            if (string.IsNullOrWhiteSpace(txtnombre.Text) ||
-                string.IsNullOrWhiteSpace(txtApellido.Text) ||
-                string.IsNullOrWhiteSpace(txtEmail.Text) ||
-                string.IsNullOrWhiteSpace(txtContrasena.Text) ||
-                string.IsNullOrWhiteSpace(txtContrasenaVer.Text) ||
-                string.IsNullOrWhiteSpace(txtTelefono.Text) ||
-                string.IsNullOrWhiteSpace(txtNit.Text))
+            if (string.IsNullOrWhiteSpace(txtbx_nombre.Text) ||
+                string.IsNullOrWhiteSpace(txtbx_apellido.Text) ||
+                string.IsNullOrWhiteSpace(txtbx_email.Text) ||
+                string.IsNullOrWhiteSpace(txtbx_contrasena.Text) ||
+                string.IsNullOrWhiteSpace(txtbx_verifContrasena.Text) ||
+                string.IsNullOrWhiteSpace(txtbx_telefono.Text) ||
+                string.IsNullOrWhiteSpace(txtbx_nit.Text))
             {
                 MessageBox.Show("Por favor, complete todos los campos.", "Error de validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             // Validar coincidencia de contraseñas
-            if (txtContrasena.Text != txtContrasenaVer.Text)
+            if (txtbx_contrasena.Text != txtbx_verifContrasena.Text)
             {
                 MessageBox.Show("Las contraseñas no coinciden. Por favor, verifícalas.", "Error de confirmación de contraseña", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             // Validar que nombre y apellido solo contengan letras
-            if (!System.Text.RegularExpressions.Regex.IsMatch(txtnombre.Text, @"^[a-zA-Z]+$") ||
-                !System.Text.RegularExpressions.Regex.IsMatch(txtApellido.Text, @"^[a-zA-Z]+$"))
+            if (!System.Text.RegularExpressions.Regex.IsMatch(txtbx_nombre.Text, @"^[a-zA-Z]+$") ||
+                !System.Text.RegularExpressions.Regex.IsMatch(txtbx_apellido.Text, @"^[a-zA-Z]+$"))
             {
                 MessageBox.Show("Ingrese valores válidos.", "Error de validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             // Validar que el email tenga el sufijo @gmail.com
-            if (!txtEmail.Text.EndsWith("@gmail.com"))
+            if (!txtbx_email.Text.EndsWith("@gmail.com"))
             {
                 MessageBox.Show("Ingrese valores válidos.", "Error de validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             // Validar que el teléfono solo contenga números y el símbolo +
-            if (!System.Text.RegularExpressions.Regex.IsMatch(txtTelefono.Text, @"^[\d+]+$"))
+            if (!System.Text.RegularExpressions.Regex.IsMatch(txtbx_telefono.Text, @"^[\d+]+$"))
             {
                 MessageBox.Show("Ingrese valores válidos.", "Error de validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -80,14 +80,14 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
                     using (MySqlCommand command = new MySqlCommand(query, connection))
                     {
                         // Agregar los parámetros con los valores de los TextBox
-                        command.Parameters.AddWithValue("@Nombre", txtnombre.Text);
-                        command.Parameters.AddWithValue("@Apellido", txtApellido.Text);
-                        command.Parameters.AddWithValue("@Email", txtEmail.Text);
-                        command.Parameters.AddWithValue("@Contrasena", txtContrasena.Text);
-                        command.Parameters.AddWithValue("@Telefono", txtTelefono.Text);
-                        command.Parameters.AddWithValue("@Nit", txtNit.Text);
+                        command.Parameters.AddWithValue("@Nombre", txtbx_nombre.Text);
+                        command.Parameters.AddWithValue("@Apellido", txtbx_apellido.Text);
+                        command.Parameters.AddWithValue("@Email", txtbx_email.Text);
+                        command.Parameters.AddWithValue("@Contrasena", txtbx_contrasena.Text);
+                        command.Parameters.AddWithValue("@Telefono", txtbx_telefono.Text);
+                        command.Parameters.AddWithValue("@Nit", txtbx_nit.Text);
 
-                        string fechaNacimiento = dpFechaNac.Value.ToString("yyyy-MM-dd");
+                        string fechaNacimiento = dtp_fecha.Value.ToString("yyyy-MM-dd");
                         command.Parameters.AddWithValue("@FechaNacimiento", fechaNacimiento);
 
                         // Ejecutar el comando

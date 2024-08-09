@@ -16,8 +16,8 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
         public LoginCliente()
         {
             InitializeComponent();
-            txtuser.KeyDown += new KeyEventHandler(TextBox_KeyDown);
-            txtContrasena.KeyDown += new KeyEventHandler(TextBox_KeyDown);
+            txtbx_correoUsuario.KeyDown += new KeyEventHandler(TextBox_KeyDown);
+            txtbx_contrasena.KeyDown += new KeyEventHandler(TextBox_KeyDown);
         }
         private void TextBox_KeyDown(object sender, KeyEventArgs e)
         {
@@ -66,8 +66,8 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             string connectionString = DatabaseConfig.ConnectionString;
 
             // Obtener los valores ingresados por el usuario
-            string email = txtuser.Text.Trim();
-            string contrasena = txtContrasena.Text.Trim();
+            string email = txtbx_correoUsuario.Text.Trim();
+            string contrasena = txtbx_contrasena.Text.Trim();
 
             // Validar que el correo tenga el sufijo @gmail.com
             if (!email.EndsWith("@gmail.com"))
@@ -128,15 +128,15 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
 
         private void mostrarCon_CheckedChanged(object sender, EventArgs e)
         {
-            if (mostrarCon.Checked)
+            if (chb_mostrarContra.Checked)
             {
                 // Mostrar la contraseña
-                txtContrasena.PasswordChar = '\0'; // \0 es el carácter nulo, que muestra el texto plano
+                txtbx_contrasena.PasswordChar = '\0'; // \0 es el carácter nulo, que muestra el texto plano
             }
             else
             {
                 // Ocultar la contraseña
-                txtContrasena.PasswordChar = '*'; // O cualquier otro carácter de tu elección
+                txtbx_contrasena.PasswordChar = '*'; // O cualquier otro carácter de tu elección
             }
         }
 

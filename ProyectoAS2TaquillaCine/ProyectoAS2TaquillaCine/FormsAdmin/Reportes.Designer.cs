@@ -30,16 +30,16 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
         private void InitializeComponent()
         {
             this.panel_panelReporte = new System.Windows.Forms.Panel();
-            this.btn_Salir = new System.Windows.Forms.Button();
-            this.lb_Total = new System.Windows.Forms.Label();
-            this.btn_generareporte = new System.Windows.Forms.Button();
-            this.dtp_Final = new System.Windows.Forms.DateTimePicker();
-            this.dtp_Inicio = new System.Windows.Forms.DateTimePicker();
+            this.lb_hasta = new System.Windows.Forms.Label();
+            this.lb_inicio = new System.Windows.Forms.Label();
+            this.btn_salir = new System.Windows.Forms.Button();
+            this.lb_total = new System.Windows.Forms.Label();
+            this.btn_generaReporte = new System.Windows.Forms.Button();
+            this.dtp_final = new System.Windows.Forms.DateTimePicker();
+            this.dtp_inidio = new System.Windows.Forms.DateTimePicker();
             this.dgv_ganancias = new System.Windows.Forms.DataGridView();
             this.lb_subtitulo = new System.Windows.Forms.Label();
             this.lb_cinehub = new System.Windows.Forms.Label();
-            this.lb_Inicio = new System.Windows.Forms.Label();
-            this.lb_Hasta = new System.Windows.Forms.Label();
             this.panel_panelReporte.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ganancias)).BeginInit();
             this.SuspendLayout();
@@ -47,13 +47,13 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             // panel_panelReporte
             // 
             this.panel_panelReporte.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            this.panel_panelReporte.Controls.Add(this.lb_Hasta);
-            this.panel_panelReporte.Controls.Add(this.lb_Inicio);
-            this.panel_panelReporte.Controls.Add(this.btn_Salir);
-            this.panel_panelReporte.Controls.Add(this.lb_Total);
-            this.panel_panelReporte.Controls.Add(this.btn_generareporte);
-            this.panel_panelReporte.Controls.Add(this.dtp_Final);
-            this.panel_panelReporte.Controls.Add(this.dtp_Inicio);
+            this.panel_panelReporte.Controls.Add(this.lb_hasta);
+            this.panel_panelReporte.Controls.Add(this.lb_inicio);
+            this.panel_panelReporte.Controls.Add(this.btn_salir);
+            this.panel_panelReporte.Controls.Add(this.lb_total);
+            this.panel_panelReporte.Controls.Add(this.btn_generaReporte);
+            this.panel_panelReporte.Controls.Add(this.dtp_final);
+            this.panel_panelReporte.Controls.Add(this.dtp_inidio);
             this.panel_panelReporte.Controls.Add(this.dgv_ganancias);
             this.panel_panelReporte.Controls.Add(this.lb_subtitulo);
             this.panel_panelReporte.Controls.Add(this.lb_cinehub);
@@ -63,62 +63,88 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.panel_panelReporte.Size = new System.Drawing.Size(797, 450);
             this.panel_panelReporte.TabIndex = 0;
             // 
-            // btn_Salir
+            // lb_hasta
             // 
-            this.btn_Salir.BackColor = System.Drawing.Color.LightCoral;
-            this.btn_Salir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Salir.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btn_Salir.Location = new System.Drawing.Point(49, 79);
-            this.btn_Salir.Name = "btn_Salir";
-            this.btn_Salir.Size = new System.Drawing.Size(123, 34);
-            this.btn_Salir.TabIndex = 190;
-            this.btn_Salir.Text = "Salir";
-            this.btn_Salir.UseVisualStyleBackColor = false;
-            this.btn_Salir.Click += new System.EventHandler(this.btn_Salir_Click);
+            this.lb_hasta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.lb_hasta.AutoSize = true;
+            this.lb_hasta.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_hasta.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lb_hasta.Location = new System.Drawing.Point(428, 125);
+            this.lb_hasta.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lb_hasta.Name = "lb_hasta";
+            this.lb_hasta.Size = new System.Drawing.Size(52, 19);
+            this.lb_hasta.TabIndex = 192;
+            this.lb_hasta.Text = "Hasta";
             // 
-            // lb_Total
+            // lb_inicio
             // 
-            this.lb_Total.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.lb_Total.AutoSize = true;
-            this.lb_Total.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_Total.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lb_Total.Location = new System.Drawing.Point(526, 422);
-            this.lb_Total.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lb_Total.Name = "lb_Total";
-            this.lb_Total.Size = new System.Drawing.Size(44, 19);
-            this.lb_Total.TabIndex = 189;
-            this.lb_Total.Text = "total";
+            this.lb_inicio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.lb_inicio.AutoSize = true;
+            this.lb_inicio.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_inicio.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lb_inicio.Location = new System.Drawing.Point(55, 125);
+            this.lb_inicio.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lb_inicio.Name = "lb_inicio";
+            this.lb_inicio.Size = new System.Drawing.Size(56, 19);
+            this.lb_inicio.TabIndex = 191;
+            this.lb_inicio.Text = "Desde";
             // 
-            // btn_generareporte
+            // btn_salir
             // 
-            this.btn_generareporte.BackColor = System.Drawing.Color.PowderBlue;
-            this.btn_generareporte.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_generareporte.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btn_generareporte.Location = new System.Drawing.Point(601, 79);
-            this.btn_generareporte.Name = "btn_generareporte";
-            this.btn_generareporte.Size = new System.Drawing.Size(123, 34);
-            this.btn_generareporte.TabIndex = 188;
-            this.btn_generareporte.Text = "Generar Reporte";
-            this.btn_generareporte.UseVisualStyleBackColor = false;
-            this.btn_generareporte.Click += new System.EventHandler(this.btn_generareporte_Click);
+            this.btn_salir.BackColor = System.Drawing.Color.LightCoral;
+            this.btn_salir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_salir.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btn_salir.Location = new System.Drawing.Point(49, 79);
+            this.btn_salir.Name = "btn_salir";
+            this.btn_salir.Size = new System.Drawing.Size(123, 34);
+            this.btn_salir.TabIndex = 6;
+            this.btn_salir.Text = "Salir";
+            this.btn_salir.UseVisualStyleBackColor = false;
+            this.btn_salir.Click += new System.EventHandler(this.btn_Salir_Click);
             // 
-            // dtp_Final
+            // lb_total
             // 
-            this.dtp_Final.CustomFormat = "yyyy/MM/dd";
-            this.dtp_Final.Location = new System.Drawing.Point(489, 125);
-            this.dtp_Final.Name = "dtp_Final";
-            this.dtp_Final.Size = new System.Drawing.Size(200, 20);
-            this.dtp_Final.TabIndex = 187;
-            this.dtp_Final.Value = new System.DateTime(2024, 8, 8, 16, 54, 16, 0);
+            this.lb_total.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.lb_total.AutoSize = true;
+            this.lb_total.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_total.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lb_total.Location = new System.Drawing.Point(526, 422);
+            this.lb_total.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lb_total.Name = "lb_total";
+            this.lb_total.Size = new System.Drawing.Size(44, 19);
+            this.lb_total.TabIndex = 189;
+            this.lb_total.Text = "total";
             // 
-            // dtp_Inicio
+            // btn_generaReporte
             // 
-            this.dtp_Inicio.CustomFormat = "yyyy/MM/dd";
-            this.dtp_Inicio.Location = new System.Drawing.Point(119, 125);
-            this.dtp_Inicio.Name = "dtp_Inicio";
-            this.dtp_Inicio.Size = new System.Drawing.Size(202, 20);
-            this.dtp_Inicio.TabIndex = 186;
-            this.dtp_Inicio.Value = new System.DateTime(2024, 8, 8, 16, 54, 21, 0);
+            this.btn_generaReporte.BackColor = System.Drawing.Color.PowderBlue;
+            this.btn_generaReporte.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_generaReporte.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btn_generaReporte.Location = new System.Drawing.Point(601, 79);
+            this.btn_generaReporte.Name = "btn_generaReporte";
+            this.btn_generaReporte.Size = new System.Drawing.Size(123, 34);
+            this.btn_generaReporte.TabIndex = 3;
+            this.btn_generaReporte.Text = "Generar Reporte";
+            this.btn_generaReporte.UseVisualStyleBackColor = false;
+            this.btn_generaReporte.Click += new System.EventHandler(this.btn_generareporte_Click);
+            // 
+            // dtp_final
+            // 
+            this.dtp_final.CustomFormat = "yyyy/MM/dd";
+            this.dtp_final.Location = new System.Drawing.Point(489, 125);
+            this.dtp_final.Name = "dtp_final";
+            this.dtp_final.Size = new System.Drawing.Size(200, 20);
+            this.dtp_final.TabIndex = 2;
+            this.dtp_final.Value = new System.DateTime(2024, 8, 8, 16, 54, 16, 0);
+            // 
+            // dtp_inidio
+            // 
+            this.dtp_inidio.CustomFormat = "yyyy/MM/dd";
+            this.dtp_inidio.Location = new System.Drawing.Point(119, 125);
+            this.dtp_inidio.Name = "dtp_inidio";
+            this.dtp_inidio.Size = new System.Drawing.Size(202, 20);
+            this.dtp_inidio.TabIndex = 1;
+            this.dtp_inidio.Value = new System.DateTime(2024, 8, 8, 16, 54, 21, 0);
             // 
             // dgv_ganancias
             // 
@@ -157,32 +183,6 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.lb_cinehub.Text = "CINEHUB";
             this.lb_cinehub.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // lb_Inicio
-            // 
-            this.lb_Inicio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.lb_Inicio.AutoSize = true;
-            this.lb_Inicio.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_Inicio.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lb_Inicio.Location = new System.Drawing.Point(55, 125);
-            this.lb_Inicio.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lb_Inicio.Name = "lb_Inicio";
-            this.lb_Inicio.Size = new System.Drawing.Size(56, 19);
-            this.lb_Inicio.TabIndex = 191;
-            this.lb_Inicio.Text = "Desde";
-            // 
-            // lb_Hasta
-            // 
-            this.lb_Hasta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.lb_Hasta.AutoSize = true;
-            this.lb_Hasta.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_Hasta.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lb_Hasta.Location = new System.Drawing.Point(428, 125);
-            this.lb_Hasta.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lb_Hasta.Name = "lb_Hasta";
-            this.lb_Hasta.Size = new System.Drawing.Size(52, 19);
-            this.lb_Hasta.TabIndex = 192;
-            this.lb_Hasta.Text = "Hasta";
-            // 
             // Reportes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -205,12 +205,12 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
         private System.Windows.Forms.Label lb_cinehub;
         private System.Windows.Forms.DataGridView dgv_ganancias;
         private System.Windows.Forms.Label lb_subtitulo;
-        private System.Windows.Forms.DateTimePicker dtp_Final;
-        private System.Windows.Forms.DateTimePicker dtp_Inicio;
-        private System.Windows.Forms.Button btn_generareporte;
-        private System.Windows.Forms.Label lb_Total;
-        private System.Windows.Forms.Button btn_Salir;
-        private System.Windows.Forms.Label lb_Hasta;
-        private System.Windows.Forms.Label lb_Inicio;
+        private System.Windows.Forms.DateTimePicker dtp_final;
+        private System.Windows.Forms.DateTimePicker dtp_inidio;
+        private System.Windows.Forms.Button btn_generaReporte;
+        private System.Windows.Forms.Label lb_total;
+        private System.Windows.Forms.Button btn_salir;
+        private System.Windows.Forms.Label lb_hasta;
+        private System.Windows.Forms.Label lb_inicio;
     }
 }

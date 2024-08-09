@@ -33,7 +33,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.btn_boton4 = new System.Windows.Forms.Button();
             this.lb_fechaSys = new System.Windows.Forms.Label();
             this.panel_panel2 = new System.Windows.Forms.Panel();
-            this.gbIngresar = new System.Windows.Forms.GroupBox();
+            this.gpb_ingresar = new System.Windows.Forms.GroupBox();
             this.txtbx_3ra = new System.Windows.Forms.TextBox();
             this.txtbx_adulto = new System.Windows.Forms.TextBox();
             this.txtbx_nino = new System.Windows.Forms.TextBox();
@@ -54,10 +54,10 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.dtp_fecha = new System.Windows.Forms.DateTimePicker();
             this.btn_regresar = new System.Windows.Forms.Button();
             this.panel_panel3 = new System.Windows.Forms.Panel();
-            this.gbbuscar = new System.Windows.Forms.GroupBox();
-            this.txtbxBuscar = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.gpb_buscar = new System.Windows.Forms.GroupBox();
+            this.txtbx_buscar = new System.Windows.Forms.TextBox();
+            this.lb_buscar = new System.Windows.Forms.Label();
+            this.lb_texto = new System.Windows.Forms.Label();
             this.dgv_horario = new System.Windows.Forms.DataGridView();
             this.btn_editar = new System.Windows.Forms.Button();
             this.btn_eliminar = new System.Windows.Forms.Button();
@@ -65,9 +65,9 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.panel_panel1 = new System.Windows.Forms.Panel();
             this.tmr_timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel_panel2.SuspendLayout();
-            this.gbIngresar.SuspendLayout();
+            this.gpb_ingresar.SuspendLayout();
             this.panel_panel3.SuspendLayout();
-            this.gbbuscar.SuspendLayout();
+            this.gpb_buscar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_horario)).BeginInit();
             this.SuspendLayout();
             // 
@@ -95,7 +95,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             // panel_panel2
             // 
             this.panel_panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            this.panel_panel2.Controls.Add(this.gbIngresar);
+            this.panel_panel2.Controls.Add(this.gpb_ingresar);
             this.panel_panel2.Controls.Add(this.btn_regresar);
             this.panel_panel2.Controls.Add(this.lb_fechaSys);
             this.panel_panel2.Dock = System.Windows.Forms.DockStyle.Right;
@@ -107,29 +107,29 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             // 
             // gbIngresar
             // 
-            this.gbIngresar.Controls.Add(this.txtbx_3ra);
-            this.gbIngresar.Controls.Add(this.txtbx_adulto);
-            this.gbIngresar.Controls.Add(this.txtbx_nino);
-            this.gbIngresar.Controls.Add(this.lb_precio3ra);
-            this.gbIngresar.Controls.Add(this.lb_precioAdulto);
-            this.gbIngresar.Controls.Add(this.lb_precioNino);
-            this.gbIngresar.Controls.Add(this.btn_guardar);
-            this.gbIngresar.Controls.Add(this.lb_mantHorario);
-            this.gbIngresar.Controls.Add(this.dtp_hora);
-            this.gbIngresar.Controls.Add(this.lb_hora);
-            this.gbIngresar.Controls.Add(this.lb_estado);
-            this.gbIngresar.Controls.Add(this.lb_fecha);
-            this.gbIngresar.Controls.Add(this.lb_sala);
-            this.gbIngresar.Controls.Add(this.lb_pelicula);
-            this.gbIngresar.Controls.Add(this.cb_Pelicula);
-            this.gbIngresar.Controls.Add(this.cb_Estado);
-            this.gbIngresar.Controls.Add(this.cb_id_Sala);
-            this.gbIngresar.Controls.Add(this.dtp_fecha);
-            this.gbIngresar.Location = new System.Drawing.Point(0, 126);
-            this.gbIngresar.Name = "gbIngresar";
-            this.gbIngresar.Size = new System.Drawing.Size(368, 540);
-            this.gbIngresar.TabIndex = 37;
-            this.gbIngresar.TabStop = false;
+            this.gpb_ingresar.Controls.Add(this.txtbx_3ra);
+            this.gpb_ingresar.Controls.Add(this.txtbx_adulto);
+            this.gpb_ingresar.Controls.Add(this.txtbx_nino);
+            this.gpb_ingresar.Controls.Add(this.lb_precio3ra);
+            this.gpb_ingresar.Controls.Add(this.lb_precioAdulto);
+            this.gpb_ingresar.Controls.Add(this.lb_precioNino);
+            this.gpb_ingresar.Controls.Add(this.btn_guardar);
+            this.gpb_ingresar.Controls.Add(this.lb_mantHorario);
+            this.gpb_ingresar.Controls.Add(this.dtp_hora);
+            this.gpb_ingresar.Controls.Add(this.lb_hora);
+            this.gpb_ingresar.Controls.Add(this.lb_estado);
+            this.gpb_ingresar.Controls.Add(this.lb_fecha);
+            this.gpb_ingresar.Controls.Add(this.lb_sala);
+            this.gpb_ingresar.Controls.Add(this.lb_pelicula);
+            this.gpb_ingresar.Controls.Add(this.cb_Pelicula);
+            this.gpb_ingresar.Controls.Add(this.cb_Estado);
+            this.gpb_ingresar.Controls.Add(this.cb_id_Sala);
+            this.gpb_ingresar.Controls.Add(this.dtp_fecha);
+            this.gpb_ingresar.Location = new System.Drawing.Point(0, 126);
+            this.gpb_ingresar.Name = "gbIngresar";
+            this.gpb_ingresar.Size = new System.Drawing.Size(368, 540);
+            this.gpb_ingresar.TabIndex = 37;
+            this.gpb_ingresar.TabStop = false;
             // 
             // txtbx_3ra
             // 
@@ -330,8 +330,8 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             // panel_panel3
             // 
             this.panel_panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            this.panel_panel3.Controls.Add(this.gbbuscar);
-            this.panel_panel3.Controls.Add(this.label1);
+            this.panel_panel3.Controls.Add(this.gpb_buscar);
+            this.panel_panel3.Controls.Add(this.lb_texto);
             this.panel_panel3.Controls.Add(this.dgv_horario);
             this.panel_panel3.Controls.Add(this.btn_editar);
             this.panel_panel3.Controls.Add(this.btn_eliminar);
@@ -345,49 +345,49 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             // 
             // gbbuscar
             // 
-            this.gbbuscar.Controls.Add(this.txtbxBuscar);
-            this.gbbuscar.Controls.Add(this.label2);
-            this.gbbuscar.Location = new System.Drawing.Point(3, 0);
-            this.gbbuscar.Name = "gbbuscar";
-            this.gbbuscar.Size = new System.Drawing.Size(683, 53);
-            this.gbbuscar.TabIndex = 184;
-            this.gbbuscar.TabStop = false;
+            this.gpb_buscar.Controls.Add(this.txtbx_buscar);
+            this.gpb_buscar.Controls.Add(this.lb_buscar);
+            this.gpb_buscar.Location = new System.Drawing.Point(3, 0);
+            this.gpb_buscar.Name = "gbbuscar";
+            this.gpb_buscar.Size = new System.Drawing.Size(683, 53);
+            this.gpb_buscar.TabIndex = 184;
+            this.gpb_buscar.TabStop = false;
             // 
             // txtbxBuscar
             // 
-            this.txtbxBuscar.Location = new System.Drawing.Point(71, 13);
-            this.txtbxBuscar.Multiline = true;
-            this.txtbxBuscar.Name = "txtbxBuscar";
-            this.txtbxBuscar.Size = new System.Drawing.Size(591, 31);
-            this.txtbxBuscar.TabIndex = 182;
-            this.txtbxBuscar.TextChanged += new System.EventHandler(this.txtbxBuscar_TextChanged);
+            this.txtbx_buscar.Location = new System.Drawing.Point(71, 13);
+            this.txtbx_buscar.Multiline = true;
+            this.txtbx_buscar.Name = "txtbxBuscar";
+            this.txtbx_buscar.Size = new System.Drawing.Size(591, 31);
+            this.txtbx_buscar.TabIndex = 182;
+            this.txtbx_buscar.TextChanged += new System.EventHandler(this.txtbxBuscar_TextChanged);
             // 
             // label2
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label2.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label2.Location = new System.Drawing.Point(5, 18);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(77, 26);
-            this.label2.TabIndex = 181;
-            this.label2.Text = "Buscar";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lb_buscar.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lb_buscar.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_buscar.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lb_buscar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lb_buscar.Location = new System.Drawing.Point(5, 18);
+            this.lb_buscar.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lb_buscar.Name = "label2";
+            this.lb_buscar.Size = new System.Drawing.Size(77, 26);
+            this.lb_buscar.TabIndex = 181;
+            this.lb_buscar.Text = "Buscar";
+            this.lb_buscar.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // label1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(229, 152);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(139, 19);
-            this.label1.TabIndex = 58;
-            this.label1.Text = "Registros Horario";
+            this.lb_texto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.lb_texto.AutoSize = true;
+            this.lb_texto.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_texto.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lb_texto.Location = new System.Drawing.Point(229, 152);
+            this.lb_texto.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lb_texto.Name = "label1";
+            this.lb_texto.Size = new System.Drawing.Size(139, 19);
+            this.lb_texto.TabIndex = 58;
+            this.lb_texto.Text = "Registros Horario";
             // 
             // dgv_horario
             // 
@@ -484,12 +484,12 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.Load += new System.EventHandler(this.Horarios_Load);
             this.panel_panel2.ResumeLayout(false);
             this.panel_panel2.PerformLayout();
-            this.gbIngresar.ResumeLayout(false);
-            this.gbIngresar.PerformLayout();
+            this.gpb_ingresar.ResumeLayout(false);
+            this.gpb_ingresar.PerformLayout();
             this.panel_panel3.ResumeLayout(false);
             this.panel_panel3.PerformLayout();
-            this.gbbuscar.ResumeLayout(false);
-            this.gbbuscar.PerformLayout();
+            this.gpb_buscar.ResumeLayout(false);
+            this.gpb_buscar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_horario)).EndInit();
             this.ResumeLayout(false);
 
@@ -507,12 +507,12 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
         private System.Windows.Forms.Button btn_eliminar;
         private System.Windows.Forms.Label lb_cinehub;
         private System.Windows.Forms.Panel panel_panel1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.GroupBox gbbuscar;
-        private System.Windows.Forms.TextBox txtbxBuscar;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lb_texto;
+        private System.Windows.Forms.GroupBox gpb_buscar;
+        private System.Windows.Forms.TextBox txtbx_buscar;
+        private System.Windows.Forms.Label lb_buscar;
         private System.Windows.Forms.Timer tmr_timer1;
-        private System.Windows.Forms.GroupBox gbIngresar;
+        private System.Windows.Forms.GroupBox gpb_ingresar;
         private System.Windows.Forms.TextBox txtbx_3ra;
         private System.Windows.Forms.TextBox txtbx_adulto;
         private System.Windows.Forms.TextBox txtbx_nino;

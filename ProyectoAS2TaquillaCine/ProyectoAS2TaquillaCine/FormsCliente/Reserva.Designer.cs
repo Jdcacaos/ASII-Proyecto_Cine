@@ -29,457 +29,457 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.label12 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2.SuspendLayout();
+            this.lb_cinehub = new System.Windows.Forms.Label();
+            this.lb_fecha = new System.Windows.Forms.Label();
+            this.cb_fecha = new System.Windows.Forms.ComboBox();
+            this.cb_hora = new System.Windows.Forms.ComboBox();
+            this.lb_horario = new System.Windows.Forms.Label();
+            this.lb_texto = new System.Windows.Forms.Label();
+            this.lb_texto2 = new System.Windows.Forms.Label();
+            this.lb_nino = new System.Windows.Forms.Label();
+            this.lb_adulto = new System.Windows.Forms.Label();
+            this.lb_3raEdad = new System.Windows.Forms.Label();
+            this.lb_precioNino = new System.Windows.Forms.Label();
+            this.lb_precioAdulto = new System.Windows.Forms.Label();
+            this.lb_precio3ra = new System.Windows.Forms.Label();
+            this.txtbx_noNinos = new System.Windows.Forms.TextBox();
+            this.txtbx_noAdulto = new System.Windows.Forms.TextBox();
+            this.txtbx_no3ra = new System.Windows.Forms.TextBox();
+            this.btn_restarNino = new System.Windows.Forms.Button();
+            this.btn_sumarNino = new System.Windows.Forms.Button();
+            this.btn_sumarAdulto = new System.Windows.Forms.Button();
+            this.btn_restarAdulto = new System.Windows.Forms.Button();
+            this.btn_sumar3ra = new System.Windows.Forms.Button();
+            this.btn_restar3ra = new System.Windows.Forms.Button();
+            this.lb_total = new System.Windows.Forms.Label();
+            this.txtbx_totalAsientos = new System.Windows.Forms.TextBox();
+            this.lb_subtotalNino = new System.Windows.Forms.Label();
+            this.lb_subtotalAdulto = new System.Windows.Forms.Label();
+            this.lb_subtotal3ra = new System.Windows.Forms.Label();
+            this.lb_totalPagar = new System.Windows.Forms.Label();
+            this.btn_continuar = new System.Windows.Forms.Button();
+            this.btn_regresar = new System.Windows.Forms.Button();
+            this.lb_17 = new System.Windows.Forms.Label();
+            this.lb_18 = new System.Windows.Forms.Label();
+            this.panel_agregarboletos = new System.Windows.Forms.Panel();
+            this.panel_3ra = new System.Windows.Forms.Panel();
+            this.panel_nino = new System.Windows.Forms.Panel();
+            this.panel_adulto = new System.Windows.Forms.Panel();
+            this.panel_agregarboletos.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial Narrow", 54F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.Window;
-            this.label1.Location = new System.Drawing.Point(255, 20);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(301, 83);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "CINEHUB";
+            this.lb_cinehub.AutoSize = true;
+            this.lb_cinehub.Font = new System.Drawing.Font("Arial Narrow", 54F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_cinehub.ForeColor = System.Drawing.SystemColors.Window;
+            this.lb_cinehub.Location = new System.Drawing.Point(255, 20);
+            this.lb_cinehub.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lb_cinehub.Name = "label1";
+            this.lb_cinehub.Size = new System.Drawing.Size(301, 83);
+            this.lb_cinehub.TabIndex = 2;
+            this.lb_cinehub.Text = "CINEHUB";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.Window;
-            this.label2.Location = new System.Drawing.Point(151, 120);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(180, 18);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Seleccione una fecha";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            this.lb_fecha.AutoSize = true;
+            this.lb_fecha.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_fecha.ForeColor = System.Drawing.SystemColors.Window;
+            this.lb_fecha.Location = new System.Drawing.Point(151, 120);
+            this.lb_fecha.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lb_fecha.Name = "label2";
+            this.lb_fecha.Size = new System.Drawing.Size(180, 18);
+            this.lb_fecha.TabIndex = 3;
+            this.lb_fecha.Text = "Seleccione una fecha";
+            this.lb_fecha.Click += new System.EventHandler(this.label2_Click);
             // 
             // comboBox1
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(166, 141);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(156, 21);
-            this.comboBox1.TabIndex = 4;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.cb_fecha.FormattingEnabled = true;
+            this.cb_fecha.Location = new System.Drawing.Point(166, 141);
+            this.cb_fecha.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.cb_fecha.Name = "comboBox1";
+            this.cb_fecha.Size = new System.Drawing.Size(156, 21);
+            this.cb_fecha.TabIndex = 1;
+            this.cb_fecha.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // comboBox2
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(481, 141);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(156, 21);
-            this.comboBox2.TabIndex = 6;
-            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            this.cb_hora.FormattingEnabled = true;
+            this.cb_hora.Location = new System.Drawing.Point(481, 141);
+            this.cb_hora.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.cb_hora.Name = "comboBox2";
+            this.cb_hora.Size = new System.Drawing.Size(156, 21);
+            this.cb_hora.TabIndex = 2;
+            this.cb_hora.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.Window;
-            this.label3.Location = new System.Drawing.Point(478, 120);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(183, 18);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Seleccione un horario";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+            this.lb_horario.AutoSize = true;
+            this.lb_horario.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_horario.ForeColor = System.Drawing.SystemColors.Window;
+            this.lb_horario.Location = new System.Drawing.Point(478, 120);
+            this.lb_horario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lb_horario.Name = "label3";
+            this.lb_horario.Size = new System.Drawing.Size(183, 18);
+            this.lb_horario.TabIndex = 5;
+            this.lb_horario.Text = "Seleccione un horario";
+            this.lb_horario.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.Window;
-            this.label4.Location = new System.Drawing.Point(314, 183);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(189, 18);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Selecciona tus boletos";
+            this.lb_texto.AutoSize = true;
+            this.lb_texto.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_texto.ForeColor = System.Drawing.SystemColors.Window;
+            this.lb_texto.Location = new System.Drawing.Point(314, 183);
+            this.lb_texto.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lb_texto.Name = "label4";
+            this.lb_texto.Size = new System.Drawing.Size(189, 18);
+            this.lb_texto.TabIndex = 7;
+            this.lb_texto.Text = "Selecciona tus boletos";
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.SystemColors.Window;
-            this.label5.Location = new System.Drawing.Point(208, 201);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(427, 18);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Puedes comprar 10 boletos máximo por transacción.";
+            this.lb_texto2.AutoSize = true;
+            this.lb_texto2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_texto2.ForeColor = System.Drawing.SystemColors.Window;
+            this.lb_texto2.Location = new System.Drawing.Point(208, 201);
+            this.lb_texto2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lb_texto2.Name = "label5";
+            this.lb_texto2.Size = new System.Drawing.Size(427, 18);
+            this.lb_texto2.TabIndex = 8;
+            this.lb_texto2.Text = "Puedes comprar 10 boletos máximo por transacción.";
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.SystemColors.Window;
-            this.label6.Location = new System.Drawing.Point(187, 131);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(50, 18);
-            this.label6.TabIndex = 9;
-            this.label6.Text = "NIÑO";
+            this.lb_nino.AutoSize = true;
+            this.lb_nino.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_nino.ForeColor = System.Drawing.SystemColors.Window;
+            this.lb_nino.Location = new System.Drawing.Point(187, 131);
+            this.lb_nino.Name = "label6";
+            this.lb_nino.Size = new System.Drawing.Size(50, 18);
+            this.lb_nino.TabIndex = 9;
+            this.lb_nino.Text = "NIÑO";
             // 
             // label7
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.SystemColors.Window;
-            this.label7.Location = new System.Drawing.Point(185, 47);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(77, 18);
-            this.label7.TabIndex = 10;
-            this.label7.Text = "ADULTO";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
+            this.lb_adulto.AutoSize = true;
+            this.lb_adulto.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_adulto.ForeColor = System.Drawing.SystemColors.Window;
+            this.lb_adulto.Location = new System.Drawing.Point(185, 47);
+            this.lb_adulto.Name = "label7";
+            this.lb_adulto.Size = new System.Drawing.Size(77, 18);
+            this.lb_adulto.TabIndex = 10;
+            this.lb_adulto.Text = "ADULTO";
+            this.lb_adulto.Click += new System.EventHandler(this.label7_Click);
             // 
             // label8
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.SystemColors.Window;
-            this.label8.Location = new System.Drawing.Point(185, 205);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(108, 18);
-            this.label8.TabIndex = 11;
-            this.label8.Text = "3 ERA EDAD";
+            this.lb_3raEdad.AutoSize = true;
+            this.lb_3raEdad.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_3raEdad.ForeColor = System.Drawing.SystemColors.Window;
+            this.lb_3raEdad.Location = new System.Drawing.Point(185, 205);
+            this.lb_3raEdad.Name = "label8";
+            this.lb_3raEdad.Size = new System.Drawing.Size(108, 18);
+            this.lb_3raEdad.TabIndex = 11;
+            this.lb_3raEdad.Text = "3 ERA EDAD";
             // 
             // label9
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.SystemColors.Window;
-            this.label9.Location = new System.Drawing.Point(287, 131);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(18, 18);
-            this.label9.TabIndex = 12;
-            this.label9.Text = "0";
+            this.lb_precioNino.AutoSize = true;
+            this.lb_precioNino.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_precioNino.ForeColor = System.Drawing.SystemColors.Window;
+            this.lb_precioNino.Location = new System.Drawing.Point(287, 131);
+            this.lb_precioNino.Name = "label9";
+            this.lb_precioNino.Size = new System.Drawing.Size(18, 18);
+            this.lb_precioNino.TabIndex = 12;
+            this.lb_precioNino.Text = "0";
             // 
             // label10
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.SystemColors.Window;
-            this.label10.Location = new System.Drawing.Point(287, 44);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(18, 18);
-            this.label10.TabIndex = 13;
-            this.label10.Text = "0";
+            this.lb_precioAdulto.AutoSize = true;
+            this.lb_precioAdulto.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_precioAdulto.ForeColor = System.Drawing.SystemColors.Window;
+            this.lb_precioAdulto.Location = new System.Drawing.Point(287, 44);
+            this.lb_precioAdulto.Name = "label10";
+            this.lb_precioAdulto.Size = new System.Drawing.Size(18, 18);
+            this.lb_precioAdulto.TabIndex = 13;
+            this.lb_precioAdulto.Text = "0";
             // 
             // label11
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.SystemColors.Window;
-            this.label11.Location = new System.Drawing.Point(288, 205);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(18, 18);
-            this.label11.TabIndex = 14;
-            this.label11.Text = "0";
+            this.lb_precio3ra.AutoSize = true;
+            this.lb_precio3ra.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_precio3ra.ForeColor = System.Drawing.SystemColors.Window;
+            this.lb_precio3ra.Location = new System.Drawing.Point(288, 205);
+            this.lb_precio3ra.Name = "label11";
+            this.lb_precio3ra.Size = new System.Drawing.Size(18, 18);
+            this.lb_precio3ra.TabIndex = 14;
+            this.lb_precio3ra.Text = "0";
             // 
             // textBox1
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(354, 131);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(33, 20);
-            this.textBox1.TabIndex = 15;
-            this.textBox1.Text = "0";
+            this.txtbx_noNinos.Enabled = false;
+            this.txtbx_noNinos.Location = new System.Drawing.Point(354, 131);
+            this.txtbx_noNinos.Name = "textBox1";
+            this.txtbx_noNinos.Size = new System.Drawing.Size(33, 20);
+            this.txtbx_noNinos.TabIndex = 15;
+            this.txtbx_noNinos.Text = "0";
             // 
             // textBox2
             // 
-            this.textBox2.Enabled = false;
-            this.textBox2.Location = new System.Drawing.Point(354, 44);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(33, 20);
-            this.textBox2.TabIndex = 16;
-            this.textBox2.Text = "0";
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.txtbx_noAdulto.Enabled = false;
+            this.txtbx_noAdulto.Location = new System.Drawing.Point(354, 44);
+            this.txtbx_noAdulto.Name = "textBox2";
+            this.txtbx_noAdulto.Size = new System.Drawing.Size(33, 20);
+            this.txtbx_noAdulto.TabIndex = 16;
+            this.txtbx_noAdulto.Text = "0";
+            this.txtbx_noAdulto.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // textBox3
             // 
-            this.textBox3.Enabled = false;
-            this.textBox3.Location = new System.Drawing.Point(354, 206);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(33, 20);
-            this.textBox3.TabIndex = 17;
-            this.textBox3.Text = "0";
+            this.txtbx_no3ra.Enabled = false;
+            this.txtbx_no3ra.Location = new System.Drawing.Point(354, 206);
+            this.txtbx_no3ra.Name = "textBox3";
+            this.txtbx_no3ra.Size = new System.Drawing.Size(33, 20);
+            this.txtbx_no3ra.TabIndex = 17;
+            this.txtbx_no3ra.Text = "0";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(413, 133);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(41, 20);
-            this.button1.TabIndex = 18;
-            this.button1.Text = "-";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btn_restarNino.Location = new System.Drawing.Point(413, 133);
+            this.btn_restarNino.Name = "button1";
+            this.btn_restarNino.Size = new System.Drawing.Size(41, 20);
+            this.btn_restarNino.TabIndex = 18;
+            this.btn_restarNino.Text = "-";
+            this.btn_restarNino.UseVisualStyleBackColor = true;
+            this.btn_restarNino.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
-            this.button2.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.button2.Location = new System.Drawing.Point(451, 133);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(41, 20);
-            this.button2.TabIndex = 19;
-            this.button2.Text = "+";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btn_sumarNino.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.btn_sumarNino.Location = new System.Drawing.Point(451, 133);
+            this.btn_sumarNino.Name = "button2";
+            this.btn_sumarNino.Size = new System.Drawing.Size(41, 20);
+            this.btn_sumarNino.TabIndex = 4;
+            this.btn_sumarNino.Text = "+";
+            this.btn_sumarNino.UseVisualStyleBackColor = true;
+            this.btn_sumarNino.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
-            this.button3.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.button3.Location = new System.Drawing.Point(449, 45);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(41, 20);
-            this.button3.TabIndex = 21;
-            this.button3.Text = "+";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btn_sumarAdulto.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.btn_sumarAdulto.Location = new System.Drawing.Point(449, 45);
+            this.btn_sumarAdulto.Name = "button3";
+            this.btn_sumarAdulto.Size = new System.Drawing.Size(41, 20);
+            this.btn_sumarAdulto.TabIndex = 3;
+            this.btn_sumarAdulto.Text = "+";
+            this.btn_sumarAdulto.UseVisualStyleBackColor = true;
+            this.btn_sumarAdulto.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(410, 45);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(41, 20);
-            this.button4.TabIndex = 20;
-            this.button4.Text = "-";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.btn_restarAdulto.Location = new System.Drawing.Point(410, 45);
+            this.btn_restarAdulto.Name = "button4";
+            this.btn_restarAdulto.Size = new System.Drawing.Size(41, 20);
+            this.btn_restarAdulto.TabIndex = 20;
+            this.btn_restarAdulto.Text = "-";
+            this.btn_restarAdulto.UseVisualStyleBackColor = true;
+            this.btn_restarAdulto.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
-            this.button5.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.button5.Location = new System.Drawing.Point(451, 205);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(41, 20);
-            this.button5.TabIndex = 23;
-            this.button5.Text = "+";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.btn_sumar3ra.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.btn_sumar3ra.Location = new System.Drawing.Point(451, 205);
+            this.btn_sumar3ra.Name = "button5";
+            this.btn_sumar3ra.Size = new System.Drawing.Size(41, 20);
+            this.btn_sumar3ra.TabIndex = 5;
+            this.btn_sumar3ra.Text = "+";
+            this.btn_sumar3ra.UseVisualStyleBackColor = true;
+            this.btn_sumar3ra.Click += new System.EventHandler(this.button5_Click);
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(413, 205);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(41, 20);
-            this.button6.TabIndex = 22;
-            this.button6.Text = "-";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.btn_restar3ra.Location = new System.Drawing.Point(413, 205);
+            this.btn_restar3ra.Name = "button6";
+            this.btn_restar3ra.Size = new System.Drawing.Size(41, 20);
+            this.btn_restar3ra.TabIndex = 22;
+            this.btn_restar3ra.Text = "-";
+            this.btn_restar3ra.UseVisualStyleBackColor = true;
+            this.btn_restar3ra.Click += new System.EventHandler(this.button6_Click);
             // 
             // label12
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.SystemColors.Window;
-            this.label12.Location = new System.Drawing.Point(192, 270);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(63, 18);
-            this.label12.TabIndex = 24;
-            this.label12.Text = "TOTAL";
+            this.lb_total.AutoSize = true;
+            this.lb_total.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_total.ForeColor = System.Drawing.SystemColors.Window;
+            this.lb_total.Location = new System.Drawing.Point(192, 270);
+            this.lb_total.Name = "label12";
+            this.lb_total.Size = new System.Drawing.Size(63, 18);
+            this.lb_total.TabIndex = 24;
+            this.lb_total.Text = "TOTAL";
             // 
             // textBox4
             // 
-            this.textBox4.Enabled = false;
-            this.textBox4.Location = new System.Drawing.Point(388, 270);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(33, 20);
-            this.textBox4.TabIndex = 25;
+            this.txtbx_totalAsientos.Enabled = false;
+            this.txtbx_totalAsientos.Location = new System.Drawing.Point(388, 270);
+            this.txtbx_totalAsientos.Name = "textBox4";
+            this.txtbx_totalAsientos.Size = new System.Drawing.Size(33, 20);
+            this.txtbx_totalAsientos.TabIndex = 25;
             // 
             // label13
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.SystemColors.Window;
-            this.label13.Location = new System.Drawing.Point(517, 133);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(18, 18);
-            this.label13.TabIndex = 26;
-            this.label13.Text = "0";
+            this.lb_subtotalNino.AutoSize = true;
+            this.lb_subtotalNino.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_subtotalNino.ForeColor = System.Drawing.SystemColors.Window;
+            this.lb_subtotalNino.Location = new System.Drawing.Point(517, 133);
+            this.lb_subtotalNino.Name = "label13";
+            this.lb_subtotalNino.Size = new System.Drawing.Size(18, 18);
+            this.lb_subtotalNino.TabIndex = 26;
+            this.lb_subtotalNino.Text = "0";
             // 
             // label14
             // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.SystemColors.Window;
-            this.label14.Location = new System.Drawing.Point(515, 45);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(18, 18);
-            this.label14.TabIndex = 27;
-            this.label14.Text = "0";
+            this.lb_subtotalAdulto.AutoSize = true;
+            this.lb_subtotalAdulto.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_subtotalAdulto.ForeColor = System.Drawing.SystemColors.Window;
+            this.lb_subtotalAdulto.Location = new System.Drawing.Point(515, 45);
+            this.lb_subtotalAdulto.Name = "label14";
+            this.lb_subtotalAdulto.Size = new System.Drawing.Size(18, 18);
+            this.lb_subtotalAdulto.TabIndex = 27;
+            this.lb_subtotalAdulto.Text = "0";
             // 
             // label15
             // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.SystemColors.Window;
-            this.label15.Location = new System.Drawing.Point(517, 207);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(18, 18);
-            this.label15.TabIndex = 28;
-            this.label15.Text = "0";
+            this.lb_subtotal3ra.AutoSize = true;
+            this.lb_subtotal3ra.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_subtotal3ra.ForeColor = System.Drawing.SystemColors.Window;
+            this.lb_subtotal3ra.Location = new System.Drawing.Point(517, 207);
+            this.lb_subtotal3ra.Name = "label15";
+            this.lb_subtotal3ra.Size = new System.Drawing.Size(18, 18);
+            this.lb_subtotal3ra.TabIndex = 28;
+            this.lb_subtotal3ra.Text = "0";
             // 
             // label16
             // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.SystemColors.Window;
-            this.label16.Location = new System.Drawing.Point(448, 270);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(18, 18);
-            this.label16.TabIndex = 29;
-            this.label16.Text = "0";
+            this.lb_totalPagar.AutoSize = true;
+            this.lb_totalPagar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_totalPagar.ForeColor = System.Drawing.SystemColors.Window;
+            this.lb_totalPagar.Location = new System.Drawing.Point(448, 270);
+            this.lb_totalPagar.Name = "label16";
+            this.lb_totalPagar.Size = new System.Drawing.Size(18, 18);
+            this.lb_totalPagar.TabIndex = 29;
+            this.lb_totalPagar.Text = "0";
             // 
             // button7
             // 
-            this.button7.BackColor = System.Drawing.Color.MidnightBlue;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.ForeColor = System.Drawing.Color.White;
-            this.button7.Location = new System.Drawing.Point(307, 555);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(183, 51);
-            this.button7.TabIndex = 30;
-            this.button7.Text = "CONTINUAR";
-            this.button7.UseVisualStyleBackColor = false;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
+            this.btn_continuar.BackColor = System.Drawing.Color.MidnightBlue;
+            this.btn_continuar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_continuar.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_continuar.ForeColor = System.Drawing.Color.White;
+            this.btn_continuar.Location = new System.Drawing.Point(307, 555);
+            this.btn_continuar.Name = "button7";
+            this.btn_continuar.Size = new System.Drawing.Size(183, 51);
+            this.btn_continuar.TabIndex = 6;
+            this.btn_continuar.Text = "CONTINUAR";
+            this.btn_continuar.UseVisualStyleBackColor = false;
+            this.btn_continuar.Click += new System.EventHandler(this.button7_Click);
             // 
             // button8
             // 
-            this.button8.BackColor = System.Drawing.Color.Red;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button8.Location = new System.Drawing.Point(10, 20);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(86, 37);
-            this.button8.TabIndex = 31;
-            this.button8.Text = "Regresar";
-            this.button8.UseVisualStyleBackColor = false;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
+            this.btn_regresar.BackColor = System.Drawing.Color.Red;
+            this.btn_regresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_regresar.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btn_regresar.Location = new System.Drawing.Point(10, 20);
+            this.btn_regresar.Name = "button8";
+            this.btn_regresar.Size = new System.Drawing.Size(86, 37);
+            this.btn_regresar.TabIndex = 31;
+            this.btn_regresar.Text = "Regresar";
+            this.btn_regresar.UseVisualStyleBackColor = false;
+            this.btn_regresar.Click += new System.EventHandler(this.button8_Click);
             // 
             // label17
             // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(1321, 32);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(30, 13);
-            this.label17.TabIndex = 33;
-            this.label17.Text = "Hora";
+            this.lb_17.AutoSize = true;
+            this.lb_17.Location = new System.Drawing.Point(1321, 32);
+            this.lb_17.Name = "label17";
+            this.lb_17.Size = new System.Drawing.Size(30, 13);
+            this.lb_17.TabIndex = 33;
+            this.lb_17.Text = "Hora";
             // 
             // label18
             // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(1321, 9);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(37, 13);
-            this.label18.TabIndex = 32;
-            this.label18.Text = "Fecha";
+            this.lb_18.AutoSize = true;
+            this.lb_18.Location = new System.Drawing.Point(1321, 9);
+            this.lb_18.Name = "label18";
+            this.lb_18.Size = new System.Drawing.Size(37, 13);
+            this.lb_18.TabIndex = 32;
+            this.lb_18.Text = "Fecha";
             // 
             // panel2
             // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.panel4);
-            this.panel2.Controls.Add(this.panel3);
-            this.panel2.Controls.Add(this.button2);
-            this.panel2.Controls.Add(this.panel1);
-            this.panel2.Controls.Add(this.label6);
-            this.panel2.Controls.Add(this.label7);
-            this.panel2.Controls.Add(this.label8);
-            this.panel2.Controls.Add(this.label9);
-            this.panel2.Controls.Add(this.label10);
-            this.panel2.Controls.Add(this.label16);
-            this.panel2.Controls.Add(this.label11);
-            this.panel2.Controls.Add(this.label15);
-            this.panel2.Controls.Add(this.textBox1);
-            this.panel2.Controls.Add(this.label14);
-            this.panel2.Controls.Add(this.textBox2);
-            this.panel2.Controls.Add(this.label13);
-            this.panel2.Controls.Add(this.textBox3);
-            this.panel2.Controls.Add(this.textBox4);
-            this.panel2.Controls.Add(this.button1);
-            this.panel2.Controls.Add(this.label12);
-            this.panel2.Controls.Add(this.button4);
-            this.panel2.Controls.Add(this.button5);
-            this.panel2.Controls.Add(this.button3);
-            this.panel2.Controls.Add(this.button6);
-            this.panel2.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.panel2.Location = new System.Drawing.Point(111, 234);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(584, 312);
-            this.panel2.TabIndex = 161;
+            this.panel_agregarboletos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel_agregarboletos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel_agregarboletos.Controls.Add(this.panel_3ra);
+            this.panel_agregarboletos.Controls.Add(this.panel_nino);
+            this.panel_agregarboletos.Controls.Add(this.btn_sumarNino);
+            this.panel_agregarboletos.Controls.Add(this.panel_adulto);
+            this.panel_agregarboletos.Controls.Add(this.lb_nino);
+            this.panel_agregarboletos.Controls.Add(this.lb_adulto);
+            this.panel_agregarboletos.Controls.Add(this.lb_3raEdad);
+            this.panel_agregarboletos.Controls.Add(this.lb_precioNino);
+            this.panel_agregarboletos.Controls.Add(this.lb_precioAdulto);
+            this.panel_agregarboletos.Controls.Add(this.lb_totalPagar);
+            this.panel_agregarboletos.Controls.Add(this.lb_precio3ra);
+            this.panel_agregarboletos.Controls.Add(this.lb_subtotal3ra);
+            this.panel_agregarboletos.Controls.Add(this.txtbx_noNinos);
+            this.panel_agregarboletos.Controls.Add(this.lb_subtotalAdulto);
+            this.panel_agregarboletos.Controls.Add(this.txtbx_noAdulto);
+            this.panel_agregarboletos.Controls.Add(this.lb_subtotalNino);
+            this.panel_agregarboletos.Controls.Add(this.txtbx_no3ra);
+            this.panel_agregarboletos.Controls.Add(this.txtbx_totalAsientos);
+            this.panel_agregarboletos.Controls.Add(this.btn_restarNino);
+            this.panel_agregarboletos.Controls.Add(this.lb_total);
+            this.panel_agregarboletos.Controls.Add(this.btn_restarAdulto);
+            this.panel_agregarboletos.Controls.Add(this.btn_sumar3ra);
+            this.panel_agregarboletos.Controls.Add(this.btn_sumarAdulto);
+            this.panel_agregarboletos.Controls.Add(this.btn_restar3ra);
+            this.panel_agregarboletos.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.panel_agregarboletos.Location = new System.Drawing.Point(111, 234);
+            this.panel_agregarboletos.Margin = new System.Windows.Forms.Padding(2);
+            this.panel_agregarboletos.Name = "panel2";
+            this.panel_agregarboletos.Size = new System.Drawing.Size(584, 312);
+            this.panel_agregarboletos.TabIndex = 161;
             // 
             // panel4
             // 
-            this.panel4.BackgroundImage = global::ProyectoAS2TaquillaCine.Properties.Resources.anciano;
-            this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.panel4.Location = new System.Drawing.Point(131, 183);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(49, 63);
-            this.panel4.TabIndex = 36;
+            this.panel_3ra.BackgroundImage = global::ProyectoAS2TaquillaCine.Properties.Resources.anciano;
+            this.panel_3ra.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.panel_3ra.Location = new System.Drawing.Point(131, 183);
+            this.panel_3ra.Margin = new System.Windows.Forms.Padding(2);
+            this.panel_3ra.Name = "panel4";
+            this.panel_3ra.Size = new System.Drawing.Size(49, 63);
+            this.panel_3ra.TabIndex = 36;
             // 
             // panel3
             // 
-            this.panel3.BackgroundImage = global::ProyectoAS2TaquillaCine.Properties.Resources.ninos__1_;
-            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.panel3.Location = new System.Drawing.Point(131, 105);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(49, 63);
-            this.panel3.TabIndex = 35;
+            this.panel_nino.BackgroundImage = global::ProyectoAS2TaquillaCine.Properties.Resources.ninos__1_;
+            this.panel_nino.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.panel_nino.Location = new System.Drawing.Point(131, 105);
+            this.panel_nino.Margin = new System.Windows.Forms.Padding(2);
+            this.panel_nino.Name = "panel3";
+            this.panel_nino.Size = new System.Drawing.Size(49, 63);
+            this.panel_nino.TabIndex = 35;
             // 
             // panel1
             // 
-            this.panel1.BackgroundImage = global::ProyectoAS2TaquillaCine.Properties.Resources.hombre;
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.panel1.Location = new System.Drawing.Point(131, 28);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(49, 63);
-            this.panel1.TabIndex = 34;
+            this.panel_adulto.BackgroundImage = global::ProyectoAS2TaquillaCine.Properties.Resources.hombre;
+            this.panel_adulto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.panel_adulto.Location = new System.Drawing.Point(131, 28);
+            this.panel_adulto.Margin = new System.Windows.Forms.Padding(2);
+            this.panel_adulto.Name = "panel1";
+            this.panel_adulto.Size = new System.Drawing.Size(49, 63);
+            this.panel_adulto.TabIndex = 34;
             // 
             // Reserva
             // 
@@ -487,26 +487,26 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
             this.ClientSize = new System.Drawing.Size(799, 618);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.label17);
-            this.Controls.Add(this.label18);
-            this.Controls.Add(this.button8);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.panel_agregarboletos);
+            this.Controls.Add(this.lb_17);
+            this.Controls.Add(this.lb_18);
+            this.Controls.Add(this.btn_regresar);
+            this.Controls.Add(this.btn_continuar);
+            this.Controls.Add(this.lb_texto2);
+            this.Controls.Add(this.lb_texto);
+            this.Controls.Add(this.cb_hora);
+            this.Controls.Add(this.lb_horario);
+            this.Controls.Add(this.cb_fecha);
+            this.Controls.Add(this.lb_fecha);
+            this.Controls.Add(this.lb_cinehub);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Name = "Reserva";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Reserva";
             this.Load += new System.EventHandler(this.Reserva_Load);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.panel_agregarboletos.ResumeLayout(false);
+            this.panel_agregarboletos.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -514,41 +514,41 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label lb_cinehub;
+        private System.Windows.Forms.Label lb_fecha;
+        private System.Windows.Forms.ComboBox cb_fecha;
+        private System.Windows.Forms.ComboBox cb_hora;
+        private System.Windows.Forms.Label lb_horario;
+        private System.Windows.Forms.Label lb_texto;
+        private System.Windows.Forms.Label lb_texto2;
+        private System.Windows.Forms.Label lb_nino;
+        private System.Windows.Forms.Label lb_adulto;
+        private System.Windows.Forms.Label lb_3raEdad;
+        private System.Windows.Forms.Label lb_precioNino;
+        private System.Windows.Forms.Label lb_precioAdulto;
+        private System.Windows.Forms.Label lb_precio3ra;
+        private System.Windows.Forms.TextBox txtbx_noNinos;
+        private System.Windows.Forms.TextBox txtbx_noAdulto;
+        private System.Windows.Forms.TextBox txtbx_no3ra;
+        private System.Windows.Forms.Button btn_restarNino;
+        private System.Windows.Forms.Button btn_sumarNino;
+        private System.Windows.Forms.Button btn_sumarAdulto;
+        private System.Windows.Forms.Button btn_restarAdulto;
+        private System.Windows.Forms.Button btn_sumar3ra;
+        private System.Windows.Forms.Button btn_restar3ra;
+        private System.Windows.Forms.Label lb_total;
+        private System.Windows.Forms.TextBox txtbx_totalAsientos;
+        private System.Windows.Forms.Label lb_subtotalNino;
+        private System.Windows.Forms.Label lb_subtotalAdulto;
+        private System.Windows.Forms.Label lb_subtotal3ra;
+        private System.Windows.Forms.Label lb_totalPagar;
+        private System.Windows.Forms.Button btn_continuar;
+        private System.Windows.Forms.Button btn_regresar;
+        private System.Windows.Forms.Label lb_17;
+        private System.Windows.Forms.Label lb_18;
+        private System.Windows.Forms.Panel panel_adulto;
+        private System.Windows.Forms.Panel panel_agregarboletos;
+        private System.Windows.Forms.Panel panel_nino;
+        private System.Windows.Forms.Panel panel_3ra;
     }
 }

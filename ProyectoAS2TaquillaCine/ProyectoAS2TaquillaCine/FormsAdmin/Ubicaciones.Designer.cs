@@ -34,27 +34,27 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.tmr_tiempo = new System.Windows.Forms.Timer(this.components);
             this.panel_panel1 = new System.Windows.Forms.Panel();
             this.panel_panel2 = new System.Windows.Forms.Panel();
-            this.gbIngresar = new System.Windows.Forms.GroupBox();
+            this.gpb_ingresar = new System.Windows.Forms.GroupBox();
             this.lb_mantUbicacion = new System.Windows.Forms.Label();
-            this.btn_boton5 = new System.Windows.Forms.Button();
+            this.btn_guardar = new System.Windows.Forms.Button();
             this.txtbx_ubicacion = new System.Windows.Forms.TextBox();
             this.txtbx_ciudad = new System.Windows.Forms.TextBox();
             this.lb_direccion = new System.Windows.Forms.Label();
             this.lb_ciudad = new System.Windows.Forms.Label();
             this.btn_regresar = new System.Windows.Forms.Button();
             this.panel_panel3 = new System.Windows.Forms.Panel();
-            this.gbbuscar = new System.Windows.Forms.GroupBox();
-            this.txtbxBuscar = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.gpb_buscar = new System.Windows.Forms.GroupBox();
+            this.txtbx_Buscar = new System.Windows.Forms.TextBox();
+            this.lb_buscar = new System.Windows.Forms.Label();
+            this.lb_subtitulo = new System.Windows.Forms.Label();
             this.lb_cinehub = new System.Windows.Forms.Label();
             this.dgv_ubicaciones = new System.Windows.Forms.DataGridView();
             this.btn_editar = new System.Windows.Forms.Button();
             this.btn_eliminar = new System.Windows.Forms.Button();
             this.panel_panel2.SuspendLayout();
-            this.gbIngresar.SuspendLayout();
+            this.gpb_ingresar.SuspendLayout();
             this.panel_panel3.SuspendLayout();
-            this.gbbuscar.SuspendLayout();
+            this.gpb_buscar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ubicaciones)).BeginInit();
             this.SuspendLayout();
             // 
@@ -85,7 +85,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             // panel_panel2
             // 
             this.panel_panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            this.panel_panel2.Controls.Add(this.gbIngresar);
+            this.panel_panel2.Controls.Add(this.gpb_ingresar);
             this.panel_panel2.Controls.Add(this.btn_regresar);
             this.panel_panel2.Controls.Add(this.lb_fechaHora);
             this.panel_panel2.Dock = System.Windows.Forms.DockStyle.Right;
@@ -97,17 +97,17 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             // 
             // gbIngresar
             // 
-            this.gbIngresar.Controls.Add(this.lb_mantUbicacion);
-            this.gbIngresar.Controls.Add(this.btn_boton5);
-            this.gbIngresar.Controls.Add(this.txtbx_ubicacion);
-            this.gbIngresar.Controls.Add(this.txtbx_ciudad);
-            this.gbIngresar.Controls.Add(this.lb_direccion);
-            this.gbIngresar.Controls.Add(this.lb_ciudad);
-            this.gbIngresar.Location = new System.Drawing.Point(5, 92);
-            this.gbIngresar.Name = "gbIngresar";
-            this.gbIngresar.Size = new System.Drawing.Size(363, 585);
-            this.gbIngresar.TabIndex = 54;
-            this.gbIngresar.TabStop = false;
+            this.gpb_ingresar.Controls.Add(this.lb_mantUbicacion);
+            this.gpb_ingresar.Controls.Add(this.btn_guardar);
+            this.gpb_ingresar.Controls.Add(this.txtbx_ubicacion);
+            this.gpb_ingresar.Controls.Add(this.txtbx_ciudad);
+            this.gpb_ingresar.Controls.Add(this.lb_direccion);
+            this.gpb_ingresar.Controls.Add(this.lb_ciudad);
+            this.gpb_ingresar.Location = new System.Drawing.Point(5, 92);
+            this.gpb_ingresar.Name = "gbIngresar";
+            this.gpb_ingresar.Size = new System.Drawing.Size(363, 585);
+            this.gpb_ingresar.TabIndex = 54;
+            this.gpb_ingresar.TabStop = false;
             // 
             // lb_mantUbicacion
             // 
@@ -124,19 +124,19 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             // 
             // btn_boton5
             // 
-            this.btn_boton5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_boton5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            this.btn_boton5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_boton5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_boton5.Image = global::ProyectoAS2TaquillaCine.Properties.Resources.diskette_save_saveas_1514;
-            this.btn_boton5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_boton5.Location = new System.Drawing.Point(128, 440);
-            this.btn_boton5.Name = "btn_boton5";
-            this.btn_boton5.Size = new System.Drawing.Size(118, 67);
-            this.btn_boton5.TabIndex = 56;
-            this.btn_boton5.Text = "Guardar";
-            this.btn_boton5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_boton5.UseVisualStyleBackColor = false;
+            this.btn_guardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_guardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.btn_guardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_guardar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_guardar.Image = global::ProyectoAS2TaquillaCine.Properties.Resources.diskette_save_saveas_1514;
+            this.btn_guardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_guardar.Location = new System.Drawing.Point(128, 440);
+            this.btn_guardar.Name = "btn_boton5";
+            this.btn_guardar.Size = new System.Drawing.Size(118, 67);
+            this.btn_guardar.TabIndex = 56;
+            this.btn_guardar.Text = "Guardar";
+            this.btn_guardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_guardar.UseVisualStyleBackColor = false;
             // 
             // txtbx_ubicacion
             // 
@@ -194,8 +194,8 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             // panel_panel3
             // 
             this.panel_panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            this.panel_panel3.Controls.Add(this.gbbuscar);
-            this.panel_panel3.Controls.Add(this.label1);
+            this.panel_panel3.Controls.Add(this.gpb_buscar);
+            this.panel_panel3.Controls.Add(this.lb_subtitulo);
             this.panel_panel3.Controls.Add(this.lb_cinehub);
             this.panel_panel3.Controls.Add(this.dgv_ubicaciones);
             this.panel_panel3.Controls.Add(this.btn_editar);
@@ -209,49 +209,49 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             // 
             // gbbuscar
             // 
-            this.gbbuscar.Controls.Add(this.txtbxBuscar);
-            this.gbbuscar.Controls.Add(this.label2);
-            this.gbbuscar.Location = new System.Drawing.Point(0, 0);
-            this.gbbuscar.Name = "gbbuscar";
-            this.gbbuscar.Size = new System.Drawing.Size(609, 53);
-            this.gbbuscar.TabIndex = 182;
-            this.gbbuscar.TabStop = false;
+            this.gpb_buscar.Controls.Add(this.txtbx_Buscar);
+            this.gpb_buscar.Controls.Add(this.lb_buscar);
+            this.gpb_buscar.Location = new System.Drawing.Point(0, 0);
+            this.gpb_buscar.Name = "gbbuscar";
+            this.gpb_buscar.Size = new System.Drawing.Size(609, 53);
+            this.gpb_buscar.TabIndex = 182;
+            this.gpb_buscar.TabStop = false;
             // 
             // txtbxBuscar
             // 
-            this.txtbxBuscar.Location = new System.Drawing.Point(71, 13);
-            this.txtbxBuscar.Multiline = true;
-            this.txtbxBuscar.Name = "txtbxBuscar";
-            this.txtbxBuscar.Size = new System.Drawing.Size(532, 31);
-            this.txtbxBuscar.TabIndex = 182;
-            this.txtbxBuscar.TextChanged += new System.EventHandler(this.txtbxBuscar_TextChanged);
+            this.txtbx_Buscar.Location = new System.Drawing.Point(71, 13);
+            this.txtbx_Buscar.Multiline = true;
+            this.txtbx_Buscar.Name = "txtbxBuscar";
+            this.txtbx_Buscar.Size = new System.Drawing.Size(532, 31);
+            this.txtbx_Buscar.TabIndex = 182;
+            this.txtbx_Buscar.TextChanged += new System.EventHandler(this.txtbxBuscar_TextChanged);
             // 
             // label2
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label2.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label2.Location = new System.Drawing.Point(-4, 16);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(77, 26);
-            this.label2.TabIndex = 181;
-            this.label2.Text = "Buscar";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lb_buscar.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lb_buscar.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_buscar.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lb_buscar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lb_buscar.Location = new System.Drawing.Point(-4, 16);
+            this.lb_buscar.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lb_buscar.Name = "label2";
+            this.lb_buscar.Size = new System.Drawing.Size(77, 26);
+            this.lb_buscar.TabIndex = 181;
+            this.lb_buscar.Text = "Buscar";
+            this.lb_buscar.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // label1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(216, 177);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(157, 19);
-            this.label1.TabIndex = 54;
-            this.label1.Text = "Registros Ubicación";
+            this.lb_subtitulo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.lb_subtitulo.AutoSize = true;
+            this.lb_subtitulo.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_subtitulo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lb_subtitulo.Location = new System.Drawing.Point(216, 177);
+            this.lb_subtitulo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lb_subtitulo.Name = "label1";
+            this.lb_subtitulo.Size = new System.Drawing.Size(157, 19);
+            this.lb_subtitulo.TabIndex = 54;
+            this.lb_subtitulo.Text = "Registros Ubicación";
             // 
             // lb_cinehub
             // 
@@ -329,12 +329,12 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.Load += new System.EventHandler(this.Ubicacion_Load);
             this.panel_panel2.ResumeLayout(false);
             this.panel_panel2.PerformLayout();
-            this.gbIngresar.ResumeLayout(false);
-            this.gbIngresar.PerformLayout();
+            this.gpb_ingresar.ResumeLayout(false);
+            this.gpb_ingresar.PerformLayout();
             this.panel_panel3.ResumeLayout(false);
             this.panel_panel3.PerformLayout();
-            this.gbbuscar.ResumeLayout(false);
-            this.gbbuscar.PerformLayout();
+            this.gpb_buscar.ResumeLayout(false);
+            this.gpb_buscar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ubicaciones)).EndInit();
             this.ResumeLayout(false);
 
@@ -351,16 +351,16 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
         private System.Windows.Forms.DataGridView dgv_ubicaciones;
         private System.Windows.Forms.Button btn_editar;
         private System.Windows.Forms.Button btn_eliminar;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.GroupBox gbIngresar;
+        private System.Windows.Forms.Label lb_subtitulo;
+        private System.Windows.Forms.GroupBox gpb_ingresar;
         private System.Windows.Forms.Label lb_mantUbicacion;
-        private System.Windows.Forms.Button btn_boton5;
+        private System.Windows.Forms.Button btn_guardar;
         private System.Windows.Forms.TextBox txtbx_ubicacion;
         private System.Windows.Forms.TextBox txtbx_ciudad;
         private System.Windows.Forms.Label lb_direccion;
         private System.Windows.Forms.Label lb_ciudad;
-        private System.Windows.Forms.GroupBox gbbuscar;
-        private System.Windows.Forms.TextBox txtbxBuscar;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.GroupBox gpb_buscar;
+        private System.Windows.Forms.TextBox txtbx_Buscar;
+        private System.Windows.Forms.Label lb_buscar;
     }
 }

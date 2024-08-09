@@ -34,7 +34,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.lb_fechaSys = new System.Windows.Forms.Label();
             this.panel_panel1 = new System.Windows.Forms.Panel();
             this.panel_panel2 = new System.Windows.Forms.Panel();
-            this.gbIngresar = new System.Windows.Forms.GroupBox();
+            this.gpb_ingresar = new System.Windows.Forms.GroupBox();
             this.txtbx_trailer = new System.Windows.Forms.TextBox();
             this.lb_trailer = new System.Windows.Forms.Label();
             this.lb_mantPelicula = new System.Windows.Forms.Label();
@@ -59,20 +59,20 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.lb_sinopsis = new System.Windows.Forms.Label();
             this.btn_regresar = new System.Windows.Forms.Button();
             this.panel_panel3 = new System.Windows.Forms.Panel();
-            this.gbbuscar = new System.Windows.Forms.GroupBox();
-            this.txtbxBuscar = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.gpb_buscar = new System.Windows.Forms.GroupBox();
+            this.txbx_buscar = new System.Windows.Forms.TextBox();
+            this.lb_buscar = new System.Windows.Forms.Label();
+            this.lb_texto = new System.Windows.Forms.Label();
             this.dgv_peliculas = new System.Windows.Forms.DataGridView();
             this.lb_cinehub = new System.Windows.Forms.Label();
             this.btn_editar = new System.Windows.Forms.Button();
             this.btn_eliminar = new System.Windows.Forms.Button();
             this.tmr_timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel_panel2.SuspendLayout();
-            this.gbIngresar.SuspendLayout();
+            this.gpb_ingresar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picbx_imagenPelicula)).BeginInit();
             this.panel_panel3.SuspendLayout();
-            this.gbbuscar.SuspendLayout();
+            this.gpb_buscar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_peliculas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -110,7 +110,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             // panel_panel2
             // 
             this.panel_panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            this.panel_panel2.Controls.Add(this.gbIngresar);
+            this.panel_panel2.Controls.Add(this.gpb_ingresar);
             this.panel_panel2.Controls.Add(this.btn_regresar);
             this.panel_panel2.Controls.Add(this.lb_fechaSys);
             this.panel_panel2.Dock = System.Windows.Forms.DockStyle.Right;
@@ -122,33 +122,33 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             // 
             // gbIngresar
             // 
-            this.gbIngresar.Controls.Add(this.txtbx_trailer);
-            this.gbIngresar.Controls.Add(this.lb_trailer);
-            this.gbIngresar.Controls.Add(this.lb_mantPelicula);
-            this.gbIngresar.Controls.Add(this.btn_guardar);
-            this.gbIngresar.Controls.Add(this.txtbx_imagen);
-            this.gbIngresar.Controls.Add(this.txtbx_duracion);
-            this.gbIngresar.Controls.Add(this.picbx_imagenPelicula);
-            this.gbIngresar.Controls.Add(this.btn_imagen);
-            this.gbIngresar.Controls.Add(this.txtbx_titulo);
-            this.gbIngresar.Controls.Add(this.txtbx_genero);
-            this.gbIngresar.Controls.Add(this.lb_imagen);
-            this.gbIngresar.Controls.Add(this.cb_clasificacion);
-            this.gbIngresar.Controls.Add(this.cb_estado);
-            this.gbIngresar.Controls.Add(this.lb_titulo);
-            this.gbIngresar.Controls.Add(this.lb_estado);
-            this.gbIngresar.Controls.Add(this.lb_genero);
-            this.gbIngresar.Controls.Add(this.cb_productor);
-            this.gbIngresar.Controls.Add(this.lb_duracion);
-            this.gbIngresar.Controls.Add(this.lb_productor);
-            this.gbIngresar.Controls.Add(this.lb_clasificacion);
-            this.gbIngresar.Controls.Add(this.txtbx_sinopsis);
-            this.gbIngresar.Controls.Add(this.lb_sinopsis);
-            this.gbIngresar.Location = new System.Drawing.Point(3, 102);
-            this.gbIngresar.Name = "gbIngresar";
-            this.gbIngresar.Size = new System.Drawing.Size(362, 507);
-            this.gbIngresar.TabIndex = 47;
-            this.gbIngresar.TabStop = false;
+            this.gpb_ingresar.Controls.Add(this.txtbx_trailer);
+            this.gpb_ingresar.Controls.Add(this.lb_trailer);
+            this.gpb_ingresar.Controls.Add(this.lb_mantPelicula);
+            this.gpb_ingresar.Controls.Add(this.btn_guardar);
+            this.gpb_ingresar.Controls.Add(this.txtbx_imagen);
+            this.gpb_ingresar.Controls.Add(this.txtbx_duracion);
+            this.gpb_ingresar.Controls.Add(this.picbx_imagenPelicula);
+            this.gpb_ingresar.Controls.Add(this.btn_imagen);
+            this.gpb_ingresar.Controls.Add(this.txtbx_titulo);
+            this.gpb_ingresar.Controls.Add(this.txtbx_genero);
+            this.gpb_ingresar.Controls.Add(this.lb_imagen);
+            this.gpb_ingresar.Controls.Add(this.cb_clasificacion);
+            this.gpb_ingresar.Controls.Add(this.cb_estado);
+            this.gpb_ingresar.Controls.Add(this.lb_titulo);
+            this.gpb_ingresar.Controls.Add(this.lb_estado);
+            this.gpb_ingresar.Controls.Add(this.lb_genero);
+            this.gpb_ingresar.Controls.Add(this.cb_productor);
+            this.gpb_ingresar.Controls.Add(this.lb_duracion);
+            this.gpb_ingresar.Controls.Add(this.lb_productor);
+            this.gpb_ingresar.Controls.Add(this.lb_clasificacion);
+            this.gpb_ingresar.Controls.Add(this.txtbx_sinopsis);
+            this.gpb_ingresar.Controls.Add(this.lb_sinopsis);
+            this.gpb_ingresar.Location = new System.Drawing.Point(3, 102);
+            this.gpb_ingresar.Name = "gbIngresar";
+            this.gpb_ingresar.Size = new System.Drawing.Size(362, 507);
+            this.gpb_ingresar.TabIndex = 47;
+            this.gpb_ingresar.TabStop = false;
             // 
             // txtbx_trailer
             // 
@@ -400,8 +400,8 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             // panel_panel3
             // 
             this.panel_panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            this.panel_panel3.Controls.Add(this.gbbuscar);
-            this.panel_panel3.Controls.Add(this.label1);
+            this.panel_panel3.Controls.Add(this.gpb_buscar);
+            this.panel_panel3.Controls.Add(this.lb_texto);
             this.panel_panel3.Controls.Add(this.dgv_peliculas);
             this.panel_panel3.Controls.Add(this.lb_cinehub);
             this.panel_panel3.Controls.Add(this.btn_editar);
@@ -415,50 +415,50 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             // 
             // gbbuscar
             // 
-            this.gbbuscar.Controls.Add(this.txtbxBuscar);
-            this.gbbuscar.Controls.Add(this.label2);
-            this.gbbuscar.Location = new System.Drawing.Point(0, 0);
-            this.gbbuscar.Name = "gbbuscar";
-            this.gbbuscar.Size = new System.Drawing.Size(609, 53);
-            this.gbbuscar.TabIndex = 181;
-            this.gbbuscar.TabStop = false;
+            this.gpb_buscar.Controls.Add(this.txbx_buscar);
+            this.gpb_buscar.Controls.Add(this.lb_buscar);
+            this.gpb_buscar.Location = new System.Drawing.Point(0, 0);
+            this.gpb_buscar.Name = "gbbuscar";
+            this.gpb_buscar.Size = new System.Drawing.Size(609, 53);
+            this.gpb_buscar.TabIndex = 181;
+            this.gpb_buscar.TabStop = false;
             // 
             // txtbxBuscar
             // 
-            this.txtbxBuscar.Location = new System.Drawing.Point(71, 13);
-            this.txtbxBuscar.Multiline = true;
-            this.txtbxBuscar.Name = "txtbxBuscar";
-            this.txtbxBuscar.Size = new System.Drawing.Size(532, 31);
-            this.txtbxBuscar.TabIndex = 182;
-            this.txtbxBuscar.TextChanged += new System.EventHandler(this.txtbxBuscar_TextChanged);
+            this.txbx_buscar.Location = new System.Drawing.Point(71, 13);
+            this.txbx_buscar.Multiline = true;
+            this.txbx_buscar.Name = "txtbxBuscar";
+            this.txbx_buscar.Size = new System.Drawing.Size(532, 31);
+            this.txbx_buscar.TabIndex = 182;
+            this.txbx_buscar.TextChanged += new System.EventHandler(this.txtbxBuscar_TextChanged);
             // 
             // label2
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label2.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label2.Location = new System.Drawing.Point(-4, 16);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(77, 26);
-            this.label2.TabIndex = 181;
-            this.label2.Text = "Buscar";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label2.Click += new System.EventHandler(this.label2_Click_1);
+            this.lb_buscar.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lb_buscar.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_buscar.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lb_buscar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lb_buscar.Location = new System.Drawing.Point(-4, 16);
+            this.lb_buscar.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lb_buscar.Name = "label2";
+            this.lb_buscar.Size = new System.Drawing.Size(77, 26);
+            this.lb_buscar.TabIndex = 181;
+            this.lb_buscar.Text = "Buscar";
+            this.lb_buscar.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lb_buscar.Click += new System.EventHandler(this.label2_Click_1);
             // 
             // label1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(179, 145);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(211, 19);
-            this.label1.TabIndex = 75;
-            this.label1.Text = "Mantenimiento de Pelicula";
+            this.lb_texto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.lb_texto.AutoSize = true;
+            this.lb_texto.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_texto.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lb_texto.Location = new System.Drawing.Point(179, 145);
+            this.lb_texto.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lb_texto.Name = "label1";
+            this.lb_texto.Size = new System.Drawing.Size(211, 19);
+            this.lb_texto.TabIndex = 75;
+            this.lb_texto.Text = "Mantenimiento de Pelicula";
             // 
             // dgv_peliculas
             // 
@@ -547,13 +547,13 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.Load += new System.EventHandler(this.Peliculas_Load);
             this.panel_panel2.ResumeLayout(false);
             this.panel_panel2.PerformLayout();
-            this.gbIngresar.ResumeLayout(false);
-            this.gbIngresar.PerformLayout();
+            this.gpb_ingresar.ResumeLayout(false);
+            this.gpb_ingresar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picbx_imagenPelicula)).EndInit();
             this.panel_panel3.ResumeLayout(false);
             this.panel_panel3.PerformLayout();
-            this.gbbuscar.ResumeLayout(false);
-            this.gbbuscar.PerformLayout();
+            this.gpb_buscar.ResumeLayout(false);
+            this.gpb_buscar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_peliculas)).EndInit();
             this.ResumeLayout(false);
 
@@ -570,11 +570,11 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
         private System.Windows.Forms.Button btn_editar;
         private System.Windows.Forms.Button btn_eliminar;
         private System.Windows.Forms.DataGridView dgv_peliculas;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.GroupBox gbbuscar;
-        private System.Windows.Forms.TextBox txtbxBuscar;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.GroupBox gbIngresar;
+        private System.Windows.Forms.Label lb_texto;
+        private System.Windows.Forms.GroupBox gpb_buscar;
+        private System.Windows.Forms.TextBox txbx_buscar;
+        private System.Windows.Forms.Label lb_buscar;
+        private System.Windows.Forms.GroupBox gpb_ingresar;
         private System.Windows.Forms.TextBox txtbx_trailer;
         private System.Windows.Forms.Label lb_trailer;
         private System.Windows.Forms.Label lb_mantPelicula;

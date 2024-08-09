@@ -29,75 +29,75 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.cbDireccion = new System.Windows.Forms.ComboBox();
-            this.cbDepto = new System.Windows.Forms.ComboBox();
-            this.PeliculaPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.btnQF = new System.Windows.Forms.Button();
+            this.lb_cinehub = new System.Windows.Forms.Label();
+            this.cb_direccion = new System.Windows.Forms.ComboBox();
+            this.cb_depto = new System.Windows.Forms.ComboBox();
+            this.panel_panelPelicula = new System.Windows.Forms.FlowLayoutPanel();
+            this.btn_cerrarSesion = new System.Windows.Forms.Button();
+            this.btn_quitarFiltro = new System.Windows.Forms.Button();
             this.btn_filtrar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 54F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.Window;
-            this.label1.Location = new System.Drawing.Point(334, 17);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(359, 82);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "CINEHUB";
+            this.lb_cinehub.AutoSize = true;
+            this.lb_cinehub.Font = new System.Drawing.Font("Microsoft Sans Serif", 54F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_cinehub.ForeColor = System.Drawing.SystemColors.Window;
+            this.lb_cinehub.Location = new System.Drawing.Point(334, 17);
+            this.lb_cinehub.Name = "label1";
+            this.lb_cinehub.Size = new System.Drawing.Size(359, 82);
+            this.lb_cinehub.TabIndex = 1;
+            this.lb_cinehub.Text = "CINEHUB";
             // 
             // cbDireccion
             // 
-            this.cbDireccion.FormattingEnabled = true;
-            this.cbDireccion.Location = new System.Drawing.Point(413, 108);
-            this.cbDireccion.Name = "cbDireccion";
-            this.cbDireccion.Size = new System.Drawing.Size(121, 21);
-            this.cbDireccion.TabIndex = 7;
+            this.cb_direccion.FormattingEnabled = true;
+            this.cb_direccion.Location = new System.Drawing.Point(413, 108);
+            this.cb_direccion.Name = "cbDireccion";
+            this.cb_direccion.Size = new System.Drawing.Size(121, 21);
+            this.cb_direccion.TabIndex = 7;
             // 
             // cbDepto
             // 
-            this.cbDepto.FormattingEnabled = true;
-            this.cbDepto.Location = new System.Drawing.Point(286, 108);
-            this.cbDepto.Name = "cbDepto";
-            this.cbDepto.Size = new System.Drawing.Size(121, 21);
-            this.cbDepto.TabIndex = 6;
-            this.cbDepto.SelectedIndexChanged += new System.EventHandler(this.cbDepto_SelectedIndexChanged);
+            this.cb_depto.FormattingEnabled = true;
+            this.cb_depto.Location = new System.Drawing.Point(286, 108);
+            this.cb_depto.Name = "cbDepto";
+            this.cb_depto.Size = new System.Drawing.Size(121, 21);
+            this.cb_depto.TabIndex = 6;
+            this.cb_depto.SelectedIndexChanged += new System.EventHandler(this.cbDepto_SelectedIndexChanged);
             // 
             // PeliculaPanel
             // 
-            this.PeliculaPanel.Location = new System.Drawing.Point(47, 147);
-            this.PeliculaPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.PeliculaPanel.Name = "PeliculaPanel";
-            this.PeliculaPanel.Size = new System.Drawing.Size(1305, 557);
-            this.PeliculaPanel.TabIndex = 10;
+            this.panel_panelPelicula.Location = new System.Drawing.Point(47, 147);
+            this.panel_panelPelicula.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel_panelPelicula.Name = "PeliculaPanel";
+            this.panel_panelPelicula.Size = new System.Drawing.Size(1305, 557);
+            this.panel_panelPelicula.TabIndex = 10;
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.Color.Red;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(9, 10);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(96, 31);
-            this.button2.TabIndex = 12;
-            this.button2.Text = "Cerrar Sesion";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btn_cerrarSesion.BackColor = System.Drawing.Color.Red;
+            this.btn_cerrarSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_cerrarSesion.ForeColor = System.Drawing.Color.White;
+            this.btn_cerrarSesion.Location = new System.Drawing.Point(9, 10);
+            this.btn_cerrarSesion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_cerrarSesion.Name = "button2";
+            this.btn_cerrarSesion.Size = new System.Drawing.Size(96, 31);
+            this.btn_cerrarSesion.TabIndex = 12;
+            this.btn_cerrarSesion.Text = "Cerrar Sesion";
+            this.btn_cerrarSesion.UseVisualStyleBackColor = false;
+            this.btn_cerrarSesion.Click += new System.EventHandler(this.button2_Click);
             // 
             // btnQF
             // 
-            this.btnQF.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnQF.Image = global::ProyectoAS2TaquillaCine.Properties.Resources.filtrar;
-            this.btnQF.Location = new System.Drawing.Point(599, 103);
-            this.btnQF.Name = "btnQF";
-            this.btnQF.Size = new System.Drawing.Size(59, 29);
-            this.btnQF.TabIndex = 9;
-            this.btnQF.UseVisualStyleBackColor = true;
-            this.btnQF.Click += new System.EventHandler(this.btnQF_Click_1);
+            this.btn_quitarFiltro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_quitarFiltro.Image = global::ProyectoAS2TaquillaCine.Properties.Resources.filtrar;
+            this.btn_quitarFiltro.Location = new System.Drawing.Point(599, 103);
+            this.btn_quitarFiltro.Name = "btnQF";
+            this.btn_quitarFiltro.Size = new System.Drawing.Size(59, 29);
+            this.btn_quitarFiltro.TabIndex = 9;
+            this.btn_quitarFiltro.UseVisualStyleBackColor = true;
+            this.btn_quitarFiltro.Click += new System.EventHandler(this.btnQF_Click_1);
             // 
             // btn_filtrar
             // 
@@ -116,13 +116,13 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
             this.ClientSize = new System.Drawing.Size(1028, 609);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.PeliculaPanel);
-            this.Controls.Add(this.btnQF);
+            this.Controls.Add(this.btn_cerrarSesion);
+            this.Controls.Add(this.panel_panelPelicula);
+            this.Controls.Add(this.btn_quitarFiltro);
             this.Controls.Add(this.btn_filtrar);
-            this.Controls.Add(this.cbDireccion);
-            this.Controls.Add(this.cbDepto);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.cb_direccion);
+            this.Controls.Add(this.cb_depto);
+            this.Controls.Add(this.lb_cinehub);
             this.Name = "CarteleraNueva";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cartelera";
@@ -134,12 +134,12 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lb_cinehub;
         private System.Windows.Forms.Button btn_filtrar;
-        private System.Windows.Forms.ComboBox cbDireccion;
-        private System.Windows.Forms.ComboBox cbDepto;
-        private System.Windows.Forms.Button btnQF;
-        private System.Windows.Forms.FlowLayoutPanel PeliculaPanel;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ComboBox cb_direccion;
+        private System.Windows.Forms.ComboBox cb_depto;
+        private System.Windows.Forms.Button btn_quitarFiltro;
+        private System.Windows.Forms.FlowLayoutPanel panel_panelPelicula;
+        private System.Windows.Forms.Button btn_cerrarSesion;
     }
 }

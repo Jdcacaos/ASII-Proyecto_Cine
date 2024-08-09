@@ -30,343 +30,343 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtNombre = new System.Windows.Forms.TextBox();
-            this.txtTel = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtTj = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.cbmes = new System.Windows.Forms.ComboBox();
-            this.cbano = new System.Windows.Forms.ComboBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.txtCVV = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.txtNIT = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.btnPagar = new System.Windows.Forms.Button();
-            this.btnRegresar = new System.Windows.Forms.Button();
-            this.pb1 = new System.Windows.Forms.ProgressBar();
-            this.label14 = new System.Windows.Forms.Label();
-            this.lblT = new System.Windows.Forms.Label();
-            this.cbEmpleados = new System.Windows.Forms.ComboBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.txtCorreo = new System.Windows.Forms.TextBox();
-            this.lblCorreo = new System.Windows.Forms.Label();
-            this.tiempo = new System.Windows.Forms.Timer(this.components);
-            this.rb_Credito = new System.Windows.Forms.RadioButton();
-            this.rb_Debito = new System.Windows.Forms.RadioButton();
-            this.txtNomEmple = new System.Windows.Forms.TextBox();
+            this.lb_cinehub = new System.Windows.Forms.Label();
+            this.lb_lb3 = new System.Windows.Forms.Label();
+            this.lb_lb2 = new System.Windows.Forms.Label();
+            this.lb_infoPersonal = new System.Windows.Forms.Label();
+            this.lb_nomTitular = new System.Windows.Forms.Label();
+            this.lb_telefono = new System.Windows.Forms.Label();
+            this.txtbx_nombre = new System.Windows.Forms.TextBox();
+            this.txtbx_telefono = new System.Windows.Forms.TextBox();
+            this.lb_campoObligatorio = new System.Windows.Forms.Label();
+            this.txtbx_noTarjeta = new System.Windows.Forms.TextBox();
+            this.lb_noTarjeta = new System.Windows.Forms.Label();
+            this.cb_mes = new System.Windows.Forms.ComboBox();
+            this.cb_ano = new System.Windows.Forms.ComboBox();
+            this.lb_fechaCaducidad = new System.Windows.Forms.Label();
+            this.txtbx_codigoSeg = new System.Windows.Forms.TextBox();
+            this.lb_codigoSeg = new System.Windows.Forms.Label();
+            this.txtbx_nit = new System.Windows.Forms.TextBox();
+            this.lb_nit = new System.Windows.Forms.Label();
+            this.btn_pagar = new System.Windows.Forms.Button();
+            this.btn_regresar = new System.Windows.Forms.Button();
+            this.pgb_tiempo = new System.Windows.Forms.ProgressBar();
+            this.lb_tiempoRest = new System.Windows.Forms.Label();
+            this.lb_tiempo = new System.Windows.Forms.Label();
+            this.cb_empleados = new System.Windows.Forms.ComboBox();
+            this.lb_empleado = new System.Windows.Forms.Label();
+            this.txtbx_correo = new System.Windows.Forms.TextBox();
+            this.lb_correo = new System.Windows.Forms.Label();
+            this.tmr_timer = new System.Windows.Forms.Timer(this.components);
+            this.rdb_credito = new System.Windows.Forms.RadioButton();
+            this.rdb_debito = new System.Windows.Forms.RadioButton();
+            this.cb_nombreEmpleado = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // label1
+            // lb_cinehub
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 54F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.Window;
-            this.label1.Location = new System.Drawing.Point(308, 21);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(359, 82);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "CINEHUB";
+            this.lb_cinehub.AutoSize = true;
+            this.lb_cinehub.Font = new System.Drawing.Font("Microsoft Sans Serif", 54F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_cinehub.ForeColor = System.Drawing.SystemColors.Window;
+            this.lb_cinehub.Location = new System.Drawing.Point(308, 21);
+            this.lb_cinehub.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lb_cinehub.Name = "lb_cinehub";
+            this.lb_cinehub.Size = new System.Drawing.Size(359, 82);
+            this.lb_cinehub.TabIndex = 4;
+            this.lb_cinehub.Text = "CINEHUB";
             // 
-            // label3
+            // lb_lb3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(1324, 32);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(30, 13);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Hora";
+            this.lb_lb3.AutoSize = true;
+            this.lb_lb3.Location = new System.Drawing.Point(1324, 32);
+            this.lb_lb3.Name = "lb_lb3";
+            this.lb_lb3.Size = new System.Drawing.Size(30, 13);
+            this.lb_lb3.TabIndex = 6;
+            this.lb_lb3.Text = "Hora";
             // 
-            // label2
+            // lb_lb2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(1324, 9);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(37, 13);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Fecha";
+            this.lb_lb2.AutoSize = true;
+            this.lb_lb2.Location = new System.Drawing.Point(1324, 9);
+            this.lb_lb2.Name = "lb_lb2";
+            this.lb_lb2.Size = new System.Drawing.Size(37, 13);
+            this.lb_lb2.TabIndex = 5;
+            this.lb_lb2.Text = "Fecha";
             // 
-            // label4
+            // lb_infoPersonal
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.Window;
-            this.label4.Location = new System.Drawing.Point(315, 111);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(317, 37);
-            this.label4.TabIndex = 12;
-            this.label4.Text = "Informacion personal";
+            this.lb_infoPersonal.AutoSize = true;
+            this.lb_infoPersonal.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_infoPersonal.ForeColor = System.Drawing.SystemColors.Window;
+            this.lb_infoPersonal.Location = new System.Drawing.Point(315, 111);
+            this.lb_infoPersonal.Name = "lb_infoPersonal";
+            this.lb_infoPersonal.Size = new System.Drawing.Size(317, 37);
+            this.lb_infoPersonal.TabIndex = 12;
+            this.lb_infoPersonal.Text = "Informacion personal";
             // 
-            // label5
+            // lb_nomTitular
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.SystemColors.Window;
-            this.label5.Location = new System.Drawing.Point(234, 324);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(148, 19);
-            this.label5.TabIndex = 13;
-            this.label5.Text = "Nombre del titular";
+            this.lb_nomTitular.AutoSize = true;
+            this.lb_nomTitular.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_nomTitular.ForeColor = System.Drawing.SystemColors.Window;
+            this.lb_nomTitular.Location = new System.Drawing.Point(234, 324);
+            this.lb_nomTitular.Name = "lb_nomTitular";
+            this.lb_nomTitular.Size = new System.Drawing.Size(148, 19);
+            this.lb_nomTitular.TabIndex = 13;
+            this.lb_nomTitular.Text = "Nombre del titular";
             // 
-            // label7
+            // lb_telefono
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.SystemColors.Window;
-            this.label7.Location = new System.Drawing.Point(232, 370);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(83, 19);
-            this.label7.TabIndex = 15;
-            this.label7.Text = "Telefono*";
+            this.lb_telefono.AutoSize = true;
+            this.lb_telefono.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_telefono.ForeColor = System.Drawing.SystemColors.Window;
+            this.lb_telefono.Location = new System.Drawing.Point(232, 370);
+            this.lb_telefono.Name = "lb_telefono";
+            this.lb_telefono.Size = new System.Drawing.Size(83, 19);
+            this.lb_telefono.TabIndex = 15;
+            this.lb_telefono.Text = "Telefono*";
             // 
-            // txtNombre
+            // txtbx_nombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(235, 348);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(351, 20);
-            this.txtNombre.TabIndex = 3;
+            this.txtbx_nombre.Location = new System.Drawing.Point(235, 348);
+            this.txtbx_nombre.Name = "txtbx_nombre";
+            this.txtbx_nombre.Size = new System.Drawing.Size(351, 20);
+            this.txtbx_nombre.TabIndex = 3;
             // 
-            // txtTel
+            // txtbx_telefono
             // 
-            this.txtTel.Location = new System.Drawing.Point(235, 393);
-            this.txtTel.Name = "txtTel";
-            this.txtTel.Size = new System.Drawing.Size(193, 20);
-            this.txtTel.TabIndex = 4;
+            this.txtbx_telefono.Location = new System.Drawing.Point(235, 393);
+            this.txtbx_telefono.Name = "txtbx_telefono";
+            this.txtbx_telefono.Size = new System.Drawing.Size(193, 20);
+            this.txtbx_telefono.TabIndex = 4;
             // 
-            // label8
+            // lb_campoObligatorio
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(232, 475);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(108, 13);
-            this.label8.TabIndex = 19;
-            this.label8.Text = "* Campos obligatorios";
+            this.lb_campoObligatorio.AutoSize = true;
+            this.lb_campoObligatorio.Location = new System.Drawing.Point(232, 475);
+            this.lb_campoObligatorio.Name = "lb_campoObligatorio";
+            this.lb_campoObligatorio.Size = new System.Drawing.Size(108, 13);
+            this.lb_campoObligatorio.TabIndex = 19;
+            this.lb_campoObligatorio.Text = "* Campos obligatorios";
             // 
-            // txtTj
+            // txtbx_noTarjeta
             // 
-            this.txtTj.Location = new System.Drawing.Point(237, 244);
-            this.txtTj.Name = "txtTj";
-            this.txtTj.Size = new System.Drawing.Size(233, 20);
-            this.txtTj.TabIndex = 1;
-            this.txtTj.Leave += new System.EventHandler(this.txtTj_Leave);
+            this.txtbx_noTarjeta.Location = new System.Drawing.Point(237, 244);
+            this.txtbx_noTarjeta.Name = "txtbx_noTarjeta";
+            this.txtbx_noTarjeta.Size = new System.Drawing.Size(233, 20);
+            this.txtbx_noTarjeta.TabIndex = 1;
+            this.txtbx_noTarjeta.Leave += new System.EventHandler(this.txtTj_Leave);
             // 
-            // label9
+            // lb_noTarjeta
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.SystemColors.Window;
-            this.label9.Location = new System.Drawing.Point(233, 219);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(165, 22);
-            this.label9.TabIndex = 20;
-            this.label9.Text = "Numero de tarjeta ";
+            this.lb_noTarjeta.AutoSize = true;
+            this.lb_noTarjeta.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_noTarjeta.ForeColor = System.Drawing.SystemColors.Window;
+            this.lb_noTarjeta.Location = new System.Drawing.Point(233, 219);
+            this.lb_noTarjeta.Name = "lb_noTarjeta";
+            this.lb_noTarjeta.Size = new System.Drawing.Size(165, 22);
+            this.lb_noTarjeta.TabIndex = 20;
+            this.lb_noTarjeta.Text = "Numero de tarjeta ";
             // 
-            // cbmes
+            // cb_mes
             // 
-            this.cbmes.FormattingEnabled = true;
-            this.cbmes.Location = new System.Drawing.Point(464, 402);
-            this.cbmes.Name = "cbmes";
-            this.cbmes.Size = new System.Drawing.Size(50, 21);
-            this.cbmes.TabIndex = 5;
+            this.cb_mes.FormattingEnabled = true;
+            this.cb_mes.Location = new System.Drawing.Point(464, 402);
+            this.cb_mes.Name = "cb_mes";
+            this.cb_mes.Size = new System.Drawing.Size(50, 21);
+            this.cb_mes.TabIndex = 5;
             // 
-            // cbano
+            // cb_ano
             // 
-            this.cbano.FormattingEnabled = true;
-            this.cbano.Location = new System.Drawing.Point(519, 402);
-            this.cbano.Name = "cbano";
-            this.cbano.Size = new System.Drawing.Size(50, 21);
-            this.cbano.TabIndex = 6;
+            this.cb_ano.FormattingEnabled = true;
+            this.cb_ano.Location = new System.Drawing.Point(519, 402);
+            this.cb_ano.Name = "cb_ano";
+            this.cb_ano.Size = new System.Drawing.Size(50, 21);
+            this.cb_ano.TabIndex = 6;
             // 
-            // label10
+            // lb_fechaCaducidad
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.SystemColors.Window;
-            this.label10.Location = new System.Drawing.Point(460, 377);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(167, 22);
-            this.label10.TabIndex = 24;
-            this.label10.Text = "Fecha de caducidad";
+            this.lb_fechaCaducidad.AutoSize = true;
+            this.lb_fechaCaducidad.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_fechaCaducidad.ForeColor = System.Drawing.SystemColors.Window;
+            this.lb_fechaCaducidad.Location = new System.Drawing.Point(460, 377);
+            this.lb_fechaCaducidad.Name = "lb_fechaCaducidad";
+            this.lb_fechaCaducidad.Size = new System.Drawing.Size(167, 22);
+            this.lb_fechaCaducidad.TabIndex = 24;
+            this.lb_fechaCaducidad.Text = "Fecha de caducidad";
             // 
-            // txtCVV
+            // txtbx_codigoSeg
             // 
-            this.txtCVV.Location = new System.Drawing.Point(238, 454);
-            this.txtCVV.Name = "txtCVV";
-            this.txtCVV.Size = new System.Drawing.Size(39, 20);
-            this.txtCVV.TabIndex = 7;
+            this.txtbx_codigoSeg.Location = new System.Drawing.Point(238, 454);
+            this.txtbx_codigoSeg.Name = "txtbx_codigoSeg";
+            this.txtbx_codigoSeg.Size = new System.Drawing.Size(39, 20);
+            this.txtbx_codigoSeg.TabIndex = 7;
             // 
-            // label11
+            // lb_codigoSeg
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.SystemColors.Window;
-            this.label11.Location = new System.Drawing.Point(232, 429);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(227, 22);
-            this.label11.TabIndex = 25;
-            this.label11.Text = "Codigo de seguridad /CVV";
+            this.lb_codigoSeg.AutoSize = true;
+            this.lb_codigoSeg.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_codigoSeg.ForeColor = System.Drawing.SystemColors.Window;
+            this.lb_codigoSeg.Location = new System.Drawing.Point(232, 429);
+            this.lb_codigoSeg.Name = "lb_codigoSeg";
+            this.lb_codigoSeg.Size = new System.Drawing.Size(227, 22);
+            this.lb_codigoSeg.TabIndex = 25;
+            this.lb_codigoSeg.Text = "Codigo de seguridad /CVV";
             // 
-            // txtNIT
+            // txtbx_nit
             // 
-            this.txtNIT.Location = new System.Drawing.Point(238, 297);
-            this.txtNIT.Name = "txtNIT";
-            this.txtNIT.Size = new System.Drawing.Size(232, 20);
-            this.txtNIT.TabIndex = 2;
+            this.txtbx_nit.Location = new System.Drawing.Point(238, 297);
+            this.txtbx_nit.Name = "txtbx_nit";
+            this.txtbx_nit.Size = new System.Drawing.Size(232, 20);
+            this.txtbx_nit.TabIndex = 2;
             // 
-            // label12
+            // lb_nit
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.SystemColors.Window;
-            this.label12.Location = new System.Drawing.Point(235, 272);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(39, 22);
-            this.label12.TabIndex = 30;
-            this.label12.Text = "NIT";
+            this.lb_nit.AutoSize = true;
+            this.lb_nit.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_nit.ForeColor = System.Drawing.SystemColors.Window;
+            this.lb_nit.Location = new System.Drawing.Point(235, 272);
+            this.lb_nit.Name = "lb_nit";
+            this.lb_nit.Size = new System.Drawing.Size(39, 22);
+            this.lb_nit.TabIndex = 30;
+            this.lb_nit.Text = "NIT";
             // 
-            // btnPagar
+            // btn_pagar
             // 
-            this.btnPagar.BackColor = System.Drawing.Color.MidnightBlue;
-            this.btnPagar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPagar.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPagar.ForeColor = System.Drawing.SystemColors.Menu;
-            this.btnPagar.Location = new System.Drawing.Point(646, 415);
-            this.btnPagar.Name = "btnPagar";
-            this.btnPagar.Size = new System.Drawing.Size(183, 51);
-            this.btnPagar.TabIndex = 8;
-            this.btnPagar.Text = "PAGAR";
-            this.btnPagar.UseVisualStyleBackColor = false;
-            this.btnPagar.Click += new System.EventHandler(this.btnPagar_Click);
+            this.btn_pagar.BackColor = System.Drawing.Color.MidnightBlue;
+            this.btn_pagar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_pagar.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_pagar.ForeColor = System.Drawing.SystemColors.Menu;
+            this.btn_pagar.Location = new System.Drawing.Point(646, 415);
+            this.btn_pagar.Name = "btn_pagar";
+            this.btn_pagar.Size = new System.Drawing.Size(183, 51);
+            this.btn_pagar.TabIndex = 10;
+            this.btn_pagar.Text = "PAGAR";
+            this.btn_pagar.UseVisualStyleBackColor = false;
+            this.btn_pagar.Click += new System.EventHandler(this.btnPagar_Click);
             // 
-            // btnRegresar
+            // btn_regresar
             // 
-            this.btnRegresar.BackColor = System.Drawing.Color.Red;
-            this.btnRegresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegresar.ForeColor = System.Drawing.SystemColors.Menu;
-            this.btnRegresar.Location = new System.Drawing.Point(10, 11);
-            this.btnRegresar.Name = "btnRegresar";
-            this.btnRegresar.Size = new System.Drawing.Size(86, 37);
-            this.btnRegresar.TabIndex = 9;
-            this.btnRegresar.Text = "Regresar";
-            this.btnRegresar.UseVisualStyleBackColor = false;
-            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
+            this.btn_regresar.BackColor = System.Drawing.Color.Red;
+            this.btn_regresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_regresar.ForeColor = System.Drawing.SystemColors.Menu;
+            this.btn_regresar.Location = new System.Drawing.Point(10, 11);
+            this.btn_regresar.Name = "btn_regresar";
+            this.btn_regresar.Size = new System.Drawing.Size(86, 37);
+            this.btn_regresar.TabIndex = 9;
+            this.btn_regresar.Text = "Regresar";
+            this.btn_regresar.UseVisualStyleBackColor = false;
+            this.btn_regresar.Click += new System.EventHandler(this.btnRegresar_Click);
             // 
-            // pb1
+            // pgb_tiempo
             // 
-            this.pb1.Location = new System.Drawing.Point(646, 348);
-            this.pb1.Name = "pb1";
-            this.pb1.Size = new System.Drawing.Size(254, 23);
-            this.pb1.TabIndex = 150;
+            this.pgb_tiempo.Location = new System.Drawing.Point(646, 348);
+            this.pgb_tiempo.Name = "pgb_tiempo";
+            this.pgb_tiempo.Size = new System.Drawing.Size(254, 23);
+            this.pgb_tiempo.TabIndex = 150;
             // 
-            // label14
+            // lb_tiempoRest
             // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.SystemColors.Window;
-            this.label14.Location = new System.Drawing.Point(645, 318);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(143, 22);
-            this.label14.TabIndex = 151;
-            this.label14.Text = "Tiempo restante";
+            this.lb_tiempoRest.AutoSize = true;
+            this.lb_tiempoRest.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_tiempoRest.ForeColor = System.Drawing.SystemColors.Window;
+            this.lb_tiempoRest.Location = new System.Drawing.Point(645, 318);
+            this.lb_tiempoRest.Name = "lb_tiempoRest";
+            this.lb_tiempoRest.Size = new System.Drawing.Size(143, 22);
+            this.lb_tiempoRest.TabIndex = 151;
+            this.lb_tiempoRest.Text = "Tiempo restante";
             // 
-            // lblT
+            // lb_tiempo
             // 
-            this.lblT.AutoSize = true;
-            this.lblT.ForeColor = System.Drawing.SystemColors.Window;
-            this.lblT.Location = new System.Drawing.Point(860, 329);
-            this.lblT.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblT.Name = "lblT";
-            this.lblT.Size = new System.Drawing.Size(41, 13);
-            this.lblT.TabIndex = 153;
-            this.lblT.Text = "label15";
+            this.lb_tiempo.AutoSize = true;
+            this.lb_tiempo.ForeColor = System.Drawing.SystemColors.Window;
+            this.lb_tiempo.Location = new System.Drawing.Point(860, 329);
+            this.lb_tiempo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lb_tiempo.Name = "lb_tiempo";
+            this.lb_tiempo.Size = new System.Drawing.Size(41, 13);
+            this.lb_tiempo.TabIndex = 153;
+            this.lb_tiempo.Text = "label15";
             // 
-            // cbEmpleados
+            // cb_empleados
             // 
-            this.cbEmpleados.FormattingEnabled = true;
-            this.cbEmpleados.Location = new System.Drawing.Point(646, 180);
-            this.cbEmpleados.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.cbEmpleados.Name = "cbEmpleados";
-            this.cbEmpleados.Size = new System.Drawing.Size(254, 21);
-            this.cbEmpleados.TabIndex = 154;
-            this.cbEmpleados.Tag = "Seleccione un empleado";
-            this.cbEmpleados.SelectedIndexChanged += new System.EventHandler(this.cbEmpleados_SelectedIndexChanged);
+            this.cb_empleados.FormattingEnabled = true;
+            this.cb_empleados.Location = new System.Drawing.Point(646, 180);
+            this.cb_empleados.Margin = new System.Windows.Forms.Padding(2);
+            this.cb_empleados.Name = "cb_empleados";
+            this.cb_empleados.Size = new System.Drawing.Size(254, 21);
+            this.cb_empleados.TabIndex = 154;
+            this.cb_empleados.Tag = "Seleccione un empleado";
+            this.cb_empleados.SelectedIndexChanged += new System.EventHandler(this.cbEmpleados_SelectedIndexChanged);
             // 
-            // label13
+            // lb_empleado
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.SystemColors.Window;
-            this.label13.Location = new System.Drawing.Point(645, 228);
-            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(253, 22);
-            this.label13.TabIndex = 155;
-            this.label13.Text = "Empleado que realizó la venta";
+            this.lb_empleado.AutoSize = true;
+            this.lb_empleado.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_empleado.ForeColor = System.Drawing.SystemColors.Window;
+            this.lb_empleado.Location = new System.Drawing.Point(645, 228);
+            this.lb_empleado.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lb_empleado.Name = "lb_empleado";
+            this.lb_empleado.Size = new System.Drawing.Size(253, 22);
+            this.lb_empleado.TabIndex = 155;
+            this.lb_empleado.Text = "Empleado que realizó la venta";
             // 
-            // txtCorreo
+            // txtbx_correo
             // 
-            this.txtCorreo.Location = new System.Drawing.Point(237, 190);
-            this.txtCorreo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(233, 20);
-            this.txtCorreo.TabIndex = 0;
-            this.txtCorreo.TextChanged += new System.EventHandler(this.txtCorreo_TextChanged_1);
+            this.txtbx_correo.Location = new System.Drawing.Point(237, 190);
+            this.txtbx_correo.Margin = new System.Windows.Forms.Padding(2);
+            this.txtbx_correo.Name = "txtbx_correo";
+            this.txtbx_correo.Size = new System.Drawing.Size(233, 20);
+            this.txtbx_correo.TabIndex = 0;
+            this.txtbx_correo.TextChanged += new System.EventHandler(this.txtCorreo_TextChanged_1);
             // 
-            // lblCorreo
+            // lb_correo
             // 
-            this.lblCorreo.AutoSize = true;
-            this.lblCorreo.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCorreo.ForeColor = System.Drawing.SystemColors.Window;
-            this.lblCorreo.Location = new System.Drawing.Point(236, 166);
-            this.lblCorreo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblCorreo.Name = "lblCorreo";
-            this.lblCorreo.Size = new System.Drawing.Size(66, 22);
-            this.lblCorreo.TabIndex = 158;
-            this.lblCorreo.Text = "Correo";
+            this.lb_correo.AutoSize = true;
+            this.lb_correo.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_correo.ForeColor = System.Drawing.SystemColors.Window;
+            this.lb_correo.Location = new System.Drawing.Point(236, 166);
+            this.lb_correo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lb_correo.Name = "lb_correo";
+            this.lb_correo.Size = new System.Drawing.Size(66, 22);
+            this.lb_correo.TabIndex = 158;
+            this.lb_correo.Text = "Correo";
             // 
-            // rb_Credito
+            // rdb_credito
             // 
-            this.rb_Credito.AutoSize = true;
-            this.rb_Credito.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rb_Credito.ForeColor = System.Drawing.SystemColors.Window;
-            this.rb_Credito.Location = new System.Drawing.Point(476, 429);
-            this.rb_Credito.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.rb_Credito.Name = "rb_Credito";
-            this.rb_Credito.Size = new System.Drawing.Size(88, 23);
-            this.rb_Credito.TabIndex = 159;
-            this.rb_Credito.TabStop = true;
-            this.rb_Credito.Text = "Crétdito";
-            this.rb_Credito.UseVisualStyleBackColor = true;
+            this.rdb_credito.AutoSize = true;
+            this.rdb_credito.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdb_credito.ForeColor = System.Drawing.SystemColors.Window;
+            this.rdb_credito.Location = new System.Drawing.Point(476, 429);
+            this.rdb_credito.Margin = new System.Windows.Forms.Padding(2);
+            this.rdb_credito.Name = "rdb_credito";
+            this.rdb_credito.Size = new System.Drawing.Size(88, 23);
+            this.rdb_credito.TabIndex = 8;
+            this.rdb_credito.TabStop = true;
+            this.rdb_credito.Text = "Crétdito";
+            this.rdb_credito.UseVisualStyleBackColor = true;
             // 
-            // rb_Debito
+            // rdb_debito
             // 
-            this.rb_Debito.AutoSize = true;
-            this.rb_Debito.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rb_Debito.ForeColor = System.Drawing.SystemColors.Window;
-            this.rb_Debito.Location = new System.Drawing.Point(476, 453);
-            this.rb_Debito.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.rb_Debito.Name = "rb_Debito";
-            this.rb_Debito.Size = new System.Drawing.Size(78, 23);
-            this.rb_Debito.TabIndex = 160;
-            this.rb_Debito.TabStop = true;
-            this.rb_Debito.Text = "Débito";
-            this.rb_Debito.UseVisualStyleBackColor = true;
+            this.rdb_debito.AutoSize = true;
+            this.rdb_debito.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdb_debito.ForeColor = System.Drawing.SystemColors.Window;
+            this.rdb_debito.Location = new System.Drawing.Point(476, 453);
+            this.rdb_debito.Margin = new System.Windows.Forms.Padding(2);
+            this.rdb_debito.Name = "rdb_debito";
+            this.rdb_debito.Size = new System.Drawing.Size(78, 23);
+            this.rdb_debito.TabIndex = 9;
+            this.rdb_debito.TabStop = true;
+            this.rdb_debito.Text = "Débito";
+            this.rdb_debito.UseVisualStyleBackColor = true;
             // 
-            // txtNomEmple
+            // cb_nombreEmpleado
             // 
-            this.txtNomEmple.Location = new System.Drawing.Point(646, 253);
-            this.txtNomEmple.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.txtNomEmple.Name = "txtNomEmple";
-            this.txtNomEmple.Size = new System.Drawing.Size(216, 20);
-            this.txtNomEmple.TabIndex = 161;
-            this.txtNomEmple.TextChanged += new System.EventHandler(this.txtNomEmple_TextChanged);
+            this.cb_nombreEmpleado.Location = new System.Drawing.Point(646, 253);
+            this.cb_nombreEmpleado.Margin = new System.Windows.Forms.Padding(2);
+            this.cb_nombreEmpleado.Name = "cb_nombreEmpleado";
+            this.cb_nombreEmpleado.Size = new System.Drawing.Size(216, 20);
+            this.cb_nombreEmpleado.TabIndex = 161;
+            this.cb_nombreEmpleado.TextChanged += new System.EventHandler(this.txtNomEmple_TextChanged);
             // 
             // Pago
             // 
@@ -374,36 +374,36 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
             this.ClientSize = new System.Drawing.Size(1009, 561);
-            this.Controls.Add(this.txtNomEmple);
-            this.Controls.Add(this.rb_Debito);
-            this.Controls.Add(this.rb_Credito);
-            this.Controls.Add(this.lblCorreo);
-            this.Controls.Add(this.txtCorreo);
-            this.Controls.Add(this.label13);
-            this.Controls.Add(this.cbEmpleados);
-            this.Controls.Add(this.lblT);
-            this.Controls.Add(this.label14);
-            this.Controls.Add(this.pb1);
-            this.Controls.Add(this.btnRegresar);
-            this.Controls.Add(this.btnPagar);
-            this.Controls.Add(this.txtNIT);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.txtCVV);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.cbano);
-            this.Controls.Add(this.cbmes);
-            this.Controls.Add(this.txtTj);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.txtTel);
-            this.Controls.Add(this.txtNombre);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.cb_nombreEmpleado);
+            this.Controls.Add(this.rdb_debito);
+            this.Controls.Add(this.rdb_credito);
+            this.Controls.Add(this.lb_correo);
+            this.Controls.Add(this.txtbx_correo);
+            this.Controls.Add(this.lb_empleado);
+            this.Controls.Add(this.cb_empleados);
+            this.Controls.Add(this.lb_tiempo);
+            this.Controls.Add(this.lb_tiempoRest);
+            this.Controls.Add(this.pgb_tiempo);
+            this.Controls.Add(this.btn_regresar);
+            this.Controls.Add(this.btn_pagar);
+            this.Controls.Add(this.txtbx_nit);
+            this.Controls.Add(this.lb_nit);
+            this.Controls.Add(this.txtbx_codigoSeg);
+            this.Controls.Add(this.lb_codigoSeg);
+            this.Controls.Add(this.lb_fechaCaducidad);
+            this.Controls.Add(this.cb_ano);
+            this.Controls.Add(this.cb_mes);
+            this.Controls.Add(this.txtbx_noTarjeta);
+            this.Controls.Add(this.lb_noTarjeta);
+            this.Controls.Add(this.lb_campoObligatorio);
+            this.Controls.Add(this.txtbx_telefono);
+            this.Controls.Add(this.txtbx_nombre);
+            this.Controls.Add(this.lb_telefono);
+            this.Controls.Add(this.lb_nomTitular);
+            this.Controls.Add(this.lb_infoPersonal);
+            this.Controls.Add(this.lb_lb3);
+            this.Controls.Add(this.lb_lb2);
+            this.Controls.Add(this.lb_cinehub);
             this.Name = "Pago";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pago";
@@ -415,36 +415,36 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.TextBox txtTel;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtTj;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox cbmes;
-        private System.Windows.Forms.ComboBox cbano;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox txtCVV;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox txtNIT;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Button btnPagar;
-        private System.Windows.Forms.Button btnRegresar;
-        private System.Windows.Forms.ProgressBar pb1;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label lblT;
-        private System.Windows.Forms.ComboBox cbEmpleados;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox txtCorreo;
-        private System.Windows.Forms.Label lblCorreo;
-        private System.Windows.Forms.Timer tiempo;
-        private System.Windows.Forms.RadioButton rb_Credito;
-        private System.Windows.Forms.RadioButton rb_Debito;
-        private System.Windows.Forms.TextBox txtNomEmple;
+        private System.Windows.Forms.Label lb_cinehub;
+        private System.Windows.Forms.Label lb_lb3;
+        private System.Windows.Forms.Label lb_lb2;
+        private System.Windows.Forms.Label lb_infoPersonal;
+        private System.Windows.Forms.Label lb_nomTitular;
+        private System.Windows.Forms.Label lb_telefono;
+        private System.Windows.Forms.TextBox txtbx_nombre;
+        private System.Windows.Forms.TextBox txtbx_telefono;
+        private System.Windows.Forms.Label lb_campoObligatorio;
+        private System.Windows.Forms.TextBox txtbx_noTarjeta;
+        private System.Windows.Forms.Label lb_noTarjeta;
+        private System.Windows.Forms.ComboBox cb_mes;
+        private System.Windows.Forms.ComboBox cb_ano;
+        private System.Windows.Forms.Label lb_fechaCaducidad;
+        private System.Windows.Forms.TextBox txtbx_codigoSeg;
+        private System.Windows.Forms.Label lb_codigoSeg;
+        private System.Windows.Forms.TextBox txtbx_nit;
+        private System.Windows.Forms.Label lb_nit;
+        private System.Windows.Forms.Button btn_pagar;
+        private System.Windows.Forms.Button btn_regresar;
+        private System.Windows.Forms.ProgressBar pgb_tiempo;
+        private System.Windows.Forms.Label lb_tiempoRest;
+        private System.Windows.Forms.Label lb_tiempo;
+        private System.Windows.Forms.ComboBox cb_empleados;
+        private System.Windows.Forms.Label lb_empleado;
+        private System.Windows.Forms.TextBox txtbx_correo;
+        private System.Windows.Forms.Label lb_correo;
+        private System.Windows.Forms.Timer tmr_timer;
+        private System.Windows.Forms.RadioButton rdb_credito;
+        private System.Windows.Forms.RadioButton rdb_debito;
+        private System.Windows.Forms.TextBox cb_nombreEmpleado;
     }
 }

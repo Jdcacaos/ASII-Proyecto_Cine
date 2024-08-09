@@ -67,16 +67,16 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
                 MySqlCommand command = new MySqlCommand(query, connection);
-                command.Parameters.AddWithValue("@Fecha", comboBox1.SelectedItem.ToString());
-                command.Parameters.AddWithValue("@Hora", comboBox2.SelectedItem.ToString());
+                command.Parameters.AddWithValue("@Fecha", cb_fecha.SelectedItem.ToString());
+                command.Parameters.AddWithValue("@Hora", cb_hora.SelectedItem.ToString());
                 connection.Open();
                 MySqlDataReader reader = command.ExecuteReader();
 
                 if (reader.Read())
                 {
-                    label9.Text = reader["Precio_Nino"].ToString();
-                    label10.Text = reader["Precio_Adulto"].ToString();
-                    label11.Text = reader["Precio_3ra_Edad"].ToString();
+                    lb_precioNino.Text = reader["Precio_Nino"].ToString();
+                    lb_precioAdulto.Text = reader["Precio_Adulto"].ToString();
+                    lb_precio3ra.Text = reader["Precio_3ra_Edad"].ToString();
                 }
             }
         }
@@ -129,12 +129,12 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
 
                         using (MySqlDataReader reader = command.ExecuteReader())
                         {
-                            comboBox1.Items.Clear();
+                            cb_fecha.Items.Clear();
 
                             while (reader.Read())
                             {
                                 DateTime fecha = reader.GetDateTime(0);
-                                comboBox1.Items.Add(fecha.ToString("yyyy-MM-dd"));
+                                cb_fecha.Items.Add(fecha.ToString("yyyy-MM-dd"));
                             }
                         }
                     }
@@ -147,9 +147,9 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             {
                 MessageBox.Show("Ocurrió un error: " + ex.Message);
             }
-            if (comboBox1.Items.Count > 0)
+            if (cb_fecha.Items.Count > 0)
             {
-                comboBox1.SelectedIndex = 0;
+                cb_fecha.SelectedIndex = 0;
             }
         }
 
@@ -168,7 +168,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
 
                     while (reader.Read())
                     {
-                        comboBox2.Items.Add(reader.GetTimeSpan("Hora").ToString());
+                        cb_hora.Items.Add(reader.GetTimeSpan("Hora").ToString());
                     }
 
                     reader.Close();
@@ -187,7 +187,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
         {
             int valor = Convert.ToInt16(textBox.Text);
 
-            if (textBox == textBox1) // Suponiendo que textBox1 es para niños
+            if (textBox == txtbx_noNinos) // Suponiendo que textBox1 es para niños
             {
                 if (clasificacionPelicula == 5 || clasificacionPelicula == 6)
                 {
@@ -213,8 +213,6 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             {
                 valor++;
                 textBox.Text = valor.ToString();
-                operar(textBox, label9, label13);
-                total(textBox1, textBox2, textBox3, label13, label14, label15);
             }
             else
             {
@@ -225,7 +223,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
         private void restar(TextBox textBox)
         {
             int valor = Convert.ToInt16(textBox.Text);
-            if (textBox == textBox1) // Suponiendo que textBox1 es para niños
+            if (textBox == txtbx_noNinos) // Suponiendo que textBox1 es para niños
             {
                 if (clasificacionPelicula == 5 || clasificacionPelicula == 6)
                 {
@@ -238,8 +236,6 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             {
                 valor--;
                 textBox.Text = valor.ToString();
-                operar(textBox, label9, label13);
-                total(textBox1, textBox2, textBox3, label13, label14, label15);
             }
             else
             {
@@ -273,14 +269,17 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
                 textbox1.Text = "0";
                 textbox2.Text = "0";
                 textbox3.Text = "0";
-                label16.Text = "0";
-                textBox4.Text = "0";
+                lb_totalPagar.Text = "0";
+                txtbx_totalAsientos.Text = "0";
+                lb_subtotalAdulto.Text = "0";
+                lb_subtotalNino.Text = "0";
+                lb_subtotal3ra.Text = "0";
             }
             
             else
             {
-                label16.Text = total.ToString();
-                textBox4.Text = totalAsientos.ToString();
+                lb_totalPagar.Text = total.ToString();
+                txtbx_totalAsientos.Text = totalAsientos.ToString();
             }
         }
 
@@ -289,59 +288,59 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            comboBox2.Items.Clear();
-            LoadHoras(comboBox1.SelectedItem.ToString(), pelicula);
+            cb_hora.Items.Clear();
+            LoadHoras(cb_fecha.SelectedItem.ToString(), pelicula);
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            sumar(textBox1);
-            operar(textBox1, label9, label13);
-            total(textBox1, textBox2, textBox3, label13, label14, label15);
+            sumar(txtbx_noNinos);
+            operar(txtbx_noNinos, lb_precioNino, lb_subtotalNino);
+            total(txtbx_noNinos, txtbx_noAdulto, txtbx_no3ra, lb_subtotalNino, lb_subtotalAdulto, lb_subtotal3ra);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            restar(textBox1);
-            operar(textBox1, label9, label13);
-            total(textBox1, textBox2, textBox3, label13, label14, label15);
+            restar(txtbx_noNinos);
+            operar(txtbx_noNinos, lb_precioNino, lb_subtotalNino);
+            total(txtbx_noNinos, txtbx_noAdulto, txtbx_no3ra, lb_subtotalNino, lb_subtotalAdulto, lb_subtotal3ra);
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            sumar(textBox2);
-            operar(textBox2, label10, label14);
-            total(textBox1, textBox2, textBox3, label13, label14, label15);
+            sumar(txtbx_noAdulto);
+            operar(txtbx_noAdulto, lb_precioAdulto, lb_subtotalAdulto);
+            total(txtbx_noNinos, txtbx_noAdulto, txtbx_no3ra, lb_subtotalNino, lb_subtotalAdulto, lb_subtotal3ra);
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            restar(textBox2);
-            operar(textBox2, label10, label14);
-            total(textBox1, textBox2, textBox3, label13, label14, label15);
+            restar(txtbx_noAdulto);
+            operar(txtbx_noAdulto, lb_precioAdulto, lb_subtotalAdulto);
+            total(txtbx_noNinos, txtbx_noAdulto, txtbx_no3ra, lb_subtotalNino, lb_subtotalAdulto, lb_subtotal3ra);
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            sumar(textBox3);
-            operar(textBox3, label11, label15);
-            total(textBox1, textBox2, textBox3, label13, label14, label15);
+            sumar(txtbx_no3ra);
+            operar(txtbx_no3ra, lb_precio3ra, lb_subtotal3ra);
+            total(txtbx_noNinos, txtbx_noAdulto, txtbx_no3ra, lb_subtotalNino, lb_subtotalAdulto, lb_subtotal3ra);
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            restar(textBox3);
-            operar(textBox3, label11, label15);
-            total(textBox1, textBox2, textBox3, label13, label14, label15);
+            restar(txtbx_no3ra);
+            operar(txtbx_no3ra, lb_precio3ra, lb_subtotal3ra);
+            total(txtbx_noNinos, txtbx_noAdulto, txtbx_no3ra, lb_subtotalNino, lb_subtotalAdulto, lb_subtotal3ra);
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
             cargarPrecios();
-            operar(textBox1, label9, label13);
-            operar(textBox2, label10, label14);
-            operar(textBox3, label11, label15);
-            total(textBox1, textBox2, textBox3, label13, label14, label15);
+            operar(txtbx_noNinos, lb_precioNino, lb_subtotalNino);
+            operar(txtbx_noAdulto, lb_precioAdulto, lb_subtotalAdulto);
+            operar(txtbx_no3ra, lb_precio3ra, lb_subtotal3ra);
+            total(txtbx_noNinos, txtbx_noAdulto, txtbx_no3ra, lb_subtotalNino, lb_subtotalAdulto, lb_subtotal3ra);
         }
         private int ObtenerIdProyeccion(int idPelicula, string fecha, string hora)
         {
@@ -367,19 +366,19 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
         private void button7_Click(object sender, EventArgs e)
         {
            
-            int totalAsientos = Convert.ToInt32(textBox1.Text) + Convert.ToInt32(textBox2.Text) + Convert.ToInt32(textBox3.Text);
+            int totalAsientos = Convert.ToInt32(txtbx_noNinos.Text) + Convert.ToInt32(txtbx_noAdulto.Text) + Convert.ToInt32(txtbx_no3ra.Text);
             if (totalAsientos == 0)
             {
                 MessageBox.Show("Debe seleccionar al menos un boleto para proceder.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                textBox4.Text = "0";
+                txtbx_totalAsientos.Text = "0";
             }
             else
             {
-                fecha = Convert.ToString( comboBox1.SelectedItem);
-                hora = Convert.ToString(comboBox2.SelectedItem);
+                fecha = Convert.ToString( cb_fecha.SelectedItem);
+                hora = Convert.ToString(cb_hora.SelectedItem);
                 horario = fecha +" "+hora;
-                totalventa = Convert.ToInt32(label16.Text);
-                int idProyeccion = ObtenerIdProyeccion(pelicula, comboBox1.SelectedItem.ToString(), comboBox2.SelectedItem.ToString());
+                totalventa = Convert.ToInt32(lb_totalPagar.Text);
+                int idProyeccion = ObtenerIdProyeccion(pelicula, cb_fecha.SelectedItem.ToString(), cb_hora.SelectedItem.ToString());
                 FormsCliente.Asientos formAsientos = new FormsCliente.Asientos(pelicula, totalventa, idProyeccion, idCliente, descuento, horario);
                 formAsientos.TotalAsientos = totalAsientos;
 

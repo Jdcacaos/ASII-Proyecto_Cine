@@ -26,7 +26,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             tmr_timer1.Start(); // Iniciar el Timer
             btn_editar.Visible = GlobalSettings.IsAdmin;
             btn_eliminar.Visible = GlobalSettings.IsAdmin;
-            gbIngresar.Visible = GlobalSettings.IsAdmin;
+            gpb_ingresar.Visible = GlobalSettings.IsAdmin;
         }
         private void Horarios_Load(object sender, EventArgs e)
         {   
@@ -481,7 +481,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
         private void txtbxBuscar_TextChanged(object sender, EventArgs e)
         {
             // Obtener el texto de búsqueda
-            string searchText = txtbxBuscar.Text.Trim();
+            string searchText = txtbx_buscar.Text.Trim();
             if (string.IsNullOrEmpty(searchText))
             {
                 // Si el texto de búsqueda está vacío, no aplicar filtro

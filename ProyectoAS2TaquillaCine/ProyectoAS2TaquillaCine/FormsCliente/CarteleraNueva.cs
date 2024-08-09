@@ -87,7 +87,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             moviePanel.Click += new EventHandler(MoviePanel_Click);
 
             // Agregar el panel de la película al FlowLayoutPanel
-            PeliculaPanel.Controls.Add(moviePanel); // PeliculaPanel es tu contenedor
+            panel_panelPelicula.Controls.Add(moviePanel); // PeliculaPanel es tu contenedor
         }
 
         private void MoviePanel_Click(object sender, EventArgs e)
@@ -138,9 +138,9 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
                     DataTable dt = new DataTable();
                     dt.Load(reader);
 
-                    cbDepto.DisplayMember = "Ciudad";
-                    cbDepto.ValueMember = "ID_Ubicacion";
-                    cbDepto.DataSource = dt;
+                    cb_depto.DisplayMember = "Ciudad";
+                    cb_depto.ValueMember = "ID_Ubicacion";
+                    cb_depto.DataSource = dt;
                 }
                 catch (Exception ex)
                 {
@@ -167,9 +167,9 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
                     DataTable dt = new DataTable();
                     dt.Load(reader);
 
-                    cbDireccion.DisplayMember = "Direccion";
-                    cbDireccion.ValueMember = "ID_Ubicacion";
-                    cbDireccion.DataSource = dt;
+                    cb_direccion.DisplayMember = "Direccion";
+                    cb_direccion.ValueMember = "ID_Ubicacion";
+                    cb_direccion.DataSource = dt;
                 }
                 catch (Exception ex)
                 {
@@ -184,9 +184,9 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
         private void btn_filtrar_Click_1(object sender, EventArgs e)
         {
             // Verificar si los ComboBox tienen una selección válida
-            if (cbDepto.SelectedValue != null && cbDireccion.SelectedValue != null)
+            if (cb_depto.SelectedValue != null && cb_direccion.SelectedValue != null)
             {
-                int direccionIdSeleccionada = Convert.ToInt32(cbDireccion.SelectedValue);
+                int direccionIdSeleccionada = Convert.ToInt32(cb_direccion.SelectedValue);
 
                 string query = @"
             SELECT p.imagen, p.titulo, p.ID_pelicula
@@ -207,7 +207,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
                         MySqlDataReader reader = command.ExecuteReader();
 
                         // Limpiar el FlowLayoutPanel antes de agregar nuevos controles
-                        PeliculaPanel.Controls.Clear();
+                        panel_panelPelicula.Controls.Clear();
 
                         while (reader.Read())
                         {
@@ -261,7 +261,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
                             };
 
                             // Añadir el panel al FlowLayoutPanel
-                            PeliculaPanel.Controls.Add(panel);
+                            panel_panelPelicula.Controls.Add(panel);
                         }
 
                         reader.Close();
@@ -280,7 +280,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
 
         private void btnQF_Click_1(object sender, EventArgs e)
         {
-            PeliculaPanel.Controls.Clear();
+            panel_panelPelicula.Controls.Clear();
             using (MySqlConnection conexion = new MySqlConnection(connectionString))
             {
                 try

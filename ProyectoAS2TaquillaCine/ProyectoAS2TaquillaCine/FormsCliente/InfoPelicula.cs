@@ -26,25 +26,25 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             idpelicula = id;
             this.idCliente = idCliente;
 
-            this.btnReserva = new System.Windows.Forms.Button();
+            this.btn_reserva = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnReserva
             // 
-            this.btnReserva.Location = new System.Drawing.Point(12, 12);
-            this.btnReserva.Name = "btnReserva";
-            this.btnReserva.Size = new System.Drawing.Size(120, 30);
-            this.btnReserva.TabIndex = 0;
-            this.btnReserva.Text = "Reservar";
-            this.btnReserva.UseVisualStyleBackColor = true;
-            this.btnReserva.Click += new System.EventHandler(this.btnReserva_Click);
+            this.btn_reserva.Location = new System.Drawing.Point(12, 12);
+            this.btn_reserva.Name = "btnReserva";
+            this.btn_reserva.Size = new System.Drawing.Size(120, 30);
+            this.btn_reserva.TabIndex = 0;
+            this.btn_reserva.Text = "Reservar";
+            this.btn_reserva.UseVisualStyleBackColor = true;
+            this.btn_reserva.Click += new System.EventHandler(this.btnReserva_Click);
             // 
             // MenuCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnReserva);
+            this.Controls.Add(this.btn_reserva);
             this.Name = "MenuCliente";
             this.Text = "MenuCliente";
             this.ResumeLayout(false);
@@ -74,10 +74,10 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
                         byte[] fotografia = (byte[])reader["Imagen"];
                         trailerUrl = reader["trailer_url"].ToString(); // Asigna el valor del trailer_url
 
-                        lbl_nombre.Text = nombre;
-                        lbl_duracion.Text = "Duración: " + duracion + " min";
-                        picbox1.Image = imagen(fotografia);
-                        lbl_genero.Text = "Género: " + genero;
+                        lb_nombre.Text = nombre;
+                        lb_duracion.Text = "Duración: " + duracion + " min";
+                        picbx_imagenPelicula.Image = imagen(fotografia);
+                        lb_genero.Text = "Género: " + genero;
                         txtbx_sinopsis.Text = sinopsis;
                     }
                 }

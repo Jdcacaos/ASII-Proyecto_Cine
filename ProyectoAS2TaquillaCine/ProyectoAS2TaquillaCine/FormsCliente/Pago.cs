@@ -41,7 +41,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             LlenarComboEmpleados();
             Llenar_ComboBox_ano();
             Llenar_ComboBox_mes();
-            txtCorreo.TextChanged += TxtCorreo_TextChanged;
+            txtbx_correo.TextChanged += TxtCorreo_TextChanged;
             asientosSeleccionados = asientos;
             // Inicializa el Timer
             timer = new Timer();
@@ -50,12 +50,12 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
 
             descu = desc;
             // Configura la ProgressBar
-            pb1.Maximum = 500; // Puedes ajustar el valor máximo según tus necesidades
-            pb1.Value = 500;
+            pgb_tiempo.Maximum = 500; // Puedes ajustar el valor máximo según tus necesidades
+            pgb_tiempo.Value = 500;
 
             // Configura el tiempo restante
             tiempoRestante = 500; // En segundos, por ejemplo
-            lblT.Text = FormatTime(tiempoRestante);
+            lb_tiempo.Text = FormatTime(tiempoRestante);
 
             // Inicia el Timer
             timer.Start();
@@ -132,7 +132,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
                     {
                         using (MySqlDataReader reader = command.ExecuteReader())
                         {
-                            cbEmpleados.Items.Clear();
+                            cb_empleados.Items.Clear();
 
                             // Crear una lista temporal para almacenar los elementos
                             List<KeyValuePair<int, string>> empleados = new List<KeyValuePair<int, string>>();
@@ -147,13 +147,13 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
                             }
 
                             // Establecer la fuente de datos del ComboBox
-                            cbEmpleados.DataSource = empleados;
-                            cbEmpleados.DisplayMember = "Value";
-                            cbEmpleados.ValueMember = "Key";
+                            cb_empleados.DataSource = empleados;
+                            cb_empleados.DisplayMember = "Value";
+                            cb_empleados.ValueMember = "Key";
 
-                            if (cbEmpleados.Items.Count > 0)
+                            if (cb_empleados.Items.Count > 0)
                             {
-                                cbEmpleados.SelectedIndex = 0;
+                                cb_empleados.SelectedIndex = 0;
                             }
                         }
                     }
@@ -167,7 +167,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
 
         private void obtnerdatosfactura()
         {
-            string tipoTarjeta = rb_Credito.Checked ? "Credito" : "Debito";
+            string tipoTarjeta = rdb_credito.Checked ? "Credito" : "Debito";
             int totalVenta = Venta;
             int descuento = descu;
             numAsientos = asientosSeleccionados.Count;
@@ -212,7 +212,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
 
         private void TxtCorreo_TextChanged(object sender, EventArgs e)
         {
-            string correo = txtCorreo.Text.Trim();
+            string correo = txtbx_correo.Text.Trim();
             VerificarCorreo(correo);
         }
 
@@ -233,8 +233,8 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
                     {
                         command.Parameters.AddWithValue("@Correo", correo);
                         correoEnCliente = Convert.ToInt32(command.ExecuteScalar()) > 0;
-                        cbEmpleados.SelectedItem = "Generado por cliente";
-                        cbEmpleados.Text = "Seleccione un empleado";
+                        cb_empleados.SelectedItem = "Generado por cliente";
+                        cb_empleados.Text = "Seleccione un empleado";
                     }
 
                     // Verificar si el correo está en tbl_empleado
@@ -253,59 +253,59 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
 
             if (correoEnCliente)
             {
-                cbEmpleados.Enabled = false;
+                cb_empleados.Enabled = false;
             }
             else
             {
-                cbEmpleados.Enabled = true;
+                cb_empleados.Enabled = true;
             }
         }
 
         private void Llenar_ComboBox_mes()
         {
-            cbmes.Items.Clear();
-            cbmes.Items.Add("01");
-            cbmes.Items.Add("02");
-            cbmes.Items.Add("03");
-            cbmes.Items.Add("04");
-            cbmes.Items.Add("05");
-            cbmes.Items.Add("06");
-            cbmes.Items.Add("07");
-            cbmes.Items.Add("08");
-            cbmes.Items.Add("09");
-            cbmes.Items.Add("10");
-            cbmes.Items.Add("11");
-            cbmes.Items.Add("12");
-            if (cbmes.Items.Count > 0)
+            cb_mes.Items.Clear();
+            cb_mes.Items.Add("01");
+            cb_mes.Items.Add("02");
+            cb_mes.Items.Add("03");
+            cb_mes.Items.Add("04");
+            cb_mes.Items.Add("05");
+            cb_mes.Items.Add("06");
+            cb_mes.Items.Add("07");
+            cb_mes.Items.Add("08");
+            cb_mes.Items.Add("09");
+            cb_mes.Items.Add("10");
+            cb_mes.Items.Add("11");
+            cb_mes.Items.Add("12");
+            if (cb_mes.Items.Count > 0)
             {
-                cbmes.SelectedIndex = 0;
+                cb_mes.SelectedIndex = 0;
             }
         }
 
         private void Llenar_ComboBox_ano()
         {
-            cbano.Items.Clear();
-            cbano.Items.Add("23");
-            cbano.Items.Add("24");
-            cbano.Items.Add("25");
-            cbano.Items.Add("26");
-            cbano.Items.Add("27");
-            cbano.Items.Add("28");
-            cbano.Items.Add("29");
-            cbano.Items.Add("30");
-            cbano.Items.Add("31");
-            cbano.Items.Add("32");
-            cbano.Items.Add("33");
-            cbano.Items.Add("34");
-            cbano.Items.Add("35");
-            cbano.Items.Add("36");
-            cbano.Items.Add("37");
-            cbano.Items.Add("38");
-            cbano.Items.Add("39");
-            cbano.Items.Add("40");
-            if (cbano.Items.Count > 0)
+            cb_ano.Items.Clear();
+            cb_ano.Items.Add("23");
+            cb_ano.Items.Add("24");
+            cb_ano.Items.Add("25");
+            cb_ano.Items.Add("26");
+            cb_ano.Items.Add("27");
+            cb_ano.Items.Add("28");
+            cb_ano.Items.Add("29");
+            cb_ano.Items.Add("30");
+            cb_ano.Items.Add("31");
+            cb_ano.Items.Add("32");
+            cb_ano.Items.Add("33");
+            cb_ano.Items.Add("34");
+            cb_ano.Items.Add("35");
+            cb_ano.Items.Add("36");
+            cb_ano.Items.Add("37");
+            cb_ano.Items.Add("38");
+            cb_ano.Items.Add("39");
+            cb_ano.Items.Add("40");
+            if (cb_ano.Items.Count > 0)
             {
-                cbano.SelectedIndex = 0;
+                cb_ano.SelectedIndex = 0;
             }
         }
 
@@ -314,13 +314,13 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             if (tiempoRestante > 0)
             {
                 tiempoRestante--;
-                pb1.Value = tiempoRestante; // Ajusta el valor de la ProgressBar
-                lblT.Text = FormatTime(tiempoRestante); // Actualiza la Label con el tiempo restante
+                pgb_tiempo.Value = tiempoRestante; // Ajusta el valor de la ProgressBar
+                lb_tiempo.Text = FormatTime(tiempoRestante); // Actualiza la Label con el tiempo restante
             }
             else
             {
                 timer.Stop(); // Detiene el Timer cuando el tiempo se acaba
-                lblT.Text = "¡Tiempo terminado!";
+                lb_tiempo.Text = "¡Tiempo terminado!";
                 this.Close();
             }
         }
@@ -335,28 +335,28 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
         {
             InsertarAsientosSeleccionados();
             // Obtener los valores del formulario
-            string numeroTarjeta = txtTj.Text;
-            string mesExpiracion = cbmes.SelectedItem.ToString();
-            string anoExpiracion = cbano.SelectedItem.ToString();
+            string numeroTarjeta = txtbx_noTarjeta.Text;
+            string mesExpiracion = cb_mes.SelectedItem.ToString();
+            string anoExpiracion = cb_ano.SelectedItem.ToString();
 
             // Asegúrate de que el mes tenga dos dígitos (ej. 01, 02, ..., 12)
             string mesFormateado = mesExpiracion.PadLeft(2, '0');
             // Construir la fecha de expiración en formato YYYY-MM-DD
             string fechaExpiracion = $"{anoExpiracion}-{mesFormateado}-01";
 
-            string cvv = txtCVV.Text;
-            string nombreTitular = txtNombre.Text;
-            string tipoTarjeta = rb_Credito.Checked ? "Credito" : "Debito";
+            string cvv = txtbx_codigoSeg.Text;
+            string nombreTitular = txtbx_nombre.Text;
+            string tipoTarjeta = rdb_credito.Checked ? "Credito" : "Debito";
             string estado = "Activo";
 
             // Obtener el ID del empleado desde el ComboBox
-            int idEmpleado = Convert.ToInt32(cbEmpleados.SelectedValue);
+            int idEmpleado = Convert.ToInt32(cb_empleados.SelectedValue);
 
             // Obtener la fecha y hora actuales
             DateTime fechaHora = DateTime.Now;
 
             // Concatenar el método de pago
-            string metodoPago = "Tarjeta " + (rb_Credito.Checked ? "Credito" : "Debito");
+            string metodoPago = "Tarjeta " + (rdb_credito.Checked ? "Credito" : "Debito");
 
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
@@ -535,11 +535,11 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
         {
             int venta = Venta;
             int descuento = descu;
-            string metodoPago = "Tarjeta " + (rb_Credito.Checked ? "Credito" : "Debito");
+            string metodoPago = "Tarjeta " + (rdb_credito.Checked ? "Credito" : "Debito");
             DateTime fechaHora = DateTime.Now;
-            int idEmpleado = Convert.ToInt32(cbEmpleados.SelectedValue);
+            int idEmpleado = Convert.ToInt32(cb_empleados.SelectedValue);
 
-            string nombrec = txtNombre.Text;
+            string nombrec = txtbx_nombre.Text;
 
             // Generar un número de factura (correlativo)
             //int numeroFactura = GenerarNumeroFactura(); // Método que genera o recupera el número de factura
@@ -548,7 +548,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             string downloadsPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
             string pdfDirectory = Path.Combine(downloadsPath, "Descargas");
 
-            // Asegúrate de que el directorio existe
+            // Asegurar de que el directorio existe
             if (!Directory.Exists(pdfDirectory))
             {
                 Directory.CreateDirectory(pdfDirectory);
@@ -602,7 +602,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
                     table.AddCell(nombrec);
 
                     table.AddCell("NIT:");
-                    table.AddCell(txtNIT.Text);
+                    table.AddCell(txtbx_nit.Text);
 
                     table.AddCell("Nombre de la Película:");
                     table.AddCell(nombrePelicula);
@@ -618,7 +618,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
 
                     table.AddCell("Método de Pago:");
                     table.AddCell(metodoPago);
-                    if (cbEmpleados.Enabled == true)
+                    if (cb_empleados.Enabled == true)
                     {
                         table.AddCell("ID Empleado:");
                         table.AddCell(idEmpleado.ToString());
@@ -689,12 +689,12 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
         }
         private void BuscarNombrePorCorreo()
         {
-            string correo = txtCorreo.Text.Trim();
+            string correo = txtbx_correo.Text.Trim();
 
             if (string.IsNullOrEmpty(correo))
             {
                 // Limpiar el resultado si el texto está vacío
-                txtNombre.Text = string.Empty;
+                txtbx_nombre.Text = string.Empty;
                 return;
             }
 
@@ -713,13 +713,13 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
                         if (resultado != null)
                         {
                             // Mostrar el nombre en el TextBox
-                            txtNomEmple.Text = resultado.ToString();
+                            cb_nombreEmpleado.Text = resultado.ToString();
                         }
                         else
                         {
                             // No se encontró el correo
-                            txtNomEmple.Enabled = false;
-                            txtNomEmple.Text = "No se encontró el empleado";
+                            cb_nombreEmpleado.Enabled = false;
+                            cb_nombreEmpleado.Text = "No se encontró el empleado";
                         }
                     }
                 }

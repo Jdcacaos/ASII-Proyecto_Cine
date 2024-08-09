@@ -17,28 +17,28 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
         {
             InitializeComponent();
             // Asociar eventos para validar fechas
-            dtp_Inicio.ValueChanged += dtp_Inicio_ValueChanged;
-            dtp_Final.ValueChanged += dtp_Final_ValueChanged;
+            dtp_inidio.ValueChanged += dtp_Inicio_ValueChanged;
+            dtp_final.ValueChanged += dtp_Final_ValueChanged;
         }
 
         private void Reportes_Load(object sender, EventArgs e)
         {
             // Cargar datos inicialmente con el rango de fechas predeterminado
-            dtp_Inicio.Value = DateTime.Now.AddMonths(-1); // Por ejemplo, últimos 30 días
-            dtp_Final.Value = DateTime.Now;
+            dtp_inidio.Value = DateTime.Now.AddMonths(-1); // Por ejemplo, últimos 30 días
+            dtp_final.Value = DateTime.Now;
             CargarDatos();
         }
 
         private void CargarDatos()
         {
             // Obtener las fechas seleccionadas
-            DateTime Inicio = dtp_Inicio.Value.Date;
-            DateTime Final = dtp_Final.Value.Date;
+            DateTime Inicio = dtp_inidio.Value.Date;
+            DateTime Final = dtp_final.Value.Date;
 
             // Asegurarse de que fechaFinal incluya el final del día
             Final = Final.AddHours(23).AddMinutes(59).AddSeconds(59);
             // Verificar que las fechas son válidas
-            if (dtp_Inicio.Value > dtp_Final.Value)
+            if (dtp_inidio.Value > dtp_final.Value)
             {
                 MessageBox.Show("La fecha de inicio no puede ser posterior a la fecha final.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -52,8 +52,8 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 MySqlDataAdapter adaptador = new MySqlDataAdapter(consulta, conn);
-                adaptador.SelectCommand.Parameters.AddWithValue("@Inicio", dtp_Inicio.Value.Date);
-                adaptador.SelectCommand.Parameters.AddWithValue("@Final", dtp_Final.Value.Date.AddDays(1).AddTicks(-1)); // Hasta el final del día
+                adaptador.SelectCommand.Parameters.AddWithValue("@Inicio", dtp_inidio.Value.Date);
+                adaptador.SelectCommand.Parameters.AddWithValue("@Final", dtp_final.Value.Date.AddDays(1).AddTicks(-1)); // Hasta el final del día
 
                 DataTable dt = new DataTable();
                 adaptador.Fill(dt);
@@ -72,7 +72,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                 }
 
                 // Mostrar la suma en la Label
-                lb_Total.Text = $"Total: {totalMonto:C}";
+                lb_total.Text = $"Total: {totalMonto:C}";
             }
         }
         private void btn_generareporte_Click(object sender, EventArgs e)
@@ -84,8 +84,8 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                 return;
             }
 
-            DateTime fechaInicio = dtp_Inicio.Value;
-            DateTime fechaFinal = dtp_Final.Value;
+            DateTime fechaInicio = dtp_inidio.Value;
+            DateTime fechaFinal = dtp_final.Value;
 
             GenerarFacturaPDF(fechaInicio, fechaFinal);
         }
@@ -175,7 +175,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                     document.Add(table);
 
                     // Añadir el total al final del PDF
-                    Paragraph totalParagraph = new Paragraph($"{lb_Total.Text}")
+                    Paragraph totalParagraph = new Paragraph($"{lb_total.Text}")
                     {
                         Alignment = Element.ALIGN_RIGHT,
                         Font = FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 14)
@@ -207,18 +207,18 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
         private void dtp_Inicio_ValueChanged(object sender, EventArgs e)
         {
             CargarDatos();
-            if (dtp_Inicio.Value > dtp_Final.Value)
+            if (dtp_inidio.Value > dtp_final.Value)
             {
-                dtp_Final.Value = dtp_Inicio.Value;
+                dtp_final.Value = dtp_inidio.Value;
             }
         }
 
         private void dtp_Final_ValueChanged(object sender, EventArgs e)
         {
             CargarDatos();
-            if (dtp_Final.Value < dtp_Inicio.Value)
+            if (dtp_final.Value < dtp_inidio.Value)
             {
-                dtp_Final.Value = dtp_Inicio.Value;
+                dtp_final.Value = dtp_inidio.Value;
             }
         }
     }

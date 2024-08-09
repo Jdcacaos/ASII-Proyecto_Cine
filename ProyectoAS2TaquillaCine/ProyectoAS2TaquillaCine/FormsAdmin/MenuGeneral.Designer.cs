@@ -47,8 +47,8 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.btn_peliculas = new System.Windows.Forms.Button();
             this.btn_empleados = new System.Windows.Forms.Button();
             this.panel_panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btn_Taquilla = new System.Windows.Forms.Button();
+            this.lb_reportes = new System.Windows.Forms.Label();
+            this.btn_taquilla = new System.Windows.Forms.Button();
             this.btn_reportes = new System.Windows.Forms.Button();
             this.panel_panel2.SuspendLayout();
             this.panel_panel3.SuspendLayout();
@@ -300,8 +300,8 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             // panel_panel1
             // 
             this.panel_panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.panel_panel1.Controls.Add(this.label1);
-            this.panel_panel1.Controls.Add(this.btn_Taquilla);
+            this.panel_panel1.Controls.Add(this.lb_reportes);
+            this.panel_panel1.Controls.Add(this.btn_taquilla);
             this.panel_panel1.Controls.Add(this.btn_reportes);
             this.panel_panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_panel1.Location = new System.Drawing.Point(0, 0);
@@ -312,32 +312,32 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(11, 4);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(177, 22);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "GENERAR REPORTES";
+            this.lb_reportes.AutoSize = true;
+            this.lb_reportes.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_reportes.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lb_reportes.Location = new System.Drawing.Point(11, 4);
+            this.lb_reportes.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lb_reportes.Name = "label1";
+            this.lb_reportes.Size = new System.Drawing.Size(177, 22);
+            this.lb_reportes.TabIndex = 7;
+            this.lb_reportes.Text = "GENERAR REPORTES";
             // 
             // btn_Taquilla
             // 
-            this.btn_Taquilla.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            this.btn_Taquilla.FlatAppearance.BorderSize = 0;
-            this.btn_Taquilla.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Taquilla.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Taquilla.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_Taquilla.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Taquilla.Location = new System.Drawing.Point(342, -1);
-            this.btn_Taquilla.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_Taquilla.Name = "btn_Taquilla";
-            this.btn_Taquilla.Size = new System.Drawing.Size(135, 32);
-            this.btn_Taquilla.TabIndex = 9;
-            this.btn_Taquilla.Text = "Peli más Taquillera";
-            this.btn_Taquilla.UseVisualStyleBackColor = false;
-            this.btn_Taquilla.Click += new System.EventHandler(this.btn_Taquilla_Click);
+            this.btn_taquilla.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.btn_taquilla.FlatAppearance.BorderSize = 0;
+            this.btn_taquilla.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_taquilla.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_taquilla.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_taquilla.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_taquilla.Location = new System.Drawing.Point(342, -1);
+            this.btn_taquilla.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_taquilla.Name = "btn_Taquilla";
+            this.btn_taquilla.Size = new System.Drawing.Size(135, 32);
+            this.btn_taquilla.TabIndex = 9;
+            this.btn_taquilla.Text = "Peli más Taquillera";
+            this.btn_taquilla.UseVisualStyleBackColor = false;
+            this.btn_taquilla.Click += new System.EventHandler(this.btn_Taquilla_Click);
             // 
             // btn_reportes
             // 
@@ -400,7 +400,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
         private System.Windows.Forms.Button btn_cerrarSesion;
         private System.Windows.Forms.Button btn_bitacora;
         private System.Windows.Forms.Button btn_reportes;
-        private System.Windows.Forms.Button btn_Taquilla;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btn_taquilla;
+        private System.Windows.Forms.Label lb_reportes;
     }
 }

@@ -39,94 +39,94 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             horario = horar;
 
             // Asignar el mismo método a todos los botones
-            btnA1.Click += Asiento_Click;
-            btnA2.Click += Asiento_Click;
-            btnA3.Click += Asiento_Click;
-            btnA4.Click += Asiento_Click;
-            btnA5.Click += Asiento_Click;
-            btnA6.Click += Asiento_Click;
-            btnA7.Click += Asiento_Click;
-            btnA8.Click += Asiento_Click;
-            btnA9.Click += Asiento_Click;
-            btnA10.Click += Asiento_Click;
+            btn_A1.Click += Asiento_Click;
+            btn_A2.Click += Asiento_Click;
+            btn_A3.Click += Asiento_Click;
+            btn_A4.Click += Asiento_Click;
+            btn_A5.Click += Asiento_Click;
+            btn_A6.Click += Asiento_Click;
+            btn_A7.Click += Asiento_Click;
+            btn_A8.Click += Asiento_Click;
+            btn_A9.Click += Asiento_Click;
+            btn_A10.Click += Asiento_Click;
 
-            btnB1.Click += Asiento_Click;
-            btnB2.Click += Asiento_Click;
-            btnB3.Click += Asiento_Click;
-            btnB4.Click += Asiento_Click;
-            btnB5.Click += Asiento_Click;
-            btnB6.Click += Asiento_Click;
-            btnB7.Click += Asiento_Click;
-            btnB8.Click += Asiento_Click;
-            btnB9.Click += Asiento_Click;
-            btnB10.Click += Asiento_Click;
+            btn_B1.Click += Asiento_Click;
+            btn_B2.Click += Asiento_Click;
+            btn_B3.Click += Asiento_Click;
+            btn_B4.Click += Asiento_Click;
+            btn_B5.Click += Asiento_Click;
+            btn_B6.Click += Asiento_Click;
+            btn_B7.Click += Asiento_Click;
+            btn_B8.Click += Asiento_Click;
+            btn_B9.Click += Asiento_Click;
+            btn_B10.Click += Asiento_Click;
 
-            btnC1.Click += Asiento_Click;
-            btnC2.Click += Asiento_Click;
-            btnC3.Click += Asiento_Click;
-            btnC4.Click += Asiento_Click;
-            btnC5.Click += Asiento_Click;
-            btnC6.Click += Asiento_Click;
-            btnC7.Click += Asiento_Click;
-            btnC8.Click += Asiento_Click;
-            btnC9.Click += Asiento_Click;
-            btnC10.Click += Asiento_Click;
+            btn_C1.Click += Asiento_Click;
+            btn_C2.Click += Asiento_Click;
+            btn_C3.Click += Asiento_Click;
+            btn_C4.Click += Asiento_Click;
+            btn_C5.Click += Asiento_Click;
+            btn_C6.Click += Asiento_Click;
+            btn_C7.Click += Asiento_Click;
+            btn_C8.Click += Asiento_Click;
+            btn_C9.Click += Asiento_Click;
+            btn_C10.Click += Asiento_Click;
 
-            btnD4.Click += Asiento_Click;
-            btnD5.Click += Asiento_Click;
-            btnD6.Click += Asiento_Click;
-            btnD7.Click += Asiento_Click;
-            btnD8.Click += Asiento_Click;
-            btnD9.Click += Asiento_Click;
-            btnD10.Click += Asiento_Click;
+            btn_D4.Click += Asiento_Click;
+            btn_D5.Click += Asiento_Click;
+            btn_D6.Click += Asiento_Click;
+            btn_D7.Click += Asiento_Click;
+            btn_D8.Click += Asiento_Click;
+            btn_D9.Click += Asiento_Click;
+            btn_D10.Click += Asiento_Click;
 
-            btnE4.Click += Asiento_Click;
-            btnE5.Click += Asiento_Click;
-            btnE6.Click += Asiento_Click;
-            btnE7.Click += Asiento_Click;
-            btnE8.Click += Asiento_Click;
-            btnE9.Click += Asiento_Click;
-            btnE10.Click += Asiento_Click;
+            btn_E4.Click += Asiento_Click;
+            btn_E5.Click += Asiento_Click;
+            btn_E6.Click += Asiento_Click;
+            btn_E7.Click += Asiento_Click;
+            btn_E8.Click += Asiento_Click;
+            btn_E9.Click += Asiento_Click;
+            btn_E10.Click += Asiento_Click;
 
-            btnF4.Click += Asiento_Click;
-            btnF5.Click += Asiento_Click;
-            btnF6.Click += Asiento_Click;
-            btnF7.Click += Asiento_Click;
-            btnF8.Click += Asiento_Click;
-            btnF9.Click += Asiento_Click;
-            btnF10.Click += Asiento_Click;
+            btn_F4.Click += Asiento_Click;
+            btn_F5.Click += Asiento_Click;
+            btn_F6.Click += Asiento_Click;
+            btn_F7.Click += Asiento_Click;
+            btn_F8.Click += Asiento_Click;
+            btn_F9.Click += Asiento_Click;
+            btn_F10.Click += Asiento_Click;
 
-            btnG4.Click += Asiento_Click;
-            btnG5.Click += Asiento_Click;
-            btnG6.Click += Asiento_Click;
-            btnG7.Click += Asiento_Click;
-            btnG8.Click += Asiento_Click;
-            btnG9.Click += Asiento_Click;
-            btnG10.Click += Asiento_Click;
+            btn_G4.Click += Asiento_Click;
+            btn_G5.Click += Asiento_Click;
+            btn_G6.Click += Asiento_Click;
+            btn_G7.Click += Asiento_Click;
+            btn_G8.Click += Asiento_Click;
+            btn_G9.Click += Asiento_Click;
+            btn_G10.Click += Asiento_Click;
 
-            btnH4.Click += Asiento_Click;
-            btnH5.Click += Asiento_Click;
-            btnH6.Click += Asiento_Click;
-            btnH7.Click += Asiento_Click;
-            btnH8.Click += Asiento_Click;
-            btnH9.Click += Asiento_Click;
-            btnH10.Click += Asiento_Click;
+            btn_H4.Click += Asiento_Click;
+            btn_H5.Click += Asiento_Click;
+            btn_H6.Click += Asiento_Click;
+            btn_H7.Click += Asiento_Click;
+            btn_H8.Click += Asiento_Click;
+            btn_H9.Click += Asiento_Click;
+            btn_H10.Click += Asiento_Click;
 
-            btnI4.Click += Asiento_Click;
-            btnI5.Click += Asiento_Click;
-            btnI6.Click += Asiento_Click;
-            btnI7.Click += Asiento_Click;
-            btnI8.Click += Asiento_Click;
-            btnI9.Click += Asiento_Click;
-            btnI10.Click += Asiento_Click;
+            btn_I4.Click += Asiento_Click;
+            btn_I5.Click += Asiento_Click;
+            btn_I6.Click += Asiento_Click;
+            btn_I7.Click += Asiento_Click;
+            btn_I8.Click += Asiento_Click;
+            btn_I9.Click += Asiento_Click;
+            btn_I10.Click += Asiento_Click;
 
 
-            lbl_totalventa.Text = Convert.ToString(totalventa + descu);
+            lb_totalVentas.Text = Convert.ToString(totalventa + descu);
         }
 
         private void IniciarCronometro(int segundos)
         {
-            if (pb1 == null || lblT == null)
+            if (pgb_tiempo == null || lb_timer == null)
             {
                 MessageBox.Show("Controles no inicializados.");
                 return;
@@ -134,10 +134,10 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
 
             tiempoTotal = segundos;
             tiempoRestante = segundos;
-            pb1.Maximum = tiempoTotal;
-            pb1.Value = tiempoTotal;
+            pgb_tiempo.Maximum = tiempoTotal;
+            pgb_tiempo.Value = tiempoTotal;
 
-            lblT.Text = TimeSpan.FromSeconds(tiempoRestante).ToString(@"hh\:mm\:ss");
+            lb_timer.Text = TimeSpan.FromSeconds(tiempoRestante).ToString(@"hh\:mm\:ss");
             // Inicia el Timer
             timer.Start();
         }
@@ -152,17 +152,17 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             tiempoRestante--;
 
             // Actualiza la Label con el tiempo restante
-            lblT.Text = TimeSpan.FromSeconds(tiempoRestante).ToString(@"hh\:mm\:ss");
+            lb_timer.Text = TimeSpan.FromSeconds(tiempoRestante).ToString(@"hh\:mm\:ss");
 
             // Actualiza la ProgressBar
-            pb1.Value = tiempoRestante;
+            pgb_tiempo.Value = tiempoRestante;
 
             // Detén el Timer cuando el tiempo se acabe
             if (tiempoRestante <= 0)
             {
                 timer.Stop();
-                lblT.Text = "00:00:00";
-                pb1.Value = 0;
+                lb_timer.Text = "00:00:00";
+                pgb_tiempo.Value = 0;
                 MessageBox.Show("¡Tiempo agotado!");
 
                 // Redirige al formulario CarteleraNueva
@@ -252,9 +252,9 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
         private void Asientos_Load_1(object sender, EventArgs e)
         {
             IniciarCronometro(60);
-            label25.Text = TotalAsientos.ToString();
-            lbl_descuento.Text = Convert.ToString(descu);
-            lbl_totalC.Text = Convert.ToString(totalventa);
+            lb_noBoletos.Text = TotalAsientos.ToString();
+            lb_descuentoA.Text = Convert.ToString(descu);
+            lb_totalC.Text = Convert.ToString(totalventa);
             using (MySqlConnection conexion = new MySqlConnection(connectionString))
             {
                 try
@@ -272,7 +272,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
                         string nombre = reader["Titulo"].ToString();
                         byte[] fotografia = (byte[])reader["Imagen"];
 
-                        lbl_NomPelicula.Text = nombre;
+                        lb_pelicula.Text = nombre;
                         picbx_pelicula.Image = imagen(fotografia);
                     }
 
@@ -289,8 +289,8 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
                         string fecha = reader2["Fecha"].ToString();
                         string horario = reader2["Hora"].ToString();
 
-                        lbl_FechaProyeccion.Text = "Fecha: " + fecha;
-                        lbl_horarioproyeccion.Text = "Horario: " + horario;
+                        lb_fechaProyeccion.Text = "Fecha: " + fecha;
+                        lb_horaProyeccion.Text = "Horario: " + horario;
                     }
 
                     reader2.Close(); // Cerrar el segundo lector

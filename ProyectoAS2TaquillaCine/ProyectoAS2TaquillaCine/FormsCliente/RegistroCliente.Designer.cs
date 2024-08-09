@@ -29,223 +29,223 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtnombre = new System.Windows.Forms.TextBox();
-            this.txtApellido = new System.Windows.Forms.TextBox();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.txtContrasena = new System.Windows.Forms.TextBox();
-            this.txtContrasenaVer = new System.Windows.Forms.TextBox();
-            this.txtTelefono = new System.Windows.Forms.TextBox();
-            this.txtNit = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.dpFechaNac = new System.Windows.Forms.DateTimePicker();
-            this.btnRegresar = new System.Windows.Forms.Button();
+            this.txtbx_nombre = new System.Windows.Forms.TextBox();
+            this.txtbx_apellido = new System.Windows.Forms.TextBox();
+            this.txtbx_email = new System.Windows.Forms.TextBox();
+            this.txtbx_contrasena = new System.Windows.Forms.TextBox();
+            this.txtbx_verifContrasena = new System.Windows.Forms.TextBox();
+            this.txtbx_telefono = new System.Windows.Forms.TextBox();
+            this.txtbx_nit = new System.Windows.Forms.TextBox();
+            this.lb_nombre = new System.Windows.Forms.Label();
+            this.lb_apellido = new System.Windows.Forms.Label();
+            this.lb_email = new System.Windows.Forms.Label();
+            this.lb_contrasena = new System.Windows.Forms.Label();
+            this.lb_confContra = new System.Windows.Forms.Label();
+            this.lb_telefono = new System.Windows.Forms.Label();
+            this.lb_nit = new System.Windows.Forms.Label();
+            this.lb_fechaNac = new System.Windows.Forms.Label();
+            this.btn_registrarse = new System.Windows.Forms.Button();
+            this.dtp_fecha = new System.Windows.Forms.DateTimePicker();
+            this.btn_regresar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // txtnombre
+            // txtbx_nombre
             // 
-            this.txtnombre.Font = new System.Drawing.Font("Microsoft YaHei UI", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtnombre.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.txtnombre.Location = new System.Drawing.Point(85, 123);
-            this.txtnombre.Multiline = true;
-            this.txtnombre.Name = "txtnombre";
-            this.txtnombre.Size = new System.Drawing.Size(212, 31);
-            this.txtnombre.TabIndex = 0;
-            this.txtnombre.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.txtbx_nombre.Font = new System.Drawing.Font("Microsoft YaHei UI", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbx_nombre.ForeColor = System.Drawing.SystemColors.MenuText;
+            this.txtbx_nombre.Location = new System.Drawing.Point(85, 123);
+            this.txtbx_nombre.Multiline = true;
+            this.txtbx_nombre.Name = "txtbx_nombre";
+            this.txtbx_nombre.Size = new System.Drawing.Size(212, 31);
+            this.txtbx_nombre.TabIndex = 0;
+            this.txtbx_nombre.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // txtApellido
+            // txtbx_apellido
             // 
-            this.txtApellido.Font = new System.Drawing.Font("Microsoft YaHei UI", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtApellido.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.txtApellido.Location = new System.Drawing.Point(352, 123);
-            this.txtApellido.Multiline = true;
-            this.txtApellido.Name = "txtApellido";
-            this.txtApellido.Size = new System.Drawing.Size(212, 31);
-            this.txtApellido.TabIndex = 1;
-            this.txtApellido.TextChanged += new System.EventHandler(this.txtApellido_TextChanged);
+            this.txtbx_apellido.Font = new System.Drawing.Font("Microsoft YaHei UI", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbx_apellido.ForeColor = System.Drawing.SystemColors.MenuText;
+            this.txtbx_apellido.Location = new System.Drawing.Point(352, 123);
+            this.txtbx_apellido.Multiline = true;
+            this.txtbx_apellido.Name = "txtbx_apellido";
+            this.txtbx_apellido.Size = new System.Drawing.Size(212, 31);
+            this.txtbx_apellido.TabIndex = 1;
+            this.txtbx_apellido.TextChanged += new System.EventHandler(this.txtApellido_TextChanged);
             // 
-            // txtEmail
+            // txtbx_email
             // 
-            this.txtEmail.Font = new System.Drawing.Font("Microsoft YaHei UI", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.txtEmail.Location = new System.Drawing.Point(85, 212);
-            this.txtEmail.Multiline = true;
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(479, 39);
-            this.txtEmail.TabIndex = 2;
-            this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
+            this.txtbx_email.Font = new System.Drawing.Font("Microsoft YaHei UI", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbx_email.ForeColor = System.Drawing.SystemColors.MenuText;
+            this.txtbx_email.Location = new System.Drawing.Point(85, 212);
+            this.txtbx_email.Multiline = true;
+            this.txtbx_email.Name = "txtbx_email";
+            this.txtbx_email.Size = new System.Drawing.Size(479, 39);
+            this.txtbx_email.TabIndex = 2;
+            this.txtbx_email.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
             // 
-            // txtContrasena
+            // txtbx_contrasena
             // 
-            this.txtContrasena.Font = new System.Drawing.Font("Microsoft YaHei UI", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtContrasena.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.txtContrasena.Location = new System.Drawing.Point(85, 329);
-            this.txtContrasena.Multiline = true;
-            this.txtContrasena.Name = "txtContrasena";
-            this.txtContrasena.PasswordChar = '*';
-            this.txtContrasena.Size = new System.Drawing.Size(212, 38);
-            this.txtContrasena.TabIndex = 3;
-            this.txtContrasena.TextChanged += new System.EventHandler(this.txtContrasena_TextChanged);
+            this.txtbx_contrasena.Font = new System.Drawing.Font("Microsoft YaHei UI", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbx_contrasena.ForeColor = System.Drawing.SystemColors.MenuText;
+            this.txtbx_contrasena.Location = new System.Drawing.Point(85, 329);
+            this.txtbx_contrasena.Multiline = true;
+            this.txtbx_contrasena.Name = "txtbx_contrasena";
+            this.txtbx_contrasena.PasswordChar = '*';
+            this.txtbx_contrasena.Size = new System.Drawing.Size(212, 38);
+            this.txtbx_contrasena.TabIndex = 3;
+            this.txtbx_contrasena.TextChanged += new System.EventHandler(this.txtContrasena_TextChanged);
             // 
-            // txtContrasenaVer
+            // txtbx_verifContrasena
             // 
-            this.txtContrasenaVer.Font = new System.Drawing.Font("Microsoft YaHei UI", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtContrasenaVer.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.txtContrasenaVer.Location = new System.Drawing.Point(352, 329);
-            this.txtContrasenaVer.Multiline = true;
-            this.txtContrasenaVer.Name = "txtContrasenaVer";
-            this.txtContrasenaVer.PasswordChar = '*';
-            this.txtContrasenaVer.Size = new System.Drawing.Size(212, 38);
-            this.txtContrasenaVer.TabIndex = 4;
-            this.txtContrasenaVer.TextChanged += new System.EventHandler(this.txtContrasenaVer_TextChanged);
+            this.txtbx_verifContrasena.Font = new System.Drawing.Font("Microsoft YaHei UI", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbx_verifContrasena.ForeColor = System.Drawing.SystemColors.MenuText;
+            this.txtbx_verifContrasena.Location = new System.Drawing.Point(352, 329);
+            this.txtbx_verifContrasena.Multiline = true;
+            this.txtbx_verifContrasena.Name = "txtbx_verifContrasena";
+            this.txtbx_verifContrasena.PasswordChar = '*';
+            this.txtbx_verifContrasena.Size = new System.Drawing.Size(212, 38);
+            this.txtbx_verifContrasena.TabIndex = 4;
+            this.txtbx_verifContrasena.TextChanged += new System.EventHandler(this.txtContrasenaVer_TextChanged);
             // 
-            // txtTelefono
+            // txtbx_telefono
             // 
-            this.txtTelefono.Font = new System.Drawing.Font("Microsoft YaHei UI", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTelefono.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.txtTelefono.Location = new System.Drawing.Point(85, 421);
-            this.txtTelefono.Multiline = true;
-            this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(212, 35);
-            this.txtTelefono.TabIndex = 5;
-            this.txtTelefono.TextChanged += new System.EventHandler(this.txtTelefono_TextChanged);
+            this.txtbx_telefono.Font = new System.Drawing.Font("Microsoft YaHei UI", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbx_telefono.ForeColor = System.Drawing.SystemColors.MenuText;
+            this.txtbx_telefono.Location = new System.Drawing.Point(85, 421);
+            this.txtbx_telefono.Multiline = true;
+            this.txtbx_telefono.Name = "txtbx_telefono";
+            this.txtbx_telefono.Size = new System.Drawing.Size(212, 35);
+            this.txtbx_telefono.TabIndex = 5;
+            this.txtbx_telefono.TextChanged += new System.EventHandler(this.txtTelefono_TextChanged);
             // 
-            // txtNit
+            // txtbx_nit
             // 
-            this.txtNit.Font = new System.Drawing.Font("Microsoft YaHei UI", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNit.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.txtNit.Location = new System.Drawing.Point(352, 421);
-            this.txtNit.Multiline = true;
-            this.txtNit.Name = "txtNit";
-            this.txtNit.Size = new System.Drawing.Size(212, 35);
-            this.txtNit.TabIndex = 6;
-            this.txtNit.TextChanged += new System.EventHandler(this.txtNit_TextChanged);
+            this.txtbx_nit.Font = new System.Drawing.Font("Microsoft YaHei UI", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbx_nit.ForeColor = System.Drawing.SystemColors.MenuText;
+            this.txtbx_nit.Location = new System.Drawing.Point(352, 421);
+            this.txtbx_nit.Multiline = true;
+            this.txtbx_nit.Name = "txtbx_nit";
+            this.txtbx_nit.Size = new System.Drawing.Size(212, 35);
+            this.txtbx_nit.TabIndex = 6;
+            this.txtbx_nit.TextChanged += new System.EventHandler(this.txtNit_TextChanged);
             // 
-            // label1
+            // lb_nombre
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 13.8F, System.Drawing.FontStyle.Bold);
-            this.label1.ForeColor = System.Drawing.SystemColors.Window;
-            this.label1.Location = new System.Drawing.Point(80, 79);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(91, 26);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Nombre";
+            this.lb_nombre.AutoSize = true;
+            this.lb_nombre.Font = new System.Drawing.Font("Microsoft YaHei UI", 13.8F, System.Drawing.FontStyle.Bold);
+            this.lb_nombre.ForeColor = System.Drawing.SystemColors.Window;
+            this.lb_nombre.Location = new System.Drawing.Point(80, 79);
+            this.lb_nombre.Name = "lb_nombre";
+            this.lb_nombre.Size = new System.Drawing.Size(91, 26);
+            this.lb_nombre.TabIndex = 9;
+            this.lb_nombre.Text = "Nombre";
             // 
-            // label2
+            // lb_apellido
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft YaHei UI", 13.8F, System.Drawing.FontStyle.Bold);
-            this.label2.ForeColor = System.Drawing.SystemColors.Window;
-            this.label2.Location = new System.Drawing.Point(347, 79);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(93, 26);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "Apellido";
+            this.lb_apellido.AutoSize = true;
+            this.lb_apellido.Font = new System.Drawing.Font("Microsoft YaHei UI", 13.8F, System.Drawing.FontStyle.Bold);
+            this.lb_apellido.ForeColor = System.Drawing.SystemColors.Window;
+            this.lb_apellido.Location = new System.Drawing.Point(347, 79);
+            this.lb_apellido.Name = "lb_apellido";
+            this.lb_apellido.Size = new System.Drawing.Size(93, 26);
+            this.lb_apellido.TabIndex = 10;
+            this.lb_apellido.Text = "Apellido";
             // 
-            // label3
+            // lb_email
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft YaHei UI", 13.8F, System.Drawing.FontStyle.Bold);
-            this.label3.ForeColor = System.Drawing.SystemColors.Window;
-            this.label3.Location = new System.Drawing.Point(80, 184);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(65, 26);
-            this.label3.TabIndex = 11;
-            this.label3.Text = "Email";
+            this.lb_email.AutoSize = true;
+            this.lb_email.Font = new System.Drawing.Font("Microsoft YaHei UI", 13.8F, System.Drawing.FontStyle.Bold);
+            this.lb_email.ForeColor = System.Drawing.SystemColors.Window;
+            this.lb_email.Location = new System.Drawing.Point(80, 184);
+            this.lb_email.Name = "lb_email";
+            this.lb_email.Size = new System.Drawing.Size(65, 26);
+            this.lb_email.TabIndex = 11;
+            this.lb_email.Text = "Email";
             // 
-            // label4
+            // lb_contrasena
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft YaHei UI", 13.8F, System.Drawing.FontStyle.Bold);
-            this.label4.ForeColor = System.Drawing.SystemColors.Window;
-            this.label4.Location = new System.Drawing.Point(80, 284);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(119, 26);
-            this.label4.TabIndex = 12;
-            this.label4.Text = "Contraseña";
+            this.lb_contrasena.AutoSize = true;
+            this.lb_contrasena.Font = new System.Drawing.Font("Microsoft YaHei UI", 13.8F, System.Drawing.FontStyle.Bold);
+            this.lb_contrasena.ForeColor = System.Drawing.SystemColors.Window;
+            this.lb_contrasena.Location = new System.Drawing.Point(80, 284);
+            this.lb_contrasena.Name = "lb_contrasena";
+            this.lb_contrasena.Size = new System.Drawing.Size(119, 26);
+            this.lb_contrasena.TabIndex = 12;
+            this.lb_contrasena.Text = "Contraseña";
             // 
-            // label6
+            // lb_confContra
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft YaHei UI", 13.8F, System.Drawing.FontStyle.Bold);
-            this.label6.ForeColor = System.Drawing.SystemColors.Window;
-            this.label6.Location = new System.Drawing.Point(347, 284);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(219, 26);
-            this.label6.TabIndex = 13;
-            this.label6.Text = "Confirmar contraseña";
+            this.lb_confContra.AutoSize = true;
+            this.lb_confContra.Font = new System.Drawing.Font("Microsoft YaHei UI", 13.8F, System.Drawing.FontStyle.Bold);
+            this.lb_confContra.ForeColor = System.Drawing.SystemColors.Window;
+            this.lb_confContra.Location = new System.Drawing.Point(347, 284);
+            this.lb_confContra.Name = "lb_confContra";
+            this.lb_confContra.Size = new System.Drawing.Size(219, 26);
+            this.lb_confContra.TabIndex = 13;
+            this.lb_confContra.Text = "Confirmar contraseña";
             // 
-            // label5
+            // lb_telefono
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft YaHei UI", 13.8F, System.Drawing.FontStyle.Bold);
-            this.label5.ForeColor = System.Drawing.SystemColors.Window;
-            this.label5.Location = new System.Drawing.Point(80, 385);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(96, 26);
-            this.label5.TabIndex = 14;
-            this.label5.Text = "Telefono";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
+            this.lb_telefono.AutoSize = true;
+            this.lb_telefono.Font = new System.Drawing.Font("Microsoft YaHei UI", 13.8F, System.Drawing.FontStyle.Bold);
+            this.lb_telefono.ForeColor = System.Drawing.SystemColors.Window;
+            this.lb_telefono.Location = new System.Drawing.Point(80, 385);
+            this.lb_telefono.Name = "lb_telefono";
+            this.lb_telefono.Size = new System.Drawing.Size(96, 26);
+            this.lb_telefono.TabIndex = 14;
+            this.lb_telefono.Text = "Telefono";
+            this.lb_telefono.Click += new System.EventHandler(this.label5_Click);
             // 
-            // label7
+            // lb_nit
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft YaHei UI", 13.8F, System.Drawing.FontStyle.Bold);
-            this.label7.ForeColor = System.Drawing.SystemColors.Window;
-            this.label7.Location = new System.Drawing.Point(347, 385);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(46, 26);
-            this.label7.TabIndex = 15;
-            this.label7.Text = "NIT";
+            this.lb_nit.AutoSize = true;
+            this.lb_nit.Font = new System.Drawing.Font("Microsoft YaHei UI", 13.8F, System.Drawing.FontStyle.Bold);
+            this.lb_nit.ForeColor = System.Drawing.SystemColors.Window;
+            this.lb_nit.Location = new System.Drawing.Point(347, 385);
+            this.lb_nit.Name = "lb_nit";
+            this.lb_nit.Size = new System.Drawing.Size(46, 26);
+            this.lb_nit.TabIndex = 15;
+            this.lb_nit.Text = "NIT";
             // 
-            // label8
+            // lb_fechaNac
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft YaHei UI", 13.8F, System.Drawing.FontStyle.Bold);
-            this.label8.ForeColor = System.Drawing.SystemColors.Window;
-            this.label8.Location = new System.Drawing.Point(80, 483);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(210, 26);
-            this.label8.TabIndex = 16;
-            this.label8.Text = "Fecha de nacimiento";
+            this.lb_fechaNac.AutoSize = true;
+            this.lb_fechaNac.Font = new System.Drawing.Font("Microsoft YaHei UI", 13.8F, System.Drawing.FontStyle.Bold);
+            this.lb_fechaNac.ForeColor = System.Drawing.SystemColors.Window;
+            this.lb_fechaNac.Location = new System.Drawing.Point(80, 483);
+            this.lb_fechaNac.Name = "lb_fechaNac";
+            this.lb_fechaNac.Size = new System.Drawing.Size(210, 26);
+            this.lb_fechaNac.TabIndex = 16;
+            this.lb_fechaNac.Text = "Fecha de nacimiento";
             // 
-            // button1
+            // btn_registrarse
             // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
-            this.button1.Location = new System.Drawing.Point(244, 528);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(136, 34);
-            this.button1.TabIndex = 17;
-            this.button1.Text = "Registrarse";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btn_registrarse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_registrarse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
+            this.btn_registrarse.Location = new System.Drawing.Point(244, 528);
+            this.btn_registrarse.Name = "btn_registrarse";
+            this.btn_registrarse.Size = new System.Drawing.Size(136, 34);
+            this.btn_registrarse.TabIndex = 8;
+            this.btn_registrarse.Text = "Registrarse";
+            this.btn_registrarse.UseVisualStyleBackColor = true;
+            this.btn_registrarse.Click += new System.EventHandler(this.button1_Click);
             // 
-            // dpFechaNac
+            // dtp_fecha
             // 
-            this.dpFechaNac.Location = new System.Drawing.Point(324, 490);
-            this.dpFechaNac.Name = "dpFechaNac";
-            this.dpFechaNac.Size = new System.Drawing.Size(200, 20);
-            this.dpFechaNac.TabIndex = 18;
+            this.dtp_fecha.Location = new System.Drawing.Point(324, 490);
+            this.dtp_fecha.Name = "dtp_fecha";
+            this.dtp_fecha.Size = new System.Drawing.Size(200, 20);
+            this.dtp_fecha.TabIndex = 7;
             // 
-            // btnRegresar
+            // btn_regresar
             // 
-            this.btnRegresar.Location = new System.Drawing.Point(9, 10);
-            this.btnRegresar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnRegresar.Name = "btnRegresar";
-            this.btnRegresar.Size = new System.Drawing.Size(110, 32);
-            this.btnRegresar.TabIndex = 19;
-            this.btnRegresar.Text = "Regresar";
-            this.btnRegresar.UseVisualStyleBackColor = true;
-            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
+            this.btn_regresar.Location = new System.Drawing.Point(9, 10);
+            this.btn_regresar.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_regresar.Name = "btn_regresar";
+            this.btn_regresar.Size = new System.Drawing.Size(110, 32);
+            this.btn_regresar.TabIndex = 9;
+            this.btn_regresar.Text = "Regresar";
+            this.btn_regresar.UseVisualStyleBackColor = true;
+            this.btn_regresar.Click += new System.EventHandler(this.btnRegresar_Click);
             // 
             // RegistroCliente
             // 
@@ -253,24 +253,24 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
             this.ClientSize = new System.Drawing.Size(670, 609);
-            this.Controls.Add(this.btnRegresar);
-            this.Controls.Add(this.dpFechaNac);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtNit);
-            this.Controls.Add(this.txtTelefono);
-            this.Controls.Add(this.txtContrasenaVer);
-            this.Controls.Add(this.txtContrasena);
-            this.Controls.Add(this.txtEmail);
-            this.Controls.Add(this.txtApellido);
-            this.Controls.Add(this.txtnombre);
+            this.Controls.Add(this.btn_regresar);
+            this.Controls.Add(this.dtp_fecha);
+            this.Controls.Add(this.btn_registrarse);
+            this.Controls.Add(this.lb_fechaNac);
+            this.Controls.Add(this.lb_nit);
+            this.Controls.Add(this.lb_telefono);
+            this.Controls.Add(this.lb_confContra);
+            this.Controls.Add(this.lb_contrasena);
+            this.Controls.Add(this.lb_email);
+            this.Controls.Add(this.lb_apellido);
+            this.Controls.Add(this.lb_nombre);
+            this.Controls.Add(this.txtbx_nit);
+            this.Controls.Add(this.txtbx_telefono);
+            this.Controls.Add(this.txtbx_verifContrasena);
+            this.Controls.Add(this.txtbx_contrasena);
+            this.Controls.Add(this.txtbx_email);
+            this.Controls.Add(this.txtbx_apellido);
+            this.Controls.Add(this.txtbx_nombre);
             this.Name = "RegistroCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RegistroCliente";
@@ -282,23 +282,23 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtnombre;
-        private System.Windows.Forms.TextBox txtApellido;
-        private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.TextBox txtContrasena;
-        private System.Windows.Forms.TextBox txtContrasenaVer;
-        private System.Windows.Forms.TextBox txtTelefono;
-        private System.Windows.Forms.TextBox txtNit;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DateTimePicker dpFechaNac;
-        private System.Windows.Forms.Button btnRegresar;
+        private System.Windows.Forms.TextBox txtbx_nombre;
+        private System.Windows.Forms.TextBox txtbx_apellido;
+        private System.Windows.Forms.TextBox txtbx_email;
+        private System.Windows.Forms.TextBox txtbx_contrasena;
+        private System.Windows.Forms.TextBox txtbx_verifContrasena;
+        private System.Windows.Forms.TextBox txtbx_telefono;
+        private System.Windows.Forms.TextBox txtbx_nit;
+        private System.Windows.Forms.Label lb_nombre;
+        private System.Windows.Forms.Label lb_apellido;
+        private System.Windows.Forms.Label lb_email;
+        private System.Windows.Forms.Label lb_contrasena;
+        private System.Windows.Forms.Label lb_confContra;
+        private System.Windows.Forms.Label lb_telefono;
+        private System.Windows.Forms.Label lb_nit;
+        private System.Windows.Forms.Label lb_fechaNac;
+        private System.Windows.Forms.Button btn_registrarse;
+        private System.Windows.Forms.DateTimePicker dtp_fecha;
+        private System.Windows.Forms.Button btn_regresar;
     }
 }

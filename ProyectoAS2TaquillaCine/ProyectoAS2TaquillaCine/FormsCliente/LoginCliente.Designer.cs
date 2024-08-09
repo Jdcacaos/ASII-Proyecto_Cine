@@ -29,153 +29,143 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
         /// </summary>
         private void InitializeComponent()
         {
-            this.mostrarCon = new System.Windows.Forms.CheckBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.txtuser = new System.Windows.Forms.TextBox();
-            this.txtContrasena = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.chb_mostrarContra = new System.Windows.Forms.CheckBox();
+            this.lb_contrasena = new System.Windows.Forms.Label();
+            this.lb_correo = new System.Windows.Forms.Label();
+            this.btn_ingresar = new System.Windows.Forms.Button();
+            this.btn_regresar = new System.Windows.Forms.Button();
+            this.btn_registrarse = new System.Windows.Forms.Button();
+            this.picbx_imagenCine = new System.Windows.Forms.PictureBox();
+            this.txtbx_correoUsuario = new System.Windows.Forms.TextBox();
+            this.txtbx_contrasena = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.picbx_imagenCine)).BeginInit();
             this.SuspendLayout();
             // 
-            // mostrarCon
+            // chb_mostrarContra
             // 
-            this.mostrarCon.AutoSize = true;
-            this.mostrarCon.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mostrarCon.ForeColor = System.Drawing.SystemColors.Window;
-            this.mostrarCon.Location = new System.Drawing.Point(225, 358);
-            this.mostrarCon.Margin = new System.Windows.Forms.Padding(4);
-            this.mostrarCon.Name = "mostrarCon";
-            this.mostrarCon.Size = new System.Drawing.Size(173, 28);
-            this.mostrarCon.TabIndex = 2;
-            this.mostrarCon.Text = "Mostrar contraseña";
-            this.mostrarCon.UseVisualStyleBackColor = true;
-            this.mostrarCon.CheckedChanged += new System.EventHandler(this.mostrarCon_CheckedChanged);
+            this.chb_mostrarContra.AutoSize = true;
+            this.chb_mostrarContra.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chb_mostrarContra.ForeColor = System.Drawing.SystemColors.Window;
+            this.chb_mostrarContra.Location = new System.Drawing.Point(169, 291);
+            this.chb_mostrarContra.Name = "chb_mostrarContra";
+            this.chb_mostrarContra.Size = new System.Drawing.Size(141, 24);
+            this.chb_mostrarContra.TabIndex = 2;
+            this.chb_mostrarContra.Text = "Mostrar contraseña";
+            this.chb_mostrarContra.UseVisualStyleBackColor = true;
+            this.chb_mostrarContra.CheckedChanged += new System.EventHandler(this.mostrarCon_CheckedChanged);
             // 
-            // label2
+            // lb_contrasena
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial Narrow", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.Window;
-            this.label2.Location = new System.Drawing.Point(216, 223);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(209, 52);
-            this.label2.TabIndex = 11;
-            this.label2.Text = "Contraseña";
+            this.lb_contrasena.AutoSize = true;
+            this.lb_contrasena.Font = new System.Drawing.Font("Arial Narrow", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_contrasena.ForeColor = System.Drawing.SystemColors.Window;
+            this.lb_contrasena.Location = new System.Drawing.Point(162, 181);
+            this.lb_contrasena.Name = "lb_contrasena";
+            this.lb_contrasena.Size = new System.Drawing.Size(167, 42);
+            this.lb_contrasena.TabIndex = 11;
+            this.lb_contrasena.Text = "Contraseña";
             // 
-            // label1
+            // lb_correo
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial Narrow", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.Window;
-            this.label1.Location = new System.Drawing.Point(236, 66);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(133, 52);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Correo";
+            this.lb_correo.AutoSize = true;
+            this.lb_correo.Font = new System.Drawing.Font("Arial Narrow", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_correo.ForeColor = System.Drawing.SystemColors.Window;
+            this.lb_correo.Location = new System.Drawing.Point(177, 54);
+            this.lb_correo.Name = "lb_correo";
+            this.lb_correo.Size = new System.Drawing.Size(107, 42);
+            this.lb_correo.TabIndex = 9;
+            this.lb_correo.Text = "Correo";
             // 
-            // button1
+            // btn_ingresar
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Arial Narrow", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(135, 458);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(372, 92);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Ingresar";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btn_ingresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
+            this.btn_ingresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_ingresar.Font = new System.Drawing.Font("Arial Narrow", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_ingresar.Location = new System.Drawing.Point(101, 372);
+            this.btn_ingresar.Name = "btn_ingresar";
+            this.btn_ingresar.Size = new System.Drawing.Size(279, 75);
+            this.btn_ingresar.TabIndex = 3;
+            this.btn_ingresar.Text = "Ingresar";
+            this.btn_ingresar.UseVisualStyleBackColor = false;
+            this.btn_ingresar.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // btn_regresar
             // 
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.button2.Location = new System.Drawing.Point(1, 13);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(163, 46);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Regresar";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btn_regresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_regresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_regresar.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btn_regresar.Location = new System.Drawing.Point(1, 11);
+            this.btn_regresar.Name = "btn_regresar";
+            this.btn_regresar.Size = new System.Drawing.Size(122, 37);
+            this.btn_regresar.TabIndex = 5;
+            this.btn_regresar.Text = "Regresar";
+            this.btn_regresar.UseVisualStyleBackColor = true;
+            this.btn_regresar.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button3
+            // btn_registrarse
             // 
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.SystemColors.Window;
-            this.button3.Location = new System.Drawing.Point(225, 588);
-            this.button3.Margin = new System.Windows.Forms.Padding(4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(213, 43);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "Registrarse";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btn_registrarse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_registrarse.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_registrarse.ForeColor = System.Drawing.SystemColors.Window;
+            this.btn_registrarse.Location = new System.Drawing.Point(169, 478);
+            this.btn_registrarse.Name = "btn_registrarse";
+            this.btn_registrarse.Size = new System.Drawing.Size(160, 35);
+            this.btn_registrarse.TabIndex = 4;
+            this.btn_registrarse.Text = "Registrarse";
+            this.btn_registrarse.UseVisualStyleBackColor = true;
+            this.btn_registrarse.Click += new System.EventHandler(this.button3_Click);
             // 
-            // pictureBox1
+            // picbx_imagenCine
             // 
-            this.pictureBox1.Image = global::ProyectoAS2TaquillaCine.Properties.Resources.cine;
-            this.pictureBox1.Location = new System.Drawing.Point(660, -102);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(789, 944);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 8;
-            this.pictureBox1.TabStop = false;
+            this.picbx_imagenCine.Image = global::ProyectoAS2TaquillaCine.Properties.Resources.cine;
+            this.picbx_imagenCine.Location = new System.Drawing.Point(495, -83);
+            this.picbx_imagenCine.Name = "picbx_imagenCine";
+            this.picbx_imagenCine.Size = new System.Drawing.Size(592, 767);
+            this.picbx_imagenCine.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picbx_imagenCine.TabIndex = 8;
+            this.picbx_imagenCine.TabStop = false;
             // 
-            // txtuser
+            // txtbx_correoUsuario
             // 
-            this.txtuser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.txtuser.Font = new System.Drawing.Font("Arial Narrow", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtuser.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtuser.Location = new System.Drawing.Point(91, 141);
-            this.txtuser.Margin = new System.Windows.Forms.Padding(4);
-            this.txtuser.Name = "txtuser";
-            this.txtuser.Size = new System.Drawing.Size(507, 58);
-            this.txtuser.TabIndex = 12;
+            this.txtbx_correoUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.txtbx_correoUsuario.Font = new System.Drawing.Font("Arial Narrow", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbx_correoUsuario.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtbx_correoUsuario.Location = new System.Drawing.Point(68, 115);
+            this.txtbx_correoUsuario.Name = "txtbx_correoUsuario";
+            this.txtbx_correoUsuario.Size = new System.Drawing.Size(381, 48);
+            this.txtbx_correoUsuario.TabIndex = 0;
             // 
-            // txtContrasena
+            // txtbx_contrasena
             // 
-            this.txtContrasena.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.txtContrasena.Font = new System.Drawing.Font("Arial Narrow", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtContrasena.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtContrasena.Location = new System.Drawing.Point(91, 289);
-            this.txtContrasena.Margin = new System.Windows.Forms.Padding(4);
-            this.txtContrasena.Name = "txtContrasena";
-            this.txtContrasena.PasswordChar = '*';
-            this.txtContrasena.Size = new System.Drawing.Size(507, 61);
-            this.txtContrasena.TabIndex = 13;
+            this.txtbx_contrasena.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.txtbx_contrasena.Font = new System.Drawing.Font("Arial Narrow", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbx_contrasena.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtbx_contrasena.Location = new System.Drawing.Point(68, 235);
+            this.txtbx_contrasena.Name = "txtbx_contrasena";
+            this.txtbx_contrasena.PasswordChar = '*';
+            this.txtbx_contrasena.Size = new System.Drawing.Size(381, 51);
+            this.txtbx_contrasena.TabIndex = 1;
             // 
             // LoginCliente
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.ClientSize = new System.Drawing.Size(1439, 740);
-            this.Controls.Add(this.txtContrasena);
-            this.Controls.Add(this.txtuser);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.mostrarCon);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.button1);
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.ClientSize = new System.Drawing.Size(1079, 601);
+            this.Controls.Add(this.txtbx_contrasena);
+            this.Controls.Add(this.txtbx_correoUsuario);
+            this.Controls.Add(this.btn_registrarse);
+            this.Controls.Add(this.btn_regresar);
+            this.Controls.Add(this.chb_mostrarContra);
+            this.Controls.Add(this.lb_contrasena);
+            this.Controls.Add(this.lb_correo);
+            this.Controls.Add(this.picbx_imagenCine);
+            this.Controls.Add(this.btn_ingresar);
             this.Name = "LoginCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LoginCliente";
             this.Load += new System.EventHandler(this.LoginCliente_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picbx_imagenCine)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -183,14 +173,14 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
 
         #endregion
 
-        private System.Windows.Forms.CheckBox mostrarCon;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.TextBox txtuser;
-        private System.Windows.Forms.TextBox txtContrasena;
+        private System.Windows.Forms.CheckBox chb_mostrarContra;
+        private System.Windows.Forms.Label lb_contrasena;
+        private System.Windows.Forms.Label lb_correo;
+        private System.Windows.Forms.PictureBox picbx_imagenCine;
+        private System.Windows.Forms.Button btn_ingresar;
+        private System.Windows.Forms.Button btn_regresar;
+        private System.Windows.Forms.Button btn_registrarse;
+        private System.Windows.Forms.TextBox txtbx_correoUsuario;
+        private System.Windows.Forms.TextBox txtbx_contrasena;
     }
 }

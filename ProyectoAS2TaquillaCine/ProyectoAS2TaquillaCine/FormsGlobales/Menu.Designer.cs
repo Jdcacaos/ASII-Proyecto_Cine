@@ -29,78 +29,73 @@ namespace ProyectoAS2TaquillaCine.FormsGlobales
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.lb_cinehub = new System.Windows.Forms.Label();
+            this.btn_administrador = new System.Windows.Forms.Button();
+            this.btn_cliente = new System.Windows.Forms.Button();
+            this.btn_apagar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // label1
+            // lb_cinehub
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Stencil", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.AliceBlue;
-            this.label1.Location = new System.Drawing.Point(305, 131);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(239, 57);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "CINEHUB";
+            this.lb_cinehub.AutoSize = true;
+            this.lb_cinehub.BackColor = System.Drawing.Color.Transparent;
+            this.lb_cinehub.Font = new System.Drawing.Font("Stencil", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_cinehub.ForeColor = System.Drawing.Color.AliceBlue;
+            this.lb_cinehub.Location = new System.Drawing.Point(229, 106);
+            this.lb_cinehub.Name = "lb_cinehub";
+            this.lb_cinehub.Size = new System.Drawing.Size(192, 46);
+            this.lb_cinehub.TabIndex = 8;
+            this.lb_cinehub.Text = "CINEHUB";
             // 
-            // button2
+            // btn_administrador
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.Highlight;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(499, 309);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(295, 97);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Administrador";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            this.btn_administrador.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btn_administrador.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_administrador.Location = new System.Drawing.Point(374, 251);
+            this.btn_administrador.Name = "btn_administrador";
+            this.btn_administrador.Size = new System.Drawing.Size(221, 79);
+            this.btn_administrador.TabIndex = 2;
+            this.btn_administrador.Text = "Administrador";
+            this.btn_administrador.UseVisualStyleBackColor = false;
+            this.btn_administrador.Click += new System.EventHandler(this.button2_Click_1);
             // 
-            // button1
+            // btn_cliente
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.Highlight;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(112, 309);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(268, 97);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Cliente";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.btn_cliente.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btn_cliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_cliente.Location = new System.Drawing.Point(84, 251);
+            this.btn_cliente.Name = "btn_cliente";
+            this.btn_cliente.Size = new System.Drawing.Size(201, 79);
+            this.btn_cliente.TabIndex = 1;
+            this.btn_cliente.Text = "Cliente";
+            this.btn_cliente.UseVisualStyleBackColor = false;
+            this.btn_cliente.Click += new System.EventHandler(this.button1_Click_1);
             // 
-            // button3
+            // btn_apagar
             // 
-            this.button3.BackColor = System.Drawing.Color.Red;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold);
-            this.button3.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button3.Location = new System.Drawing.Point(16, 15);
-            this.button3.Margin = new System.Windows.Forms.Padding(4);
-            this.button3.Name = "button3";
-            this.button3.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.button3.Size = new System.Drawing.Size(160, 74);
-            this.button3.TabIndex = 9;
-            this.button3.Text = "Apagar";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btn_apagar.BackColor = System.Drawing.Color.Red;
+            this.btn_apagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold);
+            this.btn_apagar.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btn_apagar.Location = new System.Drawing.Point(12, 12);
+            this.btn_apagar.Name = "btn_apagar";
+            this.btn_apagar.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btn_apagar.Size = new System.Drawing.Size(120, 60);
+            this.btn_apagar.TabIndex = 3;
+            this.btn_apagar.Text = "Apagar";
+            this.btn_apagar.UseVisualStyleBackColor = false;
+            this.btn_apagar.Click += new System.EventHandler(this.button3_Click);
             // 
             // Menu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ProyectoAS2TaquillaCine.Properties.Resources.cinema_movies_concept_background_with_5761469;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(905, 548);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.ClientSize = new System.Drawing.Size(679, 445);
+            this.Controls.Add(this.btn_apagar);
+            this.Controls.Add(this.lb_cinehub);
+            this.Controls.Add(this.btn_administrador);
+            this.Controls.Add(this.btn_cliente);
             this.Name = "Menu";
             this.Text = "Menu";
             this.Load += new System.EventHandler(this.Menu_Load);
@@ -111,9 +106,9 @@ namespace ProyectoAS2TaquillaCine.FormsGlobales
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label lb_cinehub;
+        private System.Windows.Forms.Button btn_administrador;
+        private System.Windows.Forms.Button btn_cliente;
+        private System.Windows.Forms.Button btn_apagar;
     }
 }

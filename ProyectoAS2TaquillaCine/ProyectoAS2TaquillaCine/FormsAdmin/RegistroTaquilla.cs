@@ -16,8 +16,8 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
         {
             InitializeComponent();
             // Asociar eventos para validar fechas
-            dtp_Inicio.ValueChanged += dtp_Inicio_ValueChanged;
-            dtp_Final.ValueChanged += dtp_Final_ValueChanged;
+            dtp_inicio.ValueChanged += dtp_Inicio_ValueChanged;
+            dtp_final.ValueChanged += dtp_Final_ValueChanged;
         }
 
         private void btn_Salir_Click(object sender, EventArgs e)
@@ -30,38 +30,38 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
         private void dtp_Inicio_ValueChanged(object sender, EventArgs e)
         {
             CargarDatos();
-            if (dtp_Inicio.Value > dtp_Final.Value)
+            if (dtp_inicio.Value > dtp_final.Value)
             {
-                dtp_Final.Value = dtp_Inicio.Value;
+                dtp_final.Value = dtp_inicio.Value;
             }
         }
 
         private void dtp_Final_ValueChanged(object sender, EventArgs e)
         {
             CargarDatos();
-            if (dtp_Inicio.Value > dtp_Final.Value)
+            if (dtp_inicio.Value > dtp_final.Value)
             {
-                dtp_Final.Value = dtp_Inicio.Value;
+                dtp_final.Value = dtp_inicio.Value;
             }
         }
 
         private void RegistroTaquilla_Load(object sender, EventArgs e)
         {
             // Cargar datos inicialmente con el rango de fechas predeterminado
-            dtp_Inicio.Value = DateTime.Now.AddMonths(-1); // Por ejemplo, últimos 30 días
-            dtp_Final.Value = DateTime.Now;
+            dtp_inicio.Value = DateTime.Now.AddMonths(-1); // Por ejemplo, últimos 30 días
+            dtp_final.Value = DateTime.Now;
             CargarDatos();
         }
         private void CargarDatos()
         {
             // Obtener las fechas seleccionadas
-            DateTime Inicio = dtp_Inicio.Value.Date;
-            DateTime Final = dtp_Final.Value.Date;
+            DateTime Inicio = dtp_inicio.Value.Date;
+            DateTime Final = dtp_final.Value.Date;
 
             // Asegurarse de que fechaFinal incluya el final del día
             Final = Final.AddHours(23).AddMinutes(59).AddSeconds(59);
 
-            if (dtp_Inicio.Value > dtp_Final.Value)
+            if (dtp_inicio.Value > dtp_final.Value)
             {
                 MessageBox.Show("La fecha de inicio no puede ser posterior a la fecha final.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -88,8 +88,8 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 MySqlDataAdapter adaptador = new MySqlDataAdapter(consulta, conn);
-                adaptador.SelectCommand.Parameters.AddWithValue("@Inicio", dtp_Inicio.Value.Date);
-                adaptador.SelectCommand.Parameters.AddWithValue("@Final", dtp_Final.Value.Date.AddDays(1).AddTicks(-1)); // Hasta el final del día
+                adaptador.SelectCommand.Parameters.AddWithValue("@Inicio", dtp_inicio.Value.Date);
+                adaptador.SelectCommand.Parameters.AddWithValue("@Final", dtp_final.Value.Date.AddDays(1).AddTicks(-1)); // Hasta el final del día
 
                 DataTable dt = new DataTable();
                 adaptador.Fill(dt);
@@ -108,8 +108,8 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                 return;
             }
 
-            DateTime fechaInicio = dtp_Inicio.Value;
-            DateTime fechaFinal = dtp_Final.Value;
+            DateTime fechaInicio = dtp_inicio.Value;
+            DateTime fechaFinal = dtp_final.Value;
 
             GenerarReportePDF(fechaInicio, fechaFinal);
         }

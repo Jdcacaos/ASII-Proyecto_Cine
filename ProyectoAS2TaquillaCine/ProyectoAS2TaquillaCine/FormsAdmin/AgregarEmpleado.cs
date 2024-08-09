@@ -586,7 +586,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
         private void txtbxBuscar_TextChanged(object sender, EventArgs e)
         {
             // Obtener el texto de búsqueda
-            string searchText = txtbxBuscar.Text.Trim();
+            string searchText = txtbx_buscar.Text.Trim();
             if (string.IsNullOrEmpty(searchText))
             {
                 // Si el texto de búsqueda está vacío, no aplicar filtro
