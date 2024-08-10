@@ -405,6 +405,8 @@
     <None Include="Resources\16974783388025.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\intensamente.jpg" />
+    <None Include="Resources\dyw.jpg" />
     <None Include="Resources\ninos %281%29.png" />
     <None Include="Resources\hombre.png" />
     <None Include="Resources\filtrar.png" />

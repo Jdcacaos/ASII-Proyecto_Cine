@@ -224,6 +224,16 @@ namespace ProyectoAS2TaquillaCine.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap dyw {
+            get {
+                object obj = ResourceManager.GetObject("dyw", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap editsquare_120033 {
             get {
                 object obj = ResourceManager.GetObject("editsquare_120033", resourceCulture);
@@ -247,6 +257,16 @@ namespace ProyectoAS2TaquillaCine.Properties {
         internal static System.Drawing.Bitmap hombre {
             get {
                 object obj = ResourceManager.GetObject("hombre", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap intensamente {
+            get {
+                object obj = ResourceManager.GetObject("intensamente", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

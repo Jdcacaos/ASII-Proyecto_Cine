@@ -14,6 +14,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BCrypt.Net; // Asegúrate de tener esta referencia
+
 
 namespace ProyectoAS2TaquillaCine.FormsCliente
 {
@@ -333,152 +335,152 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
 
         private void btnPagar_Click(object sender, EventArgs e)
         {
-            InsertarAsientosSeleccionados();
-            // Obtener los valores del formulario
-            string numeroTarjeta = txtbx_noTarjeta.Text;
-            string mesExpiracion = cb_mes.SelectedItem.ToString();
-            string anoExpiracion = cb_ano.SelectedItem.ToString();
-
-            // Asegúrate de que el mes tenga dos dígitos (ej. 01, 02, ..., 12)
-            string mesFormateado = mesExpiracion.PadLeft(2, '0');
-            // Construir la fecha de expiración en formato YYYY-MM-DD
-            string fechaExpiracion = $"{anoExpiracion}-{mesFormateado}-01";
-
-            string cvv = txtbx_codigoSeg.Text;
-            string nombreTitular = txtbx_nombre.Text;
-            string tipoTarjeta = rdb_credito.Checked ? "Credito" : "Debito";
-            string estado = "Activo";
-
-            // Obtener el ID del empleado desde el ComboBox
-            int idEmpleado = Convert.ToInt32(cb_empleados.SelectedValue);
-
-            // Obtener la fecha y hora actuales
-            DateTime fechaHora = DateTime.Now;
-
-            // Concatenar el método de pago
-            string metodoPago = "Tarjeta " + (rdb_credito.Checked ? "Credito" : "Debito");
-
-            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            try
             {
-                connection.Open();
-
-                // Verificar si la tarjeta ya existe
-                string checkQuery = "SELECT ID_Tarjeta FROM tbl_tarjeta WHERE Numero_Tarjeta = @numeroTarjeta";
-                using (MySqlCommand checkCommand = new MySqlCommand(checkQuery, connection))
+                // Validar entradas
+                if (string.IsNullOrEmpty(txtbx_noTarjeta.Text) || string.IsNullOrEmpty(txtbx_codigoSeg.Text))
                 {
-                    checkCommand.Parameters.AddWithValue("@numeroTarjeta", numeroTarjeta);
-                    object result = checkCommand.ExecuteScalar();
-
-                    if (result != null)
-                    {
-                        // La tarjeta ya existe, actualizar los datos
-                        string updateQuery = "UPDATE tbl_tarjeta SET Fecha_Expiracion = @fechaExpiracion, CVV = @cvv, Nombre_Titular = @nombreTitular, Tipo_Tarjeta = @tipoTarjeta, Estado_tbl_tarjeta = @estado WHERE Numero_Tarjeta = @numeroTarjeta";
-                        using (MySqlCommand updateCommand = new MySqlCommand(updateQuery, connection))
-                        {
-                            updateCommand.Parameters.AddWithValue("@fechaExpiracion", fechaExpiracion);
-                            updateCommand.Parameters.AddWithValue("@cvv", cvv);
-                            updateCommand.Parameters.AddWithValue("@nombreTitular", nombreTitular);
-                            updateCommand.Parameters.AddWithValue("@tipoTarjeta", tipoTarjeta);
-                            updateCommand.Parameters.AddWithValue("@estado", estado);
-                            updateCommand.Parameters.AddWithValue("@numeroTarjeta", numeroTarjeta);
-                            updateCommand.ExecuteNonQuery();
-                        }
-                    }
-                    else
-                    {
-                        // La tarjeta no existe, insertarla
-                        string insertQuery = "INSERT INTO tbl_tarjeta (Numero_Tarjeta, Fecha_Expiracion, CVV, Nombre_Titular, Tipo_Tarjeta, Estado_tbl_tarjeta, FK_ID_Cliente) VALUES (@numeroTarjeta, @fechaExpiracion, @cvv, @nombreTitular, @tipoTarjeta, @estado, @idCliente)";
-                        using (MySqlCommand insertCommand = new MySqlCommand(insertQuery, connection))
-                        {
-                            insertCommand.Parameters.AddWithValue("@numeroTarjeta", numeroTarjeta);
-                            insertCommand.Parameters.AddWithValue("@fechaExpiracion", fechaExpiracion);
-                            insertCommand.Parameters.AddWithValue("@cvv", cvv);
-                            insertCommand.Parameters.AddWithValue("@nombreTitular", nombreTitular);
-                            insertCommand.Parameters.AddWithValue("@tipoTarjeta", tipoTarjeta);
-                            insertCommand.Parameters.AddWithValue("@estado", estado);
-                            insertCommand.Parameters.AddWithValue("@idCliente", idCliente);
-
-                            insertCommand.ExecuteNonQuery();
-                        }
-                    }
+                    MessageBox.Show("Por favor, complete todos los campos requeridos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
                 }
 
-                // Verificar si el ID del empleado existe
-                string checkEmpleadoQuery = "SELECT COUNT(*) FROM tbl_empleado WHERE ID_Empleado = @idEmpleado";
-                using (MySqlCommand checkEmpleadoCommand = new MySqlCommand(checkEmpleadoQuery, connection))
+                // Inserción y actualización de datos
+                InsertarAsientosSeleccionados();
+                string numeroTarjeta = txtbx_noTarjeta.Text;
+                string mesExpiracion = cb_mes.SelectedItem.ToString();
+                string anoExpiracion = cb_ano.SelectedItem.ToString();
+                string mesFormateado = mesExpiracion.PadLeft(2, '0');
+                string fechaExpiracion = $"{anoExpiracion}-{mesFormateado}-01";
+                string cvv = txtbx_codigoSeg.Text;
+                string nombreTitular = txtbx_nombre.Text;
+                string tipoTarjeta = rdb_credito.Checked ? "Credito" : "Debito";
+                string estado = "Activo";
+
+                // Encriptar el CVV
+                string cvvEncriptado = BCrypt.Net.BCrypt.HashPassword(cvv);
+
+                int idEmpleado = Convert.ToInt32(cb_empleados.SelectedValue);
+                DateTime fechaHora = DateTime.Now;
+                string metodoPago = "Tarjeta " + (rdb_credito.Checked ? "Credito" : "Debito");
+
+                using (MySqlConnection connection = new MySqlConnection(connectionString))
                 {
-                    checkEmpleadoCommand.Parameters.AddWithValue("@idEmpleado", idEmpleado);
+                    connection.Open();
 
-                    int empleadoCount = Convert.ToInt32(checkEmpleadoCommand.ExecuteScalar());
-                    if (empleadoCount == 0)
+                    // Verificar y actualizar o insertar tarjeta
+                    string checkQuery = "SELECT ID_Tarjeta FROM tbl_tarjeta WHERE Numero_Tarjeta = @numeroTarjeta";
+                    using (MySqlCommand checkCommand = new MySqlCommand(checkQuery, connection))
                     {
-                        MessageBox.Show("El ID del empleado no existe en la base de datos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
-                }
+                        checkCommand.Parameters.AddWithValue("@numeroTarjeta", numeroTarjeta);
+                        object result = checkCommand.ExecuteScalar();
 
-                // Insertar en la tabla tbl_venta
-                string insertVentaQuery = "INSERT INTO tbl_venta (FK_ID_Empleado, Fecha_Hora, Metodo_Pago, Monto_Total) VALUES (@idEmpleado, @fechaHora, @metodoPago, @montoTotal)";
-                using (MySqlCommand insertVentaCommand = new MySqlCommand(insertVentaQuery, connection))
-                {
-                    insertVentaCommand.Parameters.AddWithValue("@idEmpleado", idEmpleado);
-                    insertVentaCommand.Parameters.AddWithValue("@fechaHora", fechaHora);
-                    insertVentaCommand.Parameters.AddWithValue("@metodoPago", metodoPago);
-                    insertVentaCommand.Parameters.AddWithValue("@montoTotal", Venta);
-
-                    insertVentaCommand.ExecuteNonQuery();
-
-                    // Obtener el ID de la venta recién insertada
-                    long ventaId = insertVentaCommand.LastInsertedId;
-                    numeroFactura = GenerarNumeroFactura();
-
-                    // Insertar en la tabla tbl_factura
-                    string insertFacturaQuery = "INSERT INTO tbl_factura (FK_ID_Reservacion, FK_ID_Venta, Fecha, NumeroFactura) VALUES (@reservacionId, @ventaId, @fecha, @numeroFactura)";
-                    using (MySqlCommand insertFacturaCommand = new MySqlCommand(insertFacturaQuery, connection))
-                    {
-                        foreach (var asiento in asientosSeleccionados)
+                        if (result != null)
                         {
-                            int idAsiento = ObtenerIDAsiento(asiento.fila, asiento.numero);
-                            if (idAsiento == -1)
+                            string updateQuery = "UPDATE tbl_tarjeta SET Fecha_Expiracion = @fechaExpiracion, CVV = @cvv, Nombre_Titular = @nombreTitular, Tipo_Tarjeta = @tipoTarjeta, Estado_tbl_tarjeta = @estado WHERE Numero_Tarjeta = @numeroTarjeta";
+                            using (MySqlCommand updateCommand = new MySqlCommand(updateQuery, connection))
                             {
-                                MessageBox.Show($"Asiento {asiento.fila}{asiento.numero} no encontrado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                return;
+                                updateCommand.Parameters.AddWithValue("@fechaExpiracion", fechaExpiracion);
+                                updateCommand.Parameters.AddWithValue("@cvv", cvvEncriptado);
+                                updateCommand.Parameters.AddWithValue("@nombreTitular", nombreTitular);
+                                updateCommand.Parameters.AddWithValue("@tipoTarjeta", tipoTarjeta);
+                                updateCommand.Parameters.AddWithValue("@estado", estado);
+                                updateCommand.Parameters.AddWithValue("@numeroTarjeta", numeroTarjeta);
+                                updateCommand.ExecuteNonQuery();
                             }
-
-                            // Verifica si la reserva existe
-                            string reservacionQuery = "SELECT ID_Reservacion FROM tbl_reservacion WHERE Fk_ID_Asiento = @asientoId";
-                            using (MySqlCommand reservacionCommand = new MySqlCommand(reservacionQuery, connection))
+                        }
+                        else
+                        {
+                            string insertQuery = "INSERT INTO tbl_tarjeta (Numero_Tarjeta, Fecha_Expiracion, CVV, Nombre_Titular, Tipo_Tarjeta, Estado_tbl_tarjeta, FK_ID_Cliente) VALUES (@numeroTarjeta, @fechaExpiracion, @cvv, @nombreTitular, @tipoTarjeta, @estado, @idCliente)";
+                            using (MySqlCommand insertCommand = new MySqlCommand(insertQuery, connection))
                             {
-                                reservacionCommand.Parameters.AddWithValue("@asientoId", idAsiento);
-                                object reservacionId = reservacionCommand.ExecuteScalar();
-                                if (reservacionId == null)
+                                insertCommand.Parameters.AddWithValue("@numeroTarjeta", numeroTarjeta);
+                                insertCommand.Parameters.AddWithValue("@fechaExpiracion", fechaExpiracion);
+                                insertCommand.Parameters.AddWithValue("@cvv", cvvEncriptado);
+                                insertCommand.Parameters.AddWithValue("@nombreTitular", nombreTitular);
+                                insertCommand.Parameters.AddWithValue("@tipoTarjeta", tipoTarjeta);
+                                insertCommand.Parameters.AddWithValue("@estado", estado);
+                                insertCommand.Parameters.AddWithValue("@idCliente", idCliente);
+
+                                insertCommand.ExecuteNonQuery();
+                            }
+                        }
+                    }
+
+                    // Verificar ID del empleado
+                    string checkEmpleadoQuery = "SELECT COUNT(*) FROM tbl_empleado WHERE ID_Empleado = @idEmpleado";
+                    using (MySqlCommand checkEmpleadoCommand = new MySqlCommand(checkEmpleadoQuery, connection))
+                    {
+                        checkEmpleadoCommand.Parameters.AddWithValue("@idEmpleado", idEmpleado);
+                        int empleadoCount = Convert.ToInt32(checkEmpleadoCommand.ExecuteScalar());
+                        if (empleadoCount == 0)
+                        {
+                            MessageBox.Show("El ID del empleado no existe en la base de datos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+                    }
+
+                    // Insertar en tbl_venta y tbl_factura
+                    string insertVentaQuery = "INSERT INTO tbl_venta (FK_ID_Empleado, Fecha_Hora, Metodo_Pago, Monto_Total) VALUES (@idEmpleado, @fechaHora, @metodoPago, @montoTotal)";
+                    using (MySqlCommand insertVentaCommand = new MySqlCommand(insertVentaQuery, connection))
+                    {
+                        insertVentaCommand.Parameters.AddWithValue("@idEmpleado", idEmpleado);
+                        insertVentaCommand.Parameters.AddWithValue("@fechaHora", fechaHora);
+                        insertVentaCommand.Parameters.AddWithValue("@metodoPago", metodoPago);
+                        insertVentaCommand.Parameters.AddWithValue("@montoTotal", Venta);
+
+                        insertVentaCommand.ExecuteNonQuery();
+
+                        long ventaId = insertVentaCommand.LastInsertedId;
+                        numeroFactura = GenerarNumeroFactura();
+
+                        string insertFacturaQuery = "INSERT INTO tbl_factura (FK_ID_Reservacion, FK_ID_Venta, Fecha, NumeroFactura) VALUES (@reservacionId, @ventaId, @fecha, @numeroFactura)";
+                        using (MySqlCommand insertFacturaCommand = new MySqlCommand(insertFacturaQuery, connection))
+                        {
+                            foreach (var asiento in asientosSeleccionados)
+                            {
+                                int idAsiento = ObtenerIDAsiento(asiento.fila, asiento.numero);
+                                if (idAsiento == -1)
                                 {
-                                    MessageBox.Show($"No se encontró reserva para el asiento {asiento.fila}{asiento.numero}.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    MessageBox.Show($"Asiento {asiento.fila}{asiento.numero} no encontrado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                     return;
                                 }
 
-                                insertFacturaCommand.Parameters.Clear();
-                                insertFacturaCommand.Parameters.AddWithValue("@reservacionId", reservacionId);
-                                insertFacturaCommand.Parameters.AddWithValue("@ventaId", ventaId);
-                                insertFacturaCommand.Parameters.AddWithValue("@fecha", fechaHora);
-                                insertFacturaCommand.Parameters.AddWithValue("@numeroFactura", numeroFactura);
+                                string reservacionQuery = "SELECT ID_Reservacion FROM tbl_reservacion WHERE Fk_ID_Asiento = @asientoId";
+                                using (MySqlCommand reservacionCommand = new MySqlCommand(reservacionQuery, connection))
+                                {
+                                    reservacionCommand.Parameters.AddWithValue("@asientoId", idAsiento);
+                                    object reservacionId = reservacionCommand.ExecuteScalar();
+                                    if (reservacionId == null)
+                                    {
+                                        MessageBox.Show($"No se encontró reserva para el asiento {asiento.fila}{asiento.numero}.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                        return;
+                                    }
 
-                                insertFacturaCommand.ExecuteNonQuery();
+                                    insertFacturaCommand.Parameters.Clear();
+                                    insertFacturaCommand.Parameters.AddWithValue("@reservacionId", reservacionId);
+                                    insertFacturaCommand.Parameters.AddWithValue("@ventaId", ventaId);
+                                    insertFacturaCommand.Parameters.AddWithValue("@fecha", fechaHora);
+                                    insertFacturaCommand.Parameters.AddWithValue("@numeroFactura", numeroFactura);
+
+                                    insertFacturaCommand.ExecuteNonQuery();
+                                }
                             }
                         }
                     }
                 }
-
-                // Mensaje de confirmación
-                MessageBox.Show("Boletos comprados.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                GenerarFacturaPDF();
-                FormsCliente.CarteleraNueva formCartelera = new FormsCliente.CarteleraNueva(idCliente);
-
-                formCartelera.Show();
-                timer.Stop();
-                this.Close();
+                    MessageBox.Show("Boletos comprados.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    GenerarFacturaPDF();
+                    FormsCliente.CarteleraNueva formCartelera = new FormsCliente.CarteleraNueva(idCliente);
+                    formCartelera.Show();
+                    timer.Stop();
+                    this.Close();
+                }
+        catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrió un error durante el proceso de pago: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
 
 
