@@ -40,11 +40,20 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
 
                 dataTable.Load(resultado);
 
-
-
                 // Asignar el DataTable al DataGridView
                 dgv_empleados.DataSource = dataTable;
-                dgv_empleados.Columns["FK_ID_Cargo"].Visible = false;
+
+                // Ocultar la columna de la contraseña en el DataGridView
+                if (dgv_empleados.Columns["Contrasena"] != null)
+                {
+                    dgv_empleados.Columns["Contrasena"].Visible = false;
+                }
+
+                // Ocultar la columna FK_ID_Cargo si ya estaba en el DataGridView
+                if (dgv_empleados.Columns["FK_ID_Cargo"] != null)
+                {
+                    dgv_empleados.Columns["FK_ID_Cargo"].Visible = false;
+                }
             }
             catch (Exception ex)
             {
@@ -230,17 +239,27 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
 
                 dataTable.Load(resultado);
 
-
-
                 // Asignar el DataTable al DataGridView
                 dgv_empleados.DataSource = dataTable;
-                dgv_empleados.Columns["FK_ID_Cargo"].Visible = false;
+
+                // Ocultar la columna de la contraseña en el DataGridView
+                if (dgv_empleados.Columns["Contrasena"] != null)
+                {
+                    dgv_empleados.Columns["Contrasena"].Visible = false;
+                }
+
+                // Ocultar la columna FK_ID_Cargo si ya estaba en el DataGridView
+                if (dgv_empleados.Columns["FK_ID_Cargo"] != null)
+                {
+                    dgv_empleados.Columns["FK_ID_Cargo"].Visible = false;
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
         }
+
 
 
 
@@ -480,7 +499,8 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                         MessageBox.Show("No se pudo obtener el valor de ID_Empleado.");
                         return;
                     }
-
+                    string contrasena = txtbx_contrasena.Text; // Contraseña del TextBox
+                    string contrasenaEncriptada = BCrypt.Net.BCrypt.HashPassword(contrasena);
                     int ValorObtenido = Convert.ToInt32(obtener);
 
                     // Actualizar base de datos
@@ -495,7 +515,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                         comando.Parameters.AddWithValue("@Email", txtbx_email.Text);
                         comando.Parameters.AddWithValue("@Telefono", txtbx_telefono.Text);
                         comando.Parameters.AddWithValue("@Estado", cb_estadoEmp.SelectedItem.ToString());
-                        comando.Parameters.AddWithValue("@Contrasena", txtbx_contrasena.Text);
+                        comando.Parameters.AddWithValue("@Contrasena", contrasenaEncriptada);
                         comando.Parameters.AddWithValue("@ID_Empleado", ValorObtenido);
 
                         int cantidad = comando.ExecuteNonQuery();
@@ -620,6 +640,10 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
 
         private void btn_guardar_Click(object sender, EventArgs e)
         {
+            string contrasena = txtbx_contrasena.Text; // Contraseña del TextBox
+            string contrasenaEncriptada = BCrypt.Net.BCrypt.HashPassword(contrasena);
+
+
             if (txtbx_apellido.Text == "" || txtbx_contrasena.Text == "" || txtbx_confContra.Text == "" || txtbx_email.Text == "" || txtbx_nombre.Text == "" || txtbx_telefono == null || cb_cargo.Text == "" || cb_estadoEmp.Text == "")
             {
                 MessageBox.Show("Hay campos vacios, LLENE TODOS LOS CAMPOS", "Error de llenado de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -648,7 +672,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                         command.Parameters.AddWithValue("@Apellido", txtbx_apellido.Text);
                         command.Parameters.AddWithValue("@Cargo", idCargo);
                         command.Parameters.AddWithValue("@Email", txtbx_email.Text);
-                        command.Parameters.AddWithValue("@Contrasena", txtbx_contrasena.Text);
+                        command.Parameters.AddWithValue("@Contrasena", contrasenaEncriptada);
                         command.Parameters.AddWithValue("@Telefono", txtbx_telefono.Text);
                         command.Parameters.AddWithValue("@Estado", cb_estadoEmp.Text);
 

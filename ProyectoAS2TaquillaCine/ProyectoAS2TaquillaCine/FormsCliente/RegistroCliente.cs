@@ -17,6 +17,8 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
         public RegistroCliente()
         {
             InitializeComponent();
+            //dpFechaNac.MaxDate = DateTime.Today.AddYears(-7); // Fecha máxima permitida
+            //dpFechaNac.MinDate = DateTime.Today.AddYears(-120);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -42,8 +44,8 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             }
 
             // Validar que nombre y apellido solo contengan letras
-            if (!System.Text.RegularExpressions.Regex.IsMatch(txtbx_nombre.Text, @"^[a-zA-Z]+$") ||
-                !System.Text.RegularExpressions.Regex.IsMatch(txtbx_apellido.Text, @"^[a-zA-Z]+$"))
+            if (!System.Text.RegularExpressions.Regex.IsMatch(txtbx_nombre.Text, @"^[a-zA-ZÀ-ÿ\u00f1\u00d1\s]+$") ||
+                !System.Text.RegularExpressions.Regex.IsMatch(txtbx_apellido.Text, @"^[a-zA-ZÀ-ÿ\u00f1\u00d1\s]+$"))
             {
                 MessageBox.Show("Ingrese valores válidos.", "Error de validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
