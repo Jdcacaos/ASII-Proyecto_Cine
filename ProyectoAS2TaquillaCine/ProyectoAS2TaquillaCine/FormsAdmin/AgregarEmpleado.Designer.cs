@@ -34,7 +34,10 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.panel_panel1 = new System.Windows.Forms.Panel();
             this.panel_panel2 = new System.Windows.Forms.Panel();
             this.gbIngresar = new System.Windows.Forms.GroupBox();
+            this.btn_eliminar = new System.Windows.Forms.Button();
+            this.btn_guardar = new System.Windows.Forms.Button();
             this.lb_estadoEmp = new System.Windows.Forms.Label();
+            this.btn_editar = new System.Windows.Forms.Button();
             this.cb_estadoEmp = new System.Windows.Forms.ComboBox();
             this.txtbx_confContra = new System.Windows.Forms.TextBox();
             this.lb_confContra = new System.Windows.Forms.Label();
@@ -51,7 +54,6 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.txtbx_nombre = new System.Windows.Forms.TextBox();
             this.lb_nombre = new System.Windows.Forms.Label();
             this.lb_mantenimientoEmpl = new System.Windows.Forms.Label();
-            this.btn_guardar = new System.Windows.Forms.Button();
             this.lb_tiempoSys = new System.Windows.Forms.Label();
             this.btn_regresar = new System.Windows.Forms.Button();
             this.panel_panel3 = new System.Windows.Forms.Panel();
@@ -60,8 +62,6 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.txtbx_buscar = new System.Windows.Forms.TextBox();
             this.lb_buscar = new System.Windows.Forms.Label();
             this.dgv_empleados = new System.Windows.Forms.DataGridView();
-            this.btn_editar = new System.Windows.Forms.Button();
-            this.btn_eliminar = new System.Windows.Forms.Button();
             this.lb_cinehub = new System.Windows.Forms.Label();
             this.panel_panel2.SuspendLayout();
             this.gbIngresar.SuspendLayout();
@@ -129,6 +129,43 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.gbIngresar.TabIndex = 71;
             this.gbIngresar.TabStop = false;
             // 
+            // btn_eliminar
+            // 
+            this.btn_eliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btn_eliminar.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btn_eliminar.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_eliminar.ForeColor = System.Drawing.SystemColors.Control;
+            this.btn_eliminar.Image = global::ProyectoAS2TaquillaCine.Properties.Resources.delete_button_6303088;
+            this.btn_eliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_eliminar.Location = new System.Drawing.Point(26, 568);
+            this.btn_eliminar.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_eliminar.Name = "btn_eliminar";
+            this.btn_eliminar.Size = new System.Drawing.Size(136, 48);
+            this.btn_eliminar.TabIndex = 10;
+            this.btn_eliminar.Text = "Eliminar";
+            this.btn_eliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_eliminar.UseVisualStyleBackColor = false;
+            this.btn_eliminar.Click += new System.EventHandler(this.button2_Click_1);
+            // 
+            // btn_guardar
+            // 
+            this.btn_guardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_guardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.btn_guardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_guardar.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_guardar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_guardar.Image = global::ProyectoAS2TaquillaCine.Properties.Resources.diskette_save_saveas_1514;
+            this.btn_guardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_guardar.Location = new System.Drawing.Point(170, 584);
+            this.btn_guardar.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_guardar.Name = "btn_guardar";
+            this.btn_guardar.Size = new System.Drawing.Size(173, 52);
+            this.btn_guardar.TabIndex = 78;
+            this.btn_guardar.Text = "Guardar";
+            this.btn_guardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_guardar.UseVisualStyleBackColor = false;
+            this.btn_guardar.Click += new System.EventHandler(this.btn_guardar_Click);
+            // 
             // lb_estadoEmp
             // 
             this.lb_estadoEmp.AutoSize = true;
@@ -140,6 +177,24 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.lb_estadoEmp.Size = new System.Drawing.Size(185, 27);
             this.lb_estadoEmp.TabIndex = 87;
             this.lb_estadoEmp.Text = "Estado Empleado";
+            // 
+            // btn_editar
+            // 
+            this.btn_editar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btn_editar.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btn_editar.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_editar.ForeColor = System.Drawing.SystemColors.Control;
+            this.btn_editar.Image = global::ProyectoAS2TaquillaCine.Properties.Resources.editsquare_120033;
+            this.btn_editar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_editar.Location = new System.Drawing.Point(351, 568);
+            this.btn_editar.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_editar.Name = "btn_editar";
+            this.btn_editar.Size = new System.Drawing.Size(123, 48);
+            this.btn_editar.TabIndex = 9;
+            this.btn_editar.Text = "Editar";
+            this.btn_editar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_editar.UseVisualStyleBackColor = false;
+            this.btn_editar.Click += new System.EventHandler(this.button3_Click);
             // 
             // cb_estadoEmp
             // 
@@ -188,12 +243,14 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             // 
             // cb_cargo
             // 
+            this.cb_cargo.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.cb_cargo.FormattingEnabled = true;
             this.cb_cargo.Location = new System.Drawing.Point(252, 265);
             this.cb_cargo.Margin = new System.Windows.Forms.Padding(4);
             this.cb_cargo.Name = "cb_cargo";
             this.cb_cargo.Size = new System.Drawing.Size(160, 24);
             this.cb_cargo.TabIndex = 72;
+            this.cb_cargo.Text = "Seleccione un cargo ...";
             // 
             // txtbx_contrasena
             // 
@@ -309,25 +366,6 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.lb_mantenimientoEmpl.TabIndex = 79;
             this.lb_mantenimientoEmpl.Text = "Mantenimiento de Empleado";
             // 
-            // btn_guardar
-            // 
-            this.btn_guardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_guardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            this.btn_guardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_guardar.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_guardar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_guardar.Image = global::ProyectoAS2TaquillaCine.Properties.Resources.diskette_save_saveas_1514;
-            this.btn_guardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_guardar.Location = new System.Drawing.Point(170, 584);
-            this.btn_guardar.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_guardar.Name = "btn_guardar";
-            this.btn_guardar.Size = new System.Drawing.Size(173, 52);
-            this.btn_guardar.TabIndex = 78;
-            this.btn_guardar.Text = "Guardar";
-            this.btn_guardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_guardar.UseVisualStyleBackColor = false;
-            this.btn_guardar.Click += new System.EventHandler(this.btn_guardar_Click);
-            // 
             // lb_tiempoSys
             // 
             this.lb_tiempoSys.AutoSize = true;
@@ -428,42 +466,6 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.dgv_empleados.TabIndex = 179;
             this.dgv_empleados.Tag = "";
             this.dgv_empleados.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
-            // 
-            // btn_editar
-            // 
-            this.btn_editar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btn_editar.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.btn_editar.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_editar.ForeColor = System.Drawing.SystemColors.Control;
-            this.btn_editar.Image = global::ProyectoAS2TaquillaCine.Properties.Resources.editsquare_120033;
-            this.btn_editar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_editar.Location = new System.Drawing.Point(351, 568);
-            this.btn_editar.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_editar.Name = "btn_editar";
-            this.btn_editar.Size = new System.Drawing.Size(123, 48);
-            this.btn_editar.TabIndex = 9;
-            this.btn_editar.Text = "Editar";
-            this.btn_editar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_editar.UseVisualStyleBackColor = false;
-            this.btn_editar.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // btn_eliminar
-            // 
-            this.btn_eliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btn_eliminar.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.btn_eliminar.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_eliminar.ForeColor = System.Drawing.SystemColors.Control;
-            this.btn_eliminar.Image = global::ProyectoAS2TaquillaCine.Properties.Resources.delete_button_6303088;
-            this.btn_eliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_eliminar.Location = new System.Drawing.Point(26, 568);
-            this.btn_eliminar.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_eliminar.Name = "btn_eliminar";
-            this.btn_eliminar.Size = new System.Drawing.Size(136, 48);
-            this.btn_eliminar.TabIndex = 10;
-            this.btn_eliminar.Text = "Eliminar";
-            this.btn_eliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_eliminar.UseVisualStyleBackColor = false;
-            this.btn_eliminar.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // lb_cinehub
             // 

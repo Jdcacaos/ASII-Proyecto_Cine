@@ -119,6 +119,8 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             obtnerdatosfactura();
             cb_mes.SelectedItem = "09";
             cb_ano.SelectedItem = "24";
+           cb_mes.DropDownStyle = ComboBoxStyle.DropDownList;
+           cb_ano.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         private void LlenarComboEmpleados()
@@ -301,7 +303,6 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             cb_ano.Items.Add("38");
             cb_ano.Items.Add("39");
             cb_ano.Items.Add("40");
-            cb_ano.SelectedItem = "2024";
             if (cb_ano.Items.Count > 0)
             {
                 cb_ano.SelectedIndex = 0;
@@ -332,6 +333,45 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
 
         private void btnPagar_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(txtbx_correo.Text) ||
+               string.IsNullOrWhiteSpace(txtbx_noTarjeta.Text) ||
+               string.IsNullOrWhiteSpace(txtbx_nit.Text) ||
+               string.IsNullOrWhiteSpace(txtbx_nombre.Text) ||
+               string.IsNullOrWhiteSpace(txtbx_telefono.Text) ||
+               string.IsNullOrWhiteSpace(txtbx_telefono.Text) ||
+               string.IsNullOrWhiteSpace(txtbx_codigoSeg.Text) ||
+               string.IsNullOrWhiteSpace(cb_mes.Text) ||
+               string.IsNullOrWhiteSpace(cb_ano.Text) ||
+
+               string.IsNullOrWhiteSpace(txtbx_nit.Text))
+            {
+                MessageBox.Show("Por favor, complete todos los campos.", "Error de validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (!rdb_credito.Checked && !rdb_debito.Checked)
+            {
+                // Ningún RadioButton está seleccionado
+                MessageBox.Show("Por favor, seleccione una opción de pago.");
+            }
+            if (!System.Text.RegularExpressions.Regex.IsMatch(txtbx_nombre.Text, @"^[a-zA-ZÀ-ÿ\u00f1\u00d1\s]+$"))
+            {
+                MessageBox.Show("Ingrese valores válidos. Nombre ", "Error de validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (!txtbx_correo.Text.EndsWith("@gmail.com"))
+            {
+                MessageBox.Show("Ingrese valores válidos. Email incorrecto", "Error de validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (!System.Text.RegularExpressions.Regex.IsMatch(txtbx_telefono.Text, @"^[\d+]+$") ||
+                !System.Text.RegularExpressions.Regex.IsMatch(txtbx_codigoSeg.Text, @"^[\d+]+$") ||
+                !System.Text.RegularExpressions.Regex.IsMatch(txtbx_noTarjeta.Text, @"^[\d+]+$") ||
+                !System.Text.RegularExpressions.Regex.IsMatch(txtbx_nit.Text, @"^[\d+]+$"))
+            {
+                MessageBox.Show("Ingrese valores válidos. Telefono o cvv ingreso numeros", "Error de validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             try
             {
                 if (string.IsNullOrEmpty(txtbx_noTarjeta.Text) || string.IsNullOrEmpty(txtbx_codigoSeg.Text))

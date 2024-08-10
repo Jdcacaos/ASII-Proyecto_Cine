@@ -39,7 +39,9 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.btn_guardar = new System.Windows.Forms.Button();
             this.txtbx_ubicacion = new System.Windows.Forms.TextBox();
             this.txtbx_ciudad = new System.Windows.Forms.TextBox();
+            this.btn_editar = new System.Windows.Forms.Button();
             this.lb_direccion = new System.Windows.Forms.Label();
+            this.btn_eliminar = new System.Windows.Forms.Button();
             this.lb_ciudad = new System.Windows.Forms.Label();
             this.btn_regresar = new System.Windows.Forms.Button();
             this.panel_panel3 = new System.Windows.Forms.Panel();
@@ -49,8 +51,6 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.lb_subtitulo = new System.Windows.Forms.Label();
             this.lb_cinehub = new System.Windows.Forms.Label();
             this.dgv_ubicaciones = new System.Windows.Forms.DataGridView();
-            this.btn_editar = new System.Windows.Forms.Button();
-            this.btn_eliminar = new System.Windows.Forms.Button();
             this.panel_panel2.SuspendLayout();
             this.gpb_ingresar.SuspendLayout();
             this.panel_panel3.SuspendLayout();
@@ -107,9 +107,9 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.gpb_ingresar.Controls.Add(this.btn_eliminar);
             this.gpb_ingresar.Controls.Add(this.lb_ciudad);
             this.gpb_ingresar.Location = new System.Drawing.Point(7, 113);
-            this.gpb_ingresar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gpb_ingresar.Margin = new System.Windows.Forms.Padding(4);
             this.gpb_ingresar.Name = "gpb_ingresar";
-            this.gpb_ingresar.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gpb_ingresar.Padding = new System.Windows.Forms.Padding(4);
             this.gpb_ingresar.Size = new System.Drawing.Size(484, 720);
             this.gpb_ingresar.TabIndex = 54;
             this.gpb_ingresar.TabStop = false;
@@ -135,13 +135,14 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.btn_guardar.Image = global::ProyectoAS2TaquillaCine.Properties.Resources.diskette_save_saveas_1514;
             this.btn_guardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_guardar.Location = new System.Drawing.Point(171, 542);
-            this.btn_guardar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_guardar.Margin = new System.Windows.Forms.Padding(4);
             this.btn_guardar.Name = "btn_guardar";
             this.btn_guardar.Size = new System.Drawing.Size(157, 48);
             this.btn_guardar.TabIndex = 56;
             this.btn_guardar.Text = "Guardar";
             this.btn_guardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_guardar.UseVisualStyleBackColor = false;
+            this.btn_guardar.Click += new System.EventHandler(this.btn_guardar_Click);
             // 
             // txtbx_ubicacion
             // 
@@ -159,6 +160,24 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.txtbx_ciudad.Size = new System.Drawing.Size(208, 22);
             this.txtbx_ciudad.TabIndex = 54;
             // 
+            // btn_editar
+            // 
+            this.btn_editar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btn_editar.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btn_editar.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_editar.ForeColor = System.Drawing.SystemColors.Control;
+            this.btn_editar.Image = global::ProyectoAS2TaquillaCine.Properties.Resources.editsquare_120033;
+            this.btn_editar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_editar.Location = new System.Drawing.Point(29, 542);
+            this.btn_editar.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_editar.Name = "btn_editar";
+            this.btn_editar.Size = new System.Drawing.Size(123, 48);
+            this.btn_editar.TabIndex = 3;
+            this.btn_editar.Text = "Editar";
+            this.btn_editar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_editar.UseVisualStyleBackColor = false;
+            this.btn_editar.Click += new System.EventHandler(this.button3_Click);
+            // 
             // lb_direccion
             // 
             this.lb_direccion.AutoSize = true;
@@ -169,6 +188,24 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.lb_direccion.Size = new System.Drawing.Size(178, 26);
             this.lb_direccion.TabIndex = 58;
             this.lb_direccion.Text = "Centro Comercial";
+            // 
+            // btn_eliminar
+            // 
+            this.btn_eliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btn_eliminar.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btn_eliminar.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_eliminar.ForeColor = System.Drawing.SystemColors.Control;
+            this.btn_eliminar.Image = global::ProyectoAS2TaquillaCine.Properties.Resources.delete_button_6303088;
+            this.btn_eliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_eliminar.Location = new System.Drawing.Point(336, 542);
+            this.btn_eliminar.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_eliminar.Name = "btn_eliminar";
+            this.btn_eliminar.Size = new System.Drawing.Size(139, 48);
+            this.btn_eliminar.TabIndex = 4;
+            this.btn_eliminar.Text = "Eliminar";
+            this.btn_eliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_eliminar.UseVisualStyleBackColor = false;
+            this.btn_eliminar.Click += new System.EventHandler(this.button6_Click);
             // 
             // lb_ciudad
             // 
@@ -187,7 +224,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.btn_regresar.BackColor = System.Drawing.Color.Red;
             this.btn_regresar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btn_regresar.Location = new System.Drawing.Point(316, 25);
-            this.btn_regresar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_regresar.Margin = new System.Windows.Forms.Padding(4);
             this.btn_regresar.Name = "btn_regresar";
             this.btn_regresar.Size = new System.Drawing.Size(121, 41);
             this.btn_regresar.TabIndex = 5;
@@ -214,9 +251,9 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.gpb_buscar.Controls.Add(this.txtbx_Buscar);
             this.gpb_buscar.Controls.Add(this.lb_buscar);
             this.gpb_buscar.Location = new System.Drawing.Point(0, 0);
-            this.gpb_buscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gpb_buscar.Margin = new System.Windows.Forms.Padding(4);
             this.gpb_buscar.Name = "gpb_buscar";
-            this.gpb_buscar.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gpb_buscar.Padding = new System.Windows.Forms.Padding(4);
             this.gpb_buscar.Size = new System.Drawing.Size(812, 65);
             this.gpb_buscar.TabIndex = 182;
             this.gpb_buscar.TabStop = false;
@@ -224,7 +261,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             // txtbx_Buscar
             // 
             this.txtbx_Buscar.Location = new System.Drawing.Point(95, 16);
-            this.txtbx_Buscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtbx_Buscar.Margin = new System.Windows.Forms.Padding(4);
             this.txtbx_Buscar.Multiline = true;
             this.txtbx_Buscar.Name = "txtbx_Buscar";
             this.txtbx_Buscar.Size = new System.Drawing.Size(708, 37);
@@ -276,49 +313,13 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgv_ubicaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_ubicaciones.Location = new System.Drawing.Point(63, 261);
-            this.dgv_ubicaciones.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgv_ubicaciones.Margin = new System.Windows.Forms.Padding(4);
             this.dgv_ubicaciones.Name = "dgv_ubicaciones";
             this.dgv_ubicaciones.RowHeadersWidth = 51;
             this.dgv_ubicaciones.Size = new System.Drawing.Size(693, 368);
             this.dgv_ubicaciones.TabIndex = 181;
             this.dgv_ubicaciones.Tag = "";
             this.dgv_ubicaciones.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_Ubicaciones_CellContentClick);
-            // 
-            // btn_editar
-            // 
-            this.btn_editar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btn_editar.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.btn_editar.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_editar.ForeColor = System.Drawing.SystemColors.Control;
-            this.btn_editar.Image = global::ProyectoAS2TaquillaCine.Properties.Resources.editsquare_120033;
-            this.btn_editar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_editar.Location = new System.Drawing.Point(29, 542);
-            this.btn_editar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btn_editar.Name = "btn_editar";
-            this.btn_editar.Size = new System.Drawing.Size(123, 48);
-            this.btn_editar.TabIndex = 3;
-            this.btn_editar.Text = "Editar";
-            this.btn_editar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_editar.UseVisualStyleBackColor = false;
-            this.btn_editar.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // btn_eliminar
-            // 
-            this.btn_eliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btn_eliminar.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.btn_eliminar.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_eliminar.ForeColor = System.Drawing.SystemColors.Control;
-            this.btn_eliminar.Image = global::ProyectoAS2TaquillaCine.Properties.Resources.delete_button_6303088;
-            this.btn_eliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_eliminar.Location = new System.Drawing.Point(336, 542);
-            this.btn_eliminar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btn_eliminar.Name = "btn_eliminar";
-            this.btn_eliminar.Size = new System.Drawing.Size(139, 48);
-            this.btn_eliminar.TabIndex = 4;
-            this.btn_eliminar.Text = "Eliminar";
-            this.btn_eliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_eliminar.UseVisualStyleBackColor = false;
-            this.btn_eliminar.Click += new System.EventHandler(this.button6_Click);
             // 
             // Ubicaciones
             // 
@@ -329,7 +330,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.Controls.Add(this.panel_panel2);
             this.Controls.Add(this.panel_panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Ubicaciones";
             this.Text = "Ubicaciones";
             this.Load += new System.EventHandler(this.Ubicacion_Load);

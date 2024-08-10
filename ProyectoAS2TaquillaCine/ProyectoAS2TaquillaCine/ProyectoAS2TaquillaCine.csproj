@@ -293,6 +293,7 @@
     <Compile Include="FormsCliente\Pago.Designer.cs">
       <DependentUpon>Pago.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormsCliente\placeholder.cs" />
     <Compile Include="FormsCliente\RegistroCliente.cs">
       <SubType>Form</SubType>
     </Compile>

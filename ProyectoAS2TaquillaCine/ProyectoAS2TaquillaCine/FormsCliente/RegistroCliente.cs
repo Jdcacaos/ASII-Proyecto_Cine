@@ -45,19 +45,19 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             if (!System.Text.RegularExpressions.Regex.IsMatch(txtbx_nombre.Text, @"^[a-zA-ZÀ-ÿ\u00f1\u00d1\s]+$") ||
                 !System.Text.RegularExpressions.Regex.IsMatch(txtbx_apellido.Text, @"^[a-zA-ZÀ-ÿ\u00f1\u00d1\s]+$"))
             {
-                MessageBox.Show("Ingrese valores válidos.", "Error de validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Ingrese valores válidos. Nombre o apellido incorrecto", "Error de validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             if (!txtbx_email.Text.EndsWith("@gmail.com"))
             {
-                MessageBox.Show("Ingrese valores válidos.", "Error de validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Ingrese valores válidos. Email incorrecto", "Error de validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             if (!System.Text.RegularExpressions.Regex.IsMatch(txtbx_telefono.Text, @"^[\d+]+$"))
             {
-                MessageBox.Show("Ingrese valores válidos.", "Error de validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Ingrese valores válidos. Telefono incorrecto", "Error de validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 

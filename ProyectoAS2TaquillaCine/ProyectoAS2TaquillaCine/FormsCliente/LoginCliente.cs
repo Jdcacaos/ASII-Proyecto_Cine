@@ -118,7 +118,19 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
 
         private void LoginCliente_Load(object sender, EventArgs e)
         {
+            var emailPlaceholder = new PlaceholderManager(
+                txtbx_correoUsuario,
+                "eje: xxx@gmail.com",
+                Color.Gray,
+                Color.White
+            );
 
+            var passPlaceholder = new PlaceholderManager(
+                txtbx_contrasena,
+                "ingrese contraseña ...",
+                Color.Gray,
+                Color.White
+            );
         }
 
         private void button1_Click_1(object sender, EventArgs e)

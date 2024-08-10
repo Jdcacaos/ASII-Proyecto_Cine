@@ -52,21 +52,25 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // 
             // cb_direccion
             // 
+            this.cb_direccion.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.cb_direccion.FormattingEnabled = true;
             this.cb_direccion.Location = new System.Drawing.Point(551, 133);
-            this.cb_direccion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cb_direccion.Margin = new System.Windows.Forms.Padding(4);
             this.cb_direccion.Name = "cb_direccion";
             this.cb_direccion.Size = new System.Drawing.Size(160, 24);
             this.cb_direccion.TabIndex = 7;
+            this.cb_direccion.Text = "Seleccione un cine ...";
             // 
             // cb_depto
             // 
+            this.cb_depto.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.cb_depto.FormattingEnabled = true;
             this.cb_depto.Location = new System.Drawing.Point(381, 133);
-            this.cb_depto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cb_depto.Margin = new System.Windows.Forms.Padding(4);
             this.cb_depto.Name = "cb_depto";
             this.cb_depto.Size = new System.Drawing.Size(160, 24);
             this.cb_depto.TabIndex = 6;
+            this.cb_depto.Text = "Seleccione una ubicacion ...";
             this.cb_depto.SelectedIndexChanged += new System.EventHandler(this.cbDepto_SelectedIndexChanged);
             // 
             // panel_panelPelicula
@@ -96,7 +100,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             this.btn_quitarFiltro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_quitarFiltro.Image = global::ProyectoAS2TaquillaCine.Properties.Resources.filtrar;
             this.btn_quitarFiltro.Location = new System.Drawing.Point(799, 127);
-            this.btn_quitarFiltro.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_quitarFiltro.Margin = new System.Windows.Forms.Padding(4);
             this.btn_quitarFiltro.Name = "btn_quitarFiltro";
             this.btn_quitarFiltro.Size = new System.Drawing.Size(79, 36);
             this.btn_quitarFiltro.TabIndex = 9;
@@ -108,7 +112,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             this.btn_filtrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_filtrar.Image = global::ProyectoAS2TaquillaCine.Properties.Resources.buscar;
             this.btn_filtrar.Location = new System.Drawing.Point(721, 127);
-            this.btn_filtrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_filtrar.Margin = new System.Windows.Forms.Padding(4);
             this.btn_filtrar.Name = "btn_filtrar";
             this.btn_filtrar.Size = new System.Drawing.Size(61, 36);
             this.btn_filtrar.TabIndex = 8;
@@ -128,7 +132,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             this.Controls.Add(this.cb_direccion);
             this.Controls.Add(this.cb_depto);
             this.Controls.Add(this.lb_cinehub);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CarteleraNueva";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cartelera";

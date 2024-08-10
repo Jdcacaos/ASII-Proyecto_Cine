@@ -29,9 +29,12 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             gpb_ingresar.Visible = GlobalSettings.IsAdmin;
         }
         private void Horarios_Load(object sender, EventArgs e)
-        {   
-            
+        {
 
+            cb_Estado.DropDownStyle = ComboBoxStyle.DropDownList;
+            cb_id_Sala.DropDownStyle = ComboBoxStyle.DropDownList;
+            cb_Pelicula.DropDownStyle = ComboBoxStyle.DropDownList;
+            cb_Estado.SelectedItem = "Activo";
             LlenarComboBox_estado();
             LlenarComboBox_idSala();
             LlenarComboBox_Pelicula();

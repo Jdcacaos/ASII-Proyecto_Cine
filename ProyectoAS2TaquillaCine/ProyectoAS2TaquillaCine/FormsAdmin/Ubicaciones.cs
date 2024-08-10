@@ -43,40 +43,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
 
         private void btn_Agregar_Click(object sender, EventArgs e)
         {
-            if (!datosCorrectos())
-            {
-                return;
-            }
-
-            using (MySqlConnection connection = new MySqlConnection(connectionString))
-            {
-                try
-                {
-                    connection.Open();
-
-                    string query = "INSERT INTO tbl_ubicacion (Ciudad, Direccion) VALUES (@Ciudad, @Direccion)";
-
-                    using (MySqlCommand command = new MySqlCommand(query, connection))
-                    {
-                        command.Parameters.AddWithValue("@Ciudad", txtbx_ciudad.Text);
-                        command.Parameters.AddWithValue("@Direccion", txtbx_ubicacion.Text);
-
-                        command.ExecuteNonQuery();
-                    }
-
-                    MessageBox.Show("Registro completado exitosamente.");
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error al registrar la ubicación: " + ex.Message);
-                }
-
-                llenar_tabla();
-
-                // Limpiar campos
-                txtbx_ciudad.Text = "";
-                txtbx_ubicacion.Text = "";
-            }
+            
         }
 
         private object ObtenerValorCelda(string nombreColumna)
@@ -472,6 +439,44 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
         private void tmr_tiempo_Tick(object sender, EventArgs e)
         {
             UpdateDateTimeLabel();
+        }
+
+        private void btn_guardar_Click(object sender, EventArgs e)
+        {
+            if (!datosCorrectos())
+            {
+                return;
+            }
+
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+
+                    string query = "INSERT INTO tbl_ubicacion (Ciudad, Direccion) VALUES (@Ciudad, @Direccion)";
+
+                    using (MySqlCommand command = new MySqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@Ciudad", txtbx_ciudad.Text);
+                        command.Parameters.AddWithValue("@Direccion", txtbx_ubicacion.Text);
+
+                        command.ExecuteNonQuery();
+                    }
+
+                    MessageBox.Show("Registro completado exitosamente.");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al registrar la ubicación: " + ex.Message);
+                }
+
+                llenar_tabla();
+
+                // Limpiar campos
+                txtbx_ciudad.Text = "";
+                txtbx_ubicacion.Text = "";
+            }
         }
     }
 

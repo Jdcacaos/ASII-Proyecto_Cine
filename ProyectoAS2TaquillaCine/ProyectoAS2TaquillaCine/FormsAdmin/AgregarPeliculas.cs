@@ -36,6 +36,10 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
 
         private void Peliculas_Load(object sender, EventArgs e)
         {
+            cb_clasificacion.DropDownStyle = ComboBoxStyle.DropDownList;
+            cb_estado.DropDownStyle = ComboBoxStyle.DropDownList;
+            cb_productor.DropDownStyle = ComboBoxStyle.DropDownList;
+            cb_estado.SelectedItem = "Activo";
             MySqlConnection conexionDB;
             DataTable dataTable = new DataTable();
             MySqlDataReader resultado;

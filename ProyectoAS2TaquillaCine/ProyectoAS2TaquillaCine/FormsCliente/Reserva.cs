@@ -56,7 +56,9 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
 
         private void Reserva_Load(object sender, EventArgs e)
         {
-            LoadFechas(pelicula); 
+            LoadFechas(pelicula);
+            cb_fecha.DropDownStyle = ComboBoxStyle.DropDownList;
+            cb_hora.DropDownStyle = ComboBoxStyle.DropDownList;
 
 
 

@@ -123,7 +123,19 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
 
         private void LoginAdmin_Load(object sender, EventArgs e)
         {
+            var emailPlaceholder = new FormsCliente.PlaceholderManager(
+              txtbx_user,
+              "eje: xxx@gmail.com",
+              Color.Gray,
+              Color.White
+          );
 
+            var passPlaceholder = new FormsCliente.PlaceholderManager(
+                txtbx_contrasena,
+                "ingrese contraseña ...",
+                Color.Gray,
+                Color.White
+            );
         }
 
         private void txtbx_contrasena_TextChanged(object sender, EventArgs e)

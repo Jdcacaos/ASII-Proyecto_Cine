@@ -24,6 +24,8 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
 
         private void CarteleraNueva_Load(object sender, EventArgs e)
         {
+            cb_depto.DropDownStyle = ComboBoxStyle.DropDownList;
+            cb_direccion.DropDownStyle = ComboBoxStyle.DropDownList;
             using (MySqlConnection conexion = new MySqlConnection(connectionString))
             {
                 try

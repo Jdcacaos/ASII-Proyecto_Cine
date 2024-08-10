@@ -17,7 +17,22 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
 
         private void AgregarEmpleado_Load(object sender, EventArgs e)
         {
-            
+            var emailPlaceholder = new FormsCliente.PlaceholderManager(
+              cb_cargo,
+              "Añada un cargo",
+              Color.Gray,
+              Color.White
+          );
+
+            var passPlaceholder = new FormsCliente.PlaceholderManager(
+                cb_estadoEmp,
+                "ingrese un estado",
+                Color.Gray,
+                Color.White
+            );
+            cb_cargo.DropDownStyle = ComboBoxStyle.DropDownList;
+            cb_estadoEmp.DropDownStyle = ComboBoxStyle.DropDownList;
+            cb_estadoEmp.SelectedItem = "Activo";
             dgv_empleados.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             MySqlConnection conexionDB;
             DataTable dataTable = new DataTable();
@@ -330,6 +345,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             if (dialogResult == DialogResult.Yes)
             {
                 try
+
                 {
 
                     int cargo = ((KeyValuePair<int, string>)cb_cargo.SelectedItem).Key;
