@@ -111,5 +111,14 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.Hide();
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("SI QUIERE EDITAR O ELIMINAR SELECCIONE PRIMERO UN REGISTRO EN LA TABLA", "Ayuda", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void MenuGeneral_Load(object sender, EventArgs e)
+        {
+            MessageBox.Show("SI QUIERE EDITAR O ELIMINAR SELECCIONE PRIMERO UN REGISTRO EN LA TABLA", "Ayuda", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 }

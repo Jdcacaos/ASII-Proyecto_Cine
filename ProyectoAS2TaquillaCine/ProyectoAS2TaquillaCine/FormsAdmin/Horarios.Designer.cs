@@ -74,7 +74,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             // btn_boton4
             // 
             this.btn_boton4.Location = new System.Drawing.Point(16, 15);
-            this.btn_boton4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_boton4.Margin = new System.Windows.Forms.Padding(4);
             this.btn_boton4.Name = "btn_boton4";
             this.btn_boton4.Size = new System.Drawing.Size(121, 41);
             this.btn_boton4.TabIndex = 40;
@@ -112,7 +112,9 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.gpb_ingresar.Controls.Add(this.txtbx_3ra);
             this.gpb_ingresar.Controls.Add(this.txtbx_adulto);
             this.gpb_ingresar.Controls.Add(this.txtbx_nino);
+            this.gpb_ingresar.Controls.Add(this.btn_editar);
             this.gpb_ingresar.Controls.Add(this.lb_precio3ra);
+            this.gpb_ingresar.Controls.Add(this.btn_eliminar);
             this.gpb_ingresar.Controls.Add(this.lb_precioAdulto);
             this.gpb_ingresar.Controls.Add(this.lb_precioNino);
             this.gpb_ingresar.Controls.Add(this.btn_guardar);
@@ -128,9 +130,9 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.gpb_ingresar.Controls.Add(this.cb_id_Sala);
             this.gpb_ingresar.Controls.Add(this.dtp_fecha);
             this.gpb_ingresar.Location = new System.Drawing.Point(0, 155);
-            this.gpb_ingresar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gpb_ingresar.Margin = new System.Windows.Forms.Padding(4);
             this.gpb_ingresar.Name = "gpb_ingresar";
-            this.gpb_ingresar.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gpb_ingresar.Padding = new System.Windows.Forms.Padding(4);
             this.gpb_ingresar.Size = new System.Drawing.Size(491, 665);
             this.gpb_ingresar.TabIndex = 37;
             this.gpb_ingresar.TabStop = false;
@@ -138,7 +140,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             // txtbx_3ra
             // 
             this.txtbx_3ra.Location = new System.Drawing.Point(260, 418);
-            this.txtbx_3ra.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtbx_3ra.Margin = new System.Windows.Forms.Padding(4);
             this.txtbx_3ra.Name = "txtbx_3ra";
             this.txtbx_3ra.Size = new System.Drawing.Size(160, 22);
             this.txtbx_3ra.TabIndex = 65;
@@ -146,7 +148,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             // txtbx_adulto
             // 
             this.txtbx_adulto.Location = new System.Drawing.Point(260, 375);
-            this.txtbx_adulto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtbx_adulto.Margin = new System.Windows.Forms.Padding(4);
             this.txtbx_adulto.Name = "txtbx_adulto";
             this.txtbx_adulto.Size = new System.Drawing.Size(160, 22);
             this.txtbx_adulto.TabIndex = 64;
@@ -154,7 +156,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             // txtbx_nino
             // 
             this.txtbx_nino.Location = new System.Drawing.Point(260, 327);
-            this.txtbx_nino.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtbx_nino.Margin = new System.Windows.Forms.Padding(4);
             this.txtbx_nino.Name = "txtbx_nino";
             this.txtbx_nino.Size = new System.Drawing.Size(160, 22);
             this.txtbx_nino.TabIndex = 63;
@@ -203,10 +205,10 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.btn_guardar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btn_guardar.Image = global::ProyectoAS2TaquillaCine.Properties.Resources.diskette_save_saveas_1514;
             this.btn_guardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_guardar.Location = new System.Drawing.Point(177, 506);
-            this.btn_guardar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_guardar.Location = new System.Drawing.Point(150, 560);
+            this.btn_guardar.Margin = new System.Windows.Forms.Padding(4);
             this.btn_guardar.Name = "btn_guardar";
-            this.btn_guardar.Size = new System.Drawing.Size(179, 78);
+            this.btn_guardar.Size = new System.Drawing.Size(179, 60);
             this.btn_guardar.TabIndex = 66;
             this.btn_guardar.Text = "Guardar";
             this.btn_guardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -229,7 +231,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             // 
             this.dtp_hora.Format = System.Windows.Forms.DateTimePickerFormat.Time;
             this.dtp_hora.Location = new System.Drawing.Point(257, 224);
-            this.dtp_hora.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtp_hora.Margin = new System.Windows.Forms.Padding(4);
             this.dtp_hora.Name = "dtp_hora";
             this.dtp_hora.ShowUpDown = true;
             this.dtp_hora.Size = new System.Drawing.Size(160, 22);
@@ -299,7 +301,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             // 
             this.cb_Pelicula.FormattingEnabled = true;
             this.cb_Pelicula.Location = new System.Drawing.Point(257, 79);
-            this.cb_Pelicula.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cb_Pelicula.Margin = new System.Windows.Forms.Padding(4);
             this.cb_Pelicula.Name = "cb_Pelicula";
             this.cb_Pelicula.Size = new System.Drawing.Size(160, 24);
             this.cb_Pelicula.TabIndex = 58;
@@ -308,7 +310,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             // 
             this.cb_Estado.FormattingEnabled = true;
             this.cb_Estado.Location = new System.Drawing.Point(257, 270);
-            this.cb_Estado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cb_Estado.Margin = new System.Windows.Forms.Padding(4);
             this.cb_Estado.Name = "cb_Estado";
             this.cb_Estado.Size = new System.Drawing.Size(160, 24);
             this.cb_Estado.TabIndex = 62;
@@ -317,7 +319,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             // 
             this.cb_id_Sala.FormattingEnabled = true;
             this.cb_id_Sala.Location = new System.Drawing.Point(257, 128);
-            this.cb_id_Sala.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cb_id_Sala.Margin = new System.Windows.Forms.Padding(4);
             this.cb_id_Sala.Name = "cb_id_Sala";
             this.cb_id_Sala.Size = new System.Drawing.Size(160, 24);
             this.cb_id_Sala.TabIndex = 59;
@@ -327,7 +329,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.dtp_fecha.CustomFormat = "yyyy/MM/dd";
             this.dtp_fecha.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtp_fecha.Location = new System.Drawing.Point(257, 176);
-            this.dtp_fecha.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtp_fecha.Margin = new System.Windows.Forms.Padding(4);
             this.dtp_fecha.Name = "dtp_fecha";
             this.dtp_fecha.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dtp_fecha.Size = new System.Drawing.Size(160, 22);
@@ -340,7 +342,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.btn_regresar.BackColor = System.Drawing.Color.Red;
             this.btn_regresar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btn_regresar.Location = new System.Drawing.Point(300, 14);
-            this.btn_regresar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_regresar.Margin = new System.Windows.Forms.Padding(4);
             this.btn_regresar.Name = "btn_regresar";
             this.btn_regresar.Size = new System.Drawing.Size(121, 41);
             this.btn_regresar.TabIndex = 13;
@@ -354,8 +356,6 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.panel_panel3.Controls.Add(this.gpb_buscar);
             this.panel_panel3.Controls.Add(this.lb_texto);
             this.panel_panel3.Controls.Add(this.dgv_horario);
-            this.panel_panel3.Controls.Add(this.btn_editar);
-            this.panel_panel3.Controls.Add(this.btn_eliminar);
             this.panel_panel3.Controls.Add(this.lb_cinehub);
             this.panel_panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_panel3.Location = new System.Drawing.Point(0, 34);
@@ -370,9 +370,9 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.gpb_buscar.Controls.Add(this.txtbx_buscar);
             this.gpb_buscar.Controls.Add(this.lb_buscar);
             this.gpb_buscar.Location = new System.Drawing.Point(4, 0);
-            this.gpb_buscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gpb_buscar.Margin = new System.Windows.Forms.Padding(4);
             this.gpb_buscar.Name = "gpb_buscar";
-            this.gpb_buscar.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gpb_buscar.Padding = new System.Windows.Forms.Padding(4);
             this.gpb_buscar.Size = new System.Drawing.Size(911, 65);
             this.gpb_buscar.TabIndex = 184;
             this.gpb_buscar.TabStop = false;
@@ -380,7 +380,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             // txtbx_buscar
             // 
             this.txtbx_buscar.Location = new System.Drawing.Point(95, 16);
-            this.txtbx_buscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtbx_buscar.Margin = new System.Windows.Forms.Padding(4);
             this.txtbx_buscar.Multiline = true;
             this.txtbx_buscar.Name = "txtbx_buscar";
             this.txtbx_buscar.Size = new System.Drawing.Size(787, 37);
@@ -421,7 +421,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgv_horario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_horario.Location = new System.Drawing.Point(16, 238);
-            this.dgv_horario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgv_horario.Margin = new System.Windows.Forms.Padding(4);
             this.dgv_horario.Name = "dgv_horario";
             this.dgv_horario.ReadOnly = true;
             this.dgv_horario.RowHeadersWidth = 51;
@@ -438,8 +438,8 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.btn_editar.ForeColor = System.Drawing.SystemColors.Control;
             this.btn_editar.Image = global::ProyectoAS2TaquillaCine.Properties.Resources.editsquare_120033;
             this.btn_editar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_editar.Location = new System.Drawing.Point(41, 632);
-            this.btn_editar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_editar.Location = new System.Drawing.Point(17, 560);
+            this.btn_editar.Margin = new System.Windows.Forms.Padding(4);
             this.btn_editar.Name = "btn_editar";
             this.btn_editar.Size = new System.Drawing.Size(125, 48);
             this.btn_editar.TabIndex = 9;
@@ -456,8 +456,8 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.btn_eliminar.ForeColor = System.Drawing.SystemColors.Control;
             this.btn_eliminar.Image = global::ProyectoAS2TaquillaCine.Properties.Resources.delete_button_6303088;
             this.btn_eliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_eliminar.Location = new System.Drawing.Point(240, 632);
-            this.btn_eliminar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_eliminar.Location = new System.Drawing.Point(337, 560);
+            this.btn_eliminar.Margin = new System.Windows.Forms.Padding(4);
             this.btn_eliminar.Name = "btn_eliminar";
             this.btn_eliminar.Size = new System.Drawing.Size(139, 48);
             this.btn_eliminar.TabIndex = 10;
@@ -504,7 +504,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.Controls.Add(this.panel_panel1);
             this.Controls.Add(this.btn_boton4);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Horarios";
             this.Text = "Horarios";
             this.Load += new System.EventHandler(this.Horarios_Load);

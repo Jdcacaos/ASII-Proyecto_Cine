@@ -216,8 +216,6 @@ C:\Users\bhern\Desktop\SistemaCine\ASII-Proyecto_Cine\ProyectoAS2TaquillaCine\Pr
 C:\Users\bhern\Desktop\SistemaCine\ASII-Proyecto_Cine\ProyectoAS2TaquillaCine\ProyectoAS2TaquillaCine\obj\Debug\ProyectoAS2TaquillaCine.FormsAdmin.Proveedor.resources
 C:\Users\bhern\Desktop\SistemaCine\ASII-Proyecto_Cine\ProyectoAS2TaquillaCine\ProyectoAS2TaquillaCine\obj\Debug\ProyectoAS2TaquillaCine.FormsAdmin.Salas.resources
 C:\Users\bhern\Desktop\SistemaCine\ASII-Proyecto_Cine\ProyectoAS2TaquillaCine\ProyectoAS2TaquillaCine\obj\Debug\ProyectoAS2TaquillaCine.FormsAdmin.Ubicaciones.resources
-C:\Users\bhern\Desktop\SistemaCine\ASII-Proyecto_Cine\ProyectoAS2TaquillaCine\ProyectoAS2TaquillaCine\obj\Debug\ProyectoAS2TaquillaCine.FormsAdmin.Usuarios.resources
-C:\Users\bhern\Desktop\SistemaCine\ASII-Proyecto_Cine\ProyectoAS2TaquillaCine\ProyectoAS2TaquillaCine\obj\Debug\ProyectoAS2TaquillaCine.FormsAdmin.Ventas.resources
 C:\Users\bhern\Desktop\SistemaCine\ASII-Proyecto_Cine\ProyectoAS2TaquillaCine\ProyectoAS2TaquillaCine\obj\Debug\ProyectoAS2TaquillaCine.FormsCliente.Asientos.resources
 C:\Users\bhern\Desktop\SistemaCine\ASII-Proyecto_Cine\ProyectoAS2TaquillaCine\ProyectoAS2TaquillaCine\obj\Debug\ProyectoAS2TaquillaCine.FormsCliente.LoginCliente.resources
 C:\Users\bhern\Desktop\SistemaCine\ASII-Proyecto_Cine\ProyectoAS2TaquillaCine\ProyectoAS2TaquillaCine\obj\Debug\ProyectoAS2TaquillaCine.FormsCliente.Pago.resources

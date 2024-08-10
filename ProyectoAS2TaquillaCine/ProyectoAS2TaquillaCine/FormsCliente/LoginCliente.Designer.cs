@@ -38,6 +38,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             this.picbx_imagenCine = new System.Windows.Forms.PictureBox();
             this.txtbx_correoUsuario = new System.Windows.Forms.TextBox();
             this.txtbx_contrasena = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picbx_imagenCine)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,7 +48,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             this.chb_mostrarContra.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chb_mostrarContra.ForeColor = System.Drawing.SystemColors.Window;
             this.chb_mostrarContra.Location = new System.Drawing.Point(225, 358);
-            this.chb_mostrarContra.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chb_mostrarContra.Margin = new System.Windows.Forms.Padding(4);
             this.chb_mostrarContra.Name = "chb_mostrarContra";
             this.chb_mostrarContra.Size = new System.Drawing.Size(173, 28);
             this.chb_mostrarContra.TabIndex = 2;
@@ -85,7 +86,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             this.btn_ingresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_ingresar.Font = new System.Drawing.Font("Arial Narrow", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_ingresar.Location = new System.Drawing.Point(135, 458);
-            this.btn_ingresar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_ingresar.Margin = new System.Windows.Forms.Padding(4);
             this.btn_ingresar.Name = "btn_ingresar";
             this.btn_ingresar.Size = new System.Drawing.Size(372, 92);
             this.btn_ingresar.TabIndex = 3;
@@ -99,7 +100,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             this.btn_regresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_regresar.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.btn_regresar.Location = new System.Drawing.Point(1, 14);
-            this.btn_regresar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_regresar.Margin = new System.Windows.Forms.Padding(4);
             this.btn_regresar.Name = "btn_regresar";
             this.btn_regresar.Size = new System.Drawing.Size(163, 46);
             this.btn_regresar.TabIndex = 5;
@@ -113,7 +114,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             this.btn_registrarse.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_registrarse.ForeColor = System.Drawing.SystemColors.Window;
             this.btn_registrarse.Location = new System.Drawing.Point(225, 588);
-            this.btn_registrarse.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_registrarse.Margin = new System.Windows.Forms.Padding(4);
             this.btn_registrarse.Name = "btn_registrarse";
             this.btn_registrarse.Size = new System.Drawing.Size(213, 43);
             this.btn_registrarse.TabIndex = 4;
@@ -125,7 +126,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // 
             this.picbx_imagenCine.Image = global::ProyectoAS2TaquillaCine.Properties.Resources.cine;
             this.picbx_imagenCine.Location = new System.Drawing.Point(660, -102);
-            this.picbx_imagenCine.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picbx_imagenCine.Margin = new System.Windows.Forms.Padding(4);
             this.picbx_imagenCine.Name = "picbx_imagenCine";
             this.picbx_imagenCine.Size = new System.Drawing.Size(789, 944);
             this.picbx_imagenCine.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -138,7 +139,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             this.txtbx_correoUsuario.Font = new System.Drawing.Font("Arial Narrow", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbx_correoUsuario.ForeColor = System.Drawing.SystemColors.Window;
             this.txtbx_correoUsuario.Location = new System.Drawing.Point(91, 142);
-            this.txtbx_correoUsuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtbx_correoUsuario.Margin = new System.Windows.Forms.Padding(4);
             this.txtbx_correoUsuario.Name = "txtbx_correoUsuario";
             this.txtbx_correoUsuario.Size = new System.Drawing.Size(507, 58);
             this.txtbx_correoUsuario.TabIndex = 0;
@@ -149,11 +150,24 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             this.txtbx_contrasena.Font = new System.Drawing.Font("Arial Narrow", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbx_contrasena.ForeColor = System.Drawing.SystemColors.Window;
             this.txtbx_contrasena.Location = new System.Drawing.Point(91, 289);
-            this.txtbx_contrasena.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtbx_contrasena.Margin = new System.Windows.Forms.Padding(4);
             this.txtbx_contrasena.Name = "txtbx_contrasena";
             this.txtbx_contrasena.PasswordChar = '*';
             this.txtbx_contrasena.Size = new System.Drawing.Size(507, 61);
             this.txtbx_contrasena.TabIndex = 1;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.button1.Font = new System.Drawing.Font("Microsoft YaHei", 7.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button1.Location = new System.Drawing.Point(203, 404);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(211, 32);
+            this.button1.TabIndex = 12;
+            this.button1.Text = "¿Olvidaste la Contraseña?";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // LoginCliente
             // 
@@ -161,6 +175,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
             this.ClientSize = new System.Drawing.Size(1439, 740);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.txtbx_contrasena);
             this.Controls.Add(this.txtbx_correoUsuario);
             this.Controls.Add(this.btn_registrarse);
@@ -170,7 +185,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             this.Controls.Add(this.lb_correo);
             this.Controls.Add(this.picbx_imagenCine);
             this.Controls.Add(this.btn_ingresar);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "LoginCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LoginCliente";
@@ -192,5 +207,6 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
         private System.Windows.Forms.Button btn_registrarse;
         private System.Windows.Forms.TextBox txtbx_correoUsuario;
         private System.Windows.Forms.TextBox txtbx_contrasena;
+        private System.Windows.Forms.Button button1;
     }
 }

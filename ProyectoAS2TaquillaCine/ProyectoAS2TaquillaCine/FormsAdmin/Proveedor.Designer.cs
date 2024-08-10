@@ -61,9 +61,9 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.panel_panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
             this.panel_panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel_panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel_panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel_panel1.Name = "panel_panel1";
-            this.panel_panel1.Size = new System.Drawing.Size(954, 28);
+            this.panel_panel1.Size = new System.Drawing.Size(1272, 34);
             this.panel_panel1.TabIndex = 35;
             // 
             // panel_panel2
@@ -73,22 +73,26 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.panel_panel2.Controls.Add(this.lb_tiempoSys);
             this.panel_panel2.Controls.Add(this.btn_regresar);
             this.panel_panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel_panel2.Location = new System.Drawing.Point(586, 28);
-            this.panel_panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel_panel2.Location = new System.Drawing.Point(781, 34);
+            this.panel_panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel_panel2.Name = "panel_panel2";
-            this.panel_panel2.Size = new System.Drawing.Size(368, 612);
+            this.panel_panel2.Size = new System.Drawing.Size(491, 754);
             this.panel_panel2.TabIndex = 36;
             this.panel_panel2.Click += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // gbIngresar
+            // gpb_ingresar
             // 
             this.gpb_ingresar.Controls.Add(this.lb_productoras);
             this.gpb_ingresar.Controls.Add(this.btn_guardar);
             this.gpb_ingresar.Controls.Add(this.txtbx_nombre);
             this.gpb_ingresar.Controls.Add(this.lb_nombreProductora);
-            this.gpb_ingresar.Location = new System.Drawing.Point(0, 81);
-            this.gpb_ingresar.Name = "gbIngresar";
-            this.gpb_ingresar.Size = new System.Drawing.Size(368, 578);
+            this.gpb_ingresar.Controls.Add(this.btn_editar);
+            this.gpb_ingresar.Controls.Add(this.btn_eliminar);
+            this.gpb_ingresar.Location = new System.Drawing.Point(0, 100);
+            this.gpb_ingresar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gpb_ingresar.Name = "gpb_ingresar";
+            this.gpb_ingresar.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gpb_ingresar.Size = new System.Drawing.Size(491, 711);
             this.gpb_ingresar.TabIndex = 71;
             this.gpb_ingresar.TabStop = false;
             // 
@@ -98,10 +102,9 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.lb_productoras.AutoSize = true;
             this.lb_productoras.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_productoras.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lb_productoras.Location = new System.Drawing.Point(83, 115);
-            this.lb_productoras.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lb_productoras.Location = new System.Drawing.Point(111, 142);
             this.lb_productoras.Name = "lb_productoras";
-            this.lb_productoras.Size = new System.Drawing.Size(185, 19);
+            this.lb_productoras.Size = new System.Drawing.Size(234, 26);
             this.lb_productoras.TabIndex = 57;
             this.lb_productoras.Text = "Ingreso de Productoras";
             // 
@@ -114,9 +117,10 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.btn_guardar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btn_guardar.Image = global::ProyectoAS2TaquillaCine.Properties.Resources.diskette_save_saveas_1514;
             this.btn_guardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_guardar.Location = new System.Drawing.Point(124, 338);
+            this.btn_guardar.Location = new System.Drawing.Point(160, 468);
+            this.btn_guardar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_guardar.Name = "btn_guardar";
-            this.btn_guardar.Size = new System.Drawing.Size(146, 58);
+            this.btn_guardar.Size = new System.Drawing.Size(162, 48);
             this.btn_guardar.TabIndex = 55;
             this.btn_guardar.Text = "Guardar";
             this.btn_guardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -126,9 +130,10 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             // txtbx_nombre
             // 
             this.txtbx_nombre.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtbx_nombre.Location = new System.Drawing.Point(204, 248);
+            this.txtbx_nombre.Location = new System.Drawing.Point(272, 305);
+            this.txtbx_nombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtbx_nombre.Name = "txtbx_nombre";
-            this.txtbx_nombre.Size = new System.Drawing.Size(115, 20);
+            this.txtbx_nombre.Size = new System.Drawing.Size(152, 22);
             this.txtbx_nombre.TabIndex = 54;
             // 
             // lb_nombreProductora
@@ -136,9 +141,10 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.lb_nombreProductora.AutoSize = true;
             this.lb_nombreProductora.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_nombreProductora.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lb_nombreProductora.Location = new System.Drawing.Point(25, 246);
+            this.lb_nombreProductora.Location = new System.Drawing.Point(33, 303);
+            this.lb_nombreProductora.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_nombreProductora.Name = "lb_nombreProductora";
-            this.lb_nombreProductora.Size = new System.Drawing.Size(190, 19);
+            this.lb_nombreProductora.Size = new System.Drawing.Size(231, 24);
             this.lb_nombreProductora.TabIndex = 56;
             this.lb_nombreProductora.Text = "Nombre de la Productora:";
             // 
@@ -146,10 +152,9 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             // 
             this.lb_tiempoSys.AutoSize = true;
             this.lb_tiempoSys.ForeColor = System.Drawing.SystemColors.Control;
-            this.lb_tiempoSys.Location = new System.Drawing.Point(226, 62);
-            this.lb_tiempoSys.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lb_tiempoSys.Location = new System.Drawing.Point(301, 76);
             this.lb_tiempoSys.Name = "lb_tiempoSys";
-            this.lb_tiempoSys.Size = new System.Drawing.Size(35, 13);
+            this.lb_tiempoSys.Size = new System.Drawing.Size(46, 17);
             this.lb_tiempoSys.TabIndex = 70;
             this.lb_tiempoSys.Text = "label7";
             // 
@@ -158,9 +163,10 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.btn_regresar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_regresar.BackColor = System.Drawing.Color.Red;
             this.btn_regresar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_regresar.Location = new System.Drawing.Point(228, 19);
+            this.btn_regresar.Location = new System.Drawing.Point(304, 23);
+            this.btn_regresar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_regresar.Name = "btn_regresar";
-            this.btn_regresar.Size = new System.Drawing.Size(91, 33);
+            this.btn_regresar.Size = new System.Drawing.Size(121, 41);
             this.btn_regresar.TabIndex = 4;
             this.btn_regresar.Text = "Regresar";
             this.btn_regresar.UseVisualStyleBackColor = false;
@@ -173,59 +179,58 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.panel_panel3.Controls.Add(this.lb_texto);
             this.panel_panel3.Controls.Add(this.dgv_productores);
             this.panel_panel3.Controls.Add(this.lb_cinehub);
-            this.panel_panel3.Controls.Add(this.btn_editar);
-            this.panel_panel3.Controls.Add(this.btn_eliminar);
             this.panel_panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_panel3.Location = new System.Drawing.Point(0, 28);
-            this.panel_panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel_panel3.Location = new System.Drawing.Point(0, 34);
+            this.panel_panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel_panel3.Name = "panel_panel3";
-            this.panel_panel3.Size = new System.Drawing.Size(586, 612);
+            this.panel_panel3.Size = new System.Drawing.Size(781, 754);
             this.panel_panel3.TabIndex = 77;
             this.panel_panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
-            // gbbuscar
+            // gpb_buscar
             // 
             this.gpb_buscar.Controls.Add(this.txtbx_buscar);
             this.gpb_buscar.Controls.Add(this.lb_buscar);
-            this.gpb_buscar.Location = new System.Drawing.Point(0, 6);
-            this.gpb_buscar.Name = "gbbuscar";
-            this.gpb_buscar.Size = new System.Drawing.Size(568, 53);
+            this.gpb_buscar.Location = new System.Drawing.Point(0, 7);
+            this.gpb_buscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gpb_buscar.Name = "gpb_buscar";
+            this.gpb_buscar.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gpb_buscar.Size = new System.Drawing.Size(757, 65);
             this.gpb_buscar.TabIndex = 185;
             this.gpb_buscar.TabStop = false;
             // 
-            // txtbxBuscar
+            // txtbx_buscar
             // 
-            this.txtbx_buscar.Location = new System.Drawing.Point(71, 13);
+            this.txtbx_buscar.Location = new System.Drawing.Point(95, 16);
+            this.txtbx_buscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtbx_buscar.Multiline = true;
-            this.txtbx_buscar.Name = "txtbxBuscar";
-            this.txtbx_buscar.Size = new System.Drawing.Size(491, 31);
+            this.txtbx_buscar.Name = "txtbx_buscar";
+            this.txtbx_buscar.Size = new System.Drawing.Size(653, 37);
             this.txtbx_buscar.TabIndex = 182;
             this.txtbx_buscar.TextChanged += new System.EventHandler(this.txtbxBuscar_TextChanged);
             // 
-            // label2
+            // lb_buscar
             // 
             this.lb_buscar.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lb_buscar.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_buscar.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.lb_buscar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.lb_buscar.Location = new System.Drawing.Point(-4, 16);
-            this.lb_buscar.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lb_buscar.Name = "label2";
-            this.lb_buscar.Size = new System.Drawing.Size(77, 26);
+            this.lb_buscar.Location = new System.Drawing.Point(-5, 20);
+            this.lb_buscar.Name = "lb_buscar";
+            this.lb_buscar.Size = new System.Drawing.Size(103, 32);
             this.lb_buscar.TabIndex = 181;
             this.lb_buscar.Text = "Buscar";
             this.lb_buscar.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // label1
+            // lb_texto
             // 
             this.lb_texto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.lb_texto.AutoSize = true;
             this.lb_texto.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_texto.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lb_texto.Location = new System.Drawing.Point(177, 166);
-            this.lb_texto.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lb_texto.Name = "label1";
-            this.lb_texto.Size = new System.Drawing.Size(190, 19);
+            this.lb_texto.Location = new System.Drawing.Point(236, 204);
+            this.lb_texto.Name = "lb_texto";
+            this.lb_texto.Size = new System.Drawing.Size(243, 26);
             this.lb_texto.TabIndex = 71;
             this.lb_texto.Text = "Registro de Productoras";
             // 
@@ -235,10 +240,11 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgv_productores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_productores.Location = new System.Drawing.Point(9, 214);
+            this.dgv_productores.Location = new System.Drawing.Point(12, 263);
+            this.dgv_productores.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgv_productores.Name = "dgv_productores";
             this.dgv_productores.RowHeadersWidth = 51;
-            this.dgv_productores.Size = new System.Drawing.Size(572, 180);
+            this.dgv_productores.Size = new System.Drawing.Size(763, 223);
             this.dgv_productores.TabIndex = 184;
             this.dgv_productores.Tag = "";
             // 
@@ -248,10 +254,9 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.lb_cinehub.Font = new System.Drawing.Font("Microsoft Sans Serif", 54F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_cinehub.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.lb_cinehub.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.lb_cinehub.Location = new System.Drawing.Point(85, 81);
-            this.lb_cinehub.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lb_cinehub.Location = new System.Drawing.Point(113, 100);
             this.lb_cinehub.Name = "lb_cinehub";
-            this.lb_cinehub.Size = new System.Drawing.Size(388, 85);
+            this.lb_cinehub.Size = new System.Drawing.Size(517, 105);
             this.lb_cinehub.TabIndex = 182;
             this.lb_cinehub.Text = "CINEHUB";
             this.lb_cinehub.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -265,9 +270,10 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.btn_editar.ForeColor = System.Drawing.SystemColors.Control;
             this.btn_editar.Image = global::ProyectoAS2TaquillaCine.Properties.Resources.editsquare_120033;
             this.btn_editar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_editar.Location = new System.Drawing.Point(150, 512);
+            this.btn_editar.Location = new System.Drawing.Point(8, 468);
+            this.btn_editar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_editar.Name = "btn_editar";
-            this.btn_editar.Size = new System.Drawing.Size(97, 39);
+            this.btn_editar.Size = new System.Drawing.Size(129, 48);
             this.btn_editar.TabIndex = 2;
             this.btn_editar.Text = "Editar";
             this.btn_editar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -282,9 +288,10 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.btn_eliminar.ForeColor = System.Drawing.SystemColors.Control;
             this.btn_eliminar.Image = global::ProyectoAS2TaquillaCine.Properties.Resources.delete_button_6303088;
             this.btn_eliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_eliminar.Location = new System.Drawing.Point(340, 512);
+            this.btn_eliminar.Location = new System.Drawing.Point(330, 468);
+            this.btn_eliminar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_eliminar.Name = "btn_eliminar";
-            this.btn_eliminar.Size = new System.Drawing.Size(111, 39);
+            this.btn_eliminar.Size = new System.Drawing.Size(148, 48);
             this.btn_eliminar.TabIndex = 3;
             this.btn_eliminar.Text = "Eliminar";
             this.btn_eliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -297,13 +304,14 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             // 
             // Proveedor
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(954, 640);
+            this.ClientSize = new System.Drawing.Size(1272, 788);
             this.Controls.Add(this.panel_panel3);
             this.Controls.Add(this.panel_panel2);
             this.Controls.Add(this.panel_panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Proveedor";
             this.Text = "Productora";
             this.Load += new System.EventHandler(this.Proveedor_Load);

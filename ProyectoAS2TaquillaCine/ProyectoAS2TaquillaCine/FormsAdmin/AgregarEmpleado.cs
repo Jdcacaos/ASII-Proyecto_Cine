@@ -17,6 +17,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
 
         private void AgregarEmpleado_Load(object sender, EventArgs e)
         {
+            
             dgv_empleados.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             MySqlConnection conexionDB;
             DataTable dataTable = new DataTable();
@@ -132,7 +133,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                 txtbx_nombre.Text = Convert.ToString(selectedRow.Cells["Nombre"].Value);
                 txtbx_apellido.Text = Convert.ToString(selectedRow.Cells["Apellido"].Value);
                 txtbx_email.Text = Convert.ToString(selectedRow.Cells["Email"].Value);
-                txtbx_contrasena.Text = Convert.ToString(selectedRow.Cells["Contrasena"].Value);
+               
                 txtbx_telefono.Text = Convert.ToString(selectedRow.Cells["Telefono"].Value);
 
                 // Obtener el valor del cargo y estado
@@ -490,70 +491,55 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
         private void button3_Click(object sender, EventArgs e)
         {
 
-            DialogResult dialogResult = MessageBox.Show("¿Estás seguro de que deseas editar este registro?", "Confirmar eliminación", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
+            if (txtbx_apellido.Text == "" || txtbx_contrasena.Text == "" || txtbx_confContra.Text == "" || txtbx_email.Text == "" || txtbx_nombre.Text == "" || txtbx_telefono == null || cb_cargo.Text == "" || cb_estadoEmp.Text == "")
+            {
+                MessageBox.Show("Hay campos vacios, LLENE TODOS LOS CAMPOS", "Error de llenado de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (txtbx_contrasena.Text != txtbx_confContra.Text)
+            {
+                MessageBox.Show("Las contraseñas no coinciden. Por favor, verifícalas.", "Error de confirmación de contraseña", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            int idCargo = ((KeyValuePair<int, string>)cb_cargo.SelectedItem).Key;
+            string contrasenaEncriptada = BCrypt.Net.BCrypt.HashPassword(txtbx_contrasena.Text);
+
+            int idEmpleado = Convert.ToInt32(dgv_empleados.SelectedRows[0].Cells["ID_Empleado"].Value);
+
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
                 try
                 {
+                    connection.Open();
 
-                    // Obtener valores del ComboBox
-                    int cargo = ((KeyValuePair<int, string>)cb_cargo.SelectedItem).Key;
+                    string query = "UPDATE tbl_empleado SET nombre = @Nombre, apellido = @Apellido, FK_ID_Cargo = @Cargo, email = @Email, telefono = @Telefono, Estado_tbl_empleado = @Estado, contrasena = @Contrasena WHERE ID_Empleado = @ID_Empleado";
 
-                    // Obtener valor de la celda
-                    Object obtener = ObtenerValorCelda("ID_Empleado");
-                    if (obtener == null)
+                    using (MySqlCommand command = new MySqlCommand(query, connection))
                     {
-                        MessageBox.Show("No se pudo obtener el valor de ID_Empleado.");
-                        return;
+                        command.Parameters.AddWithValue("@Nombre", txtbx_nombre.Text);
+                        command.Parameters.AddWithValue("@Apellido", txtbx_apellido.Text);
+                        command.Parameters.AddWithValue("@Cargo", idCargo);
+                        command.Parameters.AddWithValue("@Email", txtbx_email.Text);
+                        command.Parameters.AddWithValue("@Contrasena", contrasenaEncriptada);
+                        command.Parameters.AddWithValue("@Telefono", txtbx_telefono.Text);
+                        command.Parameters.AddWithValue("@Estado", cb_estadoEmp.Text);
+                        command.Parameters.AddWithValue("@ID_Empleado", idEmpleado);
+
+                        command.ExecuteNonQuery();
                     }
 
-                    int ValorObtenido = Convert.ToInt32(obtener);
-
-                    // Actualizar base de datos
-                    using (MySqlConnection connection = new MySqlConnection(connectionString))
-                    {
-                        connection.Open();
-                        string consulta = "UPDATE tbl_empleado SET Nombre = @Nombre, Apellido = @Apellido, FK_ID_Cargo = @FK_ID_Cargo, Email = @Email, Telefono = @Telefono, Estado_tbl_empleado = @Estado, Contrasena = @Contrasena WHERE ID_Empleado = @ID_Empleado";
-                        MySqlCommand comando = new MySqlCommand(consulta, connection);
-                        comando.Parameters.AddWithValue("@Nombre", txtbx_nombre.Text);
-                        comando.Parameters.AddWithValue("@Apellido", txtbx_apellido.Text);
-                        comando.Parameters.AddWithValue("@FK_ID_Cargo", cargo);
-                        comando.Parameters.AddWithValue("@Email", txtbx_email.Text);
-                        comando.Parameters.AddWithValue("@Telefono", txtbx_telefono.Text);
-                        comando.Parameters.AddWithValue("@Estado", cb_estadoEmp.SelectedItem.ToString());
-                        comando.Parameters.AddWithValue("@Contrasena", txtbx_contrasena.Text);
-                        comando.Parameters.AddWithValue("@ID_Empleado", ValorObtenido);
-
-                        int cantidad = comando.ExecuteNonQuery();
-                        if (cantidad > 0)
-                        {
-                            MessageBox.Show("Registro modificado");
-                        }
-                        else
-                        {
-                            MessageBox.Show("No se encontró el registro para modificar.");
-                        }
-                        PllenarTabla();
-                        Pvaciar();
-                    }
-                }
-                catch (NullReferenceException ex)
-                {
-                    MessageBox.Show("Se ha producido un error: " + ex.Message);
-                }
-                catch (FormatException ex)
-                {
-                    MessageBox.Show("Formato de datos incorrecto: " + ex.Message);
-                }
-                catch (MySqlException ex)
-                {
-                    MessageBox.Show("Error de base de datos: " + ex.Message);
+                    MessageBox.Show("Empleado actualizado exitosamente.");
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Se ha producido un error: " + ex.Message);
+                    MessageBox.Show("Error al actualizar el empleado: " + ex.Message);
                 }
             }
+
+            PllenarTabla();
+            Pvaciar();
         }
 
         private void button2_Click_1(object sender, EventArgs e)
@@ -668,6 +654,20 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                 {
                     connection.Open();
 
+                    string checkEmailQuery = "SELECT COUNT(*) FROM tbl_empleado WHERE Email = @Email";
+                    using (MySqlCommand checkEmailCommand = new MySqlCommand(checkEmailQuery, connection))
+                    {
+                        checkEmailCommand.Parameters.AddWithValue("@Email", txtbx_email.Text);
+
+                        int emailCount = Convert.ToInt32(checkEmailCommand.ExecuteScalar());
+
+                        if (emailCount > 0)
+                        {
+                            MessageBox.Show("El correo ya está registrado. Por favor, use otro correo.", "Error de duplicación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+                    }
+
                     string query = "INSERT INTO tbl_empleado (nombre, apellido, FK_ID_Cargo, email, telefono, Estado_tbl_empleado, contrasena) " +
                                    "VALUES (@Nombre, @Apellido, @Cargo, @Email, @Telefono, @Estado, @Contrasena)";
 
@@ -677,7 +677,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                         command.Parameters.AddWithValue("@Apellido", txtbx_apellido.Text);
                         command.Parameters.AddWithValue("@Cargo", idCargo);
                         command.Parameters.AddWithValue("@Email", txtbx_email.Text);
-                        command.Parameters.AddWithValue("@Contrasena", txtbx_contrasena.Text);
+                        command.Parameters.AddWithValue("@Contrasena", contrasenaEncriptada);
                         command.Parameters.AddWithValue("@Telefono", txtbx_telefono.Text);
                         command.Parameters.AddWithValue("@Estado", cb_estadoEmp.Text);
 

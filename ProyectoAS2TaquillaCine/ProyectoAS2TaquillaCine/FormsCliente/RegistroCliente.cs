@@ -77,7 +77,20 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
                 try
                 {
                     connection.Open();
+                    // Validar si el correo ya existe en la base de datos
+                    string checkEmailQuery = "SELECT COUNT(*) FROM tbl_cliente WHERE email = @Email";
+                    using (MySqlCommand checkEmailCommand = new MySqlCommand(checkEmailQuery, connection))
+                    {
+                        checkEmailCommand.Parameters.AddWithValue("@Email", txtbx_email.Text);
 
+                        int emailCount = Convert.ToInt32(checkEmailCommand.ExecuteScalar());
+
+                        if (emailCount > 0)
+                        {
+                            MessageBox.Show("El correo ya está registrado. Por favor, use otro correo.", "Error de duplicación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+                    }
                     // Crear un comando para insertar los datos en la tabla cliente
                     string query = "INSERT INTO tbl_cliente (Nombre, Apellido, Email, Contrasena, Telefono, NIT, Fecha_Nacimiento) " +
                                    "VALUES (@Nombre, @Apellido, @Email, @Contrasena, @Telefono, @Nit, @FechaNacimiento)";

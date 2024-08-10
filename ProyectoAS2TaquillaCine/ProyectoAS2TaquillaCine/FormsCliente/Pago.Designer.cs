@@ -133,7 +133,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // txtbx_nombre
             // 
             this.txtbx_nombre.Location = new System.Drawing.Point(313, 428);
-            this.txtbx_nombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtbx_nombre.Margin = new System.Windows.Forms.Padding(4);
             this.txtbx_nombre.Name = "txtbx_nombre";
             this.txtbx_nombre.Size = new System.Drawing.Size(467, 22);
             this.txtbx_nombre.TabIndex = 3;
@@ -141,7 +141,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // txtbx_telefono
             // 
             this.txtbx_telefono.Location = new System.Drawing.Point(313, 484);
-            this.txtbx_telefono.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtbx_telefono.Margin = new System.Windows.Forms.Padding(4);
             this.txtbx_telefono.Name = "txtbx_telefono";
             this.txtbx_telefono.Size = new System.Drawing.Size(256, 22);
             this.txtbx_telefono.TabIndex = 4;
@@ -159,7 +159,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // txtbx_noTarjeta
             // 
             this.txtbx_noTarjeta.Location = new System.Drawing.Point(316, 300);
-            this.txtbx_noTarjeta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtbx_noTarjeta.Margin = new System.Windows.Forms.Padding(4);
             this.txtbx_noTarjeta.Name = "txtbx_noTarjeta";
             this.txtbx_noTarjeta.Size = new System.Drawing.Size(309, 22);
             this.txtbx_noTarjeta.TabIndex = 1;
@@ -181,7 +181,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // 
             this.cb_mes.FormattingEnabled = true;
             this.cb_mes.Location = new System.Drawing.Point(619, 495);
-            this.cb_mes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cb_mes.Margin = new System.Windows.Forms.Padding(4);
             this.cb_mes.Name = "cb_mes";
             this.cb_mes.Size = new System.Drawing.Size(65, 24);
             this.cb_mes.TabIndex = 5;
@@ -190,7 +190,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // 
             this.cb_ano.FormattingEnabled = true;
             this.cb_ano.Location = new System.Drawing.Point(692, 495);
-            this.cb_ano.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cb_ano.Margin = new System.Windows.Forms.Padding(4);
             this.cb_ano.Name = "cb_ano";
             this.cb_ano.Size = new System.Drawing.Size(65, 24);
             this.cb_ano.TabIndex = 6;
@@ -211,7 +211,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // txtbx_codigoSeg
             // 
             this.txtbx_codigoSeg.Location = new System.Drawing.Point(317, 559);
-            this.txtbx_codigoSeg.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtbx_codigoSeg.Margin = new System.Windows.Forms.Padding(4);
             this.txtbx_codigoSeg.Name = "txtbx_codigoSeg";
             this.txtbx_codigoSeg.Size = new System.Drawing.Size(51, 22);
             this.txtbx_codigoSeg.TabIndex = 7;
@@ -231,7 +231,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // txtbx_nit
             // 
             this.txtbx_nit.Location = new System.Drawing.Point(317, 366);
-            this.txtbx_nit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtbx_nit.Margin = new System.Windows.Forms.Padding(4);
             this.txtbx_nit.Name = "txtbx_nit";
             this.txtbx_nit.Size = new System.Drawing.Size(308, 22);
             this.txtbx_nit.TabIndex = 2;
@@ -255,7 +255,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             this.btn_pagar.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_pagar.ForeColor = System.Drawing.SystemColors.Menu;
             this.btn_pagar.Location = new System.Drawing.Point(861, 511);
-            this.btn_pagar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_pagar.Margin = new System.Windows.Forms.Padding(4);
             this.btn_pagar.Name = "btn_pagar";
             this.btn_pagar.Size = new System.Drawing.Size(244, 63);
             this.btn_pagar.TabIndex = 10;
@@ -269,7 +269,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             this.btn_regresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_regresar.ForeColor = System.Drawing.SystemColors.Menu;
             this.btn_regresar.Location = new System.Drawing.Point(13, 14);
-            this.btn_regresar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_regresar.Margin = new System.Windows.Forms.Padding(4);
             this.btn_regresar.Name = "btn_regresar";
             this.btn_regresar.Size = new System.Drawing.Size(115, 46);
             this.btn_regresar.TabIndex = 9;
@@ -280,7 +280,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // pgb_tiempo
             // 
             this.pgb_tiempo.Location = new System.Drawing.Point(861, 428);
-            this.pgb_tiempo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pgb_tiempo.Margin = new System.Windows.Forms.Padding(4);
             this.pgb_tiempo.Name = "pgb_tiempo";
             this.pgb_tiempo.Size = new System.Drawing.Size(339, 28);
             this.pgb_tiempo.TabIndex = 150;
@@ -357,10 +357,10 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             this.rdb_credito.Location = new System.Drawing.Point(635, 528);
             this.rdb_credito.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rdb_credito.Name = "rdb_credito";
-            this.rdb_credito.Size = new System.Drawing.Size(112, 30);
+            this.rdb_credito.Size = new System.Drawing.Size(104, 30);
             this.rdb_credito.TabIndex = 8;
             this.rdb_credito.TabStop = true;
-            this.rdb_credito.Text = "Crétdito";
+            this.rdb_credito.Text = "Crédito";
             this.rdb_credito.UseVisualStyleBackColor = true;
             // 
             // rdb_debito
@@ -422,7 +422,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             this.Controls.Add(this.lb_lb3);
             this.Controls.Add(this.lb_lb2);
             this.Controls.Add(this.lb_cinehub);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Pago";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pago";

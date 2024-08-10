@@ -258,18 +258,6 @@
     <Compile Include="FormsAdmin\Ubicaciones.Designer.cs">
       <DependentUpon>Ubicaciones.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormsAdmin\Usuarios.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormsAdmin\Usuarios.Designer.cs">
-      <DependentUpon>Usuarios.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormsAdmin\Ventas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormsAdmin\Ventas.Designer.cs">
-      <DependentUpon>Ventas.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormsCliente\Asientos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -365,12 +353,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormsAdmin\Ubicaciones.resx">
       <DependentUpon>Ubicaciones.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormsAdmin\Usuarios.resx">
-      <DependentUpon>Usuarios.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormsAdmin\Ventas.resx">
-      <DependentUpon>Ventas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormsCliente\Asientos.resx">
       <DependentUpon>Asientos.cs</DependentUpon>

@@ -122,6 +122,13 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
         {
 
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            FormsCliente.Cambiocontrasena loginForm = new FormsCliente.Cambiocontrasena();
+            loginForm.Show();
+            this.Hide();
+        }
     }
 }
 
