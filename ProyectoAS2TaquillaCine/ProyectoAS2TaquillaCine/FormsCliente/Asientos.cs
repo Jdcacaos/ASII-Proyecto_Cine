@@ -26,13 +26,14 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
         public Asientos(int id, int total, int idproyeccion, int idcliente, int desc, string horar)
         {
             InitializeComponent();
+            this.MaximizeBox = false;
             idCliente = idcliente;
             pelicula = id;
             totalventa = total;
             idproye = idproyeccion;
-            // Asegúrate de que el Timer se inicializa y se configura correctamente
+
             timer = new Timer();
-            timer.Interval = 1000; // 1 segundo
+            timer.Interval = 1000;
             timer.Tick += Tick;
 
             descu = desc;
@@ -151,13 +152,9 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
         {
             tiempoRestante--;
 
-            // Actualiza la Label con el tiempo restante
             lb_timer.Text = TimeSpan.FromSeconds(tiempoRestante).ToString(@"hh\:mm\:ss");
 
-            // Actualiza la ProgressBar
             pgb_tiempo.Value = tiempoRestante;
-
-            // Detén el Timer cuando el tiempo se acabe
             if (tiempoRestante <= 0)
             {
                 timer.Stop();
@@ -165,10 +162,9 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
                 pgb_tiempo.Value = 0;
                 MessageBox.Show("¡Tiempo agotado!");
 
-                // Redirige al formulario CarteleraNueva
                 CarteleraNueva carteleraNueva = new CarteleraNueva(idCliente);
                 carteleraNueva.Show();
-                this.Close(); // Opcional: cierra el formulario actual si ya no es necesario
+                this.Close();
             }
         }
         private int ObtenerIDAsiento(char fila, int numero)
@@ -200,7 +196,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // No hacer nada si el botón está deshabilitado (asiento ocupado)
             if (!btn.Enabled)
                 return;
-            char fila = btn.Name[3]; // Asumiendo que el nombre del botón sigue el formato btnA1, btnB2, etc.
+            char fila = btn.Name[3];
             int numero = int.Parse(btn.Name.Substring(4));
 
             // Alternar el color de los botones que no son rojos
@@ -261,7 +257,6 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
                 {
                     conexion.Open();
 
-                    // Ejecutar la primera consulta
                     string query = "SELECT Titulo, Imagen FROM tbl_pelicula WHERE ID_pelicula = @id";
                     MySqlCommand cmd = new MySqlCommand(query, conexion);
                     cmd.Parameters.AddWithValue("@id", pelicula);
@@ -276,9 +271,8 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
                         picbx_pelicula.Image = imagen(fotografia);
                     }
 
-                    reader.Close(); // Cerrar el primer lector antes de ejecutar la segunda consulta
+                    reader.Close();
 
-                    // Ejecutar la segunda consulta
                     string query2 = "SELECT FK_ID_Sala, Fecha, Hora FROM tbl_proyeccion WHERE FK_ID_Pelicula = @id";
                     MySqlCommand cmd2 = new MySqlCommand(query2, conexion);
                     cmd2.Parameters.AddWithValue("@id", pelicula);
@@ -293,13 +287,13 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
                         lb_horaProyeccion.Text = "Horario: " + horario;
                     }
 
-                    reader2.Close(); // Cerrar el segundo lector
+                    reader2.Close();
 
                     string query3 = "SELECT A.Fila, A.Numero FROM tbl_reservacion R " +
                            "JOIN tbl_asiento A ON R.Fk_ID_Asiento = A.ID_Asiento " +
                            "WHERE R.Fk_ID_Proyeccion = @proyeccionId";
                     MySqlCommand cmd3 = new MySqlCommand(query3, conexion);
-                    cmd3.Parameters.AddWithValue("@proyeccionId", idproye); // Reemplazar 'pelicula' por el ID de la proyección si es necesario
+                    cmd3.Parameters.AddWithValue("@proyeccionId", idproye);
                     MySqlDataReader reader3 = cmd3.ExecuteReader();
                     int asientosOcupados = 0;
                     while (reader3.Read())
@@ -307,7 +301,6 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
                         char fila = reader3["Fila"].ToString()[0];
                         int numero = Convert.ToInt32(reader3["Numero"]);
 
-                        // Marcar el asiento como ocupado
                         MarcarAsientoOcupado(fila, numero);
                         asientosOcupados++;
                     }
@@ -316,7 +309,6 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
                     if (asientosOcupados >= 72)
                     {
                         MessageBox.Show("Todos los asientos están ocupados. No se pueden hacer más reservas.");
-                        // Deshabilitar todos los botones de los asientos
                         FormsCliente.CarteleraNueva formCartelera = new FormsCliente.CarteleraNueva(idCliente);
                         formCartelera.Show();
                         this.Close();
@@ -335,20 +327,19 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             }
         }
         private void DeshabilitarBotonesAsientos()
-{
-    foreach (Control control in this.Controls)
-    {
-        if (control is Button btn && btn.Name.StartsWith("btn"))
         {
-            btn.Enabled = false; // Deshabilitar todos los botones de los asientos
+            foreach (Control control in this.Controls)
+            {
+                if (control is Button btn && btn.Name.StartsWith("btn"))
+                {
+                    btn.Enabled = false;
+                }
+            }
         }
-    }
-}
         private void MarcarAsientoOcupado(char fila, int numero)
         {
             Button btn = null;
 
-            // Obtener el botón correspondiente al asiento
             switch (fila)
             {
                 case 'A':
@@ -381,7 +372,6 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
 
             }
 
-            // Si se encuentra el botón, marcarlo como ocupado
             if (btn != null)
             {
                 btn.BackColor = Color.Red;
@@ -413,7 +403,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
 
         private void button95_Click(object sender, EventArgs e)
         {
-           
+            string nompeli = lb_pelicula.Text;
             List<(char fila, int numero)> asientosSeleccionados = ObtenerAsientosSeleccionados();
             if (asientosSeleccionados.Count != TotalAsientos)
             {
@@ -422,8 +412,8 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             else
             {
 
-                
-                FormsCliente.Pago formPago = new FormsCliente.Pago(totalventa - descu, idCliente, asientosSeleccionados, idproye, descu, horario);
+
+                FormsCliente.Pago formPago = new FormsCliente.Pago(totalventa - descu, idCliente, asientosSeleccionados, idproye, descu, horario, nompeli);
                 formPago.Show();
                 timer.Stop();
                 this.Hide();
@@ -436,3 +426,6 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
         }
     }
 }
+
+
+//CODIGO CREADO BRAYAN HERNANDEZ

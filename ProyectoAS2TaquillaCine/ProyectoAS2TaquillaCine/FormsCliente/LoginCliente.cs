@@ -19,13 +19,14 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             InitializeComponent();
             txtbx_correoUsuario.KeyDown += new KeyEventHandler(TextBox_KeyDown);
             txtbx_contrasena.KeyDown += new KeyEventHandler(TextBox_KeyDown);
+            this.MaximizeBox = false;
         }
 
         private void TextBox_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
-                button1_Click(sender, e); // Llama al método del botón
+                button1_Click(sender, e);
             }
         }
 
@@ -62,7 +63,6 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
                 {
                     connection.Open();
 
-                    // Crear un comando para obtener la contraseña encriptada del cliente por su email
                     string query = "SELECT ID_Cliente, Contrasena FROM tbl_cliente WHERE Email = @Email";
 
                     using (MySqlCommand command = new MySqlCommand(query, connection))
@@ -73,7 +73,6 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
                         {
                             if (reader.Read())
                             {
-                                // Obtener los datos del cliente
                                 int idCliente = reader.GetInt32("ID_Cliente");
                                 string hashedPassword = reader.GetString("Contrasena");
 
@@ -82,7 +81,6 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
                                 {
                                     MessageBox.Show("Inicio de sesión exitoso.", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                                    // Abrir el siguiente formulario y pasar el ID del cliente
                                     FormsCliente.CarteleraNueva pagoForm = new FormsCliente.CarteleraNueva(idCliente);
                                     pagoForm.Show();
                                     this.Hide();
@@ -110,11 +108,11 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
         {
             if (chb_mostrarContra.Checked)
             {
-                txtbx_contrasena.PasswordChar = '\0'; // Mostrar la contraseña
+                txtbx_contrasena.PasswordChar = '\0'; 
             }
             else
             {
-                txtbx_contrasena.PasswordChar = '*'; // Ocultar la contraseña
+                txtbx_contrasena.PasswordChar = '*'; 
             }
         }
 
@@ -131,4 +129,6 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
         }
     }
 }
+
+//CODIGO CREADO POR JOSUE CACAO Y JOSE VICTOR CASTELLANOS
 

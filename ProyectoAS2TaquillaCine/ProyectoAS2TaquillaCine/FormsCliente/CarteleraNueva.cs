@@ -57,42 +57,35 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
         }
         private void PeliculaAPanel(int id, string nombre, byte[] fotografia)
         {
-            // Crear un nuevo panel para la película
             Panel moviePanel = new Panel();
-            moviePanel.Size = new Size(200, 250); // Ajusta el tamaño según necesites
+            moviePanel.Size = new Size(200, 250); 
             moviePanel.BorderStyle = BorderStyle.FixedSingle;
-            moviePanel.Tag = id; // Guardar el ID de la película en el Tag del panel
+            moviePanel.Tag = id; 
 
-            // Crear y configurar el PictureBox para la fotografía
             PictureBox pictureBox = new PictureBox();
             pictureBox.Size = new Size(200, 200);
-            pictureBox.Image = ImagenMetodo(fotografia); // Convertir el byte array a imagen
+            pictureBox.Image = ImagenMetodo(fotografia); 
             pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox.Click += new EventHandler(MoviePanel_Click); // Asignar el evento de clic
+            pictureBox.Click += new EventHandler(MoviePanel_Click); 
 
-            // Crear y configurar el Label para el nombre de la película
             Label Pelinombre = new Label();
             Pelinombre.Text = nombre;
             Pelinombre.AutoSize = false;
             Pelinombre.TextAlign = ContentAlignment.MiddleCenter;
             Pelinombre.Dock = DockStyle.Bottom;
             Pelinombre.Height = 50;
-            Pelinombre.Click += new EventHandler(MoviePanel_Click); // Asignar el evento de clic
+            Pelinombre.Click += new EventHandler(MoviePanel_Click); 
 
-            // Agregar los controles al panel de la película
             moviePanel.Controls.Add(pictureBox);
             moviePanel.Controls.Add(Pelinombre);
 
-            // Agregar evento de clic al panel de la película
             moviePanel.Click += new EventHandler(MoviePanel_Click);
 
-            // Agregar el panel de la película al FlowLayoutPanel
-            panel_panelPelicula.Controls.Add(moviePanel); // PeliculaPanel es tu contenedor
+            panel_panelPelicula.Controls.Add(moviePanel);
         }
 
         private void MoviePanel_Click(object sender, EventArgs e)
         {
-            // Obtener el panel de la película desde el control que disparó el evento
             Control control = (Control)sender;
             while (control != null && !(control is Panel))
             {
@@ -103,7 +96,6 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             {
                 int pelicula = (int)moviePanel.Tag;
 
-                // Abrir el formulario de detalles de la película
                 InfoPelicula formhorario = new InfoPelicula(pelicula, idCliente);
                 this.Hide();
                 formhorario.ShowDialog();
@@ -206,7 +198,6 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
                         connection.Open();
                         MySqlDataReader reader = command.ExecuteReader();
 
-                        // Limpiar el FlowLayoutPanel antes de agregar nuevos controles
                         panel_panelPelicula.Controls.Clear();
 
                         while (reader.Read())
@@ -215,7 +206,6 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
                             byte[] imagenData = reader["imagen"] as byte[];
                             int idPelicula = Convert.ToInt32(reader["ID_pelicula"]);
 
-                            // Crear un panel para cada película
                             Panel panel = new Panel
                             {
                                 Width = 220, // Ancho del panel
@@ -226,7 +216,6 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
                                 BackColor = Color.LightGray // Color de fondo para hacer el panel más visible
                             };
 
-                            // Crear un PictureBox para la imagen
                             PictureBox pictureBox = new PictureBox
                             {
                                 Image = imagenData != null ? Image.FromStream(new MemoryStream(imagenData)) : null,
@@ -236,7 +225,6 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
                                 BorderStyle = BorderStyle.None // Asegurarse de que no tenga border style
                             };
 
-                            // Crear un Label para el título
                             Label label = new Label
                             {
                                 Text = titulo,
@@ -246,11 +234,9 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
                                 BorderStyle = BorderStyle.None // Asegurarse de que no tenga border style
                             };
 
-                            // Añadir controles al panel
                             panel.Controls.Add(pictureBox);
                             panel.Controls.Add(label);
 
-                            // Añadir el manejador de eventos de clic al panel
                             panel.Click += (s, args) =>
                             {
                                 int id = (int)panel.Tag;
@@ -260,7 +246,6 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
                                 this.Close();
                             };
 
-                            // Añadir el panel al FlowLayoutPanel
                             panel_panelPelicula.Controls.Add(panel);
                         }
 
@@ -330,11 +315,9 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
 
             if (resultado == DialogResult.Yes)
             {
-                // Si el usuario confirma, cerrar sesión
                 FormsGlobales.Menu newMenu = new FormsGlobales.Menu();
                 newMenu.Show();
 
-                // Cerrar el formulario actual
                 this.Hide();
             }
         }
@@ -345,3 +328,6 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
         }
     }
 }
+
+
+//CODIGO CREADO POR JOSUE CACAO Y SEBASTIAN LETONA

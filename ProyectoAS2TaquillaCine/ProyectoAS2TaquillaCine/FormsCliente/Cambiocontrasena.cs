@@ -16,6 +16,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
         public Cambiocontrasena()
         {
             InitializeComponent();
+            this.MaximizeBox = false;
         }
 
         private void btn_actualizar_Click(object sender, EventArgs e)
@@ -23,7 +24,6 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             string email = txt_correo.Text.Trim();
             string nuevaContrasena = txt_nuevacontrasena.Text.Trim();
 
-            // Validar que los campos no estén vacíos
             if (string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(nuevaContrasena))
             {
                 MessageBox.Show("Por favor, complete todos los campos.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -33,7 +33,6 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             // Encriptar la nueva contraseña
             string nuevaContrasenaEncriptada = BCrypt.Net.BCrypt.HashPassword(nuevaContrasena);
 
-            // Cadena de conexión a tu base de datos MySQL
             string connectionString = DatabaseConfig.ConnectionString;
 
             using (MySqlConnection connection = new MySqlConnection(connectionString))
@@ -70,7 +69,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
                             MessageBox.Show("Contraseña actualizada correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             FormsCliente.LoginCliente pagoForm = new FormsCliente.LoginCliente();
                             pagoForm.Show();
-                            this.Close(); // Cierra el formulario si la actualización fue exitosa
+                            this.Close(); 
                         }
                         else
                         {
@@ -84,5 +83,20 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
                 }
             }
         }
+
+        private void Cambiocontrasena_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_regresar_Click(object sender, EventArgs e)
+        {
+            FormsCliente.LoginCliente pagoForm = new FormsCliente.LoginCliente();
+            pagoForm.Show();
+            this.Close(); 
+        }
     }
 }
+
+
+//CODIGO CREADO POR BRAYAN HERNANDEZ Y SEBASTIAN LETONA

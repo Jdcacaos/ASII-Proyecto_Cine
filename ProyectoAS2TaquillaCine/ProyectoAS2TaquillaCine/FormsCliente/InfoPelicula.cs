@@ -18,13 +18,14 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
         private int idpelicula;
         private int idCliente;
 
-        private string trailerUrl; // Asegúrate de que esta variable esté inicializada
+        private string trailerUrl; 
 
         public InfoPelicula(int id, int idCliente)
         {
             InitializeComponent();
             idpelicula = id;
             this.idCliente = idCliente;
+            this.MaximizeBox = false;
 
             this.btn_reserva = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -145,5 +146,6 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
     }
 }
 
+//CODIGO CREADO POR JOSUE CACAO Y JOEL LOPEZ
 
 

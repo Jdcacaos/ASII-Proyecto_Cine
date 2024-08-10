@@ -14,8 +14,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using BCrypt.Net; // Asegúrate de tener esta referencia
-
+using BCrypt.Net;
 
 namespace ProyectoAS2TaquillaCine.FormsCliente
 {
@@ -32,12 +31,14 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
 
         private string nombreCliente;
         private string nombrePelicula;
+        private string nPelicula;
         private string horario;
         private int numAsientos;
         private int numeroFactura;
 
 
-        public Pago(int TotalVenta, int idCliente, List<(char fila, int numero)> asientos, int idproye, int desc, string horar)
+
+        public Pago(int TotalVenta, int idCliente, List<(char fila, int numero)> asientos, int idproye, int desc, string horar, string nombrepeli)
         {
             InitializeComponent();
             LlenarComboEmpleados();
@@ -45,21 +46,19 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             Llenar_ComboBox_mes();
             txtbx_correo.TextChanged += TxtCorreo_TextChanged;
             asientosSeleccionados = asientos;
-            // Inicializa el Timer
             timer = new Timer();
-            timer.Interval = 1000; // Intervalo en milisegundos (1000 ms = 1 segundo)
+            timer.Interval = 1000; 
             timer.Tick += new EventHandler(timer_Tick);
 
+
+            nPelicula = nombrepeli;
             descu = desc;
-            // Configura la ProgressBar
-            pgb_tiempo.Maximum = 500; // Puedes ajustar el valor máximo según tus necesidades
+            pgb_tiempo.Maximum = 500; 
             pgb_tiempo.Value = 500;
 
-            // Configura el tiempo restante
-            tiempoRestante = 500; // En segundos, por ejemplo
+            tiempoRestante = 500; 
             lb_tiempo.Text = FormatTime(tiempoRestante);
 
-            // Inicia el Timer
             timer.Start();
 
             idproyeccion = idproye;
@@ -104,8 +103,8 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
                     cmd.Parameters.AddWithValue("@proyeccionId", idproyeccion);
                     cmd.Parameters.AddWithValue("@clienteId", idCliente);
                     cmd.Parameters.AddWithValue("@asientoId", ObtenerIDAsiento(asiento.fila, asiento.numero));
-                    cmd.Parameters.AddWithValue("@precio", Venta-descu); // Ejemplo de precio
-                    cmd.Parameters.AddWithValue("@descuento", descu); // Ejemplo de descuento
+                    cmd.Parameters.AddWithValue("@precio", Venta-descu); 
+                    cmd.Parameters.AddWithValue("@descuento", descu); 
 
                     cmd.ExecuteNonQuery();
                 }
@@ -138,7 +137,6 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
                         {
                             cb_empleados.Items.Clear();
 
-                            // Crear una lista temporal para almacenar los elementos
                             List<KeyValuePair<int, string>> empleados = new List<KeyValuePair<int, string>>();
 
                             while (reader.Read())
@@ -146,11 +144,9 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
                                 int idEmpleado = reader.GetInt32("ID_Empleado");
                                 string nombre = reader.GetString("Nombre");
 
-                                // Añadir a la lista de empleados
                                 empleados.Add(new KeyValuePair<int, string>(idEmpleado, nombre));
                             }
 
-                            // Establecer la fuente de datos del ComboBox
                             cb_empleados.DataSource = empleados;
                             cb_empleados.DisplayMember = "Value";
                             cb_empleados.ValueMember = "Key";
@@ -182,7 +178,6 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
                 {
                     connection.Open();
 
-                    // Consulta SQL para obtener los datos de la factura
                     string query = @"
                     SELECT 
                         p.Titulo AS NombrePelicula, 
@@ -202,7 +197,6 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
                             if (reader.Read())
                             {
                                 nombrePelicula = reader.GetString("NombrePelicula");
-                                //horario = reader.GetString("Horario");
                             }
                         }
                     }
@@ -231,7 +225,6 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
                 {
                     connection.Open();
 
-                    // Verificar si el correo está en tbl_cliente
                     string queryCliente = "SELECT COUNT(*) FROM tbl_cliente WHERE Email = @Correo";
                     using (MySqlCommand command = new MySqlCommand(queryCliente, connection))
                     {
@@ -320,12 +313,12 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             if (tiempoRestante > 0)
             {
                 tiempoRestante--;
-                pgb_tiempo.Value = tiempoRestante; // Ajusta el valor de la ProgressBar
-                lb_tiempo.Text = FormatTime(tiempoRestante); // Actualiza la Label con el tiempo restante
+                pgb_tiempo.Value = tiempoRestante; 
+                lb_tiempo.Text = FormatTime(tiempoRestante); 
             }
             else
             {
-                timer.Stop(); // Detiene el Timer cuando el tiempo se acaba
+                timer.Stop(); 
                 lb_tiempo.Text = "¡Tiempo terminado!";
                 this.Close();
             }
@@ -334,21 +327,19 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
         private string FormatTime(int segundos)
         {
             TimeSpan tiempo = TimeSpan.FromSeconds(segundos);
-            return tiempo.ToString(@"mm\:ss"); // Formato mm:ss
+            return tiempo.ToString(@"mm\:ss"); 
         }
 
         private void btnPagar_Click(object sender, EventArgs e)
         {
             try
             {
-                // Validar entradas
                 if (string.IsNullOrEmpty(txtbx_noTarjeta.Text) || string.IsNullOrEmpty(txtbx_codigoSeg.Text))
                 {
                     MessageBox.Show("Por favor, complete todos los campos requeridos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
-                // Inserción y actualización de datos
                 InsertarAsientosSeleccionados();
                 string numeroTarjeta = txtbx_noTarjeta.Text;
                 string mesExpiracion = cb_mes.SelectedItem.ToString();
@@ -410,7 +401,6 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
                         }
                     }
 
-                    // Verificar ID del empleado
                     string checkEmpleadoQuery = "SELECT COUNT(*) FROM tbl_empleado WHERE ID_Empleado = @idEmpleado";
                     using (MySqlCommand checkEmpleadoCommand = new MySqlCommand(checkEmpleadoQuery, connection))
                     {
@@ -513,7 +503,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
 
         private int ObtenerNumeroSala(int idProyeccion)
         {
-            int numeroSala = -1; // Valor predeterminado en caso de no encontrar el número de sala
+            int numeroSala = -1; 
 
             using (MySqlConnection conexion = new MySqlConnection(connectionString))
             {
@@ -547,14 +537,10 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
 
             string nombrec = txtbx_nombre.Text;
 
-            // Generar un número de factura (correlativo)
-            //int numeroFactura = GenerarNumeroFactura(); // Método que genera o recupera el número de factura
 
-            // Obtener la ruta de la carpeta de "Descargas"
             string downloadsPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
             string pdfDirectory = Path.Combine(downloadsPath, "Descargas");
 
-            // Asegurar de que el directorio existe
             if (!Directory.Exists(pdfDirectory))
             {
                 Directory.CreateDirectory(pdfDirectory);
@@ -567,13 +553,11 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
 
             try
             {
-                // Crear un documento PDF
                 using (Document document = new Document(PageSize.A4))
                 {
                     PdfWriter.GetInstance(document, new FileStream(pdfPath, FileMode.Create));
                     document.Open();
 
-                    // Añadir título
                     Paragraph title = new Paragraph("Factura de Compra")
                     {
                         Alignment = Element.ALIGN_CENTER,
@@ -596,14 +580,12 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
                     document.Add(correlativo);
                     document.Add(new Paragraph("\n"));
 
-                    // Crear una tabla para los datos de la factura
                     PdfPTable table = new PdfPTable(2)
                     {
                         WidthPercentage = 100
                     };
                     table.SetWidths(new float[] { 1f, 2f });
 
-                    // Añadir filas a la tabla
                     table.AddCell("Nombre del Cliente:");
                     table.AddCell(nombrec);
 
@@ -611,7 +593,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
                     table.AddCell(txtbx_nit.Text);
 
                     table.AddCell("Nombre de la Película:");
-                    table.AddCell(nombrePelicula);
+                    table.AddCell(nPelicula);
 
                     table.AddCell("Horario:");
                     table.AddCell(horario);
@@ -640,13 +622,11 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
                     }
                     table.AddCell(seatsCell);
 
-                    // Añadir la tabla al documento
                     document.Add(table);
 
                     document.Close();
                 }
 
-                // Abrir el PDF automáticamente después de generarlo
                 Process.Start(new ProcessStartInfo(pdfPath) { UseShellExecute = true });
             }
             catch (Exception ex)
@@ -666,7 +646,6 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
                 {
                     connection.Open();
 
-                    // Consulta para obtener el último número de factura
                     string query = "SELECT MAX(NumeroFactura) FROM tbl_factura";
 
                     using (MySqlCommand command = new MySqlCommand(query, connection))
@@ -678,7 +657,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
                         }
                         else
                         {
-                            numeroFactura = 1; // Primera factura
+                            numeroFactura = 1; 
                         }
                     }
                 }
@@ -699,7 +678,6 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
 
             if (string.IsNullOrEmpty(correo))
             {
-                // Limpiar el resultado si el texto está vacío
                 txtbx_nombre.Text = string.Empty;
                 return;
             }
@@ -718,12 +696,10 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
 
                         if (resultado != null)
                         {
-                            // Mostrar el nombre en el TextBox
                             cb_nombreEmpleado.Text = resultado.ToString();
                         }
                         else
                         {
-                            // No se encontró el correo
                             cb_nombreEmpleado.Enabled = false;
                             cb_nombreEmpleado.Text = "No se encontró el empleado";
                         }
@@ -751,3 +727,5 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
         }
     }
 }
+
+//CODIGO CREADO POR JOSUE CACAO Y BRAYAN HERNANDEZ Y JOSE VICTOR CASTELLANOS

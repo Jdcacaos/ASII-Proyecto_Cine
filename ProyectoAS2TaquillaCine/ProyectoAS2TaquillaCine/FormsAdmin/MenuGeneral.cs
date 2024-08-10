@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
-using BCrypt.Net; // Asegúrate de tener esta referencia
+using BCrypt.Net; 
 
 namespace ProyectoAS2TaquillaCine.FormsAdmin
 {
@@ -73,7 +73,6 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
 
             if (resultado == DialogResult.Yes)
             {
-                // Verifica si el usuario es administrador y cambia la variable global si es necesario
                 if (GlobalSettings.IsAdmin)
                 {
                     GlobalSettings.IsAdmin = false;
@@ -122,3 +121,6 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
         }
     }
 }
+
+
+//CODIGO CREADO POR DIEGO MARROQUIN

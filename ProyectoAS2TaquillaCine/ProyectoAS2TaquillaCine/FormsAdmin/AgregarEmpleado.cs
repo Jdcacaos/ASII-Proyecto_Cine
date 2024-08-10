@@ -41,19 +41,14 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
 
                 dataTable.Load(resultado);
 
-                // Asignar el DataTable al DataGridView
                 dgv_empleados.DataSource = dataTable;
 
-                // Esperar a que se carguen las columnas
                 dgv_empleados.DataBindingComplete += (s, args) =>
                 {
-                    // Ocultar la columna de la contraseña en el DataGridView
                     if (dgv_empleados.Columns["Contrasena"] != null)
                     {
                         dgv_empleados.Columns["Contrasena"].Visible = false;
                     }
-
-                    // Ocultar la columna FK_ID_Cargo si ya estaba en el DataGridView
                     if (dgv_empleados.Columns["FK_ID_Cargo"] != null)
                     {
                         dgv_empleados.Columns["FK_ID_Cargo"].Visible = false;
@@ -108,9 +103,9 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
         {
             InitializeComponent();
             tmr_timer1 = new Timer();
-            tmr_timer1.Interval = 100; // Intervalo en milisegundos (1000 ms = 1 segundo)
+            tmr_timer1.Interval = 100;
             tmr_timer1.Tick += new EventHandler(timer1_Tick);
-            tmr_timer1.Start(); // Iniciar el Timer
+            tmr_timer1.Start(); 
             btn_editar.Visible = GlobalSettings.IsAdmin;
             btn_eliminar.Visible = GlobalSettings.IsAdmin;
             gbIngresar.Visible = GlobalSettings.IsAdmin;
@@ -129,18 +124,15 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                 int selectedRowIndex = dgv_empleados.SelectedCells[0].RowIndex;
                 DataGridViewRow selectedRow = dgv_empleados.Rows[selectedRowIndex];
 
-                // Asignar valores a los TextBox, manejando posibles valores nulos
                 txtbx_nombre.Text = Convert.ToString(selectedRow.Cells["Nombre"].Value);
                 txtbx_apellido.Text = Convert.ToString(selectedRow.Cells["Apellido"].Value);
                 txtbx_email.Text = Convert.ToString(selectedRow.Cells["Email"].Value);
                
                 txtbx_telefono.Text = Convert.ToString(selectedRow.Cells["Telefono"].Value);
 
-                // Obtener el valor del cargo y estado
                 var cargoId = Convert.ToInt32(selectedRow.Cells["FK_ID_Cargo"].Value);
                 var estado = Convert.ToString(selectedRow.Cells["Estado_tbl_empleado"].Value);
 
-                // Buscar y seleccionar el valor en el ComboBox de cargo
                 foreach (var item in cb_cargo.Items)
                 {
                     if (item is KeyValuePair<int, string> keyValuePair && keyValuePair.Key == cargoId)
@@ -150,7 +142,6 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                     }
                 }
 
-                // Asignar el valor del estado al ComboBox
                 cb_estadoEmp.SelectedItem = estado;
             }
         }
@@ -233,7 +224,6 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             {
                 conexionDB = new MySqlConnection(connectionString);
 
-                // Consulta SQL actualizada para incluir las uniones
                 MySqlCommand comando = new MySqlCommand(
                 "SELECT e.*, c.Nombre AS Cargo " +
                 "FROM tbl_empleado e " +
@@ -246,16 +236,14 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
 
                 dataTable.Load(resultado);
 
-                // Asignar el DataTable al DataGridView
+               
                 dgv_empleados.DataSource = dataTable;
-
-                // Ocultar la columna de la contraseña en el DataGridView
+                
                 if (dgv_empleados.Columns["Contrasena"] != null)
                 {
                     dgv_empleados.Columns["Contrasena"].Visible = false;
                 }
 
-                // Ocultar la columna FK_ID_Cargo si ya estaba en el DataGridView
                 if (dgv_empleados.Columns["FK_ID_Cargo"] != null)
                 {
                     dgv_empleados.Columns["FK_ID_Cargo"].Visible = false;
@@ -306,7 +294,6 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                         }
                     }
 
-                    // Actualizar el DataGridView
                     PllenarTabla();
                     Pvaciar();
                 }
@@ -345,10 +332,8 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                 try
                 {
 
-                    // Obtener valores del ComboBox
                     int cargo = ((KeyValuePair<int, string>)cb_cargo.SelectedItem).Key;
 
-                    // Obtener valor de la celda
                     Object obtener = ObtenerValorCelda("ID_Empleado");
                     if (obtener == null)
                     {
@@ -358,7 +343,6 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
 
                     int ValorObtenido = Convert.ToInt32(obtener);
 
-                    // Actualizar base de datos
                     using (MySqlConnection connection = new MySqlConnection(connectionString))
                     {
                         connection.Open();
@@ -411,13 +395,10 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
         }
         private void UpdateDateTimeLabel()
         {
-            // Obtener la fecha y hora actuales
             DateTime now = DateTime.Now;
 
-            // Formatear la fecha y hora como texto
-            string dateTimeText = now.ToString("yyyy-MM-dd HH:mm:ss"); // Cambia el formato según tus necesidades
+            string dateTimeText = now.ToString("yyyy-MM-dd HH:mm:ss"); 
 
-            // Establecer el texto del Label
             lb_tiempoSys.Text = dateTimeText;
         }
 
@@ -579,7 +560,6 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                         }
                     }
 
-                    // Actualizar el DataGridView
                     PllenarTabla();
                     Pvaciar();
                 }
@@ -597,36 +577,27 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
 
         private void txtbxBuscar_TextChanged(object sender, EventArgs e)
         {
-            // Obtener el texto de búsqueda
             string searchText = txtbx_buscar.Text.Trim();
             if (string.IsNullOrEmpty(searchText))
             {
-                // Si el texto de búsqueda está vacío, no aplicar filtro
                 (dgv_empleados.DataSource as DataTable).DefaultView.RowFilter = string.Empty;
                 return;
             }
 
-            // Crear una lista para las expresiones de filtro
             List<string> filterExpressions = new List<string>();
 
-            // Obtener el DataTable
             DataTable dataTable = dgv_empleados.DataSource as DataTable;
 
-            // Recorrer todas las columnas del DataTable
             foreach (DataColumn column in dataTable.Columns)
             {
-                // Excluir columnas que no sean de tipo texto
                 if (column.DataType == typeof(string))
                 {
-                    // Agregar expresión de filtro para la columna
                     filterExpressions.Add($"[{column.ColumnName}] LIKE '%{searchText}%'");
                 }
             }
 
-            // Unir todas las expresiones de filtro con el operador OR
             string filterExpression = string.Join(" OR ", filterExpressions);
 
-            // Aplicar el filtro
             (dgv_empleados.DataSource as DataTable).DefaultView.RowFilter = filterExpression;
         }
 
@@ -704,5 +675,12 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
         {
 
         }
+
+        private void txtbx_nombre_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
+
+//CODIGO CREADO POR BRAYAN HERNANDEZ

@@ -18,14 +18,14 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
 {
     public partial class AgregarPeliculas : Form
     {
-        string connectionString = DatabaseConfig.ConnectionString; // Debe ser una cadena de conexión MySQL
+        string connectionString = DatabaseConfig.ConnectionString;
 
         public AgregarPeliculas()
         {
             InitializeComponent();
             dgv_peliculas.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             tmr_timer1 = new Timer();
-            tmr_timer1.Interval = 100; // Intervalo en milisegundos (1000 ms = 1 segundo)
+            tmr_timer1.Interval = 100; 
             tmr_timer1.Tick += new EventHandler(tmr_timer1_Tick);
             tmr_timer1.Start(); // Iniciar el Timer
             btn_editar.Visible = GlobalSettings.IsAdmin;
@@ -48,7 +48,6 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             {
                 conexionDB = new MySqlConnection(connectionString);
 
-                // Consulta SQL actualizada para incluir las uniones
                 MySqlCommand comando = new MySqlCommand(
                     " SELECT p.*, c.Nombre AS Clasificacion, pr.Nombre AS Proveedor " +
                     "FROM tbl_pelicula p " +
@@ -63,10 +62,8 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
 
                 dataTable.Load(resultado);
 
-                // Asignar el DataTable al DataGridView
                 dgv_peliculas.DataSource = dataTable;
 
-                // Opcional: Ocultar las columnas de ID si ya no se necesitan
                 dgv_peliculas.Columns["FK_ID_Clasificacion"].Visible = false;
                 dgv_peliculas.Columns["FK_ID_Proveedor"].Visible = false;
             }
@@ -196,7 +193,6 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                 dgv_peliculas.Columns["FK_ID_Clasificacion"].Visible = false;
                 dgv_peliculas.Columns["FK_ID_Proveedor"].Visible = false;
 
-                // Convertir los bytes de imagen a una imagen y asignarla a la celda
                 foreach (DataGridViewRow row in dgv_peliculas.Rows)
                 {
                     if (row.Cells["Imagen"] != null && row.Cells["Imagen"].Value != DBNull.Value)
@@ -232,7 +228,6 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                 string proveedornombre = Convert.ToString(selectedRow.Cells["Proveedor"].Value);
                 string estadoNombre = Convert.ToString(selectedRow.Cells["Estado_tbl_pelicula"].Value);
 
-                // Buscar y seleccionar el valor en el ComboBox de clasificacion
                 foreach (var item in cb_clasificacion.Items)
                 {
                     var keyValuePair = (KeyValuePair<int, string>)item;
@@ -243,7 +238,6 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                     }
                 }
 
-                // Buscar y seleccionar el valor en el ComboBox de proveedor
                 foreach (var item in cb_productor.Items)
                 {
                     var keyValuePair = (KeyValuePair<int, string>)item;
@@ -254,22 +248,20 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                     }
                 }
 
-                // Asignar el valor del estado
                 cb_estado.SelectedItem = estadoNombre;
 
-                // Mostrar la imagen en el PictureBox
                 if (selectedRow.Cells["Imagen"].Value != DBNull.Value)
                 {
                     byte[] imgBytes = (byte[])selectedRow.Cells["Imagen"].Value;
                     using (MemoryStream ms = new MemoryStream(imgBytes))
                     {
                         picbx_imagenPelicula.Image = Image.FromStream(ms);
-                        picbx_imagenPelicula.SizeMode = PictureBoxSizeMode.Zoom; // Ajustar la imagen al PictureBox
+                        picbx_imagenPelicula.SizeMode = PictureBoxSizeMode.Zoom;
                     }
                 }
                 else
                 {
-                    picbx_imagenPelicula.Image = null; // Si no hay imagen, limpiar el PictureBox
+                    picbx_imagenPelicula.Image = null; 
                 }
             }
         }
@@ -384,9 +376,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                 openFileDialog.Filter = "Imágenes (*.jpg;*.jpeg;*.png)|*.jpg;*.jpeg;*.png";
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    // Cargar la imagen en el PictureBox
                     picbx_imagenPelicula.Image = Image.FromFile(openFileDialog.FileName);
-                    // Guardar la ruta de la imagen en un TextBox o variable
                     txtbx_imagen.Text = openFileDialog.FileName;
                 }
             }
@@ -394,10 +384,8 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
 
         private Image RedimensionarImagen(Image imagenOriginal, int anchoDeseado, int altoDeseado)
         {
-            // Crear un nuevo objeto Bitmap con las dimensiones deseadas
             Bitmap imagenRedimensionada = new Bitmap(anchoDeseado, altoDeseado);
 
-            // Crear un objeto Graphics para dibujar la imagen redimensionada
             using (Graphics g = Graphics.FromImage(imagenRedimensionada))
             {
                 g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
@@ -434,12 +422,11 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                     {
                         Image imagenOriginal = Image.FromStream(fs);
 
-                        // Redimensionar la imagen antes de convertirla a bytes
-                        Image imagenRedimensionada = RedimensionarImagen(imagenOriginal, 200, 200); // Ajusta el tamaño deseado aquí
+                        Image imagenRedimensionada = RedimensionarImagen(imagenOriginal, 200, 200); 
 
                         using (MemoryStream ms = new MemoryStream())
                         {
-                            imagenRedimensionada.Save(ms, ImageFormat.Jpeg); // Usa el formato adecuado
+                            imagenRedimensionada.Save(ms, ImageFormat.Jpeg);
                             imagenBytes = ms.ToArray();
                         }
                     }
@@ -526,12 +513,10 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                         {
                             Image imagenOriginal = Image.FromStream(fs);
 
-                            // Redimensionar la imagen antes de convertirla a bytes
-                            Image imagenRedimensionada = RedimensionarImagen(imagenOriginal, 200, 200); // Ajusta el tamaño deseado aquí
-
+                            Image imagenRedimensionada = RedimensionarImagen(imagenOriginal, 200, 200); 
                             using (MemoryStream ms = new MemoryStream())
                             {
-                                imagenRedimensionada.Save(ms, ImageFormat.Jpeg); // Usa el formato adecuado
+                                imagenRedimensionada.Save(ms, ImageFormat.Jpeg);
                                 imagenBytes = ms.ToArray();
                             }
                         }
@@ -642,7 +627,6 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                         }
                     }
 
-                    // Actualizar el DataGridView
                     llenar_tabla();
                 }
             }
@@ -671,13 +655,10 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
 
         private void UpdateDateTimeLabel()
         {
-            // Obtener la fecha y hora actuales
             DateTime now = DateTime.Now;
 
-            // Formatear la fecha y hora como texto
-            string dateTimeText = now.ToString("yyyy-MM-dd HH:mm:ss"); // Cambia el formato según tus necesidades
+            string dateTimeText = now.ToString("yyyy-MM-dd HH:mm:ss");
 
-            // Establecer el texto del Label
             lb_fechaSys.Text = dateTimeText;
         }
         private void tmr_timer1_Tick(object sender, EventArgs e)
@@ -687,36 +668,27 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
 
         private void txtbxBuscar_TextChanged(object sender, EventArgs e)
         {
-            // Obtener el texto de búsqueda
             string searchText = txbx_buscar.Text.Trim();
             if (string.IsNullOrEmpty(searchText))
             {
-                // Si el texto de búsqueda está vacío, no aplicar filtro
                 (dgv_peliculas.DataSource as DataTable).DefaultView.RowFilter = string.Empty;
                 return;
             }
 
-            // Crear una lista para las expresiones de filtro
             List<string> filterExpressions = new List<string>();
 
-            // Obtener el DataTable
             DataTable dataTable = dgv_peliculas.DataSource as DataTable;
 
-            // Recorrer todas las columnas del DataTable
             foreach (DataColumn column in dataTable.Columns)
             {
-                // Excluir columnas que no sean de tipo texto
                 if (column.DataType == typeof(string))
                 {
-                    // Agregar expresión de filtro para la columna
                     filterExpressions.Add($"[{column.ColumnName}] LIKE '%{searchText}%'");
                 }
             }
 
-            // Unir todas las expresiones de filtro con el operador OR
             string filterExpression = string.Join(" OR ", filterExpressions);
 
-            // Aplicar el filtro
             (dgv_peliculas.DataSource as DataTable).DefaultView.RowFilter = filterExpression;
         }
 
@@ -727,9 +699,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                 openFileDialog.Filter = "Imágenes (*.jpg;*.jpeg;*.png)|*.jpg;*.jpeg;*.png";
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    // Cargar la imagen en el PictureBox
                     picbx_imagenPelicula.Image = Image.FromFile(openFileDialog.FileName);
-                    // Guardar la ruta de la imagen en un TextBox o variable
                     txtbx_imagen.Text = openFileDialog.FileName;
                 }
             }
@@ -763,11 +733,11 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                         Image imagenOriginal = Image.FromStream(fs);
 
                         // Redimensionar la imagen antes de convertirla a bytes
-                        Image imagenRedimensionada = RedimensionarImagen(imagenOriginal, 200, 200); // Ajusta el tamaño deseado aquí
+                        Image imagenRedimensionada = RedimensionarImagen(imagenOriginal, 200, 200); 
 
                         using (MemoryStream ms = new MemoryStream())
                         {
-                            imagenRedimensionada.Save(ms, ImageFormat.Jpeg); // Usa el formato adecuado
+                            imagenRedimensionada.Save(ms, ImageFormat.Jpeg);
                             imagenBytes = ms.ToArray();
                         }
                     }
@@ -822,3 +792,4 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
     }
 }
 
+//CODIGO CREADO POR JOSE VICTOR CASTELLANOS

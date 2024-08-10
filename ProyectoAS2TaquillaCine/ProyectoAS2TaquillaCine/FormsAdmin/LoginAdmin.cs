@@ -31,14 +31,11 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
 
             // Mostrar el formulario LoginCliente
             loginForm.Show();
-
-            // Opcional: Cerrar o esconder el formulario actual
             this.Hide();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            // Cadena de conexión a tu base de datos MySQL
             string connectionString = DatabaseConfig.ConnectionString;
 
             // Obtener los valores ingresados por el usuario
@@ -52,7 +49,6 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                 return;
             }
 
-            // Crear una conexión a la base de datos
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
                 try
@@ -64,10 +60,8 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
 
                     using (MySqlCommand command = new MySqlCommand(query, connection))
                     {
-                        // Agregar el parámetro con el valor ingresado
                         command.Parameters.AddWithValue("@Email", email);
 
-                        // Ejecutar el comando y obtener el resultado
                         using (MySqlDataReader reader = command.ExecuteReader())
                         {
                             if (reader.Read())
@@ -78,36 +72,28 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                                 // Comparar la contraseña ingresada con la almacenada
                                 if (BCrypt.Net.BCrypt.Verify(contrasena, hashedPassword))//
                                 {
-                                    // Verificar el cargo del usuario
                                     if (cargoId == 1)
                                     {
-                                        // El usuario tiene el cargo de administrador
-                                        GlobalSettings.IsAdmin = true; // Activar la variable global
+                                        GlobalSettings.IsAdmin = true; 
                                     }
                                     else
                                     {
                                         // El usuario no es administrador
-                                        GlobalSettings.IsAdmin = false; // O cualquier otra lógica según sea necesario
+                                        GlobalSettings.IsAdmin = false;
                                     }
 
-                                    MessageBox.Show("Inicio de sesión exitoso.", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                                    // Aquí puedes abrir el formulario principal de tu aplicación o proceder según tu lógica
+                                    MessageBox.Show("Inicio de sesión exitoso.", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);                                
                                     FormsAdmin.MenuGeneral dashboardForm = new FormsAdmin.MenuGeneral();
                                     dashboardForm.Show();
-
-                                    // Opcional: Cerrar o esconder el formulario actual
                                     this.Hide();
                                 }
                                 else
                                 {
-                                    // La contraseña es incorrecta, mostrar un mensaje de error
                                     MessageBox.Show("Correo o contraseña incorrectos.", "Error de login", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 }
                             }
                             else
                             {
-                                // El correo no existe, mostrar un mensaje de error
                                 MessageBox.Show("Correo o contraseña incorrectos.", "Error de login", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                         }
@@ -127,13 +113,11 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
         {
             if (chb_mostrarCont.Checked)
             {
-                // Mostrar la contraseña
-                txtbx_contrasena.PasswordChar = '\0'; // \0 es el carácter nulo, que muestra el texto plano
+                txtbx_contrasena.PasswordChar = '\0'; 
             }
             else
             {
-                // Ocultar la contraseña
-                txtbx_contrasena.PasswordChar = '*'; // O cualquier otro carácter de tu elección
+                txtbx_contrasena.PasswordChar = '*'; 
             }
         }
 
@@ -148,3 +132,6 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
         }
     }
 }
+
+
+//CODIGO CREADO POR DIGO MARROQUIN Y BRAYAN HERNANDEZ

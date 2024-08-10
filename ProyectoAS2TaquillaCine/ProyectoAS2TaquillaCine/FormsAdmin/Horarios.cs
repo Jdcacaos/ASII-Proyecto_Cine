@@ -21,7 +21,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             dgv_horario.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgv_horario.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             tmr_timer1 = new Timer();
-            tmr_timer1.Interval = 100; // Intervalo en milisegundos (1000 ms = 1 segundo)
+            tmr_timer1.Interval = 100; 
             tmr_timer1.Tick += new EventHandler(tmr_timer1_Tick);
             tmr_timer1.Start(); // Iniciar el Timer
             btn_editar.Visible = GlobalSettings.IsAdmin;
@@ -44,7 +44,6 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             {
                 conexionDB = new MySqlConnection(connectionString);
 
-                // Consulta SQL actualizada para incluir las uniones
                 MySqlCommand comando = new MySqlCommand("SELECT p.ID_Proyeccion, pel.Titulo AS Pelicula, s.Numero_Sala AS Sala, p.Fecha, p.Hora, p.Estado_tbl_proyeccion AS Estado ,p.Precio_Nino , p.Precio_Adulto , p.Precio_3ra_Edad " +
                     "FROM tbl_proyeccion p " +
                     "JOIN tbl_pelicula pel ON p.FK_ID_Pelicula = pel.ID_Pelicula " +
@@ -57,7 +56,6 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
 
                 dataTable.Load(resultado);
 
-                // Asignar el DataTable al DataGridView
                 dgv_horario.DataSource = dataTable;
             }
             catch (Exception ex)
@@ -79,7 +77,6 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             {
                 conexionDB = new MySqlConnection(connectionString);
 
-                // Consulta SQL actualizada para incluir las uniones
                 MySqlCommand comando = new MySqlCommand("SELECT p.ID_Proyeccion, pel.Titulo AS Pelicula, s.Numero_Sala AS Sala, p.Fecha, p.Hora, p.Estado_tbl_proyeccion AS Estado , p.Precio_Nino , p.Precio_Adulto , p.Precio_3ra_Edad " +
                     "FROM tbl_proyeccion p " +
                     "JOIN tbl_pelicula pel ON p.FK_ID_Pelicula = pel.ID_Pelicula " +
@@ -92,7 +89,6 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
 
                 dataTable.Load(resultado);
 
-                // Asignar el DataTable al DataGridView
                 dgv_horario.DataSource = dataTable;
             }
             catch (Exception ex)
@@ -206,10 +202,8 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
 
         }
 
-        //Agregar Datos
         private bool datosCorrectos()
         {
-            // Verificar que todos los ComboBox tengan una selección
             if (cb_Pelicula.SelectedItem == null)
             {
                 MessageBox.Show("Seleccione una Pelicula");
@@ -228,7 +222,6 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                 return false;
             }
 
-            // Verificar que todos los TextBox no estén vacíos
             if (string.IsNullOrWhiteSpace(txtbx_nino.Text))
             {
                 MessageBox.Show("Ingrese el precio para niños");
@@ -272,14 +265,12 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             {
                 if (!datosCorrectos())
                 {
-                    return; // No proceder si los datos no son correctos
+                    return; 
                 }
 
-                // Obtener valores del ComboBox
                 int idPelicula = ((KeyValuePair<int, string>)cb_Pelicula.SelectedItem).Key;
                 int idSala = ((KeyValuePair<int, int>)cb_id_Sala.SelectedItem).Key;
 
-                // Obtener valor de la celda
                 Object obtener = ObtenerValorCelda("ID_Proyeccion");
                 if (obtener == null)
                 {
@@ -289,7 +280,6 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
 
                 int ValorObtenido = Convert.ToInt32(obtener);
 
-                // Actualizar base de datos
                 using (MySqlConnection connection = new MySqlConnection(connectionString))
                 {
                     connection.Open();
@@ -339,9 +329,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                 string pelicula = Convert.ToString(selectedRow.Cells["Pelicula"].Value);
                 int sala = Convert.ToInt32(selectedRow.Cells["Sala"].Value);
                 string estado = Convert.ToString(selectedRow.Cells["Estado"].Value);
-                //string hora = Convert.ToString(selectedRow.Cells["Hora"].Value);
 
-                // Buscar y seleccionar el valor en el ComboBox de tipo de sala
                 foreach (var item in cb_Pelicula.Items)
                 {
                     var keyValuePair = (KeyValuePair<int, string>)item;
@@ -352,7 +340,6 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                     }
                 }
 
-                // Buscar y seleccionar el valor en el ComboBox de ubicación
                 foreach (var item in cb_id_Sala.Items)
                 {
                     var keyValuePair = (KeyValuePair<int, int>)item;
@@ -363,7 +350,6 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                     }
                 }
 
-                // Asignar el valor del estado
                 cb_Estado.SelectedItem = estado;
 
                 string hora = Convert.ToString(selectedRow.Cells["Hora"].Value);
@@ -432,7 +418,6 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                         }
                     }
 
-                    // Actualizar el DataGridView
                     llenar_tabla();
                 }
             }
@@ -484,47 +469,35 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
 
         private void txtbxBuscar_TextChanged(object sender, EventArgs e)
         {
-            // Obtener el texto de búsqueda
             string searchText = txtbx_buscar.Text.Trim();
             if (string.IsNullOrEmpty(searchText))
             {
-                // Si el texto de búsqueda está vacío, no aplicar filtro
                 (dgv_horario.DataSource as DataTable).DefaultView.RowFilter = string.Empty;
                 return;
             }
 
-            // Crear una lista para las expresiones de filtro
             List<string> filterExpressions = new List<string>();
 
-            // Obtener el DataTable
             DataTable dataTable = dgv_horario.DataSource as DataTable;
 
-            // Recorrer todas las columnas del DataTable
             foreach (DataColumn column in dataTable.Columns)
             {
-                // Excluir columnas que no sean de tipo texto
                 if (column.DataType == typeof(string))
                 {
-                    // Agregar expresión de filtro para la columna
                     filterExpressions.Add($"[{column.ColumnName}] LIKE '%{searchText}%'");
                 }
             }
 
-            // Unir todas las expresiones de filtro con el operador OR
             string filterExpression = string.Join(" OR ", filterExpressions);
 
-            // Aplicar el filtro
             (dgv_horario.DataSource as DataTable).DefaultView.RowFilter = filterExpression;
         }
         private void UpdateDateTimeLabel()
         {
-            // Obtener la fecha y hora actuales
             DateTime now = DateTime.Now;
 
-            // Formatear la fecha y hora como texto
-            string dateTimeText = now.ToString("yyyy-MM-dd HH:mm:ss"); // Cambia el formato según tus necesidades
+            string dateTimeText = now.ToString("yyyy-MM-dd HH:mm:ss"); 
 
-            // Establecer el texto del Label
             lb_fechaSys.Text = dateTimeText;
         }
         private void tmr_timer1_Tick(object sender, EventArgs e)
@@ -536,7 +509,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
         {
             if (!datosCorrectos())
             {
-                return; // No proceder si los datos no son correctos
+                return;
             }
 
             int idPelicula = ((KeyValuePair<int, string>)cb_Pelicula.SelectedItem).Key;
@@ -583,3 +556,5 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
     }
 
 }
+
+//CODIGO CREADO POR SEBASTIAN LETONA

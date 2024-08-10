@@ -35,6 +35,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             InitializeComponent();
             pelicula = id;
             this.idCliente = idCliente;
+            this.MaximizeBox = false;
         }
 
         string connectionString = DatabaseConfig.ConnectionString;
@@ -55,7 +56,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
 
         private void Reserva_Load(object sender, EventArgs e)
         {
-            LoadFechas(pelicula); //Depende el ID de la pelicula.
+            LoadFechas(pelicula); 
 
 
 
@@ -115,7 +116,6 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
         {
             try
             {
-                // Consulta SQL para obtener las fechas de la proyección
                 string query = "SELECT DISTINCT Fecha FROM tbl_proyeccion WHERE FK_ID_Pelicula = @ID_Pelicula  AND Fecha >= @Today";
 
                 using (MySqlConnection connection = new MySqlConnection(connectionString))
@@ -140,7 +140,6 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
                     }
                 }
 
-                // Obtener la clasificación de la película
                 ObtenerClasificacionPelicula(idPelicula);
             }
             catch (Exception ex)
@@ -187,7 +186,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
         {
             int valor = Convert.ToInt16(textBox.Text);
 
-            if (textBox == txtbx_noNinos) // Suponiendo que textBox1 es para niños
+            if (textBox == txtbx_noNinos) 
             {
                 if (clasificacionPelicula == 5 || clasificacionPelicula == 6)
                 {
@@ -196,7 +195,6 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
                 }
             }
 
-            // Resto del código para sumar
             if (valor >= 5)
             {
                 descuento = 10;
@@ -223,7 +221,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
         private void restar(TextBox textBox)
         {
             int valor = Convert.ToInt16(textBox.Text);
-            if (textBox == txtbx_noNinos) // Suponiendo que textBox1 es para niños
+            if (textBox == txtbx_noNinos) 
             {
                 if (clasificacionPelicula == 5 || clasificacionPelicula == 6)
                 {
@@ -244,7 +242,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
         }
 
 
-        private void operar(TextBox textbox, Label label, Label label1) //Opera Entradas * Precio
+        private void operar(TextBox textbox, Label label, Label label1) 
         {
             double entradas, precio, subtotal;
             entradas = Convert.ToDouble(textbox.Text);
@@ -406,5 +404,6 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
     }
 }
 
+//CODIGO CREADO POR SEBASTIAN LETONA
 
 

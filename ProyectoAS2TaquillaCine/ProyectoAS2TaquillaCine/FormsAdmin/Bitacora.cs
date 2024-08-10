@@ -65,3 +65,5 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
         }
     }
 }
+
+//CODIGO CREADO POR JOSE VICTOR CASTELLANOS

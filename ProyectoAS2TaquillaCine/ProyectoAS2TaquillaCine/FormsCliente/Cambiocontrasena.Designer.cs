@@ -35,17 +35,18 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             this.txt_correo = new System.Windows.Forms.TextBox();
             this.txt_nuevacontrasena = new System.Windows.Forms.TextBox();
             this.btn_actualizar = new System.Windows.Forms.Button();
+            this.btn_regresar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbl_titulo
             // 
             this.lbl_titulo.AutoSize = true;
-            this.lbl_titulo.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_titulo.Font = new System.Drawing.Font("Microsoft YaHei", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_titulo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lbl_titulo.Location = new System.Drawing.Point(339, 28);
+            this.lbl_titulo.Location = new System.Drawing.Point(242, 33);
             this.lbl_titulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_titulo.Name = "lbl_titulo";
-            this.lbl_titulo.Size = new System.Drawing.Size(238, 24);
+            this.lbl_titulo.Size = new System.Drawing.Size(422, 40);
             this.lbl_titulo.TabIndex = 0;
             this.lbl_titulo.Text = "CAMBIO DE CONTRASENA";
             // 
@@ -86,6 +87,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             this.txt_nuevacontrasena.Location = new System.Drawing.Point(415, 208);
             this.txt_nuevacontrasena.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txt_nuevacontrasena.Name = "txt_nuevacontrasena";
+            this.txt_nuevacontrasena.PasswordChar = '*';
             this.txt_nuevacontrasena.Size = new System.Drawing.Size(249, 30);
             this.txt_nuevacontrasena.TabIndex = 4;
             // 
@@ -101,12 +103,25 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             this.btn_actualizar.UseVisualStyleBackColor = true;
             this.btn_actualizar.Click += new System.EventHandler(this.btn_actualizar_Click);
             // 
+            // btn_regresar
+            // 
+            this.btn_regresar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btn_regresar.Location = new System.Drawing.Point(29, 23);
+            this.btn_regresar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btn_regresar.Name = "btn_regresar";
+            this.btn_regresar.Size = new System.Drawing.Size(117, 34);
+            this.btn_regresar.TabIndex = 6;
+            this.btn_regresar.Text = "Regresar";
+            this.btn_regresar.UseVisualStyleBackColor = true;
+            this.btn_regresar.Click += new System.EventHandler(this.btn_regresar_Click);
+            // 
             // Cambiocontrasena
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
             this.ClientSize = new System.Drawing.Size(855, 460);
+            this.Controls.Add(this.btn_regresar);
             this.Controls.Add(this.btn_actualizar);
             this.Controls.Add(this.txt_nuevacontrasena);
             this.Controls.Add(this.txt_correo);
@@ -118,6 +133,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Cambiocontrasena";
             this.Text = "Cambiocontrasena";
+            this.Load += new System.EventHandler(this.Cambiocontrasena_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -131,5 +147,6 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
         private System.Windows.Forms.TextBox txt_correo;
         private System.Windows.Forms.TextBox txt_nuevacontrasena;
         private System.Windows.Forms.Button btn_actualizar;
+        private System.Windows.Forms.Button btn_regresar;
     }
 }

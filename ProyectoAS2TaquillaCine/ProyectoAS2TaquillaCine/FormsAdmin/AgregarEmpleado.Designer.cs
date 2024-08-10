@@ -283,6 +283,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.txtbx_nombre.Name = "txtbx_nombre";
             this.txtbx_nombre.Size = new System.Drawing.Size(160, 22);
             this.txtbx_nombre.TabIndex = 70;
+            this.txtbx_nombre.TextChanged += new System.EventHandler(this.txtbx_nombre_TextChanged);
             // 
             // lb_nombre
             // 

@@ -617,7 +617,6 @@ C:\Users\bhern\Desktop\SistemaCine\ASII-Proyecto_Cine\ProyectoAS2TaquillaCine\Pr
 C:\Users\bhern\Desktop\SistemaCine\ASII-Proyecto_Cine\ProyectoAS2TaquillaCine\ProyectoAS2TaquillaCine\bin\Debug\Google.Protobuf.pdb
 C:\Users\bhern\Desktop\SistemaCine\ASII-Proyecto_Cine\ProyectoAS2TaquillaCine\ProyectoAS2TaquillaCine\obj\Debug\ProyectoAS2TaquillaCine.FormsAdmin.RegistroTaquilla.resources
 C:\Users\bhern\Desktop\SistemaCine\ASII-Proyecto_Cine\ProyectoAS2TaquillaCine\ProyectoAS2TaquillaCine\obj\Debug\ProyectoAS2TaquillaCine.FormsAdmin.Reportes.resources
-C:\Users\bhern\Desktop\SistemaCine\ASII-Proyecto_Cine\ProyectoAS2TaquillaCine\ProyectoAS2TaquillaCine\obj\Debug\ProyectoAS2TaquillaCine.FormsCliente.MenuCliente.resources
 C:\Users\bhern\Desktop\SistemaCine\ASII-Proyecto_Cine\ProyectoAS2TaquillaCine\ProyectoAS2TaquillaCine\bin\Debug\Isopoh.Cryptography.Argon2.dll
 C:\Users\bhern\Desktop\SistemaCine\ASII-Proyecto_Cine\ProyectoAS2TaquillaCine\ProyectoAS2TaquillaCine\bin\Debug\Isopoh.Cryptography.Blake2b.dll
 C:\Users\bhern\Desktop\SistemaCine\ASII-Proyecto_Cine\ProyectoAS2TaquillaCine\ProyectoAS2TaquillaCine\bin\Debug\Isopoh.Cryptography.SecureArray.dll

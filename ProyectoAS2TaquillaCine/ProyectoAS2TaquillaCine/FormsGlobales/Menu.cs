@@ -25,54 +25,37 @@ namespace ProyectoAS2TaquillaCine.FormsGlobales
 
         private void button1_Click(object sender, EventArgs e)
         {
-            // Crear una instancia del formulario LoginCliente
             FormsCliente.LoginCliente loginForm = new FormsCliente.LoginCliente();
 
-            // Mostrar el formulario LoginCliente
             loginForm.Show();
 
-            // Opcional: Cerrar o esconder el formulario actual
-            this.Hide(); // Si quieres ocultar el formulario actual
-                         // this.Close(); // Si quieres cerrar el formulario actual
+            this.Hide(); 
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            // Crear una instancia del formulario LoginCliente
             FormsAdmin.LoginAdmin loginForm = new FormsAdmin.LoginAdmin();
 
-            // Mostrar el formulario LoginCliente
             loginForm.Show();
 
-            // Opcional: Cerrar o esconder el formulario actual
-            this.Hide(); // Si quieres ocultar el formulario actual
-                         // this.Close(); // Si quieres cerrar el formulario actual
+            this.Hide();
         }
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            // Crear una instancia del formulario LoginCliente
             FormsCliente.LoginCliente loginForm = new FormsCliente.LoginCliente();
 
-            // Mostrar el formulario LoginCliente
             loginForm.Show();
 
-            // Opcional: Cerrar o esconder el formulario actual
-            this.Hide(); // Si quieres ocultar el formulario actual
-                         // this.Close(); // Si quieres cerrar el formulario actual
+            this.Hide(); 
         }
 
         private void button2_Click_1(object sender, EventArgs e)
         {
-            // Crear una instancia del formulario LoginCliente
             FormsAdmin.LoginAdmin loginForm = new FormsAdmin.LoginAdmin();
-
-            // Mostrar el formulario LoginCliente
             loginForm.Show();
 
-            // Opcional: Cerrar o esconder el formulario actual
-            this.Hide(); // Si quieres ocultar el formulario actual
-                         // this.Close(); // Si quieres cerrar el formulario actual
+            this.Hide();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -86,3 +69,5 @@ namespace ProyectoAS2TaquillaCine.FormsGlobales
         }
     }
 }
+
+//CODIGO CREADO POR DIEGO MARROQUIN

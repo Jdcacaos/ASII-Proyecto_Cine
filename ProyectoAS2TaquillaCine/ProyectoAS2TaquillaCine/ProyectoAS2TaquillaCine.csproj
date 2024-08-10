@@ -227,7 +227,6 @@
     <Compile Include="FormsAdmin\MenuGeneral.Designer.cs">
       <DependentUpon>MenuGeneral.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormsAdmin\PasswordUtils.cs" />
     <Compile Include="FormsAdmin\Proveedor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -287,12 +286,6 @@
     </Compile>
     <Compile Include="FormsCliente\LoginCliente.Designer.cs">
       <DependentUpon>LoginCliente.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormsCliente\MenuCliente.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormsCliente\MenuCliente.Designer.cs">
-      <DependentUpon>MenuCliente.cs</DependentUpon>
     </Compile>
     <Compile Include="FormsCliente\Pago.cs">
       <SubType>Form</SubType>
@@ -368,9 +361,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormsCliente\LoginCliente.resx">
       <DependentUpon>LoginCliente.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormsCliente\MenuCliente.resx">
-      <DependentUpon>MenuCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormsCliente\Pago.resx">
       <DependentUpon>Pago.cs</DependentUpon>

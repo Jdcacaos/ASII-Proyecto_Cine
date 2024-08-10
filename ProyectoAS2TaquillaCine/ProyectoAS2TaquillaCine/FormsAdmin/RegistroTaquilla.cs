@@ -15,7 +15,6 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
         public RegistroTaquilla()
         {
             InitializeComponent();
-            // Asociar eventos para validar fechas
             dtp_inicio.ValueChanged += dtp_Inicio_ValueChanged;
             dtp_final.ValueChanged += dtp_Final_ValueChanged;
         }
@@ -48,7 +47,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
         private void RegistroTaquilla_Load(object sender, EventArgs e)
         {
             // Cargar datos inicialmente con el rango de fechas predeterminado
-            dtp_inicio.Value = DateTime.Now.AddMonths(-1); // Por ejemplo, últimos 30 días
+            dtp_inicio.Value = DateTime.Now.AddMonths(-1); 
             dtp_final.Value = DateTime.Now;
             CargarDatos();
         }
@@ -58,7 +57,6 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             DateTime Inicio = dtp_inicio.Value.Date;
             DateTime Final = dtp_final.Value.Date;
 
-            // Asegurarse de que fechaFinal incluya el final del día
             Final = Final.AddHours(23).AddMinutes(59).AddSeconds(59);
 
             if (dtp_inicio.Value > dtp_final.Value)
@@ -89,19 +87,17 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             {
                 MySqlDataAdapter adaptador = new MySqlDataAdapter(consulta, conn);
                 adaptador.SelectCommand.Parameters.AddWithValue("@Inicio", dtp_inicio.Value.Date);
-                adaptador.SelectCommand.Parameters.AddWithValue("@Final", dtp_final.Value.Date.AddDays(1).AddTicks(-1)); // Hasta el final del día
+                adaptador.SelectCommand.Parameters.AddWithValue("@Final", dtp_final.Value.Date.AddDays(1).AddTicks(-1)); 
 
                 DataTable dt = new DataTable();
                 adaptador.Fill(dt);
 
-                // Asignar el DataTable al DataGridView
                 dgv_taquilla.DataSource = dt;
             }
         }
 
         private void btn_generareporte_Click(object sender, EventArgs e)
         {
-            // Verificar si el DataGridView está vacío
             if (dgv_taquilla.Rows.Count == 0 || (dgv_taquilla.Rows.Count == 1 && dgv_taquilla.Rows[0].IsNewRow))
             {
                 MessageBox.Show("No hay datos para generar el reporte. Por favor, carga los datos antes de continuar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -119,11 +115,9 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
 
         private void GenerarReportePDF(DateTime fechaInicio, DateTime fechaFinal)
         {
-            // Obtener la ruta de la carpeta de "Escritorio"
             string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
             string pdfDirectory = Path.Combine(desktopPath, "Reportes");
 
-            // Asegúrate de que el directorio existe
             if (!Directory.Exists(pdfDirectory))
             {
                 Directory.CreateDirectory(pdfDirectory);
@@ -134,13 +128,11 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
 
             try
             {
-                // Crear un documento PDF
                 using (Document document = new Document(PageSize.A4))
                 {
                     PdfWriter.GetInstance(document, new FileStream(pdfPath, FileMode.Create));
                     document.Open();
 
-                    // Añadir título
                     Paragraph title = new Paragraph("Pelicula más taquillera")
                     {
                         Alignment = Element.ALIGN_CENTER,
@@ -156,7 +148,6 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                     document.Add(dateParagraph);
                     document.Add(new Paragraph("\n"));
 
-                    // Añadir fechas de inicio y fin
                     Paragraph fechaInicioParagraph = new Paragraph($"Fecha de Inicio: {fechaInicio:dd MMMM yyyy}")
                     {
                         Alignment = Element.ALIGN_LEFT,
@@ -173,19 +164,15 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
 
                     document.Add(new Paragraph("\n"));
 
-                    // Crear una tabla para los datos
                     PdfPTable table = new PdfPTable(dgv_taquilla.Columns.Count)
                     {
                         WidthPercentage = 100
                     };
 
-                    // Añadir encabezados
                     foreach (DataGridViewColumn column in dgv_taquilla.Columns)
                     {
                         table.AddCell(new Phrase(column.HeaderText));
                     }
-
-                    // Añadir filas
                     foreach (DataGridViewRow row in dgv_taquilla.Rows)
                     {
                         if (row.IsNewRow) continue;
@@ -196,7 +183,6 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                         }
                     }
 
-                    // Añadir la tabla al documento
                     document.Add(table);
 
                     document.Add(new Paragraph("\n"));
@@ -204,7 +190,6 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                     document.Close();
                 }
 
-                // Abrir el PDF automáticamente después de generarlo
                 Process.Start(new ProcessStartInfo(pdfPath) { UseShellExecute = true });
             }
             catch (Exception ex)
@@ -215,3 +200,6 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
 
     }
 }
+
+
+//CODIGO CREADO POR JOEL LOPEZ
