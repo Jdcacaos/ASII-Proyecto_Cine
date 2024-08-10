@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
-using BCrypt.Net; // Asegúrate de tener esta referencia
+using BCrypt.Net; 
 
 namespace ProyectoAS2TaquillaCine.FormsCliente
 {
@@ -116,6 +116,11 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             {
                 txtbx_contrasena.PasswordChar = '*'; // Ocultar la contraseña
             }
+        }
+
+        private void LoginCliente_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -164,6 +164,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             }
 
             int idCargo = ((KeyValuePair<int, string>)cb_cargo.SelectedItem).Key;
+            string contrasenaEncriptada = BCrypt.Net.BCrypt.HashPassword(txtbx_contrasena.Text);
 
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
@@ -180,7 +181,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                         command.Parameters.AddWithValue("@Apellido", txtbx_apellido.Text);
                         command.Parameters.AddWithValue("@Cargo", idCargo);
                         command.Parameters.AddWithValue("@Email", txtbx_email.Text);
-                        command.Parameters.AddWithValue("@Contrasena", txtbx_contrasena.Text);
+                        command.Parameters.AddWithValue("@Contrasena", contrasenaEncriptada);
                         command.Parameters.AddWithValue("@Telefono", txtbx_telefono.Text);
                         command.Parameters.AddWithValue("@Estado", cb_estadoEmp.Text);
 
@@ -441,6 +442,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             }
 
             int idCargo = ((KeyValuePair<int, string>)cb_cargo.SelectedItem).Key;
+            string contrasenaEncriptada = BCrypt.Net.BCrypt.HashPassword(txtbx_contrasena.Text);
 
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
@@ -457,7 +459,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                         command.Parameters.AddWithValue("@Apellido", txtbx_apellido.Text);
                         command.Parameters.AddWithValue("@Cargo", idCargo);
                         command.Parameters.AddWithValue("@Email", txtbx_email.Text);
-                        command.Parameters.AddWithValue("@Contrasena", txtbx_contrasena.Text);
+                        command.Parameters.AddWithValue("@Contrasena", contrasenaEncriptada);
                         command.Parameters.AddWithValue("@Telefono", txtbx_telefono.Text);
                         command.Parameters.AddWithValue("@Estado", cb_estadoEmp.Text);
 
@@ -640,15 +642,12 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
 
         private void btn_guardar_Click(object sender, EventArgs e)
         {
-            string contrasena = txtbx_contrasena.Text; // Contraseña del TextBox
-            string contrasenaEncriptada = BCrypt.Net.BCrypt.HashPassword(contrasena);
-
-
             if (txtbx_apellido.Text == "" || txtbx_contrasena.Text == "" || txtbx_confContra.Text == "" || txtbx_email.Text == "" || txtbx_nombre.Text == "" || txtbx_telefono == null || cb_cargo.Text == "" || cb_estadoEmp.Text == "")
             {
                 MessageBox.Show("Hay campos vacios, LLENE TODOS LOS CAMPOS", "Error de llenado de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+
             if (txtbx_contrasena.Text != txtbx_confContra.Text)
             {
                 MessageBox.Show("Las contraseñas no coinciden. Por favor, verifícalas.", "Error de confirmación de contraseña", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -656,6 +655,8 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             }
 
             int idCargo = ((KeyValuePair<int, string>)cb_cargo.SelectedItem).Key;
+            string contrasenaEncriptada = BCrypt.Net.BCrypt.HashPassword(txtbx_contrasena.Text);
+            
 
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
@@ -688,6 +689,16 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             }
             PllenarTabla();
             Pvaciar();
+        }
+
+        private void panel_panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel_panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

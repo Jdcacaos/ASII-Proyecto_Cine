@@ -64,6 +64,10 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             {
                 MessageBox.Show(ex.Message);
             }
+            DateTime now = DateTime.Now;
+            dtp_fecha.Value = DateTime.Now;
+            dtp_hora.Value = DateTime.Now;
+            dtp_hora.Value = new DateTime(now.Year, now.Month, now.Day, now.Hour,0,0);
         }
         private void llenar_tabla()
         {
@@ -570,6 +574,11 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             }
 
             llenar_tabla();
+        }
+
+        private void panel_panel3_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 

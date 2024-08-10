@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using Org.BouncyCastle.Crypto.Generators;
 
 namespace ProyectoAS2TaquillaCine.FormsAdmin
 {
@@ -71,11 +72,11 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
                         {
                             if (reader.Read())
                             {
-                                string storedPassword = reader["Contrasena"].ToString();
+                                string hashedPassword = reader.GetString("Contrasena");
                                 int cargoId = Convert.ToInt32(reader["FK_ID_Cargo"]);
 
                                 // Comparar la contraseña ingresada con la almacenada
-                                if (storedPassword == contrasena)
+                                if (BCrypt.Net.BCrypt.Verify(contrasena, hashedPassword))//
                                 {
                                     // Verificar el cargo del usuario
                                     if (cargoId == 1)

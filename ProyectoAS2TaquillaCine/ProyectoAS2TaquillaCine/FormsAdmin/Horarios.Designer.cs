@@ -73,9 +73,10 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             // 
             // btn_boton4
             // 
-            this.btn_boton4.Location = new System.Drawing.Point(12, 12);
+            this.btn_boton4.Location = new System.Drawing.Point(16, 15);
+            this.btn_boton4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_boton4.Name = "btn_boton4";
-            this.btn_boton4.Size = new System.Drawing.Size(91, 33);
+            this.btn_boton4.Size = new System.Drawing.Size(121, 41);
             this.btn_boton4.TabIndex = 40;
             this.btn_boton4.Text = "Regresar";
             this.btn_boton4.UseVisualStyleBackColor = true;
@@ -86,9 +87,10 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.lb_fechaSys.AutoSize = true;
             this.lb_fechaSys.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_fechaSys.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lb_fechaSys.Location = new System.Drawing.Point(189, 56);
+            this.lb_fechaSys.Location = new System.Drawing.Point(252, 69);
+            this.lb_fechaSys.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_fechaSys.Name = "lb_fechaSys";
-            this.lb_fechaSys.Size = new System.Drawing.Size(53, 19);
+            this.lb_fechaSys.Size = new System.Drawing.Size(67, 26);
             this.lb_fechaSys.TabIndex = 35;
             this.lb_fechaSys.Text = "Fecha";
             // 
@@ -99,13 +101,13 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.panel_panel2.Controls.Add(this.btn_regresar);
             this.panel_panel2.Controls.Add(this.lb_fechaSys);
             this.panel_panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel_panel2.Location = new System.Drawing.Point(672, 28);
-            this.panel_panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel_panel2.Location = new System.Drawing.Point(896, 34);
+            this.panel_panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel_panel2.Name = "panel_panel2";
-            this.panel_panel2.Size = new System.Drawing.Size(368, 612);
+            this.panel_panel2.Size = new System.Drawing.Size(491, 754);
             this.panel_panel2.TabIndex = 55;
             // 
-            // gbIngresar
+            // gpb_ingresar
             // 
             this.gpb_ingresar.Controls.Add(this.txtbx_3ra);
             this.gpb_ingresar.Controls.Add(this.txtbx_adulto);
@@ -125,31 +127,36 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.gpb_ingresar.Controls.Add(this.cb_Estado);
             this.gpb_ingresar.Controls.Add(this.cb_id_Sala);
             this.gpb_ingresar.Controls.Add(this.dtp_fecha);
-            this.gpb_ingresar.Location = new System.Drawing.Point(0, 126);
-            this.gpb_ingresar.Name = "gbIngresar";
-            this.gpb_ingresar.Size = new System.Drawing.Size(368, 540);
+            this.gpb_ingresar.Location = new System.Drawing.Point(0, 155);
+            this.gpb_ingresar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gpb_ingresar.Name = "gpb_ingresar";
+            this.gpb_ingresar.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gpb_ingresar.Size = new System.Drawing.Size(491, 665);
             this.gpb_ingresar.TabIndex = 37;
             this.gpb_ingresar.TabStop = false;
             // 
             // txtbx_3ra
             // 
-            this.txtbx_3ra.Location = new System.Drawing.Point(195, 340);
+            this.txtbx_3ra.Location = new System.Drawing.Point(260, 418);
+            this.txtbx_3ra.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtbx_3ra.Name = "txtbx_3ra";
-            this.txtbx_3ra.Size = new System.Drawing.Size(121, 20);
+            this.txtbx_3ra.Size = new System.Drawing.Size(160, 22);
             this.txtbx_3ra.TabIndex = 65;
             // 
             // txtbx_adulto
             // 
-            this.txtbx_adulto.Location = new System.Drawing.Point(195, 305);
+            this.txtbx_adulto.Location = new System.Drawing.Point(260, 375);
+            this.txtbx_adulto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtbx_adulto.Name = "txtbx_adulto";
-            this.txtbx_adulto.Size = new System.Drawing.Size(121, 20);
+            this.txtbx_adulto.Size = new System.Drawing.Size(160, 22);
             this.txtbx_adulto.TabIndex = 64;
             // 
             // txtbx_nino
             // 
-            this.txtbx_nino.Location = new System.Drawing.Point(195, 266);
+            this.txtbx_nino.Location = new System.Drawing.Point(260, 327);
+            this.txtbx_nino.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtbx_nino.Name = "txtbx_nino";
-            this.txtbx_nino.Size = new System.Drawing.Size(121, 20);
+            this.txtbx_nino.Size = new System.Drawing.Size(160, 22);
             this.txtbx_nino.TabIndex = 63;
             // 
             // lb_precio3ra
@@ -157,9 +164,10 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.lb_precio3ra.AutoSize = true;
             this.lb_precio3ra.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_precio3ra.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lb_precio3ra.Location = new System.Drawing.Point(53, 339);
+            this.lb_precio3ra.Location = new System.Drawing.Point(71, 417);
+            this.lb_precio3ra.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_precio3ra.Name = "lb_precio3ra";
-            this.lb_precio3ra.Size = new System.Drawing.Size(126, 19);
+            this.lb_precio3ra.Size = new System.Drawing.Size(162, 26);
             this.lb_precio3ra.TabIndex = 75;
             this.lb_precio3ra.Text = "Precio 3ra Edad";
             // 
@@ -168,9 +176,10 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.lb_precioAdulto.AutoSize = true;
             this.lb_precioAdulto.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_precioAdulto.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lb_precioAdulto.Location = new System.Drawing.Point(53, 304);
+            this.lb_precioAdulto.Location = new System.Drawing.Point(71, 374);
+            this.lb_precioAdulto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_precioAdulto.Name = "lb_precioAdulto";
-            this.lb_precioAdulto.Size = new System.Drawing.Size(111, 19);
+            this.lb_precioAdulto.Size = new System.Drawing.Size(142, 26);
             this.lb_precioAdulto.TabIndex = 74;
             this.lb_precioAdulto.Text = "Precio Adulto";
             // 
@@ -179,9 +188,10 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.lb_precioNino.AutoSize = true;
             this.lb_precioNino.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_precioNino.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lb_precioNino.Location = new System.Drawing.Point(53, 265);
+            this.lb_precioNino.Location = new System.Drawing.Point(71, 326);
+            this.lb_precioNino.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_precioNino.Name = "lb_precioNino";
-            this.lb_precioNino.Size = new System.Drawing.Size(97, 19);
+            this.lb_precioNino.Size = new System.Drawing.Size(123, 26);
             this.lb_precioNino.TabIndex = 73;
             this.lb_precioNino.Text = "Precio Niño";
             // 
@@ -193,9 +203,10 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.btn_guardar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btn_guardar.Image = global::ProyectoAS2TaquillaCine.Properties.Resources.diskette_save_saveas_1514;
             this.btn_guardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_guardar.Location = new System.Drawing.Point(133, 411);
+            this.btn_guardar.Location = new System.Drawing.Point(177, 506);
+            this.btn_guardar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_guardar.Name = "btn_guardar";
-            this.btn_guardar.Size = new System.Drawing.Size(134, 63);
+            this.btn_guardar.Size = new System.Drawing.Size(179, 78);
             this.btn_guardar.TabIndex = 66;
             this.btn_guardar.Text = "Guardar";
             this.btn_guardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -208,20 +219,20 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.lb_mantHorario.AutoSize = true;
             this.lb_mantHorario.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_mantHorario.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lb_mantHorario.Location = new System.Drawing.Point(80, 17);
-            this.lb_mantHorario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lb_mantHorario.Location = new System.Drawing.Point(107, 21);
             this.lb_mantHorario.Name = "lb_mantHorario";
-            this.lb_mantHorario.Size = new System.Drawing.Size(210, 19);
+            this.lb_mantHorario.Size = new System.Drawing.Size(269, 26);
             this.lb_mantHorario.TabIndex = 72;
             this.lb_mantHorario.Text = "Mantenimiento de Horario";
             // 
             // dtp_hora
             // 
             this.dtp_hora.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtp_hora.Location = new System.Drawing.Point(193, 182);
+            this.dtp_hora.Location = new System.Drawing.Point(257, 224);
+            this.dtp_hora.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtp_hora.Name = "dtp_hora";
             this.dtp_hora.ShowUpDown = true;
-            this.dtp_hora.Size = new System.Drawing.Size(121, 20);
+            this.dtp_hora.Size = new System.Drawing.Size(160, 22);
             this.dtp_hora.TabIndex = 61;
             // 
             // lb_hora
@@ -229,9 +240,10 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.lb_hora.AutoSize = true;
             this.lb_hora.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_hora.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lb_hora.Location = new System.Drawing.Point(53, 182);
+            this.lb_hora.Location = new System.Drawing.Point(71, 224);
+            this.lb_hora.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_hora.Name = "lb_hora";
-            this.lb_hora.Size = new System.Drawing.Size(46, 19);
+            this.lb_hora.Size = new System.Drawing.Size(59, 26);
             this.lb_hora.TabIndex = 71;
             this.lb_hora.Text = "Hora";
             // 
@@ -240,9 +252,10 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.lb_estado.AutoSize = true;
             this.lb_estado.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_estado.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lb_estado.Location = new System.Drawing.Point(53, 221);
+            this.lb_estado.Location = new System.Drawing.Point(71, 272);
+            this.lb_estado.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_estado.Name = "lb_estado";
-            this.lb_estado.Size = new System.Drawing.Size(60, 19);
+            this.lb_estado.Size = new System.Drawing.Size(76, 26);
             this.lb_estado.TabIndex = 70;
             this.lb_estado.Text = "Estado";
             // 
@@ -251,9 +264,10 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.lb_fecha.AutoSize = true;
             this.lb_fecha.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_fecha.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lb_fecha.Location = new System.Drawing.Point(53, 143);
+            this.lb_fecha.Location = new System.Drawing.Point(71, 176);
+            this.lb_fecha.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_fecha.Name = "lb_fecha";
-            this.lb_fecha.Size = new System.Drawing.Size(53, 19);
+            this.lb_fecha.Size = new System.Drawing.Size(67, 26);
             this.lb_fecha.TabIndex = 69;
             this.lb_fecha.Text = "Fecha";
             // 
@@ -262,9 +276,10 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.lb_sala.AutoSize = true;
             this.lb_sala.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_sala.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lb_sala.Location = new System.Drawing.Point(53, 104);
+            this.lb_sala.Location = new System.Drawing.Point(71, 128);
+            this.lb_sala.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_sala.Name = "lb_sala";
-            this.lb_sala.Size = new System.Drawing.Size(40, 19);
+            this.lb_sala.Size = new System.Drawing.Size(51, 26);
             this.lb_sala.TabIndex = 68;
             this.lb_sala.Text = "Sala";
             // 
@@ -273,44 +288,49 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.lb_pelicula.AutoSize = true;
             this.lb_pelicula.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_pelicula.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lb_pelicula.Location = new System.Drawing.Point(53, 64);
+            this.lb_pelicula.Location = new System.Drawing.Point(71, 79);
+            this.lb_pelicula.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_pelicula.Name = "lb_pelicula";
-            this.lb_pelicula.Size = new System.Drawing.Size(67, 19);
+            this.lb_pelicula.Size = new System.Drawing.Size(86, 26);
             this.lb_pelicula.TabIndex = 67;
             this.lb_pelicula.Text = "Pelicula";
             // 
             // cb_Pelicula
             // 
             this.cb_Pelicula.FormattingEnabled = true;
-            this.cb_Pelicula.Location = new System.Drawing.Point(193, 64);
+            this.cb_Pelicula.Location = new System.Drawing.Point(257, 79);
+            this.cb_Pelicula.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cb_Pelicula.Name = "cb_Pelicula";
-            this.cb_Pelicula.Size = new System.Drawing.Size(121, 21);
+            this.cb_Pelicula.Size = new System.Drawing.Size(160, 24);
             this.cb_Pelicula.TabIndex = 58;
             // 
             // cb_Estado
             // 
             this.cb_Estado.FormattingEnabled = true;
-            this.cb_Estado.Location = new System.Drawing.Point(193, 219);
+            this.cb_Estado.Location = new System.Drawing.Point(257, 270);
+            this.cb_Estado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cb_Estado.Name = "cb_Estado";
-            this.cb_Estado.Size = new System.Drawing.Size(121, 21);
+            this.cb_Estado.Size = new System.Drawing.Size(160, 24);
             this.cb_Estado.TabIndex = 62;
             // 
             // cb_id_Sala
             // 
             this.cb_id_Sala.FormattingEnabled = true;
-            this.cb_id_Sala.Location = new System.Drawing.Point(193, 104);
+            this.cb_id_Sala.Location = new System.Drawing.Point(257, 128);
+            this.cb_id_Sala.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cb_id_Sala.Name = "cb_id_Sala";
-            this.cb_id_Sala.Size = new System.Drawing.Size(121, 21);
+            this.cb_id_Sala.Size = new System.Drawing.Size(160, 24);
             this.cb_id_Sala.TabIndex = 59;
             // 
             // dtp_fecha
             // 
             this.dtp_fecha.CustomFormat = "yyyy/MM/dd";
             this.dtp_fecha.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtp_fecha.Location = new System.Drawing.Point(193, 143);
+            this.dtp_fecha.Location = new System.Drawing.Point(257, 176);
+            this.dtp_fecha.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtp_fecha.Name = "dtp_fecha";
             this.dtp_fecha.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dtp_fecha.Size = new System.Drawing.Size(121, 20);
+            this.dtp_fecha.Size = new System.Drawing.Size(160, 22);
             this.dtp_fecha.TabIndex = 60;
             this.dtp_fecha.Value = new System.DateTime(2024, 7, 26, 0, 0, 0, 0);
             // 
@@ -319,9 +339,10 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.btn_regresar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_regresar.BackColor = System.Drawing.Color.Red;
             this.btn_regresar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_regresar.Location = new System.Drawing.Point(225, 11);
+            this.btn_regresar.Location = new System.Drawing.Point(300, 14);
+            this.btn_regresar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_regresar.Name = "btn_regresar";
-            this.btn_regresar.Size = new System.Drawing.Size(91, 33);
+            this.btn_regresar.Size = new System.Drawing.Size(121, 41);
             this.btn_regresar.TabIndex = 13;
             this.btn_regresar.Text = "Regresar";
             this.btn_regresar.UseVisualStyleBackColor = false;
@@ -337,55 +358,57 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.panel_panel3.Controls.Add(this.btn_eliminar);
             this.panel_panel3.Controls.Add(this.lb_cinehub);
             this.panel_panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_panel3.Location = new System.Drawing.Point(0, 28);
-            this.panel_panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel_panel3.Location = new System.Drawing.Point(0, 34);
+            this.panel_panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel_panel3.Name = "panel_panel3";
-            this.panel_panel3.Size = new System.Drawing.Size(672, 612);
+            this.panel_panel3.Size = new System.Drawing.Size(896, 754);
             this.panel_panel3.TabIndex = 56;
+            this.panel_panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_panel3_Paint);
             // 
-            // gbbuscar
+            // gpb_buscar
             // 
             this.gpb_buscar.Controls.Add(this.txtbx_buscar);
             this.gpb_buscar.Controls.Add(this.lb_buscar);
-            this.gpb_buscar.Location = new System.Drawing.Point(3, 0);
-            this.gpb_buscar.Name = "gbbuscar";
-            this.gpb_buscar.Size = new System.Drawing.Size(683, 53);
+            this.gpb_buscar.Location = new System.Drawing.Point(4, 0);
+            this.gpb_buscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gpb_buscar.Name = "gpb_buscar";
+            this.gpb_buscar.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gpb_buscar.Size = new System.Drawing.Size(911, 65);
             this.gpb_buscar.TabIndex = 184;
             this.gpb_buscar.TabStop = false;
             // 
-            // txtbxBuscar
+            // txtbx_buscar
             // 
-            this.txtbx_buscar.Location = new System.Drawing.Point(71, 13);
+            this.txtbx_buscar.Location = new System.Drawing.Point(95, 16);
+            this.txtbx_buscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtbx_buscar.Multiline = true;
-            this.txtbx_buscar.Name = "txtbxBuscar";
-            this.txtbx_buscar.Size = new System.Drawing.Size(591, 31);
+            this.txtbx_buscar.Name = "txtbx_buscar";
+            this.txtbx_buscar.Size = new System.Drawing.Size(787, 37);
             this.txtbx_buscar.TabIndex = 182;
             this.txtbx_buscar.TextChanged += new System.EventHandler(this.txtbxBuscar_TextChanged);
             // 
-            // label2
+            // lb_buscar
             // 
             this.lb_buscar.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lb_buscar.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_buscar.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.lb_buscar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.lb_buscar.Location = new System.Drawing.Point(5, 18);
-            this.lb_buscar.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lb_buscar.Name = "label2";
-            this.lb_buscar.Size = new System.Drawing.Size(77, 26);
+            this.lb_buscar.Location = new System.Drawing.Point(7, 22);
+            this.lb_buscar.Name = "lb_buscar";
+            this.lb_buscar.Size = new System.Drawing.Size(103, 32);
             this.lb_buscar.TabIndex = 181;
             this.lb_buscar.Text = "Buscar";
             this.lb_buscar.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // label1
+            // lb_texto
             // 
             this.lb_texto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.lb_texto.AutoSize = true;
             this.lb_texto.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_texto.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lb_texto.Location = new System.Drawing.Point(229, 152);
-            this.lb_texto.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lb_texto.Name = "label1";
-            this.lb_texto.Size = new System.Drawing.Size(139, 19);
+            this.lb_texto.Location = new System.Drawing.Point(305, 187);
+            this.lb_texto.Name = "lb_texto";
+            this.lb_texto.Size = new System.Drawing.Size(180, 26);
             this.lb_texto.TabIndex = 58;
             this.lb_texto.Text = "Registros Horario";
             // 
@@ -397,11 +420,12 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgv_horario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_horario.Location = new System.Drawing.Point(12, 193);
+            this.dgv_horario.Location = new System.Drawing.Point(16, 238);
+            this.dgv_horario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgv_horario.Name = "dgv_horario";
             this.dgv_horario.ReadOnly = true;
             this.dgv_horario.RowHeadersWidth = 51;
-            this.dgv_horario.Size = new System.Drawing.Size(638, 278);
+            this.dgv_horario.Size = new System.Drawing.Size(851, 343);
             this.dgv_horario.TabIndex = 179;
             this.dgv_horario.Tag = "";
             this.dgv_horario.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
@@ -414,9 +438,10 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.btn_editar.ForeColor = System.Drawing.SystemColors.Control;
             this.btn_editar.Image = global::ProyectoAS2TaquillaCine.Properties.Resources.editsquare_120033;
             this.btn_editar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_editar.Location = new System.Drawing.Point(31, 513);
+            this.btn_editar.Location = new System.Drawing.Point(41, 632);
+            this.btn_editar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_editar.Name = "btn_editar";
-            this.btn_editar.Size = new System.Drawing.Size(94, 39);
+            this.btn_editar.Size = new System.Drawing.Size(125, 48);
             this.btn_editar.TabIndex = 9;
             this.btn_editar.Text = "Editar";
             this.btn_editar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -431,9 +456,10 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.btn_eliminar.ForeColor = System.Drawing.SystemColors.Control;
             this.btn_eliminar.Image = global::ProyectoAS2TaquillaCine.Properties.Resources.delete_button_6303088;
             this.btn_eliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_eliminar.Location = new System.Drawing.Point(180, 513);
+            this.btn_eliminar.Location = new System.Drawing.Point(240, 632);
+            this.btn_eliminar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_eliminar.Name = "btn_eliminar";
-            this.btn_eliminar.Size = new System.Drawing.Size(104, 39);
+            this.btn_eliminar.Size = new System.Drawing.Size(139, 48);
             this.btn_eliminar.TabIndex = 10;
             this.btn_eliminar.Text = "Eliminar";
             this.btn_eliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -446,10 +472,9 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.lb_cinehub.Font = new System.Drawing.Font("Arial Narrow", 54F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_cinehub.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.lb_cinehub.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.lb_cinehub.Location = new System.Drawing.Point(132, 67);
-            this.lb_cinehub.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lb_cinehub.Location = new System.Drawing.Point(176, 82);
             this.lb_cinehub.Name = "lb_cinehub";
-            this.lb_cinehub.Size = new System.Drawing.Size(341, 85);
+            this.lb_cinehub.Size = new System.Drawing.Size(455, 105);
             this.lb_cinehub.TabIndex = 32;
             this.lb_cinehub.Text = "CINEHUB";
             this.lb_cinehub.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -459,9 +484,9 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.panel_panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
             this.panel_panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel_panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel_panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel_panel1.Name = "panel_panel1";
-            this.panel_panel1.Size = new System.Drawing.Size(1040, 28);
+            this.panel_panel1.Size = new System.Drawing.Size(1387, 34);
             this.panel_panel1.TabIndex = 54;
             this.panel_panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -471,14 +496,15 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             // 
             // Horarios
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1040, 640);
+            this.ClientSize = new System.Drawing.Size(1387, 788);
             this.Controls.Add(this.panel_panel3);
             this.Controls.Add(this.panel_panel2);
             this.Controls.Add(this.panel_panel1);
             this.Controls.Add(this.btn_boton4);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Horarios";
             this.Text = "Horarios";
             this.Load += new System.EventHandler(this.Horarios_Load);

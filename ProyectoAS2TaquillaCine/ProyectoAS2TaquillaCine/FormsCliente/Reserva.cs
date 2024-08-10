@@ -365,26 +365,37 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
         }
         private void button7_Click(object sender, EventArgs e)
         {
-           
-            int totalAsientos = Convert.ToInt32(txtbx_noNinos.Text) + Convert.ToInt32(txtbx_noAdulto.Text) + Convert.ToInt32(txtbx_no3ra.Text);
-            if (totalAsientos == 0)
+            try
             {
-                MessageBox.Show("Debe seleccionar al menos un boleto para proceder.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtbx_totalAsientos.Text = "0";
+                int totalAsientos = Convert.ToInt32(txtbx_noNinos.Text) + Convert.ToInt32(txtbx_noAdulto.Text) + Convert.ToInt32(txtbx_no3ra.Text);
+                if (totalAsientos == 0)
+                {
+                    MessageBox.Show("Debe seleccionar al menos un boleto para proceder.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtbx_totalAsientos.Text = "0";
+                }
+                else
+                {
+                    fecha = Convert.ToString(cb_fecha.SelectedItem);
+
+                    if (cb_hora.SelectedItem == null)
+                    {
+                        throw new Exception("Debe seleccionar una hora para proceder.");
+                    }
+
+                    hora = Convert.ToString(cb_hora.SelectedItem);
+                    horario = fecha + " " + hora;
+                    totalventa = Convert.ToInt32(lb_totalPagar.Text);
+                    int idProyeccion = ObtenerIdProyeccion(pelicula, cb_fecha.SelectedItem.ToString(), cb_hora.SelectedItem.ToString());
+                    FormsCliente.Asientos formAsientos = new FormsCliente.Asientos(pelicula, totalventa, idProyeccion, idCliente, descuento, horario);
+                    formAsientos.TotalAsientos = totalAsientos;
+
+                    formAsientos.Show();
+                    this.Hide();
+                }
             }
-            else
+            catch (Exception ex)
             {
-                fecha = Convert.ToString( cb_fecha.SelectedItem);
-                hora = Convert.ToString(cb_hora.SelectedItem);
-                horario = fecha +" "+hora;
-                totalventa = Convert.ToInt32(lb_totalPagar.Text);
-                int idProyeccion = ObtenerIdProyeccion(pelicula, cb_fecha.SelectedItem.ToString(), cb_hora.SelectedItem.ToString());
-                FormsCliente.Asientos formAsientos = new FormsCliente.Asientos(pelicula, totalventa, idProyeccion, idCliente, descuento, horario);
-                formAsientos.TotalAsientos = totalAsientos;
-
-
-                formAsientos.Show();
-                this.Hide();
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

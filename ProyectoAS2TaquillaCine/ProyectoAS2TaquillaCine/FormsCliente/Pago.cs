@@ -116,6 +116,8 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
         private void Pago_Load(object sender, EventArgs e)
         {
             obtnerdatosfactura();
+            cb_mes.SelectedItem = "09";
+            cb_ano.SelectedItem = "24";
         }
 
         private void LlenarComboEmpleados()
@@ -276,6 +278,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             cb_mes.Items.Add("10");
             cb_mes.Items.Add("11");
             cb_mes.Items.Add("12");
+            
             if (cb_mes.Items.Count > 0)
             {
                 cb_mes.SelectedIndex = 0;
@@ -303,6 +306,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             cb_ano.Items.Add("38");
             cb_ano.Items.Add("39");
             cb_ano.Items.Add("40");
+            cb_ano.SelectedItem = "2024";
             if (cb_ano.Items.Count > 0)
             {
                 cb_ano.SelectedIndex = 0;
@@ -737,6 +741,11 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
         private void txtNomEmple_TextChanged(object sender, EventArgs e)
         {
             
+        }
+
+        private void cb_ano_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
