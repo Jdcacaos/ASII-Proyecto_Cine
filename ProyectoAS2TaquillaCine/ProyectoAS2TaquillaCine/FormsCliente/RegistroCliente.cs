@@ -63,6 +63,9 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
                 return;
             }
 
+            // Encriptar la contraseña
+            string hashedPassword = BCrypt.Net.BCrypt.HashPassword(txtbx_contrasena.Text);
+
             // Cadena de conexión a tu base de datos MySQL
             string connectionString = DatabaseConfig.ConnectionString;
 
@@ -74,7 +77,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
                     connection.Open();
 
                     // Crear un comando para insertar los datos en la tabla cliente
-                    string query = "INSERT INTO tbl_cliente (nombre, apellido, email, contrasena, telefono, nit, fecha_nacimiento) " +
+                    string query = "INSERT INTO tbl_cliente (Nombre, Apellido, Email, Contrasena, Telefono, NIT, Fecha_Nacimiento) " +
                                    "VALUES (@Nombre, @Apellido, @Email, @Contrasena, @Telefono, @Nit, @FechaNacimiento)";
 
                     using (MySqlCommand command = new MySqlCommand(query, connection))
@@ -83,7 +86,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
                         command.Parameters.AddWithValue("@Nombre", txtbx_nombre.Text);
                         command.Parameters.AddWithValue("@Apellido", txtbx_apellido.Text);
                         command.Parameters.AddWithValue("@Email", txtbx_email.Text);
-                        command.Parameters.AddWithValue("@Contrasena", txtbx_contrasena.Text);
+                        command.Parameters.AddWithValue("@Contrasena", hashedPassword); // Usar la contraseña encriptada
                         command.Parameters.AddWithValue("@Telefono", txtbx_telefono.Text);
                         command.Parameters.AddWithValue("@Nit", txtbx_nit.Text);
 
@@ -106,6 +109,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
                 }
             }
         }
+
 
 
 

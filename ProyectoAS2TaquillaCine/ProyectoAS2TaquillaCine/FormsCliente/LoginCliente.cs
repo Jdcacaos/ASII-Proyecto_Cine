@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using BCrypt.Net; // Asegúrate de tener esta referencia
 
 namespace ProyectoAS2TaquillaCine.FormsCliente
 {
@@ -19,6 +20,7 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             txtbx_correoUsuario.KeyDown += new KeyEventHandler(TextBox_KeyDown);
             txtbx_contrasena.KeyDown += new KeyEventHandler(TextBox_KeyDown);
         }
+
         private void TextBox_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -26,46 +28,24 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
                 button1_Click(sender, e); // Llama al método del botón
             }
         }
+
         private void button2_Click(object sender, EventArgs e)
         {
-            FormsGlobales.Menu loginForm = new FormsGlobales.Menu();
-
-            // Mostrar el formulario LoginCliente
-            loginForm.Show();
-
-            // Opcional: Cerrar o esconder el formulario actual
+            FormsGlobales.Menu menuForm = new FormsGlobales.Menu();
+            menuForm.Show();
             this.Hide();
-        }
-
-        private void LoginCliente_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            // Crear una instancia del formulario LoginCliente
-            FormsCliente.RegistroCliente RegistroForm = new FormsCliente.RegistroCliente();
-
-            // Mostrar el formulario LoginCliente
-            RegistroForm.Show();
-
-            // Opcional: Cerrar o esconder el formulario actual
-            this.Hide(); // Si quieres ocultar el formulario actual
-                         // this.Close(); // Si quieres cerrar el formulario actual
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
+            FormsCliente.RegistroCliente registroForm = new FormsCliente.RegistroCliente();
+            registroForm.Show();
+            this.Hide();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            // Cadena de conexión a tu base de datos MySQL
             string connectionString = DatabaseConfig.ConnectionString;
-
-            // Obtener los valores ingresados por el usuario
             string email = txtbx_correoUsuario.Text.Trim();
             string contrasena = txtbx_contrasena.Text.Trim();
 
@@ -76,45 +56,46 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
                 return;
             }
 
-            // Crear una conexión a la base de datos
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
                 try
                 {
                     connection.Open();
 
-                    // Crear un comando para validar el email y la contraseña y obtener el ID del cliente
-                    string query = "SELECT ID_Cliente FROM tbl_cliente WHERE email = @Email AND contrasena = @Contrasena";
+                    // Crear un comando para obtener la contraseña encriptada del cliente por su email
+                    string query = "SELECT ID_Cliente, Contrasena FROM tbl_cliente WHERE Email = @Email";
 
                     using (MySqlCommand command = new MySqlCommand(query, connection))
                     {
-                        // Agregar los parámetros con los valores ingresados
                         command.Parameters.AddWithValue("@Email", email);
-                        command.Parameters.AddWithValue("@Contrasena", contrasena);
 
-                        // Ejecutar el comando y obtener el resultado
-                        object result = command.ExecuteScalar();
-
-                        if (result != null)
+                        using (MySqlDataReader reader = command.ExecuteReader())
                         {
-                            // Las credenciales son correctas, permitir el acceso
-                            int idCliente = Convert.ToInt32(result);
+                            if (reader.Read())
+                            {
+                                // Obtener los datos del cliente
+                                int idCliente = reader.GetInt32("ID_Cliente");
+                                string hashedPassword = reader.GetString("Contrasena");
 
-                            MessageBox.Show("Inicio de sesión exitoso.", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                // Verificar la contraseña ingresada con la contraseña encriptada
+                                if (BCrypt.Net.BCrypt.Verify(contrasena, hashedPassword))
+                                {
+                                    MessageBox.Show("Inicio de sesión exitoso.", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                            // Abrir el siguiente formulario y pasar el ID del cliente
-                            FormsCliente.CarteleraNueva PagoForm = new FormsCliente.CarteleraNueva(idCliente);
-
-                            // Mostrar el formulario
-                            PagoForm.Show();
-
-                            // Opcional: Cerrar o esconder el formulario actual
-                            this.Hide();
-                        }
-                        else
-                        {
-                            // Las credenciales son incorrectas, mostrar un mensaje de error
-                            MessageBox.Show("Correo o contraseña incorrectos.", "Error de login", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    // Abrir el siguiente formulario y pasar el ID del cliente
+                                    FormsCliente.CarteleraNueva pagoForm = new FormsCliente.CarteleraNueva(idCliente);
+                                    pagoForm.Show();
+                                    this.Hide();
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Correo o contraseña incorrectos.", "Error de login", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("Correo o contraseña incorrectos.", "Error de login", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
                         }
                     }
                 }
@@ -125,25 +106,17 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             }
         }
 
-
         private void mostrarCon_CheckedChanged(object sender, EventArgs e)
         {
             if (chb_mostrarContra.Checked)
             {
-                // Mostrar la contraseña
-                txtbx_contrasena.PasswordChar = '\0'; // \0 es el carácter nulo, que muestra el texto plano
+                txtbx_contrasena.PasswordChar = '\0'; // Mostrar la contraseña
             }
             else
             {
-                // Ocultar la contraseña
-                txtbx_contrasena.PasswordChar = '*'; // O cualquier otro carácter de tu elección
+                txtbx_contrasena.PasswordChar = '*'; // Ocultar la contraseña
             }
-        }
-
-        private void txtContrasena_TextChanged(object sender, EventArgs e)
-        {
-           
-
         }
     }
 }
+

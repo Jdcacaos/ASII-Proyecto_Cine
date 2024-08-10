@@ -164,7 +164,6 @@ namespace ProyectoAS2TaquillaCine.FormsCliente
             this.Name = "LoginCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LoginCliente";
-            this.Load += new System.EventHandler(this.LoginCliente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picbx_imagenCine)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

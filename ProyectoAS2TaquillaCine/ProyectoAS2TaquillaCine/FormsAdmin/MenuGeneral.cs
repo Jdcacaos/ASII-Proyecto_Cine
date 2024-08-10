@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
+using BCrypt.Net; // Asegúrate de tener esta referencia
 
 namespace ProyectoAS2TaquillaCine.FormsAdmin
 {
@@ -108,5 +110,6 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             newTaquilla.Show();
             this.Hide();
         }
+
     }
 }

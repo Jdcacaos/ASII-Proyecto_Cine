@@ -310,19 +310,19 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.panel_panel1.Size = new System.Drawing.Size(1028, 28);
             this.panel_panel1.TabIndex = 18;
             // 
-            // label1
+            // lb_reportes
             // 
             this.lb_reportes.AutoSize = true;
             this.lb_reportes.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_reportes.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lb_reportes.Location = new System.Drawing.Point(11, 4);
             this.lb_reportes.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lb_reportes.Name = "label1";
+            this.lb_reportes.Name = "lb_reportes";
             this.lb_reportes.Size = new System.Drawing.Size(177, 22);
             this.lb_reportes.TabIndex = 7;
             this.lb_reportes.Text = "GENERAR REPORTES";
             // 
-            // btn_Taquilla
+            // btn_taquilla
             // 
             this.btn_taquilla.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
             this.btn_taquilla.FlatAppearance.BorderSize = 0;
@@ -332,7 +332,7 @@ namespace ProyectoAS2TaquillaCine.FormsAdmin
             this.btn_taquilla.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_taquilla.Location = new System.Drawing.Point(342, -1);
             this.btn_taquilla.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_taquilla.Name = "btn_Taquilla";
+            this.btn_taquilla.Name = "btn_taquilla";
             this.btn_taquilla.Size = new System.Drawing.Size(135, 32);
             this.btn_taquilla.TabIndex = 9;
             this.btn_taquilla.Text = "Peli más Taquillera";
